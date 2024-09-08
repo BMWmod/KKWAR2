@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/btr-3e/bottle"}
+	{blend none}
+}

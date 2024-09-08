@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/bmd/konkurs"}
+	{bump "$/model/bmd/konkurs_bp"}
+	{specular "$/model/bmd/konkurs_sp"}
+	{color "255 255 255 25"}
+	{emitsheat}
+{blend none}
+}

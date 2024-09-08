@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/btr80/body"}
+	{emitsheat}
+{blend none}
+}

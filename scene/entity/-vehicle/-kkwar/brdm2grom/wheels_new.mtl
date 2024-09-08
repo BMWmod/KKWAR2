@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/brdm/wheels"}
+	{bump "$/model/brdm/wheels_bp"}
+	{specular "$/model/brdm/wheels_sp"}
+	{emitsheat}
+{blend none}
+}

@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "amx_auf1"}
+	{specular "amx_auf1_s"}
+	{color "230 230 230 25"}
+	{blend none}
+}

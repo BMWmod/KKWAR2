@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "utes"}
+	{bump "utes_bp"}
+	{specular "utes_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

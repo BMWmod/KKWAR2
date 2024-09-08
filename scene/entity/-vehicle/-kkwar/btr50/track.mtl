@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "track"}
+	{bump "track_n"}
+	{specular "track_s"}
+	{color "230 230 230 25"}
+	{blend test}
+}

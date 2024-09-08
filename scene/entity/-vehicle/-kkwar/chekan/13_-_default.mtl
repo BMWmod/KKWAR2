@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/tactical_Abrams/cw_skarb"}
+	{emitsheat}
+{blend none}
+}

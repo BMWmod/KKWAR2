@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/btr70/btr70"}
+	{bump "$/model/btr70/btr70_bp"}
+	{specular "$/model/btr70/btr70_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend test}
+}

@@ -1,0 +1,7 @@
+{id "48a5b6ce-b1db-48d1-aa6f-9fcdcf915834"}
+{name "kk-war2"}
+{author "Created by Maximaglist, at Sat May 18 13:20:30 2024"}
+{dependency "02f8e8f9-91d9-45e0-8ee6-dc56adae4763"} ; main package
+{dependency "92c4ead5-a608-49c0-be0e-c74994332ee7"} ; колд вар
+;{dependency "eefc98d6-c4b0-4a7e-ac3e-8f34c512ec0e"} ; интерфейс
+{order 2}

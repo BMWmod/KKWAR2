@@ -1,0 +1,121 @@
+{game_entity
+	(include "/properties/tank.ext")
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "Medium_M" "vision_lev06" "turret_rotator" "with_open_zpu" "has_apu" "has_autoloader" "cw_artillery"}
+
+
+	{extender "enumerator"}
+	
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+		{thickness 30}
+	}
+	
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+		{thickness 30}
+	}
+	
+	("armor_medium" turret(30 20 20 10) body(80 35 30 20))
+	("armor_engine"  t(30 30 20 22))
+	("armor_mantlet" t(80))
+	
+	("crew_4_human_extended")
+	("gunner_visible")	
+	
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_m7_mgunner"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "seat_m7_mgunner"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+	}
+
+	{extender "inventory"
+		{box
+			{Size 8 8}
+			{weight 3000}
+			{item "ammo bullet155_GER fg" 22} 			
+            {item "ammo bullet155_GER_ar fg" 5}    		           	
+			{item "ammo bullet155_USA cl" 10}  
+			{item "ammo 762Nato" 600}					
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "155mm_L52" filling "ammo bullet155_GER fg" 1}
+			{gunner "gunner"}
+			{charger "gunner"}        	
+			("CW_stab_artillery_rt" rechargetime(4.5))
+		}
+		{place "mgun"
+			{weapon "browning_m2hb" filled}
+			{foresight "foresight3"}
+			{gunner "gunner2"}
+			{charger "gunner2"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		;{place "smoke"
+		;	{weapon 			"smoke_thrower" filled}
+		;	{foresight 			"visor1"}
+		;	{charger 			"gunner"}	
+		;	{rotate}
+		;}
+	}
+
+	{mass 41949}
+	
+
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.5) len(1.5))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(62.0)
+			Width(3.48)
+			Power(1000)
+			Realspeed(40)
+			Gamespeed(39) 
+		)
+		{RearGears		0.20 0.43}}
+		("CW_fuelbag" Range(420) Fuelvolume(1000))
+		("CW_speed_lev" Gamespeed(39))
+	}
+
+	{Extension "amx_auf1.mdl"}
+
+	{bone "turret_mgun"
+		{limits -50 50}
+		{speed 0.03}
+		{terminator}
+	}
+	{bone "gun_rot"
+		{limits -66 4}
+		{speed 0.0052}
+	}
+	{bone "turret"
+		{speed 0.0064}
+	}
+	{bone "mgun"
+		{limits -40 8}
+		{speed 0.007}
+	}
+	(mod "mp"
+		{brain
+			{properties
+				{fire_mode hold}
+			}
+		}
+	)
+}

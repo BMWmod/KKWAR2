@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/kamaz_43269/vstr"}
+	{bump "$/model/kamaz_43269/vstr_bp"}
+	{specular "$/model/kamaz_43269/vstr_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

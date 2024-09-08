@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/brdm2_new/brdm2interier04_co"}
+	{emitsheat}
+{blend none}
+}
+
+

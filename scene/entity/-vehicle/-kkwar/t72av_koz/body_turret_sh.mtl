@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "kozirek"}
+	{emitsheat}
+{blend none}
+}

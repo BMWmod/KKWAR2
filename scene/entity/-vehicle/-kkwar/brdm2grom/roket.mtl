@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/bmd/9k14m"}
+	{bump "$/model/bmd/9k14m_bp"}
+	{specular "$/model/bmd/9k14m_sp"}
+	{color "255 255 255 25"}
+	{emitsheat}
+{blend none}
+}

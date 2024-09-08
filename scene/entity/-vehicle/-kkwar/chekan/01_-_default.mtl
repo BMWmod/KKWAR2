@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "bmp-1_summer_02.bmp"}
+	{emitsheat}
+{blend none}
+}

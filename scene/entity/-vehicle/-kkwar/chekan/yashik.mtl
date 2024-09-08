@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/model/toyota_hilux/body_yashik"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

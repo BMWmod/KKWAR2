@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/btr80/glass_s"}
+	{emitsheat}
+{blend test}
+}
