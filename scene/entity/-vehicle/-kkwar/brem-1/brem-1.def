@@ -1,0 +1,203 @@
+{Game_Entity
+	
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev06" "mine_exploder" "has_apu" "remote_mgun"}		
+	{targetSelector "tank"}
+
+	{props "heavy" "explosion_throw_crew" "vision_vehicle_low" "windowed"}
+	
+	("armor_heavy" turret(400 200 50 80) body(190 80 100 40)) 
+	("armor_engine"  t(50))
+
+	{boarder
+	{anm "driver"
+		{forward	{begin	"board_HighArmor"} 	{end "open_driver"} {base "open_b"}}
+		{reverse 	{end	"emit1"} {base "open2" -1}}
+	}
+
+	{anm "gunner"
+		{forward	{begin	"board_HighArmor"} 	{end "open_gunner"} {base "open_g"}}
+		{reverse 	{end	"emit2"} {base "open1" -1}}
+	}
+
+	{anm "commander"
+		{forward	{begin	"board_HighArmor"} 	{end "open_t"}}
+		{reverse 	{end	"emit3"}}
+	}
+		{anm "commander2"
+			{forward	{begin	"board_LowTank_stand"} {end "0101_t72_guner"}}
+			{reverse 	{end	"emit_tank_1_hold" 1}}
+		}
+}
+
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+("crew_human" place(driver)		door(emit1) group(crew)		animation(driver)	visor(driver))
+("crew_human" place(gunner)		door(emit2) group(crew)	    	animation(gunner)	visor(main))
+("crew_human" place(commander)	door(emit3) group(crew)		animation(commander)visor(main))
+("crew_human" place(commander2)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander3)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander4)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander5)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander6)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander7)	door(emit3) 			animation(commander2)visor(main))
+("crew_human" place(commander8)	door(emit3) 			animation(commander2)visor(main))	
+("crew_human" place(commander9)	door(emit3) 			animation(commander2)visor(main))	
+("crew_human" place(commander10)	door(emit3) 			animation(commander2)visor(main))						
+("crew_human" place(commander11)	door(emit3) 			animation(commander2)visor(main))	
+	{sensor
+		{visor "main"
+			{vision "tank_main-l"}
+			{bone "visor1"}
+		}
+		{Visor "driver"
+			{vision "moto_around"}
+			{bone "visor1"}
+		}
+	}
+	
+	{extender "shield"
+			{on}
+	}
+{Weaponry
+                ("restore_ik_time")
+		{place "mgun"	
+			{type "mgun_aa"}
+			{weapon "browning_m2hb" filled}
+			{foresight "foresight3"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			;("abm_mgun2")
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		
+}
+	{extender "inventory"
+		{Box
+      		{size 8 16}     
+            {clear}
+			{item "ammo 50Nato" 800}
+			{item "hedgehog_kit" 30}
+			{item "sandbag_kit" 24}
+			{item "barbwire_kit" 12}
+			{item "barrel" 10 filling "fuel" 200}
+			{item "barbwire_kit" 8}
+			{item "c4_bomb" 10}
+			{item "antitank_m19" "mine" 40}
+			{item "antitank_tm62m" "mine" 40}
+			{item "antipersonnel_mon50" "mine"  30}
+			{item "repair_kit" 3}
+			{item "spade_inv" 10}
+			{item "buksir_tros" 5}
+			{item "netting_kit" 5}
+			{item "axe" 2}
+			{item "mine_detector" 2}
+		  }
+		}
+	
+	
+	{mass 48000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(0.4))
+		("CW_tracks"
+			Mass(48)
+			Width(3.79)
+			Power(840)	;http://www.uvz.ru/product/70/4
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(700)
+			Fuelvolume(1600)
+		)
+	}
+{props "cwfs_fuel_700" "cwfs_extfuel_1500"}    
+
+	{Extension "brem-1.mdl"}
+	("missile_aimpoint_tanksize")
+        ("cwts_buksir")
+	
+	
+	{Volume "armor_v_b1"
+	}
+	{Volume "armor_v_b2"
+	}
+	{Volume "body_tank"
+	}
+	{Volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{Volume "bort1"
+	}
+	{Volume "bort2"
+	}
+	{Volume "box1_cover"
+	}
+	{Volume "box2_cover"
+	}
+	{Volume "box3_cover"
+	}
+	{Volume "box4_cover"
+	}
+	{Volume "box5_cover"
+	}
+	{Volume "commander"
+	}
+	{Volume "commander_zone"
+	}
+	{Volume "cover"
+	}
+	{Volume "crewbody_kill1"
+	}
+	{Volume "crewbody_kill2"
+	}
+	{Volume "crewbody_kill3"
+	}
+	{Volume "crewbody_kill4"
+	}
+	{Volume "crewbody_kill5"
+	}
+	{Volume "driver"
+	}
+	{Volume "driver_zone"
+	}
+	{Volume "engine"
+	}
+	{Volume "fuel2"
+	}
+	{Volume "fuel3"
+	}
+	{Volume "guner_zone"
+	}
+	{Volume "gunner"
+	}
+	{Volume "katok1"
+	}
+	{Volume "katok2"
+	}
+	{Volume "kompozit_b1"
+	}
+	{Volume "mgun"
+	}
+	{Volume "pribor_com"
+	}
+	{Volume "pribor_gun"
+	}
+	{Volume "trackl"
+	}
+	{Volume "trackr"
+	}
+	{Volume "vsu"
+	}
+}

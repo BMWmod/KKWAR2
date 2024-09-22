@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "fuel_stik"}
+	{blend none}
+}

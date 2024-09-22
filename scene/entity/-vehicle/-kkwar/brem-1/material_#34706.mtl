@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "nsvt-kord"}
+	{blend none}
+}

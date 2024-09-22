@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "detail_bags"}
+	{blend none}
+}

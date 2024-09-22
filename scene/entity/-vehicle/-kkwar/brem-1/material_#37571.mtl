@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "cran_1"}
+	{blend none}
+}

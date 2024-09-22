@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "bags_stik2"}
+	{blend none}
+}
