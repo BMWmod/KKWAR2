@@ -1,0 +1,3510 @@
+{mission
+	{helpers
+		{triggers
+			{"mp_scripts/texmod/player0"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 0}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 0}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 0}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player0"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player1"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 1}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 1}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 1}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player1"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player2"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 2}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 2}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 2}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player2"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player3"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 3}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 3}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 3}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player3"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player4"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 4}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 4}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 4}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player4"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player5"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 5}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 5}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 5}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player5"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player6"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 6}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 6}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 6}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player6"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player7"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 7}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 7}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 7}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player7"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player8"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 8}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 8}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 8}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player8"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player9"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 9}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 9}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 9}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player9"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player10"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 10}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 10}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 10}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player10"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player11"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 11}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 11}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 11}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player11"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player12"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 12}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 12}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 12}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player12"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player13"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 13}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 13}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 13}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player13"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player14"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 14}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 14}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 14}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player14"}
+					}
+				}
+			}
+			{"mp_scripts/texmod/player15"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag texmod_flag1}
+										}
+										{tag
+											{tag texmod_flag2}
+										}
+										{tag
+											{tag texmod_flag3}
+										}
+										{tag
+											{tag texmod_flag4}
+										}
+									}
+									{include
+										{player
+											{player 15}
+										}
+									}
+								}
+							}
+						}
+						{"2.entities"
+							{selector
+								{source advanced}
+								{group
+									{select
+										{tag
+											{tag need_texmod}
+										}
+									}
+									{include
+										{player
+											{player 15}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"switch"
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag1}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+								{tag_add texmod1}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag2}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+								{tag_add texmod2}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag3}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+								{tag_add texmod3}
+								{tag_remove need_texmod}
+							}
+						}
+						{"case"
+							{condition
+								{type entities}
+								{selector
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{select
+											{tag
+												{tag texmod_flag4}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+							}
+							{"entity_state"
+								{selector
+									{source advanced}
+									{group
+										{select
+											{tag
+												{tag need_texmod}
+											}
+										}
+										{include
+											{player
+												{player 15}
+											}
+										}
+									}
+								}
+								{tag_add texmod4}
+								{tag_remove need_texmod}
+							}
+						}
+					}
+					{"delay"
+						{time 0.05}
+					}
+					{"trigger"
+						{name "mp_scripts/texmod/player15"}
+					}
+				}
+			}
+		}
+	}
+}

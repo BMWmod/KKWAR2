@@ -1,0 +1,21 @@
+;SDL
+{game
+	{maxPlayers 5}
+	{only_pve}	
+	{settings
+		{scoreFinal			0}
+;		{fogOfWar fog_realistic}
+		{fogOfWarForAI fog_per_entity}
+	}		
+	{no_manual_spawn}
+	{without_bots}
+	{parameters 
+		{no_gamebar}		
+		{mission_layers
+			"/cw_commonscripts/common_sp_scripts"
+			"/cw_commonscripts/cwfs_scripts"
+		}		
+	}
+}	
+
+
