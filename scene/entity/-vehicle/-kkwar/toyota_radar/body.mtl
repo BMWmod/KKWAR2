@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/hawx_rls/body_cwar"}
+	{bump "$/model/hawx_rls/body_cwar_bp"}
+	{specular "$/model/hawx_rls/body_cwar_sp"}
+	{color "230 230 230 25"}
+	{blend none}
+}

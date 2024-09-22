@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/toyota_hilux/speed"}
+	{emitsheat}
+{blend none}
+}

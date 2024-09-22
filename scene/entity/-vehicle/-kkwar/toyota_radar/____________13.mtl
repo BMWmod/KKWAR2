@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/toyota_hilux/salon"}
+	{bump "$/model/toyota_hilux/salon_bp"}
+	{specular "$/model/toyota_hilux/salon_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

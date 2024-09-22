@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "ukrjeep_dozer_c"}
+	{blend none}
+}

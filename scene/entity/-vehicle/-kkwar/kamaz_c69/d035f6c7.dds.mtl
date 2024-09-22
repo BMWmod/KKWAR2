@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/kamaz/kamaz_kuzov"}
+	{bump "$/model/kamaz/kamaz_kuz_bp"}
+	{specular "$/model/kamaz/kamaz_kuz_sp"}
+	{color "255 255 255 25"}
+	{blend none}
+}

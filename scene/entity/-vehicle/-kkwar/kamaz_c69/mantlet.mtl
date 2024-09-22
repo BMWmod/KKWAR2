@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "pzvi_tiger_i"}
+	{specular "pzvi_tiger_i"}
+	{color "229 229 229 25"}
+	{blend test}
+}

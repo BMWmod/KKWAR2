@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "1e3825cf"}
+	{blend  blend}
+}

@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/toyota_hilux/other2"}
+	{bump "$/model/toyota_hilux/other2_bp"}
+	{specular "$/model/toyota_hilux/other2_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}
