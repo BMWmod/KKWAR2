@@ -1,0 +1,156 @@
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl0"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/firm_pebble3"}
+		{bump "/texture/land/dirt/firm_pebble3_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl1"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/rock/stone_mound"}
+		{bump "/texture/land/rock/stone_mound_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:pbr/ground_parallax" "mtl2"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/grass04_pbr"}
+		{bump "/texture/land/grass/grass04_pbr_nm"}
+		{height "/texture/land/grass/grass04_pbr_prlx"}
+		{ao "/texture/land/grass/grass04_pbr_ao"}
+		{roughness "/texture/land/grass/grass04_pbr_rg"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl3"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/fields/field_1"}
+		{bump "/texture/land/fields/field_1_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/simple:gem2/ground/bump_simple" "mtl4"
+	{scheme 1
+		{diffuse "/texture/land/_arden/plat_stones_gr"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/firm_pebble3"}
+		{bump "/texture/land/dirt/firm_pebble3_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl5"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/steppe_1a"}
+		{bump "/texture/land/grass/steppe_1a_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl6"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/muddy_trace1"}
+		{bump "/texture/land/dirt/muddy_trace1_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl7"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/fields/tillage_3b"}
+		{bump "/texture/land/fields/tillage_3b_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "mtl8"
+	{scheme 1
+		{diffuse "/texture/land/grass/grass02_pbr"}
+		{bump "/texture/land/grass/grass02_pbr_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/fields/stubble_field3a"}
+		{bump "/texture/land/fields/stubble_field3a_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:pbr/ground_parallax" "mtl9"
+	{scheme 1
+		{diffuse "/texture/land/town/asfalt_road2"}
+		{bump "/texture/land/town/asfalt_road2_nm"}
+		{height "/texture/land/town/asfalt_road2_prlx"}
+		{ao "/texture/land/town/asfalt_road2_ao"}
+		{roughness "/texture/land/town/asfalt_road2_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/firm_pebble3"}
+		{bump "/texture/land/dirt/firm_pebble3_nm"}
+		{height "/texture/land/town/asfalt_road2_prlx"}
+		{ao "/texture/land/town/asfalt_road2_ao"}
+		{roughness "/texture/land/town/asfalt_road2_rg"}
+	}
+	{blend none}
+}
+{"land/layered_2:pbr/ground_parallax:gem2/ground/bump_simple" "land_mtl0"
+	{scheme 1
+		{diffuse "/texture/land/dirt/firm_pebble3"}
+		{bump "/texture/land/dirt/firm_pebble3_nm"}
+		{height "/texture/land/grass/grass02_pbr_prlx"}
+		{ao "/texture/land/grass/grass02_pbr_ao"}
+		{roughness "/texture/land/grass/grass02_pbr_rg"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/firm_pebble3"}
+		{bump "/texture/land/dirt/firm_pebble3_nm"}
+	}
+	{blend none}
+}
