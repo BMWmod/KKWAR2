@@ -1,0 +1,186 @@
+{brush
+	{brush_options
+		{brush_size 200}
+		{paint_dencity 0.3}
+	}
+	{filters
+		{is_landscape 1}
+		{is_static_meshes 0}
+		{is_foliage 0}
+	}
+	{foliage
+		{activate}
+		{entity "ash_tree3"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "fir_s02"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "forecount_plant1"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "fir_s01"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "apple-tree7"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "new_tree2"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+	{foliage
+		{activate}
+		{entity "new_birch"}
+		{painting
+			{density 10}
+			{radius 0}
+			{scale 1 1
+			}
+		}
+		{placement
+			{offset_z 0 0
+			}
+			{align_max_angle 0}
+			{random_yaw}
+			{random_pitch_angle 0}
+			{ground_slope_angle 0 45
+			}
+			{height -100000 100000
+			}
+		}
+		{view
+			{opacity 1}
+			{color 0xffffffff}
+		}
+	}
+}
