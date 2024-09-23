@@ -1,0 +1,130 @@
+{game_entity
+	(include "/properties/tank.ext")
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{collider "tank.heavy"}
+	{props "heavy" "turret_rotator" "flak_bmpt" "vision_vehicle_maximum" "muzzle_zenite_muzzlebreak" "muzzle_atgm" "captor" "gun_mode_change"}
+	{targetclass "tank" "atgm ap fg bullet"}
+	
+	{extender "enumerator"}
+
+	("armor_heavy"  turret(380 250 65 40) body(270 80 50 30))
+	("armor_mantlet" t(371))
+	("armor_engine"  t(30 30 20 22))
+
+	("shield" args 6)
+	{extender "shield"
+		{on}
+	}
+	
+	{placer
+		{place "driver"	{visor "driver"}}
+		{place "gunner"	{visor "main"}}
+	}
+
+
+
+	{Volume		"rgun01"{thickness	20}}
+	{component	"rgun01"{RepairTime	20}}
+	{Volume		"rgun02"{thickness	20}}
+	{component	"rgun02"{RepairTime	20}}
+
+	{Volume		"era00"{thickness	150}}
+	{component	"era00"{RepairTime	150}}
+	{Volume		"era01"{thickness	150}}
+	{component	"era01"{RepairTime	150}}
+	{Volume		"era02"{thickness	150}}
+	{component	"era02"{RepairTime	150}}
+	{Volume		"era03"{thickness	150}}
+	{component	"era03"{RepairTime	150}}
+
+	{component "era00" {tags "era400mm"}}
+	{component "era01" {tags "era400mm"}}
+	{component "era02" {tags "era400mm"}}
+	{component "era03" {tags "era400mm"}}
+
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+
+
+
+	{extender "inventory"
+		{box
+			{item "repair_kit" 10}
+			{item "can" 10 filling "fuel" 200}
+			{item "ammo bullet30 ubr11" 300}
+			{item "ammo bullet30 uof6" 200}
+			{item "ammo bullet152b atgm" 8}
+			{item "grenade decoy" 3}
+
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon			"30mm_2a42_high" filling "ammo bullet30 ubr11" 500}
+			{Barrels                 2}
+			{charger		"gunner"}		
+		}
+		{place "gun1_2"
+			{RestoreIKAfterAim}			
+			{weapon			"30mm_2a42" filling "ammo bullet30 uof6" 500}
+			{charger		"gunner"}
+			{basic}
+			("abm_stabilized_twoplane_basic")
+		}		
+		{place "missile1"
+			{weapon			"152mm_9m133_x4" filled}
+			{charger		"gunner"}
+			{Barrels                 2}
+			{shooter                "shooter_ll"}
+			("abm_low")
+			{basic}
+		}
+		{place "missile2"
+			{weapon			"152mm_9m133_x4" filled}
+			{charger                 "gunner"}
+			{Barrels                 2}
+			{shooter                "shooter_rr"}
+			("abm_low")
+			{basic}
+		}
+	}
+
+
+	{Extension "bmpt-72.mdl"}
+
+	{mass 44500}
+	{Chassis
+		{Locomotion ("locomotion")
+			("Speed" s(70))
+			{RearGears	0.2 0.23}
+		}
+		{FuelBag
+			{volume 1200}		;liters
+			("rate" r(2.4))		;liters per kilometer (adapted) // 500km range
+			{remain 1200}
+		}
+		("tank_trace" fx("tracks_big") step(0.47) len(0.8))
+	}
+
+	{bone "turret"
+		{limits}
+		{speed 0.01}
+	}
+	{bone "gun_rot"
+		{speed 0.01}
+		{limits -15 10}
+	}
+}

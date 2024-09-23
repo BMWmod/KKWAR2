@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/bmpt-72/bmpt-72_gun_am"}
+	{bump "$/model/bmpt-72/bmpt-72_gun_ddn"}
+	{specular "$/model/bmpt-72/bmpt-72_gun_s"}
+	{color "229 229 229 25"}
+	{blend none}
+	{emitsheat}
+}

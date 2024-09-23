@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/bmpt-72/bmpt-72_sideskirts_am"}
+	{bump "$/model/bmpt-72/bmpt-72_sideskirts_ddn"}
+	{specular "$/model/bmpt-72/bmpt-72_sideskirts_s"}
+	{color "229 229 229 25"}
+	{blend none}
+	{emitsheat}
+}

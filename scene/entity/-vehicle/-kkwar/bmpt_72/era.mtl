@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/bmpt-72/bmpt-72_era_am"}
+	{bump "$/model/bmpt-72/bmpt-72_era_ddn"}
+	{specular "$/model/bmpt-72/bmpt-72_era_s"}
+	{color "229 229 229 25"}
+	{blend none}
+	{emitsheat}
+}
