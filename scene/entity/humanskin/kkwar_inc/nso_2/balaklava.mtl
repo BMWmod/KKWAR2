@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/human/outfit/balaklava_vkpo"}
+	{blend test}
+}
