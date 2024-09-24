@@ -73,13 +73,13 @@
 	{Weaponry
 		{place "gun"
 			{RestoreIKAfterAim}
-			{weapon			"30mm_2a42_high" filling "ammo bullet30 ubr11" 500}
+			{weapon			"30mm_2a42" filling "ammo bullet30_RUS ap" 500}
 			{Barrels                 2}
 			{charger		"gunner"}		
 		}
 		{place "gun1_2"
 			{RestoreIKAfterAim}			
-			{weapon			"30mm_2a42" filling "ammo bullet30 uof6" 500}
+			{weapon			"30mm_2a42" filling "ammo bullet3_rus he" 500}
 			{charger		"gunner"}
 			{basic}
 			("abm_stabilized_twoplane_basic")
