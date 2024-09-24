@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/human/head/rus_euro/4"}
+	{blend none}
+}

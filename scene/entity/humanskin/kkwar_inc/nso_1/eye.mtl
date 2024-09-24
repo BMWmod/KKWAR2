@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "c_yem_militia_eye_c"}
+	{blend none}
+}

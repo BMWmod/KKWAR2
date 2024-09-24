@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/human/outfit/rus_bags"}
+	{blend none}
+}

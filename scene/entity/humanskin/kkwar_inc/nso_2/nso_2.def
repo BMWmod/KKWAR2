@@ -1,0 +1,10 @@
+{game_entity
+	(include "/properties/cw_humanskin.ext")
+	{Extension "nso_2.mdl"}
+	{bone "basis"
+		("random_face")
+		("sibz_6b51_75percent")
+		("balaklava_random")
+		("gas_bag")
+	}
+}

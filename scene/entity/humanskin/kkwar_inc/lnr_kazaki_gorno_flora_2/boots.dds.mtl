@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "c_afg_muyahidin_leader_legs_s"}
+	{blend none}
+}

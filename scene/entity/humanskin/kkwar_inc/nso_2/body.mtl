@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/human/uniform/rus/vkpo_let_dlinruk"}
+	{blend none}
+}
