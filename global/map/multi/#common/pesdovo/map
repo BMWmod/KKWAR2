@@ -24809,7 +24809,7 @@
 		}
 	}
 	{Entity "house_euro_104c_n" 0x63
-		{Position -3860.13 3499.11}
+		{Position -3829.29 3486.71}
 		{xform zl 0.99}
 		{Fogable never}
 		{Player 0}
@@ -26374,7 +26374,7 @@
 		}
 	}
 	{Entity "house_ger02" 0x809
-		{Position -3997.5 3349.96 0}
+		{Position -4058.89 3221.37 0}
 		{xform zl -90.53}
 		{Fogable never}
 		{Player 0}
@@ -26774,7 +26774,7 @@
 		}
 	}
 	{Entity "house_70_g2" 0x5807
-		{Position -3675.01 3498.72}
+		{Position -3647.18 3486.61}
 		{xform zl 92.87}
 		{Fogable never}
 		{Player 0}
@@ -75801,6 +75801,1764 @@
 		{Position -4247.13 -10960.2}
 		{xform zl -177.22}
 	}
+	{Entity "ground_clay5" 0x470
+		{Position -2629.32 3529.77}
+		{xform zl -89.94}
+	}
+	{Entity "ground_clay5" 0x471
+		{Position -2630.99 3308.32}
+		{xform zl -89.94}
+	}
+	{Entity "ground_clay5" 0x472
+		{Position -2504.73 3179.61}
+		{xform zl -0.83}
+	}
+	{Entity "ground_clay5" 0x473
+		{Position -2326.46 3175.23}
+		{xform zl -0.83}
+	}
+	{Entity "ground_clay5" 0x474
+		{Position -2206.24 3301.34}
+		{xform zl 89.62}
+	}
+	{Entity "ground_clay5" 0x475
+		{Position -2208.92 3522.72}
+		{xform zl 89.62}
+	}
+	{Entity "ground_clay5" 0x476
+		{Position -2495.5 3637.96}
+		{xform zl 178.6}
+	}
+	{Entity "ground_clay5" 0x461b
+		{Position -2324.65 3640.98}
+		{xform zl 178.6}
+	}
+	{Entity "e_house200_s1" 0x62d1
+		{Position -4032.48 3412.89 0}
+		{Fogable never}
+		{Player 0}
+		{MID 10015}
+	}
+	{Entity "e_house_200_r_1" 0x62d2
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_2" 0x62d3
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_3" 0x62d4
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_4" 0x62d5
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_5" 0x62d6
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_6" 0x62d7
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_7" 0x62d8
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_8" 0x62d9
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body23"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_9" 0x62da
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_r_10" 0x62db
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f2_1" 0x62dc
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f2_2" 0x62dd
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f2_3" 0x62de
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_1" 0x62df
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+		{Volume "body6"
+			{able {touch 1}}
+		}
+		{Volume "body7"
+			{able {touch 1}}
+		}
+		{Placer
+			{State "2" {Broken}}
+		}
+	}
+	{Entity "e_house_200_f1_2" 0x62e0
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body24"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_3" 0x62e1
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body26"
+			{able {touch 1}}
+		}
+		{Volume "body27"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_4" 0x62e2
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body25"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_5" 0x62e3
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_6" 0x62e4
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+		{Volume "body6"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_7" 0x62e5
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_8" 0x62e6
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_9" 0x62e7
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "e_house_200_f1_10" 0x62e8
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_euro_022c" 0x62eb
+		{Position -4058.88 2943.17}
+		{xform zl 88.8}
+		{Fogable never}
+		{Player 0}
+		{MID 10016}
+	}
+	{Entity "022_corner1" 0x62ec
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner2" 0x62ed
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner3" 0x62ee
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner4" 0x62ef
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "beam"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner5" 0x62f0
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner6" 0x62f1
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner7" 0x62f2
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "beam"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner8" 0x62f3
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner9" 0x62f4
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "beam"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner10" 0x62f5
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner11" 0x62f6
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "beam"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner13" 0x62f7
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof3"
+			{able {touch 1}}
+		}
+	}
+	{Entity "022_corner12" 0x62f8
+		{Volume "floor"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru" 0x51ac
+		{Position -3456.01 2933.05 0}
+		{Fogable never}
+		{Player 0}
+		{MID 10017}
+	}
+	{Entity "school_ru_plate" 0x51b2
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_1" 0x51b3
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_2" 0x51b4
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_3" 0x51b5
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_4" 0x51b6
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_5" 0x51b7
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_6" 0x51b8
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_7" 0x51b9
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_8" 0x51ba
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_9" 0x51bb
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_10" 0x51bc
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_16" 0x51bd
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_11" 0x51be
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_13" 0x51bf
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_12" 0x51c0
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_14" 0x51c1
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_15" 0x51c2
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_18" 0x51c3
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_17" 0x51c4
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_19" 0x51c5
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_21" 0x51c6
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_20" 0x51c7
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_22" 0x51c8
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_27" 0x51c9
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_28" 0x51ca
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_29" 0x51cb
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_25" 0x51cc
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_24" 0x51cd
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_26" 0x51ce
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall1_23" 0x51d0
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_1" 0x51d1
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_2" 0x51d2
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_7" 0x51d3
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_3" 0x51d4
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_4" 0x51d5
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_6" 0x51d6
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_5" 0x51d8
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_11" 0x51d9
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_9" 0x51da
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_10" 0x51db
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_8" 0x51dc
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_5" 0x51de
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_4" 0x51e1
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_6" 0x51e2
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_2" 0x51e3
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_2" 0x51e4
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_3" 0x51e5
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_2" 0x51e6
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_3" 0x51e8
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_1" 0x51e9
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_13" 0x51ea
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_9" 0x51eb
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_9" 0x51ec
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_1" 0x51ed
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_7" 0x51ee
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_7" 0x51ef
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_3" 0x51f0
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_4" 0x51f2
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_5" 0x51f3
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_6" 0x51f4
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_5" 0x51f5
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_10" 0x51f6
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_7" 0x51f7
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_8" 0x51f8
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_9" 0x51f9
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_5" 0x51fb
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_8" 0x51fd
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_7" 0x51fe
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_12" 0x51ff
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_3" 0x5200
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_11" 0x5202
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_12" 0x5203
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_2_10" 0x5204
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_8" 0x5205
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_10" 0x5206
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_10" 0x5207
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_13" 0x5208
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_8" 0x5209
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_13" 0x520a
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_2" 0x520b
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_11" 0x520c
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_12" 0x520d
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_12" 0x520e
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_2_11" 0x520f
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_35" 0x5210
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall" 0x5211
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_12" 0x5212
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_13" 0x5213
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_14" 0x5214
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_15" 0x5215
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_16" 0x5216
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_17" 0x5217
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_18" 0x5218
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_19" 0x5219
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_20" 0x521a
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_22" 0x521b
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_21" 0x521c
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_1" 0x521d
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_9" 0x521e
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_1" 0x521f
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_11" 0x5220
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_4" 0x5221
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_l_1_6" 0x5222
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_4" 0x5223
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_inn_r_1_6" 0x5224
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_37" 0x5225
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_36" 0x5226
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_34" 0x5227
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_33" 0x5228
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_32" 0x5229
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_31" 0x522a
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_30" 0x522b
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_29" 0x522c
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_28" 0x522d
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_27" 0x522e
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_26" 0x522f
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_25" 0x5230
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_24" 0x5231
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_wall2_23" 0x5232
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_roof" 0x524a
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_l_oven" 0x524b
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "school_ru_r_oven" 0x524c
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "pine_02_g2" 0x524e
+		{Position -3263.96 3669.79}
+		{xform zl 91.47}
+		{Volume "crown"
+			{able {visible 0}}
+		}
+	}
+	{Entity "new_poplar4" 0x524f
+		{Position -3184.58 3706.93}
+	}
+	{Entity "ash_tree3" 0x5250
+		{Position -3316.42 3486.31}
+		{xform zl 162.19}
+	}
+	{Entity "new_tree1" 0x5251
+		{Position -3290.18 3255.65}
+	}
+	{Entity "new_tree1" 0x5252
+		{Position -3043.57 3045}
+	}
+	{Entity "bench" 0x4aee
+		{Position -3669.53 3559.3}
+		{xform zl -88.52}
+	}
+	{Entity "bench" 0x4af0
+		{Position -3535.38 3523.84}
+		{xform zl 177.79}
+	}
+	{Entity "bench" 0x4b45
+		{Position -3974.28 3539.1}
+	}
+	{Entity "bench" 0x4b47
+		{Position -3836.63 3561.42}
+		{xform zl -87.31}
+	}
+	{Entity "bench" 0x4b49
+		{Position -4138.24 3213.77}
+	}
+	{Entity "bench" 0x4b4a
+		{Position -4089.64 3034.74}
+		{xform zl -90.53}
+	}
+	{Entity "bench" 0x4b4d
+		{Position -4040.41 3036.46}
+		{xform zl -90.53}
+	}
+	{Entity "wood_table" 0x4b4e
+		{Position -4063.17 3505.09 0.09}
+	}
+	{Entity "statue4" 0x4b73
+		{Position -4127.27 3702.83 0}
+		{xform zl 137.84}
+	}
 	{Link 0x3042 {0x3040 "basis"}}
 	{Link 0x3043 {0x3040 "5"}}
 	{Link 0x3045 {0x3040 "6"}}
@@ -76084,4 +77842,162 @@
 	{Link 0x3413 {0x340a "b_ua_03_piece09_point"}}
 	{Link 0x3414 {0x340a "b_ua_03_piece10_point"}}
 	{Link 0x3415 {0x340a "b_ua_03_piece11_point"}}
+	{Link 0x62d2 {0x62d1 "e_house_200_r_1"}}
+	{Link 0x62d3 {0x62d1 "e_house_200_r_2"}}
+	{Link 0x62d4 {0x62d1 "e_house_200_r_3"}}
+	{Link 0x62d5 {0x62d1 "e_house_200_r_4"}}
+	{Link 0x62d6 {0x62d1 "e_house_200_r_5"}}
+	{Link 0x62d7 {0x62d1 "e_house_200_r_6"}}
+	{Link 0x62d8 {0x62d1 "e_house_200_r_7"}}
+	{Link 0x62d9 {0x62d1 "e_house_200_r_8"}}
+	{Link 0x62da {0x62d1 "e_house_200_r_9"}}
+	{Link 0x62db {0x62d1 "e_house_200_r_10"}}
+	{Link 0x62dc {0x62d1 "e_house_200_f2_1"}}
+	{Link 0x62dd {0x62d1 "e_house_200_f2_2"}}
+	{Link 0x62de {0x62d1 "e_house_200_f2_3"}}
+	{Link 0x62df {0x62d1 "e_house_200_f1_1"}}
+	{Link 0x62e0 {0x62d1 "e_house_200_f1_2"}}
+	{Link 0x62e1 {0x62d1 "e_house_200_f1_3"}}
+	{Link 0x62e2 {0x62d1 "e_house_200_f1_4"}}
+	{Link 0x62e3 {0x62d1 "e_house_200_f1_5"}}
+	{Link 0x62e4 {0x62d1 "e_house_200_f1_6"}}
+	{Link 0x62e5 {0x62d1 "e_house_200_f1_7"}}
+	{Link 0x62e6 {0x62d1 "e_house_200_f1_8"}}
+	{Link 0x62e7 {0x62d1 "e_house_200_f1_9"}}
+	{Link 0x62e8 {0x62d1 "e_house_200_f1_10"}}
+	{Link 0x62ec {0x62eb "1"}}
+	{Link 0x62ed {0x62eb "2"}}
+	{Link 0x62ee {0x62eb "3"}}
+	{Link 0x62ef {0x62eb "4"}}
+	{Link 0x62f0 {0x62eb "5"}}
+	{Link 0x62f1 {0x62eb "6"}}
+	{Link 0x62f2 {0x62eb "7"}}
+	{Link 0x62f3 {0x62eb "8"}}
+	{Link 0x62f4 {0x62eb "9"}}
+	{Link 0x62f5 {0x62eb "10"}}
+	{Link 0x62f6 {0x62eb "11"}}
+	{Link 0x62f7 {0x62eb "13"}}
+	{Link 0x62f8 {0x62eb "12"}}
+	{Link 0x51b2 {0x51ac "1"}}
+	{Link 0x51b3 {0x51ac "2"}}
+	{Link 0x51b4 {0x51ac "3"}}
+	{Link 0x51b5 {0x51ac "4"}}
+	{Link 0x51b6 {0x51ac "5"}}
+	{Link 0x51b7 {0x51ac "6"}}
+	{Link 0x51b8 {0x51ac "7"}}
+	{Link 0x51b9 {0x51ac "8"}}
+	{Link 0x51ba {0x51ac "9"}}
+	{Link 0x51bb {0x51ac "10"}}
+	{Link 0x51bc {0x51ac "11"}}
+	{Link 0x51bd {0x51ac "12"}}
+	{Link 0x51be {0x51ac "13"}}
+	{Link 0x51bf {0x51ac "15"}}
+	{Link 0x51c0 {0x51ac "14"}}
+	{Link 0x51c1 {0x51ac "16"}}
+	{Link 0x51c2 {0x51ac "17"}}
+	{Link 0x51c3 {0x51ac "19"}}
+	{Link 0x51c4 {0x51ac "18"}}
+	{Link 0x51c5 {0x51ac "20"}}
+	{Link 0x51c6 {0x51ac "22"}}
+	{Link 0x51c7 {0x51ac "21"}}
+	{Link 0x51c8 {0x51ac "23"}}
+	{Link 0x51c9 {0x51ac "28"}}
+	{Link 0x51ca {0x51ac "29"}}
+	{Link 0x51cb {0x51ac "30"}}
+	{Link 0x51cc {0x51ac "26"}}
+	{Link 0x51cd {0x51ac "25"}}
+	{Link 0x51ce {0x51ac "27"}}
+	{Link 0x51d0 {0x51ac "24"}}
+	{Link 0x51d1 {0x51ac "31"}}
+	{Link 0x51d2 {0x51ac "32"}}
+	{Link 0x51d3 {0x51ac "37"}}
+	{Link 0x51d4 {0x51ac "33"}}
+	{Link 0x51d5 {0x51ac "34"}}
+	{Link 0x51d6 {0x51ac "36"}}
+	{Link 0x51d8 {0x51ac "35"}}
+	{Link 0x51d9 {0x51ac "41"}}
+	{Link 0x51da {0x51ac "39"}}
+	{Link 0x51db {0x51ac "40"}}
+	{Link 0x51dc {0x51ac "38"}}
+	{Link 0x51de {0x51ac "114"}}
+	{Link 0x51e1 {0x51ac "113"}}
+	{Link 0x51e2 {0x51ac "115"}}
+	{Link 0x51e3 {0x51ac "73"}}
+	{Link 0x51e4 {0x51ac "111"}}
+	{Link 0x51e5 {0x51ac "99"}}
+	{Link 0x51e6 {0x51ac "98"}}
+	{Link 0x51e8 {0x51ac "74"}}
+	{Link 0x51e9 {0x51ac "110"}}
+	{Link 0x51ea {0x51ac "122"}}
+	{Link 0x51eb {0x51ac "118"}}
+	{Link 0x51ec {0x51ac "93"}}
+	{Link 0x51ed {0x51ac "85"}}
+	{Link 0x51ee {0x51ac "91"}}
+	{Link 0x51ef {0x51ac "78"}}
+	{Link 0x51f0 {0x51ac "87"}}
+	{Link 0x51f2 {0x51ac "88"}}
+	{Link 0x51f3 {0x51ac "76"}}
+	{Link 0x51f4 {0x51ac "90"}}
+	{Link 0x51f5 {0x51ac "89"}}
+	{Link 0x51f6 {0x51ac "106"}}
+	{Link 0x51f7 {0x51ac "103"}}
+	{Link 0x51f8 {0x51ac "104"}}
+	{Link 0x51f9 {0x51ac "105"}}
+	{Link 0x51fb {0x51ac "101"}}
+	{Link 0x51fd {0x51ac "117"}}
+	{Link 0x51fe {0x51ac "116"}}
+	{Link 0x51ff {0x51ac "121"}}
+	{Link 0x5200 {0x51ac "112"}}
+	{Link 0x5202 {0x51ac "120"}}
+	{Link 0x5203 {0x51ac "108"}}
+	{Link 0x5204 {0x51ac "119"}}
+	{Link 0x5205 {0x51ac "92"}}
+	{Link 0x5206 {0x51ac "94"}}
+	{Link 0x5207 {0x51ac "81"}}
+	{Link 0x5208 {0x51ac "109"}}
+	{Link 0x5209 {0x51ac "79"}}
+	{Link 0x520a {0x51ac "84"}}
+	{Link 0x520b {0x51ac "86"}}
+	{Link 0x520c {0x51ac "82"}}
+	{Link 0x520d {0x51ac "83"}}
+	{Link 0x520e {0x51ac "96"}}
+	{Link 0x520f {0x51ac "95"}}
+	{Link 0x5210 {0x51ac "68"}}
+	{Link 0x5211 {0x51ac "71"}}
+	{Link 0x5212 {0x51ac "43"}}
+	{Link 0x5213 {0x51ac "44"}}
+	{Link 0x5214 {0x51ac "45"}}
+	{Link 0x5215 {0x51ac "46"}}
+	{Link 0x5216 {0x51ac "47"}}
+	{Link 0x5217 {0x51ac "48"}}
+	{Link 0x5218 {0x51ac "50"}}
+	{Link 0x5219 {0x51ac "51"}}
+	{Link 0x521a {0x51ac "52"}}
+	{Link 0x521b {0x51ac "54"}}
+	{Link 0x521c {0x51ac "53"}}
+	{Link 0x521d {0x51ac "72"}}
+	{Link 0x521e {0x51ac "80"}}
+	{Link 0x521f {0x51ac "97"}}
+	{Link 0x5220 {0x51ac "107"}}
+	{Link 0x5221 {0x51ac "100"}}
+	{Link 0x5222 {0x51ac "102"}}
+	{Link 0x5223 {0x51ac "75"}}
+	{Link 0x5224 {0x51ac "77"}}
+	{Link 0x5225 {0x51ac "70"}}
+	{Link 0x5226 {0x51ac "69"}}
+	{Link 0x5227 {0x51ac "67"}}
+	{Link 0x5228 {0x51ac "66"}}
+	{Link 0x5229 {0x51ac "65"}}
+	{Link 0x522a {0x51ac "63"}}
+	{Link 0x522b {0x51ac "62"}}
+	{Link 0x522c {0x51ac "61"}}
+	{Link 0x522d {0x51ac "60"}}
+	{Link 0x522e {0x51ac "59"}}
+	{Link 0x522f {0x51ac "58"}}
+	{Link 0x5230 {0x51ac "57"}}
+	{Link 0x5231 {0x51ac "56"}}
+	{Link 0x5232 {0x51ac "55"}}
+	{Link 0x524a {0x51ac "147"}}
+	{Link 0x524b {0x51ac "148"}}
+	{Link 0x524c {0x51ac "149"}}
 }
