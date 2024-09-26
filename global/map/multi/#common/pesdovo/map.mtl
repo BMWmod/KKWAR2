@@ -79,3 +79,12 @@
 	}
 	{blend none}
 }
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl9"
+	{scheme 1
+		{diffuse "/texture/land/fields/field_1"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_111_vic1"}
+	}
+	{blend none}
+}
