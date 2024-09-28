@@ -88,3 +88,30 @@
 	}
 	{blend none}
 }
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl10"
+	{scheme 1
+		{diffuse "/texture/land/town/asfalt_road_q3_x"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_111_vic1"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl11"
+	{scheme 1
+		{diffuse "/texture/land/dirt/clay_1b"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_111_vic1"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl12"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_111_vic1"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/clay_1b"}
+	}
+	{blend none}
+}
