@@ -23689,356 +23689,6 @@
 			{able {touch 1}}
 		}
 	}
-	{Entity "house_ru_141" 0x70e5
-		{Position -3304.87 4811.99}
-		{xform zl 178.26}
-		{Color 0xff00a411}
-		{Fogable never}
-		{Player 0}
-		{MID 10002}
-	}
-	{Entity "house_ru_141_1_1" 0x70e6
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_1_2" 0x70e7
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_2_1" 0x70e8
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_2_2" 0x70e9
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_3_1" 0x70ea
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_3_2" 0x70eb
-		{Color 0xff00a411}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "body2"
-			{able {touch 1}}
-		}
-		{Volume "body3"
-			{able {touch 1}}
-		}
-		{Volume "body4"
-			{able {touch 1}}
-		}
-		{Volume "body5"
-			{able {touch 1}}
-		}
-		{Volume "body6"
-			{able {touch 1}}
-		}
-		{Volume "body7"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof2"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_4_1" 0x70ec
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_4_2" 0x70ee
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "body2"
-			{able {touch 1}}
-		}
-		{Volume "body3"
-			{able {touch 1}}
-		}
-		{Volume "body4"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_5_1" 0x70ef
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_5_2" 0x70f0
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_6_1" 0x70f1
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_6_2" 0x70f2
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_7_1" 0x70f3
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_7_2" 0x70f4
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_8_1" 0x70f5
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_8_2" 0x70f6
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_9_1" 0x70f7
-		{Color 0xff00a411}
-	}
-	{Entity "house_ru_141_9_2" 0x70f8
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_oven" 0x70f9
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_10_in" 0x70fa
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_10_3" 0x70fb
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "body2"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof2"
-			{able {touch 1}}
-		}
-		{Volume "roof3"
-			{able {touch 1}}
-		}
-		{Volume "roof4"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_11_3" 0x70fc
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "body2"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof2"
-			{able {touch 1}}
-		}
-		{Volume "roof3"
-			{able {touch 1}}
-		}
-		{Volume "roof4"
-			{able {touch 1}}
-		}
-		{Volume "roof"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_12_3" 0x70fd
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-		{Volume "body2"
-			{able {touch 1}}
-		}
-		{Volume "body3"
-			{able {touch 1}}
-		}
-		{Volume "roof1"
-			{able {touch 1}}
-		}
-		{Volume "roof2"
-			{able {touch 1}}
-		}
-		{Volume "roof3"
-			{able {touch 1}}
-		}
-		{Volume "roof4"
-			{able {touch 1}}
-		}
-		{Volume "roof5"
-			{able {touch 1}}
-		}
-		{Volume "roof6"
-			{able {touch 1}}
-		}
-		{Volume "roof7"
-			{able {touch 1}}
-		}
-		{Volume "roof8"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen1" 0x70fe
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen2" 0x70ff
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen3" 0x7102
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen4" 0x7104
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen5" 0x7107
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen6" 0x710d
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen7" 0x7195
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen8" 0x7196
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-		{Volume "body1"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_ru_141_fen9" 0x7197
-		{Color 0xff00a411}
-		{Volume "body"
-			{able {touch 1}}
-		}
-	}
-	{Entity "house_flag" 0x7198
-		{Color 0xff00a411}
-	}
 	{Entity "house_euro_105c_n" 0x3f
 		{Position -3547.53 4555.19}
 		{xform zl -88.22}
@@ -110013,6 +109663,356 @@
 		{xform zl -93.39}
 		{TexMod "losha_end"}
 	}
+	{Entity "house_ru_141_1_1" 0x70e6
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_1_2" 0x70e7
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_2_1" 0x70e8
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_2_2" 0x70e9
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_3_1" 0x70ea
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_3_2" 0x70eb
+		{Color 0xff00a411}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "body5"
+			{able {touch 1}}
+		}
+		{Volume "body6"
+			{able {touch 1}}
+		}
+		{Volume "body7"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_4_1" 0x70ec
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_4_2" 0x70ee
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "body4"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_5_1" 0x70ef
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_5_2" 0x70f0
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_6_1" 0x70f1
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_6_2" 0x70f2
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_7_1" 0x70f3
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_7_2" 0x70f4
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_8_1" 0x70f5
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_8_2" 0x70f6
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_9_1" 0x70f7
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141_9_2" 0x70f8
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_oven" 0x70f9
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_10_in" 0x70fa
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_10_3" 0x70fb
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof3"
+			{able {touch 1}}
+		}
+		{Volume "roof4"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_11_3" 0x70fc
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof3"
+			{able {touch 1}}
+		}
+		{Volume "roof4"
+			{able {touch 1}}
+		}
+		{Volume "roof"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_12_3" 0x70fd
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+		{Volume "body2"
+			{able {touch 1}}
+		}
+		{Volume "body3"
+			{able {touch 1}}
+		}
+		{Volume "roof1"
+			{able {touch 1}}
+		}
+		{Volume "roof2"
+			{able {touch 1}}
+		}
+		{Volume "roof3"
+			{able {touch 1}}
+		}
+		{Volume "roof4"
+			{able {touch 1}}
+		}
+		{Volume "roof5"
+			{able {touch 1}}
+		}
+		{Volume "roof6"
+			{able {touch 1}}
+		}
+		{Volume "roof7"
+			{able {touch 1}}
+		}
+		{Volume "roof8"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen1" 0x70fe
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen2" 0x70ff
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen3" 0x7102
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen4" 0x7104
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen5" 0x7107
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen6" 0x710d
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen7" 0x7195
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen8" 0x7196
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+		{Volume "body1"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_ru_141_fen9" 0x7197
+		{Color 0xff00a411}
+		{Volume "body"
+			{able {touch 1}}
+		}
+	}
+	{Entity "house_flag" 0x7198
+		{Color 0xff00a411}
+	}
+	{Entity "house_ru_141" 0x70e5
+		{Position -3304.87 4811.99}
+		{xform zl 178.26}
+		{Color 0xff00a411}
+		{Fogable never}
+		{Player 0}
+		{MID 10003}
+	}
 	{Link 0x3042 {0x3040 "basis"}}
 	{Link 0x3043 {0x3040 "5"}}
 	{Link 0x3045 {0x3040 "6"}}
@@ -110079,39 +110079,6 @@
 	{Link 0x70d5 {0x700a "door1"}}
 	{Link 0x70d6 {0x700a "door2"}}
 	{Link 0x70d8 {0x700a "door3"}}
-	{Link 0x70e6 {0x70e5 "1_1"}}
-	{Link 0x70e7 {0x70e5 "1_2"}}
-	{Link 0x70e8 {0x70e5 "2_1"}}
-	{Link 0x70e9 {0x70e5 "2_2"}}
-	{Link 0x70ea {0x70e5 "3_1"}}
-	{Link 0x70eb {0x70e5 "3_2"}}
-	{Link 0x70ec {0x70e5 "4_1"}}
-	{Link 0x70ee {0x70e5 "4_2"}}
-	{Link 0x70ef {0x70e5 "5_1"}}
-	{Link 0x70f0 {0x70e5 "5_2"}}
-	{Link 0x70f1 {0x70e5 "6_1"}}
-	{Link 0x70f2 {0x70e5 "6_2"}}
-	{Link 0x70f3 {0x70e5 "7_1"}}
-	{Link 0x70f4 {0x70e5 "7_2"}}
-	{Link 0x70f5 {0x70e5 "8_1"}}
-	{Link 0x70f6 {0x70e5 "8_2"}}
-	{Link 0x70f7 {0x70e5 "9_1"}}
-	{Link 0x70f8 {0x70e5 "9_2"}}
-	{Link 0x70f9 {0x70e5 "oven"}}
-	{Link 0x70fa {0x70e5 "10_in"}}
-	{Link 0x70fb {0x70e5 "10_3"}}
-	{Link 0x70fc {0x70e5 "11_3"}}
-	{Link 0x70fd {0x70e5 "12_3"}}
-	{Link 0x70fe {0x70e5 "fen1"}}
-	{Link 0x70ff {0x70e5 "fen2"}}
-	{Link 0x7102 {0x70e5 "fen3"}}
-	{Link 0x7104 {0x70e5 "fen4"}}
-	{Link 0x7107 {0x70e5 "fen5"}}
-	{Link 0x710d {0x70e5 "fen6"}}
-	{Link 0x7195 {0x70e5 "fen7"}}
-	{Link 0x7196 {0x70e5 "fen8"}}
-	{Link 0x7197 {0x70e5 "fen9"}}
-	{Link 0x7198 {0x70e5 "flag"}}
 	{Link 0x40 {0x3f "12"}}
 	{Link 0x45 {0x3f "14"}}
 	{Link 0x46 {0x3f "15"}}
@@ -110466,4 +110433,37 @@
 	{Link 0x5aa6 {0x5a82 "ch_roof12"}}
 	{Link 0x5aa7 {0x5a82 "ch_roof14"}}
 	{Link 0x5aa8 {0x5a82 "ch_roof15"}}
+	{Link 0x70e6 {0x70e5 "1_1"}}
+	{Link 0x70e7 {0x70e5 "1_2"}}
+	{Link 0x70e8 {0x70e5 "2_1"}}
+	{Link 0x70e9 {0x70e5 "2_2"}}
+	{Link 0x70ea {0x70e5 "3_1"}}
+	{Link 0x70eb {0x70e5 "3_2"}}
+	{Link 0x70ec {0x70e5 "4_1"}}
+	{Link 0x70ee {0x70e5 "4_2"}}
+	{Link 0x70ef {0x70e5 "5_1"}}
+	{Link 0x70f0 {0x70e5 "5_2"}}
+	{Link 0x70f1 {0x70e5 "6_1"}}
+	{Link 0x70f2 {0x70e5 "6_2"}}
+	{Link 0x70f3 {0x70e5 "7_1"}}
+	{Link 0x70f4 {0x70e5 "7_2"}}
+	{Link 0x70f5 {0x70e5 "8_1"}}
+	{Link 0x70f6 {0x70e5 "8_2"}}
+	{Link 0x70f7 {0x70e5 "9_1"}}
+	{Link 0x70f8 {0x70e5 "9_2"}}
+	{Link 0x70f9 {0x70e5 "oven"}}
+	{Link 0x70fa {0x70e5 "10_in"}}
+	{Link 0x70fb {0x70e5 "10_3"}}
+	{Link 0x70fc {0x70e5 "11_3"}}
+	{Link 0x70fd {0x70e5 "12_3"}}
+	{Link 0x70fe {0x70e5 "fen1"}}
+	{Link 0x70ff {0x70e5 "fen2"}}
+	{Link 0x7102 {0x70e5 "fen3"}}
+	{Link 0x7104 {0x70e5 "fen4"}}
+	{Link 0x7107 {0x70e5 "fen5"}}
+	{Link 0x710d {0x70e5 "fen6"}}
+	{Link 0x7195 {0x70e5 "fen7"}}
+	{Link 0x7196 {0x70e5 "fen8"}}
+	{Link 0x7197 {0x70e5 "fen9"}}
+	{Link 0x7198 {0x70e5 "flag"}}
 }
