@@ -1,0 +1,197 @@
+;Exported by: Vlad
+;Date:        Tue Dec 18 21:50:42 2018
+;File:        C:\Users\Vlad\Desktop\???? ?.max
+{Skeleton
+	{animation
+		{sequence "recoil" {speed 6}}
+		{sequence "close" {speed 0.6}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				0	0	8.29201
+			}
+			{VolumeView "body.ply"}
+			{bone "stan1"
+				{Matrix34
+					0.996195	0	-0.0871557
+					0	1	0
+					0.0871557	0	0.996195
+					-10.1598	0.459586	1.21461
+				}
+				{VolumeView "stan1.ply"}
+			}
+			{bone "stan3"
+				{Matrix34
+					0.996195	0	0.0871557
+					0	1	0
+					-0.0871557	0	0.996195
+					8.63426	-0.343553	1.52547
+				}
+				{VolumeView "stan3.ply"}
+			}
+			{bone "stan2"
+				{Matrix34
+					0.996195	0	0.0871557
+					0	1	0
+					-0.0871557	0	0.996195
+					8.63421	0.149099	1.52561
+				}
+				{VolumeView "stan2.ply"}
+			}
+			{bone revolute "gun_rot"
+				{parameters "ID=gun;"}
+				{limits -2 50}
+				{speed 0.02}
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					0.368491	-0.00189986	7.27425
+				}
+				{VolumeView "gun_rot.ply"}
+				{bone revolute "mgun_rot"
+					{limits -11 11}
+					{speed 0.002}
+					{Matrix34
+						1	0	0
+						0	0	-1
+						0	1	0
+						0.671991	0.705708	6.37607e-05
+					}
+					{VolumeView "mgun_rot.ply"}
+					{bone "gun"
+						{parameters "ID=gun;"}
+						{Position 0	-1.91282e-05	0}
+						{VolumeView "gun.ply"}
+						{bone "foresight"
+							{Position 21.3755	0.00550904	2.25043}
+						}
+						{bone "shooter00"
+							{Position -13.6996	0.00551749	2.25043}
+							{bone "rocket"
+								{Position 22.5252	0.190441	0.378164}
+								{VolumeView "rocket.ply"}
+							}
+						}
+					}
+				}
+			}
+			{bone "visor"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					-0.868697	-1.89553	9.89211
+				}
+			}
+		}
+		{bone "gunner"
+			{Matrix34
+				0.819152	-0.573576	0
+				0.573576	0.819152	0
+				0	0	1
+				-4.57378	15.4954	-0.00858456
+			}
+		}
+		{bone "commander"
+			{Matrix34
+				0.642787	0.766045	0
+				-0.766045	0.642787	0
+				0	0	1
+				-6.32304	-15.1068	-0.00858456
+			}
+		}
+		{bone "driver1"
+			{Position 18.0475	-5.34696	-0.00858456}
+		}
+		{bone "driver2"
+			{Position -14.6351	-5.27023	-0.00858456}
+		}
+		{bone "support1"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-18.547	8.22406	-0.0207684
+			}
+		}
+		{bone "support2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-18.5467	-8.36087	0.00753593
+			}
+		}
+		{bone "support3"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				18.5547	0	0.00753593
+			}
+		}
+		{bone "handle1"
+			{Position 18.2181	-0.0297259	18.5756}
+		}
+		{bone "handle2"
+			{Position -11.0197	0.187128	18.5243}
+		}
+		{bone "emit1"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-4.9299	-15.1268	-0.00634283
+			}
+		}
+		{bone "emit2"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				-5.76965	14.8663	-0.0262778
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		-1.9699	0.0636791	4.30023
+	}
+}
+{Volume "gun"
+	{Cylinder 0.452756 14.5843}
+	{Bone "gun"}
+	{Matrix34
+		0	-2.29996	0
+		0	0	2.29996
+		-2.29996	0	0
+		3.98701	0.0232724	2.2633
+	}
+}
+{Volume "select"
+	{Box 19.5902 42.8893 5.0402}
+	{Bone "body"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-2.52498	0.359495	-4.04196
+	}
+}

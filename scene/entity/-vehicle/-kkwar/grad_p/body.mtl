@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "body"}
+        ;{bump "grad_p_bp"}
+	{blend none}
+}

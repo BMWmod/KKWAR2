@@ -1,0 +1,111 @@
+{entity
+	(include "/properties/cannon.ext")
+	(include "/properties/shadow/tank.inc"  scale(0.6))
+	{props "vehicle" "cannon" "heavy" "wheeled" "vision_lev02_can" "ATGM"}
+	("cw_armor_mortar")
+        {targetSelector "cannon_rocket"}
+
+	{PatherId "cannon.large"}
+
+	("armor_heavy")
+
+	{extender "inventory"
+		{box
+			{Size 7 6}
+			{weight 300}
+			{item "ammo grad rok" 6}
+		}	
+	}
+
+	{Weaponry
+		{place "gun"
+		{weapon "weapon grad_p" filling "ammo grad rok" 1}
+			{foresight "foresight"}
+			{barrels 1}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			{Rotate}
+		}
+	}
+
+
+	("crew_wheeled_gun")
+
+
+	{boarder
+		{anm "gunner"
+		{forward {end "pose_pak40_gunlayer" 10}}  
+		}
+		{anm "commander"
+		{forward {end "pose_pak40_charger" 10}}
+		}
+	}	
+
+
+	{extender "cannon"
+		{animation
+			{switch "close"}
+			{switch "close"}
+		{move "cannon_pak40_pusher_left" "cannon_pak40_pusher_right"}
+		{aim "cannon_m42_gunlayer" ""}
+		{fire  "Cannon_gunlayer_fire-alert" "cannon_m42_charger_fire"}
+		{reload  "" "cannon_m42_charger"}
+		}
+		{move {obstacle "close"}}
+		{attack {obstacle "open"}}
+	}
+
+	{Chassis "human_carrier"
+		{carrierPlace "driver1" "driver2"}
+		{carrierBone  "handle1" "handle2"}
+		("loco_carrier")
+	}
+
+
+
+	{mass 120}
+
+
+	{Extension "grad_p.mdl"}
+
+	{Volume "body"
+		{tags "body"}
+		{able{obstacle 0}}
+		{thickness 7}
+		{component "body"}
+	}
+	{Volume "gun"
+		{tags "body"}
+		{able{obstacle 0}}
+		{thickness 7}
+		{component "body"}
+	}
+	{Volume "part1"
+		{tags "body"}
+		{able{obstacle 0}}
+		{thickness 7}
+		{component "body"}
+	}
+	{Volume "part2"
+		{tags "body"}
+		{able{obstacle 0}}
+		{thickness 7}
+		{component "body"}
+	}
+	{Volume "part3"
+		{tags "body"}
+		{able{obstacle 0}}
+		{thickness 7}
+		{component "body"}
+	}
+    	
+	{sensor
+		{visor "main"
+			{vision "cannon_main"}
+		}
+	}
+	(include "/properties/selection/cannon.inc"  scale(0.7))
+
+}
+

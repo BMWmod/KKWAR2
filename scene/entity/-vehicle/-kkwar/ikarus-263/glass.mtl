@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/model/car/ikarus/ikarus_glass"}
+	{bump "$/model/car/ikarus/ikarus_glass_bp"}
+	{blend blend}
+}

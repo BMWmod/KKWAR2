@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "2a36_giatsint_2"}
+	{blend none}
+}
