@@ -1,0 +1,58 @@
+{from "pattern gun"     ; BMP2,BMP2D
+	{filling "au220m ammo"}
+      
+	{fireSound "gun/au220m"}
+	{reloadSound "none"}
+;=====================
+	{AimingTolerance 3}
+	{Automatic}
+	{recoveryTime 0.5}			
+	{rechargeTime 0.6}	;Неизвестно, но веротнее всего двухленточное питание
+	{spreading
+		{spreadradius 	1}
+		{SpreadXYRatio	1.1}
+		{SpreadPower	1.7}
+		{BurstAccuracy 100 100 100}	;темп стрельбы достаточно низок, чтобы не считаться очередью.
+			;На видео нет следов увеличения рассеивания
+	}
+	{burst
+		{min 0}
+		{short 1 1}
+		{long 2 2}
+	}
+	{RelaxationTime 1}
+	;{cursor "BKP242_ap"}
+	;{cursorReloading "BKP242_ap_reload"}
+	{cursor "cannon_on_ap_2"}
+	;{cursorReloading "cannon_on_ap"}
+	{cursorReloading "cannon_reload_ap"}
+;=====================
+	{SpreadTolerance 0.5}
+	{maxRange 140}
+	{aimRange 190}	;дальность предварительного наведения
+	("speed" s(669))
+	("37-57caliber")
+	{calibre 57}
+	("CW_AP_damage_midcaliber" penetr_2000m(70))	;нет данных далее 2000м, скопированы с Манго как более подходящего по имеющимся данным
+             ("CW_acc_common" mils(0.35))	;Рассчитано по видео
+	{parameters "fg"
+		("CW_acc_common" mils(0.35))
+		;{cursor "BKP242_he"}
+		;{cursorReloading "BKP242_he_reload"}
+		;{cursor "cannon_on_fg"}
+		{cursor "cannon_on_fg_2"}
+		;{cursorReloading "cannon_on_fg"}
+		{cursorReloading "cannon_reload_fg"}
+	}           
+    {parameters "Bullet57_RUS ap"
+		("CW_AP_damage_midcaliber" penetr_2000m(70))     ; БР-281(У)
+                           ("CW_acc_common" mils(0.35))
+		;{cursor "BKP242_ap"}
+		;{cursorReloading "BKP242_ap_reload"}
+		{cursor "cannon_on_ap_2"}
+		;{cursorReloading "cannon_on_ap"}
+	             {cursorReloading "cannon_reload_ap"}
+	}           
+          
+}
+
