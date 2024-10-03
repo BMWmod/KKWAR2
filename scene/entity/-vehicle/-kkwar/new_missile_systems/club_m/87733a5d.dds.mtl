@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/iskander/87733a5d"}
+	{emitsheat}
+{blend none}
+}

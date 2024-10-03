@@ -1,0 +1,118 @@
+;Created by cAwX
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "amphibia" "vision_lev04" "can_paradrop_il-76td" "sam_radar"}
+	{PatherID "amphibia"}
+        {targetClass "light_tank"}
+
+	{extender "enumerator"}
+	;{extender "vision_mode"
+		;only one {timer_object} is supported at the moment for vision_mode extender.
+		;{timer_object
+			;{tag		"thermal"}  ; -> only thermal, night or drone are supported right now
+			;{active_time	   36000}  ;Sec 
+			;{recharge_rate	  0.5}  ;Factor * game time -> only valid for type "recharge"
+			;{cooldown		   10}  ;Sec -> Only valid for type "consume" or "switch"
+			;{type	     "recharge"}; -> only recharge, consume or switch are supported right now
+	  ;  }
+	;}
+
+
+	("armor_IFV" turret(15 15 15 15) body(56 25 25 11))
+	("armor_engine"  t(20))
+
+
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_tank_left"} {end "seat_m7_mgunner"} {base "driver"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "driver"}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_tank_left"} {end "seat_m7_mgunner"} {base "commander"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "commander" -1}}
+		}
+	}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}{turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+{placer 
+	{place "driver" {group "crew"} }
+}
+("crew_human" place(driver)		door(emit2) group(crew)		animation(driver)		visor(main))
+("crew_human" place(commander)		door(emit1) group(crew)		animation(commander)		visor(cams))
+
+	{extender "inventory"
+		{box
+			{size 8 10}
+			 {item "9m123_rocket ammo" 15}
+             {item "netting_kit" 2}
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{weapon "khrizantema_lu" filled}
+			{foresight "foresight1"}
+			{gunner "commander"}
+			{charger "commander"}
+			("CW_stab_abm" abm(0.68))
+			("CW_stab_ld_suo")
+			{barrels 2}
+			{basic}
+		}
+	}	
+	{sensor
+		{visor "radar"
+		    {bone "Visor2"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+		{visor "main"
+		    {bone "Visor1"}
+			{vision "vehicle_main"}
+		}
+		{visor "cams"
+			{vision "tank_gunner_optic_IR_2g"}
+		    {bone "Visor3"}
+		}
+		{visor "gun"
+			{vision "tank_gunner_optic_IR_2g"}
+		    {bone "Visor4"}
+		}
+	}
+
+	{mass 19400}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.7))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(19.4)
+			Width(3.3)
+			Power(500)
+			Realspeed(70)
+			Gamespeed(43) 
+		)
+		{RearGears		0.2 0.42}}
+		("CW_fuelbag" Range(600) Fuelvolume(670))
+		("CW_speed_lev" Gamespeed(43))
+	}
+	{props "cwfs_fuel_400"}
+
+	("CW_amphibia" Waterline(1.4) )
+	("two_headlights")
+	{Extension "9k123.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(35))
+}

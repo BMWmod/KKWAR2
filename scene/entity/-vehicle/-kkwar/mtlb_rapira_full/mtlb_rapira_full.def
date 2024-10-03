@@ -1,0 +1,167 @@
+;Model by cAwX 
+;авторы модели катигорически против использования модели в дерьмо модах а ля Special Military Operation и/или Skins of Russian soldiers (сосните хуйца со своими дерьмомодами))))
+
+{ArmoredCar 
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "tank" "turret" "vision_lev03" "mtlb" "muzzle_large" "mt12_rapira"}
+	
+    {targetClass "light_tank"}
+	
+
+	{extender "enumerator"}
+	
+	{extender "shield"
+			{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+
+
+	("armor_light" turret(7 7 1 5) body(14 7 1 5))
+	("armor_engine"  t(20))	
+	
+	("shield_BMP2D")
+	
+	{boarder
+		{anm "gunner"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"}  {base"open_gunner2"}}
+			{reverse 	{end	"board_pz4_driver" -1}  {base"open_gunner2" -1}}
+		}
+		{anm "driver"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}  {base"open_driver"}}
+			{reverse 	{end	"emit_tank_2_hold"}  {base"open_driver" -1}}
+		}
+		{anm "back"
+			{forward	{begin	"board_sd222_driver"} {end "pose_thor_charger2"} {base"open_back_r"}}
+			{reverse 	{end	"emit_body"} {base"open_back_r" -1}}
+		}
+	}
+
+{Placer
+	{place "gunner"	{LinkBone "gunner"} {group "crew"} {visor "gun"}}
+	{place "charger"	{LinkBone "charger"} {group "crew"} {visor "gun"}}
+}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver) door1(emit1) anm(driver) visor(main))
+	("crew_human" place(gunner1) door1(emit0) anm(gunner) visor(mgun))
+	("crew_human" place(gunner) door1(emit2) anm(back) visor(gun))
+	("crew_human" place(charger) door1(emit2) anm(back) visor(gun))
+	
+("crew_human" place(driver)		animation(driver)	door(emit1))
+("crew_human" place(gunner1)		animation(gunner)	door(emit0))
+("crew_human" place(gunner)		animation(back)	door(emit2))
+("crew_human" place(charger)		animation(back)	door(emit2))
+	
+
+	{extender "inventory"
+		{box
+			{size 8 10}
+			{item "ammo pkm_ammo" 1750}
+			
+			{item "ammo bullet100_rus_rapira apcr" 19} 
+			{item "ammo bullet100_rus_rapira cm" 16}
+			{item "ammo bullet100_rus_rapira fg" 14}
+			
+			{item "ammo smoke_shtora" 8}
+			
+			{item "repair_kit" 1}
+			{item "netting_kit" 2}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "100mm_2a29" filling "ammo bullet100_rus_rapira apcr" 1}
+			{foresight "foresight1"}
+			{gunner "gunner"}
+			{charger "charger"}
+			("CW_stab_no_stabiliser")
+			{basic}
+			{Rotate}
+		}
+		{place "mgun"
+			{weapon "pkt" filled}
+			{foresight "foresight2"}
+			{gunner "gunner1"}
+			{charger "gunner1"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun18"
+			{type "mgun_right"}
+			{weapon "4xsmokegun_bredly" filled}
+			{gunner "driver"}
+			{charger "driver"}
+			{foresight "foresight18"}
+			{barrels 4}
+		;	{basic}
+		}
+		{place "mgun19"	
+			{type "mgun_left"}
+			{weapon "4xsmokegun_bredly" filled}
+			{gunner "driver"}
+			{charger "driver"}
+			{foresight "foresight19"}
+			{barrels 4}
+		;	{basic}
+		}
+	}
+	
+	{sensor
+		{visor "main"
+			{vision "tank_main-l"}
+			{bone "Visor1"}
+		}
+		{visor "mgun"
+			{vision "tank_main-l"}
+			{bone "Visor2"}
+		}
+		{visor "gun"
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor3"}
+		}
+	}
+
+	{mass 10700}
+	{Chassis					
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.15))
+		("CW_tracks"
+			Mass(10.7)
+			Width(3.15)
+			Power(240)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_400"}
+
+	("two_headlights")
+	{Extension "mtlb_rapira_full.mdl"}
+	("recoil_side_common")
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+
+}
+

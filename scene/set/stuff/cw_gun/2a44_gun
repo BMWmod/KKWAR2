@@ -1,0 +1,27 @@
+{from "pattern gun"
+   	
+	{filling "3vof34" 1}
+	
+	{fireSound "gun/pion_fire"}
+	{reloadSound "t80_reload"}
+	
+	{rechargeTime 20}
+	{range 323 323}
+	
+;	{gravity 18}
+;	("speed" s(1200)) 
+
+	 {gravity 1.65}
+	("speed_artillery") 
+
+	("100-128caliber")
+	{ZeroingAccuracy 1 1}
+	
+	;("CW_acc_artillery" mils(2.75))
+	("CW_acc_artillery" mils(2.75))
+	
+	{calibre 203}
+	{cursor "cannon_on_fg_5"}
+	{cursorReloading "cannon_reload_fg"}
+	("relaxationtime" rt(3))
+}	

@@ -1,0 +1,26 @@
+{from "pattern proj_weapon_ground"
+
+	{tag "gun"}
+	
+	{filling "9m123_rocket ammo" 2}
+	{fillingVisible "rocket"}
+	
+	{fireSound "bazooka/shturm_shot"}
+    {reloadSound "atgm_reload/sturm-s_reload"}
+	
+	{recoveryTime 2}
+	{rechargeTime 15}
+	
+	{mass 10}
+	
+	{maxRange 170}
+	{aimRange 175}
+	
+	{inventory {noView}}
+	
+	;{cursor "Mi24"}
+	;{cursorReloading "zenite_reload"}
+	{cursor "cannon_on_heat_2"}	
+	{cursorReloading "cannon_reload_heat"}
+	;{cursorReloading "cannon_reload_heat_timer_15"}
+}

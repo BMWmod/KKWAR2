@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "expeditionarytank_sideskirts_d"}
+	{blend none}
+}

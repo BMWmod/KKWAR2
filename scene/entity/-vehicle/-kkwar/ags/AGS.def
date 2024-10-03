@@ -1,0 +1,119 @@
+;By cAwX
+
+
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	
+	{props "light_M" "turret_rotator" "turret" "with_gun" "vision_lev04" "has_apu" "has_autoloader" "auto_dig_in" "m113a" "remote_gun"}
+	
+	{targetSelector "tank"}
+    {targetClass "light_tank"}
+	{extender "enumerator"}
+	
+	("armor_light" turret(25 25 25 25) body(38 25 25 25))
+	("armor_engine"  t(30 30 20 22))
+
+
+	{volume "turret1"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret2"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+	{extender "shield"
+		{on}
+	}
+	
+	{component "shieldl" {tags "shield"}}
+	{component "shieldr" {tags "shield"}}
+	
+	("shield_BMP2D")
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"board_pz4_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+	}
+
+{placer
+	{place "driver" {group "crew"} {visor "driver"}}
+}
+{boarder
+	{door "emit0"}
+	{link "emit0" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+}
+	("crew_human" place(gunner) door1(emit1) door2(emit2) visor(gunner))
+	("crew_human" place(commander) door1(emit1) door2(emit2) visor(main))
+	
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet105_usa apcr_h" 12}
+			{item "ammo bullet105_usa cm" 8}
+			{item "ammo bullet105_usa fg" 10}
+			{item "repair_kit" 1}
+		}
+	}
+	
+	{Weaponry
+		{place "gun"
+			{charger "gunner"}
+			{gunner "gunner"}
+			{RestoreIKAfterAim}
+			{weapon "105mm_M68A1E4" filling "ammo bullet105_usa apcr_h" 1}
+			("CW_stab_abm" abm(0.46))
+			("CW_stab_ldwind_suo")
+		}
+	}
+	
+	{sensor
+		{visor "gunner"
+			{bone "visor1"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+        {visor "driver"
+			{bone "visor2"}
+			{vision "tank_driver"}
+		}
+        {visor "commander"
+			{bone "visor1"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+	}
+	
+	{mass 30000}
+	{Chassis
+		("tank_trace" fx("tracks_sm") step(0.3) len(0.85))
+		("CW_tracks"
+			Mass(30)
+			Width(3.41)
+			Power(600)
+			Realspeed(81)
+			Gamespeed(48) 
+			Range(700)
+			Fuelvolume(1500)
+		)
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	{Extension "ags.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("recoil_side_common")
+	
+	("CW_turr_speed" deg_per_s(55))
+}

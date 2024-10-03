@@ -1,0 +1,27 @@
+{from "pattern proj_weapon_ground"
+
+	{tag "gun" "AA_missile" "prepare"}
+    {Special
+		{Mode aim}
+		{PrepareTime 0}
+		{PrepareCursor "aimed_shot_aa"}
+	}
+	
+	{filling "ammo 9m33_rocket" 6}
+	{fillingVisible "rocket"}
+
+	{fireSound "bazooka/kub_Launch"}
+	
+	{mass 50}
+	{recoveryTime 6}
+	{rechargeTime 120}
+	{inventory {noView}}
+	{maxRange 180}
+	{aimRange 230}
+	
+;	{cursor "zenite_on"}
+;	{cursorReloading "zenite_reload"}
+	{cursor "cannon_on_aa"}
+	{cursorReloading "cannon_reload_fg"}
+	;{cursorReloading "cannon_reload_fg_timer_18"}
+}

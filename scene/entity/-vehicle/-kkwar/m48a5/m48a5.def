@@ -1,0 +1,115 @@
+;Export by cAwX
+
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "medium_M" "turret_rotator" "vision_lev05" "m60a3"}
+
+
+	("armor_heavy" turret(178 65 51 23) body(110 76 76 30))  
+	;("armor_engine"  t(50))
+	
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"} {base "open_commander"}}
+			{reverse 	{end	"emit_tank_2_hold"} {base "open_commander"}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_left"} {end "seat_gunner_stand"} {base "open_charger"}}
+			{reverse 	{end	"emit_tank_2_hold"} {base "open_charger"}}
+		}
+	}
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}{turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver)	door(emit0) group(crew) animation(driver) visor(driver))
+	("crew_human" place(gunner) door(emit2) group(crew) animation(right) visor(gunner))
+	("crew_human" place(commander) door(emit2) group(crew) animation(right) visor(commander))
+	("crew_human" place(charger) door(emit1) group(crew) animation(left) visor(commander))
+	
+
+	{extender "inventory"
+		{box
+			{item "ammo 50Nato" 750}
+			{item "ammo bullet105_usa apcr" 33}
+			{item "ammo bullet105_usa cm" 13}
+			{item "ammo bullet105_usa fg" 15}
+			{item "ammo bullet105_usa sm" 2}
+		
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "105mm_M68" filling "ammo bullet105_usa apcr" 1}	
+			{foresight "foresight1"}
+			{gunner "gunner"}
+			{charger "charger"}
+			("CW_stab_abm" abm(0.33))
+			("CW_stab_ld_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{weapon "browning_m2hb" filled}
+			{foresight "foresight2"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.60))
+			("CW_stab_ld_suo")
+			{basic}
+		}
+	}
+	
+	{sensor		
+		{visor "driver"
+			{bone "Visor1"}
+		}
+		{visor "gunner"
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor3"}
+		}
+		{visor "commander"				
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor2"}
+		}
+	}
+
+	{mass 44800}
+	{Chassis
+		("tank_trace" fx("tracks_mid") step(0.52) len(2.1))
+		("CW_tracks"
+			Mass(44.8)
+			Width(3.27)
+			Power(750)
+			Realspeed(48)
+			Gamespeed(33) 
+			Range(480)
+			Fuelvolume(1457)
+		)
+	}
+	{props "cwfs_fuel_1000"}
+
+	("two_headlights")
+	{Extension "m48a5.mdl"}
+	("recoil_side_common")
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	
+
+	("CW_turr_speed" deg_per_s(24))
+
+	
+}

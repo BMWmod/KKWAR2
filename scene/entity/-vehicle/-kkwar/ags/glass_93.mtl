@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "glass_lights_atlas_d"}
+	{blend none}
+}
