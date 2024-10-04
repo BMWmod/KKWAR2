@@ -1,0 +1,13 @@
+{material bump
+	{diffuse "$/model/brdm2_new/body_brdm"}
+	{emitsheat}
+{blend none}
+}
+
+
+
+
+
+
+
+

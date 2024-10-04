@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "kirpiii_weapon_control_monitor_co"}
+	{blend none}
+}

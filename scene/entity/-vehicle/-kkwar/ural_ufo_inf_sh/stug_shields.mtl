@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "shield"}
+	{color "229 229 229 130"}
+	{blend test}
+}

@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/model/btr80/body"}
+	{bump "$/model/btr80/body_bp"}
+	{specular "$/model/btr80/body_sp"}
+	{blend none}
+}

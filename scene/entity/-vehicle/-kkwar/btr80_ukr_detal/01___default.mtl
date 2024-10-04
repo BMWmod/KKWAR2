@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/btr80/obivka"}
+	{blend none}
+}
