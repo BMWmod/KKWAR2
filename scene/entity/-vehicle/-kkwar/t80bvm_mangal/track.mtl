@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/t80/track80"}
+	{emitsheat}
+{blend test}
+}
