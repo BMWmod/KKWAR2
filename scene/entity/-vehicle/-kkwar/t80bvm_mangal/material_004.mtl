@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "steel2_dif"}
+	{emitsheat}
+{blend none}
+}

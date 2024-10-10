@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/t80/t80b/details_t80b"}
+	{emitsheat}
+{blend none}
+}
