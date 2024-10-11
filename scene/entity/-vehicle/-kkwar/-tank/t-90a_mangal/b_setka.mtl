@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t80u/setka"}
+	{blend test}
+}

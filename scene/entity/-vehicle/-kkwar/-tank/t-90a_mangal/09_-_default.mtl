@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/t-90a/nsv"}
+	{bump "$/model/t-90a/nsv_bp"}
+	{specular "$/model/t-90a/nsv_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}
