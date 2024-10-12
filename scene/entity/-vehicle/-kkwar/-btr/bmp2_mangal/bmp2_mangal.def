@@ -1,0 +1,196 @@
+;Created by Pheonix
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "amphibia" "vision_lev04" "bmp2" "cw_panorama" "3_barrels_smoke" "bmp2_new"}
+	{PatherID "amphibia"}
+	{targetClass "light_tank"}
+
+	{extender "enumerator"}
+        {extension "crew.ext"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+
+;http://www.rusarmy.com/forum/topic4703.html 
+;http://otvaga2004.narod.ru/otvaga2004/armour-rus-bmp2/a_bmp2.htm
+;	("armor_medium" turret(30 25 20 12) body(35 20 15 10))
+	("armor_IFV" turret(23 19 10 6) body(19 19 10 7))
+	("armor_engine"  t(15))
+
+	("shield" args 10)
+
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+
+
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon link_mmg"}
+		}
+		{box
+			 {item "ammo pkm_ammo" 1750}
+			
+			 {item "ammo bullet30_RUS ap" 130}
+			 {item "ammo bullet30_RUS fg" 340}
+			 {item "pkt" filled {user "mgun"}}
+			
+             		 
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_2A42" filling "ammo bullet30_RUS ap" 30}
+			("CW_stab_abm" abm(0.35))
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_no_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight5"}
+			{LinkAnimation "off"}
+			{basic}
+			("CW_stab_abm" abm(0.53))
+			("CW_stab_no_suo")
+		}
+		{place "mgun18"			;дым гранатометы
+			{type "mgun_left"}
+			{weapon "3xsmokegun_bmp2" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight20"}
+			{barrels 3}
+		;	{basic}
+		}
+		{place "mgun19"			;дым гранатометы
+			{type "mgun_right"}
+			{weapon "3xsmokegun_bmp2" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight21"}
+			{barrels 3}
+		;	{basic}
+		}
+		
+	}	
+
+	{sensor		
+		{visor "driver"
+			{bone "Visor2"}
+		}
+		{visor "commander"
+			{bone "Visor3"}
+			{vision "tank_gunner_optic_IR_1g"}
+		}
+		{visor "gunner"
+			{bone "Visor1"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+	}
+
+	{mass 13600}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.45))
+		("CW_tracks"
+			Mass(13.6)
+			Width(3.15)
+			Power(300)
+			Realspeed(65)
+			Gamespeed(41) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_300" "cwfs_extfuel_400"}
+
+	("CW_amphibia" Waterline(1.35) )
+	("two_headlights")
+	("cw_headlightt")
+	{Extension "bmp2_mangal.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	{bone "gun_rot"
+		{limits -55 5}
+	}
+
+
+	("CW_turr_speed" deg_per_s(35))
+
+
+
+	{bone "suspension_l1"
+		{limits -0.2 0.1}
+		{speed2 0.5}		
+	}
+	{bone "suspension_l2"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_l3"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_l4"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_l5"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_l6"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+
+	{bone "suspension_r1"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_r2"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_r3"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_r4"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_r5"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+	{bone "suspension_r6"
+		{limits -0.2 0.1}
+		{speed2 0.5}
+	}
+
+}
+
+
+
