@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "model_top"}
+	{blend none}
+}

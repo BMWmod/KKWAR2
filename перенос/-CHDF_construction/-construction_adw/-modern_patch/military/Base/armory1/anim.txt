@@ -1,0 +1,152 @@
+-= Animation: open, Node DoorL =-
+	Frame 0 {
+		Visibility 1
+		Position	-47.2441	0	0
+		Orientation	0 0 0 1
+	}
+	Frame 1 {
+		Orientation	0 0 0.0219894 0.999758
+	}
+	Frame 2 {
+		Orientation	0 0 0.0815906 0.996666
+	}
+	Frame 3 {
+		Orientation	0 0 0.168833 0.985645
+	}
+	Frame 4 {
+		Orientation	0 0 0.272952 0.962028
+	}
+	Frame 5 {
+		Orientation	0 0 0.382684 0.92388
+	}
+	Frame 6 {
+		Orientation	0 0 0.48725 0.873262
+	}
+	Frame 7 {
+		Orientation	0 0 0.577573 0.816339
+	}
+	Frame 8 {
+		Orientation	0 0 0.647056 0.762442
+	}
+	Frame 9 {
+		Orientation	0 0 0.691387 0.722485
+	}
+	Frame 10 {
+		Visibility 1
+		Position	-47.2441	0	0
+		Orientation	0 0 0.707107 0.707107
+	}
+-= Animation: close, Node DoorL =-
+	Frame 10 {
+		Visibility 1
+		Position	-47.2441	0	0
+		Orientation	0 0 0.707107 0.707107
+	}
+	Frame 11 {
+		Orientation	0 0 0.691387 0.722485
+	}
+	Frame 12 {
+		Orientation	0 0 0.647056 0.762442
+	}
+	Frame 13 {
+		Orientation	0 0 0.577573 0.816339
+	}
+	Frame 14 {
+		Orientation	0 0 0.48725 0.873262
+	}
+	Frame 15 {
+		Orientation	0 0 0.382684 0.92388
+	}
+	Frame 16 {
+		Orientation	0 0 0.272952 0.962028
+	}
+	Frame 17 {
+		Orientation	0 0 0.168833 0.985645
+	}
+	Frame 18 {
+		Orientation	0 0 0.0815906 0.996666
+	}
+	Frame 19 {
+		Orientation	0 0 0.0219894 0.999758
+	}
+	Frame 20 {
+		Visibility 1
+		Position	-47.2441	0	0
+		Orientation	0 0 0 1
+	}
+-= Animation: open, Node DoorR =-
+	Frame 0 {
+		Visibility 1
+		Position	47.2441	0	0
+		Orientation	0 0 1 0
+	}
+	Frame 1 {
+		Orientation	0 0 0.999758 0.0219893
+	}
+	Frame 2 {
+		Orientation	0 0 0.996666 0.0815905
+	}
+	Frame 3 {
+		Orientation	0 0 0.985645 0.168833
+	}
+	Frame 4 {
+		Orientation	0 0 0.962028 0.272952
+	}
+	Frame 5 {
+		Orientation	0 0 0.92388 0.382683
+	}
+	Frame 6 {
+		Orientation	0 0 0.873262 0.48725
+	}
+	Frame 7 {
+		Orientation	0 0 0.816339 0.577573
+	}
+	Frame 8 {
+		Orientation	0 0 0.762443 0.647056
+	}
+	Frame 9 {
+		Orientation	0 0 0.722485 0.691387
+	}
+	Frame 10 {
+		Visibility 1
+		Position	47.2441	0	0
+		Orientation	0 0 0.707107 0.707107
+	}
+-= Animation: close, Node DoorR =-
+	Frame 10 {
+		Visibility 1
+		Position	47.2441	0	0
+		Orientation	0 0 0.707107 0.707107
+	}
+	Frame 11 {
+		Orientation	0 0 0.722485 0.691387
+	}
+	Frame 12 {
+		Orientation	0 0 0.762443 0.647056
+	}
+	Frame 13 {
+		Orientation	0 0 0.816339 0.577573
+	}
+	Frame 14 {
+		Orientation	0 0 0.873262 0.48725
+	}
+	Frame 15 {
+		Orientation	0 0 0.92388 0.382683
+	}
+	Frame 16 {
+		Orientation	0 0 0.962028 0.272952
+	}
+	Frame 17 {
+		Orientation	0 0 0.985645 0.168833
+	}
+	Frame 18 {
+		Orientation	0 0 0.996666 0.0815905
+	}
+	Frame 19 {
+		Orientation	0 0 0.999758 0.0219893
+	}
+	Frame 20 {
+		Visibility 1
+		Position	47.2441	0	0
+		Orientation	0 0 1 0
+	}

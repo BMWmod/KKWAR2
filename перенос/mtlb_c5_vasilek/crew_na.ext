@@ -1,0 +1,49 @@
+{boarder
+		{anm "driver"
+			{forward	{begin	"board_Kubel_driver"} {end "seat_driver_car"} {base "driver"}}
+			{reverse 	{end	"board_Kubel_driver" -1} {base "driver" -1}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_Kubel_commander"} {end "seat_passenger"} {base "commander"}}
+			{reverse 	{end	"board_Kubel_commander" -1} {base "commander" -1}}
+		}
+		{anm "passenger1"
+			{forward	{begin	"board_Kubel_leftpassenger"} {end "seat_passenger"} {base "doorl2"}}
+			{reverse 	{end	"board_Kubel_leftpassenger" -1} {base "doorl2" -1}}
+		}
+		{anm "passenger2"
+			{forward	{begin	"board_Kubel_rightpassenger"} {end "seat_passenger"} {base "doorr2"}}
+			{reverse 	{end	"board_Kubel_rightpassenger" -1} {base "doorr2" -1}}
+		}
+		{anm "gunner"
+			{forward	{begin	"board_Kubel_leftpassenger"} {end "pose_m5_gunlayer"} {base "doorl2"}}
+			{reverse 	{end	"board_Kubel_leftpassenger" -1} {base "doorl2" -1}}
+		}
+		{anm "gunner2"
+			{forward	{begin	"board_Kubel_leftpassenger"} {end "pose_m5_charger"} {base "doorl2"}}
+			{reverse 	{end	"board_Kubel_leftpassenger" -1} {base "doorl2" -1}}
+		}
+
+	}
+	
+{Placer
+	{place "driver"		{LinkBone "driver"} {group "crew"} {visor "driver"}}
+	{place "commander"	{LinkBone "commander"} {group "crew"} {visor "driver"}}
+	{place "gunner2"	{LinkBone "gunner2"} {group "crew"} {visor "driver"}}
+	{place "gunner"		{LinkBone "gunner"} {group "crew"} {visor "mgun"}}
+	
+}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+("crew_human" place(driver)		animation(driver)	door(emit1))
+("crew_human" place(gunner2)	animation(gunner2)	door(emit11))
+("crew_human" place(gunner)		animation(gunner)	door(emit10))
+("crew_human" place(commander)	animation(commander) door(emit4))

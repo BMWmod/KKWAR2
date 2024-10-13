@@ -1,0 +1,4 @@
+{material bump
+	{diffuse "diner_door"}
+	{blend none}
+}

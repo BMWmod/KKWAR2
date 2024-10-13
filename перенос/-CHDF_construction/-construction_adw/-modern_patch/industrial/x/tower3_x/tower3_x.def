@@ -1,0 +1,15 @@
+{game_entity
+	{Extension "tower3_x.mdl"}
+	{Volume "body"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece4"
+	}
+	{Volume "piece6"
+	}
+	{Volume "piece7"
+	}
+	{Volume "piece8"
+	}
+}

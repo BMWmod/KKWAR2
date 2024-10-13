@@ -1,0 +1,111 @@
+;Exported by: Notebook
+;Date:        Sun Sep 08 10:48:17 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Tower\tower2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+		}
+		{bone "ferm"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0	0	8.90165
+			}
+			{VolumeView "ferm.ply"}
+			{bone "top"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-0.000225782	266.299
+				}
+				{VolumeView "top.ply"}
+				{bone "lightning"
+					{Position -22.1457	22.1446	0.389862}
+					{VolumeView "lightning.ply"}
+				}
+				{bone "braket"
+					{Matrix34
+						1	0	0
+						0	-1	0
+						0	0	-1
+						14.7638	-29.2343	7.6745
+					}
+					{VolumeView "braket.ply"}
+					{bone "projector"
+						{Matrix34
+							1	0	0
+							0	0.432057	-0.901846
+							0	0.901846	0.432057
+							0	0	-0.00726318
+						}
+						{VolumeView "projector.ply"}
+						{bone "lightfx"
+							{parameters "light_boat;"}
+							{Matrix34
+								-1	0	0
+								0	0	1
+								0	1	0
+								0	-3.05176e-005	5.40369
+							}
+						}
+					}
+				}
+			}
+			{bone "stair"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					-7.57468	-2.848e-005	35.4812
+				}
+				{VolumeView "stair.ply"}
+			}
+			{bone "stand1"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-8.28023e-005	88.1489
+				}
+				{VolumeView "stand1.ply"}
+			}
+			{bone "stand2"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-0.000154057	176.92
+				}
+				{VolumeView "stand2.ply"}
+			}
+		}
+	}
+}
+{Volume "ferm"
+	{Box 23.622 23.622 275.591}
+	{Bone "ferm"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	-0.00011222	128.894
+	}
+}
+{Volume "projector"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector"}
+	{Position 0	0	1.61942}
+}
+{Volume "top"
+	{Box 49.2126 49.2126 29.5276}
+	{Bone "top"}
+	{Position 0	1.1929e-005	13.1851}
+}

@@ -1,0 +1,91 @@
+;Exported by: Домашний
+;Date:        Fri Aug 02 22:41:49 2013
+;File:        (null)
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Volume "body"
+	{Cylinder 3.7733 10.8265}
+	{Bone "body"}
+	{Matrix34
+		1.48109	0	0
+		0	1.48109	0
+		0	0	1.92711
+		0.23421	0.00374468	10.428
+	}
+}
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin -26.2364	6.47657	38.5822}
+			{lookat 1.46658	-0.246339	7.44027}
+			{fov 15.1893}
+			{horizon -1.69385}
+		}
+		{lights
+			{"0"
+				{type directional}
+				{direction 0	0	-0.5}
+			}
+			{"1"
+				{type directional}
+				{direction 0.176026	0.268661	-0.383192}
+			}
+			{"2"
+				{type directional}
+				{direction 0.324854	0.183212	0.333021}
+			}
+		}
+	}
+	{"Stuff_primary"
+		{camera
+			{origin -50.8775	12.0545	72.7865}
+			{lookat 4.57279	-1.40202	10.4531}
+			{fov 15.1893}
+			{horizon -39.6939}
+		}
+		{lights
+			{"0"
+				{type directional}
+				{direction 0	0	-0.5}
+			}
+			{"1"
+				{type directional}
+				{direction 0.176026	0.268661	-0.383192}
+			}
+			{"2"
+				{type directional}
+				{direction 0.324854	0.183212	0.333021}
+			}
+		}
+	}
+	{"Stuff_secondary"
+		{camera
+			{origin -32.116	7.59244	51.4873}
+			{lookat 4.48121	-1.28892	10.3472}
+			{fov 15.1893}
+			{horizon -39.6939}
+		}
+		{lights
+			{"0"
+				{type directional}
+				{direction 0	0	-0.5}
+			}
+			{"1"
+				{type directional}
+				{direction 0.176026	0.268661	-0.383192}
+			}
+			{"2"
+				{type directional}
+				{direction 0.324854	0.183212	0.333021}
+			}
+		}
+	}
+}

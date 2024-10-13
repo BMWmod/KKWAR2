@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "avtomat"}
+	{bump "avtomat_bp"}
+	{specular "avtomat_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

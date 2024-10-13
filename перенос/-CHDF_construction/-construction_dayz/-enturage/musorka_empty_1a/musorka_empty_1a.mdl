@@ -1,0 +1,21 @@
+;Exported by: Alexey
+;Date:        Tue Jan 13 23:58:02 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\musorka_empty_1a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position -0.659509	-0.217936	13.953}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0.931673	-5.04926	-5.11551}
+}

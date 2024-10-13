@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "well_cup.mdl"}
+	{Extender "land_patch"
+	}
+}

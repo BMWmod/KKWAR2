@@ -1,0 +1,107 @@
+;Exported by: Vorabat
+;Date:        Mon Apr 26 21:03:34 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\rus 3.max
+{Skeleton
+	{bone "garage_rus_4"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "garage_rus_4.ply"}
+	}
+}
+{Obstacle "box05"
+	{Obb2
+		{Center -30.0655 -4.91376}
+		{Extent 1.8252 44.5349}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box06"
+	{Obb2
+		{Center 30.2743 -2.40415}
+		{Extent 1.8252 44.5349}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box07"
+	{Obb2
+		{Center 0.416134 -46.8935}
+		{Extent 31.576 1.8252}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box08"
+	{Obb2
+		{Center -30.9203 47.6947}
+		{Extent 2.06498 10.0668}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box09"
+	{Obb2
+		{Center 17.6403 44.2967}
+		{Extent 10.0669 2.0658}
+		{Axis 0.656386 0.754425}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box10"
+	{Obb2
+		{Center 20.8338 39.1767}
+		{Extent 9.16335 1.54874}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box05"
+	{Box 3.65041 89.0698 41.2495}
+	{Bone "garage_rus_4"}
+	{Position -30.0655	4.91375	20.6248}
+}
+{Volume "box06"
+	{Box 3.65041 89.0698 41.2495}
+	{Bone "garage_rus_4"}
+	{Position 30.2743	2.40415	20.6248}
+}
+{Volume "box07"
+	{Polyhedron "box07.vol"}
+	{Bone "garage_rus_4"}
+	{Position 0.416138	46.8935	0}
+}
+{Volume "box08"
+	{Box 4.12996 20.1335 41.0414}
+	{Bone "garage_rus_4"}
+	{Position -30.9203	-47.6947	20.5207}
+}
+{Volume "box09"
+	{Box 4.12996 20.1335 41.0414}
+	{Bone "garage_rus_4"}
+	{Matrix34
+		0.754478	0.656325	0
+		-0.656325	0.754478	0
+		0	0	1
+		17.6404	-44.2967	20.5207
+	}
+}
+{Volume "box10"
+	{Box 18.3267 3.09747 45.6876}
+	{Bone "garage_rus_4"}
+	{Position 20.8338	-39.1767	22.8438}
+}
+{Volume "box16"
+	{Polyhedron "box16.vol"}
+	{Bone "garage_rus_4"}
+	{Position -0.138718	3.30168	40.0587}
+}

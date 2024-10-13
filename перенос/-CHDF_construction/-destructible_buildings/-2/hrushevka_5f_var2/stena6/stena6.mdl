@@ -1,0 +1,105 @@
+;Exported by: MOCKVu4
+;Date:        Thu Nov 30 11:15:13 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f\hrushevka_5f_var5.max
+{Skeleton
+	{bone "attach006"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "stena"
+			{Matrix34
+				-1	0	0
+				0	0	1
+				0	1	0
+				21.2734	4.49284	17.4416
+			}
+			{VolumeView "stena.ply"}
+			{bone "window1"
+				{Matrix34
+					1	0	0
+					0	1	0
+					0	0	1
+					-1.28758	3.37186	-3.88992
+				}
+				{VolumeView "window1.ply"}
+			}
+		}
+		{bone "seat1"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				11.1094	0.471947	-1.98027
+			}
+		}
+		{bone "stena2"
+			{Matrix34
+				-1	0	0
+				0	0	1
+				0	1	0
+				22.9877	-38.6388	17.5497
+			}
+			{VolumeView "stena2.ply"}
+		}
+	}
+}
+{Obstacle "stena2"
+	{Obb2
+		{Center 23.559 38.958}
+		{Extent 1.96862 20.6693}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "stena"
+	{Obb2
+		{Center 23.5582 -4.846}
+		{Extent 1.96862 23.5823}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "hole1"
+	{Box 19.685 29.5276 19.685}
+	{Bone "attach006"}
+	{Matrix34
+		0	1	0
+		-1.29683	0	0.00945383
+		0.00827863	0	1.13563
+		25.5968	0.192189	21.1469
+	}
+}
+{Volume "stena2"
+	{Box 41.3386 41.3386 3.93701}
+	{Bone "stena2"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-0.571348	-0.0217438	-0.319262
+	}
+}
+{Volume "stena"
+	{Box 47.1646 41.3386 3.93701}
+	{Bone "stena"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-2.28482	0.272609	0.353168
+	}
+}
+{Volume "window1"
+	{Box 22.1083 23.9346 1.63409}
+	{Bone "window1"}
+	{Matrix34
+		0	0	-1
+		0	1	0
+		1	0	0
+		-1.51389	-0.0915912	0.227535
+	}
+}

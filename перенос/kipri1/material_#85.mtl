@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "tmt_kirpi_wheel_w_co"}
+	{blend none}
+}

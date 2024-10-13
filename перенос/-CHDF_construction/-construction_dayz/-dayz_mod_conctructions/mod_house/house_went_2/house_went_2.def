@@ -1,0 +1,61 @@
+{game_entity
+    (include "/properties/building.inc")
+        {props "cornered" "concrete" "parts" "construction" "wall"}
+        {Extension "house_went_2.mdl"}
+        {Extender "land_patch"
+        {TerrainType "road" "bridge"}
+        {on 1}
+        {updateEntities 1}
+        {Nonormals 1}
+        }
+	{Volume "box01"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box02"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box03"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box04"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box05"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "cylinder01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder03"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder04"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder05"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder06"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+}

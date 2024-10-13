@@ -1,0 +1,159 @@
+{game_entity
+	(include "/properties/car.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{collider "truck"}
+	{props "vehicle" "car" "truck" "wheeled" "8_wheels" "vision_lev03" "hemtt"}
+	{able "emit_on_attack"}
+	("armor_car_truck")
+	{extender "enumerator"}
+	
+	{texmod "desert"}
+
+
+	("crew_2_human")
+
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+
+	("crew_human" place(commander) bone(commander) door(emit2) animation(commander))
+
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_big-highcar_driver"} {end "seat_driver_car"} {base "doorleft"}}
+			{reverse 	{end	"board_big-highcar_driver" -1} {base "doorleft" -1}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_big-highcar"} {end "seat_passenger"} {base "doorright"}}
+			{reverse 	{end	"board_big-highcar" -1} {base "doorright" -1}}
+		}
+	}
+
+
+	{mass 30000}
+
+	{sensor
+		{visor "driver"
+			{bone "visor1"}
+			{vision "vehicle_main"}
+		}		
+	}
+
+    	{extender "inventory"
+    		  {box
+			{clear}
+      			{size 10 12}
+                        {item "repair_kit"}  
+		}
+	}
+
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	("wheel" args "wheelright2")
+	("wheel" args "wheelleft2")
+	("wheel" args "wheelright3")
+	("wheel" args "wheelleft3")
+	("wheel" args "wheelright4")
+	("wheel" args "wheelleft4")
+
+	{Chassis
+		("CW_wheels"
+			Mass(19.3)
+			Turnradius(14.3)
+			Power(515)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(483)				;10000 litres minus inventory give great range
+			Fuelvolume(587)
+		)
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlr") wheelr("wrr") bonel("FXtraceL2") boner("FXtraceR2"))
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlr") wheelr("wrr") bonel("FXtraceL3") boner("FXtraceR3"))
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlr") wheelr("wrr") bonel("FXtraceL4") boner("FXtraceR4"))
+		
+	}
+	{props "cwfs_fuel_500"}
+
+	{Volume "Body1"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body2"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body3"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body4"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body5"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body6"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body7"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body8"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body9"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body10"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body11"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body13"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "Body14"
+		{tags "body"}
+		{component "body"}
+		{thickness 3}
+	}
+	{Volume "wheelleft1"
+	}
+	{Volume "wheelleft2"
+	}
+	{Volume "wheelleft3"
+	}
+	{Volume "wheelright1"
+	}
+	{Volume "wheelright2"
+	}
+	{Volume "wheelright3"
+	}
+
+	("two_headlights")
+	{Extension "hemtt_tractor.mdl"}
+	("missile_aimpoint_trucksize")
+
+}

@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/entourage-new/447th_roof"}
+	{bump "$/entourage-new/447th_roof_nm"}
+	{specular "$/entourage-new/447th_roof_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

@@ -1,0 +1,74 @@
+;model by cAwX
+{actor
+	(include "/properties/cannon_mgun_mod.ext")
+	(include "/properties/shadow/tank.inc"  scale(0.3))
+	{props "collectable" "ATGM" "vision_lev02_can" "round_sandbag2" "spike_lr"}
+	("cw_armor_atgm")
+	{targetClass "cannon_atgm" "atgm"}
+
+	{extender "inventory"
+		{box
+			{Size 6 6}
+			{weight 300}
+			{item "ammo spike-lr" 4}
+		}	
+	}
+	
+	{Weaponry
+		{place "gun"
+		{weapon "weapon spike-lr_x1" filling "ammo spike-lr" 1}
+			{foresight "foresight1"}
+			{barrels 1}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+		}
+	}
+	
+	{sensor
+		{visor "gunner"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "visor1"}
+		}
+	}
+	
+{boarder
+	{anm "gunner"
+		{forward	{end "pose_vicers_gunner"}}
+	}
+	{anm "commander"
+		{forward	{end "lie_take_item_end"}}
+	}
+	{anm "driver1"
+		{forward {end "mgun_browning_driver_r"}}
+	}
+	{anm "driver2"
+		{forward {end "mgun_browning_driver_l"}}
+	}
+	{link "driver1" "gunner"}
+	{link "driver2" "commander"}
+}
+
+{extender "cannon"
+	{animation
+		{switch "close"}
+		{move "mgun_browning_driver_r" "mgun_browning_driver_l"}
+		{aim "" ""}
+		{fire  "" ""}
+		{reload  "" "lie_take_small end lie_take_item_end"}
+	}
+	{animation
+		{switch close}
+	}
+	{attack {workers "gunner" "commander"}}
+}
+
+	{Extension "spike_lr.mdl"}
+	("missile_aimpoint_stansize")
+	
+	{bone "basis"
+		{limits}
+	    	{speed 0.007}
+	}
+	
+}

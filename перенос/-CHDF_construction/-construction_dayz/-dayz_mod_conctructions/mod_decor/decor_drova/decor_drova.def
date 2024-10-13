@@ -1,0 +1,18 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "parts" "construction" "no_destroyed_stamp" "wood" "burning"}
+ {Extension "decor_drova.mdl"}
+ {Volume "body"
+         }
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+}

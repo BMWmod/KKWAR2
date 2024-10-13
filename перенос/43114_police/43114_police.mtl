@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "43114_police"}
+	{bump "43114_police_bp"}
+	{specular "43114_police_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

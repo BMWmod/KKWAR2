@@ -1,0 +1,40 @@
+;Exported by: User
+;Date:        Sun Apr 12 00:09:39 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\запрвка пошел.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.207373	-0.978262	0
+				0.97821	0.207362	-0.0102818
+				0.0264798	0.00561321	0.999634
+				0	0	23.0289
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -0.964765 -2.20967}
+		{Extent 7.10327 15.5392}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.207373	0.978041	0.0100595
+		-0.978262	0.207326	0.00213244
+		0	-0.0270718	1.00009
+		-2.51993	0.243835	-23.0349
+	}
+}

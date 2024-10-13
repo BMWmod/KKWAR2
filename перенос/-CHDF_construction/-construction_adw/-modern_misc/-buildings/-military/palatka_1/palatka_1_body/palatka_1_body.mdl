@@ -1,0 +1,388 @@
+;Exported by: zorro
+;Date:        Wed Feb 17 22:30:37 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\palatka1.max
+{Skeleton
+	{bone "palatka_1_body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "palatka_1_body.ply"}
+		{bone "box50"
+			{Matrix34
+				-1	0	0
+				0	-0.9399	0.341451
+				0	0.341451	0.9399
+				-127.622	7.62939	44.2208
+			}
+		}
+		{bone "box49"
+			{Matrix34
+				1	0	0
+				0	0.939485	0.342589
+				0	-0.342589	0.939485
+				-127.622	-8.16906	44.2113
+			}
+		}
+		{bone "box01"
+			{Matrix34
+				0	-1	0
+				0.9399	0	0.341451
+				-0.341451	0	0.9399
+				46.8631	-105.806	44.1521
+			}
+		}
+		{bone "box52"
+			{Matrix34
+				0	1	0
+				-0.939485	0	0.342589
+				0.342589	0	0.939485
+				62.6616	-105.806	44.1521
+			}
+		}
+		{bone "box04"
+			{Matrix34
+				0	1	0
+				-0.9399	0	0.341451
+				0.341451	0	0.9399
+				62.64	105.842	44.2803
+			}
+		}
+		{bone "box57"
+			{Matrix34
+				0	-1	0
+				0.939485	0	0.342589
+				-0.342589	0	0.939485
+				46.8415	105.842	44.2803
+			}
+		}
+	}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 77.6526 -63.6891}
+		{Extent 5.97504 8.13498}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center 78.6732 63.9111}
+		{Extent 5.97504 8.13498}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box27"
+	{Obb2
+		{Center -127.795 -17.0277}
+		{Extent 36.1222 1.01325}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box28"
+	{Obb2
+		{Center -127.795 17.3334}
+		{Extent 36.1222 1.01325}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box29"
+	{Obb2
+		{Center 84.1716 0.29705}
+		{Extent 0.999924 72.2445}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box30"
+	{Obb2
+		{Center -91.95 -43.6336}
+		{Extent 0.749943 28.6491}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box31"
+	{Obb2
+		{Center -91.9126 44.0657}
+		{Extent 0.749947 28.6324}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box32"
+	{Obb2
+		{Center -28.0837 68.0436}
+		{Extent 63.6634 4.50526}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box33"
+	{Obb2
+		{Center -27.5251 -67.3076}
+		{Extent 64.222 4.51646}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box54"
+	{Obb2
+		{Center 71.8526 99.2776}
+		{Extent 1.01325 42.7964}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box55"
+	{Obb2
+		{Center 37.4916 100.338}
+		{Extent 1.01325 41.7363}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box59"
+	{Obb2
+		{Center 37.6505 -64.1126}
+		{Extent 1.01325 7.54204}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box60"
+	{Obb2
+		{Center 72.0116 -65.3559}
+		{Extent 1.01325 6.66512}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-0.965769	-0.259404
+		0	-0.259404	0.965769
+		77.6112	69.3973	0.0420348
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	0.965769	-0.259404
+		0	0.259404	0.965769
+		78.7146	-69.6193	-0.0421513
+	}
+}
+{Volume "box27"
+	{Box 72.2445 1.99985 43.9966}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	1	0.000605691
+		0	-0.000605691	1
+		-127.795	17.0277	22.0086
+	}
+}
+{Volume "box28"
+	{Box 72.2445 1.99985 43.9966}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	1	0.000605691
+		0	-0.000605691	1
+		-127.795	-17.3334	21.9878
+	}
+}
+{Volume "box29"
+	{Polyhedron "box29.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	1	0.000605691
+		0	-0.000605691	1
+		84.1716	-0.297049	-0.000178482
+	}
+}
+{Volume "box30"
+	{Polyhedron "box30.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	1	0.000605691
+		0	-0.000605691	1
+		-91.95	36.5163	0.022119
+	}
+}
+{Volume "box31"
+	{Polyhedron "box31.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-1	-0.000605583
+		0	-0.000605583	1
+		-91.9126	-36.9317	-0.0223678
+	}
+}
+{Volume "box32"
+	{Polyhedron "box32.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	0.966082	-0.258234
+		0	0.258234	0.966082
+		-3.25392	-70.1217	-0.0424707
+	}
+}
+{Volume "box33"
+	{Polyhedron "box33.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-0.965769	-0.259404
+		0	-0.259404	0.965769
+		-3.25392	69.3973	0.0420348
+	}
+}
+{Volume "box34"
+	{Polyhedron "box34.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-0.965769	-0.259404
+		0	-0.259404	0.965769
+		-3.25392	63.8855	18.9887
+	}
+}
+{Volume "box35"
+	{Polyhedron "box35.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-0.965769	-0.259404
+		0	-0.259404	0.965769
+		-86.542	63.8855	18.9887
+	}
+}
+{Volume "box37"
+	{Polyhedron "box37.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		-1	0	0
+		0	-0.965769	-0.259404
+		0	-0.259404	0.965769
+		-61.8941	59.3365	35.3578
+	}
+}
+{Volume "box39"
+	{Polyhedron "box39.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	0.966082	-0.258234
+		0	0.258234	0.966082
+		-62.3402	-59.8297	35.2856
+	}
+}
+{Volume "box40"
+	{Polyhedron "box40.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	0.966082	-0.258234
+		0	0.258234	0.966082
+		-87.09	-64.3588	18.911
+	}
+}
+{Volume "box41"
+	{Polyhedron "box41.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	0.966083	-0.258234
+		0	0.258234	0.966083
+		-4.43476	-64.3588	18.911
+	}
+}
+{Volume "box48"
+	{Polyhedron "box48.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		1	0	0
+		0	1	0.000605691
+		0	-0.000605691	1
+		-163.125	-0.389845	40.5296
+	}
+}
+{Volume "box53"
+	{Polyhedron "box53.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		0	1	0
+		-1	0	0.000605691
+		0.000605691	0	1
+		54.8846	-141.306	40.4443
+	}
+}
+{Volume "box54"
+	{Polyhedron "box54.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		0	1	0
+		-1	0	0.000605691
+		0.000605691	0	1
+		71.8393	-105.952	-0.0641609
+	}
+}
+{Volume "box55"
+	{Polyhedron "box55.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		0	1	0
+		-1	0	0.000605691
+		0.000605691	0	1
+		37.4782	-105.952	-0.0641579
+	}
+}
+{Volume "box59"
+	{Polyhedron "box59.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		0	-1	0
+		1	0	0.000605691
+		-0.000605691	0	1
+		37.6638	106.041	0.0642152
+	}
+}
+{Volume "box60"
+	{Polyhedron "box60.vol"}
+	{Bone "palatka_1_body"}
+	{Matrix34
+		0	-1	0
+		1	0	0.000605691
+		-0.000605691	0	1
+		72.0249	106.041	0.0642182
+	}
+}

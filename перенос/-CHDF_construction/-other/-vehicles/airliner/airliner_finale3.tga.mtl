@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "airliner_finale3"}
+	{blend none}
+}

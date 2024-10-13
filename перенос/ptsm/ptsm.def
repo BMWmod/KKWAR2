@@ -1,0 +1,106 @@
+;Created by cAwX
+
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	
+	{props "light_M" "amphibia" "vision_lev04" "transport_plane" "transport_ship" "ptsm" "t-64b"}
+
+	{PatherID "amphibia"}
+        {targetClass "light_tank"}
+
+	{Volume "Vehicle" {able clear}}
+
+
+	("armor_medium" turret(10 10 10 10) body(10 10 10 6))
+	("armor_engine"  t(15 15 15 15))
+
+;===================================================================
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_tank_left"} {end "seat_driver_car"} {base"doorleft"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base"doorleft"}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_tank_right"} {end "pose_stand_empty_1"}} 
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+		{anm "passenger"
+			{forward	{begin	"board_sd222_driver"} {end "pose_stand_empty_1"}}   
+			{reverse 	{end	"emit_body" 1}}
+		}
+	}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {linkbone "%bone"} {turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+("crew_human" place(driver)	door(emit1) bone(driver) animation(driver) 		group(crew))
+("crew_human" place(commander)	door(emit3) bone(commander) animation(commander) 		group(crew))
+
+
+("crew_human" place(seat01)	door(emit3) bone(seat01) animation(passenger) 	group(passengers))
+("crew_human" place(seat02)	door(emit4) bone(seat02) animation(passenger) 	group(passengers))
+("crew_human" place(seat03)	door(emit3) bone(seat03) animation(passenger) 	group(passengers))
+("crew_human" place(seat04)	door(emit4) bone(seat04) animation(passenger) 	group(passengers))
+("crew_human" place(seat05)	door(emit3) bone(seat05) animation(passenger) 	group(passengers))
+("crew_human" place(seat06)	door(emit4) bone(seat06) animation(passenger) 	group(passengers))
+("crew_human" place(seat07)	door(emit3) bone(seat07) animation(passenger) 	group(passengers))
+("crew_human" place(seat08)	door(emit4) bone(seat08) animation(passenger) 	group(passengers))
+("crew_human" place(seat09)	door(emit3) bone(seat09) animation(passenger) 	group(passengers))
+("crew_human" place(seat10)	door(emit4) bone(seat10) animation(passenger) 	group(passengers))
+("crew_human" place(seat11)	door(emit3) bone(seat11) animation(passenger) 	group(passengers))
+("crew_human" place(seat12)	door(emit4) bone(seat12) animation(passenger) 	group(passengers))
+("crew_human" place(seat13)	door(emit3) bone(seat13) animation(passenger) 	group(passengers))
+("crew_human" place(seat14)	door(emit4) bone(seat14) animation(passenger) 	group(passengers))
+("crew_human" place(seat15)	door(emit3) bone(seat15) animation(passenger) 	group(passengers))
+("crew_human" place(seat16)	door(emit4) bone(seat16) animation(passenger) 	group(passengers))
+("crew_human" place(seat17)	door(emit3) bone(seat17) animation(passenger) 	group(passengers))
+("crew_human" place(seat18)	door(emit4) bone(seat18) animation(passenger) 	group(passengers))
+
+{placer
+	{place "vehicle1"
+			{linkbone "vehicle1"}
+			{turnoff {sensor} {shadow} {targetable}}
+	}
+}
+
+;===================================================================
+
+	{extender "inventory"
+		{box
+			{size 25 25}	
+		}
+	}
+
+;===================================================================
+
+	{mass 17800}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.45))
+		("CW_tracks"
+			Mass(17.8)
+			Width(2.63)
+			Power(350)
+			Realspeed(42)
+			Gamespeed(25) 
+			Range(380)
+			Fuelvolume(400)
+		)
+	}
+	{props "cwfs_fuel_400"}
+
+	{Extension "ptsm.mdl"}
+	("missile_aimpoint_tanksize")
+	
+	("CW_amphibia" Waterline(1.34) )
+	
+}

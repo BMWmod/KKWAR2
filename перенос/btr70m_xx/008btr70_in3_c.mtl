@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "btr70010"}
+	{blend none}
+}

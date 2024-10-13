@@ -1,0 +1,123 @@
+;Exported by: Notebook
+;Date:        Tue Apr 28 23:30:13 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Streetlight\Streetlight5.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0	0	0}
+			{VolumeView "body.ply"}
+			{bone "bracket1"
+				{Matrix34
+					0	1	0
+					-1	0	0
+					0	0	1
+					0	0	137.795
+				}
+				{VolumeView "bracket1.ply"}
+				{bone "isolator2"
+					{Position 7.87402	-1.77165	1.50436}
+					{VolumeView "isolator2.ply"}
+				}
+				{bone "isolator1"
+					{Position -7.87401	-1.77165	1.50436}
+					{VolumeView "isolator1.ply"}
+				}
+			}
+			{bone "lamp"
+				{Matrix34
+					0	0	1
+					0	-1	0
+					1	0	0
+					0	0	-2.14203
+				}
+				{VolumeView "lamp.ply"}
+				{bone "lamp_glass1"
+					{Position 0	16.5056	1.0252e-005}
+					{visibility 0}
+					{VolumeView "lamp_glass1.ply"}
+				}
+				{bone "lamp_light_spot1"
+					{Matrix34
+						-1	0	0
+						0	0	1
+						0	1	0
+						188.97	-29.6104	6.10352e-005
+					}
+				}
+			}
+			{bone "light_spot"
+				{Matrix34
+					0	0	-1
+					1	0	0
+					0	-1	0
+					4.57764e-005	29.6041	76.5981
+				}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Box 5.11811 5.11811 187.008}
+	{Bone "body"}
+	{Position 0	0	83.6614}
+}
+{Volume "bracket1"
+	{Box 23.622 2.3622 2.3622}
+	{Bone "bracket1"}
+	{Position 0	-3.54331	-0.787403}
+}
+{Volume "bracket2"
+	{Box 7.87402 2.3622 2.3622}
+	{Bone "bracket1"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		0	3.54331	-0.787403
+	}
+}
+{Volume "lamp"
+	{Box 7.87402 7.87402 3.93701}
+	{Bone "lamp"}
+	{Matrix34
+		-0.12254	0.992464	0
+		0	0	1
+		0.992464	0.12254	0
+		187.584	-29.5247	6.16531e-005
+	}
+}
+{Volume "streetlight1"
+	{Box 2.95276 2.95276 23.622}
+	{Bone "lamp"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		172.129	-2.80859	4.9484e-005
+	}
+}
+{Volume "streetlight2"
+	{Box 2.95276 2.95276 12.7953}
+	{Bone "lamp"}
+	{Matrix34
+		0.867033	0.498251	0
+		0	0	1
+		0.498251	-0.867033	0
+		185.876	-8.15169	4.47341e-005
+	}
+}
+{Volume "streetlight3"
+	{Box 23.622 7.87402 3.93701}
+	{Bone "lamp"}
+	{Matrix34
+		-0.12254	0.992464	0
+		0	0	1
+		0.992464	0.12254	0
+		190.865	-23.9191	6.16531e-005
+	}
+}

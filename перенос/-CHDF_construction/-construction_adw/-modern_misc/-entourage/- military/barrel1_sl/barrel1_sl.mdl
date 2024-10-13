@@ -1,0 +1,21 @@
+;Exported by: Adam
+;Date:        Tue Apr 10 19:27:37 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\barrel.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "barrel"
+			{Position 0.0240454	0.00749954	0.0418499}
+			{VolumeView "barrel.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Cylinder 7.94755 22.7025}
+	{Bone "barrel"}
+	{Position 0.0240512	-0.00749954	11.32}
+}

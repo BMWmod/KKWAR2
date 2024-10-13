@@ -1,0 +1,28 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	("armor_light" args 0.7)
+	{Extension "metall_guard1.mdl"}
+	{props "small" "steel" "construction" "parts" "disable_area" "no_destroyed_stamp" "gate" "gate_close"}
+
+	{Volume "guard"
+		{Thickness 30}
+		{able {visible 1}{bullet 1}}
+	}
+	{Volume "opora1"
+		{Thickness 30}
+		{able {visible 1}{bullet 1}}
+	}
+	{Volume "opora2"
+		{Thickness 30}
+		{able {visible 1}{bullet 1}}
+	}
+	{Volume "opora3"
+		{Thickness 30}
+		{able {visible 1}{bullet 1}}
+	}
+	{Volume "opora4"
+		{Thickness 30}
+		{able {visible 1}{bullet 1}}
+	}
+}

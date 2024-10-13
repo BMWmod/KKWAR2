@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/tigres/glass_df"}
+	{emitsheat}
+{blend blend}
+}

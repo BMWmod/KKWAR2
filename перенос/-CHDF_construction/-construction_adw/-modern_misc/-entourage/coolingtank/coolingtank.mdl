@@ -1,0 +1,27 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 00:47:19 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage\coolingtank.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Position 0.290009	-0.665124	100.247}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0.290009	0.0588826	25.4813}
+}

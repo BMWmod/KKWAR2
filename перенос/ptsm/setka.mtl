@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/ptsm/grid_c"}
+	{blend none}
+}

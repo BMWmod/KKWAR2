@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/entourage-new/wbs70_debris_2"}
+	{bump "$/entourage-new/wbs70_debris_2_nm"}
+	{specular "$/entourage-new/wbs70_debris_2_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

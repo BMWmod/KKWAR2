@@ -1,0 +1,13 @@
+{game_entity
+	{Extension "gate_grid8_x.mdl"}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "post1"
+	}
+	{Volume "post2"
+	}
+}

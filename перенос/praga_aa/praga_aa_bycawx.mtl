@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "praga_aa_bycawx#desert"}
+	{blend none}
+}

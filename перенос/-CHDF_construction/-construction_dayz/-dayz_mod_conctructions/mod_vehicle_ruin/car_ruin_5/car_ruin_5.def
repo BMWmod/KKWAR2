@@ -1,0 +1,13 @@
+{Game_entity
+    (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 3000}
+
+	{Extension "car_ruin_5.mdl"}
+	{Volume "body"
+	}
+}

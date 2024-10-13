@@ -1,0 +1,21 @@
+{game_entity
+	
+
+(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{props "steel" "dead_vehicle" "big" "part"}
+
+        {Extension "musorka_empty_1a.mdl"}
+	
+	{Volume "body"
+
+                {thickness 50}
+		{able {visible 0}{obstacle 1}}
+		{tags "body"}
+
+
+	}
+        
+}

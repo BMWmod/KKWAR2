@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mtl_garage_gate_01a_bl"}
+	{blend none}
+}

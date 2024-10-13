@@ -1,0 +1,115 @@
+;By cAwX
+
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev03" "auto_dig_in" "has_apu" "has_autoloader" "t-64b"}
+	
+	{extender "enumerator"}	
+
+
+	("armor_heavy" turret(424 210 70 50) body(182 80 50 20))
+	("comp_armor_increment" turret(20) body(7))
+	
+
+	;("armor_engine"  t(40))
+	
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"}  {base"open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1}  {base"open_driver" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}  {base"open_gunner"}}
+			{reverse 	{end	"emit_tank_2_hold"}  {base"open_gunner" -1}}
+		}
+	}
+	
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver) door1(emit1) anm(driver) visor(driver))
+	("crew_human" place(commander) door1(emit2) anm(right) visor(commander))
+	("crew_human" place(gunner) door1(emit2) anm(right) visor(main))
+	
+("crew_human" place(driver)		animation(driver)	door(emit1))
+("crew_human" place(commander)		animation(right)	door(emit2))
+("crew_human" place(gunner)		animation(right)	door(emit2))
+	
+	{sensor		
+		{visor "driver"
+			{bone "Visor1"}
+		}
+		{visor "main"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor2"}
+		}
+		{visor "commander"				
+			{vision "vehicle_top_mgun"}
+			{bone "Visor2"}
+		}
+	}
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet125_rus_b cm" 6}
+			{item "ammo bullet125_rus_z apcr" 12}
+			{item "ammo bullet125_RUS fg" 18}
+			{item "ammo PKM_ammo" 1750}
+	
+		}
+	}
+	
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_2A46_2" filling "ammo bullet125_rus_z apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.39))
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{weapon "PKT" filled}
+			{foresight "foresight5"}
+			{basic}
+			("CW_stab_abm" abm(0.71))
+			("CW_stab_ldwind_suo")
+		}
+	}
+
+	{mass 38000}
+	{Chassis
+		("tank_trace" fx("tracks_sm") step(0.3) len(0.85))
+		("CW_tracks"
+			Mass(38.1)
+			Width(3.41)
+			Power(700)
+			Realspeed(65)
+			Gamespeed(45) 
+			Range(700)
+			Fuelvolume(1500)
+		)
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	("two_headlights")
+	{Extension "t64a.mdl"}
+	("recoil_side_common")
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+
+	
+	("CW_turr_speed" deg_per_s(24))
+	
+}

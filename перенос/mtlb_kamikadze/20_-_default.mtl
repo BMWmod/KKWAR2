@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/mtlb_new/tros"}
+	{emitsheat}
+{blend none}
+}

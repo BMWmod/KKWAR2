@@ -1,0 +1,26 @@
+{game_entity
+	
+
+(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{props "steel" "dead_vehicle" "big" "part"}
+
+	{mass 100000}
+	{Extension "trailer_base.mdl"}
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+	{Volume "box05"
+	}
+	{Volume "box06"
+	}
+	{Volume "box07"
+	}
+}

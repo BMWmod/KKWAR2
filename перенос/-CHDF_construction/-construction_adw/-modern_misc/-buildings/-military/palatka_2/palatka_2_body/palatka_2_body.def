@@ -1,0 +1,85 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{props "concrete" "no_destroyed_stamp"}
+    {obstacleid "unbreakable" "construction" }
+	{Extension "palatka_2_body.mdl"}
+	{Volume "box27"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box28"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box29"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box30"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box31"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box32"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box33"
+		{Tags  "body"}
+		{Thickness 1}
+		{able {visible 1}}
+	}
+	{Volume "box34"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box35"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box36"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box37"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box38"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box39"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box40"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box41"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box42"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box43"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box48"
+		{Thickness 1}
+		{able {visible 0}{obstacle 0}}
+	}
+}

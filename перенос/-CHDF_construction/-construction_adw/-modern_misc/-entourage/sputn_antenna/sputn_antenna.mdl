@@ -1,0 +1,58 @@
+;Exported by: Vorabat
+;Date:        Thu Jan 20 01:01:35 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\antenas.max
+{Skeleton
+	{bone "sputn_antenna"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "sputn_antenna.ply"}
+	}
+}
+{Volume "box11"
+	{Box 2.73823 2.25501 17.4763}
+	{Bone "sputn_antenna"}
+	{Position 1.41047	1.18511	8.73816}
+}
+{Volume "box12"
+	{Box 0.80536 15.5435 1.04697}
+	{Bone "sputn_antenna"}
+	{Matrix34
+		1	0	0
+		0	0.889848	-0.456257
+		0	0.456257	0.889848
+		1.491	7.42389	4.0161
+	}
+}
+{Volume "box13"
+	{Box 0.80536 15.5435 1.04697}
+	{Bone "sputn_antenna"}
+	{Matrix34
+		-0.475245	-0.879854	0
+		0.782936	-0.422896	-0.456257
+		0.401439	-0.216834	0.889848
+		7.4099	-2.75991	4.0161
+	}
+}
+{Volume "box14"
+	{Box 0.80536 15.5435 1.04697}
+	{Bone "sputn_antenna"}
+	{Matrix34
+		-0.487647	0.873041	0
+		-0.776874	-0.433932	-0.456257
+		-0.398331	-0.222492	0.889848
+		-5.0645	-2.69264	4.0161
+	}
+}
+{Volume "cylinder01"
+	{Cylinder 14.5508 1.24811}
+	{Bone "sputn_antenna"}
+	{Matrix34
+		1	0	0
+		0	0.34639	0.938091
+		0	-0.938091	0.34639
+		1.21094	-3.85421	25.0166
+	}
+}

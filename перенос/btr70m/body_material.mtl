@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "btr70"}
+	{bump "btr70_bp"}
+	{specular "btr70_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

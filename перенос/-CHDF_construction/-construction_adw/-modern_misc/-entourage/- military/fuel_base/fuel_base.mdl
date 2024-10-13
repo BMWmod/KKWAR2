@@ -1,0 +1,33 @@
+;Exported by: zorro
+;Date:        Thu Feb 18 01:39:07 2010
+;File:        (null)
+{Skeleton
+	{bone "fuel_base"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "fuel_base.ply"}
+	}
+}
+{Volume "box02"
+	{Box 39.7086 94.9355 8.67199}
+	{Bone "fuel_base"}
+	{Matrix34
+		1.29726	0	0
+		0	1	0
+		0	0	2.03341
+		-0.370132	0.802841	8.81685
+	}
+}
+{Volume "box03"
+	{Box 39.7086 94.9355 8.67199}
+	{Bone "fuel_base"}
+	{Matrix34
+		1.04237	0	0
+		0	1	0
+		0	0	3.5729
+		-0.370132	0.802841	22.0243
+	}
+}

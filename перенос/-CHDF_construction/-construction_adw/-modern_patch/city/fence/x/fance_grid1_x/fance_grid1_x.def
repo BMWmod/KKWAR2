@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "fance_grid1_x.mdl"}
+	{Volume "piece1"
+	}
+}

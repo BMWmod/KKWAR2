@@ -1,0 +1,11 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "concrete" "no_destroyed_stamp"}
+	{Extension "matras_1.mdl"}
+	{Volume "box02"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{lodclass "decor_small"}
+}

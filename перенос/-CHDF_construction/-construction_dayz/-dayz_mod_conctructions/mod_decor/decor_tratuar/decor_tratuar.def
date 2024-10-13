@@ -1,0 +1,6 @@
+{game_entity 
+	{Extension "decor_tratuar.mdl"}
+	{Volume "box02"
+	}
+	{lodclass "decor_big"}
+}

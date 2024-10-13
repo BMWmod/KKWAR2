@@ -1,0 +1,103 @@
+;Exported by: Notebook
+;Date:        Thu Feb 09 22:18:18 2017
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Camo\camo_net1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "net"
+			{parameters "CommonMesh ;"}
+			{Position -0.341094	1.41395e-005	26.1564}
+			{VolumeView "net.ply"}
+		}
+		{bone "stolb1"
+			{parameters "CommonMesh ;"}
+			{Position -64.9076	60.1026	15.1179}
+			{VolumeView "stolb1.ply"}
+		}
+		{bone "stolb2"
+			{parameters "CommonMesh ;"}
+			{Matrix34
+				0.927795	-0.373091	0
+				0.373091	0.927795	0
+				0	0	1
+				-67.8283	-60.6558	15.1179
+			}
+			{VolumeView "stolb2.ply"}
+		}
+		{bone "stolb3"
+			{parameters "CommonMesh ;"}
+			{Position 52.1556	59.6205	15.1179}
+			{VolumeView "stolb3.ply"}
+		}
+		{bone "stolb4"
+			{parameters "CommonMesh ;"}
+			{Matrix34
+				0.927795	-0.373091	0
+				0.373091	0.927795	0
+				0	0	1
+				51.9948	-59.1496	15.1179
+			}
+			{VolumeView "stolb4.ply"}
+		}
+	}
+}
+{Obstacle "net_left"
+	{Obb2
+		{Center -0.796867 -86.6142}
+		{Extent 84.6749 27.0381}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "net_right"
+	{Obb2
+		{Center -0.796867 86.6142}
+		{Extent 84.6749 27.0381}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "sidel"
+	{Polyhedron "sidel.vol"}
+	{Bone "net"}
+	{Matrix34
+		0	-1	0
+		0	0	1
+		-1	0	0
+		0.132208	85.7037	3.61387
+	}
+}
+{Volume "sider"
+	{Polyhedron "sider.vol"}
+	{Bone "net"}
+	{Matrix34
+		0	-1	0
+		0	0	1
+		-1	0	0
+		0.132208	-87.8498	3.61387
+	}
+}
+{Volume "stolb1"
+	{Cylinder 3.93701 61.0236}
+	{Bone "stolb1"}
+	{Position -0.106369	-0.201324	15.3939}
+}
+{Volume "stolb2"
+	{Cylinder 3.93701 61.0236}
+	{Bone "stolb2"}
+	{Position -0.106365	-0.201324	15.3939}
+}
+{Volume "stolb3"
+	{Cylinder 3.93701 61.0236}
+	{Bone "stolb3"}
+	{Position -0.106369	-0.201324	15.3939}
+}
+{Volume "stolb4"
+	{Cylinder 3.93701 61.0236}
+	{Bone "stolb4"}
+	{Position -0.106377	-0.201321	15.3939}
+}

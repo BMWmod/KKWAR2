@@ -1,0 +1,18 @@
+{game_entity
+	
+
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+      {Extension "car_ruin_8.mdl"}
+	
+	{Volume "body"
+
+                {thickness 50}
+		{able {visible 0}{obstacle 1}}
+		{tags "body"}
+
+
+	}
+}

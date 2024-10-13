@@ -1,0 +1,26 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "steel" "no_destroyed_stamp"}
+ {Extension "shelf_dayz.mdl"}
+ {Volume "body"
+        }
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+	{Volume "box05"
+	}
+	{Volume "box06"
+	}
+	{Volume "box07"
+	}
+	{Volume "box08"
+	}
+	{Volume "box09"
+	}
+}

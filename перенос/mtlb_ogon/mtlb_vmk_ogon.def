@@ -1,0 +1,97 @@
+;Конвертация в игру Pheonix
+;Настрока ТТХ Timosh
+
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "truck" "tractor" "vision_lev04" "amphibia" "mtlb_vmk"}
+        	{targetClass "light_tank"}
+	{PatherID "amphibia"}
+
+	{extension "crew_na.ext"}
+	{extender "enumerator"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+
+	("armor_light" turret(7 7 1 5) turret1(7 7 1 5) body(14 7 1 5))	;точные данные есть только про лоб, но машина легкая, не более 7мм броня.
+	("armor_engine"  t(20))	
+
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon link_mmg"}
+		}
+		{box
+			{size 8 10}
+			{item "ammo Hcb_ammo" 150}
+			{item "ammo osv_fg" 150}
+			{item "ammo osv_fl" 50}
+			{item "140mm_a22 fg ammo" 22}
+		}
+	}
+	{Weaponry
+		{place "mgun"
+			("abm_zenite")
+			{type "mgun_aa"}
+			{weapon "Kord" filled}
+			{foresight "foresight4"}
+			{Barrels 1}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "gun2"
+			{RestoreIKAfterAim}
+			{weapon "140mm_a22_pu" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{Shooter "Shooter"}
+			{Barrels 22}
+		}
+		
+	}	
+	{sensor
+		{visor "mgun"
+			{vision "tank_main-l"}	;ПЗУ-7 http://www.army-guide.com/rus/product202.html
+			{bone "Visor1"}
+		}
+	}
+
+	{mass 9700}
+	{Chassis					
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.15))
+		("CW_tracks"
+			Mass(9.7)
+			Width(3.15)
+			Power(240)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_400"}
+
+	("CW_amphibia" Waterline(1.1) )
+	("two_headlights")
+	{Extension "mtlb_vmk_ogon.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	{bone "mgun_rot_kord"
+        {limits -3 75}	;http://muromteplovoz.ru/product/mil_mtlb_vmk.php
+    }
+	("cw_suspension_6tracks_alt" downmax(-0.1) upmax(0.2))
+}
+

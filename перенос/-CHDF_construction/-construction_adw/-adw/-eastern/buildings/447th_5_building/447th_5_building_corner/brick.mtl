@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/entourage-new/447th_brick_wall"}
+	{bump "$/entourage-new/447th_brick_wall_nm"}
+	{specular "$/entourage-new/447th_brick_wall_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

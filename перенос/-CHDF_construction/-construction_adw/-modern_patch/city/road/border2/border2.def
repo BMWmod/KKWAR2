@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "border2.mdl"}
+	{Extender "land_patch"
+	}
+}

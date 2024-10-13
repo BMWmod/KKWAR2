@@ -1,0 +1,12 @@
+{game_entity
+(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	("armor_light" args 0.7)
+	{Extension "fence_concrete_rus_x.mdl"}
+	{props "cornered" "concrete" "parts" "construction" "wall"}	
+	{Volume "body"
+		{Thickness 10}
+		{tags "body"}
+		{able {visible 0}{obstacle 0}}
+	}
+}

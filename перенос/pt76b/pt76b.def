@@ -1,0 +1,124 @@
+;By cAwX
+
+{game_entity
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "light_M" "turret_rotator" "amphibia" "vision_lev03"}
+	{targetClass "light_tank"}
+	{PatherID "amphibia"}
+        
+	{extender "enumerator"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+		{thickness 30}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+		{thickness 30}
+	}
+
+	("armor_medium" turret(15 15 15 15) body(13 10 10 6))
+	("armor_engine"  t(30 30 20 22))
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "door_body"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "door_body" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"} {base "door_turret"}}
+			{reverse 	{end	"emit_tank_2_hold"} {base "door_turret"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "seat_gunner_stand"} {base "door_turret"}}
+			{reverse 	{end	"emit_tank_2_hold"} {base "door_turret"}}
+		}
+	}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+	
+("crew_human" place(driver)		animation(driver)	door(emit0))
+("crew_human" place(commander)		animation(left)	door(emit1))
+("crew_human" place(charger)		animation(right)	door(emit2))
+
+
+
+	{extender "inventory"
+		{box
+			{item "ammo shell76_ussr ap" 15}
+			{item "ammo shell76_ussr fg" 15}
+			{item "ammo PKM_ammo" 1500}
+			{item "repair_kit" 1}
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "76mm_br56t" filling "ammo shell76_ussr ap" 1}	
+			{gunner "commander"}
+			{charger "charger"}
+			("CW_stab_abm" abm(0.17))
+			("CW_stab_no_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{weapon "PKT" filled}
+			{foresight "foresight2"}
+			{gunner "commander"}
+			{charger "charger"}
+			{basic}
+			("CW_stab_abm" abm(0.41))
+			("CW_stab_no_suo")
+		}
+	}
+
+	{sensor		
+		{visor "driver"
+			{bone "Visor1"}
+		}
+		{visor "main"
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor2"}
+		}
+	}
+	
+	{mass 14000}
+	{Chassis					
+    ("tank_trace" fx("tracks_sm") step(0.15) len(0.15))
+		("CW_tracks"
+			Mass(14)
+			Width(3.14)
+			Power(240)
+			Realspeed(44)
+			Gamespeed(30) 
+			Range(420)
+			Fuelvolume(462)
+		)
+	}
+	
+	("CW_amphibia" Waterline(1.4) )
+	
+	("two_headlights")
+	;("cwts_buksir")	
+
+	{Extension "pt76b.mdl"}
+	("recoil_side_common")
+    ("missile_aimpoint_tanksize")
+	
+	("CW_turr_speed" deg_per_s(20))
+}

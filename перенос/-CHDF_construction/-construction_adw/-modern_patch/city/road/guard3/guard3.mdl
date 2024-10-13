@@ -1,0 +1,33 @@
+;Exported by: Notebook
+;Date:        Tue Jun 30 22:33:54 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Bridge\guard2.max
+{Skeleton
+	{bone "guard"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "guard.ply"}
+	}
+}
+{Volume "guard1"
+	{Box 4.92126 6.88976 15.748}
+	{Bone "guard"}
+	{Position 26.5748	0	7.87402}
+}
+{Volume "guard2"
+	{Box 4.92126 6.88976 15.748}
+	{Bone "guard"}
+	{Position 0	0	7.87402}
+}
+{Volume "guard3"
+	{Box 4.92126 6.88976 15.748}
+	{Bone "guard"}
+	{Position -26.5748	0	7.87402}
+}
+{Volume "guard"
+	{Box 59.0551 5.90551 9.84252}
+	{Bone "guard"}
+	{Position 0	1.96851	11.811}
+}

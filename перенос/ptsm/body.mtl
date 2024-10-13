@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/ptsm/ptsm_main_c"}
+	{blend none}
+}

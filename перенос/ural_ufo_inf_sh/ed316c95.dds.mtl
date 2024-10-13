@@ -1,0 +1,4 @@
+{material bump
+	{diffuse "$/model/ural_4320/wheel1"}
+	{blend none}
+}

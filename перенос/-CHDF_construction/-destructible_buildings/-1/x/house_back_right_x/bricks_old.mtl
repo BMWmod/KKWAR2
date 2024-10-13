@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "bricks_old"}
+	{blend none}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "grim_chassis_basecolor"}
+	{blend none}
+}

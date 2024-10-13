@@ -1,0 +1,219 @@
+;Exported by: Sea-Knight
+;Date:        Tue May 31 22:03:23 2022
+;File:        C:\Users\Sea-Knight\Documents\3ds Max 2020\scenes\3D-Work\-ADW\By-Chris-T\Decorations\121st_buildings\447th_5_building_corner.max
+{Skeleton
+	{bone "building"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{LODView
+			{VolumeView "building.ply"}
+			{VolumeView "building_lod1.ply"}
+			{VolumeView "building_lod2.ply"}
+		}
+		{bone "attach7"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				-287.504	-137.502	73.7441
+			}
+		}
+		{bone "attach8"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				-286.591	-137.502	185.456
+			}
+		}
+		{bone "attach9"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-287.357	155.061	73.7441
+			}
+		}
+		{bone "attach10"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-287.357	155.061	185.456
+			}
+		}
+		{bone "attach19"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-376.736	-60.6308	73.7441
+			}
+		}
+		{bone "attach20"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-376.736	-60.6308	184.759
+			}
+		}
+	}
+}
+{Obstacle "body00"
+	{Obb2
+		{Center -308.985 -5.85834}
+		{Extent 55.4412 132.1}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body00"
+	{Polyhedron "body00.vol"}
+	{Bone "building"}
+	{Position -190.329	5.85834	0}
+}
+{Volume "body_attach10"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		0	1.30597	0
+		-1.2917	0	0
+		0	0	1.47728
+		-287.23	155.071	185.363
+	}
+}
+{Volume "body_attach19"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.30597	0	0
+		0	-1.2917	0
+		0	0	1.47728
+		-376.746	-60.5041	73.6509
+	}
+}
+{Volume "body_attach20"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.30597	0	0
+		0	-1.2917	0
+		0	0	1.47728
+		-376.746	-60.5041	184.666
+	}
+}
+{Volume "body_attach7"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		0	-1.30597	0
+		1.2917	0	0
+		0	0	1.47728
+		-287.631	-137.512	73.6509
+	}
+}
+{Volume "body_attach8"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		0	-1.30597	0
+		1.2917	0	0
+		0	0	1.47728
+		-286.718	-137.512	185.363
+	}
+}
+{Volume "body_attach9"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		0	1.30597	0
+		-1.2917	0	0
+		0	0	1.47728
+		-287.23	155.071	73.6509
+	}
+}
+{Volume "body_r02"
+	{Polyhedron "body_r02.vol"}
+	{Bone "building"}
+	{Position -316.898	-159.324	126.453}
+}
+{Volume "body_r03"
+	{Polyhedron "body_r03.vol"}
+	{Bone "building"}
+	{Position -316.898	-159.324	237.954}
+}
+{Volume "body_r12"
+	{Polyhedron "body_r12.vol"}
+	{Bone "building"}
+	{Position -317.565	127.521	238.117}
+}
+{Volume "body_r13"
+	{Polyhedron "body_r13.vol"}
+	{Bone "building"}
+	{Position -317.565	127.521	126.592}
+}
+{Volume "body_r19"
+	{Polyhedron "body_r19.vol"}
+	{Bone "building"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-397.067	-32.9474	238.765
+	}
+}
+{Volume "body_r20"
+	{Polyhedron "body_r20.vol"}
+	{Bone "building"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-397.067	-32.9474	126.592
+	}
+}
+{Volume "body_r21"
+	{Polyhedron "body_r21.vol"}
+	{Bone "building"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-397.067	-32.9474	70.849
+	}
+}
+{Volume "body_r22"
+	{Polyhedron "body_r22.vol"}
+	{Bone "building"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-397.067	-32.9474	181.281
+	}
+}
+{Volume "body_r29"
+	{Polyhedron "body_r29.vol"}
+	{Bone "building"}
+	{Position -318.11	127.521	180.901}
+}
+{Volume "body_r30"
+	{Polyhedron "body_r30.vol"}
+	{Bone "building"}
+	{Position -318.11	127.521	69.1899}
+}
+{Volume "body_r33"
+	{Polyhedron "body_r33.vol"}
+	{Bone "building"}
+	{Position -317.269	-158.681	69.1899}
+}
+{Volume "body_r34"
+	{Polyhedron "body_r34.vol"}
+	{Bone "building"}
+	{Position -317.269	-158.681	181.525}
+}

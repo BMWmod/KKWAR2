@@ -1,0 +1,351 @@
+;Exported by: Sea-Knight
+;Date:        Thu Jun  2 18:00:18 2022
+;File:        C:\Users\Sea-Knight\Documents\3ds Max 2020\scenes\3D-Work\-ADW\By-Chris-T\Decorations\wbs70_buildings\wbs70_7_b_damage.max
+{Skeleton
+	{bone "building"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{LODView
+			{VolumeView "building.ply"}
+			{VolumeView "building_lod1.ply"}
+			{VolumeView "building_lod2.ply"}
+		}
+		{bone "attach17"
+			{Position 251.783	-128.198	65.8206}
+		}
+		{bone "attach18"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	-128.337	65.8206
+			}
+		}
+		{bone "attach19"
+			{Position 251.783	-128.198	126.902}
+		}
+		{bone "attach20"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	-128.337	126.902
+			}
+		}
+		{bone "attach21"
+			{Position 251.783	132.428	65.8206}
+		}
+		{bone "attach22"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	132.289	65.8206
+			}
+		}
+		{bone "attach23"
+			{Position 251.783	132.428	126.902}
+		}
+		{bone "attach24"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	132.289	126.902
+			}
+		}
+		{bone "land"
+			{parameters "Land;Ground;"}
+			{VolumeView "land.ply" {Ground}}
+		}
+	}
+}
+{Obstacle "body01"
+	{Obb2
+		{Center 273.293 0.719231}
+		{Extent 109.246 116.161}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body02"
+	{Obb2
+		{Center 94.0034 -111.782}
+		{Extent 71.1897 3.66073}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body03"
+	{Obb2
+		{Center 94.0034 113.553}
+		{Extent 71.1897 3.66073}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body04"
+	{Obb2
+		{Center 140.274 0.708305}
+		{Extent 24.9335 5.00113}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body01"
+	{Polyhedron "body01.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		273.968	2.77822	241.308
+	}
+}
+{Volume "body02"
+	{Polyhedron "body02.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		94.0034	111.782	241.308
+	}
+}
+{Volume "body03"
+	{Polyhedron "body03.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		94.0034	-113.553	241.308
+	}
+}
+{Volume "body04"
+	{Polyhedron "body04.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		140.274	-0.708305	89.1326
+	}
+}
+{Volume "body05"
+	{Polyhedron "body05.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		122.984	-0.229881	152.944
+	}
+}
+{Volume "body_attach17"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	-128.337	65.7184
+	}
+}
+{Volume "body_attach18"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	-128.198	65.7184
+	}
+}
+{Volume "body_attach19"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	-128.337	126.799
+	}
+}
+{Volume "body_attach20"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	-128.198	126.799
+	}
+}
+{Volume "body_attach21"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	132.289	65.7184
+	}
+}
+{Volume "body_attach22"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	132.428	65.7184
+	}
+}
+{Volume "body_attach23"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	132.289	126.799
+	}
+}
+{Volume "body_attach24"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	132.428	126.799
+	}
+}
+{Volume "bodyr11"
+	{Polyhedron "bodyr11.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	382.676
+	}
+}
+{Volume "bodyr12"
+	{Polyhedron "bodyr12.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	321.99
+	}
+}
+{Volume "bodyr13"
+	{Polyhedron "bodyr13.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	259.404
+	}
+}
+{Volume "bodyr14"
+	{Polyhedron "bodyr14.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	199.862
+	}
+}
+{Volume "bodyr15"
+	{Polyhedron "bodyr15.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	135.426
+	}
+}
+{Volume "bodyr16"
+	{Polyhedron "bodyr16.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	74.9381
+	}
+}
+{Volume "bodyr19"
+	{Polyhedron "bodyr19.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	383.828
+	}
+}
+{Volume "bodyr20"
+	{Polyhedron "bodyr20.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	322.36
+	}
+}
+{Volume "bodyr21"
+	{Polyhedron "bodyr21.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	259.085
+	}
+}
+{Volume "bodyr22"
+	{Polyhedron "bodyr22.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	197.582
+	}
+}
+{Volume "bodyr23"
+	{Polyhedron "bodyr23.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	133.412
+	}
+}
+{Volume "bodyr24"
+	{Polyhedron "bodyr24.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	72.2474
+	}
+}

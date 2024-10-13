@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "ston_beton_ch_06"}
+	{blend none}
+}

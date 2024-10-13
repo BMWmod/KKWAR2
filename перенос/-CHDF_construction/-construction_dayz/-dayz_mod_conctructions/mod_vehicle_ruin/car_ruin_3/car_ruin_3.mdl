@@ -1,0 +1,31 @@
+;Exported by: User
+;Date:        Sat Mar 14 19:58:15 2015
+;File:        C:\Users\User\Desktop\пробы моделей\razvaluhi.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0.999534	-0.030529
+				0	0.0206238	0.999787
+				1.92549	-4.97142	12.6055
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999836	0.0305305
+		0	-0.0206248	0.999583
+		-1.21619	-0.666467	-12.6285
+	}
+}

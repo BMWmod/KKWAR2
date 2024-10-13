@@ -1,0 +1,58 @@
+;Exported by: Notebook
+;Date:        Thu Oct 24 21:59:53 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\post6.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+			{bone "post"
+				{Position 0	4.68504	19.685}
+				{VolumeView "post.ply"}
+				{bone "bracket"
+					{Position 0	-2.71654	144.685}
+					{VolumeView "bracket.ply"}
+					{bone "isolator2"
+						{Position 0	2.71654	15.9413}
+						{VolumeView "isolator2.ply"}
+					}
+					{bone "isolator1"
+						{Position -7.87402	0	4.45712}
+						{VolumeView "isolator1.ply"}
+					}
+					{bone "isolator3"
+						{Position 7.87402	0	4.45712}
+						{VolumeView "isolator3.ply"}
+					}
+				}
+			}
+			{bone "loop1"
+				{Position 0	-0.0155573	27.5591}
+				{VolumeView "loop1.ply"}
+			}
+			{bone "loop2"
+				{Position 0	-0.0155573	51.1811}
+				{VolumeView "loop2.ply"}
+			}
+		}
+	}
+}
+{Volume "base"
+	{Box 5.11811 5.11811 68.8976}
+	{Bone "base"}
+	{Position 0	0	24.6063}
+}
+{Volume "bracket"
+	{Box 23.622 3.93701 7.87402}
+	{Bone "bracket"}
+	{Position 0	0	1.9685}
+}
+{Volume "post"
+	{Cylinder 2.75591 157.48}
+	{Bone "base"}
+	{Position 0	4.68504	98.4252}
+}

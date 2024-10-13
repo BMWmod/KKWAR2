@@ -1,0 +1,193 @@
+;Exported by: Notebook
+;Date:        Sun Jul 29 17:41:02 2018
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Military\Armory\Armory3.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 1}}
+		{sequence "close" {speed 1}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "gatefront"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				0	196.85	0
+			}
+			{VolumeView "gatefront.ply"}
+			{bone "doorl"
+				{Position -47.2441	0	0}
+				{VolumeView "doorl.ply"}
+			}
+			{bone "doorr"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					47.2441	0	0
+				}
+				{VolumeView "doorr.ply"}
+			}
+		}
+		{bone "land"
+			{parameters "land;"}
+			{Position 0	0	0.984252}
+			{VolumeView "land.ply"}
+			{bone "land_top"
+				{VolumeView "land_top.ply"}
+			}
+		}
+		{bone "wall"
+			{Position 0	0	62.9921}
+			{VolumeView "wall.ply"}
+		}
+		{bone "gateback"
+			{Position 0	-196.85	0}
+			{VolumeView "gateback.ply"}
+			{bone "door_back"
+				{Position -11.811	4.57764e-005	0}
+				{VolumeView "door_back.ply"}
+			}
+		}
+	}
+}
+{Obstacle "back"
+	{Obb2
+		{Center 0 196.85}
+		{Extent 68.8976 6.88976}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "front1"
+	{Obb2
+		{Center 59.0551 -196.842}
+		{Extent 14.7638 6.88976}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "front2"
+	{Obb2
+		{Center -59.0551 -196.842}
+		{Extent 14.7638 6.88976}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "left_wall"
+	{Obb2
+		{Center 68.8976 0}
+		{Extent 4.92126 196.85}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "right_wall"
+	{Obb2
+		{Center -68.8976 0}
+		{Extent 4.92126 196.85}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "gateback1"
+	{Polyhedron "gateback1.vol"}
+	{Bone "gateback"}
+	{Matrix34
+		0.800732	-0.599023	0
+		0.599023	0.800732	0
+		0	0	1
+		130.889	-47.6353	0
+	}
+}
+{Volume "gateback2"
+	{Box 149.606 17.7165 98.4252}
+	{Bone "gateback"}
+	{Position 0	-3.05176e-005	49.2126}
+}
+{Volume "gateback3"
+	{Polyhedron "gateback3.vol"}
+	{Bone "gateback"}
+	{Matrix34
+		0.800731	0.599024	0
+		-0.599024	0.800731	0
+		0	0	1
+		-131.857	-47.6353	0
+	}
+}
+{Volume "gatefront1"
+	{Polyhedron "gatefront1.vol"}
+	{Bone "gatefront"}
+	{Matrix34
+		-0.800732	-0.599023	0
+		0.599023	-0.800732	0
+		0	0	1
+		-130.889	-48.2802	0
+	}
+}
+{Volume "gatefront2"
+	{Box 19.685 17.7165 98.4252}
+	{Bone "gatefront"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-59.0551	0	49.2126
+	}
+}
+{Volume "gatefront3"
+	{Box 102.362 17.7165 35.4331}
+	{Bone "gatefront"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		0	-3.05176e-005	80.7087
+	}
+}
+{Volume "gatefront4"
+	{Box 19.685 17.7165 98.4252}
+	{Bone "gatefront"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		59.0551	-6.10352e-005	49.2126
+	}
+}
+{Volume "gatefront5"
+	{Polyhedron "gatefront5.vol"}
+	{Bone "gatefront"}
+	{Matrix34
+		-0.800732	0.599023	0
+		-0.599023	-0.800732	0
+		0	0	1
+		131.857	-48.2671	0
+	}
+}
+{Volume "landtop"
+	{Box 149.606 393.701 19.685}
+	{Bone "land_top"}
+	{Position 0	0	78.7402}
+}
+{Volume "switch"
+	{Box 31.4961 19.685 39.3671}
+	{Bone "doorl"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		27.559	-1.52588e-005	19.6836
+	}
+}
+{Volume "theswitch"
+	{Box 31.4961 19.685 39.3671}
+	{Bone "doorr"}
+	{Position 27.559	-3.05176e-005	19.6836}
+}

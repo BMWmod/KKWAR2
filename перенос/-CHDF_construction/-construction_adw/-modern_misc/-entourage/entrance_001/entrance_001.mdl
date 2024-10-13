@@ -1,0 +1,412 @@
+;Exported by: Alexey
+;Date:        Sat Nov 22 16:07:57 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\part_5\entrance_001.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				2.40661	-13.3057	2.74121
+			}
+			{VolumeView "body.ply"}
+		}
+		{bone "box02"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				2.40661	-13.3057	69.4803
+			}
+			{VolumeView "box02.ply"}
+		}
+		{bone "cylinder01"
+			{Position -34.473	-14.4878	5.97962}
+			{VolumeView "cylinder01.ply"}
+		}
+		{bone "cylinder02"
+			{Position -34.473	6.02775	5.97962}
+			{VolumeView "cylinder02.ply"}
+		}
+		{bone "cylinder03"
+			{Position 34.9607	-14.4878	5.97962}
+			{VolumeView "cylinder03.ply"}
+		}
+		{bone "cylinder04"
+			{Position 34.9607	6.02775	5.97962}
+			{VolumeView "cylinder04.ply"}
+		}
+		{bone "box07"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-30.4351	-4.61848	20.6006
+			}
+			{VolumeView "box07.ply"}
+		}
+		{bone "box08"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-27.7116	-4.61848	20.6006
+			}
+			{VolumeView "box08.ply"}
+		}
+		{bone "box10"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-32.2967	-14.5085	18.2161
+			}
+			{VolumeView "box10.ply"}
+		}
+		{bone "box09"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-32.2967	6.0005	18.2161
+			}
+			{VolumeView "box09.ply"}
+		}
+		{bone "box11"
+			{Matrix34
+				0.00241853	0.999997	0
+				0	0	1
+				0.999997	-0.00241853	0
+				28.2575	-3.88221	20.6006
+			}
+			{VolumeView "box11.ply"}
+		}
+		{bone "box12"
+			{Matrix34
+				0.00241853	0.999997	0
+				0	0	1
+				0.999997	-0.00241853	0
+				30.981	-3.88882	20.6006
+			}
+			{VolumeView "box12.ply"}
+		}
+		{bone "box13"
+			{Matrix34
+				0.00241853	0.999997	0
+				0	0	1
+				0.999997	-0.00241853	0
+				32.8665	5.99671	18.2161
+			}
+			{VolumeView "box13.ply"}
+		}
+		{bone "box14"
+			{Matrix34
+				0.00241853	0.999997	0
+				0	0	1
+				0.999997	-0.00241853	0
+				32.8169	-14.5123	18.2161
+			}
+			{VolumeView "box14.ply"}
+		}
+		{bone "box15"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				8.04212	-4.21256	5.94834
+			}
+			{VolumeView "box15.ply"}
+		}
+		{bone "box16"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-7.23577	-4.21256	5.94834
+			}
+			{VolumeView "box16.ply"}
+		}
+		{bone "box17"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.169899	-9.24493	5.94834
+			}
+			{VolumeView "box17.ply"}
+		}
+		{bone "box18"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.169899	0.809212	5.94834
+			}
+			{VolumeView "box18.ply"}
+		}
+		{bone "box19"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	0.351525	5.94834
+			}
+			{VolumeView "box19.ply"}
+		}
+		{bone "box20"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-0.108466	5.94834
+			}
+			{VolumeView "box20.ply"}
+		}
+		{bone "box21"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-0.584571	5.94834
+			}
+			{VolumeView "box21.ply"}
+		}
+		{bone "box22"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-2.05604	5.94834
+			}
+			{VolumeView "box22.ply"}
+		}
+		{bone "box23"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-1.57993	5.94834
+			}
+			{VolumeView "box23.ply"}
+		}
+		{bone "box24"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-1.11994	5.94834
+			}
+			{VolumeView "box24.ply"}
+		}
+		{bone "box25"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-5.07139	5.94834
+			}
+			{VolumeView "box25.ply"}
+		}
+		{bone "box26"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-4.59528	5.94834
+			}
+			{VolumeView "box26.ply"}
+		}
+		{bone "box27"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-4.13529	5.94834
+			}
+			{VolumeView "box27.ply"}
+		}
+		{bone "box28"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-3.59992	5.94834
+			}
+			{VolumeView "box28.ply"}
+		}
+		{bone "box29"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-3.12382	5.94834
+			}
+			{VolumeView "box29.ply"}
+		}
+		{bone "box30"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-2.66383	5.94834
+			}
+			{VolumeView "box30.ply"}
+		}
+		{bone "box31"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-8.05425	5.94834
+			}
+			{VolumeView "box31.ply"}
+		}
+		{bone "box32"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-7.57815	5.94834
+			}
+			{VolumeView "box32.ply"}
+		}
+		{bone "box33"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-7.11816	5.94834
+			}
+			{VolumeView "box33.ply"}
+		}
+		{bone "box34"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-6.58279	5.94834
+			}
+			{VolumeView "box34.ply"}
+		}
+		{bone "box35"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-6.10668	5.94834
+			}
+			{VolumeView "box35.ply"}
+		}
+		{bone "box36"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-5.64669	5.94834
+			}
+			{VolumeView "box36.ply"}
+		}
+		{bone "box37"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.204102	-8.60126	5.94834
+			}
+			{VolumeView "box37.ply"}
+		}
+		{bone "box03"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.184075	-20.1594	5.8574
+			}
+			{VolumeView "box03.ply"}
+		}
+		{bone "box04"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.184075	-24.937	3.69593
+			}
+			{VolumeView "box04.ply"}
+		}
+		{bone "box05"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.184075	-30.0628	1.24112
+			}
+			{VolumeView "box05.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		-6.76588	54.55	2.04839
+	}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		-19.3981	33.4016	36.9347
+	}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		1.12764	33.4016	-32.5768
+	}
+}
+{Volume "body4"
+	{Polyhedron "body4.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		1.12765	33.4016	36.8988
+	}
+}
+{Volume "body5"
+	{Polyhedron "body5.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		-19.281	33.4016	-32.5768
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		-6.76588	-9.77829	2.75648
+	}
+}

@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "crete_beton_dirt_01"}
+	{bump "crete_beton_dirt_01_n"}
+	{specular "crete_beton_dirt_01_s"}
+	{color "230 230 230 25"}
+	{blend none}
+}

@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Thu Mar 25 01:38:48 2010
+;File:        
+{Skeleton
+	{bone "wires_new"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "wires_new.ply"}
+	}
+}
+{Volume "box01"
+	{Box 102.55 33.3228 32.3842}
+	{Bone "wires_new"}
+	{Position 2.3929	-0.274192	16.1921}
+}

@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/vehicle/enumerator/3"}
+	{emitsheat}
+{blend blend}
+}

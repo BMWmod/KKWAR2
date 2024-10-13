@@ -1,0 +1,25 @@
+;Exported by: Alexey
+;Date:        Thu Jan 15 17:50:11 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\plity_a1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "drawcall_0024"
+			{Position -0.112104	1.83207	10.8742}
+			{VolumeView "drawcall_0024.ply"}
+		}
+		{bone "drawcall_0025"
+			{Position 3.84386	2.52663	11.774}
+			{VolumeView "drawcall_0025.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "drawcall_0024"}
+	{Position 0.38426	-7.09927	-6.40401}
+}

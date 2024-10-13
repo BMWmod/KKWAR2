@@ -1,0 +1,23 @@
+;Exported by: Домашний
+;Date:        Sat Aug 03 13:44:38 2013
+;File:        C:\Users\Домашний\Documents\3dsmax\scenes\Интерьер.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Volume "body"
+	{Box 9.93104 18.8335 8.47685}
+	{Bone "body"}
+	{Matrix34
+		1.8035	0	0
+		0	1.868	0
+		0	0	2.16957
+		-1.55082	0.0248085	10.3893
+	}
+}

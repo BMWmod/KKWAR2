@@ -1,0 +1,49 @@
+;Exported by: Alexey
+;Date:        Sat Jan 17 23:18:51 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\oblomok_st_a1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "drawcall_0023"
+			{Matrix34
+				0.963179	-0.262561	0.0578571
+				0.214509	0.620731	-0.754108
+				0.162086	0.738752	0.654197
+				-0.608941	0.223078	7.86879
+			}
+			{VolumeView "drawcall_0023.ply"}
+		}
+		{bone "drawcall_0024"
+			{Matrix34
+				0.963179	-0.262561	0.0578571
+				0.214509	0.620731	-0.754108
+				0.162086	0.738752	0.654197
+				-0.608941	0.223078	7.86879
+			}
+			{VolumeView "drawcall_0024.ply"}
+		}
+		{bone "drawcall_0166"
+			{Matrix34
+				0.999265	-0.034769	-0.0161348
+				0.0379146	0.834764	0.549301
+				-0.00562989	-0.54951	0.835468
+				19.8502	0.104786	7.35863
+			}
+			{VolumeView "drawcall_0166.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "drawcall_0166"}
+	{Matrix34
+		0.999265	0.0379146	-0.00562991
+		-0.034769	0.834764	-0.54951
+		-0.0161348	0.549302	0.835468
+		-18.9058	-4.39549	4.29491
+	}
+}

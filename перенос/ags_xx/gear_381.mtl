@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "universal_props_d"}
+	{blend none}
+}

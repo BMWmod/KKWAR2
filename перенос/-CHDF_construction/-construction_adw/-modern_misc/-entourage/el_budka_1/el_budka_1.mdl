@@ -1,0 +1,85 @@
+;Exported by: Alexey
+;Date:        Fri Nov 28 15:47:03 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\part_6\el_budka_1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.117974	0.670449	71.0848
+			}
+			{VolumeView "body.ply"}
+		}
+		{bone "box02"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.0457227	0.581635	-13.2566
+			}
+			{VolumeView "box02.ply"}
+		}
+		{bone "box03"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0.0457231	0.581635	146.278
+			}
+			{VolumeView "box03.ply"}
+		}
+		{bone "box05"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				-0.152909	-86.6036	40.9391
+			}
+			{VolumeView "box05.ply"}
+		}
+		{bone "box08"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				87.406	-42.7657	26.0553
+			}
+			{VolumeView "box08.ply"}
+		}
+		{bone "box04"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				87.406	42.1779	26.0553
+			}
+			{VolumeView "box04.ply"}
+		}
+		{bone "box06"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				45.6052	88.5704	26.0553
+			}
+			{VolumeView "box06.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		90.9466	156.767	1.80391
+	}
+}

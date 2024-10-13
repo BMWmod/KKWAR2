@@ -1,0 +1,58 @@
+;Exported by: Notebook
+;Date:        Sat Oct 19 22:48:41 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\PowerLine\PowerLine3.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "stolb"
+			{VolumeView "stolb.ply"}
+			{bone "bracket1"
+				{Position 0	0	299.213}
+				{VolumeView "bracket1.ply"}
+				{bone "isolator1"
+					{Position 0	0	-4.9212}
+					{VolumeView "isolator1.ply"}
+				}
+			}
+			{bone "bracket2"
+				{Position 0	0	240.157}
+				{VolumeView "bracket2.ply"}
+				{bone "isolator2"
+					{Position 0	0	-4.92126}
+					{VolumeView "isolator2.ply"}
+				}
+			}
+			{bone "bracket3"
+				{Position 0	0	181.102}
+				{VolumeView "bracket3.ply"}
+				{bone "isolator3"
+					{Position 0	0	-4.92123}
+					{VolumeView "isolator3.ply"}
+				}
+			}
+		}
+	}
+}
+{Volume "bracket1"
+	{Polyhedron "bracket1.vol"}
+	{Bone "bracket1"}
+	{Position 0	0	-1.96844}
+}
+{Volume "bracket2"
+	{Polyhedron "bracket2.vol"}
+	{Bone "bracket2"}
+	{Position 0	0	-1.96851}
+}
+{Volume "bracket3"
+	{Polyhedron "bracket3.vol"}
+	{Bone "bracket3"}
+	{Position 0	0	-1.96848}
+}
+{Volume "stolb"
+	{Polyhedron "stolb.vol"}
+	{Bone "stolb"}
+}

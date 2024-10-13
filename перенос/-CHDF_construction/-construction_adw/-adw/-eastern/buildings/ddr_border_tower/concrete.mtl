@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "tower_concrete"}
+	{bump "tower_concrete_nm"}
+	{specular "tower_concrete_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

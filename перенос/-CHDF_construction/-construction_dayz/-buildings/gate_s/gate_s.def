@@ -1,0 +1,39 @@
+{construction
+    (include "/properties/building.inc")
+	{Extension "gate_s.mdl"}
+	{obstacleid "unbreakable"}
+	{props "gate" "steel" "lock" "concrete" "parts" "construction"}
+	("armor_heavy" args 1.0)
+	{Volume "body1"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body2"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body3"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "left"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "lock"
+		{Tags  "body"}
+		{Thickness 3}
+	}
+	{Volume "right"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+}

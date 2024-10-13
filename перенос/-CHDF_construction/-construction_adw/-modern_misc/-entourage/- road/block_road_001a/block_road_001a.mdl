@@ -1,0 +1,31 @@
+;Exported by: Alexey
+;Date:        Sat Nov 22 13:10:47 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\part_5\block_road_001a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0.0409105	0.593838	7.72088}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Position 0.153314	-14.9986	-0.428171}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Position 0.153314	14.7919	-0.428171}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0.0852405	-0.129166	6.75254}
+}

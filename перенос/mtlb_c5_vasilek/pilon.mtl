@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/Mi17/mi17_pilon"}
+	{bump "$/model/Mi17/mi17_pilon_bp"}
+	{specular "$/model/Mi17/mi17_pilon_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

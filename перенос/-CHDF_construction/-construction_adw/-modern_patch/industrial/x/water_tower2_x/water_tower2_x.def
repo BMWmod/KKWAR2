@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "water_tower2_x.mdl"}
+	{Volume "body1"
+	}
+}

@@ -1,0 +1,22 @@
+;Exported by: Vora_bat
+;Date:        Tue Feb 24 03:16:52 2009
+;File:        C:\Program Files\Autodesk\3dsMax8\scenes\tratuar.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			0	0	1
+			-0.6567	0	0
+			0	1	0
+		}
+		{bone "box01"
+			{Matrix34
+				0	0	1
+				0	-1	0
+				1	0	0
+				0	0	0
+			}
+			{VolumeView "box01.ply"}
+		}
+	}
+}
+

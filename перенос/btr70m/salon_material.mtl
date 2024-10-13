@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "btr70_salon"}
+	{blend none}
+}

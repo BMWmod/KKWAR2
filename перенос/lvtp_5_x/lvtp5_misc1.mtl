@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "model_misc"}
+	{blend none}
+}

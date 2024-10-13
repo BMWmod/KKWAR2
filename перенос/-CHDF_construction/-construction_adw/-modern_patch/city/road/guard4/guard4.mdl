@@ -1,0 +1,47 @@
+;Exported by: Notebook
+;Date:        Fri Jul 03 23:24:38 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Road\guard31.max
+{Skeleton
+	{bone "guard"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "guard.ply"}
+		{bone "reflector"
+			{Matrix34
+				-1	0	0
+				0	0	1
+				0	1	0
+				0	0.787402	19.685
+			}
+			{VolumeView "reflector.ply"}
+		}
+	}
+}
+{Volume "guard1"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "guard"}
+	{Position 49.2126	-3.93701	10.8268}
+}
+{Volume "guard2"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "guard"}
+	{Position 14.7638	-3.93701	10.8268}
+}
+{Volume "guard3"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "guard"}
+	{Position -14.7638	-3.93701	10.8268}
+}
+{Volume "guard4"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "guard"}
+	{Position -49.2126	-3.93701	10.8268}
+}
+{Volume "guard"
+	{Box 98.4252 3.93701 9.84252}
+	{Bone "guard"}
+	{Position 0	0	19.685}
+}

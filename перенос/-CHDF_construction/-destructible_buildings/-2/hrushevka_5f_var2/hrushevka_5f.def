@@ -1,0 +1,394 @@
+{construction
+	(include "/properties/building.inc")
+	{props "concrete" "windowed" "dom" "cornered" "parts" "construction"}
+	{obstacleid "unbreakable"}
+	("armor_heavy" args 1.0)
+	{Extension "hrushevka_5f_var2.mdl"}
+	{placer}
+	{extender "structure"
+		{place "000" "stena1"}
+		{place "001" "stena2"}
+		{place "002" "stena3"}
+		{place "003" "stena4"}
+		{place "004" "stena4"}
+		{place "005" "stena4"}
+		{place "006" "stena1"}
+		{place "007" "stena3"}
+		{place "008" "stena4"}
+		{place "009" "stena4"}
+		{place "010" "stena4"}
+		{place "012" "stena4"}
+		{place "013" "stena4"}
+		{place "014" "stena4"}
+		{place "015" "stena4"}
+		{place "016" "stena4"}
+		{place "017" "stena4"}
+		{place "018" "stena4"}
+		{place "019" "stena4"}
+		{place "020" "stena4"}
+		{place "021" "stena4"}
+		{place "022" "stena4"}
+		{place "023" "stena4"}
+		{place "024" "stena4"}
+		{place "025" "stena4"}
+		{place "026" "stena4"}
+		{place "027" "stena4"}
+		{place "028" "stena3"}
+		{place "029" "stena3"}
+		{place "030" "stena2"}
+		{place "031" "stena2"}
+		{place "032" "stena2"}
+		{place "033" "stena4"}
+		{place "034" "stena1"}
+		{place "035" "stena2"}
+		{place "036" "stena3"}
+		{place "037" "stena4"}
+		{place "038" "stena4"}
+		{place "039" "stena4"}
+		{place "040" "stena1"}
+		{place "041" "stena3"}
+		{place "042" "stena4"}
+		{place "043" "stena4"}
+		{place "044" "stena4"}
+		{place "066" "stena4"}
+		{place "065" "stena5"}
+		{place "064" "stena5"}
+		{place "063" "stena5"}
+		{place "062" "stena6"}
+		{place "061" "stena6"}
+		{place "060" "stena4"}
+		{place "059" "stena4"}
+		{place "058" "stena4"}
+		{place "057" "stena4"}
+		{place "056" "stena4"}
+		{place "055" "stena4"}
+		{place "054" "stena4"}
+		{place "053" "stena4"}
+		{place "052" "stena4"}
+		{place "051" "stena4"}
+		{place "050" "stena4"}
+		{place "049" "stena4"}
+		{place "048" "stena4"}
+		{place "047" "stena4"}
+		{place "046" "stena4"}
+		{place "045" "stena4"}
+		{place "067" "stena5"}
+		{place "068" "stena6"}
+		{place "069" "stena1"}
+	}
+	{Volume "body10"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body11"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body12"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body13"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body14"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body15"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body16"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body18"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body19"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body1"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body20"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body21"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body22"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body23"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body24"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body25"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body26"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body27"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body28"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body29"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body2"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body30"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body31"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body32"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body33"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body34"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body35"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body36"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body37"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body38"
+	}
+	{Volume "body39"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body3"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body40"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body41"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body42"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body43"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body44"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body45"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body46"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body47"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body48"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body49"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body4"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body51"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body52"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body53"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body54"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body55"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body56"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body57"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body58"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body59"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body5"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body60"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body61"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body62"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body63"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body64"
+	}
+	{Volume "body65"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body66"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body67"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body68"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body69"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body6"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body70"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body71"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body72"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body73"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body74"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body75"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body76"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body77"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body78"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body79"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body7"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body80"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body8"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body9"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body"
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	
+	{Extender "land_patch"
+	}
+}

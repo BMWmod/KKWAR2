@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "cw_skarb"}
+	{blend none}
+}

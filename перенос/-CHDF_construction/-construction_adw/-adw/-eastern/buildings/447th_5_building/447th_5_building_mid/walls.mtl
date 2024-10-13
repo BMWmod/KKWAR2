@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/entourage-new/121st_5_walls"}
+	{bump "$/entourage-new/121st_5_walls_nm"}
+	{specular "$/entourage-new/121st_5_walls_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

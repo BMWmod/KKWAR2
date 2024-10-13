@@ -1,0 +1,53 @@
+;Exported by: Vorabat
+;Date:        Sat Aug 13 14:52:19 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\netting.max
+{Skeleton
+	{bone "box02"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "box02.ply"}
+	}
+}
+{Volume "box01"
+	{Box 1.33084 1.26178 49.855}
+	{Bone "box02"}
+	{Matrix34
+		0	-1	0
+		-1	0	0
+		0	0	-1
+		-35.046	33.976	24.7027
+	}
+}
+{Volume "box23"
+	{Box 1.33084 1.26178 49.855}
+	{Bone "box02"}
+	{Matrix34
+		0	-1	0
+		-1	0	0
+		0	0	-1
+		-35.1549	-34.7115	24.7027
+	}
+}
+{Volume "box27"
+	{Box 1.33084 1.26178 49.855}
+	{Bone "box02"}
+	{Matrix34
+		0	-1	0
+		-1	0	0
+		0	0	-1
+		35.2767	33.976	24.7027
+	}
+}
+{Volume "box28"
+	{Box 1.33084 1.26178 49.855}
+	{Bone "box02"}
+	{Matrix34
+		0	-1	0
+		-1	0	0
+		0	0	-1
+		35.1677	-34.7115	24.7027
+	}
+}

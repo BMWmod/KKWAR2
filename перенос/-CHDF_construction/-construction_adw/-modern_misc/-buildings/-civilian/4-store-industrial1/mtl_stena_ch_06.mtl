@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mtl_stena_ch_06"}
+	{blend none}
+}

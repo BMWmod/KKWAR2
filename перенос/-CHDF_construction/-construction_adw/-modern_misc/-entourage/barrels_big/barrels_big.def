@@ -1,0 +1,12 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+	{Extension "barrels_big.mdl"}
+	{Volume "box01"
+	}
+	{Volume "cylinder01"
+	}
+	{Volume "cylinder02"
+	}
+}

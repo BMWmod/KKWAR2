@@ -1,0 +1,186 @@
+;Exported by: Администратор
+;Date:        Tue Feb 24 15:09:28 2015
+;File:        C:\Documents and Settings\Администратор\Мои документы\3dsMax\scenes\RED STORM\btr70_xx.max
+{Skeleton
+	{bone "basis"
+		{parameters "basis;Wheelradius=0.5;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "CommonMesh;ID=body;"}
+			{animation
+				{sequence "break" {file "body_b.anm"}}
+			}
+			{Matrix34
+				0.999557	0.00156825	-0.029711
+				0	0.99861	0.0527099
+				0.0297524	-0.0526866	0.998168
+				-0.0824711	0.231828	24.502
+			}
+			{VolumeView "body.ply"}
+			{bone revolute "turret"
+				{parameters "ID=turret;"}
+				{speed 0.02}
+				{Matrix34
+					0.0520607	-0.998002	-0.035799
+					0.997823	0.0505308	0.0423878
+					-0.0404942	-0.0379278	0.99846
+					19.6101	-0.00346375	10.0165
+				}
+				{VolumeView "turret.ply"}
+				{bone revolute "gun_rot"
+					{parameters "ID=gun;"}
+					{limits -20 10}
+					{speed 0.01}
+					{Matrix34
+						0.937032	0	0.349242
+						0.349242	0	-0.937033
+						0	1	0
+						6.89045	-0.0847874	4.36924
+					}
+					{VolumeView "gun_rot.ply"}
+					{bone "mgun"
+						{Matrix34
+							1	0	0
+							0	0	1
+							0	-1	0
+							5.72967	-0.566967	-3.06489
+						}
+						{VolumeView "mgun.ply"}
+					}
+					{bone "gun"
+						{parameters "ID=gun;"}
+						{Matrix34
+							1	0	0
+							0	0	1
+							0	-1	0
+							12.8923	-0.565002	0.0882435
+						}
+						{VolumeView "gun.ply"}
+					}
+				}
+			}
+		}
+		{bone "pivot_front"
+			{Position 42.8616	1.53339	12.7487}
+			{bone revolute "steer_l1"
+				{Matrix34
+					0	-1	0
+					-1	0	0
+					0	0	-1
+					0.00736618	17.8693	0.0503445
+				}
+				{bone revolute "wheell1"
+					{parameters "ID=wheelleft1;"}
+					{Matrix34
+						0	-1	0
+						0	0	1
+						-1	0	0
+						-3.47834	0.17371	1.10289
+					}
+					{VolumeView "wheell1.ply"}
+				}
+			}
+			{bone revolute "steer_r1"
+				{Matrix34
+					0	1	0
+					1	0	0
+					0	0	-1
+					-0.0568352	-20.1438	0.00147152
+				}
+				{bone revolute "wheelr1"
+					{parameters "ID=wheelright1;"}
+					{Matrix34
+						0	1	0
+						0	0	1
+						1	0	0
+						-3.80698	-0.10955	1.05403
+					}
+					{VolumeView "wheelr1.ply"}
+				}
+			}
+			{bone revolute "steer_l2"
+				{Matrix34
+					0	-1	0
+					-1	0	0
+					0	0	-1
+					-27.2396	17.8693	0.0503445
+				}
+				{bone revolute "wheell2"
+					{parameters "ID=wheelleft2;"}
+					{Matrix34
+						0	-1	0
+						0	0	1
+						-1	0	0
+						-3.4784	0.445082	1.10286
+					}
+					{VolumeView "wheell2.ply"}
+				}
+			}
+			{bone revolute "steer_r2"
+				{Matrix34
+					0	1	0
+					1	0	0
+					0	0	-1
+					-27.2809	-20.1438	0.00147152
+				}
+				{bone revolute "wheelr2"
+					{parameters "ID=wheelright2;"}
+					{Matrix34
+						0	1	0
+						0	0	1
+						1	0	0
+						-3.80698	-0.403749	1.05403
+					}
+					{VolumeView "wheelr2.ply"}
+				}
+			}
+		}
+		{bone "pivot_back"
+			{Position -43.0839	-0.0862621	15.2501}
+			{bone revolute "wheell3"
+				{parameters "ID=wheelleft3;"}
+				{Matrix34
+					1	0	0
+					0	0	-1
+					0	1	0
+					25.0096	22.9674	-3.55393
+				}
+				{VolumeView "wheell3.ply"}
+			}
+			{bone revolute "wheell4"
+				{parameters "ID=wheelleft4;"}
+				{Matrix34
+					1	0	0
+					0	0	-1
+					0	1	0
+					-1.36224	22.9673	-3.55393
+				}
+				{VolumeView "wheell4.ply"}
+			}
+			{bone revolute "wheelr3"
+				{parameters "ID=wheelright3;"}
+				{Matrix34
+					1	0	0
+					0	0	-1
+					0	1	0
+					25.0096	-22.3312	-3.55393
+				}
+				{VolumeView "wheelr3.ply"}
+			}
+			{bone revolute "wheelr4"
+				{parameters "ID=wheelright4;"}
+				{Matrix34
+					1	0	0
+					0	0	-1
+					0	1	0
+					-1.36224	-22.3312	-3.55393
+				}
+				{VolumeView "wheelr4.ply"}
+			}
+		}
+	}
+}

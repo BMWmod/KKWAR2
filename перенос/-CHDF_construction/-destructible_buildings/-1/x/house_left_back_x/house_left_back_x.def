@@ -1,0 +1,15 @@
+{game_entity
+	{Extension "house_left_back_x.mdl"}
+	{Volume "body"
+	}
+	{Volume "piece0"
+	}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "piece4"
+	}
+}

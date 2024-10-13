@@ -1,0 +1,9 @@
+{material bump
+	{diffuse "$/model/t-90a/t-90tr"}
+;	{bump "$/model/t-90a/t-90tr_bp"}
+;бамп нельзя - вырубается skin
+	{specular "$/model/t-90a/t-90tr_sp"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

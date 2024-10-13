@@ -1,0 +1,33 @@
+{game_entity
+	{Extension "house_left_front_x.mdl"}
+	{Volume "body1"
+	}
+	{Volume "body2"
+	}
+	{Volume "body"
+	}
+	{Volume "piece0"
+	}
+	{Volume "piece10"
+	}
+	{Volume "piece11"
+	}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "piece4"
+	}
+	{Volume "piece5"
+	}
+	{Volume "piece6"
+	}
+	{Volume "piece7"
+	}
+	{Volume "piece8"
+	}
+	{Volume "piece9"
+	}
+}

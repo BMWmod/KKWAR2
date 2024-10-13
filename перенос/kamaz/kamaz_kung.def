@@ -1,0 +1,112 @@
+;Created by Pheonix
+{game_entity
+	(include "/properties/car.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{props "vehicle" "car" "truck" "wheeled" "6_wheels" "vision_lev03" "kamaz"}
+	{able "emit_on_attack"}
+	("armor_car_truck")
+
+	("crew_2_human")
+	("board_animation"
+		place(driver)
+		board_begin(board_big-midcar_driver)
+		board_end(seat_driver_car)
+		base(doorleft)
+	)
+	("board_animation"
+		place(commander)
+		board_begin(board_big-midcar)
+		board_end(seat_passenger)
+		base(doorright)
+	)
+	{extender "enumerator"}
+
+	{boarder
+		{anm "passenger"
+			{forward	{begin	"board_body"} {end "seat_passenger"}}
+			{reverse 	{end	"emit_body" 1}}
+		}
+	}
+
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	("wheel" args "wheelright2")
+	("wheel" args "wheelleft2")
+	("wheel" args "wheelright3")
+	("wheel" args "wheelleft3")
+
+	{Volume "Bodyback1"
+		{tags "bodyback"}
+		{component "bodyback"}
+		{thickness 5}      
+	}
+	{mass 9600}
+
+	{sensor
+		{visor "driver"
+			{bone "visor1"}
+			{vision "vehicle_main"}
+		}		
+		
+	}
+	{Chassis
+		("CW_wheels"
+			Mass(9.6)
+			Turnradius(10)
+			Power(260)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(830)
+			Fuelvolume(250)
+		)
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel03") step(0.08) wheell("wlr") wheelr("wrr") bonel("FXtraceL2") boner("FXtraceR2"))
+	}
+	{props "cwfs_fuel_200"}
+
+;	("two_headlights")
+;	("cw_headlightt")
+	{Extension "Kamaz_kung.mdl"}
+	("missile_aimpoint_trucksize")
+	{texmod "chern"}
+
+	{component "cabin"	
+		{RepairTime 12}
+	}
+	{volume "cabin"
+		{thickness 7}
+	}
+	{volume "engine"
+		{thickness 7}
+	}
+	{Volume "fuel"
+		{thickness 2}
+	}
+	{Volume "Body"
+		{tags "body"}
+		{component "body"}
+		{thickness 8}   
+	}
+	{Volume "Cabin"
+		{tags "cabin"}
+		{component "cabin"}
+		{thickness 8}   
+	}
+	
+    	{extender "inventory"
+    	        {box
+        		
+      			{size 8 13}
+			{item "barrel" 10 filling "fuel" 200}
+			{item "ammo_box_medic" 3}
+			{item "repair_kit" 8}
+			{item "hedgehog_kit" 14}
+			{item "sandbag_kit" 24}
+			{item "barbwire_kit" 8}
+			{item "barbwire_kit" 8}
+			{item "dynamite" 6}
+		}
+	}
+  
+}

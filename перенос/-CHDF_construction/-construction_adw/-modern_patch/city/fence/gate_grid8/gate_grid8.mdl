@@ -1,0 +1,67 @@
+;Exported by: HOME Office
+;Date:        Sat May 09 19:16:05 2020
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\City\Gate\Gate_grid8.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.06}}
+		{sequence "close" {speed 0.06}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "gate"
+			{Position 0	-9.84252	1.9685}
+			{VolumeView "gate.ply"}
+		}
+		{bone "post1"
+			{Position 0	-12.2047	0}
+			{VolumeView "post1.ply"}
+		}
+		{bone "post2"
+			{Position 0	12.2047	0}
+			{VolumeView "post2.ply"}
+		}
+	}
+}
+{Obstacle "post1"
+	{Obb2
+		{Center 0 12.2047}
+		{Extent 2.46063 2.46063}
+		{Axis -1 0}
+	}
+}
+{Obstacle "post2"
+	{Obb2
+		{Center 0 -12.2047}
+		{Extent 2.46063 2.46063}
+		{Axis -1 0}
+	}
+}
+{Volume "gate"
+	{Box 2.3622 19.685 39.3701}
+	{Bone "gate"}
+	{Position 0	9.84252	19.685}
+}
+{Volume "post1"
+	{Box 3.54331 3.54331 43.3071}
+	{Bone "post1"}
+	{Position 0	0	21.6535}
+}
+{Volume "post2"
+	{Box 3.54331 3.54331 43.3071}
+	{Bone "post2"}
+	{Position 0	0	21.6535}
+}
+{Volume "switch"
+	{Box 9.84252 7.87402 15.748}
+	{Bone "gate"}
+	{Position 0	14.7638	18.4433}
+}
+{Volume "theswitch"
+	{Box 9.84252 7.87402 15.748}
+	{Bone "gate"}
+	{Position 0	6.07659	18.4433}
+}

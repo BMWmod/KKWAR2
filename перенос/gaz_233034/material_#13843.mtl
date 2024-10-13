@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "texture_0009"}
+	{blend blend}
+}

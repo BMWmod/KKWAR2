@@ -1,0 +1,23 @@
+;Exported by: Adam
+;Date:        Fri Apr 06 19:40:26 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\ammo_crate.max
+{Skeleton
+	{bone "crate"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "crate.ply"}
+	}
+}
+{Volume "body"
+	{Box 22.7525 11.5687 14.3923}
+	{Bone "crate"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.0292444	-0.00420904	5.68765
+	}
+}

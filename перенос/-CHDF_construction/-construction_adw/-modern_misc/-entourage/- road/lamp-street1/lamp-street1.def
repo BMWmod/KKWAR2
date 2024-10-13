@@ -1,0 +1,21 @@
+{construction
+    (include "/properties/post.inc")
+	{Extension "lamp-street1.mdl"}
+	("armor_use_volume_thickness")
+	{props "steel" "disable_area"}
+
+	{volume	"body"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{volume	"body1"
+		{thickness 5}
+		{able {visible 0}{obstacle 0}}	
+	}
+	{Volume "lamp1"
+		{thickness 1}
+	}
+	{extender "light"
+		{lamp "1"}
+	}
+}

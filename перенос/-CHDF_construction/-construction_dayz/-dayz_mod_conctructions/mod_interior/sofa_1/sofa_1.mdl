@@ -1,0 +1,38 @@
+;Exported by: пакунеу
+;Date:        Wed Apr 22 17:42:07 2009
+;File:        C:\Program Files\Autodesk\3dsMax8\scenes\диван.max
+{Skeleton
+	{bone "divan"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "divan.ply"}
+	}
+}
+{Volume "box01"
+	{Box 17.7209 40.9795 5.29165}
+	{Bone "divan"}
+	{Position 0.465745	-0.219122	2.64582}
+}
+{Volume "box02"
+	{Box 7.75288 41.4718 14.2751}
+	{Bone "divan"}
+	{Matrix34
+		0.655319	0	0
+		0	1	0
+		0	0	1
+		-6.82379	0.396195	7.13757
+	}
+}
+{Volume "box03"
+	{Box 16.6133 0.984493 9.5988}
+	{Bone "divan"}
+	{Position 0.158095	20.5168	4.7994}
+}
+{Volume "box04"
+	{Box 16.6133 0.984493 9.5988}
+	{Bone "divan"}
+	{Position 0.158095	-20.6116	4.7994}
+}

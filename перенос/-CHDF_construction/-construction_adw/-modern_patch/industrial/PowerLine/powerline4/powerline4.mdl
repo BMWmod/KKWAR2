@@ -1,0 +1,97 @@
+;Exported by: Notebook
+;Date:        Sat Oct 19 22:53:25 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\PowerLine\PowerLine4.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "stolb1"
+			{Position 0	78.7402	0}
+			{VolumeView "stolb1.ply"}
+			{bone "bracket1"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-78.7402	299.213
+				}
+				{VolumeView "bracket1.ply"}
+				{bone "isolator"
+					{Matrix34
+						-1	0	0
+						0	1	0
+						0	0	1
+						0	0	-4.9212
+					}
+					{VolumeView "isolator.ply"}
+				}
+			}
+		}
+		{bone "stolb2"
+			{Position 0	-78.7402	0}
+			{VolumeView "stolb2.ply"}
+			{bone "bracket2"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					0	78.7402	60.6299
+				}
+				{VolumeView "bracket2.ply"}
+			}
+		}
+	}
+}
+{Obstacle "stolb1"
+	{Circle2
+		{Radius 11.811}
+		{Center 0 -78.7402}
+	}
+}
+{Obstacle "stolb2"
+	{Circle2
+		{Radius 11.811}
+		{Center 0 78.7402}
+	}
+}
+{Volume "bracket1"
+	{Polyhedron "bracket1.vol"}
+	{Bone "bracket1"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	0	-1.96844
+	}
+}
+{Volume "bracket21"
+	{Box 1.9685 236.22 1.9685}
+	{Bone "bracket2"}
+	{Matrix34
+		-1	0	0
+		0	-0.679441	-0.73373
+		0	-0.73373	0.679441
+		0	-0.722175	77.8341
+	}
+}
+{Volume "bracket22"
+	{Box 1.9685 236.22 1.9685}
+	{Bone "bracket2"}
+	{Matrix34
+		-1	0	0
+		0	-0.679441	0.73373
+		0	0.73373	0.679441
+		0	0.722175	77.8341
+	}
+}
+{Volume "stolb1"
+	{Polyhedron "stolb1.vol"}
+	{Bone "stolb1"}
+}
+{Volume "stolb2"
+	{Polyhedron "stolb2.vol"}
+	{Bone "stolb2"}
+}

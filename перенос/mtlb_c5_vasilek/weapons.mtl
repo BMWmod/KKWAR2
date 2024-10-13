@@ -1,0 +1,8 @@
+{material bump
+	{diffuse "$/model/ka50/ka50_05"}
+	{bump "$/model/ka50/ka50_05_bp"}
+	{specular "$/model/ka50/ka50_05_sp"}
+	{color "255 255 255 25"}
+	{emitsheat}
+{blend none}
+}

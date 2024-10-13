@@ -1,0 +1,4 @@
+{material bump
+	{diffuse "oildrum_col"}
+	{blend none}
+}

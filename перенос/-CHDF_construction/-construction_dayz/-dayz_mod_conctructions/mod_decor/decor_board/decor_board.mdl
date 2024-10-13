@@ -1,0 +1,21 @@
+;Exported by: Elek
+;Date:        Wed Mar 17 21:14:13 2010
+;File:        D:\mods\exports\p90\table.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "table"
+			{Position -0.287414	7.31828	72.4457}
+			{VolumeView "table.ply"}
+		}
+	}
+}
+{Volume "table"
+	{Polyhedron "table.vol"}
+	{Bone "table"}
+	{Position 0	-1.43051e-005	-72.8299}
+}

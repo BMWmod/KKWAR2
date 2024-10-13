@@ -1,0 +1,141 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "concrete" "construction"}
+	("armor_medium" args 0.7)
+	{obstacleID "unbreakable"}
+	{lodclass "decor_big"}
+	{Extension "wbs70_7_b_damage.mdl"}
+	
+	{placer
+		{place "17" {attach  snipe_cover} 		{linkbone "attach17"}}
+		{place "18" {attach  snipe_cover} 		{linkbone "attach18"}}
+		{place "19" {attach  snipe_cover} 		{linkbone "attach19"}}
+		{place "20" {attach  snipe_cover} 		{linkbone "attach20"}}
+		{place "21" {attach  snipe_cover} 		{linkbone "attach21"}}
+		{place "22" {attach  snipe_cover} 		{linkbone "attach22"}}
+		{place "23" {attach  snipe_cover} 		{linkbone "attach23"}}
+		{place "24" {attach  snipe_cover} 		{linkbone "attach24"}}
+	}	
+	{boarder}
+
+	{Volume "body_attach17"
+		{Tags  "attach" "17"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach18"
+		{Tags  "attach" "18"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach19"
+		{Tags  "attach" "19"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach20"
+		{Tags  "attach" "20"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach21"
+		{Tags  "attach" "21"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach22"
+		{Tags  "attach" "22"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach23"
+		{Tags  "attach" "23"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach24"
+		{Tags  "attach" "24"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body01"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body04"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body05"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "bodyr11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr23"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "bodyr24"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	
+	{Extender "land_patch"
+	}
+}

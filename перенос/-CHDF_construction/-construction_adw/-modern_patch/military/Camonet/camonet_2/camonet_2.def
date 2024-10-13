@@ -1,0 +1,26 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	("armor_light" args 0.7)
+	{props "fence" "wood" "parts" "construction" "crash_wood3"}	
+	{Extension "camonet_2.mdl"}
+	
+	{Volume "sidel"
+ 		{thickness 0.1}
+		{tags "body" "fire"}
+		{able {visible 0} {bullet 0}}
+	}
+	{Volume "sider"
+		{thickness 0.1}
+		{tags "body" "fire"}
+		{able {visible 0} {bullet 0}}
+	}
+	{Volume "stolb1"
+	}
+	{Volume "stolb2"
+	}
+	{Volume "stolb3"
+	}
+	{Volume "stolb4"
+	}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "asphalt_city2"}
+	{blend test}
+}

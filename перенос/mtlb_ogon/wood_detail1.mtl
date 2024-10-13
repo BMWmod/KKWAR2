@@ -1,0 +1,6 @@
+{material simple
+	{diffuse "$/model/mtlb_new/body_yashik2"}
+	{emitsheat}
+{blend none}
+}
+

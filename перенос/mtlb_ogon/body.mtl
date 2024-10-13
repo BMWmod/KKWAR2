@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/zubr/body"}
+	{blend none}
+}

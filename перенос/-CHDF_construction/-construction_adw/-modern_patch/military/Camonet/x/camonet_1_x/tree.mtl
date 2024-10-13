@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/construction/flora/tree1"}
+	{blend test}
+}

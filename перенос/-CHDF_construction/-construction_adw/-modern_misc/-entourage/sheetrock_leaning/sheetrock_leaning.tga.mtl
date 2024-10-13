@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "sheetrock_leaning"}
+	{blend none}
+}

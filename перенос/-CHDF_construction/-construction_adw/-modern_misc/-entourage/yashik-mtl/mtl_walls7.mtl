@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mtl_walls7"}
+	{blend none}
+}

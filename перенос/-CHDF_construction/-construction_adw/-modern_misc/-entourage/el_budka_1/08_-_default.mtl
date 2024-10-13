@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "brickwall003a1"}
+	{blend none}
+}

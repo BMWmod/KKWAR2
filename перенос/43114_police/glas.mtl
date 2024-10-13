@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "43114_glass"}
+	{blend blend}
+}

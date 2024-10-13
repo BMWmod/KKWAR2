@@ -1,0 +1,931 @@
+;Exported by: WCW-XAH
+;Date:        Tue Mar  5 17:05:14 2019
+;File:        F:\bekap-vinki\3? ????????????? ??? ??? 3\??? ????\Bilding\Big_poltava_big_map.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "animation1"
+			{bone "korpus001"
+				{parameters "ID=body;"}
+				{Position -197.433	-0.745521	18.935}
+				{VolumeView "korpus001.ply"}
+				{bone "lodka002"
+					{parameters "ID=body;"}
+					{Position -1599.07	-306.524	791.22}
+					{VolumeView "lodka002.ply"}
+				}
+				{bone "lodka001"
+					{parameters "ID=body;"}
+					{Position -2123.98	-266.356	679.426}
+					{VolumeView "lodka001.ply"}
+				}
+				{bone "lodka003"
+					{parameters "ID=body;"}
+					{Position -1599.07	305.614	791.22}
+					{VolumeView "lodka003.ply"}
+				}
+				{bone "stolb001"
+					{parameters "ID=body;"}
+					{Position -1242.8	0.357656	1205.99}
+					{VolumeView "stolb001.ply"}
+				}
+				{bone "kran004"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.34202	0.939693	0
+						-0.939693	0.34202	0
+						0	0	1
+						-437.648	-206.764	615.69
+					}
+					{VolumeView "kran004.ply"}
+				}
+				{bone "kran005"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.173648	0.984808	0
+						-0.984808	0.173648	0
+						0	0	1
+						-437.648	209.144	615.69
+					}
+					{VolumeView "kran005.ply"}
+				}
+				{bone "kran003"
+					{parameters "ID=body;"}
+					{Matrix34
+						-0.34202	-0.939693	0
+						0.939693	-0.34202	0
+						0	0	1
+						-997.798	-248.894	615.69
+					}
+					{VolumeView "kran003.ply"}
+				}
+				{bone "kran002"
+					{parameters "ID=body;"}
+					{Matrix34
+						-0.173648	-0.984808	0
+						0.984808	-0.173648	0
+						0	0	1
+						-997.798	245.959	615.69
+					}
+					{VolumeView "kran002.ply"}
+				}
+				{bone "kran001"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.258819	0.965926	0
+						-0.965926	0.258819	0
+						0	0	1
+						-1805.81	1.89056	792.78
+					}
+					{VolumeView "kran001.ply"}
+				}
+				{bone "lander001"
+					{parameters "land;ID=body;"}
+					{Position -543.965	0.000309944	429.237}
+					{VolumeView "lander001.ply"}
+				}
+				{bone "krep_lesenka001"
+					{Matrix34
+						0	-1	0
+						1	0	0
+						0	0	1
+						-101.502	0.745521	-18.935
+					}
+				}
+				{bone "krep_lesenka002"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-101.502	0.745521	-18.935
+					}
+				}
+			}
+			{bone "korpus002"
+				{parameters "ID=body;"}
+				{Position 774.373	-0.615436	-6.97736}
+				{VolumeView "korpus002.ply"}
+				{bone "kran011"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.173648	0.984808	0
+						-0.984808	0.173648	0
+						0	0	1
+						380.204	-234.216	641.714
+					}
+					{VolumeView "kran011.ply"}
+				}
+				{bone "kran010"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.34202	0.939693	0
+						-0.939693	0.34202	0
+						0	0	1
+						380.204	237.707	641.714
+					}
+					{VolumeView "kran010.ply"}
+				}
+				{bone "kran009"
+					{parameters "ID=body;"}
+					{Matrix34
+						-0.34202	-0.939693	0
+						0.939693	-0.34202	0
+						0	0	1
+						-245.324	222.235	641.714
+					}
+					{VolumeView "kran009.ply"}
+				}
+				{bone "kran008"
+					{parameters "ID=body;"}
+					{Matrix34
+						-0.173648	-0.984808	0
+						0.984808	-0.173648	0
+						0	0	1
+						-241.515	-210.017	641.714
+					}
+					{VolumeView "kran008.ply"}
+				}
+				{bone "kran007"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.258819	0.965926	0
+						-0.965926	0.258819	0
+						0	0	1
+						-386.552	-238.976	641.714
+					}
+					{VolumeView "kran007.ply"}
+				}
+				{bone "kran006"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.258819	0.965926	0
+						-0.965926	0.258819	0
+						0	0	1
+						-386.552	240.246	641.714
+					}
+					{VolumeView "kran006.ply"}
+				}
+				{bone "balka001"
+					{parameters "ID=body;"}
+					{Position -389.408	0	969.87}
+					{VolumeView "balka001.ply"}
+				}
+				{bone "balka002"
+					{parameters "ID=body;"}
+					{Position -304.036	-1.17029	955.271}
+					{VolumeView "balka002.ply"}
+				}
+				{bone "lander002"
+					{parameters "land;ID=body;"}
+					{Position 0.317383	0	455.103}
+					{VolumeView "lander002.ply"}
+				}
+				{bone "krep_lesenka003"
+					{Matrix34
+						0	-1	0
+						1	0	0
+						0	0	1
+						-213.701	0.615436	6.97736
+					}
+				}
+				{bone "krep_lesenka004"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-213.701	0.615436	6.97736
+					}
+				}
+			}
+			{bone "korpus003"
+				{parameters "ID=body;"}
+				{Position 1667.66	-1.7853	9.32232}
+				{VolumeView "korpus003.ply"}
+				{bone "kran013"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.258819	0.965926	0
+						-0.965926	0.258819	0
+						0	0	1
+						70.4552	210.096	625.845
+					}
+					{VolumeView "kran013.ply"}
+				}
+				{bone "kran012"
+					{parameters "ID=body;"}
+					{Matrix34
+						0.258819	0.965926	0
+						-0.965926	0.258819	0
+						0	0	1
+						70.4552	-205.812	625.845
+					}
+					{VolumeView "kran012.ply"}
+				}
+			}
+		}
+	}
+}
+{Obstacle "obstacle001"
+	{Obb2
+		{Center -172.58 370.292}
+		{Extent 5.11222 1840.4}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle002"
+	{Obb2
+		{Center 2609.56 10.5883}
+		{Extent 255.528 306.733}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle003"
+	{Obb2
+		{Center 2042.43 10.5883}
+		{Extent 344.413 306.733}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle004"
+	{Obb2
+		{Center 1703.23 358.461}
+		{Extent 21.6257 51.1222}
+		{Axis -0.25882 -0.965926}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle005"
+	{Obb2
+		{Center -1745.42 10.5883}
+		{Extent 369.257 511.222}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle006"
+	{Obb2
+		{Center -2343.53 10.5883}
+		{Extent 351.16 102.244}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle007"
+	{Obb2
+		{Center -2533.89 10.5883}
+		{Extent 287.216 102.244}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle008"
+	{Obb2
+		{Center -2688.63 10.5883}
+		{Extent 204.082 102.244}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle009"
+	{Obb2
+		{Center -923.761 0.536072}
+		{Extent 261.722 203.149}
+		{Axis 2.33206e-07 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle010"
+	{Obb2
+		{Center -325.681 0.536072}
+		{Extent 261.722 203.149}
+		{Axis 1.16603e-07 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle011"
+	{Obb2
+		{Center 83.1095 0.536072}
+		{Extent 261.722 203.149}
+		{Axis 1.74905e-07 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle012"
+	{Obb2
+		{Center 827.838 0.536072}
+		{Extent 261.722 203.149}
+		{Axis 2.33206e-07 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle013"
+	{Obb2
+		{Center 1423.53 0.536072}
+		{Extent 261.722 203.149}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle014"
+	{Obb2
+		{Center 1703.23 -332.033}
+		{Extent 21.6257 51.1222}
+		{Axis 0.25882 -0.965926}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle015"
+	{Obb2
+		{Center -172.58 -365.12}
+		{Extent 5.11222 1840.4}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle016"
+	{Obb2
+		{Center 1152.2 0.536087}
+		{Extent 36.7845 71.1144}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle017"
+	{Obb2
+		{Center 467.459 0.536087}
+		{Extent 36.7845 102.81}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle018"
+	{Obb2
+		{Center -633.481 0.536087}
+		{Extent 36.7845 61.9121}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle019"
+	{Obb2
+		{Center -1184.64 0.536087}
+		{Extent 36.7845 61.9121}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Obstacle "obstacle020"
+	{Obb2
+		{Center 1737.7 0.536087}
+		{Extent 36.7845 61.9121}
+		{Axis 0 -1}
+	}
+	{Rotate}
+}
+{Volume "balks001"
+	{Box 87.013 825.013 19.3362}
+	{Bone "balka001"}
+	{Matrix34
+		0.996195	0	0.0871557
+		-0.0871557	0	0.996195
+		0	-1	0
+		-6.50601	-0.945506	23.485
+	}
+}
+{Volume "balks002"
+	{Box 22.013 725.013 24.336}
+	{Bone "balka002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		1.56512	2.78386	-10.1544
+	}
+}
+{Volume "boxset001"
+	{Box 398.269 63.8063 522.582}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-723.412	2.57007	433.833
+	}
+}
+{Volume "boxset002"
+	{Box 398.269 63.8063 522.582}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-113.911	2.72878	433.833
+	}
+}
+{Volume "boxset003"
+	{Box 398.269 63.8063 522.582}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-688.644	2.63311	459.546
+	}
+}
+{Volume "boxset004"
+	{Box 398.269 63.8063 522.582}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		59.03	2.63311	459.546
+	}
+}
+{Volume "boxset005"
+	{Box 398.269 63.8063 522.582}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		654.408	2.63311	459.546
+	}
+}
+{Volume "kanterner001"
+	{Box 269.122 125.521 238.616}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-709.805	-4.60897	522.06
+	}
+}
+{Volume "kanterner002"
+	{Box 349.489 125.521 402.411}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-109.15	0.293258	504.288
+	}
+}
+{Volume "kanterner003"
+	{Box 349.489 125.521 402.411}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-676.703	0.134168	530.001
+	}
+}
+{Volume "kanterner004"
+	{Box 349.489 125.521 402.411}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		62.5211	0.134168	530.001
+	}
+}
+{Volume "kanterner005"
+	{Box 349.489 125.521 402.411}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		649.331	0.134168	547.773
+	}
+}
+{Volume "krens001"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran001"}
+	{Matrix34
+		0.25882	-0.965926	0
+		0	0	1
+		-0.965926	-0.25882	0
+		-60.6963	219.119	3.80841
+	}
+}
+{Volume "krens002"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran002"}
+	{Matrix34
+		-0.258819	0.965926	0
+		0	0	1
+		0.965926	0.258819	0
+		-60.5374	221.96	11.4252
+	}
+}
+{Volume "krens003"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran003"}
+	{Matrix34
+		-0.258819	0.965926	0
+		0	0	1
+		0.965926	0.258819	0
+		-59.5854	222.039	11.4252
+	}
+}
+{Volume "krens004"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran004"}
+	{Matrix34
+		0.25882	-0.965926	0
+		0	0	1
+		-0.965926	-0.25882	0
+		-54.9837	211.086	10.7905
+	}
+}
+{Volume "krens005"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran005"}
+	{Matrix34
+		0.25882	-0.965926	0
+		0	0	1
+		-0.965926	-0.25882	0
+		-56.8879	210.689	10.7905
+	}
+}
+{Volume "krens006"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran006"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-56.0152	212.355	10.7905
+	}
+}
+{Volume "krens007"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran007"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-57.5226	211.959	10.7905
+	}
+}
+{Volume "krens008"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran008"}
+	{Matrix34
+		-0.258819	0.965926	0
+		0	0	1
+		0.965926	0.258819	0
+		-62.1243	219.976	11.4252
+	}
+}
+{Volume "krens009"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran009"}
+	{Matrix34
+		-0.258819	0.965926	0
+		0	0	1
+		0.965926	0.258819	0
+		-64.9806	223.071	11.4252
+	}
+}
+{Volume "krens010"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran010"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-57.2053	211.562	10.7905
+	}
+}
+{Volume "krens011"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran011"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-54.0316	212.197	10.7905
+	}
+}
+{Volume "krens012"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran012"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-58.1574	212.038	10.7905
+	}
+}
+{Volume "krens013"
+	{Box 555.917 122.463 75.7336}
+	{Bone "kran013"}
+	{Matrix34
+		0.258819	-0.965926	0
+		0	0	1
+		-0.965926	-0.258819	0
+		-55.6184	212.911	10.7905
+	}
+}
+{Volume "lodkos001"
+	{Box 256.16 72.0774 61.2359}
+	{Bone "lodka001"}
+	{Matrix34
+		0.984808	-0.173648	0
+		0.173648	0.984808	0
+		0	0	1
+		-1.8728	-1.37109	1.46811
+	}
+}
+{Volume "lodkos002"
+	{Box 353.334 90.8217 61.2359}
+	{Bone "lodka002"}
+	{Position 0.518555	0.712891	5.19523}
+}
+{Volume "lodkos003"
+	{Box 353.334 90.8217 61.2359}
+	{Bone "lodka003"}
+	{Position 0.518433	1.72656	5.19523}
+}
+{Volume "metali001"
+	{Box 148.245 25.7817 575.759}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-997.164	-1.21368	536.983
+	}
+}
+{Volume "metali002"
+	{Box 148.245 25.7817 575.759}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-435.426	-1.21368	536.983
+	}
+}
+{Volume "metali003"
+	{Box 136.637 111.3 79.0229}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-436.378	-0.257867	480.809
+	}
+}
+{Volume "metali004"
+	{Box 136.637 111.3 79.0229}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-990.181	-0.257867	480.809
+	}
+}
+{Volume "metali005"
+	{Box 236.637 26.2999 575.759}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-310.86	-1.34323	562.69
+	}
+}
+{Volume "metali006"
+	{Box 236.637 111.3 79.0229}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-310.86	-0.388037	506.833
+	}
+}
+{Volume "metali007"
+	{Box 148.245 25.7817 575.759}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		377.665	-1.34323	562.69
+	}
+}
+{Volume "metali008"
+	{Box 136.637 111.3 79.0229}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		380.839	-0.388037	506.833
+	}
+}
+{Volume "metali009"
+	{Box 148.245 25.7817 575.759}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		68.551	-0.173559	546.504
+	}
+}
+{Volume "metali010"
+	{Box 136.637 111.3 79.0229}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		69.1858	0.78225	490.489
+	}
+}
+{Volume "metall001"
+	{Box 2173.03 448.355 762.599}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-1088.86	-2.23478	197.712
+	}
+}
+{Volume "metall002"
+	{Box 830.888 452.838 762.599}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-1475.73	-2.23484	532.851
+	}
+}
+{Volume "metall003"
+	{Box 430.856 452.838 762.599}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-2089.67	-2.86958	432.563
+	}
+}
+{Volume "metall004"
+	{Box 426.547 448.31 490.055}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-2366.18	-10.0467	432.563
+	}
+}
+{Volume "metall005"
+	{Box 672.188 169.119 558.454}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-1394.8	-2.35388	838.157
+	}
+}
+{Volume "metall006"
+	{Box 191.377 169.119 157.406}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-1417.37	4.57663	984.78
+	}
+}
+{Volume "metall007"
+	{Box 129.689 69.8376 927.635}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-1168.99	-0.333529	827.366
+	}
+}
+{Volume "metall008"
+	{Box 1887.81 448.355 732.55}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-38.0839	-1.70342	223.426
+	}
+}
+{Volume "metall009"
+	{Box 637.616 448.355 696.647}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		305.306	0.46731	207.557
+	}
+}
+{Volume "metall010"
+	{Box 500.961 448.355 495.005}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		853.079	-10.9888	207.557
+	}
+}
+{Volume "metall011"
+	{Box 543.698 198.355 446.377}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		939.403	-0.736418	516.037
+	}
+}
+{Volume "metall012"
+	{Box 625.842 198.355 660.586}
+	{Bone "korpus003"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		361.162	-11.4054	516.037
+	}
+}
+{Volume "parapeto001"
+	{Box 1136.64 60.289 15.023}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-556.016	-372.438	444.857
+	}
+}
+{Volume "parapeto002"
+	{Box 1136.64 60.289 15.023}
+	{Bone "korpus001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-556.016	369.813	444.857
+	}
+}
+{Volume "parapeto003"
+	{Box 1936.64 60.289 15.023}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-54.182	369.683	470.769
+	}
+}
+{Volume "parapeto004"
+	{Box 1936.64 60.289 15.023}
+	{Bone "korpus002"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-44.7449	-372.568	470.769
+	}
+}
+{Volume "stoka001"
+	{Box 93.4307 430.693 38.7395}
+	{Bone "stolb001"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-8.88623	2.93618	-124.407
+	}
+}

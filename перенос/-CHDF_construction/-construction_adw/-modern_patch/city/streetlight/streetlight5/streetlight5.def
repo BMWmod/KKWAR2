@@ -1,0 +1,39 @@
+{game_entity
+   	(include "/properties/post.inc")
+	{Extension "streetlight5.mdl"}
+	("armor_use_volume_thickness")
+	{props "post"}
+
+
+	{Volume "body"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "bracket1"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "bracket2"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "lamp"
+		{thickness 1}
+		{able {contact 0}}
+	}
+	{Volume "streetlight1"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "streetlight2"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "streetlight3"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{extender "light"
+		{lamp "1"}	
+	}
+}

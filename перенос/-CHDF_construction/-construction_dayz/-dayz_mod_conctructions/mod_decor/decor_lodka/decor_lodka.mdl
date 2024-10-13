@@ -1,0 +1,78 @@
+;Exported by: User
+;Date:        Fri May 29 20:14:29 2015
+;File:        C:\Users\User\Documents\3dsmax\scenes\ccvxvxc.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				-0.851805	0.462821	-0.245406
+				0.40061	0.877355	0.26412
+				0.337549	0.126667	-0.932747
+				0	2.68463	8.28919
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -0.117781 0.670362}
+		{Extent 14.3724 16.1796}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center -0.0532503 -26.8294}
+		{Extent 13.9278 11.4375}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -0.286484 26.1027}
+		{Extent 14.4126 9.66382}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.851806	0.40061	0.337549
+		0.462821	0.877355	0.126667
+		-0.245406	0.26412	-0.932747
+		0.603835	-5.19041	7.25825
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.851806	0.40061	0.337549
+		0.462821	0.877355	0.126667
+		-0.245406	0.26412	-0.932747
+		15.5261	23.0971	11.3422
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.851806	0.40061	0.337549
+		0.462821	0.877355	0.126667
+		-0.245406	0.26412	-0.932747
+		-14.206	-33.2649	3.20501
+	}
+}

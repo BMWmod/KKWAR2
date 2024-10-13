@@ -1,0 +1,137 @@
+{game_entity
+	(include "/properties/building.inc")
+	{obstacleid "unbreakable" "construction" }
+	{props "steel" "parts" "construction" "small" "no_destroyed_stamp"}
+	
+	{Extension "cover1.mdl"}
+
+
+	{Volume "ferm1_vol1"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol10"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol2"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol3"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol4"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol5"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol6"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol7"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol8"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm1_vol9"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol1"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol10"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol2"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol3"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol4"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol5"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol6"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol7"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol8"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm2_vol9"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol1"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol2"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol3"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol4"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol5"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol6"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol7"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol8"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm3_vol9"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm4_vol1"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "ferm4_vol2"
+		{thickness 50}
+		{tags "ferm"}
+	}
+	{Volume "roof"
+		{thickness 50}
+		{tags "roof"}
+	}
+}

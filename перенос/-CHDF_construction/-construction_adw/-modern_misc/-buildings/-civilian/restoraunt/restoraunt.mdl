@@ -1,0 +1,48 @@
+;Exported by: -
+;Date:        Sun Sep 15 12:07:44 2013
+;File:        C:\Users\-\Documents\3dsmax\scenes\ресторан.max
+{Skeleton
+	{bone "restoraunt"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "restoraunt.ply"}
+		{bone "diner_restaurant_diner_restaurant_dinersign"
+			{parameters "CommonMesh;"}
+			{Position 0.458371	-2.83189	61.685}
+			{VolumeView "diner_restaurant_diner_restaurant_dinersign.ply"}
+		}
+		{bone "diner_restaurant_diner_restaurant_alumox"
+			{parameters "CommonMesh;"}
+			{Position 0.490131	-0.694345	42.9101}
+			{VolumeView "diner_restaurant_diner_restaurant_alumox.ply"}
+		}
+		{bone "diner_restaurant_diner_restaurant_ks_dinermet_02"
+			{parameters "CommonMesh;"}
+			{Position 0	-0.77604	44.3078}
+			{VolumeView "diner_restaurant_diner_restaurant_ks_dinermet_02.ply"}
+		}
+		{bone "diner_restaurant_diner_restaurant_ks_dinermet_02_ks_dinermet_02_tga"
+			{parameters "CommonMesh;"}
+			{Position 77.015	-61.0259	51.6055}
+			{VolumeView "diner_restaurant_diner_restaurant_ks_dinermet_02_ks_dinermet_02_tga.ply"}
+		}
+		{bone "diner_restaurant_diner_restaurant_mh_dinerdet"
+			{parameters "CommonMesh;"}
+			{Position 0	-1.67463	33.4749}
+			{VolumeView "diner_restaurant_diner_restaurant_mh_dinerdet.ply"}
+		}
+		{bone "diner_restaurant_diner_restaurant_diner_door"
+			{parameters "CommonMesh;"}
+			{Position -61.3397	-24.9606	22.0611}
+			{VolumeView "diner_restaurant_diner_restaurant_diner_door.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "restoraunt"}
+	{Position -0.20276	-2.00832	32.8419}
+}

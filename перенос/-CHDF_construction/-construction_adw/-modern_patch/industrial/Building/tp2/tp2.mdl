@@ -1,0 +1,194 @@
+;Exported by: Notebook
+;Date:        Sun Sep 15 19:36:34 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\tp2.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 1}}
+		{sequence "close" {speed 1}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "wall"
+			{VolumeView "wall.ply"}
+			{bone "gril1"
+				{Position 43.3071	0	56.6929}
+				{VolumeView "gril1.ply"}
+			}
+			{bone "gril2"
+				{Matrix34
+					0	-1	0
+					1	0	0
+					0	0	1
+					-43.3071	0	56.6929
+				}
+				{VolumeView "gril2.ply"}
+			}
+			{bone "gril3"
+				{Matrix34
+					0	1	0
+					-1	0	0
+					0	0	1
+					0	-43.3071	11.811
+				}
+				{VolumeView "gril3.ply"}
+			}
+			{bone "door1"
+				{Position 0	43.3071	70.8661}
+				{VolumeView "door1.ply"}
+			}
+			{bone "door3"
+				{Position 43.3071	23.6845	0}
+				{VolumeView "door3.ply"}
+			}
+			{bone "door2"
+				{Matrix34
+					1	0	0
+					0	-1	0
+					0	0	1
+					43.3071	-23.6845	0
+				}
+				{VolumeView "door2.ply"}
+			}
+			{bone "door4"
+				{Matrix34
+					0	-1	0
+					1	0	0
+					0	0	1
+					-43.3071	0	0
+				}
+				{VolumeView "door4.ply"}
+			}
+			{bone "stair"
+				{Position 13.2874	57.0866	0}
+				{VolumeView "stair.ply"}
+			}
+			{bone "isolator"
+				{Matrix34
+					1	0	0
+					0	0	1
+					0	-1	0
+					0	-44.9213	90.5512
+				}
+				{VolumeView "isolator.ply"}
+			}
+			{bone "roof"
+				{Position 0	0	134.646}
+				{VolumeView "roof.ply"}
+			}
+		}
+	}
+}
+{Obstacle "wall1"
+	{Obb2
+		{Center 43.7008 -35.4331}
+		{Extent 11.811 3.54331}
+		{Axis 3.22978e-007 1}
+	}
+	{Rotate}
+}
+{Obstacle "wall2"
+	{Obb2
+		{Center 0 -43.7008}
+		{Extent 47.2441 3.54331}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "wall3"
+	{Obb2
+		{Center -43.7008 0}
+		{Extent 47.2441 3.54331}
+		{Axis 1.61489e-007 1}
+	}
+	{Rotate}
+}
+{Obstacle "wall4"
+	{Obb2
+		{Center 0 43.7008}
+		{Extent 47.2441 3.54331}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "wall5"
+	{Obb2
+		{Center 43.7008 35.4331}
+		{Extent 11.811 3.54331}
+		{Axis 3.22978e-007 1}
+	}
+	{Rotate}
+}
+{Volume "door2"
+	{Box 1.9685 19.685 39.3701}
+	{Bone "door2"}
+	{Matrix34
+		1.20317	0	0
+		0	1.20317	0
+		0	0	1.20317
+		0	-11.8423	23.6846
+	}
+}
+{Volume "door3"
+	{Box 1.9685 19.685 39.3701}
+	{Bone "door3"}
+	{Matrix34
+		1.20317	0	0
+		0	1.20317	0
+		0	0	1.20317
+		0	-11.8423	23.6845
+	}
+}
+{Volume "roof"
+	{Box 102.362 102.362 3.54331}
+	{Bone "roof"}
+	{Position 1.52588e-005	0	3.94031}
+}
+{Volume "switch"
+	{Box 7.87402 9.84252 19.685}
+	{Bone "door2"}
+	{Matrix34
+		1	0	0
+		0	-1	0
+		0	0	1
+		0	-13.842	29.5275
+	}
+}
+{Volume "theswitch"
+	{Box 7.87402 9.84252 19.685}
+	{Bone "door3"}
+	{Position 0	-13.842	29.5276}
+}
+{Volume "wall1"
+	{Box 5.90551 25.5906 47.2441}
+	{Bone "wall"}
+	{Position 45.2756	-35.4331	23.622}
+}
+{Volume "wall2"
+	{Box 5.90551 25.5906 47.2441}
+	{Bone "wall"}
+	{Position 45.2756	35.4331	23.622}
+}
+{Volume "wall3"
+	{Box 5.90551 96.4567 88.5827}
+	{Bone "wall"}
+	{Position 47.2441	0	91.5354}
+}
+{Volume "wall4"
+	{Box 94.4882 5.90551 135.827}
+	{Bone "wall"}
+	{Position 0	45.2756	67.9134}
+}
+{Volume "wall5"
+	{Box 5.90551 96.4567 135.827}
+	{Bone "wall"}
+	{Position -45.2756	0	67.9134}
+}
+{Volume "wall6"
+	{Box 94.4882 5.90551 135.827}
+	{Bone "wall"}
+	{Position 0	-45.2756	67.9134}
+}

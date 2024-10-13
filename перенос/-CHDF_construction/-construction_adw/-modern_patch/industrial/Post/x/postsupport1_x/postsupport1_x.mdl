@@ -1,0 +1,40 @@
+;Exported by: Notebook
+;Date:        Thu Oct 24 22:34:26 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\posthsupport_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece1"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0	0	0
+			}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0	1.05523e-005	150.781
+			}
+			{VolumeView "piece2.ply"}
+		}
+	}
+}
+{Volume "piece1"
+	{Box 5.11811 5.11811 167.323}
+	{Bone "piece1"}
+	{Matrix34
+		1	0	0
+		0	0.974419	-0.224737
+		0	0.224737	0.974419
+		0	-22.7802	71.9306
+	}
+}

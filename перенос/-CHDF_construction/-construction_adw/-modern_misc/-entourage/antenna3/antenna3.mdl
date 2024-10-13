@@ -1,0 +1,38 @@
+;Exported by: Vorabat
+;Date:        Thu Jan 20 01:01:36 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\antenas.max
+{Skeleton
+	{bone "antenna3"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "antenna3.ply"}
+	}
+}
+{Volume "box03"
+	{Box 2.73823 2.25501 61.3685}
+	{Bone "antenna3"}
+	{Position -0.0270996	-3.03796	30.6842}
+}
+{Volume "box09"
+	{Box 42.523 1.1275 2.57715}
+	{Bone "antenna3"}
+	{Matrix34
+		0.973849	0.165229	0.155939
+		-0.163151	0.986255	-0.026125
+		-0.158112	0	0.987421
+		-0.288082	-3.26952	42.4448
+	}
+}
+{Volume "box10"
+	{Box 42.523 1.1275 2.57715}
+	{Bone "antenna3"}
+	{Matrix34
+		0.919946	-0.391952	-0.00862016
+		0.389336	0.915945	-0.0972763
+		0.0460232	0.0861328	0.99522
+		-2.74488	-1.68361	54.6257
+	}
+}

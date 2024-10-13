@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "s300_radar_bycawx"}
+	{blend none}
+}

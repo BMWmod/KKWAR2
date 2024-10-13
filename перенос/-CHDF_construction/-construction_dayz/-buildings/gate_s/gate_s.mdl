@@ -1,0 +1,110 @@
+;Exported by: Gans
+;Date:        Mon Nov 01 21:32:44 2021
+;File:        G:\3Dmodel\Construction\gate\gates.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.4} {resume}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "gate_right"
+			{Position 0.195925	-74.004	33.6506}
+			{VolumeView "gate_right.ply"}
+			{bone "right"
+				{Position -2.56737	23.9694	-2.51999}
+				{VolumeView "right.ply"}
+			}
+		}
+		{bone "gate_left"
+			{Position 0.195925	74.7005	33.6506}
+			{VolumeView "gate_left.ply"}
+			{bone "left"
+				{Position -2.56737	-23.963	-2.53904}
+				{VolumeView "left.ply"}
+			}
+		}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 0.206451 -75.5467}
+		{Extent 5.48269 24.8566}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center 0.206451 55.2139}
+		{Extent 5.48269 5.46845}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body3"
+	{Obb2
+		{Center 0.206451 74.5106}
+		{Extent 5.48269 24.8566}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 0.206451 -55.4347}
+		{Extent 5.48269 5.46845}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "close"
+	{Obb2
+		{Center -2.00211 -0.219624}
+		{Extent 1.86887 49.9256}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Volume "body1"
+	{Box 10.9654 49.7132 51.1622}
+	{Bone "gate_left"}
+	{Position 0.0105264	0.846161	-8.06953}
+}
+{Volume "body2"
+	{Box 10.9654 10.9369 18.93}
+	{Bone "gate_right"}
+	{Position 0.0105264	18.7902	25.5786}
+}
+{Volume "body3"
+	{Box 10.9654 49.7132 51.1622}
+	{Bone "gate_right"}
+	{Position 0.0105264	-0.506622	-8.06953}
+}
+{Volume "body"
+	{Box 10.9654 10.9369 18.93}
+	{Bone "gate_left"}
+	{Position 0.0105264	-19.2658	25.5786}
+}
+{Volume "left"
+	{Box 3.28961 49.7132 49.6273}
+	{Bone "right"}
+	{Position -0.346783	24.6559	0.566874}
+}
+{Volume "lock"
+	{Box 5.70284 11.3589 12.8959}
+	{Bone "right"}
+	{Position -4.38695	45.0284	-0.751773}
+}
+{Volume "right"
+	{Box 3.28961 49.7132 49.6273}
+	{Bone "left"}
+	{Position -0.346783	-26.3862	0.585917}
+}

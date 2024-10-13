@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "kuzov_albedo"}
+	{blend none}
+}

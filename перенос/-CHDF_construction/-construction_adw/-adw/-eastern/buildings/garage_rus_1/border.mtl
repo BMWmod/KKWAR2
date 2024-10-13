@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "ston_plita_iov"}
+	{bump "ston_plita_iov_bump"}
+	{specular "ston_plita_iov_s"}
+	{color "230 230 230 25"}
+	{blend none}
+}

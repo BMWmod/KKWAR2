@@ -1,0 +1,67 @@
+;Exported by: Vorabat
+;Date:        Sat Mar 20 21:43:13 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\trees.max
+{Skeleton
+	{bone "stolb_fonar_new"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "stolb_fonar_new.ply"}
+		{bone "lamp_glass1"
+			{Matrix34
+				0.0987481	0	-0.995112
+				0	1	0
+				0.995112	0	0.0987481
+				13.9001	-0.263164	118.041
+			}
+		}
+		{bone "lamp_light_spot1"
+			{Matrix34
+				0.0987481	0	-0.995112
+				0	1	0
+				0.995112	0	0.0987481
+				13.9001	-0.263164	118.041
+			}
+		}
+		{bone "light_spot"
+			{Matrix34
+				0.0987481	0	-0.995112
+				0	1	0
+				0.995112	0	0.0987481
+				13.9001	-0.263164	118.041
+			}
+		}
+	}
+}
+{Volume "body"
+	{Box 2.22643 2.11127 13.0131}
+	{Bone "stolb_fonar_new"}
+	{Matrix34
+		0.971794	0	0
+		0	0.971794	0
+		0	0	9.27887
+		0.0560176	-0.0904244	60.3734
+	}
+}
+{Volume "lamp1"
+	{Polyhedron "lamp1.vol"}
+	{Bone "stolb_fonar_new"}
+	{Matrix34
+		0.970694	0	0.24032
+		0	1	0
+		0.135116	0	0.99083
+		12.3782	-0.531871	117.527
+	}
+}
+{Volume "lamp_glass1"
+	{Box 6.98639 3.60835 1.22838}
+	{Bone "stolb_fonar_new"}
+	{Matrix34
+		0.968179	0	0.250259
+		0	1	0
+		-0.23481	0	0.908413
+		12.2339	-0.531871	118.085
+	}
+}

@@ -1,0 +1,23 @@
+;Exported by: zorro
+;Date:        Thu Feb 18 01:39:09 2010
+;File:        (null)
+{Skeleton
+	{bone "helicopter-dead_base"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "helicopter-dead_base.ply"}
+	}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "helicopter-dead_base"}
+	{Position 61.6324	1.14033	0}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "helicopter-dead_base"}
+	{Position -63.6722	9.22076	0}
+}

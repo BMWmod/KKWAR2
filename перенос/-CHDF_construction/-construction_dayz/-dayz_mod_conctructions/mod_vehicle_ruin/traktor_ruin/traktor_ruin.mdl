@@ -1,0 +1,26 @@
+;Exported by: Alexey
+;Date:        Sun Jan 11 14:31:48 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\traktor_2a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0.575005	-0.133347	28.6569}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Position -10.7593	-5.13385	13.4668}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position -10.7593	-5.13385	-23.823}
+}

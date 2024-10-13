@@ -1,0 +1,15 @@
+{game_entity
+	{Extension "powerline2_x.mdl"}
+	{Volume "ferm"
+	}
+	{Volume "piece11"
+	}
+	{Volume "piece12"
+	}
+	{Volume "piece13"
+	}
+	{Volume "piece21"
+	}
+	{Volume "piece22"
+	}
+}

@@ -1,0 +1,136 @@
+;Exported by: Gans
+;Date:        Tue Sep 20 01:22:22 2022
+;File:        C:\Users\Gans\Desktop\dom\house_broken.max
+{Skeleton
+	{bone "point01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "house_left_front"
+			{Position 43.5206	-201.995	106.394}
+			{VolumeView "house_left_front.ply"}
+			{bone "window1"
+				{parameters "ID=window1;"}
+				{Position -16.6836	-108.871	-10.8938}
+				{VolumeView "window1.ply"}
+			}
+			{bone "window2"
+				{parameters "ID=window2;"}
+				{Position 59.5167	73.2663	36.0123}
+				{VolumeView "window2.ply"}
+			}
+			{bone "window3"
+				{parameters "ID=window3;"}
+				{Position 59.2539	-77.1884	36.0336}
+				{VolumeView "window3.ply"}
+			}
+			{bone "window4"
+				{parameters "ID=window4;"}
+				{Position 59.0872	-77.1884	-10.2045}
+				{VolumeView "window4.ply"}
+			}
+			{bone "window5"
+				{parameters "ID=window5;"}
+				{Position -16.6836	-108.871	35.049}
+				{VolumeView "window5.ply"}
+			}
+		}
+	}
+}
+{Volume "box76"
+	{Box 114.096 8.26132 107.747}
+	{Bone "house_left_front"}
+	{Position 8.44707	-108.922	10.6071}
+}
+{Volume "box77"
+	{Box 211.745 8.26132 107.747}
+	{Bone "house_left_front"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		59.7566	-7.74149	10.6071
+	}
+}
+{Volume "box82"
+	{Polyhedron "box82.vol"}
+	{Bone "house_left_front"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		18.8796	-9.52893	64.1097
+	}
+}
+{Volume "hole1"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_left_front"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-19.1927	-109.28	-12.3974
+	}
+}
+{Volume "hole2"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_left_front"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-19.1927	-109.28	35.5675
+	}
+}
+{Volume "hole3"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_left_front"}
+	{Position 59.0844	-74.4819	-12.3974}
+}
+{Volume "hole4"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_left_front"}
+	{Position 59.0844	-74.4819	35.5675}
+}
+{Volume "hole5"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_left_front"}
+	{Position 59.0844	74.0458	35.5675}
+}
+{Volume "window1"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window1"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-2.94857	-1.65866	-1.34817
+	}
+}
+{Volume "window2"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window2"}
+	{Position 0.417694	-0.0383301	0.143068}
+}
+{Volume "window3"
+	{Box 13.8729 36.8874 26.2781}
+	{Bone "window3"}
+	{Position 0.680473	1.1153	-0.429823}
+}
+{Volume "window4"
+	{Box 13.8729 36.8874 26.2781}
+	{Bone "window4"}
+	{Position 0.847206	1.1153	-1.97729}
+}
+{Volume "window5"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window5"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-2.94857	-1.65866	0.436571
+	}
+}

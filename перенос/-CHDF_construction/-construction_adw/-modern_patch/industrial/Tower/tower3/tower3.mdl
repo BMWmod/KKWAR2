@@ -1,0 +1,109 @@
+;Exported by: Notebook
+;Date:        Sun Sep 08 21:59:07 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Tower\tower3.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+			{bone "body"
+				{VolumeView "body.ply"}
+				{bone "top"
+					{Position 0	0	275.201}
+					{VolumeView "top.ply"}
+					{bone "lightning"
+						{Position -16.7323	16.7323	0.389862}
+						{VolumeView "lightning.ply"}
+					}
+					{bone "braket1"
+						{Matrix34
+							1	0	0
+							0	-1	0
+							0	0	-1
+							9.84252	-23.9173	7.6745
+						}
+						{VolumeView "braket1.ply"}
+						{bone "projector1"
+							{Matrix34
+								1	0	0
+								0	0.432057	-0.901847
+								0	0.901847	0.432057
+								0	0	-0.00726318
+							}
+							{VolumeView "projector1.ply"}
+							{bone "lightfx1"
+								{parameters "light_boat;"}
+								{Matrix34
+									-1	0	0
+									0	0	1
+									0	1	0
+									0	0	5.40369
+								}
+							}
+						}
+					}
+					{bone "braket2"
+						{Matrix34
+							-1	0	0
+							0	1	0
+							0	0	-1
+							-9.84252	23.9173	7.6745
+						}
+						{VolumeView "braket2.ply"}
+						{bone "projector2"
+							{Matrix34
+								1	0	0
+								0	0.570257	-0.821467
+								0	0.821467	0.570257
+								0	0	-0.00726318
+							}
+							{VolumeView "projector2.ply"}
+							{bone "lightfx2"
+								{parameters "light_boat;"}
+								{Matrix34
+									-1	0	0
+									0	0	1
+									0	1	0
+									0	0	5.40367
+								}
+							}
+						}
+					}
+				}
+				{bone "stair"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						0	-6.60028	44.3829
+					}
+					{VolumeView "stair.ply"}
+				}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Cylinder 5.51181 275.591}
+	{Bone "body"}
+	{Position 0	0	137.795}
+}
+{Volume "projector1"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector1"}
+	{Position 0	3.23656e-005	1.61942}
+}
+{Volume "projector2"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector2"}
+	{Position 0	0	1.61944}
+}
+{Volume "top"
+	{Box 37.4016 37.4016 29.5276}
+	{Bone "top"}
+	{Position 0	0	13.1851}
+}

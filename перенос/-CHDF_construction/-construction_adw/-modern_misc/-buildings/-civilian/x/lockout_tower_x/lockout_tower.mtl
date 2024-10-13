@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "lockout_tower"}
+	{bump "lockout_tower_bp"}
+	{blend none}
+}

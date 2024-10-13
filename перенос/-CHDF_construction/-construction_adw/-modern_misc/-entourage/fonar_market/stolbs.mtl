@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "stolbs"}
+	{bump "stolbs_bp"}
+	{specular "stolbs_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

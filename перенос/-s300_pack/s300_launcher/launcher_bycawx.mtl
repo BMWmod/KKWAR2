@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "launcher_bycawx"}
+	{blend none}
+}

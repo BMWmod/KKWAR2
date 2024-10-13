@@ -1,0 +1,247 @@
+;Exported by: zorro
+;Date:        Wed Feb 17 21:47:27 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\palatka2.max
+{Skeleton
+	{bone "palatka_2"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "palatka_2.ply"}
+		{bone "box49"
+			{Matrix34
+				1	0	0
+				0	0.939693	0.34202
+				0	-0.34202	0.939693
+				-127.622	-8.14228	44.2162
+			}
+		}
+		{bone "box50"
+			{Matrix34
+				-1	0	0
+				0	-0.939693	0.34202
+				0	0.34202	0.939693
+				-127.622	7.65618	44.2162
+			}
+		}
+	}
+}
+{Obstacle "box27"
+	{Obb2
+		{Center -127.795 -17.041}
+		{Extent 36.1222 0.999924}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box28"
+	{Obb2
+		{Center -127.795 17.32}
+		{Extent 36.1222 0.999924}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box29"
+	{Obb2
+		{Center 84.1716 0.29705}
+		{Extent 0.999924 72.2445}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box30"
+	{Obb2
+		{Center -91.95 -43.6503}
+		{Extent 0.749943 28.6324}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box31"
+	{Obb2
+		{Center -91.9126 44.0657}
+		{Extent 0.749947 28.6324}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box32"
+	{Obb2
+		{Center -3.25392 68.0378}
+		{Extent 88.4932 4.51085}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box33"
+	{Obb2
+		{Center -3.25392 -67.3134}
+		{Extent 88.4932 4.51087}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box27"
+	{Box 72.2445 1.99985 43.9966}
+	{Bone "palatka_2"}
+	{Position -127.795	17.041	21.9983}
+}
+{Volume "box28"
+	{Box 72.2445 1.99985 43.9966}
+	{Bone "palatka_2"}
+	{Position -127.795	-17.32	21.9983}
+}
+{Volume "box29"
+	{Polyhedron "box29.vol"}
+	{Bone "palatka_2"}
+	{Position 84.1716	-0.29705	0}
+}
+{Volume "box30"
+	{Polyhedron "box30.vol"}
+	{Bone "palatka_2"}
+	{Position -91.95	36.5163	0}
+}
+{Volume "box31"
+	{Polyhedron "box31.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-91.9126	-36.9317	0
+	}
+}
+{Volume "box32"
+	{Polyhedron "box32.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-3.25392	-70.1218	0
+	}
+}
+{Volume "box33"
+	{Polyhedron "box33.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-3.25392	69.3973	0
+	}
+}
+{Volume "box34"
+	{Polyhedron "box34.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-3.25392	63.897	18.95
+	}
+}
+{Volume "box35"
+	{Polyhedron "box35.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-86.542	63.897	18.95
+	}
+}
+{Volume "box36"
+	{Polyhedron "box36.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		79.4013	63.897	18.95
+	}
+}
+{Volume "box37"
+	{Polyhedron "box37.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-61.8941	59.3579	35.3219
+	}
+}
+{Volume "box38"
+	{Polyhedron "box38.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		54.6515	59.3579	35.3219
+	}
+}
+{Volume "box39"
+	{Polyhedron "box39.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-62.3402	-59.8083	35.3219
+	}
+}
+{Volume "box40"
+	{Polyhedron "box40.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-87.09	-64.3474	18.95
+	}
+}
+{Volume "box41"
+	{Polyhedron "box41.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-4.43476	-64.3474	18.95
+	}
+}
+{Volume "box42"
+	{Polyhedron "box42.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		78.8533	-64.3473	18.95
+	}
+}
+{Volume "box43"
+	{Polyhedron "box43.vol"}
+	{Bone "palatka_2"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		53.9104	-59.8083	35.3219
+	}
+}
+{Volume "box48"
+	{Polyhedron "box48.vol"}
+	{Bone "palatka_2"}
+	{Position -163.125	-0.365297	40.5298}
+}

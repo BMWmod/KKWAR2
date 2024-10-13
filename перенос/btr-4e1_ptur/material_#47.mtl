@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/model/BTR-4E/wheels 004diffusemap"}
+	{bump "$/model/BTR-4E/wheels 003normalsmap"}
+	{blend none}
+}

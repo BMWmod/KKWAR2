@@ -1,0 +1,161 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 17:26:15 2019
+;File:        G:\Tarkov\building\fuel_zapravka\fuel_zapravka.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece05"
+			{Position 1.26289	0	18.1819}
+			{VolumeView "piece05.ply"}
+		}
+		{bone "piece01"
+			{Position 0.347457	3.24075	26.878}
+			{VolumeView "piece01.ply"}
+		}
+		{bone "piece02"
+			{Position 0.336197	3.7724	13.2386}
+			{VolumeView "piece02.ply"}
+		}
+		{bone "piece03"
+			{Position 0.336197	-3.77241	13.2386}
+			{VolumeView "piece03.ply"}
+		}
+		{bone "piece04"
+			{Position 0.347457	-3.24076	26.878}
+			{VolumeView "piece04.ply"}
+		}
+		{bone "body"
+			{Position 0	0	2.1414}
+			{VolumeView "body.ply"}
+		}
+		{bone "det1"
+			{Position 0	0	4.82501}
+			{VolumeView "det1.ply"}
+		}
+		{bone "fx_dust2a"
+			{Position 0	0	9.46185}
+		}
+		{bone "fx_exp2a"
+			{Position 0	0	4.42345}
+		}
+		{bone "fx_metall1"
+			{Position 0	0	17.7712}
+		}
+		{bone "fx_dust1"
+			{Position 0	0	24.6519}
+		}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 4.76837e-007 -2.38419e-007}
+		{Extent 14.6367 7.05989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece01"
+	{Obb2
+		{Center 0.383722 -3.84984}
+		{Extent 5.60058 0.748497}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece02"
+	{Obb2
+		{Center 0.383722 -3.84984}
+		{Extent 5.60058 0.748497}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece03"
+	{Obb2
+		{Center 0.383722 3.77554}
+		{Extent 5.60058 0.748497}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece04"
+	{Obb2
+		{Center 0.383722 3.77554}
+		{Extent 5.60058 0.748497}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece05"
+	{Obb2
+		{Center 0.351558 0}
+		{Extent 6.1383 4.95126}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0	0	-3.39295}
+}
+{Volume "piece01"
+	{Box 33.6974 4.50354 28.1423}
+	{Bone "piece01"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		0.0362654	0.609089	-0.107402
+	}
+}
+{Volume "piece02"
+	{Box 33.6974 4.50354 44.228}
+	{Bone "piece02"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		0.0475254	0.0774336	0.0973577
+	}
+}
+{Volume "piece03"
+	{Box 33.6974 4.50354 44.228}
+	{Bone "piece03"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		0.0475254	-0.0031302	0.0973577
+	}
+}
+{Volume "piece04"
+	{Box 33.6974 4.50354 28.1423}
+	{Bone "piece04"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		0.0362654	-0.534777	-0.107402
+	}
+}
+{Volume "piece05"
+	{Box 36.9327 29.7906 81.7144}
+	{Bone "piece05"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		-0.911329	0	0.185525
+	}
+}

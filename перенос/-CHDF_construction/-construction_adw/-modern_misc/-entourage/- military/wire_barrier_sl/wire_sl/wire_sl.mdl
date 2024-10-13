@@ -1,0 +1,26 @@
+;Exported by: Adam
+;Date:        Sat Jan 07 12:09:56 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\barbed_wire.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+		{bone "obb2"
+			{Position 0.192413	-0.57723	0}
+		}
+	}
+}
+{Volume "body"
+	{Box 80.5236 29.9198 17.6709}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-0.120737	-0.367015	14.9137
+	}
+}

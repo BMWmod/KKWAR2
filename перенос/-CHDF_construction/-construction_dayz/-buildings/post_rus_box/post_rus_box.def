@@ -1,0 +1,240 @@
+{construction
+    (include "/properties/building.inc")
+	{props "concrete" "windowed" "gate"}
+	{obstacleid "unbreakable"}
+	("armor_heavy" args 1.0)
+	{Extension "post_rus_box.mdl"}
+	
+	{placer
+	     {place "1" {attach  snipe_cover} 		{linkbone "attach01"}}
+	     {place "2" {attach  snipe_cover} 		{linkbone "attach02"}}
+	     {place "3" {attach  snipe_cover} 		{linkbone "attach03"}}
+	     {place "4" {attach  snipe_cover} 		{linkbone "attach04"}}
+	     {place "5" {attach  snipe_cover} 		{linkbone "attach05"}}
+	     {place "6" {attach  snipe_cover} 		{linkbone "attach06"}}
+	     {place "7" {attach  snipe_cover} 		{linkbone "attach07"}}
+	     {place "8" {attach  snipe_cover} 		{linkbone "attach08"}}
+	     {place "9" {attach  snipe_cover} 		{linkbone "attach09"}}
+	     {place "10" {attach  squat_lie} 		{linkbone "attach10"}}
+	     {place "11" {attach  squat_lie} 		{linkbone "attach11"}}
+	     {place "12" {attach  squat_lie} 		{linkbone "attach12"}}
+	     {place "13" {attach  squat_lie} 		{linkbone "attach13"}}
+	     {place "14" {attach snipe_cover} 		{linkbone "attach14"}}
+	     {place "15" {attach  squat_lie} 		{linkbone "attach15"}}
+	}
+	{boarder}
+	
+	{Volume "attach01"
+		{Tags  "attach" "1"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach02"
+		{Tags  "attach" "2"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach03"
+		{Tags  "attach" "3"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach04"
+		{Tags  "attach" "4"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach05"
+		{Tags  "attach" "5"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach06"
+		{Tags  "attach" "6"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach07"
+		{Tags  "attach" "7"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach08"
+		{Tags  "attach" "8"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach09"
+		{Tags  "attach" "9"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach10"
+		{Tags  "attach" "10"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach11"
+		{Tags  "attach" "11"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach12"
+		{Tags  "attach" "12"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach13"
+		{Tags  "attach" "13"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach14"
+		{Tags  "attach" "14"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach15"
+		{Tags  "attach" "15"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box05"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box06"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box07"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box08"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box09"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box10"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box17"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box18"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "hole10"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole1"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole2"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole3"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole4"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole5"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole6"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole7"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole8"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole9"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Extender "land_patch"
+		{TerrainType "road" "bridge"}
+	}
+}

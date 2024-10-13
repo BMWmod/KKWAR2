@@ -1,0 +1,13 @@
+;Exported by: Vorabat
+;Date:        Fri Feb 18 21:05:44 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\musor2.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}

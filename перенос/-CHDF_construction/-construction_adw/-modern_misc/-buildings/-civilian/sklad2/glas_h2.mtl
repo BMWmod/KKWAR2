@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/civilian_construction/2/glas_h2"}
+	{blend none}
+}

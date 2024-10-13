@@ -1,0 +1,139 @@
+;Exported by: Notebook
+;Date:        Sun Jan 07 14:34:28 2018
+
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.02}}
+		{sequence "close" {speed 0.02}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "wallfront"
+			{Position 0	-4.85283e-005	0}
+			{VolumeView "wallfront.ply"}
+			{bone "gate"
+				{Position 0	-9.60345	0}
+				{VolumeView "gate.ply"}
+			}
+			{bone "doorl2"
+				{Position -78.7402	-9.84247	0}
+				{VolumeView "doorl2.ply"}
+			}
+			{bone "doorr2"
+				{Position 78.7402	-9.84247	0}
+				{VolumeView "doorr2.ply"}
+			}
+			{bone "doorl1"
+				{Position 0	-11.811	0}
+				{VolumeView "doorl1.ply"}
+				{bone "numberl"
+					{Matrix34
+						1	0	0
+						0	0	1
+						0	-1	0
+						-39.3701	-2.1063	79.6082
+					}
+					{VolumeView "numberl.ply"}
+				}
+			}
+			{bone "doorr1"
+				{Position 0	-11.811	0}
+				{VolumeView "doorr1.ply"}
+				{bone "numberr"
+					{Matrix34
+						1	0	0
+						0	0	1
+						0	-1	0
+						39.3701	-2.10957	79.6082
+					}
+					{VolumeView "numberr.ply"}
+				}
+			}
+		}
+	}
+}
+{Obstacle "wallfrontl"
+	{Obb2
+		{Center -192.383 4.85283e-005}
+		{Extent 49.2126 9.84252}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "wallfrontr"
+	{Obb2
+		{Center 192.381 4.85283e-005}
+		{Extent 49.2126 9.84252}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "doorl1"
+	{Box 78.7402 3.93701 157.48}
+	{Bone "doorl1"}
+	{Position -39.3701	0	78.7402}
+}
+{Volume "doorl2"
+	{Box 78.7402 3.93701 157.48}
+	{Bone "doorl2"}
+	{Position -39.3701	0	78.7402}
+}
+{Volume "doorr1"
+	{Box 78.7402 3.93701 157.48}
+	{Bone "doorr1"}
+	{Position 39.3701	0	78.7402}
+}
+{Volume "doorr2"
+	{Box 78.7402 3.93701 157.48}
+	{Bone "doorr2"}
+	{Position 39.3701	0	78.7402}
+}
+{Volume "switch"
+	{Box 19.685 19.685 29.5276}
+	{Bone "doorl1"}
+	{Position -15.748	1.96851	38.3858}
+}
+{Volume "theswitch"
+	{Box 19.685 19.685 29.5276}
+	{Bone "doorr1"}
+	{Position 15.748	1.96851	38.3858}
+}
+{Volume "wallfront1"
+	{Box 131.89 19.685 82.6772}
+	{Bone "wallfront"}
+	{Position -212.598	0	41.3386}
+}
+{Volume "wallfront2"
+	{Box 131.89 19.685 82.6772}
+	{Bone "wallfront"}
+	{Position 212.598	0	41.3386}
+}
+{Volume "wallfront3"
+	{Box 70.8661 19.685 82.6772}
+	{Bone "wallfront"}
+	{Position -182.126	0	120.079}
+}
+{Volume "wallfront4"
+	{Box 70.8661 19.685 82.6772}
+	{Bone "wallfront"}
+	{Position 182.126	0	120.079}
+}
+{Volume "wallfront5"
+	{Box 137.795 19.685 62.9921}
+	{Bone "wallfront"}
+	{Position -113.741	0	130.129}
+}
+{Volume "wallfront6"
+	{Box 137.795 19.685 62.9921}
+	{Bone "wallfront"}
+	{Position 113.739	0	130.129}
+}
+{Volume "wallfront7"
+	{Box 236.22 19.685 49.2126}
+	{Bone "wallfront"}
+	{Position -0.000724792	0	176.476}
+}

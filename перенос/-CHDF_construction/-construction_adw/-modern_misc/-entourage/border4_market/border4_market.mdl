@@ -1,0 +1,14 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:11 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "border4_market"
+		{parameters "CommonMesh;Land;Ground;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "border4_market.ply" {Ground}}
+	}
+}

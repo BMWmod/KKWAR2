@@ -1,0 +1,114 @@
+;Exported by: Gans
+;Date:        Wed Sep 07 20:21:56 2022
+;File:        C:\Users\Gans\Desktop\dom\x\house_front_left_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece0"
+			{Position 61.0626	-30.6347	199.83}
+			{VolumeView "piece0.ply"}
+		}
+		{bone "piece1"
+			{Position 62.0349	-131.058	199.829}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Position 102.742	-80.6869	124.957}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece3"
+			{Position 102.742	-9.12306	138.188}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece4"
+			{Position 102.742	-9.45476	94.2175}
+			{VolumeView "piece4.ply"}
+		}
+		{bone "fx_metall1"
+			{parameters "LastPose = undefined;"}
+			{Position 102.006	-52.7103	173.782}
+		}
+		{bone "fx_stone2"
+			{parameters "LastPose = undefined;"}
+			{Position 101.424	-52.7103	147.771}
+		}
+		{bone "fx_stone1m"
+			{parameters "LastPose = undefined;"}
+			{Position 104.066	-81.1637	108.832}
+		}
+		{bone "fx_stone1a"
+			{parameters "LastPose = undefined;"}
+			{Position 101.961	-144.048	186.862}
+		}
+		{bone "fx_stone1"
+			{parameters "LastPose = undefined;"}
+			{Position 102.633	-76.1998	119.534}
+		}
+		{bone "fx_wood1c"
+			{parameters "LastPose = undefined;"}
+			{Position 87.7032	-11.1751	183.822}
+		}
+		{bone "fx_wood1a"
+			{parameters "LastPose = undefined;"}
+			{Position 47.7138	-89.2988	204.709}
+		}
+		{bone "fx_wood1"
+			{parameters "LastPose = undefined;"}
+			{Position 47.7138	19.4188	192.704}
+		}
+		{bone "fx_dust2a"
+			{parameters "LastPose = undefined;"}
+			{Position 1.60229	-23.814	222.118}
+		}
+		{bone "fx_dust2"
+			{parameters "LastPose = undefined;"}
+			{Position 35.4455	-144.238	205.832}
+		}
+		{bone "fx_dust1a"
+			{parameters "LastPose = undefined;"}
+			{Position 65.1139	-108.229	189.115}
+		}
+		{bone "fx_dust1"
+			{Position 65.1139	13.8279	189.115}
+		}
+	}
+}
+{Volume "piece0"
+	{Polyhedron "piece0.vol"}
+	{Bone "piece0"}
+	{Matrix34
+		0.375176	0	0.926953
+		0	1	0
+		-0.926953	0	0.375176
+		61.4328	14.9593	-24.1634
+	}
+}
+{Volume "piece1"
+	{Polyhedron "piece1.vol"}
+	{Bone "piece1"}
+	{Matrix34
+		0.375176	0	0.926953
+		0	1	0
+		-0.926953	0	0.375176
+		60.4605	12.8551	-24.1626
+	}
+}
+{Volume "piece2"
+	{Box 7.81733 68.0789 66.2489}
+	{Bone "piece2"}
+	{Position -0.208496	4.7298	16.1005}
+}
+{Volume "piece3"
+	{Box 7.81733 68.0789 66.2489}
+	{Bone "piece3"}
+	{Position -0.208496	0.107412	2.86906}
+}
+{Volume "piece4"
+	{Box 7.81733 68.0789 66.2489}
+	{Bone "piece4"}
+	{Position -0.208511	0.439116	2.39789}
+}

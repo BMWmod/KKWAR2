@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/tigres/kornet"}
+	{emitsheat}
+{blend none}
+}

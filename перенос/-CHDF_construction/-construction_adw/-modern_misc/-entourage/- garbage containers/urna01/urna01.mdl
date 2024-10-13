@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Thu Nov 19 12:17:13 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\sughqh.max
+{Skeleton
+	{bone "mesh1864shape"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "mesh1864shape.ply"}
+	}
+}
+{Volume "tube01"
+	{Polyhedron "tube01.vol"}
+	{Bone "mesh1864shape"}
+	{Position 0.115791	-0.107574	0}
+}

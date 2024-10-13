@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "tp_wall"}
+	{blend none}
+}

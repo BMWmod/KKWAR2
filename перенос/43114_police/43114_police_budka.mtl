@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "43114_police_budka"}
+	{bump "43114_police_budka_bp"}
+	{specular "43114_police_budka_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

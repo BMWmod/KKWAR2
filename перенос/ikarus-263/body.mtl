@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/car/ikarus/ikarus_body"}
+	{blend none}
+}

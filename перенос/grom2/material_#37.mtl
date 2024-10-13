@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "grim_cabin_basecolor"}
+	{blend none}
+}

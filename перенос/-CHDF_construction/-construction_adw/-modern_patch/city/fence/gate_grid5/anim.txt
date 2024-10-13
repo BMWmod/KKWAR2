@@ -1,0 +1,46 @@
+-= Animation: open, Node gate =-
+	Frame 0 {
+		Visibility 1
+		Position	0	9.84252	0.590551
+		Orientation	0 0 0 1
+	}
+	Frame 1 {
+		Orientation	0 0 0.108693 0.994075
+	}
+	Frame 2 {
+		Orientation	0 0 0.360322 0.932828
+	}
+	Frame 3 {
+		Orientation	0 0 0.627691 0.778462
+	}
+	Frame 4 {
+		Orientation	0 0 0.806548 0.591169
+	}
+	Frame 5 {
+		Visibility 1
+		Position	0	9.84252	0.590551
+		Orientation	0 0 0.866025 0.5
+	}
+-= Animation: close, Node gate =-
+	Frame 10 {
+		Visibility 1
+		Position	0	9.84252	0.590551
+		Orientation	0 0 0.866025 0.5
+	}
+	Frame 11 {
+		Orientation	0 0 0.806548 0.591169
+	}
+	Frame 12 {
+		Orientation	0 0 0.627691 0.778462
+	}
+	Frame 13 {
+		Orientation	0 0 0.360322 0.932828
+	}
+	Frame 14 {
+		Orientation	0 0 0.108693 0.994075
+	}
+	Frame 15 {
+		Visibility 1
+		Position	0	9.84252	0.590551
+		Orientation	0 0 0 1
+	}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "roof_smola_1"}
+	{blend none}
+}

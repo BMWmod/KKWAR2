@@ -1,0 +1,177 @@
+;Exported by: Notebook
+;Date:        Sun Feb 24 19:08:49 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Fence\fence_barbedware1_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "barbedware2"
+			{Position 0	29.5276	0}
+			{VolumeView "barbedware2.ply"}
+		}
+		{bone "column2"
+			{VolumeView "column2.ply"}
+			{bone "piece4"
+				{Matrix34
+					0.0220068	0.100376	-0.994706
+					-0.366243	0.926592	0.0854002
+					0.930259	0.362425	0.0571535
+					-11.7865	-11.2881	1.5748
+				}
+				{VolumeView "piece4.ply"}
+			}
+			{bone "piece5"
+				{Matrix34
+					0	0	-1
+					-0.731107	0.682263	0
+					0.682263	0.731107	0
+					-8.5105	0.579308	1.5748
+				}
+				{VolumeView "piece5.ply"}
+			}
+			{bone "piece6"
+				{Matrix34
+					0.593222	0.805039	0
+					0	0	1
+					0.805039	-0.593222	0
+					4.48354	-5.86509	1.5748
+				}
+				{VolumeView "piece6.ply"}
+			}
+		}
+		{bone "column1"
+			{Position 0	59.0551	0}
+			{VolumeView "column1.ply"}
+			{bone "piece1"
+				{Matrix34
+					0.359271	0.932592	-0.0345939
+					0.0109762	0.0328436	0.9994
+					0.933169	-0.359435	0.0015634
+					4.38743	-3.74195	1.58811
+				}
+				{VolumeView "piece1.ply"}
+			}
+			{bone "piece2"
+				{Matrix34
+					-0.0761161	-0.0508672	-0.995801
+					-0.847374	-0.523055	0.0914894
+					-0.525512	0.85078	-0.00329066
+					13.143	-0.282742	1.76814
+				}
+				{VolumeView "piece2.ply"}
+			}
+			{bone "piece3"
+				{Matrix34
+					-0.079679	0.132561	0.987967
+					-0.439667	0.884828	-0.154182
+					-0.894619	-0.446662	-0.0122193
+					0.0620594	6.3067	1.63408
+				}
+				{VolumeView "piece3.ply"}
+			}
+		}
+		{bone "barbedware1"
+			{Position 0	-29.5276	0}
+			{VolumeView "barbedware1.ply"}
+		}
+		{bone "column3"
+			{Position 0	-59.0551	0}
+			{VolumeView "column3.ply"}
+			{bone "piece7"
+				{Matrix34
+					0.0220068	0.100376	-0.994706
+					-0.366243	0.926592	0.0854002
+					0.930259	0.362425	0.0571535
+					4.53233	5.86394	1.5748
+				}
+				{VolumeView "piece7.ply"}
+			}
+			{bone "piece8"
+				{Matrix34
+					0	0	-1
+					-0.731107	0.682263	0
+					0.682263	0.731107	0
+					-3.42501	-6.2781	1.5748
+				}
+				{VolumeView "piece8.ply"}
+			}
+			{bone "piece9"
+				{Matrix34
+					0.593222	0.805039	0
+					0	0	1
+					0.805039	-0.593222	0
+					1.53776	-3.65965	1.5748
+				}
+				{VolumeView "piece9.ply"}
+			}
+		}
+	}
+}
+{Volume "barbedware"
+	{Box 0.19685 55.1181 35.4331}
+	{Bone "barbedware2"}
+	{Position 0	0	17.7165}
+}
+{Volume "column1"
+	{Box 3.54331 3.54331 12.7953}
+	{Bone "column1"}
+	{Position 0	0	6.39764}
+}
+{Volume "column2"
+	{Box 3.54331 3.54331 12.7953}
+	{Bone "column2"}
+	{Position 0	0	6.39764}
+}
+{Volume "column3"
+	{Box 3.54331 3.54331 12.7953}
+	{Bone "column3"}
+	{Position 0	0	6.39764}
+}
+{Volume "piece1"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece1"}
+	{Position 0	0	3.59644}
+}
+{Volume "piece2"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece2"}
+	{Position 0	0	3.26224}
+}
+{Volume "piece3"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece3"}
+	{Position 0	0	3.09056}
+}
+{Volume "piece4"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece4"}
+	{Position 0	0	3.8123}
+}
+{Volume "piece5"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece5"}
+	{Position 0	0	3.31786}
+}
+{Volume "piece6"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece6"}
+	{Position -0.598471	0	2.87522}
+}
+{Volume "piece7"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece7"}
+	{Position 0	0	3.8123}
+}
+{Volume "piece8"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece8"}
+	{Position 0	0	3.31786}
+}
+{Volume "piece9"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "piece9"}
+	{Position -0.598473	0	2.87522}
+}

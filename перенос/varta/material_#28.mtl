@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "salon_albedo"}
+	{blend none}
+}

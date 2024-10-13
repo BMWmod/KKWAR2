@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "bodytiger-be d"}
+	{blend none}
+}

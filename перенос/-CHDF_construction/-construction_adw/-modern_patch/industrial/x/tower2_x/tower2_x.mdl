@@ -1,0 +1,116 @@
+;Exported by: Notebook
+;Date:        Sun Sep 08 21:17:53 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Tower\tower2_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+		}
+		{bone "ferm"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0	0	8.90165
+			}
+			{VolumeView "ferm.ply"}
+		}
+		{bone "piece8"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	-1
+				14.7638	29.5276	282.875
+			}
+			{VolumeView "piece8.ply"}
+		}
+		{bone "piece2"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0	29.5276	113.192
+			}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece3"
+			{Position 7.57468	-29.5276	130.985}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece5"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0	0	230.304
+			}
+			{VolumeView "piece5.ply"}
+		}
+		{bone "piece6"
+			{Position 7.57468	29.5276	247.894}
+			{VolumeView "piece6.ply"}
+		}
+		{bone "piece1"
+			{Position 7.57468	29.5276	78.632}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece4"
+			{Position 0	-29.5276	185.821}
+			{VolumeView "piece4.ply"}
+		}
+		{bone "piece7"
+			{Position 0	-29.5276	275.201}
+			{VolumeView "piece7.ply"}
+		}
+	}
+}
+{Volume "ferm"
+	{Polyhedron "ferm.vol"}
+	{Bone "ferm"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	0	-8.90165
+	}
+}
+{Volume "piece2"
+	{Polyhedron "piece2.vol"}
+	{Bone "piece2"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	1.14441e-005	-18.5547
+	}
+}
+{Volume "piece5"
+	{Polyhedron "piece5.vol"}
+	{Bone "piece5"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	3.81727e-005	-44.0529
+	}
+}
+{Volume "piece7"
+	{Box 49.2126 49.2126 29.5276}
+	{Bone "piece7"}
+	{Position 0	1.14441e-005	13.1851}
+}
+{Volume "piece8"
+	{Cylinder 5.90551 8.26772}
+	{Bone "piece8"}
+	{Matrix34
+		1	0	0
+		0	0.432056	-0.901847
+		0	0.901847	0.432056
+		0	1.46047	0.692401
+	}
+}

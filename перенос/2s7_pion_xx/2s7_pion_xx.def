@@ -1,0 +1,21 @@
+{Game_Entity
+	{Extension "2s7_pion_x.mdl"}
+	{Volume "autoloader1"
+	}
+	{Volume "autoloader"
+	}
+	{Volume "body1"
+	}
+	{Volume "body2"
+	}
+	{Volume "gun"
+	}
+	{Volume "ramp"
+	}
+	{Volume "trackleft"
+	}
+	{Volume "trackright"
+	}
+	{Volume "turret"
+	}
+}

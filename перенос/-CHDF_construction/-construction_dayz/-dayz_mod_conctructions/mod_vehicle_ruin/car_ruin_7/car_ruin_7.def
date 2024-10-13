@@ -1,0 +1,52 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+	{Extension "car_ruin_7.mdl"}
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+	{Volume "box05"
+	}
+	{Volume "box06"
+	}
+	{Volume "box07"
+	}
+	{Volume "box08"
+	}
+	{Volume "box09"
+	}
+	{Volume "box10"
+	}
+	{Volume "box11"
+	}
+	{Volume "box12"
+	}
+	{Volume "box13"
+	}
+	{Volume "box14"
+	}
+	{Volume "box15"
+	}
+	{Volume "box16"
+	}
+	{Volume "box17"
+	}
+	{Volume "box18"
+	}
+	{Volume "box19"
+	}
+	{Volume "box20"
+	}
+	{Volume "box21"
+	}
+	{Volume "box22"
+	}
+	{Volume "box23"
+	}
+}

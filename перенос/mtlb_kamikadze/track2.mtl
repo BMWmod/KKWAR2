@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/mtlb_new/track_zubec"}
+	{emitsheat}
+{blend blend}
+}

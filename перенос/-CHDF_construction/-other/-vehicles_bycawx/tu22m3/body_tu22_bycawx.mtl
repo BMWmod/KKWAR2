@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "body_tu22_bycawx"}
+	{blend none}
+}

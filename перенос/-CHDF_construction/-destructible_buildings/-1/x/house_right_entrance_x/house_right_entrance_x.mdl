@@ -1,0 +1,72 @@
+;Exported by: Gans
+;Date:        Wed Sep 14 22:00:31 2022
+;File:        C:\Users\Gans\Desktop\dom\x\house_right_left_entrance_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece0"
+			{Position 131.52	159.761	30.304}
+			{VolumeView "piece0.ply"}
+		}
+		{bone "piece1"
+			{Position 120.005	189.838	60.9878}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Position 131.52	198.813	30.304}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece3"
+			{Position 120.005	167.604	60.9878}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "fx_metall1"
+			{parameters "LastPose = undefined;"}
+			{Position 118.564	164.092	61.6785}
+		}
+		{bone "fx_stone1"
+			{parameters "LastPose = undefined;"}
+			{Position 126.087	183.478	64.1964}
+		}
+		{bone "fx_dust2a"
+			{parameters "LastPose = undefined;"}
+			{Position 134.054	198.482	36.3907}
+		}
+		{bone "fx_dust2"
+			{parameters "LastPose = undefined;"}
+			{Position 131.395	161.23	29.5298}
+		}
+		{bone "fx_dust1a"
+			{parameters "LastPose = undefined;"}
+			{Position 114.091	178.994	52.9312}
+		}
+		{bone "fx_dust1"
+			{parameters "LastPose = undefined;"}
+			{Position 114.091	199.653	57.3682}
+		}
+	}
+}
+{Volume "piece0"
+	{Cylinder 1.72309 60.3176}
+	{Bone "piece0"}
+	{Position -0.0274963	-0.0388184	-0.145256}
+}
+{Volume "piece1"
+	{Polyhedron "piece1.vol"}
+	{Bone "piece1"}
+	{Position -0.133545	0.268951	-2.20894}
+}
+{Volume "piece2"
+	{Cylinder 1.72309 60.3176}
+	{Bone "piece2"}
+	{Position -0.0274963	-0.10199	-0.145256}
+}
+{Volume "piece3"
+	{Polyhedron "piece3.vol"}
+	{Bone "piece3"}
+	{Position -0.133545	0.0377045	-2.20894}
+}

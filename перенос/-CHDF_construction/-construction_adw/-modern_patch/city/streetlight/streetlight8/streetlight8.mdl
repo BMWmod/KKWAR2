@@ -1,0 +1,86 @@
+;Exported by: HOME Office
+;Date:        Sat May 09 22:45:20 2020
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\City\Streetlight\Streetlight5.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "lamp"
+			{Matrix34
+				0	0	1
+				0	-1	0
+				1	0	0
+				0	0	-2.14203
+			}
+			{VolumeView "lamp.ply"}
+			{bone "lamp_glass"
+				{Position -0.0119307	16.511	1.09673e-005}
+				{visibility 1}
+				{VolumeView "lamp_glass.ply"}
+			}
+			{bone "lamp_light_spot1"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					188.958	-29.6049	4.57764e-005
+				}
+			}
+			{bone "light_spot"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					139.937	-29.6041	3.05176e-005
+				}
+			}
+		}
+		{bone "bracket"
+			{Position 0	2.73212	161.417}
+			{VolumeView "bracket.ply"}
+		}
+	}
+}
+{Volume "lamp1"
+	{Box 7.87402 7.87402 3.93701}
+	{Bone "lamp"}
+	{Matrix34
+		-0.122541	0.992463	0
+		0	0	1
+		0.992463	0.122541	0
+		187.572	-29.5192	4.63943e-005
+	}
+}
+{Volume "streetlight1"
+	{Box 2.95276 2.95276 23.622}
+	{Bone "lamp"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		172.129	-2.80859	4.9484e-005
+	}
+}
+{Volume "streetlight2"
+	{Box 2.95276 2.95276 12.7953}
+	{Bone "lamp"}
+	{Matrix34
+		0.867033	0.498251	0
+		0	0	1
+		0.498251	-0.867033	0
+		185.876	-8.15169	4.47341e-005
+	}
+}
+{Volume "streetlight3"
+	{Box 23.622 7.87402 3.93701}
+	{Bone "lamp"}
+	{Matrix34
+		-0.12254	0.992464	0
+		0	0	1
+		0.992464	0.12254	0
+		190.865	-23.9191	6.16531e-005
+	}
+}

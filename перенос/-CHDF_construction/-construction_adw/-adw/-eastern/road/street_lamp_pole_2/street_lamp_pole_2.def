@@ -1,0 +1,12 @@
+{game_entity
+	(include "/properties/building.inc")
+	{obstacleid "unbreakable" "construction" }
+	{props "concrete" "no_destroyed_stamp"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 500}
+	{Extension "street_lamp_pole_2.mdl"}
+	{Volume "box02"
+	}
+}

@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "piket.mdl"}
+	{Volume "piket"
+	}
+}

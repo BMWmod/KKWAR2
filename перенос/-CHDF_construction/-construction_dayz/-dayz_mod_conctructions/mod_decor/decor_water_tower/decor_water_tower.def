@@ -1,0 +1,51 @@
+{game_entity
+    (include "/properties/construction.inc")
+	{props "small" "steel" "parts" "construction" "no_destroyed_stamp"}
+	{Extension "decor_water_tower.mdl"}
+	{Volume "body"
+	}
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box05"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box06"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box07"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box08"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box09"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "cylinder01"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+}

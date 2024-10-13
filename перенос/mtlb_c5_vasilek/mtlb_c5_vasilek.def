@@ -1,0 +1,91 @@
+;Конвертация в игру Pheonix
+;Настрока ТТХ Timosh
+
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "truck" "tractor" "vision_lev04" "amphibia" "mtlb" "with_gun" "cannon" "cannon_small" "truck_mortar"}
+        	{targetClass "light_tank"}
+	{PatherID "amphibia"}
+
+	{extension "crew_na.ext"}
+	{extender "enumerator"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+
+	("armor_light" turret(7 7 1 5) body(14 7 1 5))	;точные данные есть только про лоб, но машина легкая, не более 7мм броня.
+	("armor_engine"  t(20))	
+
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon link_mmg"}
+		}
+		{box
+			{size 8 10}
+			{item "ammo 82mm of" 180}
+			{item "ammo C5 fg"  64}
+		}
+	}
+	{Weaponry
+		{place "nar1" 
+			{weapon "57mm_UV_32_57" filling "ammo C5 fg" 32}
+			{foresight "foresight1"}
+			{charger "commander"}
+			{gunner "commander"}
+			{barrels 32}
+			{basic}
+			{rotate}
+		}
+		{place "gun"
+			{Barrels 1}
+			{weapon "82mm_2B9" filling "ammo 82mm of" 4}
+        	{foresight "foresight2"}  
+			{charger "gunner"}
+			{gunner "gunner"}
+			{barrels 32}
+			{basic}
+		}
+
+		
+	}	
+	{sensor
+		{visor "mgun"
+			{vision "tank_main-l"}
+			{bone "Visor1"}
+		}
+	}
+
+	{mass 9700}
+	{Chassis					
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.15))
+		("CW_tracks"
+			Mass(9.7)
+			Width(3.15)
+			Power(240)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_400"}
+
+	("CW_amphibia" Waterline(1.1) )
+	("two_headlights")
+	{Extension "mtlb_c5_vasilek.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("cw_suspension_6tracks_alt" downmax(-0.1) upmax(0.2))
+}
+

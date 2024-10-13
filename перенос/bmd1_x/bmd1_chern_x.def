@@ -1,0 +1,4 @@
+{game_entity
+	{Extension "bmd1_noptur_x.mdl"}
+    {texmod "chdf"}
+}

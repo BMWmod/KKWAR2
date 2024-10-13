@@ -1,0 +1,66 @@
+{Game_Entity
+	{Extension "bm27_uragan_xx.mdl"}
+	{Volume "body"
+		{tags "body"}
+		{thickness 30}
+	}
+	{Volume "bodyback1"
+		{tags "body"}
+		{thickness 30}
+	}
+	{Volume "bodyback2"
+		{tags "body"}
+		{thickness 30}
+	}
+	{Volume "bodyback3"
+		{tags "body"}
+		{thickness 30}
+	}
+	{Volume "cabin"
+		{tags "body"}
+		{thickness 30}
+	}
+	{Volume "doorl"
+	}
+	{Volume "driver_panel"
+	}
+	
+	{Volume "front_wheels"
+	}
+	
+	{Volume "gun"
+	}
+	
+	{Volume "ppu"
+	}
+	{Volume "shield"
+	}
+	
+	{Volume "transmission"
+	}
+	{Volume "turret_move_engine"
+	}
+	{Volume "turret_ring"
+	}
+	{Volume "turret"
+		{component "turret"}
+		{thickness 30}
+	}
+	{Volume "wheelleft1"
+	}
+	{Volume "wheelleft2"
+	}
+	{Volume "wheelleft3"
+	}
+	{Volume "wheelleft4"
+	}
+	{Volume "wheelright1"
+	}
+	{Volume "wheelright2"
+	}
+	{Volume "wheelright3"
+	}
+	{Volume "wheelright4"
+	}
+	{mass 41000}
+}

@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "5da98e27"}
+	{emitsheat}
+{blend none}
+}

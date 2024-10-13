@@ -1,0 +1,72 @@
+;Exported by: User
+;Date:        Wed Mar 18 21:35:32 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\stol_dayz_2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				0.998398	-0.0565753	0
+				0.0566501	0.998394	0
+				0	0	1
+			}
+			{VolumeView "body.ply"}
+			{bone "drawcall_134"
+				{Orientation
+					0.99886	0.0476652	0
+					-0.0476652	0.998867	0
+					0	0	1
+				}
+			}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Orientation
+		0.998394	0.0565752	0
+		-0.05665	0.998398	0
+		0	0	1
+	}
+}
+{Volume "cylinder01"
+	{Polyhedron "cylinder01.vol"}
+	{Bone "body"}
+	{Orientation
+		0.998394	0.0565752	0
+		-0.05665	0.998398	0
+		0	0	1
+	}
+}
+{Volume "cylinder02"
+	{Polyhedron "cylinder02.vol"}
+	{Bone "body"}
+	{Orientation
+		0.998394	0.0565752	0
+		-0.05665	0.998398	0
+		0	0	1
+	}
+}
+{Volume "cylinder03"
+	{Polyhedron "cylinder03.vol"}
+	{Bone "body"}
+	{Orientation
+		0.998394	0.0565752	0
+		-0.05665	0.998398	0
+		0	0	1
+	}
+}
+{Volume "cylinder04"
+	{Polyhedron "cylinder04.vol"}
+	{Bone "body"}
+	{Orientation
+		0.998394	0.0565752	0
+		-0.05665	0.998398	0
+		0	0	1
+	}
+}

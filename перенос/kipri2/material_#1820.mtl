@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "interer_priborka"}
+	{blend none}
+}

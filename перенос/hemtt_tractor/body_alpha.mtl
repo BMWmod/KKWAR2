@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/mtvr/detail_glass"}
+	{emitsheat}
+{blend blend}
+}

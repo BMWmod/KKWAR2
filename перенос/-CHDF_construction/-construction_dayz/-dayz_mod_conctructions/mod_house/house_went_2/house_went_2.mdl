@@ -1,0 +1,200 @@
+;Exported by: User
+;Date:        Fri Apr 10 19:32:09 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\запрвка пошел2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				1	0	0
+				0	0.999955	-0.00952091
+				0	0.0292298	0.999573
+			}
+			{VolumeView "body.ply"}
+			{bone "exterior"
+				{Position 0	0	0}
+				{VolumeView "exterior.ply"}
+			}
+			{bone "land"
+                        {parameters "Land;Ground;"}
+                        {VolumeView "land.ply" {Ground} {DecalTarget}}
+			}
+		}
+	}
+}
+{Obstacle "cylinder01"
+	{Obb2
+		{Center -97.0402 -27.0257}
+		{Extent 4.17712 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder02"
+	{Obb2
+		{Center -96.4663 51.2861}
+		{Extent 4.17712 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder03"
+	{Obb2
+		{Center -0.54899 50.6867}
+		{Extent 4.17713 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder04"
+	{Obb2
+		{Center -0.54899 -27.6812}
+		{Extent 4.17713 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder05"
+	{Obb2
+		{Center 95.1624 -28.7051}
+		{Extent 4.17712 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder06"
+	{Obb2
+		{Center 95.1624 49.997}
+		{Extent 4.17712 3.96871}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Area "interior"
+	{Obb2
+		{Center -0.103043 10.8362}
+		{Extent 127.283 66.1965}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.999956	-0.00937165	-8.92646e-005
+		-6.0268e-005	-0.0232524	1.00019
+		-0.0100709	0.999853	0.00439025
+		-1.82831	54.2062	80.8139
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.999956	-0.00937165	-8.92646e-005
+		-6.0268e-005	-0.0232524	1.00019
+		-0.0100709	0.999853	0.00439025
+		-1.82831	-78.7828	79.5472
+	}
+}
+{Volume "box03"
+	{Box 27.6021 3.27461 0.161955}
+	{Bone "body"}
+	{Matrix34
+		-0.0419706	4.83055	0.0460111
+		0.000232461	-0.130806	4.47493
+		5.00816	0.0404882	0.000177884
+		126.092	-11.5156	81.0804
+	}
+}
+{Volume "box04"
+	{Box 27.6021 3.27461 0.161955}
+	{Bone "body"}
+	{Matrix34
+		-0.0419706	4.83055	0.0460111
+		0.000232461	-0.130806	4.47493
+		5.00816	0.0404882	0.000177884
+		-127.707	-13.8416	81.0582
+	}
+}
+{Volume "box05"
+	{Box 282.999 145.571 12.7248}
+	{Bone "body"}
+	{Matrix34
+		0.89595	-0.00695467	-6.62427e-005
+		0.00695628	0.895741	0.00853192
+		0	-0.0261943	0.896111
+		-0.103043	-13.2356	82.0648
+	}
+}
+{Volume "cylinder01"
+	{Polyhedron "cylinder01.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		-97.0402	26.8381	6.46074
+	}
+}
+{Volume "cylinder02"
+	{Polyhedron "cylinder02.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		-96.4663	-51.4555	5.71501
+	}
+}
+{Volume "cylinder03"
+	{Polyhedron "cylinder03.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		-0.54899	-50.8563	5.72071
+	}
+}
+{Volume "cylinder04"
+	{Polyhedron "cylinder04.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		-0.54899	27.4935	6.46699
+	}
+}
+{Volume "cylinder05"
+	{Polyhedron "cylinder05.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		95.1624	28.5171	6.47674
+	}
+}
+{Volume "cylinder06"
+	{Polyhedron "cylinder06.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999767	0.00952268
+		0	-0.0292353	1.00015
+		95.1624	-50.1667	5.72728
+	}
+}

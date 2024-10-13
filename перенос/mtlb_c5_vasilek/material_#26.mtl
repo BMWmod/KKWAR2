@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "zsy-23-2_2"}
+	{emitsheat}
+{blend none}
+}

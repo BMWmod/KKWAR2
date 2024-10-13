@@ -1,0 +1,22 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 14:39:30 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage_1\bluebarrel001.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505462	13.0865}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position -0.0703993	-0.0133316	-13.0026}
+}

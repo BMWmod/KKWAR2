@@ -1,0 +1,127 @@
+;Exported by: vorabat
+;Date:        Mon Jun 15 21:44:57 2009
+;File:        C:\Documents and Settings\пакунеу\Мои документы\3dsmax\scenes\bench.max
+{Skeleton
+	{bone "drawcall_0130"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "drawcall_0130.ply"}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 0.171629 1.02719}
+		{Extent 27.2396 6.86161}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 0.171632 -5.96871}
+		{Extent 27.3596 4.4249}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -22.6881 6.49887}
+		{Extent 0.779989 3.02623}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center 23.0239 6.49887}
+		{Extent 0.779989 3.02623}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box05"
+	{Obb2
+		{Center 23.0239 -5.21781}
+		{Extent 0.779989 3.26253}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box06"
+	{Obb2
+		{Center -22.7336 -5.21781}
+		{Extent 0.779989 3.26253}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Box 54.4792 12.2398 3.59995}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	1.12119	0
+		0	0	1.19272
+		0.171628	-1.02719	9.38109
+	}
+}
+{Volume "box02"
+	{Box 54.7192 5.15993 12.8398}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	0.758836	-0.193209
+		0	0.384293	0.952273
+		0.171631	5.96871	16.8074
+	}
+}
+{Volume "box03"
+	{Box 1.55998 11.7598 7.4399}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	0.232893	-0.0889295
+		0	0.445392	1.16641
+		-22.6881	-6.49887	4.339
+	}
+}
+{Volume "box04"
+	{Box 1.55998 11.7598 7.4399}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	0.232893	-0.0889295
+		0	0.445392	1.16641
+		23.0239	-6.49887	4.339
+	}
+}
+{Volume "box05"
+	{Box 1.55998 11.7598 7.4399}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	0.226773	0.103544
+		0	-0.518587	1.13577
+		23.0239	5.21781	4.22499
+	}
+}
+{Volume "box06"
+	{Box 1.55998 11.7598 7.4399}
+	{Bone "drawcall_0130"}
+	{Matrix34
+		1	0	0
+		0	0.226773	0.103544
+		0	-0.518587	1.13577
+		-22.7336	5.21781	4.22499
+	}
+}

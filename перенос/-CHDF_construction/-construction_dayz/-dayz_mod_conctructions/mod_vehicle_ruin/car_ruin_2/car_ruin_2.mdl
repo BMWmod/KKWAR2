@@ -1,0 +1,21 @@
+;Exported by: User
+;Date:        Sat Mar 14 20:38:54 2015
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position -1.53419	-0.444138	-0.297159}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 2.75982	0.510693	0.297159}
+}

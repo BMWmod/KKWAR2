@@ -1,0 +1,220 @@
+{game_entity
+    (include "/properties/building.inc")
+	{props "cornered" "windowed" "steel" "parts" "construction" "wall"}
+
+	{Extension "lockout_tower.mdl"}
+
+	("armor_medium" args 0.5)
+	{mass 5000}
+
+	{placer
+		{place "1" {attach snipe_cover} {linkbone "node01"}}
+		{place "2" {attach snipe_cover} {linkbone "node02"}}
+		{place "3" {attach snipe_cover} {linkbone "node03"}}
+		{place "4" {attach squat_lie} {linkbone "node04"}}
+	}
+	{boarder
+		{door "door01" {queue} {auto_release_time 0.2}}
+
+		{node "ladder_top01"}
+
+
+		{link "door01" "ladder_top01"	{anm "[fsm]"}}
+		{link "ladder_top01" "node_ladder_bottom01"	{anm "[fsm]"}}
+		{link "node_ladder_bottom01" "node_ladder_bottom02"	{anm "[fsm]"}}
+		{link "node_ladder_bottom02" "node_ladder_bottom03"	{anm "[fsm]"}}
+	
+		
+		{link "node_ladder_bottom03"	"1"		{anm "[fsm]"}			}
+		{link "ladder_top03"	"2"		{anm "[fsm]"}			}
+		{link "ladder_top03"	"3"		{anm "[fsm]"}			}
+		{link "ladder_top03"	"4"		{anm "[fsm]"}			}
+
+	    	{link "1"	"2"	 	{anm "[fsm]"}	}
+	    	{link "1"	"3"	 	{anm "[fsm]"}	}
+	    	{link "1"	"4"	 	{anm "[fsm]"}	}
+			
+			{link "2"	"1"	 	{anm "[fsm]"}	}
+	    	{link "2"	"1"	 	{anm "[fsm]"}	}
+	    	{link "2"	"3"	 	{anm "[fsm]"}	}
+	    	{link "2"	"4"	 	{anm "[fsm]"}	}
+			
+			{link "3"	"1"	 	{anm "[fsm]"}	}
+	    	{link "3"	"1"	 	{anm "[fsm]"}	}
+	    	{link "3"	"2"	 	{anm "[fsm]"}	}
+	    	{link "3"	"4"	 	{anm "[fsm]"}	}
+					
+			{link "4"	"1"	 	{anm "[fsm]"}	}
+	    	{link "4"	"1"	 	{anm "[fsm]"}	}
+	    	{link "4"	"2"	 	{anm "[fsm]"}	}
+	    	{link "4"	"3"	 	{anm "[fsm]"}	}
+    
+	}
+
+	{Volume "attach01"
+		{Tags  "attach 1"}
+		{able clear {touch 1}}
+	}
+	{Volume "attach02"
+		{Tags  "attach 2"}
+		{able clear {touch 1}}
+	}
+	{Volume "attach03"
+		{Tags  "attach 3"}
+		{able clear {touch 1}}
+	}
+	{Volume "attach04"
+		{Tags  "attach 4"}
+		{able clear {touch 1}}
+	}
+	{Volume "body10"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body17"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body18"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body1"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body23"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body24"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body25"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body2"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body3"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body4"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body5"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body6"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body7"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body8"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body9"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{obstacle 0}}
+	}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "window10"
+	}
+	{Volume "window1"
+	}
+	{Volume "window2"
+	}
+	{Volume "window3"
+	}
+	{Volume "window4"
+	}
+	{Volume "window5"
+	}
+	{Volume "window6"
+	}
+	{Volume "window7"
+	}
+	{Volume "window8"
+	}
+	{Volume "window9"
+	}
+}

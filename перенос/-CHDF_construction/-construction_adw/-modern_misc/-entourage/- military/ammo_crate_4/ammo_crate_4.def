@@ -1,0 +1,20 @@
+{game_entity
+	{extension "ammo_crate_4.mdl"}
+	{mass 30}
+	{props "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{ObstacleID "stuff"}
+	{collider "construction"}
+	{extender "inventory"
+		{box
+			{weight 5000}
+			{size 16 16}
+		}
+	}
+	{Volume "box"
+		{thickness 5}
+		{able {touch}}
+	}
+;	(include "/properties/shadow/construction.inc" sx(0.25) sy(0.25) ofsx(0) ofsy(0))
+}
+
+

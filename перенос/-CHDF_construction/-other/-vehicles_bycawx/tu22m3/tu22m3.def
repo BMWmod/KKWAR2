@@ -1,0 +1,103 @@
+;By cAwX
+
+{game_entity
+	(include "/properties/airborne_M.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "assault" "vision_lev_plane" "su-25sm" "-radar_spo"}
+	
+	{able "-select" "-minimap" "-unmask"}
+	
+	{Extension "tu22m3.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"}}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body3"
+		{tags "body"}
+		{component "body"}
+	}
+
+	{mass 54400}
+
+	{armor
+	("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+
+	{extender "inventory"
+		{box
+			{size 6 10}
+		}
+	}
+	
+	{Weaponry
+	}	
+
+("Chassis_parameters" 
+	Speed(80) TurnRadius(50) 
+	Fuel(114600) Fuel_remain(15963) Fuel_rate(17.19) 
+	Acc_hor(2.31) Maneuvrability_hor(2)
+	Acc_ver(2.85) Maneuvrability_ver(2)
+)
+(mod "mp" 
+    {Chassis "airborne" 
+	{Altitude 25} 
+    } 
+    {ChassisManager 
+	{Current "airborne"} 
+    } 
+)
+	{props "cwfs_fuel_30k"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_big-midcar_driver"} {end "seat_driver_car"}}
+			{reverse 	{end	"board_big-midcar_driver" -1}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_big-midcar"} {end "seat_driver_car"}}
+			{reverse 	{end	"board_big-midcar" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(commander) bone(commander) door(emit2) animation(commander))
+	("crew_human" place(commander1) bone(commander1) door(emit3) animation(commander))
+	("crew_human" place(gunner) bone(gunner) door(emit4) animation(commander))
+
+;	{Placer
+;		{place "driver" {turnOff {targetable}}}
+;		{place "commander" {turnOff {targetable}}}
+;		{place "commander1" {turnOff {targetable}}}
+;		{place "gunner" {turnOff {targetable}}}
+;	}
+
+	{placer
+		{place "driver"		{group "crew"}}
+		{place "commander"	{group "crew"}}
+		{place "commander1"	{group "crew"}}
+		{place "gunner"	{group "crew"}}
+	}
+	
+("cw_headlightl")
+
+}

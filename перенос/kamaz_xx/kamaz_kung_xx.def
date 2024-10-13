@@ -1,0 +1,40 @@
+{game_entity
+	{Extension "kamaz_kung_xx.mdl"}
+	{mass 4500}
+	{Volume "Body"
+		{tags "body"}
+		{component "body"}
+		{thickness 8}   
+	}
+	{volume "part7"
+		{thickness 7}
+	}
+	{Volume "part1"
+	}
+	{Volume "part2"
+	}
+	{Volume "part3"
+	}
+	{Volume "part4"
+	}
+	{Volume "part5"
+	}
+	{Volume "part6"
+	}
+	{Volume "part8"
+		{thickness 2}
+	}
+	{Volume "wheelleft1"
+	}
+	{Volume "wheelleft2"
+	}
+	{Volume "wheelleft3"
+	}
+	{Volume "wheelright1"
+	}
+	{Volume "wheelright2"
+	}
+	{Volume "wheelright3"
+	}
+	
+}

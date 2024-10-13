@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "utility_poles001"}
+	{blend none}
+}

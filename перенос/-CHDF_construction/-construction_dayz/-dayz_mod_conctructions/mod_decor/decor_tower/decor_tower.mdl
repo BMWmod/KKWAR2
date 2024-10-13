@@ -1,0 +1,117 @@
+;Exported by: Glit
+;Date:        Wed Feb 20 18:43:35 2013
+;File:        C:\Users\Glit\Desktop\basha.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0.629959	1.44516	40.9597}
+			{VolumeView "body.ply"}
+			{bone "ladder_small"
+				{Position 9.24447	-0.105521	28.4954}
+			}
+			{bone "node1"
+				{Position 9.26106	0.071723	25.4387}
+			}
+			{bone "ladder_bottom1"
+				{Position 9.26106	-0.153389	26.0941}
+			}
+			{bone "ladder_top1"
+				{Position 9.26106	-0.153389	26.0941}
+			}
+		}
+		{bone "door"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-10.3221	7.02042	1.65527
+			}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 17.2708 17.1294}
+		{Extent 1.60436 1.86779}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 17.2708 -19.0202}
+		{Extent 1.60436 1.86779}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -19.1778 -19.0202}
+		{Extent 1.60436 1.86779}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center -19.1778 17.1294}
+		{Extent 1.60436 1.86779}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Position 16.6408	-18.5746	-8.53379}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Position 16.6408	17.575	-8.53379}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Position -19.8077	17.575	-8.53379}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "body"}
+	{Position -19.8077	-18.5746	-8.53379}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "body"}
+	{Position -0.424967	-0.596017	21.3184}
+}
+{Volume "box06"
+	{Polyhedron "box06.vol"}
+	{Bone "body"}
+	{Position -0.424967	19.3274	32.3723}
+}
+{Volume "box07"
+	{Polyhedron "box07.vol"}
+	{Bone "body"}
+	{Position 19.4114	-2.11409	32.3723}
+}
+{Volume "box08"
+	{Polyhedron "box08.vol"}
+	{Bone "body"}
+	{Position -20.1264	-2.11409	32.3723}
+}
+{Volume "box09"
+	{Polyhedron "box09.vol"}
+	{Bone "body"}
+	{Position -0.424967	-20.1777	32.3723}
+}

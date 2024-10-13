@@ -1,0 +1,31 @@
+;Exported by: User
+;Date:        Wed Mar 18 18:05:40 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\skaff_dayz_1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.999451	-0.0331421	0
+				0.0346227	0.9994	0
+				0	0	1
+				-0.206722	0.12059	18.7612
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.999402	0.0331421	0
+		-0.0346227	0.999452	0
+		0	0	1
+		0.159028	0.263332	-18.7612
+	}
+}

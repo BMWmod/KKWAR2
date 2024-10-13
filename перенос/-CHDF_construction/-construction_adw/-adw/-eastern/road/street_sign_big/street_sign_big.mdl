@@ -1,0 +1,33 @@
+;Exported by: Caps
+;Date:        Thu Sep 05 10:53:33 2013
+;File:        F:\!_DMS_CalltoArms\Assets\assets_to_export\street_sign_big\street_sign_big.max
+{Skeleton
+	{bone "street_sign_big"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "street_sign_big.ply"}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "street_sign_big"}
+	{Position 32.8595	0.0501466	0}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "street_sign_big"}
+	{Position 0	0.0501466	0}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "street_sign_big"}
+	{Position -32.8741	0.0501466	0}
+}
+{Volume "body4"
+	{Polyhedron "body4.vol"}
+	{Bone "street_sign_big"}
+	{Position -0.00728989	-1.45739	62.0122}
+}

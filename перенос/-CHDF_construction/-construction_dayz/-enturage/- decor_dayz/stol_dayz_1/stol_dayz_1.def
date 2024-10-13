@@ -1,0 +1,8 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "wood" "no_destroyed_stamp"}
+ {Extension "stol_dayz_1.mdl"}
+ {Volume "body"
+ }
+}

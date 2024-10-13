@@ -1,0 +1,108 @@
+;Exported by: Filatov
+;Date:        Tue Feb 03 23:30:46 2015
+;File:        C:\Users\Filatov\Google Диск\MOW\3ds max model\Constraction\adm_house\adm_house.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "admhouse"
+			{Position 0.00768704	1.27711	23.0024}
+			{VolumeView "admhouse.ply"}
+			{bone "vent1"
+				{Position 273.308	66.7679	236.281}
+				{VolumeView "vent1.ply"}
+			}
+			{bone "vent2"
+				{Position -0.00768704	-1.27711	236.25}
+				{VolumeView "vent2.ply"}
+			}
+		}
+	}
+}
+{Obstacle "admhouse1"
+	{Obb2
+		{Center 0.0400391 -1.29477}
+		{Extent 353.435 161.669}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "admhouse2"
+	{Obb2
+		{Center -282.71 124.865}
+		{Extent 113.771 77.3291}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "vent1"
+	{Obb2
+		{Center 273.331 -67.9469}
+		{Extent 24.6944 39.2473}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "vent21"
+	{Obb2
+		{Center 184.643 0.295851}
+		{Extent 16.8377 16.7914}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "vent22"
+	{Obb2
+		{Center 0.0400171 0.295851}
+		{Extent 16.8377 16.7914}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "vent23"
+	{Obb2
+		{Center -184.304 0.295851}
+		{Extent 16.8377 16.7914}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "admhouse1"
+	{Polyhedron "admhouse1.vol"}
+	{Bone "admhouse"}
+	{Position -0.00768704	-1.27711	-23.0024}
+}
+{Volume "admhouse2"
+	{Polyhedron "admhouse2.vol"}
+	{Bone "admhouse"}
+	{Position -278.764	-118.789	-23.0024}
+}
+{Volume "vent1"
+	{Polyhedron "vent1.vol"}
+	{Bone "vent1"}
+	{Position 1.64301	-2.42609	2.87262}
+}
+{Volume "vent21"
+	{Polyhedron "vent21.vol"}
+	{Bone "vent2"}
+	{Position 184.603	0	2.90372}
+}
+{Volume "vent22"
+	{Polyhedron "vent22.vol"}
+	{Bone "vent2"}
+	{Position 0	0	2.90372}
+}
+{Volume "vent23"
+	{Polyhedron "vent23.vol"}
+	{Bone "vent2"}
+	{Position -184.344	0	2.90372}
+}

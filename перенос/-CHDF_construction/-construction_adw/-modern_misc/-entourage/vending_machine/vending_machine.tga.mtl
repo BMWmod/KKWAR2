@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "vending_machine"}
+	{blend none}
+}

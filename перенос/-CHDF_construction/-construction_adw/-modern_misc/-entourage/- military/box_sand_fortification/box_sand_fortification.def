@@ -1,0 +1,15 @@
+{game_entity
+    (include "/properties/building.inc")
+	
+	{obstacleID "construction"}
+    {props "sand" "sand_bag_big"}
+	("armor_sandbag")
+	("armor_use_volume_thickness")
+	{Extension "box_sand_fortification.mdl"}
+
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {bullet 1} {visible 1}}
+	}
+}

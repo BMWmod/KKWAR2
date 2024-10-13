@@ -1,0 +1,133 @@
+;Exported by: Gans
+;Date:        Wed Sep 07 20:14:13 2022
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece0"
+			{Position -16.5653	-134.704	190.087}
+			{VolumeView "piece0.ply"}
+		}
+		{bone "piece1"
+			{Position -60.9461	-72.1555	201.141}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Position -63.1721	-152.624	199.835}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece3"
+			{Position -105.367	-162.671	118.2}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece4"
+			{Position -105.367	-74.2943	95.6634}
+			{VolumeView "piece4.ply"}
+		}
+		{bone "piece5"
+			{Position -105.367	-84.4441	139.573}
+			{VolumeView "piece5.ply"}
+		}
+		{bone "fx_metall1"
+			{parameters "LastPose = undefined;"}
+			{Position -105.628	-98.5412	141.961}
+		}
+		{bone "fx_stone2"
+			{parameters "LastPose = undefined;"}
+			{Position -106.858	-98.5412	126.878}
+		}
+		{bone "fx_stone1m"
+			{parameters "LastPose = undefined;"}
+			{Position -107.138	-189.879	84.698}
+		}
+		{bone "fx_stone1a"
+			{parameters "LastPose = undefined;"}
+			{Position -103.903	-189.879	164.31}
+		}
+		{bone "fx_stone1"
+			{parameters "LastPose = undefined;"}
+			{Position -3.27242	-122.031	211.101}
+		}
+		{bone "fx_wood1c"
+			{parameters "LastPose = undefined;"}
+			{Position -11.6757	-106.343	215.786}
+		}
+		{bone "fx_wood1a"
+			{parameters "LastPose = undefined;"}
+			{Position -83.6593	-135.13	192.704}
+		}
+		{bone "fx_wood1"
+			{parameters "LastPose = undefined;"}
+			{Position -82.9432	-26.4122	192.704}
+		}
+		{bone "fx_dust2a"
+			{parameters "LastPose = undefined;"}
+			{Position -57.9743	-69.645	201.269}
+		}
+		{bone "fx_dust2"
+			{parameters "LastPose = undefined;"}
+			{Position -107.086	-190.069	180.369}
+		}
+		{bone "fx_dust1a"
+			{parameters "LastPose = undefined;"}
+			{Position -106.243	-154.06	105.739}
+		}
+		{bone "fx_dust1"
+			{Position -37.854	-32.003	203.962}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "piece0"}
+	{Position 15.1277	0.750305	-29.1854}
+}
+{Volume "piece0"
+	{Box 5.21233 85.2091 55.9791}
+	{Bone "piece0"}
+	{Matrix34
+		0.819152	0	0.573576
+		0	1	0
+		-0.573576	0	0.819152
+		-0.926446	0.750305	-6.25765
+	}
+}
+{Volume "piece1"
+	{Box 7.50576 85.2091 129.978}
+	{Bone "piece1"}
+	{Matrix34
+		0.375981	0	-0.926628
+		0	1	0
+		0.926628	0	0.375981
+		1.27378	8.4039	-2.09103
+	}
+}
+{Volume "piece2"
+	{Box 7.50576 85.2091 129.978}
+	{Bone "piece2"}
+	{Matrix34
+		0.375981	0	-0.926628
+		0	1	0
+		0.926628	0	0.375981
+		3.49986	7.33507	-0.785505
+	}
+}
+{Volume "piece3"
+	{Polyhedron "piece3.vol"}
+	{Bone "piece3"}
+	{Position 0.122009	-2.02802	-54.4179}
+}
+{Volume "piece4"
+	{Polyhedron "piece4.vol"}
+	{Bone "piece4"}
+	{Position 0.122009	7.814	-31.8809}
+}
+{Volume "piece5"
+	{Polyhedron "piece5.vol"}
+	{Bone "piece5"}
+	{Position 0.122009	17.9638	-24.0369}
+}

@@ -1,0 +1,47 @@
+;Exported by: alexey
+;Date:        Mon Jul 21 06:57:22 2008
+;File:        G:\Program Files\Autodesk\3dsMax8\scenes\ecscovater.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.226146	0	23.7717}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-98.332	-19.2182	-13.4594
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.661469	-19.2182	33.7172
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		5.62244	-26.6791	-12.674
+	}
+}

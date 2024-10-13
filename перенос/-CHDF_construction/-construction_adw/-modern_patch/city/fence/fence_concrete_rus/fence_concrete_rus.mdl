@@ -1,0 +1,18 @@
+;Exported by: Filatov
+;Date:        Wed Feb 18 15:47:16 2015
+;File:        C:\Users\Filatov\Google Диск\MOW\3ds max model\Constraction\Old models\Fence\fence_concrete_rus.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Volume "body"
+	{Box 100.524 4.37552 51.1054}
+	{Bone "body"}
+	{Position 0.0405314	-0.000269949	25.5527}
+}

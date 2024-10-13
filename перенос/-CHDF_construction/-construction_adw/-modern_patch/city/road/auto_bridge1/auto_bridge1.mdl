@@ -1,0 +1,141 @@
+;Exported by: Notebook
+;Date:        Wed Jan 02 23:25:58 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Bridge\auto_bridge1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "bay1"
+			{Position 984.252	0	157.48}
+			{VolumeView "bay1.ply"}
+		}
+		{bone "bay2"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-984.252	0	157.48
+			}
+			{VolumeView "bay2.ply"}
+		}
+		{bone "levee1"
+			{parameters "land;"}
+			{Position 2795.28	0	206.693}
+			{VolumeView "levee1.ply"}
+		}
+		{bone "levee2"
+			{parameters "land;"}
+			{Position 1417.32	0	206.693}
+			{VolumeView "levee2.ply"}
+		}
+		{bone "levee3"
+			{parameters "land;"}
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-1417.32	0	206.693
+			}
+			{VolumeView "levee3.ply"}
+		}
+		{bone "levee4"
+			{parameters "land;"}
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-2795.28	0	206.693
+			}
+			{VolumeView "levee4.ply"}
+		}
+		{bone "opora1"
+			{Position 393.701	0	0}
+			{VolumeView "opora1.ply"}
+		}
+		{bone "opora2"
+			{Position -393.701	0	0}
+			{VolumeView "opora2.ply"}
+		}
+		{bone "plate1"
+			{parameters "land;"}
+			{Position 688.976	0	196.85}
+			{VolumeView "plate1.ply"}
+			{bone "fence1"
+				{Position 0	-153.543	9.84253}
+				{VolumeView "fence1.ply"}
+			}
+			{bone "fence2"
+				{Position 0	153.543	9.84253}
+				{VolumeView "fence2.ply"}
+			}
+			{bone "guard1"
+				{Position 0.00012207	-108.268	11.811}
+				{VolumeView "guard1.ply"}
+			}
+			{bone "guard2"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					0.00012207	108.268	11.811
+				}
+				{VolumeView "guard2.ply"}
+			}
+		}
+		{bone "plate2"
+			{parameters "land;"}
+			{Position 0	0	196.85}
+			{VolumeView "plate2.ply"}
+			{bone "fence3"
+				{Position 0	-153.543	9.84253}
+				{VolumeView "fence3.ply"}
+			}
+			{bone "fence4"
+				{Position 0	153.543	9.84253}
+				{VolumeView "fence4.ply"}
+			}
+			{bone "guard3"
+				{Position 0	-108.268	11.811}
+				{VolumeView "guard3.ply"}
+			}
+			{bone "guard4"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					0	108.268	11.811
+				}
+				{VolumeView "guard4.ply"}
+			}
+		}
+		{bone "plate3"
+			{parameters "land;"}
+			{Position -688.976	0	196.85}
+			{VolumeView "plate3.ply"}
+			{bone "fence5"
+				{Position 0.00012207	-153.543	9.84253}
+				{VolumeView "fence5.ply"}
+			}
+			{bone "fence6"
+				{Position 0.00012207	153.543	9.84253}
+				{VolumeView "fence6.ply"}
+			}
+			{bone "guard5"
+				{Position 0.00012207	-108.268	11.811}
+				{VolumeView "guard5.ply"}
+			}
+			{bone "guard6"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					0.00012207	108.268	11.811
+				}
+				{VolumeView "guard6.ply"}
+			}
+		}
+	}
+}

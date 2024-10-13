@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "crate2"}
+	{bump "crate2_bump"}
+	{specular "crate2_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

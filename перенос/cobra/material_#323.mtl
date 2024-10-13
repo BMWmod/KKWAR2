@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "paspas_co"}
+	{blend none}
+}

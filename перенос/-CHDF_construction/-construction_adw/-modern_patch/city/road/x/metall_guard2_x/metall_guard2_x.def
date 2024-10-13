@@ -1,0 +1,15 @@
+{game_entity
+	{Extension "metall_guard2_x.mdl"}
+	{Volume "opora"
+	}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "piece4"
+	}
+	{Volume "piece5"
+	}
+}

@@ -1,0 +1,71 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:20 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "sheld_market"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "sheld_market.ply"}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 2.99815 16.1024}
+		{Extent 5.8934 0.957729}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center 2.99815 -14.8573}
+		{Extent 5.8934 0.957729}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body"
+	{Obb2
+		{Center -1.50858 -0}
+		{Extent 8.99171 19.1546}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body1"
+	{Box 2.07574 1.91546 23.4385}
+	{Bone "sheld_market"}
+	{Matrix34
+		0.906308	0	0.422618
+		0	1	0
+		-0.422618	0	0.906308
+		2.99815	-16.1024	10.6212
+	}
+}
+{Volume "body2"
+	{Box 2.07574 1.91546 23.4385}
+	{Bone "sheld_market"}
+	{Matrix34
+		0.906308	0	0.422618
+		0	1	0
+		-0.422618	0	0.906308
+		2.99815	14.8573	10.6212
+	}
+}
+{Volume "body"
+	{Box 2.07574 38.3092 46.877}
+	{Bone "sheld_market"}
+	{Matrix34
+		0.939693	0	-0.34202
+		0	1	0
+		0.34202	0	0.939693
+		-1.50858	0	22.025
+	}
+}

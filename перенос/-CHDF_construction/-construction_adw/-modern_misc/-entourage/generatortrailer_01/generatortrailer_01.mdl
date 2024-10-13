@@ -1,0 +1,37 @@
+;Exported by: alexey
+;Date:        Sun Jul 20 16:18:22 2008
+;File:        G:\Program Files\Autodesk\3dsMax8\scenes\generatortrailer_01.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -6.31953	0	0.701449}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		55.4586	-19.2182	9.61081
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		99.8167	-19.2182	9.61081
+	}
+}

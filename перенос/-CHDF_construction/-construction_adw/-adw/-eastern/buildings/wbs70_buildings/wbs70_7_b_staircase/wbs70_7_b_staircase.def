@@ -1,0 +1,27 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "concrete" "construction"}
+	("armor_medium" args 0.7)
+	{obstacleID "unbreakable"}
+	{lodclass "decor_big"}
+	{Extension "wbs70_7_b_staircase.mdl"}
+
+	{Volume "body02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "body03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "bodyr00"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	
+	{Extender "land_patch"
+	}
+}

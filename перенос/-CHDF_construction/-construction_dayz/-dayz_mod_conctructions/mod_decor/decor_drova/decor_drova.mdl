@@ -1,0 +1,58 @@
+;Exported by: User
+;Date:        Wed Jun 10 21:02:47 2015
+;File:        C:\Users\User\Documents\3dsmax\scenes\גאûגאûג.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				0.961087	0.276205	0.00478419
+				-0.201064	0.711291	-0.673527
+				-0.189434	0.646355	0.739148
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -1.36998 1.90383}
+		{Extent 22.618 79.7447}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center -0.0207388 2.16398}
+		{Extent 78.1713 15.8057}
+		{Axis 0.0182398 0.999834}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.961087	-0.201064	-0.189434
+		0.276205	0.711291	0.646355
+		0.004784	-0.673527	0.739148
+		0.190783	3.14429	2.86393
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.961087	-0.201064	-0.189434
+		0.276205	0.711291	0.646355
+		0.004784	-0.673527	0.739148
+		0.244358	-4.39764	11.1406
+	}
+}

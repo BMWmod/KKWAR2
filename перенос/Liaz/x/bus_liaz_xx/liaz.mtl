@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "liaz_xx"}
+	{blend none}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/construction/city/road/protection"}
+	{blend none}
+}

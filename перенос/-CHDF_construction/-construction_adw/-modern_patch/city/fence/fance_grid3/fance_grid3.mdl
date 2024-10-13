@@ -1,0 +1,30 @@
+;Exported by: Notebook
+;Date:        Mon May 04 20:40:36 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Fence\fence_grid.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "fence"
+			{Position -0.492126	-29.5276	1.9685}
+			{VolumeView "fence.ply"}
+		}
+		{bone "post"
+			{Position 0	-32.4803	0}
+			{VolumeView "post.ply"}
+		}
+	}
+}
+{Volume "fence"
+	{Box 2.3622 59.0551 39.3701}
+	{Bone "fence"}
+	{Position 0.492126	29.5276	19.685}
+}
+{Volume "post"
+	{Box 3.54331 3.54331 43.3071}
+	{Bone "post"}
+	{Position 0	0	21.6535}
+}

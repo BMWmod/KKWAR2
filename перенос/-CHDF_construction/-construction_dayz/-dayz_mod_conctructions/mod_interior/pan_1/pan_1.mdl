@@ -1,0 +1,13 @@
+;Exported by: Vorabat
+;Date:        Thu Nov 19 12:16:59 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\sughqh.max
+{Skeleton
+	{bone "mesh2791shape"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "mesh2791shape.ply"}
+	}
+}

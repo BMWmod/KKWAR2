@@ -1,0 +1,23 @@
+;Exported by: Vorabat
+;Date:        Wed Mar 24 03:59:53 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\studd.max
+{Skeleton
+	{bone "garbage_bak"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "garbage_bak.ply"}
+	}
+}
+{Volume "cylinder01"
+	{Cylinder 6.13554 0.336029}
+	{Bone "garbage_bak"}
+	{Position 0.279696	-0.173054	0.00903143}
+}
+{Volume "tube01"
+	{Polyhedron "tube01.vol"}
+	{Bone "garbage_bak"}
+	{Position 0.167685	-0.0610466	0}
+}

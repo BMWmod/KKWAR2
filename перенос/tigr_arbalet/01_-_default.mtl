@@ -1,0 +1,9 @@
+{material bump
+	{diffuse "$/model/tigres/tgr_df"}
+	
+	{bump "$/model/tigres/tgr_bp"}
+	{specular "$/model/tigres/tgr_sp2"}
+	{color "229 229 229 25"}
+	{emitsheat}
+{blend none}
+}

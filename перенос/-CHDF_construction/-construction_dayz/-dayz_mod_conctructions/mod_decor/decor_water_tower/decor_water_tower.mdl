@@ -1,0 +1,132 @@
+;Exported by: User
+;Date:        Sun Apr 19 17:07:42 2015
+;File:        C:\Users\User\Desktop\пробы моделей\adddd.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.0317608	-0.999479	0.00580927
+				0.999496	0.0317603	-0.000184533
+				0	0.0058122	0.999983
+				-1.24044	0.955924	3.94894
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 26.1434 -28.4975}
+		{Extent 9.02118 9.03299}
+		{Axis 0.0356777 0.999363}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 27.3472 25.3021}
+		{Extent 9.02118 9.03299}
+		{Axis 0.0356777 0.999363}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -25.6667 26.2513}
+		{Extent 9.02118 9.03299}
+		{Axis 0.0356777 0.999363}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center -26.5666 -27.16}
+		{Extent 9.02118 9.03298}
+		{Axis 0.0356777 0.999363}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Position 0	0	0}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Position 0	0	0}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Position 0	0	0}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "body"}
+	{Position 0	0	0}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "body"}
+	{Position 0	0	0}
+}
+{Volume "box06"
+	{Box 0.544266 0.544508 12.7199}
+	{Bone "body"}
+	{Matrix34
+		10.135	0.0441572	0.710724
+		0	10.1405	-0.629979
+		-0.712105	0.628432	10.1155
+		21.6431	-21.628	79.5
+	}
+}
+{Volume "box07"
+	{Box 0.544266 0.544508 12.7199}
+	{Bone "body"}
+	{Matrix34
+		10.135	-0.0519901	0.710198
+		0	10.1329	0.741763
+		-0.712097	-0.739939	10.108
+		21.6431	23.0282	79.4521
+	}
+}
+{Volume "box08"
+	{Box 0.544266 0.544508 12.7199}
+	{Bone "body"}
+	{Matrix34
+		10.1288	-0.0519553	-0.794781
+		0.11014	10.1323	0.741301
+		0.788829	-0.747642	10.1017
+		-22.502	22.9792	79.4122
+	}
+}
+{Volume "box09"
+	{Box 0.544266 0.544508 12.7199}
+	{Bone "body"}
+	{Matrix34
+		9.9671	-1.87527	-0.605338
+		1.82331	9.9602	-0.834227
+		0.747414	0.70975	10.1076
+		-22.7654	-21.5582	79.4496
+	}
+}
+{Volume "cylinder01"
+	{Cylinder 4.24075 10.7015}
+	{Bone "body"}
+	{Matrix34
+		6.39684	0	0
+		0	6.39684	0
+		0	0	6.39684
+		-0.147233	1.21786	192.242
+	}
+}

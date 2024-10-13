@@ -1,0 +1,75 @@
+;Конвертация в игру Pheonix
+;Настрока ТТХ Timosh
+
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "truck" "tractor" "vision_lev04" "amphibia" "mtlb_vmk" "kamikadze_1000"}
+        	{targetClass "light_tank"}
+	{PatherID "amphibia"}
+
+	{extension "crew_na.ext"}
+	{extender "enumerator"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+
+	("armor_light" turret(7 7 1 5) body(14 7 1 5))	;точные данные есть только про лоб, но машина легкая, не более 7мм броня.
+	("armor_engine"  t(20))	
+
+	{extender "inventory"
+		
+		{box
+			{size 8 10}
+			
+		}
+	}
+	{Weaponry
+		{place "charge"
+			{weapon "weapon kamikadze" filling "ammo kamikadze" 1}
+
+			{gunner "driver"}
+			{charger "driver"}
+		}
+	}	
+	{sensor
+		{visor "mgun"
+			{vision "tank_main-l"}	;ПЗУ-7 http://www.army-guide.com/rus/product202.html
+			{bone "Visor1"}
+		}
+	}
+
+	{mass 9700}
+	{Chassis					
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.15))
+		("CW_tracks"
+			Mass(9.7)
+			Width(3.15)
+			Power(240)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_400"}
+
+	("CW_amphibia" Waterline(1.1) )
+	("two_headlights")
+	{Extension "mtlb_kamikadze.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	
+	("cw_suspension_6tracks_alt" downmax(-0.1) upmax(0.2))
+}
+

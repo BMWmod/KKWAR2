@@ -1,0 +1,57 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "concrete" "no_destroyed_stamp"}
+
+	{Extension "4-store-industrial1.mdl"}
+	{Volume "box11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box17"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box18"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box19"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box20"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box21"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+}

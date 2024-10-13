@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/tos-1a_solntsepek/roket_220mm_solncepek"}
+	{emitsheat}
+{blend none}
+}

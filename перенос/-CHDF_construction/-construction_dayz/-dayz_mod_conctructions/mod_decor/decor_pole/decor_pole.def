@@ -1,0 +1,12 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 30}
+	{Extension "decor_pole.mdl"}
+	{Volume "bod1"
+	}
+}

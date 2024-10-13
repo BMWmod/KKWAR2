@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "ston_walls3"}
+	{bump "ston_walls3_n"}
+	{blend none}
+}

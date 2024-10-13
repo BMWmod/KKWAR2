@@ -1,0 +1,28 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:35 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "cofe"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "cofe.ply"}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center -0.0906005 -0}
+		{Extent 5.40599 7.07396}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Box 10.812 14.1479 36.2748}
+	{Bone "cofe"}
+	{Position -0.0906004	0	18.1374}
+}

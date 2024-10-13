@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/model/BTR-4E/camo"}
+	{bump "$/model/BTR-4E/ob [normal]"}
+        {specular "$/model/BTR-4E/_k_Specular"}
+	{blend none}
+}

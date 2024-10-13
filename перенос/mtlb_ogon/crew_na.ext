@@ -1,0 +1,102 @@
+;SDL
+{props "mtlb_noammobox"}
+{boarder
+	{anm "driver"
+		{forward	{begin	"board_tank_left"} {base "open"}}
+		{reverse 	{end	"emit_tank_1_hold" } {base "open"}}
+	}
+	{anm "commander"
+		{forward	{begin	"board_tank_right"} {base "open_commander"}}
+		{reverse 	{end	"emit_tank_1_hold" } {base "open_commander"}}
+	}
+	{anm "gunner"
+		{forward	{begin	"board_tank_right"} {base "open_commander"}}
+		{reverse 	{end	"emit_tank_1_hold" } {base "close_commander"}}
+	}
+
+	{anm "passengers1"
+			{forward	{begin	"board_highArmor"} 	{end "seat_mtlb1"} {base "open_desant_cover1"}}
+			{reverse 	{end	"emit_tank_2"} {base "open_desant_cover1"-1}}
+	}
+	{anm "passengers2"
+			{forward	{begin	"board_highArmor"} 	{end "seat_isu1"}}
+			{reverse 	{end	"emit_tank_2"}}
+	}
+	{anm "passengers3"
+			{forward	{begin	"board_highArmor"} 	{end "seat_mtlb2"} {base "open_desant_cover2"}}
+			{reverse 	{end	"emit_tank_2"} {base "open_desant_cover2"-1}}
+	}
+	{anm "passengers4"
+			{forward	{begin	"board_highArmor"} 	{end "seat_isu2"}}
+			{reverse 	{end	"emit_tank_2"}}
+	}
+	{anm "passengers_cover1"
+			{forward	{begin	"board_sd222_driver"}{base "open_desant_left"}}
+			{reverse 	{end	"board_sd222_driver" -1 }{base "open_desant_left"}}
+	}
+	{anm "passengers_cover2"
+			{forward	{begin	"board_sd222_driver"}{base "open_desant_right"}}
+			{reverse 	{end	"board_sd222_driver" -1 }{base "open_desant_right"}}
+	}
+}
+
+{boarder
+	{door "emit1"}
+	{link "emit1" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+}
+;--для экипажа
+
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+("crew_human" place(driver)		door(emit1) group(crew)		    animation(driver))
+("crew_human" place(gunner)	        door(emit4) group(crew)	            animation(gunner))
+("crew_human" place(commander)	        door(emit2) group(crew)	            animation(commander))
+ 	{placer
+		{place "driver"	{visor "driver"}}
+		{place "gunner"	{visor "mgun"}}
+	}
+
+;--для внутрених пассажиров
+
+
+;-левые
+("crew_human" place(seat11)	door(emit8)  animation(passengers_cover1)        group(passengers))
+("crew_human" place(seat12)	door(emit7)  animation(passengers_cover2)        group(passengers))
+("crew_human" place(seat3)	door(emit8)  animation(passengers_cover1)	group(passengers))
+("crew_human" place(seat4)	door(emit7)  animation(passengers_cover2)	group(passengers))
+("crew_human" place(seat5)	door(emit8)  animation(passengers_cover1)	group(passengers))
+
+;-правые
+("crew_human" place(seat6)	door(emit7)  animation(passengers_cover2)	group(passengers))
+("crew_human" place(seat7)	door(emit8)  animation(passengers_cover1)	group(passengers))
+("crew_human" place(seat8)	door(emit7)  animation(passengers_cover2)	group(passengers))
+("crew_human" place(seat9)	door(emit8)  animation(passengers_cover1)	group(passengers))
+("crew_human" place(seat10)	door(emit7)  animation(passengers_cover2)	group(passengers))
+
+
+
+
+;--для внешних пассажиров
+(define "crew_human_out"
+	{placer
+		{place "%place" {group "%group"} {linkbone "%bone"} {turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+;-Левые
+("crew_human_out" place(seat1)	door(emit3) bone(seat_mtlb1) animation(passengers1)     group(passengers))
+("crew_human_out" place(seat2)	door(emit6) bone(seat_mtlb2) animation(passengers3)	group(passengers))
+
+

@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "garage_door"}
+	{bump "garage_door_bp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

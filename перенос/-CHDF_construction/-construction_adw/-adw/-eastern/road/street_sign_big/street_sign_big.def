@@ -1,0 +1,27 @@
+{game_entity
+	(include "/properties/construction_medium.ext")
+	{props "construction" "steel" "parts" "small" "no_destroyed_stamp"}
+
+	{Extension "street_sign_big.mdl"}
+
+	{Volume "body1"
+		{tags "body"}
+		{thickness 10}
+		{able {visible 0}}
+	}
+	{Volume "body2"
+		{tags "body"}
+		{thickness 10}
+		{able {visible 0}}
+	}
+	{Volume "body3"
+		{tags "body"}
+		{thickness 10}
+		{able {visible 0}}
+	}
+	{Volume "body4"
+		{tags "body"}
+		{able {visible 0}}
+		{thickness 5}
+	}
+}

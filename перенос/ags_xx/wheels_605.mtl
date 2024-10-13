@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "expeditionarytank_wheels_d"}
+	{blend none}
+}

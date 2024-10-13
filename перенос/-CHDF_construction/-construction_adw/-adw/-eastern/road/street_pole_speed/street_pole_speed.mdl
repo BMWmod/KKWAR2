@@ -1,0 +1,25 @@
+;Exported by: Adam
+;Date:        Sat Oct 29 15:28:25 2011
+;File:        E:\Users\Adam\Documents\3dsmax\autoback\sign_recover.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "sign1"
+			{bone "sign"
+				{VolumeView "sign.ply"}
+			}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "sign"}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "sign"}
+}

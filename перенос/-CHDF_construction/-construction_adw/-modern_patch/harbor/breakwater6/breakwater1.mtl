@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "breakwater"}
+	{bump "breakwater_bp"}
+	{specular "breakwater_sp"}
+	{blend none}
+}

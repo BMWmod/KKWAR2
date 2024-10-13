@@ -1,0 +1,28 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:18 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "lavka"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "lavka.ply"}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 0 0}
+		{Extent 6.00037 18.6562}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Box 12.0007 37.3123 5.7809}
+	{Bone "lavka"}
+	{Position 0	0	6.31822}
+}

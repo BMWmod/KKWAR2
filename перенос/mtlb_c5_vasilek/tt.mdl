@@ -1,0 +1,13 @@
+;Exported by: MOCKVu4
+;Date:        Sat Jul  1 08:58:56 2023
+;File:        D:\Neu\model\tt.max
+{Skeleton
+	{bone "box002"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "box002.ply"}
+	}
+}

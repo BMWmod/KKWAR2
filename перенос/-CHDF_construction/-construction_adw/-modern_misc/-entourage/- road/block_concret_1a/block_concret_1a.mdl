@@ -1,0 +1,31 @@
+;Exported by: Alexey
+;Date:        Fri Nov 28 22:32:47 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\part_6\block_concret_1a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-0.0740825	-0.108017	5.13304
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0.130264	0.0109167	0.03234
+	}
+}

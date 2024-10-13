@@ -1,0 +1,15 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{Extension "fance_grid3.mdl"}
+	{props "small" "steel" "construction" "parts" "disable_area" "no_destroyed_stamp"}
+
+
+	{Volume "fence"
+		{thickness 10}
+		{able {bullet 0} {visible 0}}
+		{able {obstacle 1}}
+	}
+	{Volume "post"
+	}
+}

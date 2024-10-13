@@ -1,0 +1,11 @@
+{game_entity
+	(include "/properties/construction.inc")		
+	{Extension "postsupport1.mdl"}
+	{props "big" "steel" "parts" "construction" "no_destroyed_stamp"}	
+
+	{Volume "post"
+		{thickness 10}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "generatortrailer01"}
+	{blend none}
+}

@@ -1,0 +1,20 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "concrete" "no_destroyed_stamp"}
+ {Extension "bed_dayz.mdl"}
+ {Volume "body"
+        }
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "cylinder01"
+	}
+	{Volume "cylinder02"
+	}
+	{Volume "cylinder03"
+	}
+	{Volume "cylinder04"
+	}
+}

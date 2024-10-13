@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "btr70_panel3"}
+	{blend none}
+}

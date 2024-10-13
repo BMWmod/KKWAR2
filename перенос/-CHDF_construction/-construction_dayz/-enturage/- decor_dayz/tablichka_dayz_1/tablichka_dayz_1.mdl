@@ -1,0 +1,75 @@
+;Exported by: User
+;Date:        Sun Apr 19 23:41:39 2015
+;File:        (null)
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				1	0	0
+				0	-0.0489946	0.998799
+				0	-0.994761	-0.102225
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 0.0789611 -0.634175}
+		{Extent 0.457319 14.2813}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder01"
+	{Obb2
+		{Center -0.502889 -7.88735}
+		{Extent 1.18596 1.16794}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder02"
+	{Obb2
+		{Center -0.417708 6.89048}
+		{Extent 1.18596 1.16794}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Box 4.39505 0.771367 0.138988}
+	{Bone "body"}
+	{Matrix34
+		-0.0025669	-0.665285	-6.5002
+		0.000165664	5.83786	-0.287529
+		6.49874	-0.000356807	-0.00256203
+		0.0791221	34.9868	-2.3607
+	}
+}
+{Volume "cylinder01"
+	{Polyhedron "cylinder01.vol"}
+	{Bone "body"}
+	{Orientation
+		1	0	0
+		0	-0.102371	-1.00022
+		0	0.996181	-0.0490646
+	}
+}
+{Volume "cylinder02"
+	{Polyhedron "cylinder02.vol"}
+	{Bone "body"}
+	{Orientation
+		1	0	0
+		0	-0.102371	-1.00022
+		0	0.996181	-0.0490646
+	}
+}

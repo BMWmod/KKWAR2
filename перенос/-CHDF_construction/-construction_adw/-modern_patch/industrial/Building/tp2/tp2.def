@@ -1,0 +1,51 @@
+{game_entity
+	(include "/properties/building.inc")			
+	{obstacleid "unbreakable"}
+	{props "cornered" "concrete" "construction" "wall" "no_destroyed_stamp"}
+
+	{Extension "tp2.mdl"}
+	{Volume "door2"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "door3"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "roof"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "switch"
+		{Tags  "door_lock"}
+		{able {touch}}
+	}
+	{Volume "theswitch"
+		{Tags  "door_close"}
+		{able {touch}}
+	}
+	{Volume "wall1"
+		{thickness 50}
+		{tags "wall"}
+	}
+	{Volume "wall2"
+		{thickness 50}
+		{tags "wall"}
+	}
+	{Volume "wall3"
+		{thickness 50}
+		{tags "wall"}
+	}
+	{Volume "wall4"
+		{thickness 50}
+		{tags "wall"}
+	}
+	{Volume "wall5"
+		{thickness 50}
+		{tags "wall"}
+	}
+	{Volume "wall6"
+		{thickness 50}
+		{tags "wall"}
+	}
+}

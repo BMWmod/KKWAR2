@@ -1,0 +1,31 @@
+;Exported by: User
+;Date:        Thu Mar 19 12:32:46 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\decor.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				-0.718681	-0.69534	0
+				0.655091	-0.75555	0
+				0	0	1
+				0.142003	0.172244	9.85102
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.756677	0.696377	0
+		-0.656068	-0.719753	0
+		0	0	1
+		0.331363	-0.026909	-9.85102
+	}
+}

@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/civilian_construction/2/wall_bricks"}
+	{bump "$/civilian_construction/2/wall_bricks_bp"}
+	{specular "$/civilian_construction/2/wall_bricks_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "barrel"}
+	{bump "barrel_bp"}
+	{specular "barrel_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

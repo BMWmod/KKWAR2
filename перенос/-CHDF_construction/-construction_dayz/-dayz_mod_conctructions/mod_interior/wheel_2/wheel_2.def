@@ -1,0 +1,14 @@
+{game_entity
+
+        {ObstacleId "construction"}
+	{props "concrete" "parts" "construction"  "small" "burning"}
+
+	{Volume "body"
+		{thickness 5}
+		{able {touch}}
+		{Tags  "body"}
+	}
+
+	{Extension "wheel_2.mdl"}
+	{lodclass "decor_small"}
+}

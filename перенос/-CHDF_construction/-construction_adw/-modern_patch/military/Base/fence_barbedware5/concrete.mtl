@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/construction/Military/concrete"}
+	{specular "$/construction/Military/concrete_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

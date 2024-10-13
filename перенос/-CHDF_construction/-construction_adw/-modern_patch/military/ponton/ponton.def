@@ -1,0 +1,7 @@
+{game_entity
+	{Extension "ponton.mdl"}
+	{Volume "body"
+	}
+	{Extender "land_patch"
+	}
+}

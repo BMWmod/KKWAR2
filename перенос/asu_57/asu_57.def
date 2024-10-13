@@ -1,0 +1,117 @@
+{game_entity
+	(include "/properties/tank.ext")
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "light_M" "tank" "can_paradrop_an-12" "vision_lev01" "-turret"}
+	
+ 	("armor_light_btr" turret(6 6 6 6) body(8 8 8 8))
+    {targetClass "light_tank"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "gun1"
+		{tags "gun"}
+		{component "gun"}
+	}
+	{volume "gun2"
+		{tags "gun"}
+		{component "gun"}
+	}
+	
+	
+	{extender "enumerator"}
+	
+	
+	{boarder
+	{anm "driver"
+		{forward	{begin	"board_Dodge_bodyBack"} {end "seat_gunner_moto"}}
+		{reverse	{end	"emit_tank_2_hold"}}
+	}
+	{anm "commander"
+		{forward	{begin	"board_Dodge_bodyBack"} {end "seat_gunner_moto"}}
+		{reverse	{end	"emit_tank_1_hold"}}
+	}
+	{anm "gunner"
+		{forward	{begin	"board_Dodge_bodyBack"} {end "pose_pak40_charger"}}
+		{reverse	{end	"emit_tank_2_hold"}}
+	}		
+}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {linkbone "%bone"} {turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	
+("crew_human" place(driver) bone(driver) door(emit1) animation(driver) group(crew))
+("crew_human" place(commander) bone(commander) door(emit1) animation(commander) group(crew))
+("crew_human" place(gunner) bone(gunner) door(emit1) animation(gunner)	group(crew))
+
+	{Placer
+		{place "driver" {visor "driver"}}
+		{place "gunner" {visor "main"}}
+		{place "commander" {visor "commander"}}
+	}
+
+
+{sensor
+	{visor "commander"
+		{vision "tank_gunner_optic_IR_2g"}
+		{bone "visor1"}
+	}
+	{visor "driver"
+		{vision "tank_driver"}
+		{bone "visor2"}
+	}
+}	
+
+ 
+	{extender "inventory"
+		{box
+			{item "ammo bullet57_ussr ap" 15}
+			{item "ammo bullet57_ussr fg" 15}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "57mm_ch51" filling "ammo bullet57_ussr ap" 1}	
+			{gunner "gunner"}
+			{charger "gunner"} 
+			("CW_stab_no_stabiliser")
+			{Rotate}
+		}
+	}
+	
+	
+	{mass 3350}
+	
+	{Chassis
+    ("tank_trace" fx("tracks_sm") step(0.2) len(1.15))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(3)
+			Width(2.08)
+			Power(55)
+			Realspeed(45)
+			Gamespeed(25) 
+		)
+		{RearGears		0.12 0.29 0.5 0.68 1}}
+		("CW_fuelbag" Range(286) Fuelvolume(80))
+		("CW_speed_lev" Gamespeed(41))
+	}
+	
+	{props "cwfs_ext_only" "cwfs_extfuel_80"}
+	
+	{Extension "asu_57.mdl"}
+	("missile_aimpoint_wieselsize")
+}
+

@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/hemtt/body1"}
+	{emitsheat}
+{blend none}
+}

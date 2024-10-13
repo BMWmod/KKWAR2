@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/ptsm/2s1_treads_c"}
+	{blend test}
+}

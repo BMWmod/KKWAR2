@@ -1,0 +1,7 @@
+
+{material bump
+	{diffuse "$/model/BTR-4E/interier"}
+	{bump "$/model/BTR-4E/normal"}
+	{specular "$/model/BTR-4E/Object080 [Specular]"}
+	{blend none}
+}

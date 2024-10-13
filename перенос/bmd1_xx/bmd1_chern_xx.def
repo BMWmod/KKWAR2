@@ -1,0 +1,14 @@
+{game_entity
+	{Extension "bmd1p_xx.mdl"}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+		{thickness 15}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+		{thickness 15}
+	}
+		;{mass 7500}
+}

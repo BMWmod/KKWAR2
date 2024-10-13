@@ -1,0 +1,37 @@
+;Exported by: Alexey
+;Date:        Thu Aug 07 15:48:35 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\forklift.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	14.3391	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.362299	20.3619	14.9242
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.362297	-31.0462	14.9242
+	}
+}

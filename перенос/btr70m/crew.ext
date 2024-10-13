@@ -1,0 +1,60 @@
+;SDL
+{boarder
+	{anm "driver"
+		{forward	{begin	"board_tank_left"} {base "open" -1}}
+		{reverse 	{end	"emit_tank_1_hold" } {base "open"}}
+	}
+	{anm "commander"
+		{forward	{begin	"board_tank_right"} {base "open2"}}
+		{reverse 	{end	"emit_tank_1_hold" } {base "open2"}}
+	}
+	{anm "gunner"
+		{forward	{begin	"board_tank_right"} {base "open2"}}
+		{reverse 	{end	"emit_tank_1_hold"} {base "open2"}}
+	}
+	{anm "passengers"
+			{forward	{begin	"board_sd222_driver"} {base "door_r"}}
+			{reverse 	{end	"emit_body" } {base "door_r"}}
+	}
+	{anm "passengers1"
+			{forward	{begin	"board_sd222_driver"} {base "door_l"}}
+			{reverse 	{end	"emit_body" } {base "door_l"}}
+	}
+}
+
+
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}{turnoff {sensor} {shadow}}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+
+	
+("crew_human" place(driver)		door(emit2) group(crew)		animation(driver))
+("crew_human" place(gunner)		door(emit1) group(crew)	    animation(gunner))
+("crew_human" place(commander)	door(emit1) group(crew)		animation(commander)	visor(main))
+
+	{placer
+		{place "driver"	{visor "driver"}}
+		{place "gunner"	{visor "main"}}
+	}
+	
+("crew_human" place(seat1)	door(emit3) bone(seat01) animation(passengers) 	group(passengers))
+("crew_human" place(seat2)	door(emit4) bone(seat02) animation(passengers1)	group(passengers))
+("crew_human" place(seat3)	door(emit3) bone(seat03) animation(passengers)	group(passengers))
+("crew_human" place(seat4)	door(emit4) bone(seat04) animation(passengers1)	group(passengers))
+("crew_human" place(seat5)	door(emit3) bone(seat05) animation(passengers)	group(passengers))
+("crew_human" place(seat6)	door(emit4) bone(seat06) animation(passengers1)	group(passengers))
+("crew_human" place(seat7)	door(emit3) bone(seat07) animation(passengers)	group(passengers))
+("crew_human" place(seat8)	door(emit4) bone(seat08) animation(passengers1)	group(passengers))
+
+
+
+
+

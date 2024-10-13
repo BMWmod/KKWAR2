@@ -1,0 +1,357 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "concrete" "construction"}
+	("armor_medium" args 0.7)
+	{obstacleID "unbreakable"}
+	{lodclass "decor_big"}
+	{Extension "121st_5_building_full.mdl"}
+	
+	{placer
+		{place "1" {attach  snipe_cover} 		{linkbone "attach1"}}
+		{place "2" {attach  snipe_cover} 		{linkbone "attach2"}}
+		{place "3" {attach  snipe_cover} 		{linkbone "attach3"}}
+		{place "4" {attach  snipe_cover} 		{linkbone "attach4"}}
+		{place "5" {attach  snipe_cover} 		{linkbone "attach5"}}
+		{place "6" {attach  snipe_cover} 		{linkbone "attach6"}}
+		{place "7" {attach  snipe_cover} 		{linkbone "attach7"}}
+		{place "8" {attach  snipe_cover} 		{linkbone "attach8"}}
+		{place "9" {attach  snipe_cover} 		{linkbone "attach9"}}
+		{place "10" {attach  snipe_cover} 		{linkbone "attach10"}}
+		{place "11" {attach  snipe_cover} 		{linkbone "attach11"}}
+		{place "12" {attach  snipe_cover} 		{linkbone "attach12"}}
+		{place "13" {attach  snipe_cover} 		{linkbone "attach13"}}
+		{place "14" {attach  snipe_cover} 		{linkbone "attach14"}}
+		{place "15" {attach  snipe_cover} 		{linkbone "attach15"}}
+		{place "16" {attach  snipe_cover} 		{linkbone "attach16"}}
+		{place "17" {attach  snipe_cover} 		{linkbone "attach17"}}
+		{place "18" {attach  snipe_cover} 		{linkbone "attach18"}}
+		{place "19" {attach  snipe_cover} 		{linkbone "attach19"}}
+		{place "20" {attach  snipe_cover} 		{linkbone "attach20"}}
+	}	
+	{boarder}
+	
+	{Volume "body_attach1"
+		{Tags  "attach" "1"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach2"
+		{Tags  "attach" "2"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach3"
+		{Tags  "attach" "3"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach4"
+		{Tags  "attach" "4"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach5"
+		{Tags  "attach" "5"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach6"
+		{Tags  "attach" "6"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach7"
+		{Tags  "attach" "7"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach8"
+		{Tags  "attach" "8"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach9"
+		{Tags  "attach" "9"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach10"
+		{Tags  "attach" "10"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach11"
+		{Tags  "attach" "11"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach12"
+		{Tags  "attach" "12"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach13"
+		{Tags  "attach" "13"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach14"
+		{Tags  "attach" "14"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach15"
+		{Tags  "attach" "15"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach16"
+		{Tags  "attach" "16"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach17"
+		{Tags  "attach" "17"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach18"
+		{Tags  "attach" "18"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach19"
+		{Tags  "attach" "19"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach20"
+		{Tags  "attach" "20"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body00"
+		{Tags  "body"}
+		{Thickness 50}
+	}
+	{Volume "body01"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body02"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body03"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body04"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body05"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body06"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body07"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body08"
+		{Tags  "body"}
+		{Thickness 10}
+	}
+	{Volume "body_r00"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r01"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r04"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r05"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r06"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r07"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r08_vol001"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r09"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r10"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r17"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r18"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r23"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r24"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r25"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r26"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r27"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r28"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r29"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r30"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r31"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r32"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r33"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r34"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r35"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r36"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r37"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r38"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r39"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r40"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	
+	{Extender "land_patch"
+	}
+}

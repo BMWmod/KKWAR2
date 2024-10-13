@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/model/tos-1a_solntsepek/solncepek_turret"}
+	{emitsheat}
+{blend none}
+}

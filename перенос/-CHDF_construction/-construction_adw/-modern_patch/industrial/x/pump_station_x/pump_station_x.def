@@ -1,0 +1,37 @@
+{game_entity
+	{Extension "pump_station_x.mdl"}
+	{Volume "piece10"
+	}
+	{Volume "piece11"
+	}
+	{Volume "piece12"
+	}
+	{Volume "piece13"
+	}
+	{Volume "piece5"
+	}
+	{Volume "piece6"
+	}
+	{Volume "piece7"
+	}
+	{Volume "piece8"
+	}
+	{Volume "piece9"
+	}
+	{Volume "wall1"
+	}
+	{Volume "wall2"
+	}
+	{Volume "wall3"
+	}
+	{Volume "wall4"
+	}
+	{Volume "wall5"
+	}
+	{Volume "wall6"
+	}
+	{Volume "wall7"
+	}
+	{Volume "wall8"
+	}
+}

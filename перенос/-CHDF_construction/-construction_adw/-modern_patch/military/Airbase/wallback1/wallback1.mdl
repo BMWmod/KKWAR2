@@ -1,0 +1,94 @@
+;Exported by: Notebook
+;Date:        Mon Jul 23 22:36:54 2018
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Military\AirBase\wallback1.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.1}}
+		{sequence "close" {speed 0.1}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "wallback"
+			{Position 0.12779	-1.21321e-005	0}
+			{VolumeView "wallback.ply"}
+			{bone "doorl"
+				{Position -19.8128	1.21321e-005	0}
+				{VolumeView "doorl.ply"}
+			}
+			{bone "doorr"
+				{Position 19.5572	1.21321e-005	0}
+				{VolumeView "doorr.ply"}
+			}
+		}
+	}
+}
+{Obstacle "wallfrontl"
+	{Obb2
+		{Center -147.638 -3.12672e-006}
+		{Extent 127.953 9.84252}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "wallfrontr"
+	{Obb2
+		{Center 147.638 -3.12672e-006}
+		{Extent 127.953 9.84252}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "doorl"
+	{Box 19.685 3.14961 59.0551}
+	{Bone "doorl"}
+	{Position 9.84252	0	29.5276}
+}
+{Volume "doorr"
+	{Box 19.685 3.14961 59.0551}
+	{Bone "doorr"}
+	{Position -9.84252	0	29.5276}
+}
+{Volume "switch"
+	{Box 19.685 39.3701 11.811}
+	{Bone "doorl"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		9.84252	-5.90551	31.329
+	}
+}
+{Volume "theswitch"
+	{Box 19.685 39.3701 11.811}
+	{Bone "doorr"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-9.84252	-5.90551	31.329
+	}
+}
+{Volume "wallback1"
+	{Box 259.843 19.685 82.6772}
+	{Bone "wallback"}
+	{Position 149.479	-1.12317	41.3386}
+}
+{Volume "wallback2"
+	{Box 259.843 19.685 82.6772}
+	{Bone "wallback"}
+	{Position -149.734	-1.12317	41.3386}
+}
+{Volume "wallback3"
+	{Box 440.945 19.685 102.362}
+	{Bone "wallback"}
+	{Position -0.000724554	-1.12317	110.236}
+}
+{Volume "wallback4"
+	{Box 240.157 19.685 43.3071}
+	{Bone "wallback"}
+	{Position -0.000724554	-1.12317	179.134}
+}

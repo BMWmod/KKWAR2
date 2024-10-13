@@ -1,0 +1,10 @@
+{actor
+	(include "/properties/construction.inc")
+        {ObstacleId "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{props "steel" "dead_vehicle" "big" "part"}
+
+	{extension "kachely.mdl"}
+	{nogroupmesh 1}
+}

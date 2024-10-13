@@ -1,0 +1,56 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:56 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "barier_market"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "barier_market.ply"}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 0 0}
+		{Extent 0.853333 18.1281}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center 0 0}
+		{Extent 0.853333 18.1281}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 0 0}
+		{Extent 0.853333 18.1281}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body1"
+	{Box 1.70667 36.2563 1.71651}
+	{Bone "barier_market"}
+	{Position 0	0	18.7757}
+}
+{Volume "body2"
+	{Box 1.70667 36.2563 15.6046}
+	{Bone "barier_market"}
+	{Position 0	0	11.9357}
+}
+{Volume "body"
+	{Box 1.70667 36.2563 1.71651}
+	{Bone "barier_market"}
+	{Position 0	0	4.50304}
+}

@@ -1,0 +1,18 @@
+;Exported by: Домашний
+;Date:        Sun Aug 04 16:12:29 2013
+;File:        (null)
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Volume "body"
+	{Box 15.4881 28.218 28.5362}
+	{Bone "body"}
+	{Position -0.0938126	8.23669	14.4533}
+}

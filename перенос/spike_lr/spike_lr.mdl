@@ -1,0 +1,124 @@
+;Exported by: ??????
+;Date:        Sun Mar 19 14:18:31 2023
+;File:        C:\Users\??????\Desktop\spike_cmsf2\spike.max
+{Skeleton
+	{animation
+		{sequence "close" {speed 0.3}}
+	}
+	{bone revolute "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "driver1"
+			{Position 1.95421	7.34805	1.31322}
+		}
+		{bone "driver2"
+			{Position -3.61174	-7.422	1.31322}
+		}
+		{bone "emit1"
+			{Position -17.5793	3.54801	1.31322}
+		}
+		{bone "support1"
+			{Position 15.3388	2.04825	1.31322}
+		}
+		{bone "support2"
+			{Position -4.38179	-11.3827	1.31322}
+		}
+		{bone "support3"
+			{Position -4.31559	11.4193	1.31322}
+		}
+		{bone "gunner"
+			{Position 0.107651	6.05145	0.379387}
+		}
+		{bone "commander"
+			{Position -10.019	-14.2171	1.31321}
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -1.22835	-0.587597	6.74803}
+			{VolumeView "body.ply"}
+			{bone revolute "turret"
+				{parameters "ID=turret;"}
+				{limits -20 20}
+				{Position 1.52854	-0.029529	7.73917}
+				{VolumeView "turret.ply"}
+				{bone "gun"
+					{parameters "ID=gun;"}
+					{Matrix34
+						0.996195	0	0.0871557
+						0	1	0
+						-0.0871557	0	0.996195
+						-0.538386	2.42913	-0.205709
+					}
+					{VolumeView "gun.ply"}
+					{bone revolute "gun_rot"
+						{limits -15 40}
+						{Matrix34
+							1	0	0
+							0	0	1
+							0	-1	0
+							11.735	-2.41937	2.05509
+						}
+						{bone "foresight1"
+							{Matrix34
+								1	0	0
+								0	0	-1
+								0	1	0
+								0.230766	0	0
+							}
+						}
+					}
+					{bone "shooter00"
+						{Position 10.4046	-2.42566	2.05508}
+					}
+					{bone "tail"
+						{Matrix34
+							-0.984808	0	-0.173648
+							0	-1	0
+							-0.173648	0	0.984808
+							-12.9343	-2.08458	0.237283
+						}
+					}
+					{bone revolute "handle"
+						{Matrix34
+							0	-1	0
+							-0.0198319	0	-0.999803
+							0.999803	0	-0.0198319
+							-0.142057	-2.99027	-1.18275
+						}
+					}
+					{bone "visor1"
+						{Position 12.9332	1.92282	-0.327816}
+					}
+				}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 1.35364	-0.204086	4.63947}
+}
+{Volume "gun"
+	{Polyhedron "gun.vol"}
+	{Bone "gun"}
+	{Matrix34
+		0	1	0
+		-0.996195	0	-0.0871557
+		-0.0871557	0	0.996195
+		-0.749586	-2.32896	-1.26776
+	}
+}
+{Volume "turret1"
+	{Polyhedron "turret1.vol"}
+	{Bone "turret"}
+	{Position 7.38427	4.47753	-1.75315}
+}
+{Volume "turret"
+	{Polyhedron "turret.vol"}
+	{Bone "turret"}
+	{Position -0.371867	-0.0596234	-2.00685}
+}

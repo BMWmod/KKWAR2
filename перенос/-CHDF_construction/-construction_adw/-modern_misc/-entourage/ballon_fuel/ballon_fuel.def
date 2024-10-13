@@ -1,0 +1,12 @@
+{game_entity
+	(include "/properties/construction.inc")
+        {ObstacleId "construction"}
+	{Extension "ballon_fuel.mdl"}
+	{props   "one" "staged" "construction" "burning" "disable_area" "no_destroyed_stamp" "concrete" "parts" "small"  "steel"}
+	("armor_light" args 0.7)
+	{Volume "body"
+		{Tags  "body" "fire"}
+		{Thickness 1}
+	}
+	{lodclass "decor_small"}
+}

@@ -1,0 +1,97 @@
+;Exported by: User
+;Date:        Sun Apr 19 21:02:01 2015
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0.998193	0.0600877
+				0	-0.158807	0.98731
+				-0.449551	-3.79156	18.0101
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -0.650774 3.07991}
+		{Extent 5.20058 0.303952}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder01"
+	{Obb2
+		{Center -5.00083 3.50328}
+		{Extent 0.82725 0.814683}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder02"
+	{Obb2
+		{Center 4.29592 3.50328}
+		{Extent 0.82725 0.814683}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder03"
+	{Obb2
+		{Center -0.301747 3.60904}
+		{Extent 4.15283 0.139239}
+		{Axis 0.999848 0.0174436}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.999969	0.0078819	-0.000479699
+		0	0.16077	1.00307
+		0.00794386	0.991982	-0.0615725
+		-0.194829	2.84522	4.89865
+	}
+}
+{Volume "cylinder01"
+	{Cylinder 0.827249 38.3042}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.992203	-0.0603856
+		0	0.159594	1.00314
+		-4.55128	0.468279	1.12813
+	}
+}
+{Volume "cylinder02"
+	{Cylinder 0.827249 38.3042}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.992203	-0.0603856
+		0	0.159594	1.00314
+		4.74547	0.468279	1.12813
+	}
+}
+{Volume "cylinder03"
+	{Cylinder 4.15292 0}
+	{Bone "body"}
+	{Matrix34
+		-0.999937	0.0111403	-0.000678002
+		-0.000369938	0.126817	1.00459
+		0.0112217	0.99686	-0.0272957
+		0.147804	2.70697	15.8655
+	}
+}

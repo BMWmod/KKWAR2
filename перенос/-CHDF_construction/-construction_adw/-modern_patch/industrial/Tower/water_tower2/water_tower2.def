@@ -1,0 +1,15 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{Extension "water_tower2.mdl"}
+	{props "cornered" "steel" "parts" "construction" "wall"}	
+	
+	{Volume "body1"
+		{thickness 10}
+		{tags "body"}
+	}
+	{Volume "body2"
+		{thickness 10}
+		{tags "body"}
+	}
+}

@@ -1,0 +1,26 @@
+;Exported by: Notebook
+;Date:        Tue Oct 08 21:24:41 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\well2.max
+{Skeleton
+	{bone "well"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "well.ply"}
+		{bone "well_top"
+			{parameters "land;"}
+			{Position 0	0	39.3701}
+			{VolumeView "well_top.ply"}
+			{bone "well_cup1"
+				{Position -19.685	-19.685	3.1496}
+				{VolumeView "well_cup1.ply"}
+			}
+			{bone "well_cup2"
+				{Position 19.685	19.685	3.1496}
+				{VolumeView "well_cup2.ply"}
+			}
+		}
+	}
+}

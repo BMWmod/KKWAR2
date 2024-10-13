@@ -1,0 +1,47 @@
+;Exported by: Adam
+;Date:        Sat Jan 07 12:44:50 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\barbed_wire_xx.max
+{Skeleton
+	{animation
+		{sequence "crush1"}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece8"
+			{Position 0	0	0}
+			{VolumeView "piece8.ply"}
+		}
+		{bone "piece7"
+			{Position 0.132195	-0.447063	23.7335}
+			{VolumeView "piece7.ply"}
+		}
+		{bone "piece6"
+			{Position -33.2036	-5.87481	0}
+			{VolumeView "piece6.ply"}
+		}
+		{bone "piece5"
+			{Position -32.744	4.75444	0}
+			{VolumeView "piece5.ply"}
+		}
+		{bone "piece4"
+			{Position 0	-3.22564	0}
+			{VolumeView "piece4.ply"}
+		}
+		{bone "piece3"
+			{Position 0	0	0}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece2"
+			{Position 34.3028	3.46954	0}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece1"
+			{Position 34.1345	-7.2132	0}
+			{VolumeView "piece1.ply"}
+		}
+	}
+}

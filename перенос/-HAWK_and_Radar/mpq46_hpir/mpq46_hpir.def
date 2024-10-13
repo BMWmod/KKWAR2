@@ -1,0 +1,68 @@
+{Entity
+	(include "/properties/point_defence.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{props "cannon" "heavy" "trailer" "wheeled" "vision_lev04_can" "sam" "autotrack_suo" "sam_radar"}
+	{PatherId "cannon.large"}
+	{targetSelector "missile"}
+	{targetClass "cannon" "ap fg"}
+	
+	{Extension "mpq46_hpir.mdl"}
+	("missile_aimpoint_trucksize")
+	
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	
+	{extender "inventory"
+		{box
+			{Size 7 6}
+			{weight 3000}
+		}
+	}
+	{Weaponry
+		{place "radar"
+			{weapon "targeting_radar_hawk" filled}
+			{foresight "Foresight1"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}		
+		}
+	}
+	
+	{sensor
+		{Visor "main"
+			{vision "radar_pantsir_s_front"}
+			{bone "visor1"}
+		}
+	}
+	
+	
+	{mass 2500}
+	{Chassis "track"
+		("car_trace" fx("tracewheel04") step(0.08) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		{locomotion
+			{StopTime	0.2}
+			{BrakeTime	0.7}
+			{TurnRadius	3}
+			{TurnStart	0.8}
+			{TurnStop	0.5}
+			{Gears		0.35 0.5 0.7 1.0}
+			{RearGears	0.33 0.5}
+			{FallSlope  60}
+			{MaxSpeed	0}
+			{StartTime	5}
+			{TurnTime	2000}
+			{TurnRadius	3}
+		}
+    }
+	
+	{extender "cannon"
+		{animation
+			{switch "close"}
+		}
+		{move {obstacle "close"}}
+		{attack {obstacle "open"}}
+	}
+
+}

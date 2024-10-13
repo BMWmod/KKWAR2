@@ -1,0 +1,31 @@
+{game_entity
+	(include "/properties/construction.inc")		
+	{Extension "powerline4.mdl"}
+	{props "big" "steel" "parts" "construction" "no_destroyed_stamp"}
+
+	{Volume "bracket1"
+		{thickness 30}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+	{Volume "bracket21"
+		{thickness 30}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+	{Volume "bracket22"
+		{thickness 30}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+	{Volume "stolb1"
+		{thickness 30}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+	{Volume "stolb2"
+		{thickness 30}
+		{tags "body"}
+		{able {obstacle 1} {visible 0}} 
+	}
+}

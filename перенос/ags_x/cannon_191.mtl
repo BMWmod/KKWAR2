@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "expeditionarytank_cannon_d"}
+	{blend none}
+}

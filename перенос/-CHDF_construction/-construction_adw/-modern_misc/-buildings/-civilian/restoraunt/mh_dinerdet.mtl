@@ -1,0 +1,4 @@
+{material bump
+	{diffuse "mh_dinerdet"}
+	{blend none}
+}

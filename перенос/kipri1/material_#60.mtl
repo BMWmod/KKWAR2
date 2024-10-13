@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "tmt_kirpi_cockpit_co"}
+	{blend none}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "grim_frame_basecolor"}
+	{blend none}
+}
