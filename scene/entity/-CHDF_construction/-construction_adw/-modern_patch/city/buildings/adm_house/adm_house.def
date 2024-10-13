@@ -1,0 +1,36 @@
+{game_entity
+	(include "/properties/building.inc")
+	{obstacleid "unbreakable" "construction" }
+	{props "concrete" "no_destroyed_stamp"}
+	{Extension "adm_house.mdl"}
+	{Volume "admhouse1"
+		{Tags  "admhouse"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "admhouse2"
+		{Tags  "admhouse"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "vent1"
+		{Tags  "vent1"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "vent21"
+		{Tags  "vent2"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "vent22"
+		{Tags  "vent2"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "vent23"
+		{Tags  "vent2"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+}

@@ -1,0 +1,51 @@
+;Exported by: Notebook
+;Date:        Sat Oct 19 22:46:07 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\PowerLine\PowerLine2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+			{bone "ferm"
+				{Position 0	0	3.93701}
+				{VolumeView "ferm.ply"}
+				{bone "isolator1"
+					{Position 0	0	290.354}
+					{VolumeView "isolator1.ply"}
+				}
+				{bone "isolator2"
+					{Position 0	0	172.244}
+					{VolumeView "isolator2.ply"}
+				}
+				{bone "isolator3"
+					{Position 0	0	231.299}
+					{VolumeView "isolator3.ply"}
+				}
+			}
+		}
+	}
+}
+{Volume "ferm1"
+	{Polyhedron "ferm1.vol"}
+	{Bone "ferm"}
+	{Position 0	0	295.276}
+}
+{Volume "ferm2"
+	{Polyhedron "ferm2.vol"}
+	{Bone "ferm"}
+	{Position 0	0	236.22}
+}
+{Volume "ferm3"
+	{Polyhedron "ferm3.vol"}
+	{Bone "ferm"}
+	{Position 0	0	177.165}
+}
+{Volume "ferm"
+	{Polyhedron "ferm.vol"}
+	{Bone "ferm"}
+	{Position 0	0	-3.93701}
+}

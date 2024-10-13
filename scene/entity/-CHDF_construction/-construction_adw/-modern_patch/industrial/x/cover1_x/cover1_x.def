@@ -1,0 +1,65 @@
+{game_entity
+	{Extension "cover1_x.mdl"}
+	{Volume "ferm1_vol1"
+	}
+	{Volume "ferm1_vol10"
+	}
+	{Volume "ferm1_vol2"
+	}
+	{Volume "ferm1_vol3"
+	}
+	{Volume "ferm1_vol4"
+	}
+	{Volume "ferm1_vol5"
+	}
+	{Volume "ferm1_vol6"
+	}
+	{Volume "ferm1_vol7"
+	}
+	{Volume "ferm1_vol8"
+	}
+	{Volume "ferm1_vol9"
+	}
+	{Volume "ferm2_vol1"
+	}
+	{Volume "ferm2_vol10"
+	}
+	{Volume "ferm2_vol2"
+	}
+	{Volume "ferm2_vol3"
+	}
+	{Volume "ferm2_vol4"
+	}
+	{Volume "ferm2_vol5"
+	}
+	{Volume "ferm2_vol6"
+	}
+	{Volume "ferm2_vol7"
+	}
+	{Volume "ferm2_vol8"
+	}
+	{Volume "ferm2_vol9"
+	}
+	{Volume "ferm3_vol1"
+	}
+	{Volume "ferm3_vol2"
+	}
+	{Volume "ferm3_vol3"
+	}
+	{Volume "ferm3_vol4"
+	}
+	{Volume "ferm3_vol5"
+	}
+	{Volume "ferm3_vol6"
+	}
+	{Volume "ferm3_vol7"
+	}
+	{Volume "ferm3_vol8"
+	}
+	{Volume "ferm3_vol9"
+	}
+	{Volume "ferm4_vol1"
+	}
+	{Volume "ferm4_vol2"
+	}
+}

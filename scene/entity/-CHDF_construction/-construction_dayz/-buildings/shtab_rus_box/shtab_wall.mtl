@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "shtab_wall"}
+	{blend none}
+}

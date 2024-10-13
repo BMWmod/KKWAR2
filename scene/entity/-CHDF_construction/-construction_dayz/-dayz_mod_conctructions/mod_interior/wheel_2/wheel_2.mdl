@@ -1,0 +1,18 @@
+;Exported by: Домашний
+;Date:        Sat Aug 03 13:25:06 2013
+;File:        C:\Users\Домашний\Documents\3dsmax\scenes\12313.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Volume "body"
+	{Cylinder 7.74515 19.7132}
+	{Bone "body"}
+	{Position 1.9803	0.154583	9.8566}
+}

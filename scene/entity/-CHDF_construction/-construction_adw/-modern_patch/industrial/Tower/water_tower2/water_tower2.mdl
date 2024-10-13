@@ -1,0 +1,43 @@
+;Exported by: Notebook
+;Date:        Sun Sep 15 00:11:45 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\water tower2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{VolumeView "body.ply"}
+			{bone "stair"
+				{Matrix34
+					0	-1	0
+					1	0	0
+					0	0	1
+					0	0	55.0629
+				}
+				{VolumeView "stair.ply"}
+			}
+			{bone "fence"
+				{Matrix34
+					0	1	0
+					-1	0	0
+					0	0	1
+					0	0	267.717
+				}
+				{VolumeView "fence.ply"}
+			}
+		}
+	}
+}
+{Volume "body1"
+	{Cylinder 21.6535 177.165}
+	{Bone "body"}
+	{Position 0	0	88.5827}
+}
+{Volume "body2"
+	{Cylinder 31.4961 98.4252}
+	{Bone "body"}
+	{Position 0	0	210.63}
+}

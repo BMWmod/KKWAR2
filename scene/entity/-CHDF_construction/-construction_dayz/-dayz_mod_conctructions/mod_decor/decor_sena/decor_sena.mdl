@@ -1,0 +1,32 @@
+;Exported by: User
+;Date:        Mon Oct 05 22:40:34 2015
+;File:        C:\Users\User\Desktop\пробы моделей\dayzмодели\гражданский1.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+	}
+}
+{Obstacle "cylinder01"
+	{Obb2
+		{Center 0.0209735 0.467426}
+		{Extent 14.6509 13.207}
+		{Axis 0.0531046 0.998589}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "cylinder01"
+	{Polyhedron "cylinder01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	1
+		-0.0450907	0.998983	0
+		-0.998983	-0.0450907	0
+		0	0	19.8892
+	}
+}

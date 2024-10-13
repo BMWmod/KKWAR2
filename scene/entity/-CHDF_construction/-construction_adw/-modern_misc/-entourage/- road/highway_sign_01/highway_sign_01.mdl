@@ -1,0 +1,23 @@
+;Exported by: Adam
+;Date:        Sun Oct 07 21:41:44 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\base_sign.max
+{Skeleton
+	{bone "sign"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "sign.ply"}
+	}
+}
+{Volume "body"
+	{Box 35.3293 16.7665 0.538922}
+	{Bone "sign"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.089798	0.0279879	28.1737
+	}
+}

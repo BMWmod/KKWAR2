@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/construction/Industrial/post_wood"}
+	{blend none}
+}

@@ -1,0 +1,35 @@
+;Exported by: Notebook
+;Date:        Thu Oct 24 22:54:47 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\posthsupport2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "post"
+			{Matrix34
+				1	0	0
+				0	0.970296	-0.241922
+				0	0.241922	0.970296
+				0	-41.5354	-9.84252
+			}
+			{VolumeView "post.ply"}
+			{bone "bracket"
+				{Matrix34
+					1	0	0
+					0	0.970296	0.241922
+					0	-0.241922	0.970296
+					0	3.87049	156.166
+				}
+				{VolumeView "bracket.ply"}
+			}
+		}
+	}
+}
+{Volume "post"
+	{Cylinder 2.75591 157.48}
+	{Bone "post"}
+	{Position 0	0	78.7402}
+}

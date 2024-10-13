@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "grnd_asphalt_escape"}
+	{blend none}
+}

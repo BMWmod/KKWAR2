@@ -1,0 +1,150 @@
+;Exported by: MOCKVu4
+;Date:        Thu Nov 30 11:15:15 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f\hrushevka_5f_var5.max
+{Skeleton
+	{bone "attach3"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "window1"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				91.7845	-85.6571	-28.5355
+			}
+			{VolumeView "window1.ply"}
+		}
+		{bone "stena3"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-23.4171	-38.3878	17.7705
+			}
+			{VolumeView "stena3.ply"}
+		}
+		{bone "stena2"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-21.6937	5.41115	17.7705
+			}
+			{VolumeView "stena2.ply"}
+		}
+		{bone "stena1"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				4.09061	28.4373	17.7705
+			}
+			{VolumeView "stena1.ply"}
+			{bone "window2"
+				{Position 87.6938	-46.1979	114.098}
+				{VolumeView "window2.ply"}
+			}
+			{bone "seat02"
+				{Matrix34
+					0	0	-1
+					-1	0	0
+					0	1	0
+					-2.24168	-19.7509	7.53601
+				}
+			}
+		}
+		{bone "seat01"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-12.7372	0.845535	-1.98028
+			}
+		}
+	}
+}
+{Obstacle "stena1"
+	{Obb2
+		{Center 3.83908 -30.7494}
+		{Extent 25.8467 1.65989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "stena2"
+	{Obb2
+		{Center -23.9903 -6.92717}
+		{Extent 1.96852 23.5823}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "stena2"
+	{Obb2
+		{Center -23.9899 38.6171}
+		{Extent 1.96852 20.6693}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "hole1"
+	{Box 19.685 29.5276 19.685}
+	{Bone "attach3"}
+	{Matrix34
+		0	-1	0
+		1.29687	0	0
+		0	0	1.13565
+		-22.4249	2.91518	21.1469
+	}
+}
+{Volume "hole2"
+	{Box 29.5276 25.5906 19.685}
+	{Bone "stena1"}
+	{Matrix34
+		-1	0	0
+		0	0	1.29687
+		0	1.13565	0
+		0.677917	2.69682	-4.7822
+	}
+}
+{Volume "stena1"
+	{Box 51.6934 40.7856 3.31976}
+	{Bone "stena1"}
+	{Position -0.251511	-0.401066	-2.31212}
+}
+{Volume "stena2"
+	{Box 47.1646 41.3386 3.93701}
+	{Bone "stena2"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-2.2966	-0.0564651	-1.51602
+	}
+}
+{Volume "window1"
+	{Box 22.1083 23.9346 1.63409}
+	{Bone "window1"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-116.345	49.2573	-88.5978
+	}
+}
+{Volume "window2"
+	{Box 1.9685 23.622 19.685}
+	{Bone "window2"}
+	{Matrix34
+		0	0	-1
+		-1.29611	-0.0443973	0
+		-0.0388784	1.13499	0
+		-86.6148	49.5671	-115.796
+	}
+}

@@ -1,0 +1,41 @@
+;Exported by: Vorabat
+;Date:        Mon Sep 06 19:16:38 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\palatka3.max
+{Skeleton
+	{bone "exterior"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "exterior.ply"}
+	}
+}
+{Area "interior"
+	{Obb2
+		{Center -0.328804 -0.726336}
+		{Extent 76.9877 55.1304}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "box09"
+	{Box 158.656 46.2748 4.5231}
+	{Bone "exterior"}
+	{Matrix34
+		1	0	0
+		0	0.939693	-0.34202
+		0	0.34202	0.939693
+		0.453613	23.3273	46.7152
+	}
+}
+{Volume "box10"
+	{Box 158.656 46.2748 4.5231}
+	{Bone "exterior"}
+	{Matrix34
+		-1	0	0
+		0	-0.939693	-0.34202
+		0	-0.34202	0.939693
+		0.453611	-21.8004	46.7152
+	}
+}

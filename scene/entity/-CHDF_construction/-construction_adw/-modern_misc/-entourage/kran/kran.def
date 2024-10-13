@@ -1,0 +1,32 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable"}
+	{props "concrete"}
+	("armor_heavy" args 1.0)
+
+	{Extension "kran.mdl"}
+	{Volume "box01"
+	}
+	{Volume "box01dahj2qoi"
+	}
+	{Volume "box01dahjfdh2qoi"
+	}
+	{Volume "box01dahjfdhfdh2qoi"
+	}
+	{Volume "box01ddh2qoi_vol01"
+	}
+	{Volume "box01dfakl"
+	}
+	{Volume "box01sg2"
+	}
+	{Volume "box01sg2as"
+	}
+	{Volume "box01xdagdg"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+}

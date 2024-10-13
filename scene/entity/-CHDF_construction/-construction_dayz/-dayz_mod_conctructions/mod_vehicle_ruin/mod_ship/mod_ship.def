@@ -1,0 +1,268 @@
+{game_entity
+        (include "/properties/bridge.inc")
+	{props "no_destroyed_stamp" "steel" "construction"}
+
+	{Extension "mod_ship.mdl"}
+
+
+	{Volume "balks001"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "balks002"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "boxset001"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "boxset002"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "boxset003"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "boxset004"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "boxset005"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "kanterner001"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "kanterner002"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "kanterner003"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "kanterner004"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "kanterner005"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens001"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens002"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens003"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens004"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens005"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens006"
+		{Thickness 40}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens007"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens008"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens009"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens010"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens011"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens012"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "krens013"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "lodkos001"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "lodkos002"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "lodkos003"
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali001"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali002"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali003"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali004"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali005"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali006"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali007"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali008"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali009"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metali010"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall001"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall002"
+		{Tags  "body"}
+		{Thickness 100}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall003"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall004"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall005"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall006"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall007"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall008"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall009"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall010"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall011"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "metall012"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "parapeto001"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "parapeto002"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "parapeto003"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "parapeto004"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Volume "stoka001"
+		{Tags  "body"}
+		{Thickness 40}
+		{able {visible 0} {obstacle 0}}
+	}
+	{Extender "land_patch"}
+}               

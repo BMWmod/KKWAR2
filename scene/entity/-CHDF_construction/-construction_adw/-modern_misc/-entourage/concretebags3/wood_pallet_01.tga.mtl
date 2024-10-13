@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "wood_pallet_01"}
+	{blend none}
+}

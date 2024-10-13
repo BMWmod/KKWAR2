@@ -1,0 +1,31 @@
+{game_entity
+	(include "/properties/construction.inc")
+;	(include "/properties/shadow/entourage.inc" sx(1.3) sy(0.1) pturn(0) ofsx(-7) ofsy(0))
+  {DecalView
+	{name "shadow"}
+  }
+	{Extension "barrier_sl.mdl"}
+	{props "construction" "wood" "delete_after_blast" "shed" "no_destroyed_stamp" "one" "staged" "gate" "disable_area"}	
+	{Volume "barrier"
+		{thickness 3}
+		{tags "body"}
+		{able {visible 0}}
+	}
+	{Volume "body1"
+		{thickness 3}
+		{tags "body"}
+		{able {visible 0}}
+	}
+	{Volume "body2"
+		{thickness 3}
+		{tags "body"}
+		{able {visible 0}}
+	}
+	{Volume "body3"
+		{thickness 3}
+		{tags "body"}
+		{able {visible 0}}
+	}
+	("declare_fire_volumes") 	
+	{lodclass "decor_medium"}
+}

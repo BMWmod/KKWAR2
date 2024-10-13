@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/construction/Military/caponier"}
+	{bump "$/construction/Military/caponier_bp"}
+	{specular "$/construction/Military/caponier_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

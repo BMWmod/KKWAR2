@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/construction/breakwater"}
+	{bump "$/construction/breakwater_bp"}
+	{specular "$/construction/breakwater_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

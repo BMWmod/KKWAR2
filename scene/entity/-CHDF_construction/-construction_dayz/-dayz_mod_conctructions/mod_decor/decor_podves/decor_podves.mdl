@@ -1,0 +1,39 @@
+;Exported by: User
+;Date:        Sun Dec 13 00:20:27 2015
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				0.882948	-0.469472	0
+				0.469472	0.882948	0
+				0	0	1
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 0.00841778 -0.00919347}
+		{Extent 17.5701 18.2009}
+		{Axis 0.0356777 0.999363}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.882948	0.469472	0
+		-0.469472	0.882948	0
+		0	0	1
+		8.59524	1.26483	0
+	}
+}

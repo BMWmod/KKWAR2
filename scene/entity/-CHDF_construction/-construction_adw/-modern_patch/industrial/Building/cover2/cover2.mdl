@@ -1,0 +1,300 @@
+;Exported by: HOME Office
+;Date:        Sun Nov 19 21:08:47 2017
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\Industrial\Cover\cover2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "ferm1"
+			{Position -59.0551	59.0551	0}
+			{VolumeView "ferm1.ply"}
+		}
+		{bone "ferm2"
+			{Position -59.0551	-59.0551	0}
+			{VolumeView "ferm2.ply"}
+		}
+		{bone "ferm3"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-59.0551	0	78.7402
+			}
+			{VolumeView "ferm3.ply"}
+		}
+		{bone "roof"
+			{Position -59.0551	0	99.1815}
+			{VolumeView "roof.ply"}
+		}
+	}
+}
+{Obstacle "ferm1"
+	{Obb2
+		{Center -59.0551 -59.0551}
+		{Extent 2.95276 2.95276}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "ferm2"
+	{Obb2
+		{Center 59.0551 -59.0551}
+		{Extent 2.95276 2.95276}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "ferm3"
+	{Obb2
+		{Center -59.0551 59.0551}
+		{Extent 2.95276 2.95276}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "ferm4"
+	{Obb2
+		{Center 59.0551 59.0551}
+		{Extent 2.95276 2.95276}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "ferm1_vol1"
+	{Box 3.93701 3.93701 78.7402}
+	{Bone "ferm1"}
+	{Position 118.11	0	39.3701}
+}
+{Volume "ferm1_vol10"
+	{Box 1.9685 1.9685 27.7569}
+	{Bone "ferm1"}
+	{Matrix34
+		0.0868673	0	-0.99622
+		0	1	0
+		0.99622	0	0.0868673
+		73.6027	0	81.3027
+	}
+}
+{Volume "ferm1_vol2"
+	{Box 3.93701 3.93701 98.4252}
+	{Bone "ferm1"}
+	{Position 0	0	49.2126}
+}
+{Volume "ferm1_vol3"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm1"}
+	{Position 59.0551	0	78.7402}
+}
+{Volume "ferm1_vol4"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm1"}
+	{Matrix34
+		0.985545	0	-0.169415
+		0	1	0
+		0.169415	0	0.985545
+		59.2219	0	89.7143
+	}
+}
+{Volume "ferm1_vol5"
+	{Box 1.9685 1.9685 15.748}
+	{Bone "ferm1"}
+	{Position 29.5276	0	86.6142}
+}
+{Volume "ferm1_vol6"
+	{Box 1.9685 1.9685 9.84252}
+	{Bone "ferm1"}
+	{Position 59.0551	0	83.6614}
+}
+{Volume "ferm1_vol7"
+	{Box 1.9685 1.9685 4.92126}
+	{Bone "ferm1"}
+	{Position 88.5827	0	81.2008}
+}
+{Volume "ferm1_vol8"
+	{Box 1.9685 1.9685 28.8955}
+	{Bone "ferm1"}
+	{Matrix34
+		0.426088	0	-0.904682
+		0	1	0
+		0.904682	0	0.426088
+		14.7032	0	86.8561
+	}
+}
+{Volume "ferm1_vol9"
+	{Box 1.9685 1.9685 28.3205}
+	{Bone "ferm1"}
+	{Matrix34
+		0.289676	0	-0.957125
+		0	1	0
+		0.957125	0	0.289676
+		44.1813	0	83.7952
+	}
+}
+{Volume "ferm2_vol1"
+	{Box 3.93701 3.93701 78.7402}
+	{Bone "ferm2"}
+	{Position 118.11	0	39.3701}
+}
+{Volume "ferm2_vol10"
+	{Box 1.9685 1.9685 27.7569}
+	{Bone "ferm2"}
+	{Matrix34
+		0.0868673	0	-0.99622
+		0	1	0
+		0.99622	0	0.0868673
+		73.6027	0	81.3027
+	}
+}
+{Volume "ferm2_vol2"
+	{Box 3.93701 3.93701 98.4252}
+	{Bone "ferm2"}
+	{Position 0	0	49.2126}
+}
+{Volume "ferm2_vol3"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm2"}
+	{Matrix34
+		0.985545	0	-0.169415
+		0	1	0
+		0.169415	0	0.985545
+		59.2219	0	89.7143
+	}
+}
+{Volume "ferm2_vol4"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm2"}
+	{Position 59.0551	0	78.7402}
+}
+{Volume "ferm2_vol5"
+	{Box 1.9685 1.9685 15.748}
+	{Bone "ferm2"}
+	{Position 29.5276	0	86.6142}
+}
+{Volume "ferm2_vol6"
+	{Box 1.9685 1.9685 9.84252}
+	{Bone "ferm2"}
+	{Position 59.0551	0	83.6614}
+}
+{Volume "ferm2_vol7"
+	{Box 1.9685 1.9685 4.92126}
+	{Bone "ferm2"}
+	{Position 88.5827	0	81.2008}
+}
+{Volume "ferm2_vol8"
+	{Box 1.9685 1.9685 28.8955}
+	{Bone "ferm2"}
+	{Matrix34
+		0.426088	0	-0.904682
+		0	1	0
+		0.904682	0	0.426088
+		14.7032	0	86.8561
+	}
+}
+{Volume "ferm2_vol9"
+	{Box 1.9685 1.9685 28.3205}
+	{Bone "ferm2"}
+	{Matrix34
+		0.289676	0	-0.957125
+		0	1	0
+		0.957125	0	0.289676
+		44.1813	0	83.7952
+	}
+}
+{Volume "ferm3_vol1"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm3"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		0	-1.62125e-005	0
+	}
+}
+{Volume "ferm3_vol2"
+	{Box 118.11 3.93701 1.9685}
+	{Bone "ferm3"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		0	19.685	0
+	}
+}
+{Volume "ferm3_vol3"
+	{Box 1.9685 1.9685 19.685}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0	9.84252	-29.5276
+	}
+}
+{Volume "ferm3_vol4"
+	{Box 1.9685 1.9685 19.685}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0	9.84252	0
+	}
+}
+{Volume "ferm3_vol5"
+	{Box 1.9685 1.9685 19.685}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0	9.84252	29.5276
+	}
+}
+{Volume "ferm3_vol6"
+	{Box 1.9685 1.9685 31.4961}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	0.827277	-0.561794
+		0	0.561794	0.827277
+		0	9.80982	-43.8788
+	}
+}
+{Volume "ferm3_vol7"
+	{Box 1.9685 1.9685 32.4803}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	-0.841699	-0.539947
+		0	0.539947	-0.841699
+		0	9.73148	-14.5232
+	}
+}
+{Volume "ferm3_vol8"
+	{Box 1.9685 1.9685 32.4803}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	0.8417	-0.539945
+		0	0.539945	0.8417
+		0	9.73146	14.6149
+	}
+}
+{Volume "ferm3_vol9"
+	{Box 1.9685 1.9685 31.4961}
+	{Bone "ferm3"}
+	{Matrix34
+		1	0	0
+		0	-0.827277	-0.561795
+		0	0.561795	-0.827277
+		0	9.80982	44.007
+	}
+}
+{Volume "roof"
+	{Polyhedron "roof.vol"}
+	{Bone "roof"}
+	{Position 0	0	-0.756302}
+}

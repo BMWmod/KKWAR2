@@ -1,0 +1,23 @@
+;Exported by: Vorabat
+;Date:        Sat Feb 27 23:47:45 2010
+;File:        (null)
+{Skeleton
+	{bone "stolb_lamps"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "stolb_lamps.ply"}
+	}
+}
+{Volume "box02"
+	{Box 11.2578 11.8503 173.606}
+	{Bone "stolb_lamps"}
+	{Position -0.218165	-0.430359	86.4473}
+}
+{Volume "box03"
+	{Box 19.2567 36.4396 15.1091}
+	{Bone "stolb_lamps"}
+	{Position -0.218165	-0.430473	166.86}
+}

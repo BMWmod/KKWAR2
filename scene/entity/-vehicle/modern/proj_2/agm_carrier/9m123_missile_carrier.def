@@ -1,0 +1,7 @@
+{actor
+	(include "/properties/projectile.ext")
+	{Extension "agm_carrier_forward.mdl"}
+	("missile_placer" missile("9m123_missile_impactor") country(rus) type(other) calibre(152)
+	speed(fast) guidance(3point))
+	("maneuvrability_cwps3" deg_per_s(55))
+}

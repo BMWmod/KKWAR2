@@ -1,0 +1,19 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "wood" "no_destroyed_stamp"}
+ {Extension "table_3.mdl"}
+ {Volume "body"
+        }
+	{Volume "box01"
+	}
+	{Volume "cylinder01"
+	}
+	{Volume "cylinder02"
+	}
+	{Volume "cylinder03"
+	}
+	{Volume "cylinder04"
+	}
+	{lodclass "decor_small"}
+}

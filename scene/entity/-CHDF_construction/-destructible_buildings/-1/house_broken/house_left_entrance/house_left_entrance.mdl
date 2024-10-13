@@ -1,0 +1,49 @@
+;Exported by: Gans
+;Date:        Tue Sep 20 01:21:54 2022
+;File:        C:\Users\Gans\Desktop\dom\house_broken.max
+{Skeleton
+	{bone "point09"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "house_left_entrance"
+			{Position 120.005	-176.378	60.9878}
+			{VolumeView "house_left_entrance.ply"}
+		}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 131.493 196.01}
+		{Extent 1.7231 1.69691}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center 131.493 157.021}
+		{Extent 1.7231 1.69691}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body1"
+	{Cylinder 1.72309 60.3176}
+	{Bone "point09"}
+	{Position 131.493	-196.01	30.1588}
+}
+{Volume "body2"
+	{Cylinder 1.72309 60.3176}
+	{Bone "point09"}
+	{Position 131.493	-157.021	30.1588}
+}
+{Volume "body"
+	{Box 31.3836 46.6288 4.73245}
+	{Bone "point09"}
+	{Position 119.872	-176.378	61.1451}
+}

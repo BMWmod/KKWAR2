@@ -1,0 +1,61 @@
+;Exported by: zorro
+;Date:        Wed Feb 17 21:47:24 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\palatka2.max
+{Skeleton
+	{bone "exterior"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "exterior.ply"}
+	}
+}
+{Area "interior"
+	{Obb2
+		{Center -4.50114 -0.303727}
+		{Extent 87.109 71.6654}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "box44"
+	{Polyhedron "box44.vol"}
+	{Bone "exterior"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-3.63713	27.8255	49.534
+	}
+}
+{Volume "box45"
+	{Polyhedron "box45.vol"}
+	{Bone "exterior"}
+	{Matrix34
+		1	0	0
+		0	0.965926	-0.258819
+		0	0.258819	0.965926
+		-3.63713	27.8255	54.6805
+	}
+}
+{Volume "box46"
+	{Polyhedron "box46.vol"}
+	{Bone "exterior"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-3.63713	-28.4622	54.6805
+	}
+}
+{Volume "box47"
+	{Polyhedron "box47.vol"}
+	{Bone "exterior"}
+	{Matrix34
+		-1	0	0
+		0	-0.965926	-0.258819
+		0	-0.258819	0.965926
+		-3.63713	-28.4622	49.534
+	}
+}

@@ -1,0 +1,59 @@
+{game_entity
+	(include "/properties/building.inc")			
+	{props "cornered" "concrete" "parts" "construction" "wall" "burning" "gate" "gate_close"}
+
+
+	{Extension "wallfront1.mdl"}
+	{Volume "doorl1"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "doorl2"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "doorr1"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "doorr2"
+		{thickness 30}
+		{tags "door"}
+	}
+	{Volume "switch"
+		{Tags  "door_lock"}
+		{able {touch}}
+	}
+	{Volume "theswitch"
+		{Tags  "door_close"}
+		{able {touch}}
+	}
+	{Volume "wallfront1"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront2"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront3"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront4"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront5"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront6"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+	{Volume "wallfront7"
+		{thickness 50}
+		{tags "wallfront"}
+	}
+}

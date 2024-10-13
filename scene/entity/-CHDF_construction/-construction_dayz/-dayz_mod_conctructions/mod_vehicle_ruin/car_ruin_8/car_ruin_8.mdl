@@ -1,0 +1,31 @@
+;Exported by: Alexey
+;Date:        Sun Jan 11 15:25:33 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\UAZ_3a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.999028	0	0.0440903
+				0.0113909	0.96605	-0.258103
+				-0.0425934	0.258354	0.965111
+				-2.42786	0.638	24.0329
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.999028	0.0113909	-0.0425935
+		0	0.96605	0.258354
+		0.0440903	-0.258103	0.965111
+		-29.0999	-2.10689	-14.9788
+	}
+}

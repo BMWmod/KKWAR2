@@ -1,0 +1,300 @@
+;Exported by: Gans
+;Date:        Fri Nov 19 23:29:56 2021
+;File:        G:\3Dmodel\Tarkov\building\post2\post2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "land"
+			{parameters "Land;Ground;"}
+			{Position 14.7905	1.08069	0}
+			{VolumeView "land.ply" {Ground}}
+		}
+		{bone "body"
+			{Position -31.7377	1.15173	42.9715}
+			{VolumeView "body.ply"}
+			{bone "window"
+				{Position 48.7022	16.986	7.04225}
+				{VolumeView "window.ply"}
+			}
+			{bone "door"
+				{Position 32.11	-21.3051	-1.02722}
+				{VolumeView "door.ply"}
+			}
+			{bone "concrete"
+				{Position 46.5282	-0.0710449	-31.9977}
+				{VolumeView "concrete.ply"}
+			}
+		}
+	}
+}
+{Obstacle "body10"
+	{Obb2
+		{Center -82.7677 26.9532}
+		{Extent 2.34163 24.0609}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body11"
+	{Obb2
+		{Center -69.7954 3.78333}
+		{Extent 14.2657 1.80305}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body14"
+	{Obb2
+		{Center 65.736 25.3253}
+		{Extent 19.7338 1.3557}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body15"
+	{Obb2
+		{Center 65.736 49.306}
+		{Extent 19.7338 1.3557}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center -56.481 -1.56018}
+		{Extent 4.74412 52.3063}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center -55.4595 -16.9191}
+		{Extent 4.74411 36.6144}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body3"
+	{Obb2
+		{Center -17.3564 -50.3368}
+		{Extent 39.5081 3.54331}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body4"
+	{Obb2
+		{Center 18.5901 -15.8554}
+		{Extent 3.54331 35.9524}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body5"
+	{Obb2
+		{Center -37.4587 17.5697}
+		{Extent 20.0415 3.54331}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body6"
+	{Obb2
+		{Center -2.78722 -51.6249}
+		{Extent 54.8723 1.96478}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body7"
+	{Obb2
+		{Center -2.78722 49.306}
+		{Extent 54.8723 1.96478}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body8"
+	{Obb2
+		{Center 50.6919 -13.514}
+		{Extent 1.96479 38.3217}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body9"
+	{Obb2
+		{Center 11.3818 17.8939}
+		{Extent 10.122 3.54331}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body10"
+	{Polyhedron "body10.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		-51.03	-28.105	-42.9715
+	}
+}
+{Volume "body11"
+	{Box 28.5314 3.60611 24.7705}
+	{Bone "body"}
+	{Position -38.0577	-4.93506	-30.5862}
+}
+{Volume "body12"
+	{Box 28.1609 6.79072 64.0794}
+	{Bone "body"}
+	{Matrix34
+		-1	0	0
+		0	0.422618	0.906308
+		0	0.906308	-0.422618
+		-39.7619	-28.8142	-8.67129
+	}
+}
+{Volume "body13"
+	{Box 22.4465 3.92957 13.5722}
+	{Bone "body"}
+	{Position 23.0021	-19.0457	25.3894}
+}
+{Volume "body14"
+	{Box 42.8004 2.7114 1.60266}
+	{Bone "body"}
+	{Matrix34
+		0.906308	0	-0.422618
+		0	1	0
+		0.422618	0	0.906308
+		97.4737	-26.4771	-9.39117
+	}
+}
+{Volume "body15"
+	{Box 42.8004 2.7114 1.60266}
+	{Bone "body"}
+	{Matrix34
+		0.906308	0	-0.422618
+		0	1	0
+		0.422618	0	0.906308
+		97.4737	-50.4578	-9.39117
+	}
+}
+{Volume "body1"
+	{Box 104.613 9.48819 47.6356}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		-24.7432	0.408447	-19.1537
+	}
+}
+{Volume "body2"
+	{Box 73.2289 9.48819 24.0536}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		-23.7217	15.7673	14.8752
+	}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Position 14.3813	49.1851	-22.3625}
+}
+{Volume "body4"
+	{Box 71.9047 7.08661 56.551}
+	{Bone "body"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		50.3278	14.7036	5.91295
+	}
+}
+{Volume "body5"
+	{Polyhedron "body5.vol"}
+	{Bone "body"}
+	{Position -5.72094	-18.7214	-22.3625}
+}
+{Volume "body6"
+	{Box 109.745 3.92957 22.8951}
+	{Bone "body"}
+	{Position 28.9505	50.4731	-31.5239}
+}
+{Volume "body7"
+	{Box 109.745 3.92957 22.8951}
+	{Bone "body"}
+	{Position 28.9505	-50.4578	-31.5239}
+}
+{Volume "body8"
+	{Box 76.6433 3.92957 22.8951}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		82.4297	12.3623	-31.5239
+	}
+}
+{Volume "body9"
+	{Box 20.2439 7.08661 56.551}
+	{Bone "body"}
+	{Position 43.1195	-19.0457	5.91296}
+}
+{Volume "body"
+	{Box 114.012 6.01224 123.553}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-0.0871556	0	0.996195
+		0.996195	0	0.0871556
+		27.9712	0.566187	32.8938
+	}
+}
+{Volume "hole1"
+	{Box 14.3285 42.0684 23.2689}
+	{Bone "body"}
+	{Position 51.76	16.8574	7.00314}
+}
+{Volume "hole2"
+	{Box 24.4759 16.4067 26.1103}
+	{Bone "body"}
+	{Position 7.48875	49.5566	7.1416}
+}
+{Volume "hole3"
+	{Box 11.7411 16.4067 26.1103}
+	{Bone "body"}
+	{Position -5.07697	-19.418	7.1416}
+}
+{Volume "hole4"
+	{Box 11.7411 16.4067 26.1103}
+	{Bone "body"}
+	{Matrix34
+		0.0871555	-0.996195	0
+		0.996195	0.0871556	0
+		0	0	1
+		-23.903	6.65601	7.1416
+	}
+}

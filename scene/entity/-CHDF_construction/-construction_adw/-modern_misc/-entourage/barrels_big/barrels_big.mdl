@@ -1,0 +1,38 @@
+;Exported by: Vorabat
+;Date:        Mon Feb 22 22:56:56 2010
+;File:        (null)
+{Skeleton
+	{bone "barrels_big_stalker"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "barrels_big_stalker.ply"}
+	}
+}
+{Volume "box01"
+	{Box 161.486 80.7428 21.4496}
+	{Bone "barrels_big_stalker"}
+	{Position 0.660508	-0.661561	10.7248}
+}
+{Volume "cylinder01"
+	{Cylinder 35.7835 72.8655}
+	{Bone "barrels_big_stalker"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	2.24924
+		-39.605	0.232349	81.9462
+	}
+}
+{Volume "cylinder02"
+	{Cylinder 35.7835 72.8655}
+	{Bone "barrels_big_stalker"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	2.24924
+		38.9002	0.232349	81.9462
+	}
+}

@@ -1,0 +1,524 @@
+;Exported by: Sea-Knight
+;Date:        Wed Jun  1 23:01:29 2022
+;File:        C:\Users\Sea-Knight\Documents\3ds Max 2020\scenes\3D-Work\-ADW\By-Chris-T\Decorations\wbs70_buildings\wbs70_7_building_mid.max
+{Skeleton
+	{bone "building"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{LODView
+			{VolumeView "building.ply"}
+			{VolumeView "building_lod1.ply"}
+			{VolumeView "building_lod2.ply"}
+		}
+		{bone "attach5"
+			{Position 36.1555	132.428	65.8206}
+		}
+		{bone "attach6"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-23.5313	132.289	65.8206
+			}
+		}
+		{bone "attach7"
+			{Position 36.1555	132.428	126.902}
+		}
+		{bone "attach8"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-23.5313	132.289	126.902
+			}
+		}
+		{bone "attach13"
+			{Position 36.1555	-128.198	65.8206}
+		}
+		{bone "attach14"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-23.5313	-128.337	65.8206
+			}
+		}
+		{bone "attach15"
+			{Position 36.1555	-128.198	126.902}
+		}
+		{bone "attach16"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-23.5313	-128.337	126.902
+			}
+		}
+		{bone "attach17"
+			{Position 251.783	-128.198	65.8206}
+		}
+		{bone "attach18"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	-128.337	65.8206
+			}
+		}
+		{bone "attach19"
+			{Position 251.783	-128.198	126.902}
+		}
+		{bone "attach20"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	-128.337	126.902
+			}
+		}
+		{bone "attach21"
+			{Position 251.783	132.428	65.8206}
+		}
+		{bone "attach22"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	132.289	65.8206
+			}
+		}
+		{bone "attach23"
+			{Position 251.783	132.428	126.902}
+		}
+		{bone "attach24"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				192.096	132.289	126.902
+			}
+		}
+	}
+}
+{Obstacle "body01"
+	{Obb2
+		{Center 109.719 -2.77822}
+		{Extent 272.332 119.659}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body01"
+	{Polyhedron "body01.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		109.719	2.77822	241.308
+	}
+}
+{Volume "body_attach13"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		36.1666	-128.337	65.7184
+	}
+}
+{Volume "body_attach14"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		-23.5425	-128.198	65.7184
+	}
+}
+{Volume "body_attach15"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		36.1666	-128.337	126.799
+	}
+}
+{Volume "body_attach16"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		-23.5425	-128.198	126.799
+	}
+}
+{Volume "body_attach17"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	-128.337	65.7184
+	}
+}
+{Volume "body_attach18"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	-128.198	65.7184
+	}
+}
+{Volume "body_attach19"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	-128.337	126.799
+	}
+}
+{Volume "body_attach20"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	-128.198	126.799
+	}
+}
+{Volume "body_attach21"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	132.289	65.7184
+	}
+}
+{Volume "body_attach22"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	132.428	65.7184
+	}
+}
+{Volume "body_attach23"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		251.794	132.289	126.799
+	}
+}
+{Volume "body_attach24"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		192.085	132.428	126.799
+	}
+}
+{Volume "body_attach5"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		36.1666	132.289	65.7184
+	}
+}
+{Volume "body_attach6"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		-23.5425	132.428	65.7184
+	}
+}
+{Volume "body_attach7"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		1.43233	0	0
+		0	1.41667	0
+		0	0	1.62021
+		36.1666	132.289	126.799
+	}
+}
+{Volume "body_attach8"
+	{Box 9.0842 9.0842 7.93265}
+	{Bone "building"}
+	{Matrix34
+		-1.43233	0	0
+		0	-1.41667	0
+		0	0	1.62021
+		-23.5425	132.428	126.799
+	}
+}
+{Volume "bodyr01"
+	{Polyhedron "bodyr01.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	75.3414
+	}
+}
+{Volume "bodyr02"
+	{Polyhedron "bodyr02.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	137.594
+	}
+}
+{Volume "bodyr03"
+	{Polyhedron "bodyr03.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	197.87
+	}
+}
+{Volume "bodyr04"
+	{Polyhedron "bodyr04.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	259.736
+	}
+}
+{Volume "bodyr05"
+	{Polyhedron "bodyr05.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	259.736
+	}
+}
+{Volume "bodyr06"
+	{Polyhedron "bodyr06.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	199.687
+	}
+}
+{Volume "bodyr07"
+	{Polyhedron "bodyr07.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	135.088
+	}
+}
+{Volume "bodyr08"
+	{Polyhedron "bodyr08.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	76.0203
+	}
+}
+{Volume "bodyr09"
+	{Polyhedron "bodyr09.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	321.374
+	}
+}
+{Volume "bodyr10"
+	{Polyhedron "bodyr10.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	130.873	382.676
+	}
+}
+{Volume "bodyr11"
+	{Polyhedron "bodyr11.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	382.676
+	}
+}
+{Volume "bodyr12"
+	{Polyhedron "bodyr12.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	321.99
+	}
+}
+{Volume "bodyr13"
+	{Polyhedron "bodyr13.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	259.404
+	}
+}
+{Volume "bodyr14"
+	{Polyhedron "bodyr14.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	199.862
+	}
+}
+{Volume "bodyr15"
+	{Polyhedron "bodyr15.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	135.426
+	}
+}
+{Volume "bodyr16"
+	{Polyhedron "bodyr16.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		221.184	130.873	74.9381
+	}
+}
+{Volume "bodyr17"
+	{Polyhedron "bodyr17.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	322.27
+	}
+}
+{Volume "bodyr18"
+	{Polyhedron "bodyr18.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		6.68493	-131.795	383.828
+	}
+}
+{Volume "bodyr19"
+	{Polyhedron "bodyr19.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	383.828
+	}
+}
+{Volume "bodyr20"
+	{Polyhedron "bodyr20.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	322.36
+	}
+}
+{Volume "bodyr21"
+	{Polyhedron "bodyr21.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	259.085
+	}
+}
+{Volume "bodyr22"
+	{Polyhedron "bodyr22.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	197.582
+	}
+}
+{Volume "bodyr23"
+	{Polyhedron "bodyr23.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	133.412
+	}
+}
+{Volume "bodyr24"
+	{Polyhedron "bodyr24.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		224.39	-131.795	72.2474
+	}
+}

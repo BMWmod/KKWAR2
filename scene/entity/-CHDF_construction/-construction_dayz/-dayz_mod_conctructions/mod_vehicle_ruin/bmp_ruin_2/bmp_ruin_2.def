@@ -1,0 +1,42 @@
+{game_entity
+	
+(include "/properties/construction.inc")
+	{props "small" "steel" "parts" "construction" "no_destroyed_stamp"}
+	{Extension "bmp_ruin_2.mdl"}
+	{Volume "body1"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body2"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body3"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body4"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body5"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body6"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+	{Volume "body7"
+			{thickness 50}
+		{tags "body"}
+	{able {visible 0}{obstacle 1}}
+}
+
+}

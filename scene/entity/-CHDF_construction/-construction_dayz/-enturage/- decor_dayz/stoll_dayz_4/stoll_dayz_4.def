@@ -1,0 +1,18 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "wood" "no_destroyed_stamp"}
+ {Extension "stoll_dayz_4.mdl"}
+ {Volume "body"
+        }
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+	{Volume "box05"
+	}
+}

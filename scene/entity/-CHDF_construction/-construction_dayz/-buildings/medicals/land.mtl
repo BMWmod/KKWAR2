@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "medical_land"}
+	{blend none}
+}

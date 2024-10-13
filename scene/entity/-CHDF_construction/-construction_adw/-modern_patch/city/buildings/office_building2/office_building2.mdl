@@ -1,0 +1,83 @@
+;Exported by: Filatov
+;Date:        Mon Nov 30 17:18:45 2015
+;File:        C:\Users\Filatov\Google Диск\MOW\3ds max model\Constraction\Office building\office building2.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0	0	24.6368}
+			{VolumeView "body.ply"}
+			{bone "roof"
+				{VolumeView "roof.ply"}
+			}
+			{bone "stair1"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-463.169	73.9104
+				}
+				{VolumeView "stair1.ply"}
+			}
+			{bone "windows"
+				{VolumeView "windows.ply"}
+			}
+			{bone "exit2"
+				{parameters "land;"}
+				{Position -167.677	-36.9488	-24.6368}
+				{VolumeView "exit2.ply"}
+			}
+			{bone "visor2"
+				{Position -167.515	-36.9552	71.9395}
+				{VolumeView "visor2.ply"}
+			}
+			{bone "exit1"
+				{parameters "land;"}
+				{Position 172.5	0	-24.6368}
+				{VolumeView "exit1.ply"}
+			}
+			{bone "visor1"
+				{Position 167.522	0	71.9395}
+				{VolumeView "visor1.ply"}
+			}
+			{bone "stair2"
+				{Matrix34
+					1	0	0
+					0	-1	0
+					0	0	1
+					0	463.169	73.9104
+				}
+				{VolumeView "stair2.ply"}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Box 305.118 895.669 187.008}
+	{Bone "body"}
+	{Position 0	0	68.8671}
+}
+{Volume "stair1"
+	{Box 157.48 39.3701 7.87402}
+	{Bone "stair1"}
+	{Matrix34
+		0.800874	0	-0.598833
+		0	-1	0
+		0.598833	0	0.800874
+		59.672	-1.79139	-46.9693
+	}
+}
+{Volume "stair2"
+	{Box 157.48 39.3701 7.87402}
+	{Bone "stair2"}
+	{Matrix34
+		0.800874	0	-0.598833
+		0	-1	0
+		0.598833	0	0.800874
+		59.672	-1.79133	-46.9693
+	}
+}

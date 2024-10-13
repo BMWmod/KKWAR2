@@ -1,0 +1,20 @@
+{Skeleton
+	{bone "body01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body01.ply"}
+	}
+}
+{Volume "box02"
+	{Box 6.54314 7.36104 142.313}
+	{Bone "body01"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	1.0881
+		-0.989975	0.0173027	77.4258
+	}
+}

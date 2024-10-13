@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "plank_d"}
+	{bump "plank_n"}
+	{specular "plank_s"}
+	{color "230 230 230 25"}
+	{blend none}
+}

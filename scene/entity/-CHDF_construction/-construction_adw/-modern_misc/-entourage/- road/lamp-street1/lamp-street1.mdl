@@ -1,0 +1,57 @@
+;Exported by: Vorabat
+;Date:        Sat Jan 02 19:24:56 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\lampstreet.max
+{Skeleton
+	{bone "drawcall_0836"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "drawcall_0836.ply"}
+		{bone "light_spot"
+			{Matrix34
+				0	0	-1
+				0	1	0
+				1	0	0
+				0.0519553	15.3739	99.7636
+			}
+		}
+		{bone "lamp_light_spot1"
+			{Matrix34
+				0	0	-1
+				0	1	0
+				1	0	0
+				0.0519553	15.3739	99.7636
+			}
+		}
+		{bone "lamp_glass1"
+			{Matrix34
+				0	0	-1
+				0	1	0
+				1	0	0
+				0.0519553	15.3739	99.7636
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "drawcall_0836"}
+	{Position 0.159572	-0.177033	0}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "drawcall_0836"}
+	{Position 0.159572	-0.177034	8.56554}
+}
+{Volume "lamp1"
+	{Box 3.98189 7.21044 2.25999}
+	{Bone "drawcall_0836"}
+	{Matrix34
+		0.85168	0	0
+		0	0.818398	0.235762
+		0	-0.11538	0.400517
+		-0.217091	15.1304	100.648
+	}
+}

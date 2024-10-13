@@ -1,0 +1,156 @@
+;Exported by: Gans
+;Date:        Tue Sep 20 01:22:06 2022
+;File:        C:\Users\Gans\Desktop\dom\house_broken.max
+{Skeleton
+	{bone "point05"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "house_right_back"
+			{Position -44.1509	220.561	106.311}
+			{VolumeView "house_right_back.ply"}
+			{bone "window1"
+				{parameters "ID=window1;"}
+				{Position -61.4649	6.35681	-10.1427}
+				{VolumeView "window1.ply"}
+			}
+			{bone "window2"
+				{parameters "ID=window2;"}
+				{Position 18.5744	91.7568	35.1322}
+				{VolumeView "window2.ply"}
+			}
+			{bone "window3"
+				{parameters "ID=window3;"}
+				{Position -61.561	58.5195	36.1168}
+				{VolumeView "window3.ply"}
+			}
+			{bone "window4"
+				{parameters "ID=window4;"}
+				{Position -61.2982	-40.2528	36.0954}
+				{VolumeView "window4.ply"}
+			}
+			{bone "window5"
+				{parameters "ID=window5;"}
+				{Position -61.2982	6.35681	36.0954}
+				{VolumeView "window5.ply"}
+			}
+			{bone "window6"
+				{parameters "ID=window6;"}
+				{Position -61.4649	-40.2528	-10.1427}
+				{VolumeView "window6.ply"}
+			}
+			{bone "window7"
+				{parameters "ID=window7;"}
+				{Position -61.4649	-90.4897	-10.1427}
+				{VolumeView "window7.ply"}
+			}
+		}
+	}
+}
+{Volume "box70"
+	{Box 144.06 8.26132 107.747}
+	{Bone "house_right_back"}
+	{Position 5.51672	91.8355	10.6903}
+}
+{Volume "box71"
+	{Box 213.785 8.26132 107.747}
+	{Bone "house_right_back"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		-62.4202	-7.69641	10.6903
+	}
+}
+{Volume "box86"
+	{Polyhedron "box86.vol"}
+	{Bone "house_right_back"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		-21.7422	35.7406	64.1928
+	}
+}
+{Volume "hole1"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		19.0918	91.2737	35.6506
+	}
+}
+{Volume "hole2"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	59.4111	35.6506}
+}
+{Volume "hole3"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	6.26317	35.6506}
+}
+{Volume "hole4"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	-40.8729	35.6506}
+}
+{Volume "hole5"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	6.26317	-12.3143}
+}
+{Volume "hole6"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	-40.8729	-12.3126}
+}
+{Volume "hole7"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_right_back"}
+	{Position -60.8881	-88.9368	-12.3126}
+}
+{Volume "window1"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window1"}
+	{Position -1.40495	0.224213	-2.57347}
+}
+{Volume "window2"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window2"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		-0.176811	0.335327	2.1417
+	}
+}
+{Volume "window3"
+	{Box 13.8729 36.8874 26.2781}
+	{Bone "window3"}
+	{Position -1.30888	0.649017	0.577944}
+}
+{Volume "window4"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window4"}
+	{Position -1.57165	-0.767502	0.14023}
+}
+{Volume "window5"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window5"}
+	{Position -1.57165	0.224213	0.14023}
+}
+{Volume "window6"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window6"}
+	{Position -1.40495	-0.767502	-2.57347}
+}
+{Volume "window7"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window7"}
+	{Position -1.40495	1.78682	-2.57347}
+}

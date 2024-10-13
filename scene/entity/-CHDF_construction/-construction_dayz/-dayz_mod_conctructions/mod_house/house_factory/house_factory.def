@@ -1,0 +1,161 @@
+{game_entity
+    (include "/properties/building.inc")
+        {props "cornered" "concrete" "parts" "construction" "wall"}
+        {Extension "house_factory.mdl"}
+        {Extender "land_patch"
+        {TerrainType "road" "bridge"}
+        {on 1}
+        {updateEntities 1}
+        {Nonormals 1}
+        }
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box05"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box06"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box07"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box08"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box09"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box10"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box11"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box12"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box13"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box14"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box15"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box16"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box17"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box18"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box19"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box20"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box21"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box22"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box23"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box24"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box25"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box26"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box27"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box28"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box29"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box30"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box31"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box32"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "cylinder01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+}

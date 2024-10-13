@@ -1,0 +1,13 @@
+{game_entity
+        (include "/properties/construction.inc")
+        {obstacleid  "construction" "no_destroyed_stamp"}
+	{props "steel"}
+	{Extension "payphone001a.mdl"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 30}
+	{Volume "box01"
+                {Thickness 10}
+		{able {obstacle 1}}
+    }
+}

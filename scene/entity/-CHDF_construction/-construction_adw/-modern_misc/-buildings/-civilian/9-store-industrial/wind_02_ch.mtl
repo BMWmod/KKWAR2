@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "wind_02_ch"}
+	{blend none}
+}

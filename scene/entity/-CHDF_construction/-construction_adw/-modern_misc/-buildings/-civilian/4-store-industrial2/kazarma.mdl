@@ -1,0 +1,98 @@
+;Exported by: -
+;Date:        Mon Sep 23 11:44:30 2013
+;File:        C:\Users\-\Documents\3dsmax\scenes\kazarma.max
+{Skeleton
+	{bone "kazarma"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "kazarma.ply"}
+		{bone "drawcall_10"
+			{parameters "Land;Ground;"}
+			{Position 0.169646	-1.02684	32.0474}
+			{VolumeView "drawcall_10.ply"{Ground} {DecalTarget}}
+		}
+		{bone "drawcall_11"
+			{parameters "CommonMesh;"}
+			{Position 0.108165	0	153.759}
+			{VolumeView "drawcall_11.ply"}
+		}
+		{bone "drawcall_12"
+			{parameters "CommonMesh;"}
+			{Position 0.113863	-0.84188	57.5352}
+			{VolumeView "drawcall_12.ply"}
+		}
+		{bone "drawcall_13"
+			{parameters "CommonMesh;"}
+			{Position 0.161948	-0.810854	35.5531}
+			{VolumeView "drawcall_13.ply"}
+		}
+		{bone "drawcall_14"
+			{parameters "CommonMesh;"}
+			{Position 0.175544	0	121.888}
+			{VolumeView "drawcall_14.ply"}
+		}
+		{bone "drawcall_15"
+			{parameters "CommonMesh;"}
+			{Position 0	0.00119331	109.432}
+			{VolumeView "drawcall_15.ply"}
+		}
+		{bone "drawcall_16"
+			{parameters "CommonMesh;"}
+			{Position 0.226127	-0.842179	6.21952}
+			{VolumeView "drawcall_16.ply"}
+		}
+		{bone "drawcall_18"
+			{parameters "CommonMesh;"}
+			{Position 0.231826	0.000745819	2.39834}
+			{VolumeView "drawcall_18.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "kazarma"}
+	{Position 1.23039	1.57836	-2.02599}
+}
+{Volume "krisha2"
+	{Polyhedron "krisha2.vol"}
+	{Bone "kazarma"}
+	{Position 16.108	-0.22061	209.235}
+}
+{Volume "krisha3"
+	{Polyhedron "krisha3.vol"}
+	{Bone "kazarma"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	2.77712e-005	1
+		247.568	5.33045	212.85
+	}
+}
+{Volume "krisha4"
+	{Polyhedron "krisha4.vol"}
+	{Bone "kazarma"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	2.77712e-005	1
+		255.526	-54.9213	214.055
+	}
+}
+{Volume "krisha"
+	{Polyhedron "krisha.vol"}
+	{Bone "kazarma"}
+	{Position -262.047	-50.0104	209.235}
+}
+{Volume "parapet2"
+	{Polyhedron "parapet2.vol"}
+	{Bone "kazarma"}
+	{Position 301.974	-3.21052	-2.02599}
+}
+{Volume "parapet"
+	{Polyhedron "parapet.vol"}
+	{Bone "kazarma"}
+	{Position -301.934	0.387468	-2.02599}
+}

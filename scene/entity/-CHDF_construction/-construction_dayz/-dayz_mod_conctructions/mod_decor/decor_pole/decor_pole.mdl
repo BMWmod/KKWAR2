@@ -1,0 +1,22 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 21:22:52 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage_2\bollard_mino.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "bod1"
+	{Polyhedron "bod1.vol"}
+	{Bone "body"}
+	{Position -0.271555	0.566867	39.4523}
+}

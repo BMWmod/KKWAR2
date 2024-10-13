@@ -1,0 +1,30 @@
+{game_entity
+    (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction"}
+	{props "steel" "wood" "no_destroyed_stamp"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 3}
+
+	{Extension "chair_1.mdl"}
+	{Volume "box010"
+	}
+	{Volume "box011"
+	}
+	{Volume "box012"
+	}
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box05"
+	}
+	{Volume "box08"
+	}
+	{Volume "box09"
+	}
+	{lodclass "decor_small"}
+}

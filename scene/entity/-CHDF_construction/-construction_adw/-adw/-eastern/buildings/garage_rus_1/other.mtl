@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "other_d"}
+	{blend none}
+}

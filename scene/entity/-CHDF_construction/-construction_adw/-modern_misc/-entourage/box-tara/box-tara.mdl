@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Thu Nov 19 12:17:08 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\sughqh.max
+{Skeleton
+	{bone "mesh3232shape"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "mesh3232shape.ply"}
+	}
+}
+{Volume "box01"
+	{Box 12.1639 11.4882 16.6691}
+	{Bone "mesh3232shape"}
+	{Position 0.0969849	0.309311	8.33455}
+}

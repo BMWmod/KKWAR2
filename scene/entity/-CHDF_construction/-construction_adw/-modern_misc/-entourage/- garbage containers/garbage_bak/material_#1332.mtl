@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "garbage_bak"}
+	{bump "garbage_bak_bump"}
+	{color "229 229 229 25"}
+	{blend none}
+}

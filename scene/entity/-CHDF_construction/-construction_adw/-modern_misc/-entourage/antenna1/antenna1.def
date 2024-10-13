@@ -1,0 +1,18 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "construction" }
+	{props "steel" "capacity" "stuff"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 10}
+	{Extension "antenna1.mdl"}
+	{Volume "box05"
+		{Thickness 10}
+	{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+	{Volume "box08"
+		{Thickness 10}
+	{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+}

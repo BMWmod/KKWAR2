@@ -1,0 +1,15 @@
+{game_entity
+	(include "/properties/construction_small.ext")
+	{props "construction" "steel" "one" "staged" "no_destroyed_stamp"}
+	{Extension "fonar_market.mdl"}
+	{Volume "body2"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 1}}
+	}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 1}}
+	}
+}

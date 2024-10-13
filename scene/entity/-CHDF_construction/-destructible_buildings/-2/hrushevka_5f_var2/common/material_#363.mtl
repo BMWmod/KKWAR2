@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "gray-concrete-wall_53876-89246"}
+	{blend none}
+}

@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/construction/Port/container"}
+	{bump "$/construction/Port/container_bp"}
+	{blend none}
+}

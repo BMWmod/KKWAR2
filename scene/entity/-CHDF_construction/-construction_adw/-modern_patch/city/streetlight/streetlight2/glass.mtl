@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "$/construction/city/streetlight/light_glass"}
+	{blend add}
+	{tile}
+}

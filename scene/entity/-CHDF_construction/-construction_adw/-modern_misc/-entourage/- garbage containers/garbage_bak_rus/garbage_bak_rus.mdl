@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Wed Apr 28 19:22:08 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\rus 3.max
+{Skeleton
+	{bone "garbage_bak_rus"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "garbage_bak_rus.ply"}
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "garbage_bak_rus"}
+	{Position 0.2677	-0.679863	0}
+}

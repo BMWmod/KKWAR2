@@ -1,0 +1,7 @@
+{game_entity
+	{Extension "coolingtank.mdl"}
+	{Volume "body1"
+	}
+	{Volume "body"
+	}
+}

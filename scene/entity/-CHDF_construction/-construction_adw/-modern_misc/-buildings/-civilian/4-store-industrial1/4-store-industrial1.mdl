@@ -1,0 +1,13 @@
+;Exported by: Vorabat
+;Date:        Sun Nov 29 11:24:21 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\Chaesbuildings.max
+{Skeleton
+	{bone "object03"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+			}
+	{VolumeView "object03.ply"}
+	}
+}

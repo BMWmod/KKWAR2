@@ -1,0 +1,77 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 22:50:54 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage_2\oilpump.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body10"
+	{Polyhedron "body10.vol"}
+	{Bone "body"}
+	{Position 35.8635	-2.71502	67.9951}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Position 26.7053	42.3089	6.4037}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Position -121.33	6.67799	151.786}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Position 26.7053	-24.4007	6.40369}
+}
+{Volume "body4"
+	{Box 65.3338 66.0762 19.3032}
+	{Bone "body"}
+	{Position -97.3716	-2.71502	9.65158}
+}
+{Volume "body5"
+	{Polyhedron "body5.vol"}
+	{Bone "body"}
+	{Position -97.3716	-2.71502	21.6636}
+}
+{Volume "body6"
+	{Polyhedron "body6.vol"}
+	{Bone "body"}
+	{Position 1.11224	6.67799	30.6041}
+}
+{Volume "body7"
+	{Polyhedron "body7.vol"}
+	{Bone "body"}
+	{Position -46.7019	-2.71502	21.6636}
+}
+{Volume "body8"
+	{Polyhedron "body8.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.0502811	-0.998735	0
+		0.998735	0.0502811	0
+		0	0	1
+		-25.7551	16.3035	21.6636
+	}
+}
+{Volume "body9"
+	{Polyhedron "body9.vol"}
+	{Bone "body"}
+	{Position -13.6479	6.67799	95.8435}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 1.11224	6.67799	30.6041}
+}

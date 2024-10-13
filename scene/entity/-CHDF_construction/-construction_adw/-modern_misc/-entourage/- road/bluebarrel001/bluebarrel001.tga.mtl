@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "bluebarrel001"}
+	{blend none}
+}

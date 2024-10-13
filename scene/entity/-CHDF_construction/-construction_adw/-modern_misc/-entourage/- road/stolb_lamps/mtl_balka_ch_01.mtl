@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mtl_balka_ch_01"}
+	{blend none}
+}

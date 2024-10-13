@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "ks_dinermet_02"}
+	{blend none}
+}

@@ -1,0 +1,13 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{simulation {able 1}}
+	{collider "construction"}
+	{ObstacleId "unbreakable"}
+	{props "steel" "dead_vehicle" "big" "part"}
+	{Extension "airliner.mdl"}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 50}
+	}
+	{mass 300}
+}

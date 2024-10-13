@@ -1,0 +1,43 @@
+;Exported by: Adam
+;Date:        Sun Jan 08 14:49:13 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\crate1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "box"
+			{Position 1.09178	0.0963582	3.53261}
+			{VolumeView "box.ply"}
+		}
+		{bone "plane"
+			{Position 1.16115	0.0351865	5.64031}
+			{VolumeView "plane.ply"}
+		}
+		{bone "top"
+			{Matrix34
+				0.939693	0	-0.34202
+				0	1	0
+				0.34202	0	0.939693
+				22.1532	0.0342339	3.80694
+			}
+			{VolumeView "top.ply"}
+		}
+		{bone "ammo"
+			{Position 1.11203	0.0384245	6.37501}
+			{VolumeView "ammo.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Box 23.6366 7.06609 10.7631}
+	{Bone "basis"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		1.10204	0.0449322	3.57188
+	}
+}

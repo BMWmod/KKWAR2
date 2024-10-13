@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "adm_house"}
+	{bump "adm_house_bp"}
+	{specular "adm_house_sp"}
+	{blend none}
+}

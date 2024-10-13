@@ -1,0 +1,30 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "construction" }
+	{props "steel" "capacity" "stuff"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 10}
+	{Extension "sputn_antenna.mdl"}
+	{Volume "box11"
+		{Thickness 10}
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+	{Volume "box12"
+		{Thickness 10}
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+	{Volume "box13"
+		{Thickness 10}
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+	{Volume "box14"
+		{Thickness 10}
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+	{Volume "cylinder01"
+		{Thickness 10}
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	}
+}

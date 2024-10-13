@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "gun_case"}
+	{bump "gun_case_bump"}
+	{specular "usa_soldier_new_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

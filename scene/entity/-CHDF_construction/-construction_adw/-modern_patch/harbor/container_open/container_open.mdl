@@ -1,0 +1,126 @@
+;Exported by: HOME Office
+;Date:        Tue Nov 21 20:01:52 2017
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\Port\containers\container_open.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.3}}
+		{sequence "close" {speed 0.3}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 0.0169559	0.13225	0}
+			{VolumeView "body.ply"}
+			{bone "door_right"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					-23.5602	116.407	2.13731
+				}
+				{VolumeView "door_right.ply"}
+			}
+			{bone "door_left"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					23.2705	116.407	2.13731
+				}
+				{VolumeView "door_left.ply"}
+			}
+			{bone "back"
+				{Position -0.0369223	-116.437	2.13731}
+				{VolumeView "back.ply"}
+			}
+		}
+	}
+}
+{Obstacle "wall_back"
+	{Obb2
+		{Center -0.000348374 117.577}
+		{Extent 1.47638 25.5906}
+		{Axis -1.55727e-005 -1}
+	}
+	{Rotate}
+}
+{Obstacle "wall_left"
+	{Obb2
+		{Center 23.9567 0.000140309}
+		{Extent 1.47638 118.11}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Obstacle "wall_right"
+	{Obb2
+		{Center -23.9566 0.00088875}
+		{Extent 1.47638 118.11}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "body1"
+	{Box 51.1811 238.189 2.95276}
+	{Bone "body"}
+	{Position -0.0172381	-0.13332	57.2824}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Position -24.1486	-0.133315	-0.0459747}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Position 24.1169	-0.13332	-0.0459747}
+}
+{Volume "body4"
+	{Polyhedron "body4.vol"}
+	{Bone "body"}
+	{Position -0.0268157	-117.194	-0.0459747}
+}
+{Volume "door_left"
+	{Polyhedron "door_left.vol"}
+	{Bone "door_left"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-0.46356	-0.329956	-2.18328
+	}
+}
+{Volume "door_right"
+	{Polyhedron "door_right.vol"}
+	{Bone "door_right"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		0.216536	-0.329567	-2.18328
+	}
+}
+{Volume "switch"
+	{Polyhedron "switch.vol"}
+	{Bone "door_right"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-14.5651	-0.406357	26.3493
+	}
+}
+{Volume "theswitch"
+	{Polyhedron "theswitch.vol"}
+	{Bone "door_left"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		15.3844	-0.406364	26.3493
+	}
+}

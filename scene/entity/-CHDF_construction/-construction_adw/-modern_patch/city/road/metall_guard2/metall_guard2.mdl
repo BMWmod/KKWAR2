@@ -1,0 +1,64 @@
+;Exported by: Notebook
+;Date:        Sun Jul 12 22:26:29 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Road\metall_guard2.max
+{Skeleton
+	{bone "opora"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "opora.ply"}
+		{bone "guard"
+			{Position 0	0	19.685}
+			{VolumeView "guard.ply"}
+			{bone "reflector1"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					0	1.03456	0
+				}
+				{VolumeView "reflector1.ply"}
+			}
+			{bone "reflector2"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					0	1.03456	-9.84252
+				}
+				{VolumeView "reflector2.ply"}
+			}
+		}
+	}
+}
+{Volume "guard1"
+	{Box 102.362 3.93701 9.84252}
+	{Bone "guard"}
+}
+{Volume "guard2"
+	{Box 102.362 3.93701 9.84252}
+	{Bone "guard"}
+	{Position 0	0	-9.84252}
+}
+{Volume "opora1"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 49.2126	-3.93701	10.8268}
+}
+{Volume "opora2"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 14.7638	-3.93701	10.8268}
+}
+{Volume "opora3"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position -14.7638	-3.93701	10.8268}
+}
+{Volume "opora4"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position -49.2126	-3.93701	10.8268}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "prop_box_3"}
+	{blend none}
+}

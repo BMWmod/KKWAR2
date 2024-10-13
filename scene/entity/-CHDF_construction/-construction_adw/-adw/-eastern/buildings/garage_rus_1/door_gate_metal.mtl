@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "door_gate_metal_01"}
+	{bump "door_gate_metal_01_bump"}
+	{specular "door_gate_metal_01_s"}
+	{color "230 230 230 25"}
+	{blend none}
+}

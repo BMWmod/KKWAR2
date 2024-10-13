@@ -1,0 +1,12 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+	{collider "particle.small"}
+	{simulation {able 1}}
+	{mass 5}
+	{Extension "gun_case.mdl"}
+	{Volume "box01"
+	}
+}

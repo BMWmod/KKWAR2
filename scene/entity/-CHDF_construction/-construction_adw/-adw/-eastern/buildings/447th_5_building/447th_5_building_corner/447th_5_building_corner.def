@@ -1,0 +1,108 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "concrete" "construction"}
+	("armor_medium" args 0.7)
+	{obstacleID "unbreakable"}
+	{lodclass "decor_big"}
+	{Extension "447th_5_building_corner.mdl"}
+	
+	{placer
+		{place "7" {attach  snipe_cover} 		{linkbone "attach7"}}
+		{place "8" {attach  snipe_cover} 		{linkbone "attach8"}}
+		{place "9" {attach  snipe_cover} 		{linkbone "attach9"}}
+		{place "10" {attach  snipe_cover} 		{linkbone "attach10"}}
+		{place "19" {attach  snipe_cover} 		{linkbone "attach19"}}
+		{place "20" {attach  snipe_cover} 		{linkbone "attach20"}}
+	}	
+	{boarder}
+	
+
+	{Volume "body_attach7"
+		{Tags  "attach" "7"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach8"
+		{Tags  "attach" "8"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach9"
+		{Tags  "attach" "9"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach10"
+		{Tags  "attach" "10"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach19"
+		{Tags  "attach" "19"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body_attach20"
+		{Tags  "attach" "20"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "body00"
+		{Tags  "body"}
+		{Thickness 50}
+	}
+	{Volume "body_r02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r29"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r30"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r33"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+	{Volume "body_r34"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}}
+	}
+}

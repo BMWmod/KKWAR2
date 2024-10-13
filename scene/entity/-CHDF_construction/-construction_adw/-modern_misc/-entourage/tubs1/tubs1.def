@@ -1,0 +1,31 @@
+{game_entity
+(include "/properties/building.inc")
+{props "construction" "steel" "parts" "bridge" "no_destroyed_stamp" "construction"}
+
+{obstacleid "building"}
+
+{Extension "tubs1.mdl"}
+
+{Volume "body"
+		
+		{Thickness 30}
+	}
+{Volume "body1"
+		
+		{Thickness 30}
+	}
+{Volume "body2"
+		
+		{Thickness 30}
+	}
+
+{placer}
+	{boarder}
+	{extender "structure"}
+	{Extender "land_patch"
+		{TerrainType "road" "bridge_wood"}
+	}
+	{forcequantable}
+
+
+}

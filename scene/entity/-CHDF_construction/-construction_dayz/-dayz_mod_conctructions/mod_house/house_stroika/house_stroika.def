@@ -1,0 +1,202 @@
+{game_entity
+    (include "/properties/building.inc")
+	{props "small" "steel" "parts" "construction" "no_destroyed_stamp"}
+        {Extension "house_stroika.mdl"}
+        {Extender "land_patch"
+        {TerrainType "road" "bridge"}
+        {on 1}
+        {updateEntities 1}
+        {Nonormals 1}
+        }
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box05"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box06"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box07"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box08"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box09"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box10"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box11"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box12"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box13"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box14"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box15"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box16"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box17"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box18"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box19"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box20"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box21"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box22"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box23"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box24"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box25"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box26"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box27"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box28"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box29"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box30"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box31"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box32"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box33"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box34"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box35"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box36"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box37"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box38"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box39"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box41"
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+}

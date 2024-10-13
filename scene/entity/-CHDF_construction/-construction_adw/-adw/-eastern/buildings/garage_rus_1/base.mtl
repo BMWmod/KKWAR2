@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "ston_megabrick_iov"}
+	{bump "ston_megabrick_iov_bump"}
+	{blend none}
+}

@@ -1,0 +1,40 @@
+{game_entity
+	(include "/properties/building.inc")			
+	{props "cornered" "concrete" "parts" "construction" "wall" "burning" "gate" "gate_close"}
+
+	{Extension "armory2.mdl"}
+	{Volume "gatefront1"
+		{thickness 30}
+		{tags "gate"}
+	}
+	{Volume "gatefront2"
+		{thickness 30}
+		{tags "gate"}
+	}
+	{Volume "gatefront3"
+		{thickness 30}
+		{tags "gate"}
+	}
+	{Volume "gatefront4"
+		{thickness 30}
+		{tags "gate"}
+	}
+	{Volume "gatefront5"
+		{thickness 30}
+		{tags "gate"}
+	}
+	{Volume "landtop"
+		{thickness 50}
+		{tags "Top"}
+	}
+	{Volume "switch"
+		{Tags  "door_lock"}
+		{able {touch}}
+	}
+	{Volume "theswitch"
+		{Tags  "door_close"}
+		{able {touch}}
+	}
+	{Extender "land_patch"
+	}
+}

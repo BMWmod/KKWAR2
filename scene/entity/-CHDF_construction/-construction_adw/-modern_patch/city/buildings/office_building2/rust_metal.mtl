@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/construction/city/rust_metal1"}
+	{bump "$/construction/city/rust_metal1_bp"}
+	{blend test}
+}

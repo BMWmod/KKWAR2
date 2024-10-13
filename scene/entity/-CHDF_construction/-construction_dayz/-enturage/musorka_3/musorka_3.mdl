@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Thu Feb 10 09:19:27 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\musorki.max
+{Skeleton
+	{bone "1"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "1.ply"}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "1"}
+	{Position -0.0181961	0.232101	0}
+}

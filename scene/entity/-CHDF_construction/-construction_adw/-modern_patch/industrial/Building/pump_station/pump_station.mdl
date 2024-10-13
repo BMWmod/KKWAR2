@@ -1,0 +1,139 @@
+;Exported by: Notebook
+;Date:        Fri May 10 20:43:52 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\pump station.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "roof"
+			{Position 0	0	76.6054}
+			{VolumeView "roof.ply"}
+			{bone "vent1"
+				{Position -34.4724	0	10.6094}
+				{VolumeView "vent1.ply"}
+			}
+			{bone "vent2"
+				{Position 0	34.6546	10.6094}
+				{VolumeView "vent2.ply"}
+			}
+		}
+		{bone "wall"
+			{Position 0	0	0}
+			{VolumeView "wall.ply"}
+			{bone "window1"
+				{Matrix34
+					0	1	0
+					-1	0	0
+					0	0	1
+					-72.7599	0	12.823
+				}
+				{VolumeView "window1.ply"}
+			}
+			{bone "window2"
+				{Position 0	73.2271	12.823}
+				{VolumeView "window2.ply"}
+			}
+			{bone "window3"
+				{Matrix34
+					0	-1	0
+					1	0	0
+					0	0	1
+					72.9082	0	12.823
+				}
+				{VolumeView "window3.ply"}
+			}
+			{bone "door"
+				{Position 0	-72.8266	0}
+				{VolumeView "door.ply"}
+			}
+		}
+	}
+}
+{Volume "roof"
+	{Polyhedron "roof.vol"}
+	{Bone "roof"}
+	{Matrix34
+		0.92388	0.382684	0
+		-0.382684	0.92388	0
+		0	0	1
+		0	0	0.166229
+	}
+}
+{Volume "wall1"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Position 74.8031	0	39.3701}
+}
+{Volume "wall2"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		0.707107	0.707107	0
+		-0.707107	0.707107	0
+		0	0	1
+		52.8938	52.8938	39.3701
+	}
+}
+{Volume "wall3"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		0	74.8031	39.3701
+	}
+}
+{Volume "wall4"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		-0.707107	0.707107	0
+		-0.707107	-0.707107	0
+		0	0	1
+		-52.8938	52.8938	39.3701
+	}
+}
+{Volume "wall5"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-74.8031	-2.4374e-005	39.3701
+	}
+}
+{Volume "wall6"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		-0.707107	-0.707107	0
+		0.707107	-0.707107	0
+		0	0	1
+		-52.8938	-52.8938	39.3701
+	}
+}
+{Volume "wall7"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		0	-74.8031	39.3701
+	}
+}
+{Volume "wall8"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		0.707107	-0.707107	0
+		0.707107	0.707107	0
+		0	0	1
+		52.8938	-52.8938	39.3701
+	}
+}

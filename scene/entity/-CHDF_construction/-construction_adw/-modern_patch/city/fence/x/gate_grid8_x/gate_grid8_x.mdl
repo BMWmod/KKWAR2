@@ -1,0 +1,67 @@
+;Exported by: HOME Office
+;Date:        Sat May 09 19:21:20 2020
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\City\Gate\Gate_grid8.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece3"
+			{Matrix34
+				0	0	1
+				-0.236201	0.971704	0
+				-0.971704	-0.236201	0
+				20.2976	-5.15232	0.984252
+			}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece1"
+			{Position -5.90551	-12.2047	26.5876}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Position 5.90551	12.2047	26.5876}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "post1"
+			{Position 0	-12.2047	0}
+			{VolumeView "post1.ply"}
+		}
+		{bone "post2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0	12.2047	0
+			}
+			{VolumeView "post2.ply"}
+		}
+	}
+}
+{Volume "piece1"
+	{Box 3.54331 3.54331 38.3858}
+	{Bone "piece1"}
+	{Position 0	0	-1.99077}
+}
+{Volume "piece2"
+	{Box 3.54331 3.54331 38.3858}
+	{Bone "piece2"}
+	{Position 0	0	-1.99077}
+}
+{Volume "piece3"
+	{Box 2.3622 19.685 39.3701}
+	{Bone "piece3"}
+	{Position 0	9.84252	19.685}
+}
+{Volume "post1"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "post1"}
+	{Position 0	0	3.93701}
+}
+{Volume "post2"
+	{Box 3.54331 3.54331 7.87402}
+	{Bone "post2"}
+	{Position 0	0	3.93701}
+}

@@ -1,0 +1,22 @@
+{game_entity
+	(include "/properties/post.inc")
+	{props "small" "steel" "construction" "parts" "disable_area" "no_destroyed_stamp"}
+	{Extension "tower3.mdl"}
+	("armor_use_volume_thickness")
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 0}}
+	}
+	{Volume "projector1"
+		{Thickness 1}
+	}
+	{Volume "projector2"
+		{Thickness 1}
+	}
+	{Volume "top"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 0}}
+	}
+}

@@ -1,0 +1,49 @@
+{game_entity
+	(include "/properties/building.inc")
+	{obstacleID "unbreakable"}
+	{props "concrete"  "construction" "no_destroyed_stamp" "opened_one"  }
+	{extender "detail"}
+	; {Extender "land_patch"
+		; {TerrainType "road" "bridge"}
+	; }
+	{Volume "door_open"
+		{Tags  "door_open" }
+		{able {contact 0} {bullet 0} {touch 1}{visible 0}}
+	}
+	{Volume "doorr"
+		{thickness 15}
+		{Tags  "body" "door_lock" "switch"}
+		{material "steel"}
+	}
+	{Volume "doorl"
+		{thickness 15}
+		{Tags  "body" "door_lock" "switch"}
+		{material "steel"}
+	}
+	{Volume "roof"
+		{thickness 30}
+		{Tags  "body"}
+		{able {visible 0}{obstacle 0}}
+		;{able {visible 0}}	
+		;{material "steel"}
+	}
+	{Volume "body1"
+		{able {obstacle 1}}
+		{thickness 30}
+		{Tags  "body"}
+		;{material "steel"}
+	}
+	{Volume "body2"
+		{able {obstacle 1}}
+		{thickness 30}
+		{Tags  "body"}
+		;{material "steel"}
+	}
+	{Volume "body3"
+		{able {obstacle 1}}
+		{thickness 30}
+		{Tags  "body"}
+		;{material "steel"}
+	}
+	{Extension "garage_rus_1.mdl"}
+}

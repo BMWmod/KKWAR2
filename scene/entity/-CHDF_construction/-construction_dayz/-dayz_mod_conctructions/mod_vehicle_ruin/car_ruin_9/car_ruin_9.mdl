@@ -1,0 +1,41 @@
+;Exported by: Alexey
+;Date:        Sun Jan 11 15:35:22 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\Paz_1a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.999891	-0.0147819	0
+				0.0147819	0.999891	0
+				0	0	1
+				-1.51882	0.212722	33.6189
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.999891	0.0147819	0
+		-0.0147819	0.999891	0
+		0	0	1
+		-51.5151	-7.31237	13.5704
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.999891	0.0147819	0
+		-0.0147819	0.999891	0
+		0	0	1
+		-51.5151	-7.31237	-22.3913
+	}
+}

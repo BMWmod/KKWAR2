@@ -1,0 +1,162 @@
+;Exported by: Xpycmb
+;Date:        Thu Feb  3 23:04:33 2022
+;File:        C:\Users\Xpycmb\Documents\3dsMax\scenes\garage.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.5} {resume}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "CommonMesh;ID=body;"}
+			{VolumeView "body.ply"}
+			{bone "doorl_bone"
+				{Position -52.2596	44.2218	42.4341}
+				{bone "doorl"
+					{parameters "CommonMesh;"}
+					{Matrix34
+						1	0	0
+						0	-1	0
+						0	0	1
+						0	0	0
+					}
+					{VolumeView "doorl.ply"}
+				}
+			}
+			{bone "doorr_bone"
+				{Position -52.2596	-44.2461	42.4341}
+				{bone "doorr"
+					{parameters "CommonMesh;"}
+					{VolumeView "doorr.ply"}
+				}
+			}
+			{bone "detail1"
+				{parameters "CommonMesh;"}
+				{Matrix34
+					0	0	-1
+					0	-1	0
+					-1	0	0
+					105.559	-45.0933	86.0529
+				}
+				{VolumeView "detail1.ply"}
+			}
+			{bone "detail2"
+				{parameters "CommonMesh;"}
+				{Matrix34
+					-0.0110421	0	-0.999939
+					-0.608831	0.793271	0.00672311
+					0.793223	0.608869	-0.00875938
+					-12.8171	-2.94268	63.5126
+				}
+				{VolumeView "detail2.ply"}
+			}
+			{bone "detail3"
+				{parameters "CommonMesh;"}
+				{Position -61.1369	-0.495625	56.1865}
+				{VolumeView "detail3.ply"}
+			}
+			{bone "land"
+				{parameters "CommonMesh;"}
+				{Position 24.44	0	-0.393103}
+				{VolumeView "land.ply"}
+			}
+		}
+		{bone "land2"
+			{parameters "CommonMesh;"}
+			{Position -67.0402	0	0.0804752}
+			{VolumeView "land2.ply"}
+		}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 26.1347 -46.1296}
+		{Extent 80 2.5}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center 26.1347 45.5277}
+		{Extent 80 2.5}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Obstacle "body3"
+	{Obb2
+		{Center 103.325 0.463448}
+		{Extent 2.5 45}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Obstacle "close"
+	{Obb2
+		{Center -52.0978 0.0615921}
+		{Extent 4.00536 42.9285}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Obstacle "left"
+	{Obb2
+		{Center -72.4016 -33.2914}
+		{Extent 2.51904 21.2522}
+		{Axis 0.469956 0.88269}
+	}
+	{Rotate}
+}
+{Obstacle "right"
+	{Obb2
+		{Center -74.4359 38.1365}
+		{Extent 21.2503 2.50283}
+		{Axis 0.96596 0.258691}
+	}
+	{Rotate}
+}
+{Volume "body1"
+	{Box 160 5 60}
+	{Bone "body"}
+	{Position 26.1347	46.1296	30}
+}
+{Volume "body2"
+	{Box 160 5 60}
+	{Bone "body"}
+	{Position 26.1347	-45.5277	30}
+}
+{Volume "body3"
+	{Box 90 5 60}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		103.325	-0.463449	30
+	}
+}
+{Volume "door_open"
+	{Box 15 85 45}
+	{Bone "basis"}
+	{Position -57.2472	-0.0615921	23.3539}
+}
+{Volume "doorl"
+	{Box 5 42.5 55}
+	{Bone "doorl"}
+	{Matrix34
+		1	0	0
+		0	-1	0
+		0	0	1
+		0.161755	22.9162	-12.7955
+	}
+}
+{Volume "doorr"
+	{Box 5 42.5 55}
+	{Bone "doorr"}
+	{Position 0.161758	23.002	-12.7955}
+}

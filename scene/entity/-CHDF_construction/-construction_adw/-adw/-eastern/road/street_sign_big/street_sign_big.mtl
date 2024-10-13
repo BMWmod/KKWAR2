@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "street_sign_big"}
+	{blend none}
+}

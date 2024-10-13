@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Thu Mar 25 01:28:26 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\box_weapon.max
+{Skeleton
+	{bone "box_weapon"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "box_weapon.ply"}
+	}
+}
+{Volume "box01"
+	{Box 28.5976 15.8643 15.3773}
+	{Bone "box_weapon"}
+	{Position -0.2648	-0.142666	7.68864}
+}

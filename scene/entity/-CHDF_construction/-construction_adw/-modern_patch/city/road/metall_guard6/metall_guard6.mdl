@@ -1,0 +1,113 @@
+;Exported by: Notebook
+;Date:        Sun Aug 02 22:54:57 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Road\metall_guard6.max
+{Skeleton
+	{bone "opora"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "opora.ply"}
+		{bone "guard"
+			{Orientation
+				-1	0	0
+				0	1	0
+				0	0	1
+			}
+			{VolumeView "guard.ply"}
+			{bone "reflector1"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					-49.2126	0.787402	19.685
+				}
+				{VolumeView "reflector1.ply"}
+			}
+			{bone "reflector2"
+				{Matrix34
+					-1	0	0
+					0	0	1
+					0	1	0
+					-49.2126	0.787402	9.84252
+				}
+				{VolumeView "reflector2.ply"}
+			}
+			{bone "reflector3"
+				{Matrix34
+					-0.972336	0	0.233585
+					0.233585	0	0.972336
+					0	1	0
+					33.4646	0.787402	11.4717
+				}
+				{VolumeView "reflector3.ply"}
+			}
+		}
+	}
+}
+{Volume "guard1"
+	{Polyhedron "guard1.vol"}
+	{Bone "guard"}
+	{Matrix34
+		1	0	0
+		0	-1	0
+		0	0	1
+		0	0	14.7638
+	}
+}
+{Volume "guard2"
+	{Polyhedron "guard2.vol"}
+	{Bone "guard"}
+	{Matrix34
+		1	0	0
+		0	-1	0
+		0	0	1
+		0	0	4.92126
+	}
+}
+{Volume "guard3"
+	{Polyhedron "guard3.vol"}
+	{Bone "guard"}
+	{Matrix34
+		-0.971247	0	0.238076
+		0	1	0
+		0.238076	0	0.971247
+		0	0	14.7638
+	}
+}
+{Volume "guard4"
+	{Polyhedron "guard4.vol"}
+	{Bone "guard"}
+	{Matrix34
+		-0.971247	0	0.238076
+		0	1	0
+		0.238076	0	0.971247
+		0	0	4.92126
+	}
+}
+{Volume "opora1"
+	{Box 3.93701 3.93701 12.7953}
+	{Bone "opora"}
+	{Position -33.4646	-3.93701	6.39764}
+}
+{Volume "opora2"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 0	-3.93701	10.8268}
+}
+{Volume "opora3"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 34.4488	-3.93701	10.8268}
+}
+{Volume "opora4"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 63.9764	-3.93701	10.8268}
+}
+{Volume "opora5"
+	{Box 3.93701 3.93701 21.6535}
+	{Bone "opora"}
+	{Position 98.4252	-3.93701	10.8268}
+}

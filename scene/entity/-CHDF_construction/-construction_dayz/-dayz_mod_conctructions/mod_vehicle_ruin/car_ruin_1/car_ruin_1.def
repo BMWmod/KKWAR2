@@ -1,0 +1,9 @@
+{game_entity
+    (include "/properties/construction.inc")
+	{props "small" "steel" "parts" "construction" "no_destroyed_stamp"}
+	{Extension "car_ruin_1.mdl"}
+	{Volume "body"
+	}
+	{Volume "body_vol01"
+	}
+}

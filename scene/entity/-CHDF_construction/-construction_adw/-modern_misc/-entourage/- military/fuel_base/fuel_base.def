@@ -1,0 +1,10 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+	{Extension "fuel_base.mdl"}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+}

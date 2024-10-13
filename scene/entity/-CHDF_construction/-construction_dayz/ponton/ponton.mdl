@@ -1,0 +1,59 @@
+;Exported by: Home Desk-Top
+;Date:        Fri May 17 21:52:10 2013
+;File:        D:\theGame\entity\3dMax Model\pontoon.max
+{Skeleton
+	{bone "basis"
+		{parameters "Land;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body4"
+			{parameters "Land;"}
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				59.3355	0.254316	-6.99625
+			}
+			{VolumeView "body4.ply"}
+		}
+		{bone "body3"
+			{parameters "Land;"}
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				19.7724	0.254316	-6.99625
+			}
+			{VolumeView "body3.ply"}
+		}
+		{bone "body1"
+			{parameters "Land;"}
+			{Position -59.6185	0.254316	-6.99625}
+			{VolumeView "body1.ply"}
+		}
+		{bone "body05"
+			{parameters "Land;"}
+			{Position -19.8546	0.254316	-6.99625}
+			{VolumeView "body05.ply"}
+		}
+		{bone "link2"
+			{Position 0.0035547	66.1802	-0.00494287}
+		}
+		{bone "link1"
+			{Position 0.00532782	-65.6844	-0.00494287}
+		}
+	}
+}
+{Volume "body"
+	{Box 165.354 133.858 23.2155}
+	{Bone "basis"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0.0206819	0.254315	1.67691
+	}
+}

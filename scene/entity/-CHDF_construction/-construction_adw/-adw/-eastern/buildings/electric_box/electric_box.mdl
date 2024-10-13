@@ -1,0 +1,38 @@
+;Exported by: -
+;Date:        Sat Sep 28 12:00:16 2013
+;File:        C:\Users\-\Documents\3dsmax\scenes\transformator.max
+{Skeleton
+	{bone "trans_01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "trans_01.ply"}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "trans_01"}
+	{Position -0.704245	2.99473	60.5009}
+}
+{Volume "noga2"
+	{Polyhedron "noga2.vol"}
+	{Bone "trans_01"}
+	{Position 6.37342	8.39541	0.246638}
+}
+{Volume "noga3"
+	{Polyhedron "noga3.vol"}
+	{Bone "trans_01"}
+	{Position -7.57535	-6.00893	0.246638}
+}
+{Volume "noga4"
+	{Polyhedron "noga4.vol"}
+	{Bone "trans_01"}
+	{Position -7.08368	9.34576	0.246638}
+}
+{Volume "noga"
+	{Polyhedron "noga.vol"}
+	{Bone "trans_01"}
+	{Position 6.45105	-5.95106	0.246638}
+}

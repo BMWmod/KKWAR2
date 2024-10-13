@@ -1,0 +1,31 @@
+;Exported by: Alexey
+;Date:        Tue Sep 02 12:50:02 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Zdaniya\zabor1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "wall"
+			{Matrix34
+				0.111286	0.993788	0
+				-0.993169	0.111217	0.0352927
+				0.0350735	-0.00392759	0.999377
+				1.03695	-1.33525	37.644
+			}
+			{VolumeView "wall.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "wall"}
+	{Matrix34
+		0.111286	-0.993083	0.0374325
+		0.993788	0.111217	-0.0039278
+		-0.000262492	0.0376371	0.999291
+		0.878154	0.390017	3.63648
+	}
+}

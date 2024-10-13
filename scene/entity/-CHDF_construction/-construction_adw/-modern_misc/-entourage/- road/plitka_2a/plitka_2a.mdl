@@ -1,0 +1,31 @@
+;Exported by: Alexey
+;Date:        Sun Jan 11 12:37:16 2009
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker\plitka_2a.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0.99995	-0.00436335	0.00899064
+				0.00436352	0.99999	0
+				-0.00899056	3.92309e-005	0.99996
+				0.432101	0.000513085	0.40796
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.99995	0.00436352	-0.00899059
+		-0.00436335	0.99999	3.92309e-005
+		0.00899067	0	0.99996
+		2.68445	-5.25619	3.53169
+	}
+}

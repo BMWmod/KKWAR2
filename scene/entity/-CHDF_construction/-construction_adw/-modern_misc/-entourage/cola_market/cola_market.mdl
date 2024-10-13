@@ -1,0 +1,28 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:46 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "cola"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "cola.ply"}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center -0.119791 -0}
+		{Extent 7.44897 9.91136}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "cola"}
+	{Position -0.119791	0	-0.176609}
+}

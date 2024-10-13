@@ -1,0 +1,13 @@
+{game_entity
+	
+
+        (include "/properties/building.inc")
+	{Extension "lenin.mdl"}
+        {obstacleid "unbreakable"}
+	{props "concrete"}
+	("armor_heavy" args 1.0)
+
+	
+	{Volume "box01"
+	}
+}

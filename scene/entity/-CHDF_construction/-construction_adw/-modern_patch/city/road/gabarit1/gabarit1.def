@@ -1,0 +1,28 @@
+{game_entity
+  	(include "/properties/post.inc")
+	{Extension "gabarit1.mdl"}
+	("armor_use_volume_thickness")
+	{props "post"}
+
+
+	{Volume "column1"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "column2"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "ferm"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "plank1"
+		{thickness 1}
+		{able {visible 0}}	
+	}
+	{Volume "plank2"
+		{thickness 1}
+		{able {visible 0}}	
+	}
+}

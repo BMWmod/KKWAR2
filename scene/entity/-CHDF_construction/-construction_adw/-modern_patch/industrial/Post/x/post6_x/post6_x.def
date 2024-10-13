@@ -1,0 +1,7 @@
+{game_entity
+	{Extension "post6_x.mdl"}
+	{Volume "base"
+	}
+	{Volume "piece1"
+	}
+}

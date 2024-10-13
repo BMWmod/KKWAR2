@@ -1,0 +1,81 @@
+;Exported by: Gans
+;Date:        Tue Sep 20 01:22:20 2022
+;File:        C:\Users\Gans\Desktop\dom\house_broken.max
+{Skeleton
+	{bone "point02"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "house_front_left"
+			{Position 59.5213	-85.4382	108.453}
+			{VolumeView "house_front_left.ply"}
+			{bone "window3"
+				{parameters "ID=window3;"}
+				{Position 43.3493	63.6946	-12.2843}
+				{VolumeView "window3.ply"}
+			}
+			{bone "window1"
+				{parameters "ID=window1;"}
+				{Position 43.2532	10.3478	33.9752}
+				{VolumeView "window1.ply"}
+			}
+			{bone "window2"
+				{parameters "ID=window2;"}
+				{Position 43.516	63.6946	33.9539}
+				{VolumeView "window2.ply"}
+			}
+		}
+	}
+}
+{Volume "box78"
+	{Box 139.752 8.26132 107.747}
+	{Bone "house_front_left"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		43.7559	39.4537	8.54869
+	}
+}
+{Volume "box83"
+	{Polyhedron "box83.vol"}
+	{Bone "house_front_left"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		2.87897	27.778	62.0513
+	}
+}
+{Volume "hole1"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_front_left"}
+	{Position 43.0837	62.9742	-14.4559}
+}
+{Volume "hole2"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_front_left"}
+	{Position 43.0837	63.0245	33.509}
+}
+{Volume "hole3"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_front_left"}
+	{Position 43.0837	10.4323	33.509}
+}
+{Volume "window1"
+	{Box 13.8729 34.8659 26.2781}
+	{Bone "window1"}
+	{Position 0.680489	-0.593231	-0.863554}
+}
+{Volume "window2"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window2"}
+	{Position 0.417702	-1.53943	0.0339527}
+}
+{Volume "window3"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window3"}
+	{Position 0.584442	-2.64994	-2.16971}
+}

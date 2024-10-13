@@ -1,0 +1,18 @@
+{game_entity
+    (include "/properties/building.inc")
+    {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 1000}
+	{Extension "electric_box.mdl"}
+	{Volume "body"
+	}
+	{Volume "noga2"
+	}
+	{Volume "noga3"
+	}
+	{Volume "noga4"
+	}
+}

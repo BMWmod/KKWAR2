@@ -1,0 +1,106 @@
+;Exported by: Notebook
+;Date:        Wed Feb 27 22:46:01 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Fence\fence_barbedware6.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "column3"
+			{Position 0	-59.0551	0}
+			{VolumeView "column3.ply"}
+		}
+		{bone "column2"
+			{VolumeView "column2.ply"}
+		}
+		{bone "barbedware1"
+			{Position 0	29.5276	19.685}
+			{VolumeView "barbedware1.ply"}
+		}
+		{bone "column1"
+			{Position 0	59.0551	0}
+			{VolumeView "column1.ply"}
+		}
+		{bone "barbedware2"
+			{Position 0	-29.5276	19.685}
+			{VolumeView "barbedware2.ply"}
+		}
+	}
+}
+{Volume "barbedware11"
+	{Box 0.19685 55.1181 38.9764}
+	{Bone "barbedware1"}
+	{Position 0	0	-0.19685}
+}
+{Volume "barbedware12"
+	{Box 0.19685 55.1181 13.7795}
+	{Bone "barbedware1"}
+	{Matrix34
+		0.707107	0	0.707107
+		0	1	0
+		-0.707107	0	0.707107
+		-4.8718	0	24.0234
+	}
+}
+{Volume "barbedware21"
+	{Box 0.19685 55.1181 38.9764}
+	{Bone "barbedware2"}
+	{Position 0	0	-0.19685}
+}
+{Volume "barbedware22"
+	{Box 0.19685 55.1181 13.7795}
+	{Bone "barbedware2"}
+	{Matrix34
+		0.707107	0	0.707107
+		0	1	0
+		-0.707107	0	0.707107
+		-4.8718	0	24.0234
+	}
+}
+{Volume "column11"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column1"}
+	{Position 0	0	19.685}
+}
+{Volume "column12"
+	{Box 3.54331 3.54331 13.7795}
+	{Bone "column1"}
+	{Matrix34
+		0.707107	0	0.707107
+		0	1	0
+		-0.707107	0	0.707107
+		-4.69814	0	43.4318
+	}
+}
+{Volume "column21"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column2"}
+	{Position 0	0	19.685}
+}
+{Volume "column22"
+	{Box 3.54331 3.54331 13.7795}
+	{Bone "column2"}
+	{Matrix34
+		0.707107	0	0.707107
+		0	1	0
+		-0.707107	0	0.707107
+		-4.69814	0	43.4318
+	}
+}
+{Volume "column31"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column3"}
+	{Position 0	0	19.685}
+}
+{Volume "column32"
+	{Box 3.54331 3.54331 13.7795}
+	{Bone "column3"}
+	{Matrix34
+		0.707107	0	0.707107
+		0	1	0
+		-0.707107	0	0.707107
+		-4.69814	0	43.4318
+	}
+}

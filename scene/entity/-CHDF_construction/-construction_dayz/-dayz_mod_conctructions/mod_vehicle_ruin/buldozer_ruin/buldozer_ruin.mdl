@@ -1,0 +1,52 @@
+;Exported by: alexey
+;Date:        Mon Jul 21 06:48:12 2008
+;File:        G:\Program Files\Autodesk\3dsMax8\scenes\buldozer.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				-0.226146	0	11.9124
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		19.2182	-98.332	-1.60017
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		19.2182	-11.3871	-2.80204
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	1	0
+		0	0	1
+		1	0	0
+		19.2182	-131.528	-1.60017
+	}
+}

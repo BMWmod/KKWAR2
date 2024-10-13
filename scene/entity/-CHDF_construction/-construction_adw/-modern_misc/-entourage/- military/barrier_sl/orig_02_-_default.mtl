@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "stop_barrier"}
+	{blend none}
+}

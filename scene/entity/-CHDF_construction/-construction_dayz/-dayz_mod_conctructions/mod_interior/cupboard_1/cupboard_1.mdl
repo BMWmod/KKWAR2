@@ -1,0 +1,31 @@
+;Exported by: пакунеу
+;Date:        Fri Mar 27 17:30:57 2009
+;File:        C:\Program Files\Autodesk\3dsMax8\scenes\бар_1_22.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "shkaf_5_decor"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0.0607437	-1.49928	21.5018
+			}
+			{VolumeView "shkaf_5_decor.ply"}
+		}
+	}
+}
+{Volume "box01"
+	{Box 1.18362 3.47754 4.91254}
+	{Bone "shkaf_5_decor"}
+	{Matrix34
+		-8.06488	0	0
+		0	8.06488	0
+		0	0	8.59967
+		-0.122061	-0.0982823	-0.259272
+	}
+}

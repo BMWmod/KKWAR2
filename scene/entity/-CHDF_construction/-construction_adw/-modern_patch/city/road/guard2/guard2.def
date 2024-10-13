@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "guard2.mdl"}
+	{Volume "guard"
+	}
+}

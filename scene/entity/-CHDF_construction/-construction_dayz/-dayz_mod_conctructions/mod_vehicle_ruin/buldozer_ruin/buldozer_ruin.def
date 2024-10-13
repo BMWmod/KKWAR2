@@ -1,0 +1,41 @@
+{game_entity
+	
+
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+
+
+
+
+
+
+
+
+
+        {Extension "buldozer_ruin.mdl"}
+	{Volume "box01"
+
+                {thickness 50}
+		{tags "body"}
+		{able {visible 0}{obstacle 1}}
+
+	}
+	{Volume "box02"
+
+                {thickness 50}
+		{able {visible 0}{obstacle 1}}
+		{tags "body"}
+
+
+	}
+{Volume "box03"
+
+                {thickness 50}
+		{able {visible 0}{obstacle 1}}
+		{tags "body"}
+
+
+	}
+}

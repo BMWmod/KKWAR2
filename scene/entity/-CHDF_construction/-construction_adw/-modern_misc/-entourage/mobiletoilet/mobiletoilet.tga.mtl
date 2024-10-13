@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mobiletoilet"}
+	{blend none}
+}

@@ -1,0 +1,16 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "wood" "no_destroyed_stamp"}
+	{Extension "lavka1.mdl"}
+	{Volume "box13"
+	}
+	{Volume "box14"
+	}
+	{Volume "box15"
+	}
+	{Volume "box16"
+	}
+	{Volume "box17"
+	}
+}

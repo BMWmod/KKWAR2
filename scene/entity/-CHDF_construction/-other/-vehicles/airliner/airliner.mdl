@@ -1,0 +1,86 @@
+;Exported by: Shelby
+;Date:        Fri Mar 26 21:01:16 2010
+;File:        D:\Δενθρ\3DS MAX\model_trash\airliner_finale.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0	0	1.46976
+			}
+			{VolumeView "body.ply"}
+			{bone "wings"
+				{VolumeView "wings.ply"}
+			}
+			{bone "wheel"
+				{Position 0	-136.616	16.0724}
+				{VolumeView "wheel.ply"}
+			}
+			{bone "wing1"
+				{Position 0	144.857	103.711}
+				{VolumeView "wing1.ply"}
+			}
+			{bone "wing2"
+				{Position 0	199.426	136.571}
+				{VolumeView "wing2.ply"}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		-0.123886	-161.398	46.6024
+	}
+}
+{Volume "wheel"
+	{Polyhedron "wheel.vol"}
+	{Bone "wheel"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		1.21109	-2.35806	0.0520649
+	}
+}
+{Volume "wing1"
+	{Polyhedron "wing1.vol"}
+	{Bone "wing1"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0.215604	6.88092	2.64828
+	}
+}
+{Volume "wing2"
+	{Polyhedron "wing2.vol"}
+	{Bone "wing2"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		0.213729	3.84738	1.85793
+	}
+}
+{Volume "wings"
+	{Polyhedron "wings.vol"}
+	{Bone "wings"}
+	{Matrix34
+		1	0	0
+		0	0	-1
+		0	1	0
+		-0.123886	-161.398	46.6024
+	}
+}

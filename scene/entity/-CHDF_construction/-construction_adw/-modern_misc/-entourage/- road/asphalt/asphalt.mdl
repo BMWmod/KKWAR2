@@ -1,0 +1,11 @@
+{Skeleton
+	{bone "tratuar_new1"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+        {parameters "Land;Ground;"}
+		{VolumeView "asphalt.ply" {Ground} {DecalTarget}}
+	}
+}

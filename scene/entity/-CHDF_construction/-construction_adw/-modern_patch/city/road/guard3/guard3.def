@@ -1,0 +1,27 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	("armor_light" args 0.7)
+	{Extension "guard3.mdl"}
+	{props "cornered" "concrete" "parts" "construction" "wall"}
+	{Volume "guard1"
+		{Thickness 30}
+		{able {visible 0}{bullet 1}}
+	}
+	{Volume "guard2"
+		{Thickness 30}
+		{able {visible 0}{bullet 1}}
+	}
+	{Volume "guard3"
+		{Thickness 30}
+		{able {visible 0}{bullet 1}}
+	}
+	{Volume "guard"
+		{Thickness 30}
+		{able {visible 0}{bullet 1}}
+	}
+}
+
+
+
+

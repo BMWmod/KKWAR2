@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "ponton"}
+	{bump "ponton_bp"}
+	{blend none}
+}

@@ -1,0 +1,873 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "concrete" "cornered" "parts" "construction" "windowed"}
+	{obstacleid "unbreakable"}
+	{Extension "house_broken.mdl"}
+	{placer}
+	{extender "structure"
+		{place "01" "house_left_front"}
+		{place "02" "house_front_left"}
+		{place "03" "house_front_right"}
+		{place "04" "house_right_front"}
+		{place "05" "house_right_back"}
+		{place "06" "house_back_right"}
+		{place "07" "house_back_left"}
+		{place "08" "house_left_back"}
+		{place "entrance1" "house_left_entrance"}
+		{place "entrance2" "house_right_entrance"}
+	}
+	{placer
+	     {place "1" {attach  snipe_cover} 		{linkbone "attach01"}}
+	     {place "2" {attach  snipe_cover} 		{linkbone "attach02"}}
+	     {place "3" {attach  snipe_cover} 		{linkbone "attach03"}}
+	     {place "4" {attach  snipe_cover} 		{linkbone "attach04"}}
+	     {place "5" {attach  snipe_cover} 		{linkbone "attach05"}}
+	     {place "6" {attach  snipe_cover} 		{linkbone "attach06"}}
+	     {place "7" {attach  snipe_cover} 		{linkbone "attach07"}}
+	     {place "8" {attach  snipe_cover} 		{linkbone "attach08"}}
+	     {place "9" {attach  snipe_cover} 		{linkbone "attach09"}}
+	     {place "10" {attach  snipe_cover} 		{linkbone "attach10"}}
+	     {place "11" {attach  snipe_cover} 		{linkbone "attach11"}}
+	     {place "12" {attach  snipe_cover} 		{linkbone "attach12"}}
+	     {place "13" {attach  snipe_cover} 		{linkbone "attach13"}}
+	     {place "14" {attach  snipe_cover} 		{linkbone "attach14"}}
+	     {place "15" {attach  snipe_cover} 		{linkbone "attach15"}}
+	     {place "16" {attach  snipe_cover} 		{linkbone "attach16"}}
+	     {place "17" {attach  snipe_cover} 		{linkbone "attach17"}}
+	     {place "18" {attach  snipe_cover} 		{linkbone "attach18"}}
+	     {place "19" {attach  snipe_cover} 		{linkbone "attach19"}}
+	     {place "20" {attach  snipe_cover} 		{linkbone "attach20"}}
+	     {place "21" {attach  snipe_cover} 		{linkbone "attach21"}}
+	     {place "22" {attach  snipe_cover} 		{linkbone "attach22"}}
+	     {place "23" {attach  snipe_cover} 		{linkbone "attach23"}}
+	     {place "24" {attach  snipe_cover} 		{linkbone "attach24"}}
+	     {place "25" {attach  snipe_cover} 		{linkbone "attach25"}}
+	     {place "26" {attach  snipe_cover} 		{linkbone "attach26"}}
+	     {place "27" {attach  snipe_cover} 		{linkbone "attach27"}}
+	     {place "28" {attach  snipe_cover} 		{linkbone "attach28"}} 
+	}
+	{boarder}
+	
+	{Volume "attach01"
+		{Tags  "attach" "01"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach02"
+		{Tags  "attach" "02"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach03"
+		{Tags  "attach" "03"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach04"
+		{Tags  "attach" "04"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach05"
+		{Tags  "attach" "05"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach06"
+		{Tags  "attach" "06"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach07"
+		{Tags  "attach" "07"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach08"
+		{Tags  "attach" "08"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach09"
+		{Tags  "attach" "09"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach10"
+		{Tags  "attach" "10"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach11"
+		{Tags  "attach" "11"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach12"
+		{Tags  "attach" "12"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach13"
+		{Tags  "attach" "13"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach14"
+		{Tags  "attach" "14"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach15"
+		{Tags  "attach" "15"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach16"
+		{Tags  "attach" "16"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach17"
+		{Tags  "attach" "17"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach18"
+		{Tags  "attach" "18"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach19"
+		{Tags  "attach" "19"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach20"
+		{Tags  "attach" "20"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach21"
+		{Tags  "attach" "21"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach22"
+		{Tags  "attach" "22"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach23"
+		{Tags  "attach" "23"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach24"
+		{Tags  "attach" "24"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach25"
+		{Tags  "attach" "25"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach26"
+		{Tags  "attach" "26"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach27"
+		{Tags  "attach" "27"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "attach28"
+		{Tags  "attach" "28"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box05"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box06"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box07"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box08"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box09"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box10"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box100"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box101"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box102"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box103"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box104"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box105"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box106"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box107"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box108"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box109"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box11"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box110"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box111"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box112"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box113"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box114"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box115"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box116"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box117"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box118"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box119"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box12"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box120"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box121"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box122"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box123"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box124"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box125"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box126"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box127"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box128"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box13"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box14"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box15"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box16"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box17"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box18"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box19"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box20"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box21"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box22"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box23"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box24"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box25"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box26"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box27"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box28"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box29"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box30"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box31"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box32"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box33"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box34"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box35"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box36"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box37"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box38"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box39"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box40"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box41"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box42"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box43"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box44"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box45"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box46"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box47"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box48"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box49"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box50"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box51"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box52"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box53"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box54"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box55"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box56"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box57"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box58"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box59"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box60"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box61"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box62"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box63"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box64"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box65"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box66"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box67"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box68"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box69"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box90"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box93"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box94"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box95"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box96"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box97"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box98"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "box99"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}{holed}}
+	}
+	{Volume "door_left"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "door_right"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "hole10"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole25"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole26"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole27"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole28"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole29"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole30"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole31"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole32"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole33"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole34"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole35"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole36"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole37"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole38"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole39"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole3"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole40"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole41"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole44"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "window10"
+	}
+	{Volume "window11"
+	}
+	{Volume "window12"
+	}
+	{Volume "window13"
+	}
+	{Volume "window14"
+	}
+	{Volume "window15"
+	}
+	{Volume "window16"
+	}
+	{Volume "window17"
+	}
+	{Volume "window18"
+	}
+	{Volume "window19"
+	}
+	{Volume "window1"
+	}
+	{Volume "window20"
+	}
+	{Volume "window21"
+	}
+	{Volume "window22"
+	}
+	{Volume "window23"
+	}
+	{Volume "window24"
+	}
+	{Volume "window25"
+	}
+	{Volume "window26"
+	}
+	{Volume "window27"
+	}
+	{Volume "window28"
+	}
+	{Volume "window29"
+	}
+	{Volume "window2"
+	}
+	{Volume "window30"
+	}
+	{Volume "window31"
+	}
+	{Volume "window32"
+	}
+	{Volume "window33"
+	}
+	{Volume "window34"
+	}
+	{Volume "window35"
+	}
+	{Volume "window36"
+	}
+	{Volume "window37"
+	}
+	{Volume "window38"
+	}
+	{Volume "window39"
+	}
+	{Volume "window3"
+	}
+	{Volume "window40"
+	}
+	{Volume "window41"
+	}
+	{Volume "window42"
+	}
+	{Volume "window43"
+	}
+	{Volume "window44"
+	}
+	{Volume "window4"
+	}
+	{Volume "window5"
+	}
+	{Volume "window6"
+	}
+	{Volume "window7"
+	}
+	{Volume "window8"
+	}
+	{Volume "window9"
+	}
+	{Extender "land_patch"
+	}
+}

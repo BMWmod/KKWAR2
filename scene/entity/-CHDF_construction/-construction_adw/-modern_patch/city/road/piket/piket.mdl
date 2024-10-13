@@ -1,0 +1,18 @@
+;Exported by: HOME Office
+;Date:        Sat May 16 00:13:22 2020
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\City\Bridge\piket.max
+{Skeleton
+	{bone "piket"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "piket.ply"}
+	}
+}
+{Volume "piket"
+	{Box 3.14961 3.14961 16.7323}
+	{Bone "piket"}
+	{Position 0	0	8.36614}
+}

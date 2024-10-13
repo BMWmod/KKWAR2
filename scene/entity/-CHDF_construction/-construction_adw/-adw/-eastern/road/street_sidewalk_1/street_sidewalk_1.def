@@ -1,0 +1,5 @@
+{game_entity
+	{Extension "street_sidewalk_1.mdl"}
+	{Extender "land_patch"
+	}
+}

@@ -1,0 +1,13 @@
+{game_entity
+	{Extension "tower2_x.mdl"}
+	{Volume "ferm"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece5"
+	}
+	{Volume "piece7"
+	}
+	{Volume "piece8"
+	}
+}

@@ -1,0 +1,37 @@
+;Exported by: User
+;Date:        Sun Apr 19 16:42:08 2015
+;File:        (null)
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{VolumeView "body.ply"}
+			{bone "land"
+                        {parameters "Land;Ground;"}
+                        {VolumeView "land.ply" {Ground} {DecalTarget}}
+			}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -2.44617 -2.63385}
+		{Extent 13.5387 11.5433}
+		{Axis 0.974396 0.224839}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Orientation
+		0.980714	-0.188811	-0.0505048
+		0.191489	0.94816	0.253622
+		0	-0.180209	0.983629
+	}
+}

@@ -1,0 +1,9 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+
+	{Extension "kachelya.mdl"}
+	{Volume "box01"
+	}
+}

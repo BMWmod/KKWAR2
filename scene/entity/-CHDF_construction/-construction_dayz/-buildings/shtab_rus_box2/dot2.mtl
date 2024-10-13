@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "sandbags_dot2"}
+	{blend none}
+}

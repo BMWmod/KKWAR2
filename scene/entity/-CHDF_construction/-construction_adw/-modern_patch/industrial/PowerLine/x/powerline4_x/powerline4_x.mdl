@@ -1,0 +1,92 @@
+;Exported by: Notebook
+;Date:        Sat Oct 19 23:08:05 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\PowerLine\x\PowerLine4_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "stolb1"
+			{Position 0	78.7402	0}
+			{VolumeView "stolb1.ply"}
+		}
+		{bone "stolb2"
+			{Position 0	-78.7402	0}
+			{VolumeView "stolb2.ply"}
+		}
+		{bone "piece3"
+			{Position 39.3701	0	295.276}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece6"
+			{Position 0	0	295.276}
+			{VolumeView "piece6.ply"}
+		}
+		{bone "piece5"
+			{Position 0	-157.48	295.276}
+			{VolumeView "piece5.ply"}
+		}
+		{bone "piece7"
+			{Position 0	157.48	295.276}
+			{VolumeView "piece7.ply"}
+		}
+		{bone "piece2"
+			{Position 39.3701	-78.7402	39.3701}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece1"
+			{Position 39.3701	78.7402	39.3701}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece4"
+			{Position 39.3701	0	137.795}
+			{VolumeView "piece4.ply"}
+		}
+	}
+}
+{Volume "piece1"
+	{Polyhedron "piece1.vol"}
+	{Bone "piece1"}
+}
+{Volume "piece2"
+	{Polyhedron "piece2.vol"}
+	{Bone "piece2"}
+	{Position 0	0	-3.05176e-005}
+}
+{Volume "piece3"
+	{Polyhedron "piece3.vol"}
+	{Bone "piece3"}
+	{Position 0	0	1.96854}
+}
+{Volume "piece4"
+	{Box 1.9685 236.22 1.9685}
+	{Bone "piece4"}
+	{Matrix34
+		1	0	0
+		0	0.679441	-0.73373
+		0	0.73373	0.679441
+		0	0.722175	0.668757
+	}
+}
+{Volume "piece5"
+	{Box 1.9685 236.22 1.9685}
+	{Bone "piece4"}
+	{Matrix34
+		1	0	0
+		0	0.679441	0.73373
+		0	-0.73373	0.679441
+		0	-0.722175	0.668756
+	}
+}
+{Volume "stolb1"
+	{Polyhedron "stolb1.vol"}
+	{Bone "stolb1"}
+	{Position 0.0058136	0	0}
+}
+{Volume "stolb2"
+	{Polyhedron "stolb2.vol"}
+	{Bone "stolb2"}
+	{Position 0.0058136	0	0}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "concrete5"}
+	{blend none}
+}

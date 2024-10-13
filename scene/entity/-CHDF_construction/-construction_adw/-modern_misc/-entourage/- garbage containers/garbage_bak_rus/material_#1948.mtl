@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "botinok"}
+	{bump "botinok_bp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

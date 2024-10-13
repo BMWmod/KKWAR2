@@ -1,0 +1,107 @@
+;Exported by: User
+;Date:        Fri Mar 20 23:06:29 2015
+;File:        (null)
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0.999954	-0.00955437
+				0	0.0112925	0.999936
+				0	0	4.97311
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 43.2129 -54.5038}
+		{Extent 6.49935 7.46803}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center -48.1884 -52.7613}
+		{Extent 6.49935 7.46803}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -46.8734 54.5712}
+		{Extent 6.49935 7.46803}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center 44.5823 52.6465}
+		{Extent 6.49935 7.46803}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999938	0.00955376
+		0	-0.0112919	0.999956
+		43.5034	54.5566	-4.45217
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999938	0.00955376
+		0	-0.0112919	0.999956
+		-47.8978	52.8142	-4.46881
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999938	0.00955376
+		0	-0.0112919	0.999956
+		-46.5829	-54.5172	-4.9986
+	}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999938	0.00955376
+		0	-0.0112919	0.999956
+		44.8728	-52.5927	-4.98021
+	}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999938	0.00955454
+		0	-0.0112927	0.999956
+		-4.14466	-1.91402	100.749
+	}
+}

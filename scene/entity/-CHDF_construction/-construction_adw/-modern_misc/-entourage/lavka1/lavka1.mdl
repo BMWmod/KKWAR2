@@ -1,0 +1,58 @@
+;Exported by: Vorabat
+;Date:        Thu Nov 19 12:16:42 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\sughqh.max
+{Skeleton
+	{bone "mesh11086shape"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "mesh11086shape.ply"}
+	}
+}
+{Volume "box13"
+	{Box 42.4397 7.83176 0.740842}
+	{Bone "mesh11086shape"}
+	{Position 0.014389	0.0447769	8.28163}
+}
+{Volume "box14"
+	{Box 0.673527 1.19738 8.232}
+	{Bone "mesh11086shape"}
+	{Matrix34
+		1	0	0
+		0	0.973086	0.230445
+		0	-0.230445	0.973086
+		-15.544	3.34936	4.00522
+	}
+}
+{Volume "box15"
+	{Box 0.673527 1.19738 8.232}
+	{Bone "mesh11086shape"}
+	{Matrix34
+		1	0	0
+		0	-0.973086	0.230445
+		0	0.230445	0.973086
+		-15.544	-3.16229	4.00522
+	}
+}
+{Volume "box16"
+	{Box 0.673527 1.19738 8.232}
+	{Bone "mesh11086shape"}
+	{Matrix34
+		1	0	0
+		0	-0.973086	0.230445
+		0	0.230445	0.973086
+		15.0918	-3.16229	4.00522
+	}
+}
+{Volume "box17"
+	{Box 0.673527 1.19738 8.232}
+	{Bone "mesh11086shape"}
+	{Matrix34
+		1	0	0
+		0	0.973086	0.230445
+		0	-0.230445	0.973086
+		15.0918	3.34936	4.00522
+	}
+}

@@ -1,0 +1,117 @@
+;Exported by: Notebook
+;Date:        Mon Apr 30 12:11:47 2018
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Military\AirBase\Caponier1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "caponier"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				0.11811	0	0
+			}
+			{VolumeView "caponier.ply"}
+		}
+	}
+}
+{Obstacle "left"
+	{Obb2
+		{Center -189.617 0}
+		{Extent 9.84252 226.378}
+		{Axis -1 -0}
+	}
+	{Rotate}
+}
+{Obstacle "right"
+	{Obb2
+		{Center 189.871 0}
+		{Extent 9.84252 226.378}
+		{Axis -1 0}
+	}
+	{Rotate}
+}
+{Volume "caponier_vol1"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.988774	0.149419	0
+		0	0	-1
+		-0.149419	0.988774	0
+		182.911	38.9281	0
+	}
+}
+{Volume "caponier_vol2"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.829373	0.558695	0
+		0	0	-1
+		-0.558695	0.829373	0
+		156.382	103.692	0
+	}
+}
+{Volume "caponier_vol3"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.552362	0.833604	0
+		0	0	-1
+		-0.833604	0.552362	0
+		104.838	153.789	0
+	}
+}
+{Volume "caponier_vol4"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.231168	0.972914	0
+		0	0	-1
+		-0.972914	0.231168	0
+		35.8373	183.558	0
+	}
+}
+{Volume "caponier_vol5"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.198288	-0.980144	0
+		0	0	-1
+		0.980144	0.198288	0
+		-34.9558	184.722	0
+	}
+}
+{Volume "caponier_vol6"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.594703	-0.803946	0
+		0	0	-1
+		0.803946	0.594703	0
+		-101.323	155.677	0
+	}
+}
+{Volume "caponier_vol7"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.810131	-0.586249	0
+		0	0	-1
+		0.586249	0.810131	0
+		-152.801	103.207	0
+	}
+}
+{Volume "caponier_vol8"
+	{Box 19.685 472.441 78.7402}
+	{Bone "caponier"}
+	{Matrix34
+		0.976382	-0.216052	0
+		0	0	-1
+		0.216052	0.976382	0
+		-182.477	38.4402	0
+	}
+}

@@ -1,0 +1,59 @@
+;Exported by: Adam
+;Date:        Tue Aug 14 22:49:43 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\Stop_barrier.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.5} {resume}}
+	}
+	{bone "barrier02"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "barrier02.ply"}
+		{bone "bar"
+			{Matrix34
+				0	1	0
+				0	0	1
+				1	0	0
+				-45.1015	0.145883	19.7894
+			}
+			{VolumeView "bar.ply"}
+		}
+	}
+}
+{Obstacle "close"
+	{Obb2
+		{Center 26.7006 -0.434074}
+		{Extent 73.5322 4.34074}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Rotate}
+}
+{Volume "barrier"
+	{Cylinder 0.967337 163.293}
+	{Bone "bar"}
+	{Position -0.145876	-0.838587	63.9654}
+}
+{Volume "body2"
+	{Box 2.17037 21.6603 6.50937}
+	{Bone "barrier02"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-45.0743	0.0368981	10.799
+	}
+}
+{Volume "body3"
+	{Box 2.17037 21.6603 6.50937}
+	{Bone "barrier02"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		96.9246	0.0368981	10.799
+	}
+}

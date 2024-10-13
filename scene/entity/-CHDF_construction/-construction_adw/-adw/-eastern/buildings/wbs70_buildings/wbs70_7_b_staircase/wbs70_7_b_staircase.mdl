@@ -1,0 +1,68 @@
+;Exported by: Sea-Knight
+;Date:        Thu Jun  2 08:36:45 2022
+;File:        C:\Users\Sea-Knight\Documents\3ds Max 2020\scenes\3D-Work\-ADW\By-Chris-T\Decorations\wbs70_buildings\wbs70_7_b_staircase.max
+{Skeleton
+	{bone "building"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{LODView
+			{VolumeView "building.ply"}
+			{VolumeView "building_lod1.ply"}
+		}
+		{bone "land"
+			{parameters "Land;Ground;"}
+			{VolumeView "land.ply" {Ground}}
+		}
+	}
+}
+{Obstacle "body02"
+	{Obb2
+		{Center 0.709358 41.9379}
+		{Extent 57.1826 143.225}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body03"
+	{Obb2
+		{Center -0.513008 -118.869}
+		{Extent 2.83565 16.7226}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body02"
+	{Polyhedron "body02.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.709366	-41.9379	137.252
+	}
+}
+{Volume "body03"
+	{Polyhedron "body03.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-0.513	118.869	30.6717
+	}
+}
+{Volume "bodyr00"
+	{Polyhedron "bodyr00.vol"}
+	{Bone "building"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.0575104	124.36	63.9081
+	}
+}

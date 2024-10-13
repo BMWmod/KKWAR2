@@ -1,0 +1,91 @@
+;Exported by: MOCKVu4
+;Date:        Fri Dec  1 14:57:03 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f\hrushevka_5f_var6.max
+{Skeleton
+	{bone "attach3"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece03"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-23.4171	-38.3878	17.7705
+			}
+			{VolumeView "piece03.ply"}
+		}
+		{bone "piece02"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-21.6937	5.41115	17.7705
+			}
+			{VolumeView "piece02.ply"}
+		}
+		{bone "piece01"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				4.09061	28.4373	17.7705
+			}
+			{VolumeView "piece01.ply"}
+		}
+	}
+}
+{Obstacle "piece01"
+	{Obb2
+		{Center 3.83908 -30.7494}
+		{Extent 25.8467 1.65989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece02"
+	{Obb2
+		{Center -23.9903 -6.92717}
+		{Extent 1.96852 23.5823}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece03"
+	{Obb2
+		{Center -23.9898 38.6171}
+		{Extent 1.96852 20.6693}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "piece01"
+	{Box 51.6934 40.7856 3.31976}
+	{Bone "piece01"}
+	{Position -0.251511	-0.401062	-2.31212}
+}
+{Volume "piece02"
+	{Box 47.1646 41.3386 3.93701}
+	{Bone "piece02"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-2.2966	-0.0564651	-1.51602
+	}
+}
+{Volume "piece03"
+	{Box 41.3386 41.3386 3.93701}
+	{Bone "piece03"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-0.572691	-0.242566	0.229221
+	}
+}

@@ -1,0 +1,11 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "cornered" "concrete" "parts" "bridge" "no_destroyed_stamp" "construction"}	
+	("armor_heavy" args 1.0)
+	{obstacleid "building"}
+
+	{Extension "border3_market.mdl"}
+	{Extender "land_patch"
+		{TerrainType "road" "bridge"}
+	}
+}

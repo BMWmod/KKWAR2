@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "cofe"}
+	{bump "cofe_bp"}
+	{specular "cofe_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

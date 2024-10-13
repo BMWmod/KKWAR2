@@ -1,0 +1,114 @@
+;Exported by: User
+;Date:        Sun Apr 19 19:21:16 2015
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				0.858165	0.513229	0.0122021
+				-0.361241	0.932458	-0.00513629
+				-0.0287843	0	0.999586
+			}
+			{VolumeView "body.ply"}
+			{bone "land"
+                        {parameters "Land;Ground;"}
+                        {VolumeView "land.ply" {Ground} {DecalTarget}}
+			}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 28.0431 -3.00601}
+		{Extent 33.0219 33.4715}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 8.65402 -4.06917}
+		{Extent 21.9518 41.1194}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder01"
+	{Obb2
+		{Center 39.0346 -19.6539}
+		{Extent 12.2801 11.7961}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder02"
+	{Obb2
+		{Center 39.0346 10.0881}
+		{Extent 12.2801 11.7961}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "cylinder03"
+	{Obb2
+		{Center 19.903 -3.67148}
+		{Extent 12.2801 11.7961}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Orientation
+		0.945692	-0.520513	-0.0142189
+		0.366517	0.870701	0
+		0.0272324	-0.0149888	1.00001
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Orientation
+		0.945692	-0.520513	-0.0142189
+		0.366517	0.870701	0
+		0.0272324	-0.0149888	1.00001
+	}
+}
+{Volume "cylinder01"
+	{Polyhedron "cylinder01.vol"}
+	{Bone "body"}
+	{Orientation
+		0.945692	-0.520513	-0.0142189
+		0.366517	0.870701	0
+		0.0272324	-0.0149888	1.00001
+	}
+}
+{Volume "cylinder02"
+	{Polyhedron "cylinder02.vol"}
+	{Bone "body"}
+	{Orientation
+		0.945692	-0.520513	-0.0142189
+		0.366517	0.870701	0
+		0.0272324	-0.0149888	1.00001
+	}
+}
+{Volume "cylinder03"
+	{Polyhedron "cylinder03.vol"}
+	{Bone "body"}
+	{Orientation
+		0.945692	-0.520513	-0.0142189
+		0.366517	0.870701	0
+		0.0272324	-0.0149888	1.00001
+	}
+}

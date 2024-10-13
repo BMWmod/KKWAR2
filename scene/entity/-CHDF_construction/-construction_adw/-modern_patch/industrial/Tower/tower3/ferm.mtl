@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/construction/Industrial/tower/tower"}
+	{bump "$/construction/Industrial/tower/tower_bp"}
+	{specular "$/construction/Industrial/tower/tower_sp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

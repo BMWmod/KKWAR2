@@ -1,0 +1,52 @@
+;Exported by: Notebook
+;Date:        Sat Oct 19 23:21:22 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\PowerLine\x\PowerLine5_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece1"
+			{Position -39.3701	0	189.65}
+			{VolumeView "piece1.ply"}
+		}
+		{bone "piece2"
+			{Position 0	59.0551	176.181}
+			{VolumeView "piece2.ply"}
+		}
+		{bone "piece3"
+			{Position 0	-78.7402	236.22}
+			{VolumeView "piece3.ply"}
+		}
+		{bone "piece4"
+			{Position 0	59.0551	295.276}
+			{VolumeView "piece4.ply"}
+		}
+		{bone "stolb"
+			{Position -0.0058136	0	0}
+			{VolumeView "stolb.ply"}
+		}
+	}
+}
+{Volume "piece1"
+	{Polyhedron "piece1.vol"}
+	{Bone "piece1"}
+	{Position 0	0	-150.28}
+}
+{Volume "piece2"
+	{Polyhedron "piece2.vol"}
+	{Bone "piece1"}
+	{Position 0	0	107.594}
+}
+{Volume "piece3"
+	{Polyhedron "piece3.vol"}
+	{Bone "piece1"}
+	{Position 0	0	24.7064}
+}
+{Volume "stolb"
+	{Polyhedron "stolb.vol"}
+	{Bone "stolb"}
+	{Position 0.0058136	0	0}
+}

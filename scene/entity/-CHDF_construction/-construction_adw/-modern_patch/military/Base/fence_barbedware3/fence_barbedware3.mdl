@@ -1,0 +1,56 @@
+;Exported by: Notebook
+;Date:        Sun Feb 24 20:06:29 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Fence\fence_barbedware3.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "column2"
+			{VolumeView "column2.ply"}
+		}
+		{bone "column1"
+			{Position 0	59.0551	0}
+			{VolumeView "column1.ply"}
+		}
+		{bone "barbedware"
+			{Position 0	29.5276	19.685}
+			{VolumeView "barbedware.ply"}
+		}
+		{bone "barbedware01"
+			{Position 0	-29.5276	19.685}
+			{VolumeView "barbedware01.ply"}
+		}
+		{bone "column3"
+			{Position 0	-59.0551	0}
+			{VolumeView "column3.ply"}
+		}
+	}
+}
+{Volume "barbedware"
+	{Box 0.19685 55.1181 35.4331}
+	{Bone "barbedware"}
+	{Position 0	0	-1.9685}
+}
+{Volume "barbedware_vol01"
+	{Box 0.19685 55.1181 35.4331}
+	{Bone "barbedware01"}
+	{Position 0	0	-1.9685}
+}
+{Volume "column1"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column1"}
+	{Position 0	0	19.685}
+}
+{Volume "column2"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column2"}
+	{Position 0	0	19.685}
+}
+{Volume "column3"
+	{Box 3.54331 3.54331 39.3701}
+	{Bone "column3"}
+	{Position 0	0	19.685}
+}

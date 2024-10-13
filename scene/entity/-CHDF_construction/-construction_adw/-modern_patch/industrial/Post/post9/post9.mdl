@@ -1,0 +1,71 @@
+;Exported by: Notebook
+;Date:        Fri Oct 25 15:26:43 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\post9.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+			{bone "post"
+				{Position 0	4.68504	19.685}
+				{VolumeView "post.ply"}
+				{bone "isolator1"
+					{Position 4.92126	0	151.575}
+					{VolumeView "isolator1.ply"}
+				}
+				{bone "isolator2"
+					{Position 4.92126	0	143.701}
+					{VolumeView "isolator2.ply"}
+				}
+				{bone "isolator3"
+					{Matrix34
+						-1	0	0
+						0	-1	0
+						0	0	1
+						-4.92126	0	133.858
+					}
+					{VolumeView "isolator3.ply"}
+				}
+				{bone "isolator4"
+					{Matrix34
+						-1	0	0
+						0	-1	0
+						0	0	1
+						-4.92126	0	125.984
+					}
+					{VolumeView "isolator4.ply"}
+				}
+				{bone "isolator5"
+					{Position 4.92126	0	116.142}
+					{VolumeView "isolator5.ply"}
+				}
+				{bone "isolator6"
+					{Position 4.92126	0	108.268}
+					{VolumeView "isolator6.ply"}
+				}
+			}
+			{bone "loop1"
+				{Position 0	-0.0155573	51.1811}
+				{VolumeView "loop1.ply"}
+			}
+			{bone "loop2"
+				{Position 0	-0.0155573	27.5591}
+				{VolumeView "loop2.ply"}
+			}
+		}
+	}
+}
+{Volume "base"
+	{Box 5.11811 5.11811 68.8976}
+	{Bone "base"}
+	{Position 0	0	24.6063}
+}
+{Volume "post"
+	{Cylinder 2.95276 157.48}
+	{Bone "post"}
+	{Position 0	0	78.7402}
+}

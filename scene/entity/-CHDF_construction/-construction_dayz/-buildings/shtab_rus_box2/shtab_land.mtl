@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "shtab_land"}
+	{blend none}
+}

@@ -1,0 +1,715 @@
+;Exported by: User
+;Date:        Tue Mar 17 20:12:37 2015
+;File:        C:\Users\User\Desktop\пробы моделей\механика\stroyika.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Orientation
+				0.00830961	-0.999965	0
+				0.999893	0.00749632	-0.0125319
+				0.0125315	9.87605e-005	0.999922
+			}
+			{VolumeView "body.ply"}
+		                {bone "exterior"
+				{Position 0	0	0}
+				{VolumeView "exterior.ply"}
+			}
+			{bone "land"
+                        {parameters "Land;Ground;"}
+                        {VolumeView "land.ply" {Ground} {DecalTarget}}
+			}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center -1.34745 -21.5009}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center -1.34722 -140.673}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center -1.34727 97.5627}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center -1.34733 269.821}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box05"
+	{Obb2
+		{Center -61.6564 269.821}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box06"
+	{Obb2
+		{Center 58.4245 269.528}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box07"
+	{Obb2
+		{Center -1.34758 -259.389}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box08"
+	{Obb2
+		{Center 58.3609 -259.389}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box09"
+	{Obb2
+		{Center -61.3703 -259.388}
+		{Extent 1.84722 4.36861}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box10"
+	{Obb2
+		{Center 90.7322 -263.448}
+		{Extent 41.325 1.23837}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box11"
+	{Obb2
+		{Center 8.27052 -263.318}
+		{Extent 41.325 1.36818}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box12"
+	{Obb2
+		{Center -84.7364 -263.08}
+		{Extent 52.0203 1.6062}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box13"
+	{Obb2
+		{Center -134.732 -229.839}
+		{Extent 1.59425 32.0158}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box14"
+	{Obb2
+		{Center -134.731 -166.279}
+		{Extent 1.59425 32.0158}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box15"
+	{Obb2
+		{Center -134.731 -102.529}
+		{Extent 1.59425 32.0158}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box16"
+	{Obb2
+		{Center -134.731 -47.4674}
+		{Extent 1.59425 24.2402}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box17"
+	{Obb2
+		{Center -134.731 72.3847}
+		{Extent 1.59425 37.3769}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box18"
+	{Obb2
+		{Center -134.731 133.092}
+		{Extent 1.59425 24.2402}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box19"
+	{Obb2
+		{Center -134.731 181.317}
+		{Extent 1.59425 24.2402}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box20"
+	{Obb2
+		{Center -134.731 239.877}
+		{Extent 1.59425 34.2906}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box21"
+	{Obb2
+		{Center 91.5705 273.241}
+		{Extent 41.325 1.25259}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box22"
+	{Obb2
+		{Center 9.10873 273.357}
+		{Extent 41.325 1.36816}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box23"
+	{Obb2
+		{Center -83.8982 273.595}
+		{Extent 52.0203 1.6062}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box24"
+	{Obb2
+		{Center 131.575 239.876}
+		{Extent 1.95865 34.2906}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box25"
+	{Obb2
+		{Center 131.565 181.317}
+		{Extent 1.96823 24.2402}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box26"
+	{Obb2
+		{Center 131.546 133.092}
+		{Extent 1.98706 24.2402}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box27"
+	{Obb2
+		{Center 131.5 71.8352}
+		{Extent 2.03251 37.926}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box28"
+	{Obb2
+		{Center 131.938 -48.5256}
+		{Extent 1.59425 23.1824}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box29"
+	{Obb2
+		{Center 131.938 -102.529}
+		{Extent 1.59425 32.0158}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box30"
+	{Obb2
+		{Center 131.938 -166.28}
+		{Extent 1.59425 32.0158}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box31"
+	{Obb2
+		{Center 131.938 -231.002}
+		{Extent 1.59425 33.1787}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Area "interior"
+	{Obb2
+		{Center -2.53134 5.48996}
+		{Extent 140.092 271.574}
+		{Axis 1 0}
+	}
+	{Rotate}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-17.6097	-5.09139	0.504001
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-136.778	-4.10097	0.515793
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		101.451	-6.08052	0.492219
+	}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		273.704	-7.51188	0.475176
+	}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		273.252	-67.8142	-0.280579
+	}
+}
+{Volume "box06"
+	{Polyhedron "box06.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		273.859	52.2556	1.22424
+	}
+}
+{Volume "box07"
+	{Polyhedron "box07.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-255.491	-3.11491	0.527535
+	}
+}
+{Volume "box08"
+	{Polyhedron "box08.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-255.043	56.5868	1.27578
+	}
+}
+{Volume "box09"
+	{Polyhedron "box09.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-255.941	-63.1309	-0.22463
+	}
+}
+{Volume "box10"
+	{Polyhedron "box10.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-263.741	92.9192	1.16317
+	}
+}
+{Volume "box11"
+	{Polyhedron "box11.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-264.359	10.4667	0.129816
+	}
+}
+{Volume "box12"
+	{Polyhedron "box12.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-264.976	-71.8357	-0.901687
+	}
+}
+{Volume "box13"
+	{Polyhedron "box13.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-230.85	-133.805	-1.67814
+	}
+}
+{Volume "box14"
+	{Polyhedron "box14.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-167.292	-134.332	-1.68443
+	}
+}
+{Volume "box15"
+	{Polyhedron "box15.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-103.544	-134.862	-1.69074
+	}
+}
+{Volume "box16"
+	{Polyhedron "box16.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-40.7082	-135.384	-1.69695
+	}
+}
+{Volume "box17"
+	{Polyhedron "box17.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		92.2769	-136.489	-1.71011
+	}
+}
+{Volume "box18"
+	{Polyhedron "box18.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		139.846	-136.884	-1.71481
+	}
+}
+{Volume "box19"
+	{Polyhedron "box19.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		188.07	-137.284	-1.71959
+	}
+}
+{Volume "box20"
+	{Polyhedron "box20.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		236.578	-137.688	-1.72439
+	}
+}
+{Volume "box21"
+	{Polyhedron "box21.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		272.925	89.298	1.12057
+	}
+}
+{Volume "box22"
+	{Polyhedron "box22.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		272.307	6.8456	0.0872091
+	}
+}
+{Volume "box23"
+	{Polyhedron "box23.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		271.69	-75.4568	-0.944285
+	}
+}
+{Volume "box24"
+	{Polyhedron "box24.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		238.577	128.952	1.61737
+	}
+}
+{Volume "box25"
+	{Polyhedron "box25.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		190.069	129.355	1.62217
+	}
+}
+{Volume "box26"
+	{Polyhedron "box26.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		141.845	129.755	1.62694
+	}
+}
+{Volume "box27"
+	{Polyhedron "box27.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		94.2757	130.15	1.63164
+	}
+}
+{Volume "box28"
+	{Polyhedron "box28.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-38.7094	131.255	1.6448
+	}
+}
+{Volume "box29"
+	{Polyhedron "box29.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-101.544	131.777	1.65101
+	}
+}
+{Volume "box30"
+	{Polyhedron "box30.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-165.294	132.307	1.65732
+	}
+}
+{Volume "box31"
+	{Polyhedron "box31.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-228.851	132.835	1.66362
+	}
+}
+{Volume "box32"
+	{Polyhedron "box32.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		193.499	126.02	119.398
+	}
+}
+{Volume "box33"
+	{Polyhedron "box33.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-48.8692	128.033	119.422
+	}
+}
+{Volume "box34"
+	{Polyhedron "box34.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-113.822	132.012	162.708
+	}
+}
+{Volume "box35"
+	{Polyhedron "box35.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-202.298	132.747	162.717
+	}
+}
+{Volume "box36"
+	{Polyhedron "box36.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		53.6358	-140.995	116.051
+	}
+}
+{Volume "box37"
+	{Polyhedron "box37.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-61.9386	-140.556	116.055
+	}
+}
+{Volume "box38"
+	{Polyhedron "box38.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		-181.964	-139.559	116.067
+	}
+}
+{Volume "box39"
+	{Polyhedron "box39.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.00749707	0.999887	0.0125314
+		-0.999972	0.00830913	9.89131e-005
+		0	-0.0125318	0.999921
+		275.812	4.51693	140.109
+	}
+}
+{Volume "box41"
+	{Polyhedron "box41.vol"}
+	{Bone "body"}
+	{Matrix34
+		-0.00159502	-0.982359	-0.186991
+		0.999999	-0.00243157	-2.52873e-005
+		-0.000277851	-0.186991	0.982362
+		-57.6795	-105.923	225.746
+	}
+}

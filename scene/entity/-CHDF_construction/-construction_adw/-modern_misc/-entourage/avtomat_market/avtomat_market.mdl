@@ -1,0 +1,57 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:51 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "avtomat"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "avtomat.ply"}
+		{bone "window1"
+			{parameters "ID=window1;"}
+			{Matrix34
+				0	0	-1
+				0	1	0
+				1	0	0
+				4.38727	0.254705	12.1898
+			}
+			{VolumeView "window1.ply"}
+		}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center -0.302804 -0}
+		{Extent 5.33309 9.35279}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "window1"
+	{Obb2
+		{Center 4.99912 1.54408}
+		{Extent 1.05043 6.46854}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Box 10.6662 18.7056 26.2904}
+	{Bone "avtomat"}
+	{Position -0.302804	0	13.1452}
+}
+{Volume "window1"
+	{Box 2.10086 12.9371 17.7499}
+	{Bone "window1"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-4.18635	-1.79879	0.61185
+	}
+}

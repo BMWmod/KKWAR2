@@ -1,0 +1,20 @@
+;Exported by: Notebook
+;Date:        Thu Apr 02 16:44:51 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Gate\Gate.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "fence2"
+			{VolumeView "fence2.ply"}
+		}
+	}
+}
+{Volume "fence2"
+	{Box 3.93701 118.11 49.2126}
+	{Bone "fence2"}
+	{Position 0	0	24.6063}
+}

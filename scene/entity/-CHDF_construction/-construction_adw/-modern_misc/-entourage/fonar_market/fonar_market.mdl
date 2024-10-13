@@ -1,0 +1,43 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:27 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "fonar"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "fonar.ply"}
+		{bone "fonar2"
+			{Position -0.0926495	-0.00665283	66.9094}
+		}
+	}
+}
+{Obstacle "body2"
+	{Circle2 {Radius 3.16604}
+		{Center 0 3.05176e-005}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 0 3.05772e-005}
+		{Extent 1.26743 1.24817}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body2"
+	{Sphere 3.16604}
+	{Bone "fonar2"}
+	{Position 0.0926495	0.00662231	0}
+}
+{Volume "body"
+	{Cylinder 1.26743 64.8108}
+	{Bone "fonar"}
+	{Position 0	-3.05176e-005	32.4054}
+}

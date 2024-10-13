@@ -1,0 +1,163 @@
+;Exported by: Администратор
+;Date:        Tue Jun 12 20:24:55 2012
+;File:        C:\Documents and Settings\Администратор\Мои документы\3dsmax\scenes\БМП-2краш строение.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=Body;"}
+			{Position 3.01517	0.615471	23.1447}
+			{VolumeView "body.ply"}
+			{bone "fire"
+				{parameters "ID=Fire;"}
+				{Matrix34
+					1	0	0
+					0	0	1
+					0	-1	0
+					12.2092	2.01647	8.17113
+				}
+				{VolumeView "fire.ply"}
+				{bone "fx_light"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-1.00937	1.36568	-0.700134
+					}
+				}
+				{bone "fx_light2"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						2.29367	1.36568	9.05938
+					}
+				}
+				{bone "fx_light3"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-29.5468	-3.66148	25.4846
+					}
+				}
+				{bone "fx_light4"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-10.589	-4.63676	29.4023
+					}
+				}
+				{bone "fx_light5"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-66.4	-3.8187	23.5445
+					}
+				}
+				{bone "fx_light6"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-28.7858	6.11165	13.9558
+					}
+				}
+				{bone "fx_light7"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-11.3093	4.21186	12.3151
+					}
+				}
+			}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-37.6546	-0.100484	5.18092
+	}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		29.4405	-0.0418701	4.84537
+	}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-8.56758	-0.201673	-5.87211
+	}
+}
+{Volume "body4"
+	{Polyhedron "body4.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		57.9143	0.000230372	-6.13041
+	}
+}
+{Volume "body5"
+	{Polyhedron "body5.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.340803	-0.939587	-0.0320712
+		-0.939768	-0.339519	-0.0395293
+		0.0262525	0.0436112	-0.998704
+		-12.3258	0.199367	12.2612
+	}
+}
+{Volume "body6"
+	{Polyhedron "body6.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-6.47479	-25.7154	-13.9838
+	}
+}
+{Volume "body7"
+	{Polyhedron "body7.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-6.47479	25.5	-13.9838
+	}
+}
+{Volume "body8"
+	{Polyhedron "body8.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-72.6648	-25.5529	-2.78248
+	}
+}

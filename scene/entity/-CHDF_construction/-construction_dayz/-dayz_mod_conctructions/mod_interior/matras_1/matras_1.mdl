@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Sun Aug 30 15:04:38 2009
+;File:        (null)
+{Skeleton
+	{bone "matras"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "matras.ply"}
+	}
+}
+{Volume "box02"
+	{Box 37.3287 18.219 3.15796}
+	{Bone "matras"}
+	{Position -0.0424909	-0.0300164	1.57898}
+}

@@ -1,0 +1,13 @@
+;Exported by: Vorabat
+;Date:        Fri Feb 18 21:32:45 2011
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\musor3 stolb el1.max
+{Skeleton
+	{bone "body1"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body1.ply"}
+	}
+}

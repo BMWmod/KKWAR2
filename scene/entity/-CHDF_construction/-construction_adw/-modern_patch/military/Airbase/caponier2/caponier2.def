@@ -1,0 +1,45 @@
+{game_entity
+	{Extension "caponier2.mdl"}
+	{Volume "caponier_vol1"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol2"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol3"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol4"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol5"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol6"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol7"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Volume "caponier_vol8"
+		{Tags  "caponier"}
+		{Thickness 50}
+		{able {visible 1}}	
+	}
+	{Extender "land_patch"
+	}
+}

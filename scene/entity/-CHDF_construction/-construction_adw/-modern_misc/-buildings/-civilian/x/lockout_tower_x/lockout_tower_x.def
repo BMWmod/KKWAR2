@@ -1,0 +1,57 @@
+{game_entity
+	{Extension "lockout_tower_x.mdl"}
+	{Volume "body10"
+	}
+	{Volume "body11"
+	}
+	{Volume "body15"
+	}
+	{Volume "body16"
+	}
+	{Volume "body17"
+	}
+	{Volume "body18"
+	}
+	{Volume "body19"
+	}
+	{Volume "body1"
+	}
+	{Volume "body22"
+	}
+	{Volume "body23"
+	}
+	{Volume "body2"
+	}
+	{Volume "body3"
+	}
+	{Volume "body6"
+	}
+	{Volume "body8"
+	}
+	{Volume "body9"
+	}
+	{Volume "body"
+	}
+	{Volume "piece10"
+	}
+	{Volume "piece11"
+	}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "piece4"
+	}
+	{Volume "piece5"
+	}
+	{Volume "piece6"
+	}
+	{Volume "piece7"
+	}
+	{Volume "piece8"
+	}
+	{Volume "piece9"
+	}
+}

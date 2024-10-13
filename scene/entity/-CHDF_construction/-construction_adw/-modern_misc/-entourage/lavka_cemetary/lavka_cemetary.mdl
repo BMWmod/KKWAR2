@@ -1,0 +1,28 @@
+;Exported by: Vorabat
+;Date:        Sun Feb 28 00:42:01 2010
+;File:        
+{Skeleton
+	{bone "lavka_cemetary"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "lavka_cemetary.ply"}
+	}
+}
+{Volume "box06"
+	{Box 2.77928 3.09392 10.0684}
+	{Bone "lavka_cemetary"}
+	{Position -0.0860062	-12.9833	5.03418}
+}
+{Volume "box07"
+	{Box 3.11474 3.48554 9.27005}
+	{Bone "lavka_cemetary"}
+	{Position -0.127457	12.3144	4.63503}
+}
+{Volume "box08"
+	{Box 7.41604 35.597 2.07649}
+	{Bone "lavka_cemetary"}
+	{Position 0.05793	-0.0704269	9.47135}
+}

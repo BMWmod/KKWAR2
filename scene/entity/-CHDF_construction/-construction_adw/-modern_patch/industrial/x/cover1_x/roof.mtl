@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "roof"}
+	{bump "roof_bp"}
+	{blend none}
+}

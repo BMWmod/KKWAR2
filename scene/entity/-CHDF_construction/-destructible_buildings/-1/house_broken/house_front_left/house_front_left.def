@@ -1,0 +1,34 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "cornered" "concrete" "parts" "construction" "windowed" "wall" "no_destroyed_stamp"}
+	("armor_heavy" args 1.5)
+	{Extension "house_front_left.mdl"}
+	{Volume "box78"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "box83"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "hole1"
+		{Tags  "attach" "1"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole2"
+		{Tags  "attach" "2"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "hole3"
+		{Tags  "body"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "window1"
+	}
+	{Volume "window2"
+	}
+	{Volume "window3"
+	}
+}

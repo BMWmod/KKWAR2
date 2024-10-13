@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "bench"}
+	{bump "bench_bp"}
+	{specular "usa_soldier_new_sp"}
+	{color "229 229 229 25"}
+	{blend test}
+}

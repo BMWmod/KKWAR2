@@ -1,0 +1,111 @@
+{game_entity
+	(include "/properties/building.inc")
+	{props "cornered" "concrete" "parts" "construction" "no_destroyed_stamp"}
+	("armor_heavy" args 1.5)
+	{Extension "ddr_border_tower.mdl"}
+
+	{Volume "body00"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body01"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body02"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}{holed}}
+	}
+	{Volume "body04"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 1}}
+	}
+	{Volume "body_attach"
+		{Tags  "body" "fire" "attach"}
+		{Thickness 7}
+		{able {visible 0}{obstacle 0} {touch 1}}
+	}
+	{Volume "body_attach1"
+		{Tags  "body" "fire" "attach"}
+		{Thickness 7}
+		{able {visible 0}{obstacle 0} {touch 1}}
+	}
+	{Volume "body_attach2"
+		{Tags  "body" "fire" "attach"}
+		{Thickness 7}
+		{able {visible 0}{obstacle 0} {touch 1}}
+	}
+	{Volume "body_attach3"
+		{Tags  "body" "fire" "attach"}
+		{Thickness 7}
+		{able {visible 0}{obstacle 0} {touch 1}}
+	}
+	{Volume "body_r_00"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body_r_01"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "body_r_02"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "body_r_03"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "body_r_04"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	{Volume "body_r_05"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "body_r_06"
+		{Tags  "body"}
+		{Thickness 20}
+		{able {visible 0}{holed}{obstacle 0}}
+	}
+	
+	{placer
+		{place "1" {attach  snipe_cover} 		{linkbone "attach"}}
+		{place "2" {attach  snipe_cover} 		{linkbone "attach1"}}
+		{place "3" {attach  snipe_cover} 		{linkbone "attach2"}}
+		{place "4" {attach  snipe_cover} 		{linkbone "attach3"}}
+	}
+	{Boarder
+		{door "emit" {queue 0}}
+		{node "node_ladder_bottom"}
+		{node "node_ladder_top"}
+		{anm "ladder_bind"
+			{forward	{begin	"stand_climb_stairs"}}
+			{reverse	{end	"stand_climb_stairs" -1}}
+		}
+		{anm "ladder"
+			{forward	{speed 1} {loop "stand_upstairs"}}
+			{reverse	{speed 1} {loop "stand_upstairs" -1}}
+		}
+		{link "emit" "node_ladder_bottom" {anm "ladder_bind"} {forward putoff} {reverse puton}}
+		{link "node_ladder_bottom" "node_ladder_top" {anm "ladder"}}
+		{link "node_ladder_top" "1"}
+		{link "node_ladder_top" "2"}
+		{link "node_ladder_top" "3"}
+		{link "node_ladder_top" "4"}
+	}
+	
+	{Extender "land_patch"
+	}
+}

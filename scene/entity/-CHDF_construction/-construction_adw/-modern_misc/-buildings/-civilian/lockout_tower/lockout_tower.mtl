@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/civilian_construction/lockout_tower"}
+	{bump "$/civilian_construction/lockout_tower_bp"}
+	{color "229 229 229 25"}
+	{blend none}
+}

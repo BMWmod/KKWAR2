@@ -1,0 +1,11 @@
+{Skeleton
+	{bone "land1"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{parameters "Land;Ground;"}
+		{VolumeView "land1.ply" {Ground} {DecalTarget}}
+	}
+}

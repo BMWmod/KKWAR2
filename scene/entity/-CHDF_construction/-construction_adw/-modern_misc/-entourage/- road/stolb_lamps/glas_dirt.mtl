@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "glas_dirt"}
+	{blend none}
+}

@@ -1,0 +1,23 @@
+;Exported by: Adam
+;Date:        Mon Aug 13 02:15:53 2012
+;File:        E:\Users\Adam\Documents\3dsmax\scenes\supply_crate_2.max
+{Skeleton
+	{bone "crate"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "crate.ply"}
+	}
+}
+{Volume "body1"
+	{Box 17.6182 34.1928 25.4536}
+	{Bone "crate"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		-0.0920906	0.0371246	17.0043
+	}
+}

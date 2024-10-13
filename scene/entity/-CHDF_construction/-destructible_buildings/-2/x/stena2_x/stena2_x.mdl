@@ -1,0 +1,68 @@
+;Exported by: MOCKVu4
+;Date:        Fri Dec  1 14:57:02 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f\hrushevka_5f_var6.max
+{Skeleton
+	{bone "attach2"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece01"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-19.682	-23.973	17.4415
+			}
+			{VolumeView "piece01.ply"}
+		}
+		{bone "piece02"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				-21.3962	19.7122	17.5496
+			}
+			{VolumeView "piece02.ply"}
+		}
+	}
+}
+{Obstacle "piece01"
+	{Obb2
+		{Center -21.9669 24.3262}
+		{Extent 1.96852 23.5823}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "piece02"
+	{Obb2
+		{Center -21.9666 -20.0314}
+		{Extent 1.96852 20.6693}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "piece01"
+	{Box 47.1646 41.3386 3.93701}
+	{Bone "piece01"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-2.28488	0.272548	0.353149
+	}
+}
+{Volume "piece02"
+	{Box 41.3386 41.3386 3.93701}
+	{Bone "piece02"}
+	{Matrix34
+		0	0	1
+		0	1	0
+		-1	0	0
+		-0.570341	-0.0217478	-0.319166
+	}
+}

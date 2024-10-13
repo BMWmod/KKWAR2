@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "marsh_grass"}
+	{blend test}
+}

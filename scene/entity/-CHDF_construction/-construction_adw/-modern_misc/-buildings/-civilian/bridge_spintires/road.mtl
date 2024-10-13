@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "road1"}
+	{blend none}
+}

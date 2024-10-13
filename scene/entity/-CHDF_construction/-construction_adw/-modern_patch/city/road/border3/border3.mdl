@@ -1,0 +1,14 @@
+;Exported by: Notebook
+;Date:        Fri Jun 26 17:30:04 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Bridge\border1.max
+{Skeleton
+	{bone "border"
+		{parameters "Land;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "border.ply"}
+	}
+}

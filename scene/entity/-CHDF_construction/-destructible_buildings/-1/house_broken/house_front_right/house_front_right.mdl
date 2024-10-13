@@ -1,0 +1,111 @@
+;Exported by: Gans
+;Date:        Tue Sep 20 01:22:16 2022
+;File:        C:\Users\Gans\Desktop\dom\house_broken.max
+{Skeleton
+	{bone "point03"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "house_front_right"
+			{Position 51.6446	106.658	146.839}
+			{VolumeView "house_front_right.ply"}
+			{bone "window1"
+				{parameters "ID=window1;"}
+				{Position 51.2259	-81.2467	-50.6706}
+				{VolumeView "window1.ply"}
+			}
+			{bone "window2"
+				{parameters "ID=window2;"}
+				{Position 51.3927	-81.2467	-4.43243}
+				{VolumeView "window2.ply"}
+			}
+			{bone "window3"
+				{parameters "ID=window3;"}
+				{Position 51.1299	-29.0819	-4.41107}
+				{VolumeView "window3.ply"}
+			}
+			{bone "window4"
+				{parameters "ID=window4;"}
+				{Position 51.9041	72.8789	-8.83844}
+				{VolumeView "window4.ply"}
+			}
+			{bone "window5"
+				{parameters "ID=window5;"}
+				{Position 50.9632	-29.0819	-50.6492}
+				{VolumeView "window5.ply"}
+			}
+		}
+	}
+}
+{Volume "box79"
+	{Box 194.255 8.26132 107.747}
+	{Bone "house_front_right"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		51.6326	2.42058	-29.8376
+	}
+}
+{Volume "box84"
+	{Polyhedron "box84.vol"}
+	{Bone "house_front_right"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		10.7556	0.839005	23.665
+	}
+}
+{Volume "hole1"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_front_right"}
+	{Position 50.9604	-81.3938	-52.8422}
+}
+{Volume "hole2"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_front_right"}
+	{Position 50.9604	-29.3718	-52.8422}
+}
+{Volume "hole3"
+	{Box 12.6003 19.5812 22.6392}
+	{Bone "house_front_right"}
+	{Position 50.9604	-81.3436	-4.87726}
+}
+{Volume "hole4"
+	{Box 12.6003 33.7607 22.6392}
+	{Bone "house_front_right"}
+	{Position 50.9604	-29.3718	-4.87726}
+}
+{Volume "hole5"
+	{Box 12.6003 19.5812 40.0715}
+	{Bone "house_front_right"}
+	{Position 50.9604	72.7211	-10.3352}
+}
+{Volume "window1"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window1"}
+	{Position 0.584442	0.279882	-2.16969}
+}
+{Volume "window2"
+	{Box 13.8729 25.0834 26.2781}
+	{Bone "window2"}
+	{Position 0.417702	0.279882	-0.847822}
+}
+{Volume "window3"
+	{Box 13.8729 36.8874 26.2781}
+	{Bone "window3"}
+	{Position 0.680496	0.306068	-0.869184}
+}
+{Volume "window4"
+	{Box 13.8729 21.7636 39.4172}
+	{Bone "window4"}
+	{Position -0.0936813	-0.684097	-0.779217}
+}
+{Volume "window5"
+	{Box 13.8729 36.8874 26.2781}
+	{Bone "window5"}
+	{Position 0.847229	0.306068	-2.19108}
+}

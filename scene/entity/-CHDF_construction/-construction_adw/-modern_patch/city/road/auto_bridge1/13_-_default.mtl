@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "levee_big"}
+	{blend test}
+}

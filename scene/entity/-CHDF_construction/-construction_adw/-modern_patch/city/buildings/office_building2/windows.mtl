@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/construction/city/windows1"}
+	{bump "$/construction/city/windows1_bp"}
+	{blend test}
+}

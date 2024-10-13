@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "mtl_bochka_02"}
+	{blend none}
+}

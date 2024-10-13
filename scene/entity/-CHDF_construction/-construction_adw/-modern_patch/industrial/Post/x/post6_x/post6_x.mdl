@@ -1,0 +1,34 @@
+;Exported by: Notebook
+;Date:        Thu Oct 24 22:26:13 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\post6_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{Orientation
+				1	0	0
+				0	0.987146	0.159821
+				0	-0.159821	0.987146
+			}
+			{VolumeView "base.ply"}
+		}
+		{bone "piece1"
+			{Position 0	19.685	19.685}
+			{VolumeView "piece1.ply"}
+		}
+	}
+}
+{Volume "base"
+	{Box 5.11811 5.11811 68.8976}
+	{Bone "base"}
+	{Position 0	0	24.6063}
+}
+{Volume "piece1"
+	{Cylinder 2.75591 157.48}
+	{Bone "piece1"}
+	{Position 0	0	78.7402}
+}

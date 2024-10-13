@@ -1,0 +1,8 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp"}
+	{Extension "garbage_bak_rus.mdl"}
+	{Volume "box02"
+	}
+}

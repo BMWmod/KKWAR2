@@ -1,0 +1,100 @@
+;Exported by: Notebook
+;Date:        Sun May 31 21:48:45 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Railroad\Traffic_light\gabarit1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "column1"
+			{Position 98.4252	0	-9.84252}
+			{VolumeView "column1.ply"}
+		}
+		{bone "column2"
+			{Position -98.4252	0	-9.84252}
+			{VolumeView "column2.ply"}
+		}
+		{bone "ferm"
+			{Matrix34
+				0	-1	0
+				0	0	1
+				-1	0	0
+				0	0	141.732
+			}
+			{VolumeView "ferm.ply"}
+			{bone "plank1"
+				{Matrix34
+					0	0	-1
+					-1	0	0
+					0	1	0
+					0	-21.6535	-49.2126
+				}
+				{VolumeView "plank1.ply"}
+			}
+			{bone "sign"
+				{Matrix34
+					0	0	1
+					0	1	0
+					-1	0	0
+					-1.74336	6.38048	0
+				}
+				{VolumeView "sign.ply"}
+			}
+			{bone "plank2"
+				{Matrix34
+					0	0	-1
+					-1	0	0
+					0	1	0
+					0	-21.6535	49.2126
+				}
+				{VolumeView "plank2.ply"}
+			}
+		}
+	}
+}
+{Obstacle "column1"
+	{Obb2
+		{Center 98.4252 0}
+		{Extent 4.92126 4.92126}
+		{Axis -1 0}
+	}
+}
+{Obstacle "column2"
+	{Obb2
+		{Center -98.4252 0}
+		{Extent 4.92126 4.92126}
+		{Axis -1 0}
+	}
+}
+{Volume "column1"
+	{Cylinder 3.93701 167.323}
+	{Bone "column1"}
+	{Position 0	0	83.6614}
+}
+{Volume "column2"
+	{Cylinder 3.93701 167.323}
+	{Bone "column2"}
+	{Position 0	0	83.6614}
+}
+{Volume "ferm"
+	{Box 196.85 3.93701 17.7165}
+	{Bone "ferm"}
+	{Matrix34
+		0	0	-1
+		-1	0	0
+		0	1	0
+		0	6.88976	0
+	}
+}
+{Volume "plank1"
+	{Box 68.8976 3.93701 5.90551}
+	{Bone "plank1"}
+	{Position 0	0	1.9685}
+}
+{Volume "plank2"
+	{Box 68.8976 3.93701 5.90551}
+	{Bone "plank2"}
+	{Position 0	0	1.96851}
+}

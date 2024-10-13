@@ -1,0 +1,56 @@
+{game_entity
+	
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	("armor_light" args 0.7)
+	{Extension "pump_station.mdl"}
+	{props "cornered" "concrete" "parts" "construction" "wall"}	
+
+	
+
+	{Volume "roof"
+		{Tags  "roof"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "wall1"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall2"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall3"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall4"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall5"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall6"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall7"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "wall8"
+		{Tags  "wall"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+}

@@ -1,0 +1,16 @@
+;Exported by: zorro
+;Date:        Wed Feb 17 22:30:34 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\palatka1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "palatka_1_body"
+		}
+		{bone "roof_palatka_1"
+		}
+	}
+}

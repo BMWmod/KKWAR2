@@ -1,0 +1,31 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{Extension "fence_barbedware4.mdl"}
+	{props "small" "steel" "construction" "parts" "disable_area" "no_destroyed_stamp"}
+	{Volume "barbedware1"
+		{thickness 10}
+		{able {bullet 0} {visible 0}}
+		{able {obstacle 1}}
+	}
+	{Volume "barbedware2"
+		{thickness 10}
+		{able {bullet 0} {visible 0}}
+		{able {obstacle 1}}
+	}
+	{Volume "column1"
+		{Thickness 50}
+		{tags "column"}
+		{able {visible 0}{obstacle 1}}
+	}
+	{Volume "column2"
+		{Thickness 50}
+		{tags "column"}
+		{able {visible 0}{obstacle 1}}
+	}
+	{Volume "column3"
+		{Thickness 50}
+		{tags "column"}
+		{able {visible 0}{obstacle 1}}
+	}
+}

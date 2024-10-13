@@ -1,0 +1,94 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 16:30:30 2019
+;File:        G:\Tarkov\entourage\market\market.max
+{Skeleton
+	{bone "telega_market"
+		{parameters "CommonMesh;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "telega_market.ply"}
+	}
+}
+{Obstacle "body1"
+	{Obb2
+		{Center 4.81837 0}
+		{Extent 0.515009 9.17795}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body2"
+	{Obb2
+		{Center -4.6817 -0}
+		{Extent 0.515009 9.17795}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body3"
+	{Obb2
+		{Center 0 8.84166}
+		{Extent 5.04787 0.51501}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body4"
+	{Obb2
+		{Center 0 -8.70567}
+		{Extent 5.04787 0.51501}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 0 0}
+		{Extent 5.15009 9.17795}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body1"
+	{Box 1.03002 18.3559 10.2171}
+	{Bone "telega_market"}
+	{Position 4.81837	0	6.91067}
+}
+{Volume "body2"
+	{Box 1.03002 18.3559 10.2171}
+	{Bone "telega_market"}
+	{Position -4.6817	0	6.91067}
+}
+{Volume "body3"
+	{Box 1.03002 10.0957 10.2171}
+	{Bone "telega_market"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		0	-8.84166	6.91067
+	}
+}
+{Volume "body4"
+	{Box 1.03002 10.0957 10.2171}
+	{Bone "telega_market"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		0	8.70567	6.91067
+	}
+}
+{Volume "body"
+	{Box 10.3002 18.3559 1.17438}
+	{Bone "telega_market"}
+	{Position 0	0	2.38931}
+}

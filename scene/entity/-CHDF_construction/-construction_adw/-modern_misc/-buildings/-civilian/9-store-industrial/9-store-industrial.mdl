@@ -1,0 +1,194 @@
+;Exported by: Vorabat
+;Date:        Sun Nov 29 11:13:09 2009
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\Chaesbuildings.max
+{Skeleton
+	{bone "object07"
+		{Orientation
+			0.7	0	0
+			0	-0.7	0
+			0	0	0.7
+		}
+		{VolumeView "object07.ply"}
+	}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 36.6366 35.9865}
+		{Extent 387.089 420.749}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center 148.327 -419.954}
+		{Extent 270.045 37.485}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center -384.215 297.933}
+		{Extent 33.5381 157.953}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box05"
+	{Obb2
+		{Center -409.367 1.22914}
+		{Extent 8.11404 11.3597}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box06"
+	{Obb2
+		{Center -409.366 -147.269}
+		{Extent 8.11404 11.3597}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box07"
+	{Obb2
+		{Center -409.367 -295.181}
+		{Extent 8.11404 11.3596}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box08"
+	{Obb2
+		{Center -409.367 -442.57}
+		{Extent 8.11404 11.3596}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box09"
+	{Obb2
+		{Center -401.111 -442.57}
+		{Extent 8.11404 11.3596}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box10"
+	{Obb2
+		{Center -258.794 -446.946}
+		{Extent 11.3597 8.11404}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Box 336.6 367.199 237.456}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.93597
+		2.97571	-3.85605	424.128
+	}
+}
+{Volume "box02"
+	{Box 309.672 336.6 42.84}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		36.6366	-35.9865	53.5499
+	}
+}
+{Volume "box03"
+	{Box 216.036 29.9879 42.8399}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		148.327	419.954	53.55
+	}
+}
+{Volume "box04"
+	{Box 26.8304 126.363 41.5439}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-384.215	-297.933	51.9298
+	}
+}
+{Volume "box05"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-409.366	-1.22913	41.3816
+	}
+}
+{Volume "box06"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-409.366	147.269	41.3816
+	}
+}
+{Volume "box07"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-409.366	295.181	41.3816
+	}
+}
+{Volume "box08"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-409.366	442.57	41.3816
+	}
+}
+{Volume "box09"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		2.5	0	0
+		0	2.5	0
+		0	0	2.5
+		-401.11	442.57	41.3816
+	}
+}
+{Volume "box10"
+	{Box 6.49124 9.08773 33.1053}
+	{Bone "object07"}
+	{Matrix34
+		0	2.5	0
+		-2.5	0	0
+		0	0	2.5
+		-258.794	446.946	41.3816
+	}
+}

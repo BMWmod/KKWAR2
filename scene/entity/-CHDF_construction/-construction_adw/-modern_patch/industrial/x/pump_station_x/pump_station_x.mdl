@@ -1,0 +1,401 @@
+;Exported by: Notebook
+;Date:        Mon Mar 11 22:03:46 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\pump station_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "wall"
+			{Position 0	0	0}
+			{VolumeView "wall.ply"}
+			{bone "brick1"
+				{Matrix34
+					-0.917359	0.374935	0.133705
+					-0.398061	-0.864062	-0.308131
+					0	-0.335889	0.941902
+					-56.8683	10.4905	0
+				}
+				{VolumeView "brick1.ply"}
+			}
+			{bone "brick2"
+				{Matrix34
+					-0.950757	0.309938	0
+					-0.309938	-0.950757	0
+					0	0	1
+					-49.5251	43.9709	2.08824
+				}
+				{VolumeView "brick2.ply"}
+			}
+			{bone "brick3"
+				{Matrix34
+					0.171016	0.976154	0.133705
+					-0.929003	0.204961	-0.308131
+					-0.328187	-0.0715165	0.941902
+					46.5323	41.3691	0
+				}
+				{VolumeView "brick3.ply"}
+			}
+			{bone "brick4"
+				{Matrix34
+					0.0164187	-0.990885	0.133705
+					0.950994	-0.0258198	-0.308131
+					0.308775	0.132211	0.941902
+					51.8596	-80.6379	0.216218
+				}
+				{VolumeView "brick4.ply"}
+			}
+			{bone "brick5"
+				{Matrix34
+					-0.211987	0.977273	0
+					-0.977273	-0.211987	0
+					0	0	1
+					-93.7979	25.4299	2.08824
+				}
+				{VolumeView "brick5.ply"}
+			}
+			{bone "brick6"
+				{Matrix34
+					0.878407	-0.477914	0
+					0.477914	0.878407	0
+					0	0	1
+					-84.699	3.05054	2.01536
+				}
+				{VolumeView "brick6.ply"}
+			}
+			{bone "brick7"
+				{Matrix34
+					-0.961683	0.274165	0
+					-0.274165	-0.961683	0
+					0	0	1
+					32.9938	-34.7289	0
+				}
+				{VolumeView "brick7.ply"}
+			}
+			{bone "brick8"
+				{Matrix34
+					0.142379	0.989812	0
+					-0.989812	0.142379	0
+					0	0	1
+					-40.5413	-49.238	0
+				}
+				{VolumeView "brick8.ply"}
+			}
+			{bone "piece05"
+				{Matrix34
+					0.0899675	0.995945	0
+					-0.910293	0.0822302	-0.405715
+					-0.40407	0.0365012	0.913999
+					47.9839	-30.6438	0
+				}
+				{VolumeView "piece05.ply"}
+			}
+			{bone "piece06"
+				{Matrix34
+					-0.282589	0.38673	-0.877829
+					-0.717917	-0.692201	-0.0738409
+					-0.636191	0.609342	0.473249
+					34.7144	-56.4239	10.5448
+				}
+				{VolumeView "piece06.ply"}
+			}
+			{bone "piece07"
+				{Matrix34
+					-0.576881	0.8094	0.109908
+					-0.795098	-0.587258	0.151482
+					0.187154	0	0.982331
+					-52.6436	-28.9527	3.73735
+				}
+				{VolumeView "piece07.ply"}
+			}
+			{bone "piece08"
+				{Matrix34
+					-0.314819	0.886858	-0.33819
+					-0.946765	-0.268164	0.178113
+					0.0672701	0.376259	0.924069
+					-62.7309	-3.42998	3.84857
+				}
+				{VolumeView "piece08.ply"}
+			}
+			{bone "piece09"
+				{Matrix34
+					0.894336	0.447395	-0.000736706
+					-0.410264	0.820768	0.397522
+					0.178454	-0.355216	0.917592
+					-21.3282	62.7495	5.45686
+				}
+				{VolumeView "piece09.ply"}
+			}
+			{bone "piece10"
+				{Matrix34
+					0.899744	0.436418	0
+					-0.436418	0.899744	0
+					0	0	1
+					6.62542	66.8863	0
+				}
+				{VolumeView "piece10.ply"}
+			}
+			{bone "piece11"
+				{Matrix34
+					0.526636	0.686527	0.501334
+					-0.77308	0.632054	-0.0534374
+					-0.353556	-0.35943	0.863602
+					24.4365	52.7349	7.82119
+				}
+				{VolumeView "piece11.ply"}
+			}
+			{bone "piece12"
+				{Matrix34
+					-0.532273	-0.776089	-0.33819
+					0.773573	-0.608162	0.178113
+					-0.343905	-0.16681	0.924069
+					-84.677	12.0905	3.84857
+				}
+				{VolumeView "piece12.ply"}
+			}
+			{bone "piece13"
+				{Matrix34
+					-0.937128	0.0861283	-0.33819
+					-0.153605	-0.971947	0.178113
+					-0.313362	0.218862	0.924069
+					-83.0185	27.1857	3.84857
+				}
+				{VolumeView "piece13.ply"}
+			}
+			{bone "bunch1"
+				{Position -60.7928	15.855	0}
+				{VolumeView "bunch1.ply"}
+			}
+			{bone "bunch2"
+				{Matrix34
+					-0.823849	-0.56681	0
+					0.56681	-0.823849	0
+					0	0	1
+					57.4266	25.7582	0
+				}
+				{VolumeView "bunch2.ply"}
+			}
+			{bone "bunch3"
+				{Matrix34
+					-0.721225	0.692701	0
+					-0.692701	-0.721225	0
+					0	0	1
+					39.9076	-48.2178	0
+				}
+				{VolumeView "bunch3.ply"}
+			}
+			{bone "bunch4"
+				{Position -59.7915	-12.8257	0}
+				{VolumeView "bunch4.ply"}
+			}
+			{bone "bunch5"
+				{Matrix34
+					-0.176685	-0.984267	0
+					0.984267	-0.176685	0
+					0	0	1
+					22.4014	58.8325	0
+				}
+				{VolumeView "bunch5.ply"}
+			}
+			{bone "bunch6"
+				{Matrix34
+					0.928351	-0.371706	0
+					0.371706	0.928351	0
+					0	0	1
+					-75.4513	55.2745	0
+				}
+				{VolumeView "bunch6.ply"}
+			}
+			{bone "bunch7"
+				{Matrix34
+					-0.66443	0.747351	0
+					-0.747351	-0.66443	0
+					0	0	1
+					63.9193	-74.7684	0
+				}
+				{VolumeView "bunch7.ply"}
+			}
+			{bone "piece14"
+				{Matrix34
+					0.845779	0.533534	0
+					-0.533534	0.845779	0
+					0	0	1
+					-23.8547	4.68592	0
+				}
+				{VolumeView "piece14.ply"}
+			}
+			{bone "piece15"
+				{Matrix34
+					0.531832	-0.842385	-0.0868434
+					0.840913	0.537441	-0.0634233
+					0.1001	-0.0392973	0.994201
+					102.377	-21.3483	0
+				}
+				{VolumeView "piece15.ply"}
+			}
+			{bone "piece16"
+				{Matrix34
+					-0.827456	-0.553912	-0.09219
+					0.56005	-0.825991	-0.0638912
+					-0.0407581	-0.104498	0.99369
+					-75.3733	-38.3551	0
+				}
+				{VolumeView "piece16.ply"}
+			}
+			{bone "door"
+				{Matrix34
+					-0.0901922	-0.933834	0.346149
+					0.878413	-0.238376	-0.414207
+					0.469315	0.266703	0.841792
+					12.6575	-72.3606	0
+				}
+				{VolumeView "door.ply"}
+			}
+			{bone "piece17"
+				{Matrix34
+					0.999539	0	0.0303522
+					0	1	0
+					-0.0303522	0	0.999539
+					37.2225	-4.9525	3.59416
+				}
+				{VolumeView "piece17.ply"}
+			}
+			{bone "piece18"
+				{Matrix34
+					-0.365428	-0.93084	0
+					0.93084	-0.365428	0
+					0	0	1
+					-4.77202	108.489	0
+				}
+				{VolumeView "piece18.ply"}
+			}
+		}
+	}
+}
+{Volume "piece10"
+	{Polyhedron "piece10.vol"}
+	{Bone "piece10"}
+	{Position -4.27221	-1.96534	0}
+}
+{Volume "piece11"
+	{Polyhedron "piece11.vol"}
+	{Bone "piece11"}
+	{Position 0.581566	-0.256859	0}
+}
+{Volume "piece12"
+	{Polyhedron "piece12.vol"}
+	{Bone "piece12"}
+	{Matrix34
+		0.983732	-0.172352	0.0506637
+		0.16708	0.981408	0.0944573
+		-0.0660016	-0.0844555	0.994239
+		-3.52245	-1.62042	0
+	}
+}
+{Volume "piece13"
+	{Polyhedron "piece13.vol"}
+	{Bone "piece13"}
+	{Position -3.52245	-1.62043	0}
+}
+{Volume "piece5"
+	{Polyhedron "piece5.vol"}
+	{Bone "piece05"}
+	{Position -3.47593	-1.96535	0}
+}
+{Volume "piece6"
+	{Polyhedron "piece6.vol"}
+	{Bone "piece06"}
+	{Position 0.58157	-0.256862	0}
+}
+{Volume "piece7"
+	{Polyhedron "piece7.vol"}
+	{Bone "piece07"}
+	{Position 0.0773096	0	0}
+}
+{Volume "piece8"
+	{Polyhedron "piece8.vol"}
+	{Bone "piece08"}
+	{Position -3.52245	-1.62044	0}
+}
+{Volume "piece9"
+	{Polyhedron "piece9.vol"}
+	{Bone "piece09"}
+	{Position -3.47593	-1.96534	0}
+}
+{Volume "wall1"
+	{Polyhedron "wall1.vol"}
+	{Bone "wall"}
+	{Position 0	0	0}
+}
+{Volume "wall2"
+	{Box 9.84252 68.8976 78.7402}
+	{Bone "wall"}
+	{Matrix34
+		0.707107	0.707107	0
+		-0.707107	0.707107	0
+		0	0	1
+		52.8938	52.8938	39.3701
+	}
+}
+{Volume "wall3"
+	{Polyhedron "wall3.vol"}
+	{Bone "wall"}
+	{Matrix34
+		0	1	0
+		-1	0	0
+		0	0	1
+		0	0	0
+	}
+}
+{Volume "wall4"
+	{Polyhedron "wall4.vol"}
+	{Bone "wall"}
+	{Matrix34
+		-0.707107	0.707107	0
+		-0.707107	-0.707107	0
+		0	0	1
+		0	0	0
+	}
+}
+{Volume "wall5"
+	{Polyhedron "wall5.vol"}
+	{Bone "wall"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		0	0	0
+	}
+}
+{Volume "wall6"
+	{Polyhedron "wall6.vol"}
+	{Bone "wall"}
+	{Matrix34
+		-0.707106	-0.707108	0
+		0.707108	-0.707106	0
+		0	0	1
+		0	0	0
+	}
+}
+{Volume "wall7"
+	{Polyhedron "wall7.vol"}
+	{Bone "wall"}
+	{Matrix34
+		0	-1	0
+		1	0	0
+		0	0	1
+		0	0	0
+	}
+}
+{Volume "wall8"
+	{Polyhedron "wall8.vol"}
+	{Bone "wall"}
+	{Matrix34
+		0.707107	-0.707107	0
+		0.707107	0.707107	0
+		0	0	1
+		0	0	0
+	}
+}

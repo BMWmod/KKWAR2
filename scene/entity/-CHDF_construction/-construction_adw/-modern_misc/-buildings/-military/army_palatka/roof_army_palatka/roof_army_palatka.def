@@ -1,0 +1,14 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{props "cornered" "parts" "construction" "windowed" "break_on_burn" "wall" "burning" "flue" "no_destroyed_stamp"}
+        {obstacleid "unbreakable" "construction" }
+	{Extension "roof_army_palatka.mdl"}
+	{Volume "box09"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box10"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+}

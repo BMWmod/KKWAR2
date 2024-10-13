@@ -1,0 +1,18 @@
+;Exported by: zorro
+;Date:        Wed Feb 17 21:21:53 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\base.max
+{Skeleton
+	{bone "generator_base"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "generator_base.ply"}
+	}
+}
+{Volume "box01"
+	{Box 21.9452 50.9531 37.332}
+	{Bone "generator_base"}
+	{Position 0.17511	0.0852051	18.6385}
+}

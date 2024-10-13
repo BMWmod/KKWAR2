@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "lighthouse_platform"}
+	{blend none}
+}

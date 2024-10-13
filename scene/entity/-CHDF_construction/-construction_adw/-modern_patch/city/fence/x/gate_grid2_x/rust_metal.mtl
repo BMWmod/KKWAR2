@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "metal_rusted1"}
+	{blend none}
+}

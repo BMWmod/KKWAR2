@@ -1,0 +1,14 @@
+;Exported by: Notebook
+;Date:        Tue Oct 08 21:29:51 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\well_cup.max
+{Skeleton
+	{bone "well_cup"
+		{parameters "land;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "well_cup.ply"}
+	}
+}

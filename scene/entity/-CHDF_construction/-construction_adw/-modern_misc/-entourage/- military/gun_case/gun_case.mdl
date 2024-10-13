@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Mon Sep 06 20:08:21 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\dfgdfhd.max
+{Skeleton
+	{bone "gun_case"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "gun_case.ply"}
+	}
+}
+{Volume "box01"
+	{Box 26.0027 9.62178 3.10124}
+	{Bone "gun_case"}
+	{Position 0.249771	-0.362595	1.55062}
+}

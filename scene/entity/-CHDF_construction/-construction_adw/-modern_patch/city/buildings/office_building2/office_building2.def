@@ -1,0 +1,24 @@
+{game_entity
+	(include "/properties/building.inc")
+	{obstacleid "unbreakable" "construction" }
+	{props "concrete" "no_destroyed_stamp"}
+	{Extension "office_building2.mdl"}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "stair1"
+		{Tags  "stair1"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "stair2"
+		{Tags  "stair2"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Extender "land_patch"
+		{TerrainType "road" "bridge"}
+	}	
+}

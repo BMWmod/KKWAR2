@@ -1,0 +1,7 @@
+{game_entity
+	{Extension "gate_grid3_x.mdl"}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+}

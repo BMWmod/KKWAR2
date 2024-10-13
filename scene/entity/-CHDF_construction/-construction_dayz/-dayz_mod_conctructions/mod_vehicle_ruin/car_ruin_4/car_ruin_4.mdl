@@ -1,0 +1,18 @@
+;Exported by: UserXP
+;Date:        Mon Mar 16 14:39:14 2015
+;File:        G:\DUSK-12 CARS\gazik\gazik01.max
+{Skeleton
+	{bone "gazik01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "gazik01.ply"}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "gazik01"}
+	{Position 5.55515e-005	-0.111963	0}
+}

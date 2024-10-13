@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "ston_walls4_border"}
+	{blend none}
+}

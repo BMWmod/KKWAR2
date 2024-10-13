@@ -1,0 +1,72 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 00:03:34 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage\Shelves_metal.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Position 2.03389	1.6115	12.8349}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Position 2.03389	1.6115	25.6295}
+}
+{Volume "body3"
+	{Polyhedron "body3.vol"}
+	{Bone "body"}
+	{Position 2.03389	1.6115	36.7669}
+}
+{Volume "body4"
+	{Polyhedron "body4.vol"}
+	{Bone "body"}
+	{Position 5.48174	-15.1573	39.0883}
+}
+{Volume "body5"
+	{Polyhedron "body5.vol"}
+	{Bone "body"}
+	{Position -7.76406	-15.1573	39.0883}
+}
+{Volume "body6"
+	{Polyhedron "body6.vol"}
+	{Bone "body"}
+	{Position -7.76406	15.9839	39.0883}
+}
+{Volume "body7"
+	{Polyhedron "body7.vol"}
+	{Bone "body"}
+	{Position 5.55435	15.9839	39.0883}
+}
+{Volume "body8"
+	{Polyhedron "body8.vol"}
+	{Bone "body"}
+	{Position -7.65933	-14.4477	39.0883}
+}
+{Volume "body9"
+	{Polyhedron "body9.vol"}
+	{Bone "body"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		-6.85657	0.0247945	15.2535
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 2.03389	1.6115	0}
+}

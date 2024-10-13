@@ -1,0 +1,92 @@
+-= Animation: open, Node DoorL =-
+	Frame 0 {
+		Visibility 1
+		Position	-19.8128	1.21321e-005	0
+		Orientation	0 0 0 1
+	}
+	Frame 1 {
+		Orientation	0 0 0.0680153 0.997684
+	}
+	Frame 2 {
+		Orientation	0 0 0.228351 0.973579
+	}
+	Frame 3 {
+		Orientation	0 0 0.411514 0.911403
+	}
+	Frame 4 {
+		Orientation	0 0 0.553392 0.832921
+	}
+	Frame 5 {
+		Visibility 1
+		Position	-19.8128	1.21321e-005	0
+		Orientation	0 0 0.608761 0.793353
+	}
+-= Animation: close, Node DoorL =-
+	Frame 10 {
+		Visibility 1
+		Position	-19.8128	1.21321e-005	0
+		Orientation	0 0 0.608761 0.793353
+	}
+	Frame 11 {
+		Orientation	0 0 0.553392 0.832921
+	}
+	Frame 12 {
+		Orientation	0 0 0.411514 0.911403
+	}
+	Frame 13 {
+		Orientation	0 0 0.228351 0.973579
+	}
+	Frame 14 {
+		Orientation	0 0 0.0680153 0.997684
+	}
+	Frame 15 {
+		Visibility 1
+		Position	-19.8128	1.21321e-005	0
+		Orientation	0 0 0 1
+	}
+-= Animation: open, Node DoorR =-
+	Frame 0 {
+		Visibility 1
+		Position	19.5572	1.21321e-005	0
+		Orientation	0 0 0 1
+	}
+	Frame 1 {
+		Orientation	0 0 -0.0680153 0.997684
+	}
+	Frame 2 {
+		Orientation	0 0 -0.228351 0.973579
+	}
+	Frame 3 {
+		Orientation	0 0 -0.411514 0.911403
+	}
+	Frame 4 {
+		Orientation	0 0 -0.553392 0.832921
+	}
+	Frame 5 {
+		Visibility 1
+		Position	19.5572	1.21321e-005	0
+		Orientation	0 0 -0.608761 0.793353
+	}
+-= Animation: close, Node DoorR =-
+	Frame 10 {
+		Visibility 1
+		Position	19.5572	1.21321e-005	0
+		Orientation	0 0 -0.608761 0.793353
+	}
+	Frame 11 {
+		Orientation	0 0 -0.553392 0.832921
+	}
+	Frame 12 {
+		Orientation	0 0 -0.411514 0.911403
+	}
+	Frame 13 {
+		Orientation	0 0 -0.228351 0.973579
+	}
+	Frame 14 {
+		Orientation	0 0 -0.0680153 0.997684
+	}
+	Frame 15 {
+		Visibility 1
+		Position	19.5572	1.21321e-005	0
+		Orientation	0 0 0 1
+	}

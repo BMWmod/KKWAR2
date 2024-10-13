@@ -1,0 +1,20 @@
+{game_entity
+    (include "/properties/building.inc")
+ 
+	{obstacleid "unbreakable" "construction" }
+
+	{props "cornered" "steel" "staged" "concrete"}
+
+	("armor_heavy" args 0.8)
+
+	{simulation {able 1}}
+
+	{mass 1000}	
+
+	{Extension "container.mdl"}
+
+	{Volume "body"
+		{thickness 50}
+		{tags "body"}
+	}
+}

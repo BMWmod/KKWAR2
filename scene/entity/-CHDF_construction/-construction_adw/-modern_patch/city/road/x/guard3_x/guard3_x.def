@@ -1,0 +1,17 @@
+{game_entity
+	{Extension "guard3_x.mdl"}
+	{Volume "guard1"
+	}
+	{Volume "guard2"
+	}
+	{Volume "guard3"
+	}
+	{Volume "piece1"
+	}
+	{Volume "piece2"
+	}
+	{Volume "piece3"
+	}
+	{Volume "piece4"
+	}
+}

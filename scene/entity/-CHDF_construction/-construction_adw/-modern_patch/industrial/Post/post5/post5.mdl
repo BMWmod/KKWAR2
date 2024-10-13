@@ -1,0 +1,35 @@
+;Exported by: Notebook
+;Date:        Thu Oct 24 17:46:37 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Post\post5.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "post"
+			{Position 0	0	-9.84252}
+			{VolumeView "post.ply"}
+			{bone "bracket"
+				{Position 0	1.9685	174.213}
+				{VolumeView "bracket.ply"}
+			}
+		}
+	}
+}
+{Volume "bracket1"
+	{Box 27.5591 3.93701 5.90551}
+	{Bone "bracket"}
+	{Position 0	0	1.96849}
+}
+{Volume "bracket2"
+	{Box 7.87402 3.93701 5.90551}
+	{Bone "bracket"}
+	{Position 0	-1.9685	16.1046}
+}
+{Volume "post"
+	{Cylinder 2.95276 187.008}
+	{Bone "post"}
+	{Position 0	0	93.5039}
+}

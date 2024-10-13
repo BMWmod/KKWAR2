@@ -1,0 +1,62 @@
+;Exported by: Notebook
+;Date:        Sat Apr 04 00:55:46 2020
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\City\Gate\Gate.max
+{Skeleton
+	{animation
+		{sequence "open" {speed 0.02}}
+		{sequence "close" {speed 0.02}}
+	}
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Position 1.52588e-005	0	0}
+			{VolumeView "body.ply"}
+			{bone "gate"
+				{Position -1.52588e-005	0	1.9685}
+				{VolumeView "gate.ply"}
+				{bone "sing"
+					{Matrix34
+						0	1	0
+						0	0	1
+						1	0	0
+						0.196854	19.685	29.5276
+					}
+					{VolumeView "sing.ply"}
+				}
+			}
+		}
+	}
+}
+{Obstacle "gate1"
+	{Obb2
+		{Center 1.31084 -61.0236}
+		{Extent 3.93701 4.92126}
+		{Axis -1 0}
+	}
+}
+{Obstacle "gate2"
+	{Obb2
+		{Center 0 68.8976}
+		{Extent 3.93701 19.685}
+		{Axis -1 0}
+	}
+}
+{Volume "gate"
+	{Box 3.93701 141.732 51.1811}
+	{Bone "gate"}
+	{Position 0	-9.84252	23.622}
+}
+{Volume "switch"
+	{Box 7.87402 9.84252 19.685}
+	{Bone "gate"}
+	{Position 0	47.2441	24.0117}
+}
+{Volume "theswitch"
+	{Box 7.87402 9.84252 19.685}
+	{Bone "gate"}
+	{Position 0	36.3326	24.0117}
+}

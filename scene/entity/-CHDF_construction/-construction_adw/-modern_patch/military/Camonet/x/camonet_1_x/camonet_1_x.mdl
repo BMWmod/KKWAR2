@@ -1,0 +1,82 @@
+;Exported by: HOME Office
+;Date:        Tue Nov 21 18:40:02 2017
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\Military\Camo\x\camo_net1_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "net"
+			{parameters "CommonMesh ;"}
+			{Position -0.341094	1.41395e-005	26.1564}
+			{VolumeView "net.ply"}
+			{bone "piece1"
+				{parameters "CommonMesh ;"}
+				{Matrix34
+					-0.0338702	0.029247	0.998998
+					0.653562	0.756873	0
+					-0.756114	0.652908	-0.0447502
+					-64.5665	60.1026	-23.4963
+				}
+				{VolumeView "piece1.ply"}
+			}
+			{bone "piece3"
+				{parameters "CommonMesh ;"}
+				{Position 52.4967	59.6205	-11.0385}
+				{VolumeView "piece3.ply"}
+			}
+			{bone "piece4"
+				{parameters "CommonMesh ;"}
+				{Matrix34
+					0.258001	-0.114609	-0.959323
+					-0.855653	0.433996	-0.281969
+					0.448658	0.893595	0.0139063
+					52.3359	-59.1496	-25.2421
+				}
+				{VolumeView "piece4.ply"}
+			}
+			{bone "piece2"
+				{parameters "CommonMesh ;"}
+				{Matrix34
+					0.927795	-0.373091	0
+					0.373091	0.927795	0
+					0	0	1
+					-67.4872	-60.6559	-11.0385
+				}
+				{VolumeView "piece2.ply"}
+			}
+		}
+	}
+}
+{Volume "net"
+	{Polyhedron "net.vol"}
+	{Bone "net"}
+	{Matrix34
+		0	-1	0
+		0	0	1
+		-1	0	0
+		0.132208	85.7037	3.61387
+	}
+}
+{Volume "piece1"
+	{Cylinder 3.93701 61.0236}
+	{Bone "piece1"}
+	{Position -0.106369	-0.201323	15.3939}
+}
+{Volume "piece2"
+	{Cylinder 3.93701 19.685}
+	{Bone "piece2"}
+	{Position -0.106361	-0.201324	-5.27538}
+}
+{Volume "piece3"
+	{Cylinder 3.93701 61.0236}
+	{Bone "piece3"}
+	{Position -0.106369	-0.201324	15.3939}
+}
+{Volume "piece4"
+	{Cylinder 3.93701 61.0236}
+	{Bone "piece4"}
+	{Position -0.106368	-0.201308	15.3939}
+}

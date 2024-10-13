@@ -1,0 +1,29 @@
+;Exported by: Notebook
+;Date:        Sun Oct 20 21:52:18 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\post1_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "stolb"
+			{VolumeView "stolb.ply"}
+		}
+		{bone "piece1"
+			{Position 0	-19.685	108.268}
+			{VolumeView "piece1.ply"}
+		}
+	}
+}
+{Volume "piece1"
+	{Box 5.11811 5.11811 157.48}
+	{Bone "piece1"}
+	{Position 0	0	-9.84251}
+}
+{Volume "stolb"
+	{Box 5.11811 5.11811 39.3701}
+	{Bone "stolb"}
+	{Position 0	0	9.84252}
+}

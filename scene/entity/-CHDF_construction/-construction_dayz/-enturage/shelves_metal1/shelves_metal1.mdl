@@ -1,0 +1,22 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 00:06:41 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage\Shelves_metal1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 2.03389	1.6115	0}
+}

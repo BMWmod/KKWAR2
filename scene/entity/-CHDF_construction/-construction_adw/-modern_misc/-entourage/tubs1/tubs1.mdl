@@ -1,0 +1,69 @@
+;Exported by: Alexey
+;Date:        Fri Sep 12 22:09:07 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\stalker_hlam\tubs1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "drawcall_0001"
+			{Matrix34
+				0.219029	0.975718	0
+				-0.392473	0.0881023	-0.915534
+				-0.893303	0.200529	0.40224
+				-12.3013	-346.085	766.932
+			}
+			{VolumeView "drawcall_0001.ply"}
+		}
+		{bone "drawcall_0008"
+			{Matrix34
+				0.219029	0.975718	0
+				-0.392473	0.0881023	-0.915534
+				-0.893303	0.200529	0.40224
+				-12.3013	-346.085	766.932
+			}
+			{VolumeView "drawcall_0008.ply"}
+		}
+		{bone "drawcall_0009"
+			{Matrix34
+				0.219029	0.975718	0
+				-0.392473	0.0881023	-0.915534
+				-0.893303	0.200529	0.40224
+				-12.3013	-346.085	766.932
+			}
+			{VolumeView "drawcall_0009.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "basis"}
+	{Matrix34
+		0.486441	-0.873713	0
+		0	0	1
+		-0.873713	-0.486441	0
+		38.962	41.5891	19.6396
+	}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "basis"}
+	{Matrix34
+		0.306141	-0.948921	-0.0763295
+		0.241922	0	0.970296
+		-0.920734	-0.315513	0.229565
+		1.77746	-12.5745	43.3621
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "basis"}
+	{Matrix34
+		0	-1	0
+		0	0	1
+		-1	0	0
+		125.437	-51.3737	19.6396
+	}
+}

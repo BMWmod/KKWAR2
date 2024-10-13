@@ -1,0 +1,82 @@
+;Exported by: MOCKVu4
+;Date:        Mon Dec  4 18:22:51 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f_var7.max
+{Skeleton
+	{bone "attach4"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "piece01"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				0.163143	28.4116	17.6624
+			}
+			{VolumeView "piece01.ply"}
+		}
+		{bone "piece02"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				10.3431	30.1305	9.59946
+			}
+			{VolumeView "piece02.ply"}
+		}
+		{bone "piece04"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				0.164077	28.4113	17.6621
+			}
+			{VolumeView "piece04.ply"}
+		}
+		{bone "piece03"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				0.165085	28.4112	17.662
+			}
+			{VolumeView "piece03.ply"}
+		}
+	}
+}
+{Obstacle "piece01"
+	{Obb2
+		{Center 0.671448 -30.7393}
+		{Extent 13.1398 1.65989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "piece01"
+	{Box 26.2795 26.2795 3.31976}
+	{Bone "piece01"}
+	{Position 0.508315	2.69129	-2.32763}
+}
+{Volume "piece02"
+	{Polyhedron "piece02.vol"}
+	{Bone "piece02"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	-1
+		-0.126923	0.0110626	1.65047
+	}
+}
+{Volume "piece03"
+	{Polyhedron "piece03.vol"}
+	{Bone "piece03"}
+	{Position -4.18921	-0.00240326	-3.39384}
+}
+{Volume "piece04"
+	{Polyhedron "piece04.vol"}
+	{Bone "piece04"}
+	{Position -0.69043	12.0347	-3.77921}
+}

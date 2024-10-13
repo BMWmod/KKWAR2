@@ -1,0 +1,18 @@
+{game_entity
+
+        {ObstacleId "construction"}
+	{collider "particle.small"}
+	{simulation {able 1}}
+	{constrain ground}
+
+	{props "concrete" "parts" "construction"  "small" "burning" "stuff"}
+
+	{Volume "body"
+		{thickness 10}
+		{able {touch}}
+		{Tags  "body"}
+	}
+
+	{Extension "wheel_1.mdl"}
+	{lodclass "decor_small"}
+}

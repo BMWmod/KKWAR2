@@ -1,0 +1,57 @@
+;Exported by: GANS
+;Date:        Thu Dec 12 17:26:20 2019
+;File:        G:\Tarkov\building\fuel_zapravka\fuel_zapravka.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "colonka"
+			{Position 1.78359	-0.122566	18.9426}
+			{VolumeView "colonka.ply"}
+		}
+		{bone "body"
+			{Position 0	0	2.1414}
+			{VolumeView "body.ply"}
+		}
+		{bone "det1"
+			{Position 0	0	4.82501}
+			{VolumeView "det1.ply"}
+		}
+	}
+}
+{Obstacle "body"
+	{Obb2
+		{Center 4.76837e-007 -2.38419e-007}
+		{Extent 14.6367 7.05989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "colonka"
+	{Obb2
+		{Center 0.516928 0}
+		{Extent 6.1383 4.95126}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0	0	-3.39295}
+}
+{Volume "colonka"
+	{Box 36.9327 29.7906 81.7144}
+	{Bone "colonka"}
+	{Matrix34
+		0.332404	0	0
+		0	0.332404	0
+		0	0	0.332404
+		-1.26667	0.122566	-0.371875
+	}
+}

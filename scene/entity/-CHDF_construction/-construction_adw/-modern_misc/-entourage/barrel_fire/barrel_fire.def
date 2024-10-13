@@ -1,0 +1,17 @@
+{game_entity
+
+        {ObstacleId "construction"}
+	{collider "particle.small"}
+	{simulation {able 1}}
+	{constrain ground}
+
+	{props "concrete" "parts" "construction"  "small" "burning" "stuff" "steel"}
+
+	{Volume "body"
+		{thickness 10}
+		{able {touch}}
+		{Tags  "body"}
+	}
+
+	{Extension "barrel_fire.mdl"}
+}

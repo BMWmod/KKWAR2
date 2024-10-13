@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/construction/railroad/base_concrete"}
+	{bump "$/construction/railroad/base_concrete_bp"}
+	{blend none}
+}

@@ -1,0 +1,14 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "wood" "no_destroyed_stamp"}
+ {Extension "decor_podves.mdl"}
+ {Volume "body"
+ }
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{lodclass "decor_small"}
+}

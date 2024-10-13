@@ -1,0 +1,52 @@
+{game_entity
+	(include "/properties/post.inc")
+	{props "small" "steel" "construction" "parts" "disable_area" "no_destroyed_stamp"}
+	{Extension "tower1.mdl"}
+
+	{Volume "ferm"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 0}{bullet 1}}
+	}
+	{Volume "lamp1"
+		{thickness 1}
+		{able {contact 0}}
+	}
+	{Volume "lamp6"
+		{thickness 1}
+		{able {contact 0}}
+	}
+	{Volume "projector1"
+		{Thickness 3}
+	}
+	{Volume "projector2"
+		{Thickness 3}
+	}
+	{Volume "projector3"
+		{Thickness 3}
+	}
+	{Volume "projector4"
+		{Thickness 3}
+	}
+	{Volume "projector5"
+		{Thickness 3}
+	}
+	{Volume "projector6"
+		{Thickness 3}
+	}
+	{Volume "top"
+		{Tags  "body"}
+		{Thickness 10}
+		{able {visible 0}{bullet 1}}
+	}
+	{Extender "land_patch"
+	}
+	{extender "light"
+		{lamp "1"}
+		{lightfx "light_boat"}
+	}
+	{extender "light"
+		{lamp "6"}
+		{lightfx "light_boat"}
+	}
+}

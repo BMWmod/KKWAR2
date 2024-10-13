@@ -1,0 +1,17 @@
+;Exported by: Evan
+;Date:        Sun Jul 27 15:24:38 2014
+;File:        C:\Users\Evan\Documents\3dsmax\scenes\hlprops\payphone.max
+{Skeleton
+	{bone "smdimport01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "smdimport01.ply"}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "smdimport01"}
+}

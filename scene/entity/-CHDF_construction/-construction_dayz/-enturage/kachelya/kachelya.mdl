@@ -1,0 +1,18 @@
+;Exported by: vorabat
+;Date:        Thu Jul 23 17:32:06 2009
+;File:        C:\Documents and Settings\пакунеу\Мои документы\3dsmax\scenes\качели.max
+{Skeleton
+	{bone "object01"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "object01.ply"}
+	}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "object01"}
+	{Position 1.00336	0.129946	0}
+}

@@ -1,0 +1,154 @@
+;Exported by: User
+;Date:        Sun Apr 19 19:44:04 2015
+;File:        
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0.999788	-0.0205698
+				0	0.0451608	0.99898
+				0	0	0.134279
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Obstacle "box01"
+	{Obb2
+		{Center 11.3505 -3.06727}
+		{Extent 26.7663 43.7107}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box02"
+	{Obb2
+		{Center 13.5343 -54.9642}
+		{Extent 26.2249 8.64827}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box03"
+	{Obb2
+		{Center 12.2151 -2.2424}
+		{Extent 13.2044 11.2257}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box04"
+	{Obb2
+		{Center 34.7448 -3.92285}
+		{Extent 2.18081 34.181}
+		{Axis 0.999848 0.0174436}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box05"
+	{Obb2
+		{Center -10.4735 -3.92285}
+		{Extent 2.18081 34.181}
+		{Axis 0.999848 0.0174436}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box06"
+	{Obb2
+		{Center 28.7146 50.4918}
+		{Extent 1.69592 6.33394}
+		{Axis 0.998631 0.0523094}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "box07"
+	{Obb2
+		{Center -8.04593 49.0827}
+		{Extent 6.32721 1.66973}
+		{Axis 0.0879049 0.996129}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "box01"
+	{Polyhedron "box01.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999282	0.0205761
+		0	-0.0451746	1.00009
+		7.4522	-19.2691	6.55305
+	}
+}
+{Volume "box02"
+	{Polyhedron "box02.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999282	0.0205761
+		0	-0.0451746	1.00009
+		11.2541	48.9207	15.0248
+	}
+}
+{Volume "box03"
+	{Polyhedron "box03.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999282	0.0205761
+		0	-0.0451746	1.00009
+		7.36355	-0.268987	27.7834
+	}
+}
+{Volume "box04"
+	{Polyhedron "box04.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999282	0.0205761
+		0	-0.0451746	1.00009
+		34.2897	1.55178	-0.102464
+	}
+}
+{Volume "box05"
+	{Polyhedron "box05.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0.999282	0.0205761
+		0	-0.0451746	1.00009
+		-10.9286	1.55178	-0.102464
+	}
+}
+{Volume "box06"
+	{Polyhedron "box06.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.9982	-0.0599358	-0.00123413
+		0.0599789	0.997483	0.0205391
+		0	-0.0451746	1.00009
+		29.0453	-51.0448	12.0054
+	}
+}
+{Volume "box07"
+	{Polyhedron "box07.vol"}
+	{Bone "body"}
+	{Matrix34
+		0.996431	0.0843502	0.00173679
+		-0.0844108	0.995716	0.0205027
+		0	-0.0451746	1.00009
+		-7.71862	-49.5891	12.0354
+	}
+}

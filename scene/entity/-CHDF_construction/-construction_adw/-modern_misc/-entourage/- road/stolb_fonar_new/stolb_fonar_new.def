@@ -1,0 +1,17 @@
+{construction
+    (include "/properties/post.inc")
+	{Extension "stolb_fonar_new.mdl"}
+	("armor_use_volume_thickness")
+	{props "steel" "disable_area"}
+
+	{volume	"body"
+		{thickness 5}
+		{able {visible 0}}	
+	}
+	{Volume "lamp1"
+		{thickness 1}
+	}
+	{extender "light"
+		{lamp "1"}
+	}
+}

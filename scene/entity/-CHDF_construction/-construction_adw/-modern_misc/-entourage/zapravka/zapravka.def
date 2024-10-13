@@ -1,0 +1,19 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+	{props "steel" "no_destroyed_stamp" "windowed" "parts" "small" "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 300}
+	{Extension "zapravka.mdl"}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 7}
+		{able {visible 1}}
+	}
+	{Volume "colonka"
+		{Tags  "body"}
+		{Thickness 7}
+		{able {visible 1}}
+	}
+}

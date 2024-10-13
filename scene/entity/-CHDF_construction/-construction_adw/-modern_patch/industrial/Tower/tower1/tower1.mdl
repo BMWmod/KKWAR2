@@ -1,0 +1,251 @@
+;Exported by: HOME Office
+;Date:        Fri May 15 23:14:05 2020
+;File:        C:\Users\HOME Office\Google Диск\MOW\3ds max model\Constraction\Industrial\Tower\tower1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{parameters "land;"}
+			{VolumeView "base.ply"}
+		}
+		{bone "ferm"
+			{Matrix34
+				-1	0	0
+				0	1	0
+				0	0	1
+				0	0	8.90165
+			}
+			{VolumeView "ferm.ply"}
+			{bone "top"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-0.000225782	266.299
+				}
+				{VolumeView "top.ply"}
+				{bone "bra_projector1"
+					{Matrix34
+						-1	0	0
+						0	1	0
+						0	0	-1
+						14.7638	29.0354	7.74475
+					}
+					{VolumeView "bra_projector1.ply"}
+					{bone "projector1"
+						{Matrix34
+							1	0	0
+							0	0.642787	-0.766045
+							0	0.766045	0.642787
+							0	0	-0.00726318
+						}
+						{VolumeView "projector1.ply"}
+						{bone "lamp_light_spot1"
+							{Matrix34
+								0	0	1
+								1	0	0
+								0	1	0
+								0	7.62939e-005	5.36803
+							}
+						}
+						{bone "lamp_glass1"
+							{Position 0	0	-3.05176e-005}
+							{VolumeView "lamp_glass1.ply"}
+						}
+					}
+				}
+				{bone "bra_projector2"
+					{Matrix34
+						-1	0	0
+						0	1	0
+						0	0	-1
+						0	29.0354	7.74475
+					}
+					{VolumeView "bra_projector2.ply"}
+					{bone "projector2"
+						{Matrix34
+							1	0	0
+							0	0.5	-0.866026
+							0	0.866026	0.5
+							0	0	-0.00726318
+						}
+						{VolumeView "projector2.ply"}
+						{bone "glass2"
+							{Position 0	3.05176e-005	-3.8147e-005}
+							{VolumeView "glass2.ply"}
+						}
+					}
+				}
+				{bone "bra_projector3"
+					{Matrix34
+						-1	0	0
+						0	1	0
+						0	0	-1
+						-15.2634	29.0452	7.74475
+					}
+					{VolumeView "bra_projector3.ply"}
+					{bone "projector3"
+						{Matrix34
+							1	0	0
+							0	0.374052	-0.927408
+							0	0.927408	0.374052
+							0	0	-0.00726318
+						}
+						{VolumeView "projector3.ply"}
+					}
+				}
+				{bone "bra_projector4"
+					{Matrix34
+						1	0	0
+						0	-1	0
+						0	0	-1
+						14.7638	-29.0354	7.74475
+					}
+					{VolumeView "bra_projector4.ply"}
+					{bone "projector4"
+						{Matrix34
+							1	0	0
+							0	0.439811	-0.898091
+							0	0.898091	0.439811
+							0	0	-0.00726318
+						}
+						{VolumeView "projector4.ply"}
+					}
+				}
+				{bone "bra_projector5"
+					{Matrix34
+						1	0	0
+						0	-1	0
+						0	0	-1
+						0	-29.0354	7.74475
+					}
+					{VolumeView "bra_projector5.ply"}
+					{bone "projector5"
+						{Matrix34
+							1	0	0
+							0	0.315037	-0.94908
+							0	0.94908	0.315037
+							0	0	-0.00726318
+						}
+						{VolumeView "projector5.ply"}
+					}
+				}
+				{bone "bra_projector6"
+					{Matrix34
+						1	0	0
+						0	-1	0
+						0	0	-1
+						-14.7638	-29.0354	7.74475
+					}
+					{VolumeView "bra_projector6.ply"}
+					{bone "projector6"
+						{Matrix34
+							1	0	0
+							0	0.5	-0.866026
+							0	0.866026	0.5
+							0	0	-0.00726318
+						}
+						{VolumeView "projector6.ply"}
+						{bone "lamp_light_spot6"
+							{Matrix34
+								0	0	1
+								-1	0	0
+								0	-1	0
+								0	6.10352e-005	5.22289
+							}
+						}
+						{bone "lamp_glass6"
+							{VolumeView "lamp_glass6.ply"}
+						}
+					}
+				}
+			}
+			{bone "stair"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					-7.57468	-2.848e-005	35.4812
+				}
+				{VolumeView "stair.ply"}
+			}
+			{bone "stand1"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-8.28023e-005	88.1489
+				}
+				{VolumeView "stand1.ply"}
+			}
+			{bone "stand2"
+				{Matrix34
+					-1	0	0
+					0	1	0
+					0	0	1
+					0	-0.000154057	176.92
+				}
+				{VolumeView "stand2.ply"}
+			}
+		}
+	}
+}
+{Volume "ferm"
+	{Box 23.622 23.622 275.591}
+	{Bone "ferm"}
+	{Matrix34
+		-1	0	0
+		0	1	0
+		0	0	1
+		0	-0.00011222	128.894
+	}
+}
+{Volume "lamp1"
+	{Box 7.87402 7.87402 7.87402}
+	{Bone "projector1"}
+	{Position 0	-0.281052	2.46063}
+}
+{Volume "lamp6"
+	{Box 7.87402 7.87402 7.87402}
+	{Bone "projector6"}
+	{Position 0	-0.281036	2.46064}
+}
+{Volume "projector1"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector1"}
+	{Position 0	0	1.61944}
+}
+{Volume "projector2"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector2"}
+	{Position 0	3.24888e-005	1.61942}
+}
+{Volume "projector3"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector3"}
+	{Position 0	0	1.61942}
+}
+{Volume "projector4"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector4"}
+	{Position 0	3.24888e-005	1.61942}
+}
+{Volume "projector5"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector5"}
+	{Position 0	0	1.61943}
+}
+{Volume "projector6"
+	{Cylinder 5.90551 8.26772}
+	{Bone "projector6"}
+	{Position 0	3.24888e-005	1.61942}
+}
+{Volume "top"
+	{Box 49.2126 49.2126 29.5276}
+	{Bone "top"}
+	{Position 0	1.1929e-005	13.1851}
+}

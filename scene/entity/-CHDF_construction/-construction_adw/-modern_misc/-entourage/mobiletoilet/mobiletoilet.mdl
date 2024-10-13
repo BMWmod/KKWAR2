@@ -1,0 +1,22 @@
+;Exported by: Alexey
+;Date:        Fri Aug 15 23:15:36 2008
+;File:        D:\Program Files\Autodesk\3dsMax8\scenes\Enturage_2\mobiletoilet.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position -0.00800323	0.00505519	0.0838561}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 6.82548	0.566865	47.1632}
+}

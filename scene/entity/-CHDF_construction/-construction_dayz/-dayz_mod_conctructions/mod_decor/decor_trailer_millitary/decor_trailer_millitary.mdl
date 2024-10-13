@@ -1,0 +1,63 @@
+;Exported by: zorro
+;Date:        Thu Feb 18 00:32:52 2010
+;File:        C:\Users\zorro\Documents\3dsmax\scenes\palatki2.max
+{Skeleton
+	{bone "trailer_base"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "trailer_base.ply"}
+	}
+}
+{Volume "box01"
+	{Box 137.656 49.0067 45.8852}
+	{Bone "trailer_base"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	1.06934
+		14.7641	-1.93254	40.512
+	}
+}
+{Volume "box02"
+	{Box 23.8952 6.09093 23.4267}
+	{Bone "trailer_base"}
+	{Position 39.5924	17.118	11.7133}
+}
+{Volume "box03"
+	{Box 22.9581 5.6224 24.8323}
+	{Bone "trailer_base"}
+	{Position 66.0646	17.5866	12.4161}
+}
+{Volume "box04"
+	{Box 22.9581 5.6224 24.8323}
+	{Bone "trailer_base"}
+	{Position 66.0646	-20.8874	12.4161}
+}
+{Volume "box05"
+	{Box 23.8952 6.09093 23.4267}
+	{Bone "trailer_base"}
+	{Position 39.5924	-21.356	11.7133}
+}
+{Volume "box06"
+	{Box 23.8952 6.09093 23.4267}
+	{Bone "trailer_base"}
+	{Matrix34
+		0.992308	0.123796	0
+		-0.123796	0.992308	0
+		0	0	1
+		-33.973	-21.2691	11.7133
+	}
+}
+{Volume "box07"
+	{Box 23.8952 6.09093 23.4267}
+	{Bone "trailer_base"}
+	{Matrix34
+		0.992308	0.123796	0
+		-0.123796	0.992308	0
+		0	0	1
+		-39.062	16.4891	11.7133
+	}
+}

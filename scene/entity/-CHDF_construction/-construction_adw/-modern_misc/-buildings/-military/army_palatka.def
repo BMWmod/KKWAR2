@@ -1,0 +1,8 @@
+{game_entity
+	{Extension "army_palatka.mdl"}
+	{placer}
+	{extender "structure"
+		{place "roof_palatka_army" "roof_army_palatka"}
+		{place "body_palatka_army" "body_army_palatka"}
+	}
+}

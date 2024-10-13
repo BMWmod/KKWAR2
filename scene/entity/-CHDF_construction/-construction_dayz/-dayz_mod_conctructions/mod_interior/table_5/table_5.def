@@ -1,0 +1,21 @@
+{game_enity
+	(include "/properties/construction.inc")
+	{props "wood" "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{mass 10}
+	{Extension "table_5.mdl"}
+	{Volume "box01"
+	}
+	{Volume "box02"
+	}
+	{Volume "box03"
+	}
+	{Volume "box04"
+	}
+	{Volume "box05"
+	}
+	{Volume "box06"
+	}
+	{lodclass "decor_small"}
+}

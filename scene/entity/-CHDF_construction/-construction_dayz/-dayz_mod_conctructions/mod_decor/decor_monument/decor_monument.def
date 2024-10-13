@@ -1,0 +1,36 @@
+{game_entity
+    (include "/properties/building.inc")
+        {props "cornered" "concrete" "parts" "construction" "wall"}
+        {Extension "decor_monument.mdl"}
+        {Extender "land_patch"
+        {TerrainType "road" "bridge"}
+        {on 1}
+        {updateEntities 1}
+        {Nonormals 1}
+        }
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder01"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder02"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+	{Volume "cylinder03"
+		{Tags  "body"}
+		{Thickness 30}
+		{able {visible 1}}
+	}
+}

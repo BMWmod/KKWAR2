@@ -1,0 +1,293 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction"}
+	{props "concrete steel"}
+	("armor_heavy" args 1.0)
+
+
+	{Extension "lep_1b.mdl"}
+	{Volume "box01"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box02"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box03"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box04"
+		{Tags  "body"}
+		{Thickness 50}
+		{able {visible 1}}
+	}
+	{Volume "box050"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box051"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box061"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box06"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box070"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box07"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box080"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box08"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box090"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0911"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box091"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0921"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0922"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box092"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0931"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box093"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0941"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box094"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0951"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0952"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box095"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0961"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box096"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box0971"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box097"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box09"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box101"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box10"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box111"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box11"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box121"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "box12"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe1"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe2"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe3"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe501"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe502"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe503"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe504"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe505"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe506"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe50"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe51"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe52"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe53"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe54"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe55"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe56"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe57"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe58"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe590"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe591"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe59"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe5"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe60"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe61"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe62"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe63"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe6"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe7"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe8"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe90"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe91"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe92"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe9"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+	{Volume "boxe"
+		{Thickness 10}
+		{able {visible 0}{obstacle 0}}
+	}
+}

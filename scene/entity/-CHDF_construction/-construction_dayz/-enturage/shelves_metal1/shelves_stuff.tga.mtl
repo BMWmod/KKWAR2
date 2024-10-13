@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "shelves_stuff"}
+	{blend none}
+}

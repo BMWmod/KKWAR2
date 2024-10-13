@@ -1,0 +1,68 @@
+;Exported by: User
+;Date:        Tue May 26 21:09:38 2015
+;File:        C:\Users\User\Documents\3dsmax\scenes\ccvxvxc.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{VolumeView "body.ply"}
+			{bone "land"
+				{Position 1.1337e-005	0.000725571	0}
+                                {parameters "Land;Ground;"}
+                                {VolumeView "land.ply" {Ground} {DecalTarget}}
+			}
+			{bone "cylinder01"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object01"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object02"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object03"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object04"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object05"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object06"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object07"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object08"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object09"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object10"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object11"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object12"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object13"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object14"
+				{Position 0.2314	-0.399628	0}
+			}
+			{bone "object15"
+				{Position 0.2314	-0.399628	0}
+			}
+		}
+	}
+}

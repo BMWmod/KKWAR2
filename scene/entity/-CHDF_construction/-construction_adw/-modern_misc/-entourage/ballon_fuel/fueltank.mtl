@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "fueltank_d"}
+	{blend none}
+}

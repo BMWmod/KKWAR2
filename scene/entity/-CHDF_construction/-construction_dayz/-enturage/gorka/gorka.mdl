@@ -1,0 +1,26 @@
+;Exported by: Admin
+;Date:        Sun Jan 12 12:11:57 2014
+;File:        E:\1.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{Matrix34
+				1	0	0
+				0	0.993338	-0.115237
+				0	0.115237	0.993338
+				0.139454	-331.759	31.8302
+			}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Position 0	-3.05176e-005	0}
+}

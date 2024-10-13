@@ -1,0 +1,18 @@
+;Exported by: Vorabat
+;Date:        Wed Mar 24 02:34:52 2010
+;File:        (null)
+{Skeleton
+	{bone "sand_box"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "sand_box.ply"}
+	}
+}
+{Volume "box01"
+	{Box 25.2865 24.6211 27.9483}
+	{Bone "sand_box"}
+	{Position -0.128222	-0.00533104	13.9741}
+}

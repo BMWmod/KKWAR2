@@ -1,0 +1,9 @@
+{game_entity
+        (include "/properties/building.inc")
+        {obstacleid "unbreakable" "construction" }
+ {props "concrete" "no_destroyed_stamp"}
+ {Extension "chair_4.mdl"}
+ {Volume "body"
+ }
+	{lodclass "decor_small"}
+}

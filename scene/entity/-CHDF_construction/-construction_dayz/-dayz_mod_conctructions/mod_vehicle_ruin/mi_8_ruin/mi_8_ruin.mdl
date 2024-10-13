@@ -1,0 +1,56 @@
+;Exported by: пакунеу
+;Date:        Thu Apr 23 22:11:13 2009
+;File:        C:\Documents and Settings\пакунеу\Мои документы\3dsmax\scenes\mi8.max
+{Skeleton
+	{bone "mi-8"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "mi-8.ply"}
+	}
+}
+{Obstacle "mi-01"
+	{Obb2
+		{Center -13.7266 -63.6564}
+		{Extent 137.182 28.7428}
+		{Axis 0.0531046 0.998589}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Obstacle "object04"
+	{Obb2
+		{Center -6.72548 138.627}
+		{Extent 72.47 15.518}
+		{Axis 0.0879049 0.996129}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "mi-01"
+	{Polyhedron "mi-01.vol"}
+	{Bone "mi-8"}
+	{Position 0.0612182	0	0}
+}
+{Volume "object01"
+	{Polyhedron "object01.vol"}
+	{Bone "mi-8"}
+	{Position 0.0612182	0	0}
+}
+{Volume "object02"
+	{Polyhedron "object02.vol"}
+	{Bone "mi-8"}
+	{Position 0.0612182	0	0}
+}
+{Volume "object03"
+	{Polyhedron "object03.vol"}
+	{Bone "mi-8"}
+	{Position 0.0612182	0	0}
+}
+{Volume "object04"
+	{Polyhedron "object04.vol"}
+	{Bone "mi-8"}
+	{Position 0.0612182	0	0}
+}

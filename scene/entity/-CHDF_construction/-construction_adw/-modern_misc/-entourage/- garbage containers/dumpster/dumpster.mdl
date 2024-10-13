@@ -1,0 +1,23 @@
+;Exported by: Adam
+;Date:        Tue Aug 14 17:42:11 2012
+;File:        
+{Skeleton
+	{bone "dumpster"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "dumpster.ply"}
+	}
+}
+{Volume "body"
+	{Box 46.3961 29.9383 31.8405}
+	{Bone "dumpster"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		0.0415761	0.0423765	14.9519
+	}
+}

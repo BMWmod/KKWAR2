@@ -1,0 +1,16 @@
+;Exported by: Vorabat
+;Date:        Mon Sep 06 19:16:36 2010
+;File:        C:\Users\Vorabat\Documents\3dsmax\scenes\palatka3.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "roof_palatka_army"
+		}
+		{bone "body_palatka_army"
+		}
+	}
+}

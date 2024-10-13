@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "121st_5_details"}
+	{bump "121st_5_details_nm"}
+	{specular "121st_5_details_sp"}
+	{color "230 230 230 25"}
+	{blend test}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "medical_wall"}
+	{blend none}
+}

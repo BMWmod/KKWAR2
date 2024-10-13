@@ -1,0 +1,114 @@
+;Exported by: Notebook
+;Date:        Tue Sep 10 21:30:51 2019
+;File:        C:\Users\Notebook\Google Диск\MOW\3ds max model\Constraction\Industrial\Tower\tower3_x.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "base"
+			{VolumeView "base.ply"}
+			{bone "body"
+				{VolumeView "body.ply"}
+				{bone "piece6"
+					{Position 0	0	275.201}
+					{VolumeView "piece6.ply"}
+				}
+				{bone "stair"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						0	-6.60028	37.3703
+					}
+					{VolumeView "stair.ply"}
+				}
+				{bone "piece1"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						-19.685	-6.60028	124.987
+					}
+					{VolumeView "piece1.ply"}
+				}
+				{bone "piece2"
+					{Position 19.685	0	134.916}
+					{VolumeView "piece2.ply"}
+				}
+				{bone "piece3"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						0	-6.60028	185.6
+					}
+					{VolumeView "piece3.ply"}
+				}
+				{bone "piece4"
+					{Position -19.685	0	228.439}
+					{VolumeView "piece4.ply"}
+				}
+				{bone "piece5"
+					{Matrix34
+						0	1	0
+						-1	0	0
+						0	0	1
+						19.685	-6.60028	242.225
+					}
+					{VolumeView "piece5.ply"}
+				}
+				{bone "piece7"
+					{Matrix34
+						1	0	0
+						0	-0.432057	0.901846
+						0	-0.901846	-0.432057
+						9.84252	-23.9173	282.882
+					}
+					{VolumeView "piece7.ply"}
+				}
+				{bone "piece8"
+					{Matrix34
+						-1	0	0
+						0	0.570257	0.821467
+						0	0.821467	-0.570257
+						-9.84252	23.9173	282.882
+					}
+					{VolumeView "piece8.ply"}
+				}
+			}
+		}
+	}
+}
+{Volume "body"
+	{Cylinder 5.51181 92.5197}
+	{Bone "body"}
+	{Position 0	0	46.2598}
+}
+{Volume "piece2"
+	{Cylinder 5.51181 92.5197}
+	{Bone "piece2"}
+	{Position 0	0	2.95821}
+}
+{Volume "piece4"
+	{Cylinder 5.51181 92.5197}
+	{Bone "piece4"}
+	{Position 0	0	0.870991}
+}
+{Volume "piece6"
+	{Box 37.4016 37.4016 29.5276}
+	{Bone "piece6"}
+	{Position 0	0	13.1851}
+}
+{Volume "piece7"
+	{Cylinder 5.90551 8.26772}
+	{Bone "piece7"}
+	{Position 0	3.23656e-005	1.61942}
+}
+{Volume "piece8"
+	{Cylinder 5.90551 8.26772}
+	{Bone "piece8"}
+	{Position 0	0	1.61944}
+}

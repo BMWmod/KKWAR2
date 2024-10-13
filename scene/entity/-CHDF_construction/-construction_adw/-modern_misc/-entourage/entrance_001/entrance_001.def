@@ -1,0 +1,55 @@
+{game_entity
+	
+        (include "/properties/building.inc")
+	{Extension "entrance_001.mdl"}
+        {obstacleid "unbreakable"}
+	{props "concrete"}
+	("armor_heavy" args 1.0)	
+       
+	
+	{Volume "body"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+       {Volume "body1"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+{Volume "body2"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+{Volume "body3"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+{Volume "body4"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+{Volume "body5"
+		
+                {Thickness 10}
+		{able {obstacle 1}}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

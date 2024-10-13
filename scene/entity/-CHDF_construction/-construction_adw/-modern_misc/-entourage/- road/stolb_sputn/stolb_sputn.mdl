@@ -1,0 +1,23 @@
+;Exported by: Vorabat
+;Date:        Sat Feb 27 23:47:43 2010
+;File:        (null)
+{Skeleton
+	{bone "stolb_sputn"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "stolb_sputn.ply"}
+	}
+}
+{Volume "box01"
+	{Box 10.5857 10.5857 36.4735}
+	{Bone "stolb_sputn"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	4.6914
+		-3.86277	-0.393032	85.2
+	}
+}

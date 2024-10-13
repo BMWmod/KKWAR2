@@ -1,0 +1,67 @@
+;Exported by: MOCKVu4
+;Date:        Thu Nov 30 11:15:15 2023
+;File:        D:\!Neu\model\!house\hrushevka_5f\hrushevka_5f_var5.max
+{Skeleton
+	{bone "attach4"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "seat"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				1.01151	20.8993	-1.34317
+			}
+		}
+		{bone "stena"
+			{Matrix34
+				1	0	0
+				0	0	1
+				0	-1	0
+				0.163143	28.4116	17.6624
+			}
+			{VolumeView "stena.ply"}
+			{bone "window1"
+				{Position 41.3749	-46.1979	114.083}
+				{VolumeView "window1.ply"}
+			}
+		}
+	}
+}
+{Obstacle "stena"
+	{Obb2
+		{Center 0.671449 -30.7393}
+		{Extent 20.6693 1.65989}
+		{Axis 1 0}
+	}
+	{Rotate}
+	{Tags  "body"}
+}
+{Volume "hole1"
+	{Box 25.5906 25.5906 19.685}
+	{Bone "attach4"}
+	{Matrix34
+		-1	0	0
+		0	-1.29687	0
+		0	0	1.13565
+		1.03456	33.2175	20.4674
+	}
+}
+{Volume "stena"
+	{Box 41.3386 41.3386 3.31976}
+	{Bone "stena"}
+	{Position 0.508315	0.000934007	-2.32763}
+}
+{Volume "window1"
+	{Box 1.9685 23.622 19.685}
+	{Bone "window1"}
+	{Matrix34
+		0	0	-1
+		-1.29558	-0.0577124	0
+		-0.0505383	1.13453	0
+		-37.3207	49.6708	-115.796
+	}
+}

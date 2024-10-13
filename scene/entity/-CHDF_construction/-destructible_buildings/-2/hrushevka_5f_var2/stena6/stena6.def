@@ -1,0 +1,30 @@
+{game_entity
+	(include "/properties/building.inc")
+	{Extension "stena6.mdl"}
+	{props "cornered" "concrete" "parts" "construction" "windowed" "wall" "burning" "dom" "slow_on_crush"} 
+	("armor_heavy" args 0.8)
+
+	{placer
+		{place "1" {attach  squat_lie} 		{linkbone "seat1"}}
+	}	
+	{mass 5000}
+	{boarder}
+	{Volume "hole1"
+		{Tags  "attach" "1"}
+		{able clear {hole}{touch 1}}
+	}
+	{Volume "stena2"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 1}{holed}}
+	}
+	{Volume "stena"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {visible 1}{holed}}
+	}
+	{Volume "window1_vol022"
+		{Thickness 0.2}
+		{able {visible 0}{window}}
+	}
+}

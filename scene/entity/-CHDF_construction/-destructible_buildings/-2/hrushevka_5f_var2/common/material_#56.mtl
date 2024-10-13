@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "rm187-mynt-34"}
+	{blend none}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "de_train_signalbox"}
+	{blend none}
+}

@@ -1,0 +1,18 @@
+{construction
+	(include "/properties/post.inc")
+	{Extension "highway_sign_01.mdl"}
+	{props "construction" "steel"}	
+	("armor_post")
+	("armor_use_volume_thickness")
+
+
+	{volume	"body1"
+		{thickness 10}
+		{able {visible 0}}
+	}
+	{volume	"body2"
+		{thickness 1}
+		{able{obstacle 0}}
+	}
+	{lodclass "decor_medium"}
+}

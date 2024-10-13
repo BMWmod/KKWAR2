@@ -1,0 +1,13 @@
+{game_entity
+    (include "/properties/building.inc")
+	{Extension "fence_soviet.mdl"}
+	{obstacleID "construction"}
+    {props "concrete" "sand_bag_big"}
+	("armor_use_volume_thickness")	  
+	
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 15}
+		{able {bullet 1} {visible 1}}
+	}
+}

@@ -1,0 +1,16 @@
+{game_entity
+	(include "/properties/post.inc")
+	{Extension "utilitypole01d.mdl"}
+	{props "post" "wood"}
+	("armor_use_volume_thickness")
+	
+	{Volume "body1"
+		{Tags  "body"}
+		{Thickness 5}
+	}
+	{Volume "body"
+		{Tags  "body"}
+		{Thickness 5}
+	}
+	{lodclass "decor_medium"}
+}

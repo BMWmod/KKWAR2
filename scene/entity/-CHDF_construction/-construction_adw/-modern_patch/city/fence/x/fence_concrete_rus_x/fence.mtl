@@ -1,0 +1,6 @@
+{material bump
+	{diffuse "$/construction/city/fence/fence"}
+	{bump "$/construction/city/fence/fence_bp"}
+	{specular "$/construction/city/fence1_sp"}
+	{blend none}
+}

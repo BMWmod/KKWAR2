@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "ston_floor_03a"}
+	{blend none}
+}
