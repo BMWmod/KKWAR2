@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "adds_co"}
+	{blend none}
+}

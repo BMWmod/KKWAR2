@@ -2,7 +2,7 @@
 	(include "/properties/car.ext")
 	(include "/properties/shadow/tank.inc"  scale(0.9))
 	(include "/properties/selection/vehicle.inc"  scale(1.1))
-    {props "wheeled" "4_wheels" "car" "DUM" "vision_lev03" "armored_glass"}
+    {props  "vehicle" "wheeled" "4_wheels" "car" "DUM" "vision_lev03" "armored_glass" "novator"}
  	{targetClass "armoredcar_DUM"}
  	{PatherId "vehicle.small"}
 	("armor_car_STANAG3a")
@@ -99,18 +99,8 @@
 
 	{extender "inventory"
 		{Box
-			{size 8 10}     
-            {clear}
-			{item "hedgehog_kit" 50}
-			{item "antitank_tm62m" "mine" 100}
-			{item "antipersonnel_mon50" "mine"  300}
-			{item "repair_kit" 3}
-			{item "spade_inv" 10}
-			{item "buksir_tros" 5}
-			{item "netting_kit" 5}
-			{item "axe" 2}
-			{item "mine_detector" 2}
-			{item "barbwire_kit" 30}
+			{Size 6 10}
+			{weight 1500}
 			
 		}
 	}

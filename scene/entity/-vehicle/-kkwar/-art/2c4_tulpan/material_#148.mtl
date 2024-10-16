@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/2s4_240mm/2s4_240mm_ammo2"}
+	{blend none}
+}

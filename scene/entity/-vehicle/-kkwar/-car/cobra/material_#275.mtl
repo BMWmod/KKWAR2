@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "cobra_init_2_co"}
+	{blend none}
+}

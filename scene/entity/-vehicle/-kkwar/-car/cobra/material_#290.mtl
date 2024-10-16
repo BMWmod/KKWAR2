@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "hmmwv_clocks_co"}
+	{blend none}
+}

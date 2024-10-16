@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/model/2s4_240mm/2s4_240mm_body_am"}
+	{color "229 229 229 25"}
+	{blend test}
+}

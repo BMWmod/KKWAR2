@@ -1,0 +1,94 @@
+{game_entity
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+
+	{collider "tank.light"}
+	{props "Light_M" "vision_lev06" "turret_rotator" "with_open_zpu" "has_apu" "has_autoloader" "cw_artillery"}
+	{targetClass "light_tank"}
+	{extension "crew.ext"}
+	{volume "body2"
+		{component "body"}
+		{tags "body"}
+	}
+	{volume "body3"
+		{component "body"}
+		{tags "body"}
+	}
+
+
+	("armor_light" turret(5 5 5 5) body(30 12 10 8))
+	("armor_engine"  t(20))
+
+	{Volume "gun"
+		{tags "gun"}
+		{component "gun"}
+		{thickness 25}
+	}
+
+	{Volume "mantlet"
+		{tags "gun"}
+		{component "gun"}
+		{thickness 25}
+	}
+
+
+
+	{extender "inventory"
+		{box
+		{Size 8 6}
+		{Weight 15000}
+		{item "ammo 240mm_mortar fg" 20}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "weapon 240mm-2s4_gun" filling "ammo 240mm_2s4_ammo fg" 1}
+			{foresight "foresight1"}
+			{basic}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{SequentialAim 0}
+			("CW_stab_artillery_rt" rechargetime(20))
+		}
+	}
+	{brain
+		{properties
+			{fire_mode hold}	;Это я нашел у нашей гаубицы Б4.
+		}
+	}
+
+	{extender "cannon"
+		{animation
+			{move "" ""}
+			{reload "" ""}
+			{aim "" ""}
+		}
+		{animation
+			{switch close}
+		}
+		{move {workers "driver" "Seat04"} {obstacle "open"}}
+		{attack {workers "Seat03" "gunner"} {obstacle "close"}}
+		{rotate_ik_Limit 0}
+	}
+
+	{mass 24000}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(2.0))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(15.7)
+			Width(3.25)
+			Power(300)
+			Realspeed(52)
+			Gamespeed(32) 
+		)
+		{RearGears		0.20 0.34}}
+		("CW_fuelbag" Range(500) Fuelvolume(830))
+		("CW_speed_lev" Gamespeed(41))
+	}
+	{props "cwfs_fuel_800"}
+	{Extension "2s4_240mm.mdl"}
+	("cwts_buksir")
+	("missile_aimpoint_tanksize")
+	("two_headlights")
+}
