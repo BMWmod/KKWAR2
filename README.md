@@ -1,6 +1,6 @@
 
 https://bestway-1.gitbook.io/dokumentaciya
--Днивник с описанием модинга мыловара 
+-Дневник с описанием модинга мыловара 
 
 C:\Users\%username%\AppData\Local\Men of War II\packages\editor-local-changes
 
