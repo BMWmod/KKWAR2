@@ -1,7 +1,10 @@
 
 https://bestway-1.gitbook.io/dokumentaciya
+-Дневник с описанием модинга мыловара 
 
 C:\Users\%username%\AppData\Local\Men of War II\packages\editor-local-changes
+
+-Путь до ваших локальных изменений (т.е карты) 
 
 
 
