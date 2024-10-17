@@ -67,7 +67,7 @@
 
 ;	("two_headlights")
 ;	("cw_headlightt")
-	{Extension "Kamaz_kung.mdl"}
+	{Extension "kamaz_kung.mdl"}
 	("missile_aimpoint_trucksize")
 	{texmod "chern"}
 
