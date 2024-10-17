@@ -1,0 +1,32 @@
+{weapon_bullet
+	{tag "gun" "weapon" "skill_tankgun" "bullet"}	;"bullet" is needed for work of levelling and skills
+	("heavy_artillery")
+	{filling "ammo 9m27" 16}
+
+	{fireSound "reactive/9k57"}
+	{burst {min 0} {noaiming}}
+	{recoveryTime 2.5}
+	{rechargeTime 210}
+	("CW_acc_artillery" mils(5))
+	{range 380 380}
+	{gravity 1.2}
+	("speed_mrls")
+
+	{aimtype adaptive}
+	{cursor "cannon_on_fg_14"}
+	{cursorreloading "cannon_reload_fg_timer_210"}
+
+	{parameters "cl"
+        {gravity 0.9}	
+		{range 380 380}
+		{cursor "cannon_on_heat_10"}
+		{cursorreloading "cannon_reload_heat_timer_210"}
+	}
+
+	{parameters "oa"
+        {gravity 0.51}	
+		{range 380 380}
+		{cursor "cannon_on_fg_3"}
+		{cursorreloading "cannon_reload_fg_timer_210"}
+	}
+}	

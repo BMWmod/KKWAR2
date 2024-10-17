@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "bastion_tubes_bycawx"}
+	{blend none}
+}

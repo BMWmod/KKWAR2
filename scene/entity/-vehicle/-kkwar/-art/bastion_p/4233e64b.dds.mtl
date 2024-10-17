@@ -1,9 +1,0 @@
-;MTL Created by CB_MtlFixer
-{material bump
-	{diffuse "$/model/iskander/covers"}
-	{bump "$/model/iskander/covers_bp"}
-	{specular "$/model/iskander/covers_sp"}
-	{color "229 229 229 25"}
-	{emitsheat}
-{blend none}
-}

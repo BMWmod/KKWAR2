@@ -1,8 +1,0 @@
-;MTL Created by CB_MtlFixer
-{material bump
-	{diffuse "$/model/iskander/glass"}
-	{specular "$/model/iskander/glass_sp"}
-	{color "229 229 229 25"}
-	{emitsheat}
-{blend blend}
-}

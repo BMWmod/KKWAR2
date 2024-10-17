@@ -1,9 +1,0 @@
-;MTL Created by CB_MtlFixer
-{material bump
-	{diffuse "$/model/iskander/cabin"}
-	{bump "$/model/iskander/cabin_bp"}
-	{specular "$/model/iskander/cabin_sp"}
-	{color "229 229 229 25"}
-	{emitsheat}
-{blend none}
-}

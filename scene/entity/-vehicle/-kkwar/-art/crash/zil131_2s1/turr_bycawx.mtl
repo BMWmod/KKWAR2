@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "gvosdika2s1_turret_d"}
+	{blend none}
+}

@@ -66,32 +66,28 @@
 
 ;===================================================================
 
+	
 	{extender "inventory"
-		{Box
-		
-			{Size 9 7}
-			{weight 3000}
-			
-			{item "ammo 9M27F" 16}
-			
-			
+		{box
+			{size 14 8}
+			{item "ammo 9m27 f" 16}
+			{item "ammo 9m27 cl" 16}
+			{item "repair_kit" 2}
 		}
 	}
 	
 ;===================================================================
-	
+
 	{Weaponry
 		{place "gun"
-			{weapon "bm27_lu" filled}
-			{foresight "foresight"}
+			{weapon "weapon 9K57" filling "ammo 9m27 f" 16}
 			{Barrels 16}
-			{shooter "shooter"}
-			
-			{charger "gunner"}
-			{gunner "gunner"}
-			
-			{StationaryFiring}
+			{foresight "shooter00"}
 			{RestoreIKAfterAim}
+			{charger "commander"}
+			{gunner "commander"}
+			("CW_stab_artillery")
+			;{StationaryFiring}
 			{basic}
 		}
 	}

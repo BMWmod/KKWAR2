@@ -1,0 +1,22 @@
+{from "pattern gun"    
+    ("100-128caliber")
+    {ZeroingAccuracy 0.8 0.6 0.5}
+    {DisableRicochet}
+    {aimtype curved}
+    {traceFreq 0}
+    {filling "ammo 240mm_mortar" 1}
+    {fireSound "gun/2B11"}
+    {reloadSound "tankgun_r03"}
+    {rechargeTime 6} ;ïðèöåëüíàß ñêîðîñòðåëüíîñòü: äî 10 âûñòð./ìèí
+    {range 185 185} ; ìàêñèìàëüíàß äàëüíîñòü ñòðåëüáû: 7100 ì; 9000 ì (ŠŒ-8 ÇƒðàíüÈ)
+    {gravity 1}
+    ("speed" s(820)) 
+    {calibre 120}
+    ("CW_acc_artillery" mils(8))    
+    ;{cursor "cannon_on_fg_4"}
+    {cursor "mortar"}
+    {cursorReloading "cannon_reload_fg"}                            
+}
+
+
+

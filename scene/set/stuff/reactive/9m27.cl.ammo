@@ -1,0 +1,20 @@
+{bullet
+	
+	{tag "big" "shell" "fg" "size2" "no_ricochet" "m270_cl" "fragmentary" "antiinf" "fx_45_89"}
+	{tag "cluster_shell"} 
+	{inventory
+		{size 7 2}
+		{weight 100}
+	}	
+	{mass 300}
+	{entity "9m27oa"}
+	{view "9m27oa"
+		{tail "rocket_cl_smoke_short_mlrs" "tail"}
+	}
+	{detonationThickness 1}
+	{applyProjectile}
+	;GMLRS M31A1 90 кг. ОФ БЧ содержит ВВ 24 кг - http://basart.artillerie.asso.fr/article.php3?id_article=975
+("cw_direct_hit" energy(15))
+("cw_blast_mass_add" add(700))
+}
+;6 волна бонус

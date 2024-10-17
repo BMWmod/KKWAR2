@@ -1,0 +1,59 @@
+{bullet
+	
+	{tag "big" "shell" "fg" "bomb" "no_ricochet" "fragmentary" "m270_fg" "fx_upto250kg"}
+	{tag "fg_150_shell"} ; òîëüêî äëÿ ammo.set
+	{inventory
+		{size 7 2}
+		{weight 100}
+	}	
+	{mass 300}
+	{entity "9m27f"}
+	{view "9m27f"
+		{tail "rocket_smoke_short_mlrs" "tail"}
+	}
+	{detonationThickness 1}
+	{applyProjectile}
+	;GMLRS M31A1 90 êã. ÎÔ Á× ñîäåðæèò ÂÂ 24 êã - http://basart.artillerie.asso.fr/article.php3?id_article=975
+;	{tag "he_8to30"}
+;	{damage blastwave	 ; fragmentary
+;		{energy 0.7}
+;		{area 15.2 17.5}
+;	}
+;	{damage add blastwave	 ; HE antipersonnel
+;		{energy 1.2}
+;		{area 12.9 14.8}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-APC
+;		{energy 2.5}
+;		{area 9.2 10.5}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-IFV
+;		{energy 6.5}
+;		{area 7 8.1}
+;	}
+;	{damage add blastwave	 ; HE, FG antitank
+;		{energy 11}
+;		{area 3.6 4.1}
+;	}
+;	{damage add blastwave	 ; HE, kinetic, direct hit
+;		{energy 25}
+;		{area 0.2 0.4}
+;	}
+;Á× 90 êã, ÂÂ 24 êã, ÒÝ 1,3, íà÷. ñêîðîñòü 500 ì/ñ, òèï îáîëî÷êè - Ãàóáèöû 101+ìì, òèï Á× - ÎÔ(HE)
+("cw_blastwave_4" tank(1.3) ifv(3.9) apc(7.6) end(9.8))
+("cw_direct_hit" energy(25))
+("cw_fragwave" e2_5(2.5) r2_5(6.1) e1_2(1.2) r1_2(12.5) chance(22.6))
+("cw_fragwave" e2_5(2.5) r2_5(8.2) e1_2(1.2) r1_2(17.5) chance(14.3))
+("cw_fragwave" e2_5(2.5) r2_5(9.6) e1_2(1.2) r1_2(20.6) chance(14.2))
+("cw_fragwave" e2_5(2.5) r2_5(12.3) e1_2(1.2) r1_2(26.1) chance(12.2))
+("cw_fragwave" e2_5(2.5) r2_5(15.9) e1_2(1.2) r1_2(33.2) chance(11.2))
+("cw_fragments" e1_2(1.2) r1_2(12.5) e1_0(1) r1_0(16.3) e0_7(0.7) r0_7(22.7) e0_25(0.25) r0_25(31.3) chance(22.6))
+("cw_fragments" e1_2(1.2) r1_2(17.5) e1_0(1) r1_0(22.9) e0_7(0.7) r0_7(32.1) e0_25(0.25) r0_25(32.1) chance(14.3))
+("cw_fragments" e1_2(1.2) r1_2(20.6) e1_0(1) r1_0(27) e0_7(0.7) r0_7(38) e0_25(0.25) r0_25(38) chance(14.2))
+("cw_fragments" e1_2(1.2) r1_2(26.1) e1_0(0.25) r1_0(26.1) e0_7(0.25) r0_7(26.1) e0_25(0.25) r0_25(26.1) chance(12.2))
+("cw_fragments" e1_2(1.2) r1_2(33.2) e1_0(0.25) r1_0(33.2) e0_7(0.25) r0_7(33.2) e0_25(0.25) r0_25(33.2) chance(11.2))
+("cw_contusion" t10(10.3) t6(14.7) t3(19.8) t0(25.8))
+("cw_seismic_5")
+("cw_blast_mass_add" add(180.5))
+}
+;6 âîëíà áîíóñ

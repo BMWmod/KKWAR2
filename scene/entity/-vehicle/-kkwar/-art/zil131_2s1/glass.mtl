@@ -1,5 +1,0 @@
-{material envmap
-	{diffuse "glass"}
-        {mask "glass"}
-	{blend blend}
-}

@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "main_2_base_color"}
-	{blend none}
-}
