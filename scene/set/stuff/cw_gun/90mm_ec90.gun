@@ -1,0 +1,91 @@
+;Created by Pheonix 
+{from "pattern tank_gun" 
+	{tag "agf"}
+	{filling "bullet90_nato" 3}
+	{fireSound "gun_cw/90mm_shot"}
+	{reloadSound "cw/t34_reload"}
+	{RecoveryTime 8}
+	{rechargeTime 10}
+	{range 130 130}
+	("speed" s(800)) 
+	("75-76caliber")
+	{calibre 90}
+	("CW_acc_common" mils(0.8))
+	;{cursor "T62_HE"}
+	;{cursorReloading "T62_HE_reload"}
+	{cursor "cannon_on_fg_2"}
+	{cursorReloading "cannon_reload_fg"}
+
+
+	{parameters "bullet90_fr_m bullet90_nato apcr"  	;M669A1
+		("CW_APCR_damage_WC1500" penetr_2000m(185))	;100mm/60deg/1000m
+		("CW_acc_common" mils(0.4))
+		{cursor "cannon_on_apcr"}
+		{cursorReloading "cannon_reload_apcr"}
+		("speed" s(1200)) 
+	}
+	{parameters "bullet90_fr_m cm" 	;M620A1
+		("CW_acc_common" mils(0.5))
+		;{cursor "tankgun_HEAT"}
+		;{cursorReloading "tankgun_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorReloading "cannon_reload_heat"}
+		("speed" s(890)) 
+	}
+ 	{parameters "bullet90_fr cm" 	;NR 478A1
+		("CW_acc_common" mils(0.8))
+		;{cursor "tankgun_HEAT"}
+		;{cursorReloading "tankgun_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorReloading "cannon_reload_heat"}
+		("speed" s(890)) 
+	}
+	{parameters "bullet90_fr_m fg"	;M631
+		("CW_acc_common" mils(0.5))
+		;{cursor "tankgun_HE"}
+		;{cursorReloading "tankgun_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}
+		("speed" s(658))
+	} 
+	{parameters "bullet90_fr fg"	;NR 501A1
+		("CW_acc_common" mils(0.8))
+		;{cursor "tankgun_HE"}
+		;{cursorReloading "tankgun_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}
+		("speed" s(700))
+	} 
+	{parameters "bullet90_fr_m sm"	;M632
+		("CW_acc_common" mils(0.5))
+		;{cursor "tankgun_SM"}
+		;{cursorReloading "tankgun_SM_reload"}
+		{cursor "cannon_on_sm"}
+		{cursorReloading "cannon_reload_sm"}
+		("speed" s(658))
+	}
+	{parameters "bullet90_fr sm"	;NR 502A2
+		("CW_acc_common" mils(1.0))
+		;{cursor "tankgun_SM"}
+		;{cursorReloading "tankgun_SM_reload"}
+		{cursor "cannon_on_sm"}
+		{cursorReloading "cannon_reload_sm"}
+		("speed" s(700))
+	}	
+	{parameters "bullet90_fr_m ap"	;M625A1
+		("CW_acc_common" mils(0.5))
+		{cursor "cannon_on_hesh"}
+		{cursorReloading "cannon_reload_hesh"}
+		("speed" s(800))
+	}
+	{parameters "bullet90_fr ap"	;NR 503A2
+		("CW_acc_common" mils(1.0))
+		{cursor "cannon_on_hesh"}
+		{cursorReloading "cannon_reload_hesh"}
+		("speed" s(800))
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+		{range 190 190}	;7300 +10
+	}
+}	           

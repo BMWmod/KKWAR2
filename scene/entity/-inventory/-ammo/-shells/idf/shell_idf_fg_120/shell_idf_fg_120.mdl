@@ -1,0 +1,80 @@
+;Exported by: User
+;Date:        Tue Apr 23 19:04:26 2024
+;File:        C:\Users\User\Desktop\NATO ARMY 120mm shell France,Germany,USA\120mm nato .max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+		{bone "tail"
+			{parameters "Voxels=0;"}
+			{Matrix34
+				0	0	-1
+				-1	0	0
+				0	1	0
+				0.0118274	-0.0923139	-9.08798
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		0	-1	0
+		-1	0	0
+		-0.0645906	-0.0884868	-1.98631
+	}
+}
+{Volume "select"
+	{Polyhedron "select.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	0	-1
+		0	-1	0
+		-1	0	0
+		1.16008	-0.0884894	-1.82647
+	}
+}
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 33.8088	-0.0876417	-0.214666}
+			{lookat -0.956081	-0.115093	-0.202997}
+			{fov 31.7555}
+			{horizon -90.17}
+		}
+		{lights
+			{"0"
+				{type directional}
+				{direction -0.45561	-0.200804	0.0457976}
+			}
+			{"1"
+				{type point}
+				{position -9.48301	4.66817	12.5091}
+			}
+			{"2"
+				{type point}
+				{position -1.07254	-11.3972	-28.5572}
+			}
+		}
+	}
+	{"Stuff_primary"
+		{camera
+			{origin 33.9493	0.0252008	-0.178843}
+			{lookat -6.88277	0.0425076	-0.167248}
+			{fov 31.7555}
+			{horizon -90.1701}
+		}
+		{lights
+			{"0"
+				{type directional}
+				{direction -0.45561	-0.200804	0.0457965}
+			}
+		}
+	}
+}

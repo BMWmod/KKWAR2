@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet stackable Lapua rifle sniper pierce sharing fx_bul_med ui_rifle"}
+	{inventory
+		{weight 10}
+		{block 10}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.03}
+	{entity "8_6x70_x10"}
+	{trace
+		{view "/texture/fx/trace7"
+			{ScaleY 0.18}
+			{Light 0.4}
+		}
+		{length 2.8}
+	}
+("cw_powder_charge" kg(0.005))
+}

@@ -1,0 +1,79 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "mt-12"
+	{tag "agf"}
+	{filling "100mmrapira ammo"}
+	{fireSound "gun_cw/100mm_d10-t"}
+	{reloadSound "cw/gun73reload"}
+	{rechargeTime 4.5}
+	{range 185 185}
+
+	;{cursor "arta_he"}
+	;{cursorreloading "arta_he_reload"}
+	{cursor "cannon_on_fg_4"}
+	{cursorreloading "cannon_reload_fg"}
+	("speed" s(663))
+	("100-128caliber")
+	{calibre 15}
+	;("damage4" a(200) b(175) c(152) d(130) e(100))   ; нет калиберного бронебойного, не используется
+	("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+	{parameters "bullet100_rus_rapira apcr"             ; ПК 3БМ24 Калач
+		("CW_APCR_damage_ST1500" penetr_2000m(195)) ; +15% к бронебойности 3БМ2 
+		{range 145 145}
+		("CW_acc_common" mils(0.23));таблицы стрельбы
+		;оценка
+		;{cursor "arta_apcr"}
+		;{cursorreloading "arta_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1575))
+	}
+	{parameters "bullet100_rus_rapira cm"
+		{range 145 145}
+		("CW_acc_common" mils(0.35));таблицы стрельбы
+		;оценка
+		{cursor "arta_heat"}
+		{cursorreloading "arta_heat_reload"}	
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(975))
+	}
+	{parameters "bullet100_rus_rapira fg"
+		("CW_acc_common" mils(0.3));таблицы стрельбы
+		("speed" s(663))
+		{gravity 2}	
+	}
+	{parameters "bullet100_cn_rapira apcr" 
+		("CW_APCR_damage_ST1500" penetr_2000m(438))	;DYW PT86-100
+		{range 145 145}
+		("CW_acc_common" mils(0.23));оценка
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1575))
+	}
+	{parameters "bullet100_cn_rapira cm"
+		{range 145 145}
+		("CW_acc_common" mils(0.35))
+		{cursor "arta_heat"}
+		{cursorreloading "arta_heat_reload"}	
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(975))
+	}
+	{parameters "bullet100_cn_rapira fg"
+		("CW_acc_common" mils(0.3));таблицы стрельбы
+		("speed" s(663))
+		{gravity 2}	
+	}
+	{parameters "bullet100_cn_rapira rok"
+		("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+		{range 1 1}
+		("CW_acc_common" mils(0))
+		{cursor "cannon_on_heat_2"}
+		{cursorreloading "cannon_reload_heat"}
+		{speed 1000}
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+	}
+}
+                    

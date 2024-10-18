@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet stackable rifle 7H33 pierce sharing fx_bul_med ui_rifle"}
+	{inventory
+		{weight 10}
+		{block 10}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.015}
+	{entity "svdk_ammo"}
+	{trace
+		{view "/texture/fx/tracerf"
+			{ScaleY 0.18}
+			{Light 0.4}
+		}
+		{length 2.8}
+	}
+("cw_powder_charge" kg(0.003))
+}

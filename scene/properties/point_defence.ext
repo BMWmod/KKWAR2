@@ -1,0 +1,396 @@
+;SDL
+actor
+{PatherID  "vehicle.large"}
+{obstacleID "tank"}
+{simulation {able 0}}
+{able "repaired" "minimap"}
+{lodclass "none"}
+{collider "cannon"}
+
+	{extension "/properties/animation/vehicle/visor_anm.ext"}
+{sensor
+		{RecognizeTime 0.01}
+		{InformRange 300}	;Changed in MOW2
+}
+{targetClass "cannon_point_defence"}
+{targetSelector "cannon_shell"}
+
+{props "steel" "vehicle" "vehicle_common" "emit_on_sink" "point_defence" "unit"}
+; {props  "icon_for_linked"}	;это лучше убрать для большинства линкованных объектов (их можно выбрать кликом по ним) и оставить для главных
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	;шасси и cannon нужны для работы переключателя режима огня
+{Chassis "human_carrier"
+	{locomotion
+		{StopTime	0.2}
+		{BrakeTime	0.7}
+		{TurnRadius	3}
+		{TurnStart	0.8}
+		{TurnStop	0.5}
+		{Gears		0.35 0.5 0.7 1.0}
+		{RearGears	0.33 0.5}
+		{MaxSpeed	1}
+		{StartTime	1}
+		{TurnTime	2}
+		{TurnRadius	2}
+	}
+	{FuelBag
+		{volume 0 }	; liters
+		{remain 0 }
+		{fuel "fuel"}
+	}
+}
+	{extender "cannon"
+		{animation
+			{switch "close"}
+		}
+		{move {obstacle "close"}}
+		{attack {obstacle "open"}}
+	}
+
+{## extender "detail"
+	{random}
+}
+
+
+{extender "inventory"
+	{box
+		{Size 6 6}
+		{weight 2000}
+	}
+}
+{boarder}
+
+{## extender "d_a"
+	{on}
+}
+;{RimLight}	;Disabled in MOW2
+
+{volume "body" {thickness 4} {component "body"}}
+{volume "body1" {thickness 4} {component "body"}}
+{volume "body2" {thickness 4} {component "body"}}
+{volume "body3" {thickness 4} {component "body"}}
+{volume "body4" {thickness 4} {component "body"}}
+{volume "turret" {thickness 3} {component "turret"}}
+{volume "turret1" {thickness 3} {component "turret"}}
+{volume "turret2" {thickness 3} {component "turret"}}
+{volume "gun_rot" {thickness 3} {component "gun_rot"}}
+{volume "gun_rot1" {thickness 3} {component "gun_rot"}}
+{volume "gun_rot2" {thickness 3} {component "gun_rot"}}
+{volume "gun"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun"}
+}
+{volume "gun_a"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun"}
+}
+{volume "gun2"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun2"}
+}
+{volume "gun2_a"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun2"}
+}
+{volume "gun3"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun3"}
+}
+{volume "gun3_a"
+	{thickness 3}
+	{able {Visible 0} {Obstacle 0} {Contact 0} {nolook 1}}
+	{component "gun3"}
+}
+{volume "driver_triplex" {thickness 5} {component "driver_triplex"}}
+{volume "driver_triplex1" {thickness 5} {component "driver_triplex"}}
+{volume "driver_triplex2" {thickness 5} {component "driver_triplex"}}
+{volume "commander_triplex" {thickness 5} {component "commander_triplex"}}
+{volume "commander_triplex1" {thickness 5} {component "commander_triplex"}}
+{volume "commander_triplex2" {thickness 5} {component "commander_triplex"}}
+{volume "commander_triplex3" {thickness 5} {component "commander_triplex"}}
+{volume "additional_triplex" {thickness 5} {component "additional_triplex"}}
+{volume "additional_triplex1" {thickness 5} {component "additional_triplex1"}}
+
+{volume "ammo_storage_main" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main1" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main2" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main3" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main4" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main5" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main6" {thickness 10} {component "ammo_storage_main"}}
+
+{volume "ammo_storage_autocannon" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon1" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon2" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon3" {thickness 10} {component "ammo_storage_autocannon"}}
+
+{volume "ammo_storage_mgun" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun1" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun2" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun3" {thickness 10} {component "ammo_storage_mgun"}}
+
+{volume "autoloader" {thickness 10} {component "autoloader"}{able clear {bullet 1}{BLAST 1}}}
+{volume "autoloader1" {thickness 10} {component "autoloader"}{able clear {bullet 1}{BLAST 1}}}
+{volume "autoloader2" {thickness 10} {component "autoloader"}{able clear {bullet 1}{BLAST 1}}}
+
+(define "recoil_side_volumes"	;support of side gun recoil
+	{volume "recoil_gun_front" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_left" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_right" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_back" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_baleft" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_baright" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_frright" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{volume "recoil_gun_frleft" {component "recoil_gun"}{thickness 30}{tags "gun_recoil"}{able clear {NoWoundDecal}}}
+	{component "recoil_gun"}
+)
+
+;==================================
+
+{component "body"	{RepairTime 40} {tags "repair_lev3" "repair_lev2"}}
+{component "turret" {RepairTime 30} {tags "repair_lev3" "repair_lev2"}}
+{component "gun_rot"{RepairTime 20} {tags "repair_lev3" "repair_lev2"}}
+{component "gun"{RepairTime 20} {tags "repair_lev2"}}
+{component "gun2"{RepairTime 20} {tags "repair_lev3" "repair_lev2"}}
+{component "gun3"{RepairTime 20} {tags "repair_lev3" "repair_lev2"}}
+
+
+    {component "driver_triplex"}	;visor bone 2
+    {component "commander_triplex"}	;visor bone 1
+    {component "additional_triplex"}	;visor bone 3
+    {component "additional_triplex1"}	;visor bone 4
+
+    {component "ammo_storage_main" {tags "explosive"}}
+    {component "ammo_storage_autocannon" {tags "explosive"}}
+    {component "ammo_storage_mgun" {tags "explosive"}}
+
+    {component "autoloader" {RepairTime 20}}
+
+
+
+
+(define "armor_point_def"
+	{armor
+		{setting "turret"
+			{thickness %tur}
+			{threshold  {blast {value %t_thr}}}	; 
+			{durability {blast {value %t_dur}}}	; 
+			{volumes "turret*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "gun_rot"
+			{thickness %tur}
+			{threshold  {blast {value %t_thr}}}	; 
+			{durability {blast {value %t_dur}}}	; 
+			{volumes "gun_rot*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "gun"
+			{thickness %tur}
+			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
+			{durability {blast {value (* 0.8 %t_dur)}}}	; 
+			{volumes "gun*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "gun2"
+			{thickness %tur}
+			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
+			{durability {blast {value (* 0.8 %t_dur)}}}	; 
+			{volumes "gun*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "gun3"
+			{thickness %tur}
+			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
+			{durability {blast {value (* 0.8 %t_dur)}}}	; 
+			{volumes "gun*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "shield"
+			{thickness %s}
+			{volumes "shield*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "body"
+			{thickness %b}
+			{threshold  {blast {value %t_thr}}}	
+			{durability {blast {value %t_dur}}}	
+			{volumes "body*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+)
+
+(define "armor_verylight"
+	("armor_point_def" tur(5) t_thr(30) t_dur(40) s(3) b(8))
+)
+(define "armor_light"
+	("armor_point_def" tur(10) t_thr(40) t_dur(60) s(6) b(15))
+)
+(define "armor_medium"
+	("armor_point_def" tur(15) t_thr(60) t_dur(120) s(10) b(25))
+)
+(define "wheel"
+	{volume %0
+		{thickness 0.5}
+		{tags "wheel"}
+		{component %0}
+		{able {NoWoundDecal}}
+	}
+	{component %0
+		{RepairTime 10}
+		{tags "wheel"}
+	}
+)
+(define "car_trace"
+    {Track %wheell
+	    {Tracer
+    		{View %fx}
+    		{Bone %bonel}
+	    	{Step %step}
+    	}
+    }
+    {Track %wheelr
+    	{Tracer 
+	    	{View %fx}
+    		{Bone %boner}
+    		{Step %step}
+	    }
+    }
+)
+(define "accuracy_by_motion" ;  spreading depending on the speed of "body", "gun" volumes
+    {AccuracyByMotion
+        {MaxLinearSpeed %max_linear}               ;km/h
+        {ByLinearSpeed %accuracy_by_linear}
+        {MaxAngularSpeed %max_angular}             ;deg/s
+        {ByAngularSpeed %accuracy_by_angular}
+        {DisorderTime %disorder_time}              ;s
+        {OrderTime %order_time}                    ;s
+    }
+)
+
+(define "CW_stab_2D_0_2class"
+    ("accuracy_by_motion"
+        max_linear(25) accuracy_by_linear(0.8)
+        max_angular(20) accuracy_by_angular(1.0)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_2D_0_5class"
+    ("accuracy_by_motion"
+        max_linear(20) accuracy_by_linear(0.6)
+        max_angular(15) accuracy_by_angular(0.9)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_2D_1_0class"
+    ("accuracy_by_motion"
+        max_linear(15) accuracy_by_linear(0.4)
+        max_angular(10) accuracy_by_angular(0.8)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_no_stabiliser"
+    ("accuracy_by_motion"
+        max_linear(10) accuracy_by_linear(0.2)
+        max_angular(10) accuracy_by_angular(0.8)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_turr_speed"
+	{bone "turret"
+	             	{speed (* %deg_per_s 0.000355) }
+	}
+)
+(define "CW_gun_rot_speed"
+	{bone "gun_rot"
+	             	{speed (* %deg_per_s 0.000355) }
+	}
+)
+(define "CW_bone_speed"
+	{bone "%bone"
+	             	{speed (* %deg_per_s 0.000355) }
+	}
+)
+;===============================cwps3
+(define "missile_aimpoint_custom"
+	{extension "/properties/animation/vehicle/proj_point_anm.ext"}
+		{bone "basis"
+			{bone "cwps3_place1"
+				{Matrix34
+					1	0	0
+					0	1	0
+					0	0	1
+					(* 20 %front)	(* 20 %side)	(* 20 %height)
+				}
+				{bone "cwps3_place"
+				}
+			}
+		}
+	{Placer
+		{place "cwps_proj_point"
+			{entity "cwps3_proj_point"}
+			{Linkbone "cwps3_place"}
+			{handlebone "Basis"}
+			{obstacle disable}
+		}
+	}
+)
+(define "missile_aimpoint_tanksize"
+	("missile_aimpoint_custom" height(0.75) front(0) side(0))
+)
+(define "missile_aimpoint_wieselsize"
+	("missile_aimpoint_custom" height(0.5) front(0) side(0))
+)
+(define "missile_aimpoint_stansize"
+	("missile_aimpoint_custom" height(0.25) front(0) side(0))
+)
+(define "missile_aimpoint_trucksize"
+	("missile_aimpoint_custom" height(1.05) front(0) side(0))
+)
+(define "missile_aimpoint_air"
+	("missile_aimpoint_custom" height(1.0) front(3) side(0))
+)
+(define "sam_radar"
+(mod "mp"
+	{props "sam_radar_%type"}
+)
+{props "sam_radar"}
+	{Placer
+		{place "vehicle9"
+		(mod not "mp"
+			{entity "proj_point_%type_antirad_spawner"}
+		)
+			{Linkbone "basis"}
+			{handlebone "Basis"}
+			{obstacle disable}
+		}
+	}
+)
+(define "attach_time_cannon"
+{attach_time 4}
+)
+(define "attach_time_small"
+{attach_time 2}
+)

@@ -1,0 +1,32 @@
+{bullet
+	
+	{tag "big" "shell" "fg" "bomb" "no_ricochet" "fragmentary" "fx_tos"}
+	{tag "fg_150_shell"} ; только для ammo.set
+	{inventory
+		{size 7 2}
+		{weight 100}
+	}	
+	{mass 810}
+	{entity "9m529"}
+	{view "9m529_view"
+		{tail "rocket_smokebig_short" "tail"}
+	}
+	{detonationThickness 1}
+	{applyProjectile}
+	;ВВ 100кг.100 x 1 = 90кг к расчету термобар.
+;	{tag "he_over30"}
+;	{damage add blastwave {energy 1.2} {area 42.8 49.2}}
+;	{damage add blastwave {energy 2.5} {area 23.7 27.3}}
+;	{damage add blastwave {energy 6.5} {area 18.1 20.9}}
+;	{damage add blastwave {energy 11} {area 7.7 8.8}}
+	{damage add fire
+			{radius 33}
+			{heating 11}
+			{time 6}
+	}
+;БЧ 150 кг, ВВ 90 кг, ТЭ 1,3, нач. скорость 500 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_4" tank(4.6) ifv(6.8) apc(13) end(15.2))
+("cw_contusion" t10(16) t6(23.1) t3(30.7) t0(39.8))
+("cw_seismic_5")
+("cw_blast_mass_add" add(878))
+}

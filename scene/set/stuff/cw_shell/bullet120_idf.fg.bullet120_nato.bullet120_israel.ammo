@@ -1,0 +1,48 @@
+{from "pattern fg"
+	{tag "big" "size4" "122to128fg" "bullet120_israel" "bullet120_NATO" "fx_111_145"}
+	{tag "fg_120_shell"} ; только для ammo.set
+	{mass 27}
+	{inventory
+		{size 6 1}
+	}	
+	{entity "shell_idf_fg_120"}
+	{view "fg_fly"}
+	{trace
+		{view "/texture/fx/trace" {ScaleY 0.2}}
+		{length 2}
+	}
+	{spawn ""
+		;{altitude 3}
+		{distance}
+        {detonation}
+	}
+
+	;M339 ОФ 2.3 кг ВВ к расчету.
+	;https://military-history.fandom.com/wiki/120%C3%97570mm_NATO
+	;https://en.topwar.ru/63113-pravilnyy-snaryad-dlya-pravilnoy-celi.html
+	;3 modes: PDD, PD and AB
+	;https://community.gaijin.net/issues/p/warthunder/i/5fGdMDyA7g6D
+	;accuracy 0,3
+	;https://ndiastorage.blob.core.usgovcloudapi.net/ndia/2012/IMEM/13813shachar1A.pdf
+;        {tag "he_2to4_5"}
+;        {damage blastwave {energy 0.7} {area 9.8 11.3}}
+;        {damage add blastwave {energy 1.2} {area 7.8 9}}
+;        {damage add blastwave {energy 2.5} {area 3 3.4}}
+;        {damage add blastwave {energy 6.5} {area 0.3 0.3}}
+;БЧ 17 кг, ВВ 2,3 кг, ТЭ 1,3, нач. скорость 900 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_2" tank() ifv() apc(0.1) end(3.2))
+("cw_direct_hit" energy(12))
+("cw_fragwave" e2_5(2.5) r2_5(3.8) e1_2(1.2) r1_2(10.3) chance(8.2))
+("cw_fragwave" e2_5(2.5) r2_5(5.7) e1_2(1.2) r1_2(15) chance(5.2))
+("cw_fragwave" e2_5(2.5) r2_5(7.1) e1_2(1.2) r1_2(18) chance(5.1))
+("cw_fragwave" e2_5(2.5) r2_5(9.6) e1_2(2.5) r1_2(9.6) chance(4.4))
+("cw_fragwave" e2_5(2.5) r2_5(13.2) e1_2(2.5) r1_2(13.2) chance(4))
+("cw_fragments" e1_2(1.2) r1_2(10.3) e1_0(1) r1_0(14) e0_7(0.7) r0_7(20.5) e0_25(0.25) r0_25(20.5) chance(8.2))
+("cw_fragments" e1_2(1.2) r1_2(15) e1_0(0.25) r1_0(15) e0_7(0.25) r0_7(15) e0_25(0.25) r0_25(15) chance(5.2))
+("cw_fragments" e1_2(1.2) r1_2(18) e1_0(0.25) r1_0(18) e0_7(0.25) r0_7(18) e0_25(0.25) r0_25(18) chance(5.1))
+("cw_contusion" t10(0) t6(6.8) t3(9.2) t0(11.8))
+("cw_seismic_2")
+
+}
+;4 волна бонус
+;M339 - 2.3 кг ВВ CLX663 http://globalwarnews.ru/tankovye-boepripasy-v-otvet-na-sovremennye-potrebnosti-4628.html 

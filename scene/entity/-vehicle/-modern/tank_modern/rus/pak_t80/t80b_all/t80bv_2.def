@@ -1,0 +1,204 @@
+;Expotr,DEF by Pheonix
+;Pheonix game 2012 (c)
+;ASS edition by Pheonix
+
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev06" "with_open_zpu" "has_autoloader" "t80b_series" "4_barrels_smoke" "spall_liner"}		
+	{targetSelector "tank"}
+
+	{extender "enumerator"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+
+;    ("armor_heavy" turret(647 387 80 75) body(188 85 40 100))	;желаемое, но для ВЛД Т-80 надо домножить на 1,16
+    ("armor_heavy" turret(647 387 80 75) body(218 85 40 100))
+	("comp_armor_increment" turret(40) body(9))
+
+	;("armor_engine"  t(5))
+	
+	{volume "armor_turret_ring" {thickness 80}}
+	{armor
+		{setting "armor_turret_ring"
+			{thickness 80 80 80 1}		
+			{durability {blast {value 50}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "armor_turret_ring*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+	("d_a_Kontakt1") 
+
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+	{component "shieldl11" {tags "shield"}}
+	{component "shieldl12" {tags "shield"}}
+	{component "shieldl13" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	{component "shieldr11" {tags "shield"}}
+	{component "shieldr12" {tags "shield"}}
+	{component "shieldr13" {tags "shield"}}
+
+	("shield_t-64a_1981")
+ 
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}{base "open1"}}
+			{reverse 	{end	"emit_tank_2_hold"}{base "open1" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "t80b_mgunner"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+	}
+	{sensor		
+		{visor "driver" 	;триплекс
+			{vision "moto"}
+			{bone "Visor2"}
+		}
+		{visor "gunner" ;  1Г42
+			{vision "tank_gunner_optic_3g"}
+			{bone "Visor1"}
+		}
+		{visor "gunner2" ; ТПН3-49(ночник дублер)
+			{vision "tank_gunner_optic_2g"}
+			{bone "Visor4"}
+		}
+		{visor "commander"	;триплекс			
+			{vision "tank_gunner_optic_3g"}
+			{bone "Visor3"}
+		}
+	}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+		("crew_human" place(driver)			door(emitd) group(crew)	visor(driver) animation(driver))
+		("crew_human" place(gunner)	        door(emitg) group(crew)	visor(gunner2) animation(left))
+		("crew_human" place(gunner2)	    door(emitc) group(crew)	visor(commander) animation(right))
+	{placer
+		{place "gunner2"
+			{group "crew"}	{linkbone "gunner2"}	{turnoff {sensor} {shadow}}
+			{openForCrush}	{useVision}
+		}
+	}
+	("gunner_visible")
+     
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon mgun"}
+		}
+		{box    ; БК 38 выстрелов 1250 ПКТ  300 НСВТ
+			{item "hcb" filled {user "mgun"}}
+			{item "ammo bullet125_rus_m apcr" 13}
+			{item "ammo bullet125_RUS_a cm" 4}
+			{item "ammo bullet125_RUS fg" 19}
+			{item "ammo tur_kobra" 6}		
+			{item "ammo Hcb_ammo" 75} 
+			{item "ammo osv_fg" 75}
+			{item "ammo PKM_ammo" 1000}
+			;{item "ammo smoke_shtora" 8}	
+		}
+	}
+	
+	{Weaponry		
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_2A46M_1" filling "ammo bullet125_rus_m apcr" 1}	
+			{gunner "gunner"}				
+			{charger "gunner"}	
+			("CW_stab_abm" abm(0.34))
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun"	
+			{type "mgun_aa"}
+			{foresight "foresight4"}
+			{gunner "gunner2"}
+			{charger "gunner2"}                 
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun1"
+			{type "mgun_coaxial"}
+			{weapon "PKT" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.71))
+			("CW_stab_ldwind_suo")
+		}
+		{place "spot"
+			{weapon "spot" filled}
+			{foresight "foresight6"}
+			;{charger "commander"}
+			{gunner "gunner2"}
+			{SequentialAim 0}
+			;{basic}
+		}
+	}
+
+	{mass 44000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(2.2))
+		("CW_tracks"
+			Mass(44)
+			Width(3.67)
+			Power(1100)
+			Realspeed(80)
+			Gamespeed(47) 
+			Range(562)
+			Fuelvolume(2200)
+		)
+	}
+	{props "cwfs_fuel_1000" "cwfs_extfuel_2000"}
+
+	("two_headlights")
+	{Extension "t80bv_3.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+
+	("CW_turr_speed" deg_per_s(24))
+}

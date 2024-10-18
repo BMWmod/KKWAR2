@@ -1,0 +1,150 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+(include "cannon_crew.ext")
+(include "cannon_armor.ext")
+;(include "shadow/tank.inc"  scale(0.7))
+(include "selection/vehicle.inc"  scale(0.7))
+{PatherID "cannon.carried"}
+{simulation {able 1} {disableLinked 1}}
+{obstacleID "tank"}
+{collider "cannon"}
+{constrain ground}
+{props "mg_stan" "vehicle" "steel" "cannon" "emit_on_sink"}
+{able "emit_crew_on_injure"}
+{targetClass "cannon" "bullet"}
+{targetSelector "cannon_bullet"}
+
+
+(define "accuracy_by_motion" ;  spreading depending on the speed of "body", "gun" volumes
+	{AccuracyByMotion
+        {MaxLinearSpeed %max_linear}               ;km/h
+        {ByLinearSpeed %accuracy_by_linear}
+        {MaxAngularSpeed %max_angular}             ;deg/s
+        {ByAngularSpeed %accuracy_by_angular}
+        {DisorderTime %disorder_time}              ;s
+        {OrderTime %order_time}                    ;s
+    }
+)
+(define "abm_mgun"
+	("accuracy_by_motion"
+		max_linear(10) accuracy_by_linear(0.5)
+		max_angular(30) accuracy_by_angular(0.5)
+		disorder_time(0) order_time(0.75)
+	)
+)
+
+
+{brain "vehicle" 
+	{state "vehicle"}
+}
+
+{extender "bodykit"
+	{"camouflage"
+		{drop_on_move}
+		{delay 5}
+		{"leafbush_01b_scale06" "basis"}
+	}       	
+}
+
+{placer
+	{crew}
+	{place "commander" {visor "commander"}}
+	{place "driver1" {visor "commander"}}
+	{place "driver2" {visor "commander"}}
+}
+
+{sensor
+	{visor "main"
+		{vision "cannon_mgun"}
+	}
+	{visor "commander"
+		{vision "cannon_crew"}
+		{bone "turret"}
+	}
+}
+
+{extender "inventory"
+	{Box
+		{Size 6 6}
+		{weight 1000}
+		(mod "mp"
+			{item "plant" 2 {cell 0 1}}
+		)
+	}
+}
+
+{Weaponry
+	{place "mgun"
+		{charger "gunner"}
+		{LinkBone "mgun"}
+		{LinkAnimation "off"}
+	}
+}  	
+
+
+("crew_2_human")
+("crew_human" place(driver1) bone(driver1)	door(emit1) animation(driver1))
+("crew_human" place(driver2) bone(driver2)	door(emit2) animation(driver2))
+{boarder
+	{anm "gunner"
+		{forward	{end "pose_mgun_stan"}}
+	}
+	{anm "commander"
+		{forward	{end "pose_mg_stan_charger"}}
+	}
+	{anm "driver1"
+		{forward {end "mgun_browning_driver_r"}}
+	}
+	{anm "driver2"
+		{forward {end "mgun_browning_driver_l"}}
+	}
+	{link "driver1" "gunner"}
+	{link "driver2" "commander"}
+}
+
+{extender "cannon"
+	{animation
+		{switch "close"}
+		{move "mgun_browning_driver_r" "mgun_browning_driver_l"}
+		{aim "" ""}
+		{fire  "" ""}
+		{reload  "mgun_stan_charger" ""}
+	}
+	{attack {workers "gunner" "commander"}}
+}
+
+{Chassis "human_carrier"
+	("loco_carrier")
+}
+
+{volume "shield" {thickness 10}}
+{component "shield" {RepairTime 20}}
+{extender "shield"
+	{on}
+	;{no_blast} off for arena
+}
+
+{armor
+	{setting "shield"
+		{volumes "*shield*"}
+		{thickness 10}
+	}
+}
+
+{mass 50}
+
+{volume "select"
+	{able clear {select}}
+	{density 0}
+}
+{component "body"
+	{RepairTime 15}
+}
+
+{extender "talk"
+	{talker "cannon"}
+}
+
+("armor_light" args 0.7)

@@ -1,0 +1,18 @@
+{game_entity
+	(include "/properties/stuff_shell.ext")
+	
+	{extender "stuff"
+		{item "bullet122_rus korr d30ammo ammo"}
+	}
+	{props "explosive_stuff"}
+	{Extension "kitolov2m_122.mdl"}
+	("cw_advanced_bullet")
+	("cwbs_152mm_shell_sound")
+}
+
+
+
+
+
+
+

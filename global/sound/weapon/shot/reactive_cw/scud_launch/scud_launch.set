@@ -1,0 +1,18 @@
+{composite
+	{"scud_launch_close"
+		{loudness "hmissile_close"}
+		{start_offset 0.0}
+	}
+	{"scud_launch_medium"
+		{loudness "hmissile_medium"}
+		{start_offset 0.0}
+	}
+	{"scud_launch_far"
+		{loudness "hmissile_far"}
+		{start_offset 0.0}
+	}	
+	{"scud_launch_distant"
+		{loudness "hmissile_distant"}
+		{start_offset 0.0}
+	}		
+}

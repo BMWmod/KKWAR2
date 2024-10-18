@@ -1,0 +1,17 @@
+{bullet
+	{tag "ammo ap rocketlauncher shell dropboxed low_speed no_ricochet cm_type_dmg rpg_shell sharing ui_rpg"}
+	{tag "rpg"} ; только для ammo.set
+	{inventory
+		{weight 100}
+		{size 2 1}
+	}	
+;	{damage blastwave
+;		{energy 1}
+;		{area 2.5 6}
+;	}
+	{detonationThickness 2}
+;	{cumulative 3.1}	;мешает пробитию через cumulative
+	{mass 0.0}
+	
+	{possibleDamageRadius 3}
+}

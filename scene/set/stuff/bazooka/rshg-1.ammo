@@ -1,0 +1,32 @@
+{from "pattern rpg_ammo"
+	{tag "big" "size3" "75to76" "no_ricochet" "fg" "rpg27" "fragmentary" "antiinf" "fx_shmel" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	;
+	{entity "rshg1"}
+	{view "rshg1"
+		{tail "bazooka_tail_2gen" "tail"}
+	} 	
+	{possibleDamageRadius 15}
+	;1,8 кг капсула с термобарическим снаряжением ОМ-100Ми + 0.25кг А-IX-I (95% гексоген, ТЭ 1,6)
+	{tag "he_07to2"}
+	{damage fire
+		{radius 4}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;{damage add blastwave {energy 1.2} {area 11.7 13.5}}
+;{damage add blastwave {energy 2.5} {area 3.4 3.9}}
+;	{damage add blastwave	 ; HE, FG anti-IFV
+;		{energy 6.5}
+;		{area 0.6 0.65}
+;	}
+;БЧ 3,4 кг, ВВ 1,8 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.3) apc(2.1) end(4.3))
+("cw_contusion" t10(4.4) t6(6.2) t3(8.5) t0(11))
+("cw_blast_mass_add" add(7))
+}

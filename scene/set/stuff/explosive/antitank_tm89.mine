@@ -1,0 +1,21 @@
+{item
+	{tag "smallitemin1hand dropboxed antitank mine sharing fx_111_145"}
+	{entity "mine_antitank_tm89"}
+	{inventory
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 11.5}
+;6,7кг взрывчатки ТГ40/60 (40% тротила, 60% гексогена ТЭ1,6, итого 1*,4+1,6*,6=1,36 расчетная масса 7,04кг коэфф 1,36/1,3). Тип - фугасная, осколков нет (алюм корпус).
+;Для подземных ПТ мин надо убирать первые две фугасные волны, т. к. грунт мешает распространению удара в стороны.
+;	{damage add blastwave {energy 2.5} {area 7.4 8.6}}
+;	{damage add blastwave {energy 6.5} {area 4.7 5.4}}
+;	{damage add blastwave {energy 11} {area 2.3 2.7}}
+;	{damage cumulative {damage 200} {distance 3}}
+;БЧ 11,5 кг, ВВ 6,7 кг, ТЭ 1,36, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_4" tank(0.1) ifv(2.5) apc(5) end(8))
+("cw_contusion" t10(6.8) t6(9.8) t3(13.4) t0(17.2))
+("cw_seismic_4")
+("cw_blast_mass_add" add(32.5))
+("cw_heat" energy(200))
+}

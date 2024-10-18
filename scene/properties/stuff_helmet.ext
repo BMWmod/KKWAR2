@@ -1,0 +1,45 @@
+;SDL
+(include "stuff.ext")
+{volume "body" 
+	{able {visible 0}}
+	{thickness 0.3}
+}
+{props "nocover"}
+{lodclass "stuff_small"}
+
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 13.0732	5.88706	5.50579}
+			{lookat 0.963972	0.10529	2.72897}
+			{fov 35}
+			{horizon -0.947294}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position -33.009	101.177	1.26977}
+			}
+			{"1"
+				{type point}
+				{position -25.7058	-77.9467	20.5019}
+			}
+			{"2"
+				{type directional}
+				{direction -0.317367	0.285549	-0.260268}
+			}
+		}
+	}
+	{"Stuff_primary"
+		{lights
+			{"0"
+				{type point}
+				{position -33.009	101.177	1.26977}
+			}
+			{"1"
+				{type point}
+				{position -25.7058	-77.9467	20.5019}
+			}
+		}
+	}
+}

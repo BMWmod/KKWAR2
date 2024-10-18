@@ -1,0 +1,24 @@
+{from "pattern proj_weapon_air"
+;{weapon_bombing	
+	{tag "gun" "weapon"}
+	{inventory
+		{noView}
+	}
+	{filling "ammo eleron3sv" 1}
+	{fillingVisible "Starter_vis_00"}	
+	{foresight "Foresight1"}
+	{fireSound "gun_cw/katapulta"}
+	{mass 5}
+	{speed 30}
+	{gravity 1}
+	{recoveryTime 20}
+	{rechargeTime 20}
+	{inventory {noView}}
+	{maxRange 100}	
+	{aimRange 100}
+	;{cursor "zenite_on"}
+	;{cursorreloading "zenite_reload"}
+	{cursor "attack"}
+	{cursorreloading "cannon_reload_all"}
+	;{cursorreloading "cannon_reload_all_timer_120"}
+}

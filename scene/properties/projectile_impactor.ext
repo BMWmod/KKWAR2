@@ -1,0 +1,146 @@
+;SDL
+actor
+	{able "-select"}
+	{brain "actor"
+		{state "animal"}
+	}
+	{autooperatable 1}
+	{placer
+		{crew 0}
+		{place "driver" remove}
+	}
+	
+;{props "grenade"}
+{props "steel" "stuff" "collectable" "nocover" "spawned_warhead" "vis_level_impactor" "projectile_impactor" "ignore_uplink_fogged"}
+{Chassis "human_carrier"
+	{locomotion
+		{StopTime	0.2}
+		{BrakeTime	0.7}
+		{TurnRadius	3}
+		{TurnStart	0.8}
+		{TurnStop	0.5}
+		{Gears		0.35 0.5 0.7 1.0}
+		{RearGears	0.33 0.5}
+		{MaxSpeed	1}
+		{StartTime	1}
+		{TurnTime	2}
+		{TurnRadius	2}
+	}
+}
+
+;{extender "stuff"}
+{volume "body"
+	{able clear {visible} {bullet} {contact_ground} {contact} {blast} {select 0} {touch 0}}
+	{thickness 0}
+}
+{volume "select"
+	{able clear {select 0} {touch 0}}
+	{density 0}
+}
+
+{obstacleID "stuff"}
+{simulation {able 1} {disableLinked 1}}
+{constrain ground}
+{simulatorId "grenade"}
+{lodclass "part_big"}
+
+{body {proper body sensible} {permit body}}
+{collider "grenade"}
+;center of body_vol must be in front of model basis 
+
+{targetClass 	"commonmissile"}
+
+(define "targetable_impactor"
+	{extension "/properties/animation/proj/proj_anm.ext"}
+		{bone "root"
+			{bone "target_holder"
+				{Matrix34
+					-1	0	0
+					0	-1	0
+					0	0	1
+					0	0	0
+				}
+			}
+		}
+	{props "targetable_impactor" "vis_level_targetable_impactor" "-vis_level_impactor"}
+	{targetClass 	"antiship_missile"}
+	{Volume "target_front"
+		{able clear {Visible 1}{select 0} {touch 0}} {Thickness 0.1} {component "missile"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "target_holder"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			150	0	7.48852e-005
+		}
+	}
+	{Volume "targ_for_missile"
+		{able clear {Visible 0}{select 0} {touch 0}} {Thickness 0.1} {component "antimissile_t"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "target_holder"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			150	0	0
+		}
+	}
+	{volume "body"
+		{component "body"}
+;		{able  {visible} {bullet} {contact_ground} {contact} {blast} {select 0} {touch 0}}
+		{able  {visible} {contact_ground} {contact} {blast} {select 0} {touch 0}}
+	}
+	{component "missile"}
+	{component "antimissile_t"}
+	{component "body"}
+)
+(define "targetable_impactor_slow"
+	("targetable_impactor")
+)
+(define "targetable_impactor_small"
+	("targetable_impactor")
+	{targetClass 	"small_targ_missile"}
+)
+(define "targetable_impactor_small_kamikadze"
+	("targetable_impactor")
+	{targetClass 	"small_UAV_kamikaze"}
+)
+(define "targetable_impactor_antirad"
+	("targetable_impactor")
+	{targetClass 	"antirad_missile"}
+)
+
+(define "targetable_impactor_torpedo"
+	{props "targetable_impactor"  "-vis_level_impactor"}
+	{targetClass 	"torpedo"}
+	{Volume "target_front"
+		{able clear {Visible 1}{select 0} {touch 0}} {Thickness 0.1} {component "missile"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "root"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			880.58407	0	100
+		}
+	}
+	{Volume "targ_for_missile"
+		{able clear {Visible 0}{select 0} {touch 0}} {Thickness 0.1} {component "antimissile_t"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "root"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			900	0	100
+		}
+	}
+	{volume "body"
+		{component "body"}
+		{able  {visible} {bullet} {contact_ground} {contact} {blast} {select 0} {touch 0}}
+	}
+	{component "missile"}
+	{component "antimissile_t"}
+	{component "body"}
+)

@@ -1,0 +1,36 @@
+{from "pattern proj_impactor"
+	{entity "agm-114n_impactor"}
+              {inventory
+		{weight 100}
+		{size 6 1}
+	}
+	{tag "no_ricochet" "cm" "big" "size4" "88to105" "pierce" "ptrk" "-fx_111_145" "fx_shmel"} 
+	;AGM-114N. 4,1 фунта MAC + 4,6 фунтов PBXN-112 = 3.85кг к термобарическому расчету.
+	{tag "he_4_5to8"}
+	{damage fire          ;аналог Корнета
+		{radius 11}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire      ;аналог Корнета
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;        {damage add blastwave {energy 1.2} {area 18 20.8}}
+;        {damage add blastwave {energy 2.5} {area 8 9.2}}
+;        {damage add blastwave {energy 6.5} {area 3.8 4.4}}
+;        {damage add blastwave {energy 11} {area 0.9 1}}
+;БЧ 9 кг, ВВ 3,85 кг, ТЭ 1,3, нач. скорость 500 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_4" tank(0.4) ifv(2.7) apc(4.8) end(6.5))
+("cw_contusion" t10(5.6) t6(8) t3(10.9) t0(14.2))
+("cw_blast_mass_add" add(16.5))
+}
+;
+;AGM-114N / N-5 4,1 фунта лайнера MAC, 4,6 фунта PBXN-112
+;MAC из алюминиевого порошка, покрытого витвином, дает термобарические свойства
+;Больший импульс из-за сжигания алюминия
+;масса 106 фунтов
+;
+;
+;https://forums.eagle.ru/showthread.php?p=3545629

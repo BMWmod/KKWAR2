@@ -1,0 +1,36 @@
+{from "pattern fg"
+	{tag "big" "size3" "122to128fg" "bullet125_h_rus" "2a46ammo" "2a46ammo_h" "kbaz_ammo" "2a82ammo" "fx_111_145"}
+	{tag "fg_120_shell"} ; только для ammo.set
+	{mass 33}
+	{inventory
+		{size 6 1}
+	}	
+	{entity "shell_rus_fg_125"}
+	{view "fg_fly"}
+	{trace
+		{view "/texture/fx/trace" {ScaleY 0.2}}
+		{length 2}
+	}
+	;3ВОФ36? 3.4 кг ВВ Гексал т.е. 1.7
+;	{tag "he_2to4_5"}
+;{damage blastwave {energy 0.7} {area 9.8 11.2}}
+;{damage add blastwave {energy 1.2} {area 8.2 9.4}}
+;{damage add blastwave {energy 2.5} {area 4.6 5.4}}
+;{damage add blastwave {energy 6.5} {area 1.9 2.1}}
+;	{damage add blastwave	 ; HE, FG antitank
+;		{energy 11}
+;		{area 0.2 0.25}
+;	}
+;БЧ 22,7 кг, ВВ 3,4 кг, ТЭ 1,7, нач. скорость 850 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_3" tank() ifv(1.3) apc(3.5) end(6.5))
+("cw_direct_hit" energy(11))
+("cw_fragwave" e2_5(2.5) r2_5(7.6) e1_2(1.2) r1_2(14.1) chance(9.3))
+("cw_fragwave" e2_5(2.5) r2_5(10.4) e1_2(1.2) r1_2(19.7) chance(5.9))
+("cw_fragwave" e2_5(2.5) r2_5(12.3) e1_2(2.5) r1_2(12.3) chance(5.9))
+("cw_fragwave" e2_5(2.5) r2_5(15.7) e1_2(2.5) r1_2(15.7) chance(5))
+("cw_fragwave" e2_5(2.5) r2_5(20.4) e1_2(2.5) r1_2(20.4) chance(4.6))
+("cw_fragments" e1_2(1.2) r1_2(14.1) e1_0(1) r1_0(17.8) e0_7(0.7) r0_7(24.3) e0_25(0.25) r0_25(24.3) chance(9.3))
+("cw_fragments" e1_2(1.2) r1_2(19.7) e1_0(0.25) r1_0(19.7) e0_7(0.25) r0_7(19.7) e0_25(0.25) r0_25(19.7) chance(5.9))
+("cw_contusion" t10(5.9) t6(8.5) t3(11.4) t0(14.7))
+("cw_seismic_3")
+}

@@ -1,0 +1,69 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "Т55"
+	{tag "agf"}
+	{filling "bullet100_RUS" 3}
+	{fireSound "gun_cw/100mm_d10"}
+	{reloadSound "cw/gun73reload"}
+	{RecoveryTime 10.00}
+	{rechargeTime 11.1}
+	{range 145 145}
+	("speed" s(900)) 
+	("100-128caliber")
+	{calibre 15}
+        ; ("accuracy_d10t")
+	("CW_acc_common" mils(0.34))
+	
+	;{cursor "T62_HE"}
+	;{cursorreloading "T62_HE_reload"}
+	{cursor "cannon_on_fg_4"}
+	{cursorreloading "cannon_reload_fg"}
+
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	("damage4" a(200) b(175) c(152) d(130) e(100))   ; БР-412Д
+	{parameters "apcr"             ; ПК
+        ;("damage4" a(330) b(300) c(260) d(240) e(180)) ; 
+		("CW_APCR_damage_WC1500" penetr_2000m(280)) ; 3БМ25  «Изомер»
+		{range 145 145}
+		("CW_acc_common" mils(0.24))
+		
+		;{cursor "T62_APCR"}
+		;{cursorreloading "T62_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1430)) 
+	}
+	; a - 20, b - 50, c - 80, d -100, e - 120, f - 160,  l - 190, g - 220
+        ; Таблица Кум и рокет
+	{parameters "cm"
+		{range 145 145}
+		("CW_acc_common" mils(0.34))    ;оценка
+		    ;оценка
+		;{cursor "T62_HEAT"}
+		;{cursorreloading "T62_HEAT_reload"}	
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+	}
+        {parameters "ap"                        ; БР-412Д
+		{range 145 145}
+		("CW_acc_common" mils(0.24))    ;оценка
+		    ;оценка
+		;{cursor "T62_APCR"}
+		;{cursorreloading "T62_APCR_reload"}	
+		{cursor "cannon_on_ap_3"}
+		{cursorreloading "cannon_reload_ap"}
+
+	}                        
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+	}
+}	           
+;В 1972 году открылся первый этап модернизации артиллерийских противотанковых средств. Были начаты ОКР по созданию выстрелов с бронебойными подкалиберными снарядами:	           
+;- 115-мм 3БМ21 «Заступ» к гладкоствольной танковой пушке У-5ТС	            
+;- 125-мм 3БМ22/3БМ23 «Заколка» к гладкоствольной танковой пушке Д-81Т	            
+;- 100-мм 3БМ24 «Калач» к гладкоствольным противотанковым пушкам Т-12 и МТ-12	           
+;- 100-мм 3БМ25 «Изомер» к нарезным танковым пушкам Д-10Т, Д-10С, буксируемой пушке БС-3	            
+;В 1977-1979 годах эти выстрелы были приняты на вооружение, хотя серийное производство началось еще в 1975-1976 годах.	            
+;Данные выстрелы отличались от ранее созданных наличием более массивного бронебойного демпфера, установленного перед бронебойным сердечником.	            
+;Это привело к повышению массы снаряда, некоторому снижению начальной скорости и повышению бронепробиваемости.	           
+;Масса снаряда – 5,02 кг Масса выстрела – 20,7 кг Масса метательного заряда – 6,5 кг Длина выстрела – 978 мм Бронебойный демпфер изготовлен из тяжелого сплава ВНЖ-90            
+;Масса сердечника – 0,271 кг Длина сердечника – 71 мм Диаметр сердечника – 20 мм Сердечник изготовлен из тяжелого сплава ВН-8 на основе карбида вольфрама

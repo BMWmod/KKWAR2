@@ -1,0 +1,22 @@
+[
+	{
+		"_id": "iraq",
+        "category": "story",
+ 		"modId":  "cold war 1_7_6",
+		"currency":"rub",
+		"display_order":7,
+		"enabled":true,
+        "mission_results": "only_first_win",
+		"money": {"freeXp":0,"silver":0},
+		"node": {
+				"n00":{"level":2,"map":["iraq_1_mission"],"open":true,"open_up":["n01"],"tree_x":2.5,"tree_y":1},
+				"n01":{"level":3,"map":["iraq_2_mission"],"opened_by":["n00"],"open_up":["n02"],"tree_x":2.5,"tree_y":2},
+				"n02":{"level":3,"map":["iraq_3_mission"],"opened_by":["n01"],"open_up":["n03"],"tree_x":2.5,"tree_y":3},
+				"n03":{"level":3,"map":["iraq_4_mission"],"opened_by":["n02"],"open_up":["n04"],"tree_x":2.5,"tree_y":4},
+				"n04":{"final":true,"level":2,"map":["iraq_5_mission"],"opened_by":["n03"],"tree_x":2.5,"tree_y":5}				
+		},
+		"tags":["rus"],
+		"image":"iraq.jpg",
+		"image_preview":"iraq_preview.jpg"
+	}
+]

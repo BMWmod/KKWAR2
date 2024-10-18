@@ -1,0 +1,297 @@
+;SDL
+
+(include "vehicle.ext")
+(include "car_crew.ext")
+
+("brain_vehicle")
+
+{hearingBias 4.5} ; in meters
+{sensor
+    {visor "main"
+        {bone "visor1"}
+    }
+    {Visor "driver"
+        {vision "tank_driver"}
+        {bone "visor2"}
+    }
+        (mod "mp"
+            {visor "view-around"
+                {vision "tank_around-l"}
+                {bone "visor2"}
+            }
+        )
+}
+
+{PatherID  "armored"}
+{collider "armored"}
+{props "emit_on_sink" "armored_car_M" "tractor" "standart_netting" "cw_tractored" "aas_vehicle"}
+{targetClass "armoredcar" "bullet"}
+{targetSelector "tank_bullet"}
+
+{extender "inventory"
+    {box
+
+        {Size 8 14}
+        {weight 2000}
+				{item "buksir_tros" 1}
+    }
+}
+(mod "mp"
+{extender "inventory"
+    {box
+        {Size 8 14}
+        {weight 2000}
+                {item "repair_kit"}
+                {item "can"}
+				{item "netting_kit" 1}
+    }
+}
+)
+{extender "talk"
+    {talker "tank"}
+}
+{able "talk"}
+
+{volume "body"
+    {thickness 12}
+}
+{volume "body1" {component "body"}}
+{volume "body2" {component "body"}}
+{volume "body3" {component "body"}}
+{volume "body4" {component "body"}}
+{volume "body5" {component "body"}}
+{volume "engine" {tags "component_internal"}
+    {thickness 15}
+}
+{volume "inventory"
+    {tags "explosive"}
+    {thickness 8}
+}
+{volume "crew"
+    {thickness 3}
+}
+{volume "turret"
+    {component "turret"}
+    {tags "turret"}
+}
+;====================================================
+;New volumes
+;новые волумы
+{volume "gun1"
+    {tags "no_target"}
+    {thickness 20}
+    {able {Visible 0} {Obstacle 0} {Contact 0}}
+    {component "gun1"}
+}
+{volume "gun"
+    {tags "no_target"}
+    {thickness 15}
+    {able {Visible 0} {Obstacle 0} {Contact 0}}
+    {component "gun"}
+}
+{volume "gun2"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun2_a"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun3"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun3_a"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+
+(include "aas_tank_apc_common.inc")
+
+{volume "wheelleft1" {tags "wheel"} {component "wheelleft1"}}
+{volume "wheelleft2" {tags "wheel"} {component "wheelleft2"} }
+{volume "wheelleft3" {tags "wheel"} {component "wheelleft3"} }
+{volume "wheelleft4" {tags "wheel"} {component "wheelleft4"} }
+
+{volume "wheell1" {tags "wheel"} {component "wheelleft1"} }
+{volume "wheell2" {tags "wheel"} {component "wheelleft2"} }
+{volume "wheell3" {tags "wheel"} {component "wheelleft3"} }
+{volume "wheell4" {tags "wheel"} {component "wheelleft4"} }
+
+{volume "wheelright1" {tags "wheel"} {component "wheelright1"} }
+{volume "wheelright2" {tags "wheel"} {component "wheelright2"} }
+{volume "wheelright3" {tags "wheel"} {component "wheelright3"} }
+{volume "wheelright4" {tags "wheel"} {component "wheelright4"} }
+
+{volume "wheelr1" {tags "wheel"} {component "wheelright1"} }
+{volume "wheelr2" {tags "wheel"} {component "wheelright2"} }
+{volume "wheelr3" {tags "wheel"} {component "wheelright3"} }
+{volume "wheelr4" {tags "wheel"} {component "wheelright4"} }
+
+;end of new volumes
+;====================================================
+;====================================================
+;New components
+;новые компоненты
+
+{component "wheelright1" {RepairTime 5}}
+{component "wheelright2" {RepairTime 5}}
+{component "wheelright3" {RepairTime 5}}
+{component "wheelright4" {RepairTime 5}}
+{component "wheelleft1" {RepairTime 5}}
+{component "wheelleft2" {RepairTime 5}}
+{component "wheelleft3" {RepairTime 5}}
+{component "wheelleft4" {RepairTime 5}}
+
+{Chassis "wheel"
+    ("chassis_defaults")
+    {speed
+        {Slow   15 }    ; km/h
+        {Normal 25}
+        {Fast   25  }
+    }
+}
+
+(define "locomotion"
+    {MaxSpeed   25  }       
+    {StartTime  15  }      
+    {maxSpeedAtMaxTurn 15}
+    {BrakeTime  2   }       
+    {StopTime   4   }       
+    {TurnRadius 8   }      
+    {Gears      0.1 0.5 0.8 1.0} 
+    {RearGears  0.35}       
+    {SteerOn    20}       
+    {SteerOff   40}         
+    {SplineRadius 3}                                                          
+)
+
+
+(define "armor_armoredcar"
+	("components_tank" repair(1.2))
+    {armor
+        {setting "track"
+            {volumes "track*"}
+        }
+        {setting "wheel"
+            {thickness 6}
+            {threshold
+                {blast {value 10} } {pierce {value 7} }
+            }
+            {durability
+                {blast {value 10} } {pierce {value 12} }
+            }
+            {whole_wound}
+            {volumes "wheel*"}
+        }
+        {setting "gun"
+            {durability
+                {blast  {koef 2}} {pierce {koef 10}}
+            }
+            {threshold
+                {blast {value 15}} {pierce {value 16}}
+            }
+            {volumes "gun*"}
+        }
+        {setting "body"
+            {threshold
+                {blast {value 10} } {pierce {value 6} }
+            }
+            {durability
+                {blast {value 30} } {pierce  {value 50} }
+            }
+            {volumes "body*"}
+        }
+        {setting "turret"
+            {threshold
+                {blast {value 10} } {pierce {value 6} }
+            }
+            {durability
+                {blast {value 30} } {pierce  {value 50} }
+            }
+            {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
+        }
+        {setting "engine"
+            {threshold
+                {blast {value 6} } {pierce {value 6} }
+            }
+            {durability
+                {blast {value 20} }
+            }
+            {volumes "engine*"}
+        }
+    }
+)
+(define "armor_light"
+    ("armor_armoredcar" t(14) ta(12) b(30) w(30) k(%0))
+)
+
+(define "armor_medium"
+    ("armor_armoredcar" t(22) ta(10) b(60) w(60) k(%0))
+)
+
+(define "restore_ik_time"
+    {RestoreIKTime 10}
+)
+{extender "bodykit"
+	{"camouflage"
+		{delay 10}
+		{drop_on_move}
+		{"leafbush_01b_scale06" "visor"} ;entity bone
+		{"leafbush_01b_scale06" "visor1"} ;entity bone
+		{"leafbush_01b_scale06" "visor2"} ;entity bone
+		{"leafbush_01b_scale06" "visor3"} ;entity bone		
+		{"leafbush_01b_scale06" "mgun"} ;entity bone
+		{"leafbush_01b_scale06" "turret"} ;entity bone
+		{"leafbush_01b_scale05" "cover1"} ;entity bone
+		{"leafbush_01b_scale05" "cover2"} ;entity bone
+		{"leafbush_01b_scale05" "cover3"} ;entity bone
+		{"leafbush_01b_scale05" "cover4"} ;entity bone
+		{"leafbush_01b_scale04" "fxsmoke1"} ;entity bone
+		{"leafbush_01b_scale05" "fxsmoke2"} ;entity bone
+		{"leafbush_01b_scale05" "fxfire3"} ;entity bone
+		{"leafbush_01b_scale05" "detail1"} ;entity bone
+		{"leafbush_01b_scale05" "detail2"} ;entity bone
+		{"leafbush_01b_scale05" "detail3"} ;entity bone
+		{"leafbush_01b_scale05" "detail4"} ;entity bone
+		{"leafbush_01b_scale05" "detail5"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl1"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr1"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl2"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr2"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl3"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr3"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl4"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr4"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl5"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr5"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl6"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr6"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl7"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr7"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl8"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr8"} ;entity bone
+		{"leafbush_01b_scale05" "shieldl9"} ;entity bone
+		{"leafbush_01b_scale05" "shieldr9"} ;entity bone
+		{"leafbush_01b_scale04" "wheell1"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr1"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell2"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr2"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell3"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr3"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell4"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr4"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft1"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright1"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft2"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright2"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft3"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright3"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft4"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright4"} ;entity bone		
+	}       	
+}

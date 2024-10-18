@@ -1,0 +1,67 @@
+;SDL
+actor
+;===============CtA
+(define "armor_engine"
+    {armor
+        {setting "engine"
+            {thickness %t}
+            {volumes "engine*"}
+        }
+    }
+)
+(define "Speed"
+	{Slow	15}
+	{Normal	30}
+)
+(define "Fast"   
+	{Fast (* 0.8 %s)}  
+)
+(define "Fast2"   
+	{Fast (* 0.5 %s)}  
+)
+
+(define "MaxSpeed"   
+	{MaxSpeed (* 1.0 %s)}  
+)
+(define "MaxSpeed2"   
+	{MaxSpeed (* 0.5 %s)}  
+)
+(define "maxSpeedAtMaxTurn"   
+	{maxSpeedAtMaxTurn (* 0.3 %s)}  
+)
+;================
+(include "tank_unarmed_m.ext")
+
+(define "accuracy_by_motion" ; 	spreading depending on the speed of "body", "gun" volumes
+	{AccuracyByMotion
+		{MaxLinearSpeed %max_linear}               ;km/h
+		{ByLinearSpeed %accuracy_by_linear}
+		{MaxAngularSpeed %max_angular}             ;deg/s
+		{ByAngularSpeed %accuracy_by_angular}
+		{DisorderTime %disorder_time}              ;s
+		{OrderTime %order_time}                    ;s
+	}
+)
+
+
+{Weaponry
+	{ManualAccuracy 1}
+	{place "gun"
+	}
+	{place "mgun"
+	}
+	
+}
+{extender "inventory"
+	{weapon "mgun"
+		{mask "weapon mgun"}
+	}
+}
+
+(define "restore_ik_time"
+	{RestoreIKTime 4}
+)
+
+{props "with_gun"}
+{targetClass "tank" "ap fg bullet"}
+{targetSelector "tank"}

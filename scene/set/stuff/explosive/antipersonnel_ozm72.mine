@@ -1,0 +1,11 @@
+{item
+	{tag "smallitemin1hand dropboxed antipersonnel mine nokeep sharing"}
+	{entity "mine_antipersonnel_ozm72"}
+	{inventory
+		{size 2 2}
+		{weight 100}
+		{fsm "belt"}
+	}
+	{mass 5}
+	;Прыгающая, дамаг в БЧ
+}

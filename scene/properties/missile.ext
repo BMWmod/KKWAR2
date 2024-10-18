@@ -1,0 +1,155 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+
+{collider "airborne"}
+{props "airborne" "cw_missile_old"}
+{able "-select"}
+{targetClass "none"}
+{targetSelector "cannon_bullet"}
+{brain "vehicle" {state "airborne"}}
+
+
+{Chassis "wheel"
+	("chassis_defaults")
+	{locomotion
+		{MaxSpeed 	 	30 }
+		{StartTime 		4  } 
+		{BrakeTime 		1  } 
+		{StopTime		2  } 
+	}
+
+			{FuelBag
+				{volume 40 }	
+				{rate	320 }   
+				{remain 40 }
+				{fuel "fuel"}
+			}
+
+}
+{Chassis "airborne"
+	("chassis_defaults")
+	{locomotion
+		{Maxspeed 		300 } 
+ 	  	{turnRadius 	5 } 
+		{StartTime 		0.1  } 
+		{BrakeTime 		4  }  
+		{StopTime		7  } 
+	}
+
+			{FuelBag
+				{volume 40 }	
+				{rate	320 }   
+				{remain 40 }
+				{fuel "fuel"}
+			}
+
+	{dontUseSlope}
+	{ignorePatherBounds}
+	{disableBackward}
+	{sideSlopeSpeed 75}			
+	{maxSideSlope 25}			
+	{maxElevationSpeed 50}		
+	{elevationAcceleration 60}	
+}
+{chassisManager
+	{current "airborne"}
+}
+{simulatorId "airborne"}
+
+{extender "inventory"
+	{box
+		{Size 1 1}
+		{weight 1000}
+	}
+}
+
+
+{volume "engine"
+	{tags "inflammable"}
+	{thickness 5}
+}
+{volume "warhead"
+	{thickness 5}
+}
+{volume "controls"
+	{thickness 5}
+}
+{volume "body"
+	{tags "body"}
+	{thickness 5}      
+}
+{volume "body_back"
+	{tags "body"}
+	{thickness hollow 5}     
+}
+{volume "wingr1"
+	{tags "inflammable" "part"}
+	{component "wingright"}
+	{thickness 5} 
+     
+}
+{volume "wingl1"
+	{tags "inflammable" "part"}
+	{component "wingleft"}
+	{thickness 5} 
+     
+}
+{volume "wingr2"
+	{tags "inflammable" "part"}
+	{thickness 5} 
+     
+}
+{volume "wingl2"
+	{tags "inflammable" "part"}
+	{thickness 5}
+      
+}
+	
+
+{component "engine"
+	{RepairTime 25}
+}
+{component "body"
+	{RepairTime 25}
+}
+{component "body_back"
+	{RepairTime 25}
+}
+{component "warhead"
+	{RepairTime 25}
+}
+{component "controls"
+	{RepairTime 25}
+}
+{component "wingright"
+	{RepairTime 25}
+}
+{component "wingleft"
+	{RepairTime 25}
+}
+{component "wingr2"
+	{RepairTime 25}
+}
+{component "wingl2"
+	{RepairTime 25}
+}
+
+(define "locomotion"
+	{StartTime	5	}		
+	{BrakeTime	2	}		
+	{StopTime	4	}	
+	{SteerOn	15}			
+	{SteerOff	15}      
+	{SplineRadius 5}		
+)
+
+(define "part"
+	{volume %0
+		{tags "part"}
+		{thickness 20}
+		
+	}
+	{component %0}
+)

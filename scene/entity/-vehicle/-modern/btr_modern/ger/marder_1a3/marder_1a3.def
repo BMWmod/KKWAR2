@@ -1,0 +1,181 @@
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{props "light_M" "turret_rotator" "turret" "with_gun" "vision_lev03" "remote_autocannon" "remote_mgun" "3_barrels_smoke" "spall_liner"}
+    {targetClass "light_tank"}
+("armor_IFV_multivolume_med" turret(40 30 15 11) body1(25 15 30 21) body2(32 15 30 11))
+	("armor_engine"  t(20))
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{component "turret"}
+		{tags "turret"}
+	}
+	{volume "turret1"
+		{component "turret"}
+		{tags "turret"}
+	}
+	{volume "appliquef"	{Thickness 19}}
+	{volume "appliques1"	{Thickness 9}}
+	{volume "appliques2"	{Thickness 9}}
+	{armor
+		{setting "appliquef"
+			{thickness 19}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "appliquef*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "apploque_side"
+			{thickness 9}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "appliques*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+	}
+	
+	{extender "shield"
+		{on}
+	}
+{component "shieldl1" {tags "shield"}} 
+ {component "shieldr1" {tags "shield"}} 
+ {component "shieldr2" {tags "shield"}} 
+ {component "shieldl2" {tags "shield"}} 
+ {component "shieldl3" {tags "shield"}} 
+ {component "shieldr3" {tags "shield"}} 
+ {component "shieldl4" {tags "shield"}} 
+ {component "shieldr4" {tags "shield"}} 
+
+
+;============================================================================================================
+{boarder
+	{anm "driver"
+		{forward	{begin	"board_tank_left"} {base "open_driver"}}
+		{reverse 	{end	"emit_tank_2_hold"} {base "open_driver" -1}}
+	}
+	{anm "commander"
+		{forward	{begin	"board_tank_right"}}
+		{reverse 	{end	"emit_tank_2_hold"}}
+	}
+	{anm "passengers"
+			{forward	{begin	"board_sd222_driver"} {base "open_apar"}}
+			{reverse 	{end	"board_sd222_driver" -1 } {base "open_apar" -1}}
+	}
+}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+("crew_human" place(driver)		door(emit0) group(crew)	    animation(driver))
+("crew_human" place(gunner)		door(emit1) group(crew)	    animation(commander))
+("crew_human" place(commander)		door(emit1) group(crew)	    animation(commander))
+ 	{placer
+		{place "driver"	{visor "driver"}}
+		{place "gunner"	{visor "gunner"}}
+		{place "commander"	{visor "commander"}}
+	}
+
+("crew_human" place(seat1)	door(emit2) animation(passengers) group(passengers1))
+("crew_human" place(seat2)	door(emit3) animation(passengers)	group(passengers1))
+("crew_human" place(seat3)	door(emit2) animation(passengers)	group(passengers1))
+("crew_human" place(seat4)	door(emit3) animation(passengers)	group(passengers1))
+("crew_human" place(seat5)	door(emit2) animation(passengers)	group(passengers1))
+("crew_human" place(seat6)	door(emit3) animation(passengers)	group(passengers1))
+;седьмой на 1А3 убран https://de.wikipedia.org/wiki/Marder_(Sch%C3%BCtzenpanzer)
+
+;==============================================================================================================
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet20_139 ap" 292}
+			{item "ammo bullet20_139 fg" 967}
+			{item "ammo 762Nato" 3800}
+			{item "ammo milan-er" 4}
+			{item "m72a4law weapon" 4 filling "m72a4 ammo" 1}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "20mm_Rh202" filling "ammo bullet20_139 ap" 25}
+			{charger "gunner"}
+			{gunner "gunner"} 
+			("CW_stab_abm" abm(0.62))
+			("CW_stab_ld_suo")
+        }
+		{place "gun2"
+			{weapon "weapon MILAN" filling "ammo milan-er" 1}
+			{foresight "foresight6"}
+			{gunner "commander"}
+			{charger "commander"}
+			{barrels 1}
+			{basic}
+		}
+		{place "mgun"
+			{weapon "MG3" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.86))
+			("CW_stab_ld_suo")
+        }
+	}
+	{sensor
+		{visor "driver"
+			{vision "tank_driver"}
+			{bone "visor2"}
+		}
+		{visor "commander"
+			{vision "vehicle_top_mgun"}
+			{bone "visor3"}
+		}
+		{visor "gunner"
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "visor1"}
+		}
+		{visor "gunner2"
+			{vision "tank_gunner_optic_2g"}
+			{bone "visor4"}
+		}
+	}
+	{mass 37000}
+    {Chassis
+                ("tank_trace" fx("tracks_sm") step(0.2) len(1.15))
+
+		{Locomotion ("CW_track_moveparam" 
+			Mass(37)
+			Width(3.24)
+			Power(600)
+			Realspeed(65)
+			Gamespeed(41) 
+		)
+		{RearGears		0.12 0.29 0.5 0.68 1}}
+		("CW_fuelbag" Range(520) Fuelvolume(660))
+		("CW_speed_lev" Gamespeed(41))
+	}
+	
+	{props "cwfs_fuel_600"}
+
+	("two_headlights")
+	{Extension "marder_1a3.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(60))
+}

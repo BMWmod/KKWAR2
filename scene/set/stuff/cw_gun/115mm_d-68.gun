@@ -1,0 +1,36 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "Т62"   	
+   	{tag "agf"}
+	{filling "bullet100_RUS" 3}
+	{fireSound "gun_cw/115mm_d68"}
+	{reloadSound "cw/gun73reload"}
+	{RecoveryTime 12.00}
+	{rechargeTime 15}
+	{rechargeTime 5}
+	{range 145 145}
+	("speed" s(1590)) 
+	("100-128caliber")
+	{calibre 15}
+	("CW_acc_common" mils(0.28))
+	
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	("damage4" a(200) b(175) c(152) d(130) e(100))   ; БР-412Д
+	{cursor "cannon_on_fg_4"}
+	{cursorreloading "cannon_reload_fg"}
+	{parameters "apcr"             ; ПК
+		("damage4" a(330) b(300) c(260) d(240) e(180)) ; 3БМ20
+		{range 120 120}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+	}
+	{parameters "cm"
+		("damage5" a(390) b(390) c(390) d(390) e(390) f(390) l(390) g(390)) ;3БК17М реальный (снаряд для ЗУБК9)
+;   	("damage5" a(312) b(312) c(312) d(312) e(312) f(312) l(312) g(312)) ;3БК17М
+		{range 145 145}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+	}
+}

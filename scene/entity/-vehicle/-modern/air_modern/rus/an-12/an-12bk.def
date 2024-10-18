@@ -1,0 +1,79 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "assault" "transport_plane" "airborne_M" "vision_lev_plane" "an-12" "-radar_spo" "-IR_spo"}	;заметность очень высокая, живучесть аналогична штурмовику из-за большого запаса прочности
+
+;"airborne_M"
+	{Extension "an-12bk.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+	{mass 64000}
+
+	{Volume "armor"}
+	{Volume "armor1"}
+
+	{Volume "wheel_left1" {thickness 6} {tags "wheel_left"}}
+	{Volume "wheel_right1" {thickness 6} {tags "wheel_right1"}}
+
+{armor
+	("air_armor" body(2) wing(3) avionics(3) engine(3) hydrosystem(4) electronics(4) fuel(4))
+	("armor_panel" name(armor) thickness(4))
+	{setting "armor"
+		{thickness 4}
+		{volumes "armor*"}
+		{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+	}
+}
+
+	{Volume "Vehicle" {able clear}}
+
+	{extender "inventory"
+		{box
+			{Size 6 4}
+			{weight 20000}
+		}
+	}	
+
+("Chassis_parameters" 
+	Speed(57) TurnRadius(53) 
+	Fuel(22066) Fuel_remain(7533) Fuel_rate(5.99) 
+	Acc_hor(1.97) Maneuvrability_hor(2.59)
+	Acc_ver(2.17) Maneuvrability_ver(1.55)
+)
+(mod "mp" 
+    {Chassis "airborne" 
+	{Altitude 25} 
+    } 
+    {ChassisManager 
+	{Current "airborne"} 
+    } 
+)
+	{props "cwfs_fuel_20k"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+
+("cw_headlightl")
+;	{Sensor
+;		{Visor "gunner"
+;			{vision "mp_soldier"}
+;			{bone "visor_gunner"}
+;		}
+;	}
+
+{Extension "crew1.ext"}
+	{texmod "1"}
+
+}
+
+

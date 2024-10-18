@@ -1,0 +1,10 @@
+(include "physics_generic.ext")
+
+{props "wood"}
+{mass 50}
+
+{volume "body"
+	{thickness 10}
+}
+
+{lodclass "decor_tiny"}

@@ -1,0 +1,107 @@
+;Created by Pheonix
+;Patch - 1.0
+{game_entity
+	(include "/properties/armoredcar.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.0))
+	{props "vehicle" "armored_car_M" "tank" "turret" "wheeled" "with_gun" "vision_lev03" "8_wheels" "spall_liner"}
+	{targetClass "armoredcar"}
+	{targetSelector "tank"}
+	{extender "enumerator"}
+	{extension "crew.ext"}
+
+	("armor_btr" turret(15 15 10 8) body(19 19 19 1))	
+                       ("shield_BMP2D")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}	
+	{component "shieldr3" {tags "shield"}}	
+	{component "shieldr4" {tags "shield"}}
+              {component "shieldr5" {tags "shield"}}
+              {component "shieldl5" {tags "shield"}}
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet120_USA_mine fg" 54}	;http://www.military-today.com/artillery/m1129_stryker_mortar.htm
+			{item "ammo bullet120_USA_mine sm" 5}	;http://www.military-today.com/artillery/m1129_stryker_mortar.htm
+			{item "ammo mk19_ammo fg" 60}
+			{item "ammo 40x53_usapg cm" 90}
+			;{item "ammo smoke_shtora" 16}	
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{RestoreIKAfterAim}
+			{Barrels 1}
+			{weapon "120mm_M121" filling "ammo bullet120_USA_mine fg" 1}
+			{charger "charger"}
+			{gunner "gunner"}
+			{foresight "foresight1"} 
+			{basic}
+			("CW_stab_no_stabiliser")
+	}
+	{place "mgun"
+			{weapon "mk19 weapon" filling "ammo mk19_ammo fg" 30}
+            {foresight "foresight4"}
+			{LinkAnimation "off"}
+			{gunner "commander1"}
+			{charger "commander1"}
+            {basic}
+			("CW_stab_abm" abm(0.92))
+			("CW_stab_ld_suo")
+    }
+	}	
+	{sensor
+		{visor "main"
+			{vision "tank_main-l"}
+		}
+		{visor "commander"
+			{vision "tank_main-l"}
+			{bone "Visor3"}
+		}
+	}
+
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	("wheel" args "wheelright2")
+	("wheel" args "wheelleft2")
+	("wheel" args "wheelright3")
+	("wheel" args "wheelleft3")
+	("wheel" args "wheelright4")
+	("wheel" args "wheelleft4")
+
+	{mass 19400}
+	{Chassis
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlr") wheelr("wrr") bonel("FXtraceL3") boner("FXtraceR3"))
+		("CW_wheels"
+			Mass(19.4)
+			Turnradius(17.7)
+			Power(350)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(500)
+			Fuelvolume(200)
+		)
+	}
+	{props "cwfs_ext_only" "cwfs_extfuel_200"}
+
+	("two_headlights")
+	{Extension "m-1129.mdl"}
+	("missile_aimpoint_trucksize")
+
+	("cwts_buksir")
+	{bone "turret"
+		{speed 0.018}
+	}
+	{bone "mgun_rot"
+		{speed 0.01}
+	}
+}
+

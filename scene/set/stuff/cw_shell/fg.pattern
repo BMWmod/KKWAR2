@@ -1,0 +1,11 @@
+{bullet
+	{tag "ammo shell fg no_ricochet itemin2hands fragmentary antiinf sharing ui_fg"}
+	{tag "fg_shell"} ; только для ammo.set
+	{detonationThickness 2}
+	{inventory
+		{size 5 1}
+		{weight 100}
+		{fsm "stuff"}
+	}
+	;{entity "shell_fg_med"}
+}

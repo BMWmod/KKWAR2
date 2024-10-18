@@ -1,0 +1,116 @@
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{extender "enumerator"}
+	{collider "tank.heavy"}
+	{props "light_M" "vision_lev06" "auto_dig_in" "has_apu" "has_autoloader" "cw_artillery" "remote_gun" "-standart_netting" "long_netting" "2s7" "spall_liner"}
+	;Несмотря на необитаемое БО, имеется механическое управление
+	{volume "part1"
+		{tags "part"}
+		{thickness 20}
+	}
+	("armor_IFV" turret(20 20 20 20) body(12 21 4 8))
+	;Корпус коробчатый, набран из разнесенных листов, держит очень большие нагрузки от выстрела, но имели место проблемы с надежным креплением узлов ходовой.
+	;поэтому уровень прочности все же больше похож на IFV, чем на средний танк с монолитной 40-55мм броней.
+	("armor_engine"  t(30))
+	{volume "apploque_side1"	{Thickness 4}}
+	{volume "apploque_side2"	{Thickness 4}}
+	{volume "apploque_side3"	{Thickness 4}}
+	{volume "apploque_side4"	{Thickness 4}}
+	{armor
+		{setting "apploque_side"
+			{thickness 4 4 4 4}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_side*"}
+			{health_reducing {pierce {koef 0}} {blast {koef 0}} }
+		}
+	}
+;====================================
+	{extension "crew.ext"}
+;5 сменных солдат - для MOW2
+	{extender "cannon"
+		{animation
+			{move   "" "" "" "" ""}
+			{reload "" "" "cannon_m5_gunlayer" "cannon_155gpf_charger" "cannon_m5_charger"}
+			{aim    "" "cannon_vickers_gunlaeyr-r" "" "" ""}
+			{fire   "" "cannon_vickers_gunlaeyr-r_fire-alert" "cannon_gunlayer_fire-alert" "cannon_gunlayer_fire-alert" "cannon_gunlayer_fire-alert"}
+		}
+		{animation
+			{switch close}
+		}
+		{driver {workers "driver"}}
+		{move {workers "driver" "seat6" "seat7" "seat9"  "seat8"}}
+		{attack {workers "seat5" "gunner" "charger" "charger2" "charger3"}}
+		{rotate_ik_Limit 0}
+	}
+;3 сменных солдата - Штурм
+;	{extender "cannon"
+;		{animation
+;			{move   "" "" ""}
+;			{reload "" "" "cannon_m5_gunlayer"}
+;			{aim    "" "cannon_vickers_gunlaeyr-r" ""}
+;			{fire   "" "cannon_vickers_gunlaeyr-r_fire-alert" "cannon_gunlayer_fire-alert"}
+;		}
+;		{animation
+;			{switch close}
+;		}
+;		{move {workers "driver" "seat6" "seat7"}}
+;		{attack {workers "seat5" "gunner" "charger"}}
+;		{rotate_ik_Limit 0}
+;	}
+;====================================
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_1g"}
+		}
+		{visor "add"				
+			{vision "vehicle_top_mgun"}
+			{bone "visor3"}
+		}
+	}
+	{extender "inventory"
+		{box     ;БК 8 снарядов в собственной укладке у 2С7М и 4 у 2С7 базовой.
+			{Size 8 8}
+			{weight 10000}		
+			{item "ammo bullet203_rus fg" 7}
+			;{item "ammo bullet203_rus cl" 3}
+			;{item "ammo bullet203_rus rok" 2}
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "203mm_2a44" filling "ammo bullet203_rus fg" 1}
+			{gunner "gunner"}
+			{charger "charger"}        	
+			{foresight "foresight1"}
+			("CW_stab_artillery_rt" rechargetime(24))
+		}
+	}
+	{mass 46500}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(1.4))
+		("CW_tracks"
+			Mass(46.5)
+			Width(3.2)
+			Power(840)
+			Realspeed(50)
+			Gamespeed(34) 
+			Range(500)
+			Fuelvolume(1280)
+		)
+		
+	}
+	{props "cwfs_fuel_300 cwfs_extfuel_800"}
+
+	{Extension "2s7m_malka.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("two_headlights")
+	("cw_headlightt")
+	("CW_turr_speed" deg_per_s(10))	;нет данных
+}

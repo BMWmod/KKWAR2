@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "small bullet stackable  rifle sniper pierce sharing fx_10_15 fx_ap ui_rifle"}
+	{inventory
+		{weight 20}
+		{block 1}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.09}
+	{entity "103x77_x5"}
+	{trace
+		{view "/texture/fx/tracerf"
+			{ScaleY 0.18}
+			{Light 0.4}
+		}
+		{length 3}
+	}
+("cw_powder_charge" kg(0.01))
+}

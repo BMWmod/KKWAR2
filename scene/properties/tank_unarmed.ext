@@ -1,0 +1,1187 @@
+;SDL
+;obsolete, do not use
+actor
+{Chassis "track"
+    ; left track must be first
+    {FuelBag
+        {volume 250 }   ; liters
+        {rate   50 }    ; liters per kilometer
+        {remain 250 }
+        {fuel "fuel"}
+    }
+    {speed
+        {Slow   15   }   ; km/h
+        {Normal 25  }
+        {Fast   25  }
+    }
+}
+
+(include "vehicle.ext")
+(include "tank_crew.ext")
+
+("brain_vehicle")
+;========================CtA
+(include "accuracy_by_motion.inc")
+
+(define "armor_engine"
+    {armor
+        {setting "engine"
+            {thickness %t}
+            {volumes "engine*"}
+        }
+    }
+)
+(define "armor_light"
+    ("armor_tank" t(6) track_b(15) bod(%body) tur(%turret) en(12) gun(15) dur(1) thr(1) pierce_dur(999))
+    ("components_tank" repair(1.5))
+
+	{sensor
+		{visor "view-around"
+			{vision "none"}
+			{bone "basis"}
+		}
+		{visor "main"
+			{vision "tank_main-l"}
+		}
+	}
+)
+
+(define "armor_medium"
+    ("armor_tank" t(6) track_b(18) bod(%body) tur(%turret) en(25) gun(35) dur(1.5) thr(1.1) pierce_dur(999))
+    ("components_tank" repair(2.5))
+
+    {sensor
+        {visor "view-around"
+            {vision "none"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-m"}
+        }
+    }
+)
+
+(define "armor_heavy"
+    ("armor_tank" t(6) track_b(20) bod(%body) tur(%turret) en(40) gun(45) dur(2) thr(0.8) pierce_dur(999))
+    ("components_tank" repair(3))
+
+    {sensor
+        {visor "view-around"
+            {vision "none"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-h"}
+        }
+    }
+)
+;==================================
+(define "accuracy_by_motion" ;  spreading depending on the speed of "body", "gun" volumes
+    {AccuracyByMotion
+        {MaxLinearSpeed %max_linear}               ;km/h
+        {ByLinearSpeed %accuracy_by_linear}
+        {MaxAngularSpeed %max_angular}             ;deg/s
+        {ByAngularSpeed %accuracy_by_angular}
+        {DisorderTime %disorder_time}              ;s
+        {OrderTime %order_time * 0.001}                    ;s
+    }
+)
+;max_linear - максимальная линейная скорость
+;accuracy_by_linear точность при этой скорости
+;max_angular максимальная угловая скорость, в градусах
+;accuracy_by_angular точность при этой скорости в процентах, первая тоже в процентах
+;точнее 0.1 - это 10%
+;disorder_time время увеличения кружка точности
+;order_time - время сведения кружка точности до максимальной
+
+;///////MODERN/////////////////////
+;================================================
+
+
+(define "CW_stab_2D_0_2class"
+    ("accuracy_by_motion"
+        max_linear(25) accuracy_by_linear(0.8)
+        max_angular(20) accuracy_by_angular(1.0)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_2D_0_5class"
+    ("accuracy_by_motion"
+        max_linear(20) accuracy_by_linear(0.6)
+        max_angular(15) accuracy_by_angular(0.9)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_2D_1_0class"
+    ("accuracy_by_motion"
+        max_linear(15) accuracy_by_linear(0.4)
+        max_angular(10) accuracy_by_angular(0.8)
+        disorder_time(2) order_time(1)
+    )
+)
+
+(define "CW_stab_no_stabiliser"
+    ("accuracy_by_motion"
+        max_linear(10) accuracy_by_linear(0.2)
+        max_angular(10) accuracy_by_angular(0.8)
+        disorder_time(2) order_time(1)
+    )
+)
+;================================================
+
+{hearingBias 4.5} ; in meters
+{sensor
+    {visor "main"
+        {vision "tank_main-l"}
+        {bone "visor1"}
+    }
+    {Visor "driver"
+        {vision "tank_driver"}
+        {bone "visor2"}
+    }
+}
+
+{collider "tank.medium"}
+{props "tank" "turret" "emit_on_sink"}
+{PatherID  "tank"}
+
+{extender "inventory"
+    {box
+        {Size 6 10}
+        {Weight 15000}
+    }
+}
+(mod "mp"
+{extender "inventory"
+    {box
+        {Size 6 10}
+        {Weight 15000}
+            {item "repair_kit" 1 {cell 0 0}}
+			{item "netting_kit" 1}
+    }
+}
+)
+{extender "talk"
+    {talker "tank"}
+}
+{able "talk" }
+
+("tracks")
+
+{volume "gun"
+    {tags "no_target"}
+    {thickness 50}
+    {able clear {bullet 1}{CONTACT 0}{CONTACT_GROUND 0}{BLAST 1}{SELECT 0}{visible 0}}
+    {component "gun"}
+}
+{volume "gun1"
+    {tags "no_target"}
+    {thickness 20}
+    {able clear {bullet 1}{CONTACT 0}{CONTACT_GROUND 0}{BLAST 1}{SELECT 0}{visible 0}}
+    {component "gun1"}
+}
+{volume "gun2"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun2_a"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun3"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "gun3_a"
+    {tags "explosive"}
+    {thickness 15}
+    {component "gun2"}
+}
+{volume "inventory"
+    {tags "explosive"}
+    {thickness 0.1}
+;	{able {NoWoundDecal}}
+}
+{volume "crew"
+	{able {NoWoundDecal}}
+}
+{volume "engine" {tags "component_internal"}
+    {thickness 1}
+}
+{volume "crew"
+    {thickness 1}
+}
+{volume "turret"
+    {component "turret"}
+    {tags "turret"}
+}
+
+;====================================================
+;New volumes
+;новые волумы
+
+{volume "driver_panel" {thickness 7} {component "driver_panel"}}
+{volume "driver_panel1" {thickness 7} {component "driver_panel"}}
+
+{volume "transmission" {thickness 10} {component "transmission"}}
+{volume "transmission1" {thickness 10} {component "transmission"}}
+
+{volume "autoloader" {thickness 10} {component "autoloader"}}
+{volume "autoloader1" {thickness 10} {component "autoloader"}}
+{volume "autoloader2" {thickness 10} {component "autoloader"}}
+
+{volume "mgun" {thickness 8} {component "mgun"}}
+{volume "mgun1" {thickness 8} {component "mgun1"}}
+{volume "mgun2" {thickness 8} {component "mgun2"}}
+{volume "mgun3" {thickness 8} {component "mgun3"}}
+{volume "mgun4" {thickness 8} {component "mgun4"}}
+{volume "mgun5" {thickness 8} {component "mgun5"}}
+{volume "mgun6" {thickness 8} {component "mgun6"}}
+
+{volume "turret_ring" {thickness 10} {component "turret_ring"}}
+{volume "turret_ring1" {thickness 10} {component "turret_ring"}}
+
+{volume "panel_engine_connectors" {thickness 10} {component "panel_engine_connectors"}}
+{volume "panel_engine_connectors1" {thickness 10} {component "panel_engine_connectors"}}
+
+{volume "turret_move_engine" {thickness 10} {component "turret_move_engine"}}
+{volume "turret_move_engine1" {thickness 10} {component "turret_move_engine"}}
+
+{volume "front_wheels" {thickness 15} {component "front_wheels"}}
+{volume "front_wheels1" {thickness 15} {component "front_wheels"}}
+{volume "front_wheels2" {thickness 15} {component "front_wheels"}}
+{volume "front_wheels3" {thickness 15} {component "front_wheels"}}
+
+{volume "stabilizer" {thickness 10} {component "stabilizer"}}
+{volume "stabilizer1" {thickness 10} {component "stabilizer"}}
+
+{volume "PPU" {thickness 10} {component "PPU"}}
+{volume "PPU1" {thickness 10} {component "PPU"}}
+{volume "PPU2" {thickness 10} {component "PPU"}}
+{volume "PPU3" {thickness 10} {component "PPU"}}
+{volume "PPU4" {thickness 10} {component "PPU"}}
+
+{volume "APU" {thickness 10} {component "APU"}}
+{volume "APU1" {thickness 10} {component "APU"}}
+
+{volume "driver_place" {thickness 3} {component "driver_place"}{able {NoWoundDecal}}}
+{volume "driver1_place" {thickness 3} {component "driver1_place"}{able {NoWoundDecal}}}
+{volume "gunner_place" {thickness 3} {component "gunner_place"}{able {NoWoundDecal}}}
+{volume "gunner1_place" {thickness 3} {component "gunner1_place"}{able {NoWoundDecal}}}
+{volume "gunner2_place" {thickness 3} {component "gunner2_place"}{able {NoWoundDecal}}}
+{volume "charger_place" {thickness 3} {component "charger_place"}{able {NoWoundDecal}}}
+{volume "commander_place" {thickness 3} {component "commander_place"}{able {NoWoundDecal}}}
+{volume "commander1_place" {thickness 3} {component "commander1_place"}{able {NoWoundDecal}}}
+
+{volume "seat1_place" {thickness 3} {component "seat1_place"}{able {NoWoundDecal}}}
+{volume "seat2_place" {thickness 3} {component "seat2_place"}{able {NoWoundDecal}}}
+{volume "seat3_place" {thickness 3} {component "seat3_place"}{able {NoWoundDecal}}}
+{volume "seat4_place" {thickness 3} {component "seat4_place"}{able {NoWoundDecal}}}
+{volume "seat5_place" {thickness 3} {component "seat5_place"}{able {NoWoundDecal}}}
+{volume "seat6_place" {thickness 3} {component "seat6_place"}{able {NoWoundDecal}}}
+{volume "seat7_place" {thickness 3} {component "seat7_place"}{able {NoWoundDecal}}}
+{volume "seat8_place" {thickness 3} {component "seat8_place"}{able {NoWoundDecal}}}
+{volume "seat9_place" {thickness 3} {component "seat9_place"}{able {NoWoundDecal}}}
+{volume "seat10_place" {thickness 3} {component "seat10_place"}{able {NoWoundDecal}}}
+{volume "seat11_place" {thickness 3} {component "seat11_place"}{able {NoWoundDecal}}}
+{volume "seat12_place" {thickness 3} {component "seat12_place"}{able {NoWoundDecal}}}
+{volume "seat13_place" {thickness 3} {component "seat13_place"}{able {NoWoundDecal}}}
+{volume "seat14_place" {thickness 3} {component "seat14_place"}{able {NoWoundDecal}}}
+{volume "seat15_place" {thickness 3} {component "seat15_place"}{able {NoWoundDecal}}}
+{volume "seat16_place" {thickness 3} {component "seat16_place"}{able {NoWoundDecal}}}
+{volume "seat17_place" {thickness 3} {component "seat17_place"}{able {NoWoundDecal}}}
+
+{volume "driver_triplex" {thickness 25} {component "driver_triplex"}}
+{volume "driver_triplex1" {thickness 25} {component "driver_triplex"}}
+{volume "driver_triplex2" {thickness 25} {component "driver_triplex"}}
+{volume "commander_triplex" {thickness 25} {component "commander_triplex"}}
+{volume "commander_triplex1" {thickness 25} {component "commander_triplex"}}
+{volume "commander_triplex2" {thickness 25} {component "commander_triplex"}}
+{volume "commander_triplex3" {thickness 25} {component "commander_triplex"}}
+{volume "additional_triplex" {thickness 25} {component "additional_triplex"}}
+{volume "additional_triplex1" {thickness 25} {component "additional_triplex1"}}
+
+{volume "ammo_storage_main" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main1" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main2" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main3" {thickness 10} {component "ammo_storage_main"}}
+{volume "ammo_storage_main4" {thickness 10} {component "ammo_storage_main"}}
+
+{volume "ammo_storage_autocannon" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon1" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon2" {thickness 10} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon3" {thickness 10} {component "ammo_storage_autocannon"}}
+
+{volume "ammo_storage_mgun" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun1" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun2" {thickness 10} {component "ammo_storage_mgun"}}
+{volume "ammo_storage_mgun3" {thickness 10} {component "ammo_storage_mgun"}}
+
+{volume "fuel_tank_internal_a" {thickness 10} {component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_a1" {thickness 10} {component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_b" {thickness 10} {component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_b1" {thickness 10} {component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_c" {thickness 10} {component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_c1" {thickness 10} {component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_d" {thickness 10} {component "fuel_tank_internal_d"}}
+{volume "fuel_tank_internal_d1" {thickness 10} {component "fuel_tank_internal_d"}}
+
+{volume "fuel_tank_external_a" {thickness 10} {component "fuel_tank_external_a"}}
+{volume "fuel_tank_external_a1" {thickness 10} {component "fuel_tank_external_a"}}
+{volume "fuel_tank_external_b" {thickness 10} {component "fuel_tank_external_b"}}
+{volume "fuel_tank_external_b1" {thickness 10} {component "fuel_tank_external_b"}}
+{volume "fuel_tank_external_c" {thickness 10} {component "fuel_tank_external_c"}}
+{volume "fuel_tank_external_c1" {thickness 10} {component "fuel_tank_external_c"}}
+{volume "fuel_tank_external_d" {thickness 10} {component "fuel_tank_external_d"}}
+{volume "fuel_tank_external_d1" {thickness 10} {component "fuel_tank_external_d"}}
+
+{volume "hull_integrity" {thickness 1} {component "hull_integrity"}}
+
+
+;end of new volumes
+;====================================================
+
+(define "components_tank"
+    {component "body"
+        (mod "mp"
+            {RepairTime (* %repair 100)}
+        )
+        {tags "mover" "noDestroyedView"}
+    }
+
+
+;====================================================
+;New components
+;новые компоненты
+
+
+    {component "driver_panel"
+        {RepairTime (* %repair 15)}
+    }
+    {component "transmission"
+        {RepairTime (* %repair 25)}
+    }
+    {component "autoloader"
+        {RepairTime (* %repair 15)}
+    }
+    {component "mgun"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun1"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun2"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun3"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun4"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun5"
+        {RepairTime (* %repair 7)}
+    }
+    {component "mgun6"
+        {RepairTime (* %repair 7)}
+    }
+    {component "turret_ring"
+        {RepairTime (* %repair 25)}
+    }
+    {component "panel_engine_connectors"
+        {RepairTime (* %repair 20)}
+    }
+    {component "turret_move_engine"
+        {RepairTime (* %repair 10)}
+    }
+    {component "front_wheels"	;передние ленивцы
+        {RepairTime (* %repair 10)}
+    }
+    {component "stabilizer"
+        {RepairTime (* %repair 15)}
+    }
+    {component "PPU"		;основной аккумулятор. Нужен для включения двигателя
+        {RepairTime (* %repair 5)}
+    }
+    {component "APU"		;ВСУ. Нужна для работы башни при выкл. двигателе.
+        {RepairTime (* %repair 7)}
+    }
+    {component "driver_place"}
+    {component "driver1_place"}
+    {component "gunner_place"}
+    {component "gunner1_place"}
+    {component "gunner2_place"}
+    {component "charger_place"}
+    {component "commander_place"}
+    {component "commander1_place"}
+    {component "seat1_place"}
+    {component "seat2_place"}
+    {component "seat3_place"}
+    {component "seat4_place"}
+    {component "seat5_place"}
+    {component "seat6_place"}
+    {component "seat7_place"}
+    {component "seat8_place"}
+    {component "seat9_place"}
+    {component "seat10_place"}
+    {component "seat11_place"}
+    {component "seat12_place"}
+    {component "seat13_place"}
+    {component "seat14_place"}
+    {component "seat15_place"}
+    {component "seat16_place"}
+    {component "seat17_place"}
+
+    {component "driver_triplex"}	;visor bone 2
+    {component "commander_triplex"}	;visor bone 1
+    {component "additional_triplex"}	;visor bone 3
+    {component "additional_triplex1"}	;visor bone 4
+
+    {component "ammo_storage_main" {tags "explosive"}}
+    {component "ammo_storage_autocannon" {tags "explosive"}}
+    {component "ammo_storage_mgun" {tags "explosive"}}
+
+    {component "fuel_tank_internal_a" {tags "explosive"}}
+    {component "fuel_tank_internal_b" {tags "explosive"}}
+    {component "fuel_tank_internal_c" {tags "explosive"}}
+    {component "fuel_tank_internal_d" {tags "explosive"}}
+    {component "fuel_tank_external_a" {tags "explosive"}}
+    {component "fuel_tank_external_b" {tags "explosive"}}
+    {component "fuel_tank_external_c" {tags "explosive"}}
+    {component "fuel_tank_external_d" {tags "explosive"}}
+
+
+    {component "hull_integrity"
+	 {RepairTime (* %repair 5)}
+    }
+	;Это - способность плавать - герметичность корпуса. Волум для нее ставится в любое место корпуса, ломается при пробитиях корпуса. 
+				;Чинится (заделать пробоины). При поломке машина тонет.
+    {component "gun1"
+        {RepairTime (* %repair 10)}
+    }
+    {component "gun2"	;gun2,3,... - внешние контейнеры с ПТУР
+        {RepairTime (* %repair 7)}
+    }
+    {component "gun3"
+        {RepairTime (* %repair 7)}
+    }
+
+;end of new components
+;====================================================
+
+
+
+
+    {component "engine"
+        {RepairTime (* %repair 25)}
+    }
+    {component "turret"
+        {RepairTime (* %repair 25)}
+    }
+    {component "gun"
+        {RepairTime (* %repair 15)}
+    }
+    {component "trackleft"
+        {RepairTime (* %repair 15)}
+    }
+    {component "trackright"
+        {RepairTime (* %repair 15)}
+    }
+)
+
+
+
+
+
+(define "locomotion"
+    {MaxSpeed       25 } ; максимальная скорость, kmph
+    {StartTime      6  } ; время разгона до макс. скорости с 0, seconds
+    {TurnTime       5  } ; время на разворот на 360 градусов при макс. скорости разворота, seconds
+    {TurnStart      0.8} ; время разгона до макс. угловой скорости с 0, seconds
+    {BrakeTime      0.6} ; время торможения с макс. скорости до 0, seconds
+    {StopTime       1  } ; время остановки после отключения двигателя с макс. скорости до 0, seconds
+    {TurnRadius     5  } ; мин. радиус разворота, meter
+    {TurnStop       0.5} ; время остановки с макс. угловой скорости до 0, seconds
+    {Gears 0.2 0.3 0.5 0.7 1.0} ; передаточные коэф-ты коробки передач
+    {RearGears 0.2 0.5} ; передаточные коэф-ты коробки передач
+    {GearSwitchDelay 0.5}   ; время смены направления движения, sec
+)
+
+(define "armor_mantlet"
+    {volume "mantlet"
+        {tags "mantlet"}
+        {component "mantlet"}
+    }
+    {armor
+        {setting "mantlet"
+            {thickness %t}
+            {durability
+                {pierce
+                    {value 1}
+                }
+             }
+            {threshold
+                {blast
+                    {koef  1.2} ;1.2
+                }
+                {pierce
+                    {koef 1} ;Отношение стойкости брони к БПС и к КС 1 - просто сталь
+		{calibre 10};Этот параметр отличает КС и все остальное. Если у пушки меньше 10 - КС
+               }
+            }
+            {volumes "mantlet"}
+        }
+    }
+)
+
+(define "armor_spa_mantlet"
+    {volume "mantlet"
+        {tags "mantlet"}
+        {component "mantlet"}
+    }
+    {armor
+        {setting "mantlet"
+            {thickness %t}
+            {volumes "mantlet"}
+        }
+    }
+)
+
+(define "armor_engine"
+    {armor
+        {setting "engine"
+            {thickness %t}
+            {volumes "engine*"}
+        }
+    }
+)
+
+;(define "armor_tank" ; armor system details you will find at "set/interaction_entity/tank.inc"
+;    {armor
+;        {setting "track"
+;            {thickness %t}
+;            {durability
+;                {blast
+;                    {koef (* %dur 2.5)}
+;                }
+;                {pierce
+;                    {value 1000}
+;                }
+;            }
+;            {threshold
+;                {blast
+;                    {value %track_b}
+;                }
+;            }
+;            {volumes "track*"}
+;            {whole_wound}
+;        }
+;        {setting "turret"
+;            {thickness %tur}
+;            {durability
+;                {blast
+;                    {koef %dur}
+;	      {value %dur_value}
+;                }
+;        		{pierce
+;                    {koef %pierce_dur}
+;                }
+;            }
+;            {threshold
+;                {blast
+;                    {koef %thr}
+;	      {value %thr_value}
+;                }
+;        		;{pierce
+;                ;    {koef 1}
+;        		;}
+;            }
+;            {volumes "turret*"}
+;        }
+;        {setting "gun"
+;            {thickness %gun}
+;            {durability
+;                {blast  {koef 3}}
+;                {pierce {koef 3}}
+;            }
+;            {threshold
+;                {blast
+;                    {value 15}
+;                }
+;                {pierce
+;                    {value 12}
+;                }
+;            }
+;            {volumes "gun*"}
+;        }
+;        {setting "body"
+;            {thickness %bod}
+;            {durability
+;                {blast
+;                    {koef %dur}
+;	      {value %dur_value}
+;                }
+;        		{pierce
+;                    {koef %pierce_dur}
+;                }
+;            }
+;            {threshold
+;                {blast
+;                    {koef %thr}
+;	      {value %thr_value}
+;                }
+;        		;{pierce
+;                ;    {koef 1}
+;        		;}
+;            }
+;            {volumes "body*"}
+;        }
+;        {setting "engine"
+;            {thickness %en}
+;            {durability
+;                {blast
+;                    {koef %dur}
+;                }
+;            }
+;            {threshold
+;                {blast
+;                    {koef %thr}
+;                }
+;            }
+;            {volumes "engine*"}
+;        }
+;disabled for some reason I do not remember
+;		{setting "other"
+;			{thickness 10}
+;			{durability
+;				{pierce
+;					{koef 0.8}
+;					(mod "mp" {koef 999})
+;				}
+;			}
+;		}
+	}
+)
+
+
+
+
+
+
+
+
+
+
+
+(define "armor_light"	;for APC - level armor - BTR, Shilka, BMD
+    ("armor_tank" t(20) track_b(20) bod(%body) tur(%turret) en(12) gun(15) dur(1) thr(1) pierce_dur(999) dur_value(30) thr_value(10))
+;    ("armor_tank" t(10) track_b(14) bod(%body) tur(%turret) en(25) gun(35) dur(1.0) thr(0.8) pierce_dur(999))
+    ("components_tank" repair(1.5))
+	{sensor
+		{visor "view-around"
+			{vision "tank_around-l"}
+			{bone "basis"}
+		}
+		{visor "main"
+			{vision "tank_main-l"}
+		}
+	}
+)
+(define "armor_IFV"	;for IFV-level armor about 25mm - Bradly, BMP-1,2,3, M113.
+    ("armor_tank" t(20) track_b(20) bod(%body) tur(%turret) en(12) gun(15) dur(1) thr(1) pierce_dur(999) dur_value(60) thr_value(20))
+;    ("armor_tank" t(10) track_b(14) bod(%body) tur(%turret) en(25) gun(35) dur(1.0) thr(0.8) pierce_dur(999))
+    ("components_tank" repair(1.5))
+	{sensor
+		{visor "view-around"
+			{vision "tank_around-l"}
+			{bone "basis"}
+		}
+		{visor "main"
+			{vision "tank_main-l"}
+		}
+	}
+)
+(define "armor_medium"
+    ("armor_tank" t(28) track_b(28) bod(%body) tur(%turret) en(25) gun(35) dur(2) thr(1.5) pierce_dur(999) dur_value(80) thr_value(40))
+;    ("armor_tank" t(10) track_b(14) bod(%body) tur(%turret) en(25) gun(35) dur(1.0) thr(0.9) pierce_dur(999))
+    ("components_tank" repair(2.3))
+
+    {sensor
+        {visor "view-around"
+            {vision "tank_around-m"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-m"}
+        }
+    }
+)
+(define "armor_heavy"
+;    ("armor_tank" t(35) track_b(35) bod(%body) tur(%turret) en(40) gun(80) dur(2) thr(2) pierce_dur(999) dur_value(100) thr_value(50))
+    ("armor_tank" t(35) track_b(35) bod(%body) tur(%turret) en(40) gun(80) dur(2) thr(2) pierce_dur(999) dur_value(100) thr_value(60))
+;    ("armor_tank" t(12) track_b(16) bod(%body) tur(%turret) en(40) gun(80) dur(2) thr(15) pierce_dur(999))
+    ("components_tank" repair(3))
+
+    {sensor
+        {visor "view-around"
+            {vision "tank_around-h"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-h"}
+        }
+    }
+)
+
+(define "armor_heavy_multivolume"
+    ("components_tank" repair(3))
+ {armor
+        {setting "track"
+            {thickness 35}
+            {durability
+                {blast
+                    {koef (* 2 2.5)}
+                }
+                {pierce
+                    {value 1000}
+                }
+            }
+            {threshold
+                {blast
+                    {value 35}
+                }
+            }
+            {volumes "track*"}
+            {whole_wound}
+        }
+        {setting "turret"
+            {thickness %turret}
+         
+            {durability
+                {pierce
+                    {koef 999}
+                }
+                {blast
+	     {value 100}
+                }
+             }
+             {threshold
+                {blast
+                    {koef  2}
+	      {value 60}
+                 }
+            }
+            {volumes "turret*"}
+        }
+        {setting "gun"
+            {thickness 100}
+            {durability
+                {blast  {koef 3}}
+                {pierce {koef 3}}
+            }
+            {threshold
+                {blast
+                    {value 15}
+                }
+                {pierce
+                    {value 12}
+                }
+            }
+            {volumes "gun*"}
+        }
+        {setting "body1"
+            {thickness %body1}
+            {durability
+                {blast
+                    {koef 2}
+	      {value 100}
+                 }
+        	{pierce
+                    {koef 999}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 2}
+	      {value 60}
+                 }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "body1*"}
+        }
+        {setting "body2"
+            {thickness %body2}
+            {durability
+                {blast
+                    {koef 2}
+	      {value 100}
+                 }
+        		{pierce
+                    {koef 999}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 2}
+	      {value 60}
+                 }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "body2*"}
+        }
+        {setting "engine"
+            {thickness 40}
+            {durability
+                {blast
+                    {koef 1}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 0.8}
+                }
+            }
+            {volumes "engine*"}
+        }
+   }
+    {sensor
+        {visor "view-around"
+            {vision "tank_around-h"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-h"}
+        }
+    }
+)
+
+(define "armor_heavy_3volume"
+    ("components_tank" repair(3))
+ {armor
+        {setting "track"
+            {thickness 35}
+            {durability
+                {blast
+                    {koef (* 2 2.5)}
+                }
+                {pierce
+                    {value 1000}
+                }
+            }
+            {threshold
+                {blast
+                    {value 35}
+                }
+            }
+            {volumes "track*"}
+            {whole_wound}
+        }
+        {setting "turret"
+            {thickness %turret}
+         
+            {durability
+                {pierce
+                    {koef 999}
+                }
+                {blast
+	     {value 100}
+                }
+             }
+             {threshold
+                {blast
+                    {koef  2}
+	      {value 60}
+                 }
+            }
+            {volumes "turret*"}
+        }
+        {setting "gun"
+            {thickness 100}
+            {durability
+                {blast  {koef 3}}
+                {pierce {koef 3}}
+            }
+            {threshold
+                {blast
+                    {value 15}
+                }
+                {pierce
+                    {value 12}
+                }
+            }
+            {volumes "gun*"}
+        }
+        {setting "body1"
+            {thickness %body1}
+            {durability
+                {blast
+                    {koef 3}
+	      {value 100}
+                 }
+        	{pierce
+                    {koef 999}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 3}
+	      {value 60}
+                 }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "body1"}
+        }
+        {setting "body2"
+            {thickness %body2}
+            {durability
+                {blast
+                    {koef 3}
+	      {value 100}
+                 }
+        		{pierce
+                    {koef 999}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 3}
+	      {value 60}
+                 }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "body2"}
+        }
+        {setting "body3"
+            {thickness %body3}
+            {durability
+                {blast
+                    {koef 3}
+	      {value 100}
+                 }
+        		{pierce
+                    {koef 999}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 3}
+	      {value 60}
+                 }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "body3"}
+        }
+        {setting "engine"
+            {thickness 40}
+            {durability
+                {blast
+                    {koef 1}
+                }
+            }
+            {threshold
+                {blast
+                    {koef 0.8}
+                }
+            }
+            {volumes "engine*"}
+        }
+   }
+    {sensor
+        {visor "view-around"
+            {vision "tank_around-h"}
+            {bone "basis"}
+        }
+        {visor "main"
+            {vision "tank_main-h"}
+        }
+    }
+)
+
+;====================MAIN==================
+;by Pheonix
+
+;=========================================
+(define "shield_BMP2D"
+	{armor
+		{setting "shield"
+			{thickness 10}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 20}}}
+			{volumes "shield*"}
+		}
+	}
+)
+
+;=========================================
+(define "shield_t-64a_1981"
+	{armor
+		{setting "shield"
+			{thickness 10}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 20}}}
+			{volumes "shield*"}
+		}
+	}
+)
+;=========================================
+(define "shield_M1"
+	{armor
+		{setting "shield"
+			{thickness 35}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 20}}}
+			{volumes "shield*"}
+		}
+	}
+)
+;=========================================
+(define "shield_Leo2"
+	{armor
+		{setting "shield"
+;			{thickness 600}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 20}}}
+			{volumes "shield*"}
+		}
+	}
+)
+;=========================================
+(define "d_a_Kontakt1"
+	{armor
+		{setting "d_a"
+			{thickness 60}
+			{durability {blast {koef 2}} {pierce {value 120}}}
+			{threshold {blast {koef 1}} {pierce {koef 0.33} 	{calibre 6}}}
+			{volumes "d_a*"}
+		}
+
+	}
+)
+;=========================================
+(define "shield_M1A2TUSK"
+	{armor
+		{setting "shield"
+			{thickness 7}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 15}}}
+			{volumes "shield*"}
+		}
+	}
+)
+;=========================================
+(define "d_a_ARAT1"
+	{armor
+		{setting "d_a"
+			{thickness 185}
+			{durability {blast {koef 2}} {pierce {value 120}}}
+			{threshold {blast {koef 1}} {pierce {koef 0.15} {calibre 6}}}
+			{volumes "d_a*"}
+		}
+
+	}
+)
+;=========================================
+(define "d_a_Kontakt5"
+	{armor
+		{setting "d_a"
+			{thickness 94}		;500 под углом 68 гр.
+			{durability {blast {koef 2}} {pierce {value 180}}}	;метание крышки - т. е. крышка довольно прочная.
+			{threshold {blast {koef 1}} {pierce {koef 0.166} 	{calibre 6}}}
+			{volumes "d_a*"}
+		}
+	}
+)
+;=========================================
+(define "kaz_arena_armor"
+	{Volume "kaz_hitzone_01" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_02" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_03" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_04" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_05" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_06" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_07" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_08" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_09" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_10" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_11" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_12" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_13" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_14" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_15" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_16" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_17" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_18" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_19" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_20" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_21" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_22" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_23" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+	{Volume "kaz_hitzone_24" {thickness 0.1} {tags "kaz_hitzone"} {able {NoWoundDecal} {obstacle 0}} {component "kaz1"}}
+
+    {component "kaz1"}
+
+	{Volume "kaz_01" {thickness 20} {component "kaz"}}
+	{Volume "kaz_02" {thickness 20} {component "kaz"}}
+	{Volume "kaz_03" {thickness 20} {component "kaz"}}
+	{Volume "kaz_04" {thickness 20} {component "kaz"}}
+	{Volume "kaz_05" {thickness 20} {component "kaz"}}
+	{Volume "kaz_06" {thickness 20} {component "kaz"}}
+	{Volume "kaz_07" {thickness 20} {component "kaz"}}
+	{Volume "kaz_08" {thickness 20} {component "kaz"}}
+	{Volume "kaz_09" {thickness 20} {component "kaz"}}
+	{Volume "kaz_10" {thickness 20} {component "kaz"}}
+	{Volume "kaz_11" {thickness 20} {component "kaz"}}
+	{Volume "kaz_12" {thickness 20} {component "kaz"}}
+	{Volume "kaz_13" {thickness 20} {component "kaz"}}
+	{Volume "kaz_14" {thickness 20} {component "kaz"}}
+	{Volume "kaz_15" {thickness 20} {component "kaz"}}
+	{Volume "kaz_16" {thickness 20} {component "kaz"}}
+	{Volume "kaz_17" {thickness 20} {component "kaz"}}
+	{Volume "kaz_18" {thickness 20} {component "kaz"}}
+	{Volume "kaz_19" {thickness 20} {component "kaz"}}
+	{Volume "kaz_20" {thickness 20} {component "kaz"}}
+	{Volume "kaz_21" {thickness 20} {component "kaz"}}
+	{Volume "kaz_22" {thickness 20} {component "kaz"}}
+	{Volume "kaz_23" {thickness 20} {component "kaz"}}
+	{Volume "kaz_24" {thickness 20} {component "kaz"}}
+   {component "kaz"}
+
+
+
+
+;	{armor
+;		{setting "kaz"
+;			{thickness 30}		
+;			{durability {blast {koef 1}} {pierce {value 70}}}	
+;			{threshold {blast {koef 1}} {pierce {koef 1} 	{calibre 6}}}
+;			{volumes "kaz_*"}
+;		}
+;	}
+)
+
+;=========================================
+
+;для бронебойных - калибр больше 10, для обычных кумулятивных - 5, для тандемных - 7
+
+
+
+
+
+
+
+

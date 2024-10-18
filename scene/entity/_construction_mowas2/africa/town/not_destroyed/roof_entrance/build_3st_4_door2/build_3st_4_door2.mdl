@@ -1,0 +1,72 @@
+;Exported by: Администратор
+;Date:        Sat Jan 11 16:05:45 2014
+;File:        G:\Работа с Pheonix\Редактирование\Мои модели\Мое\Люк на крышу\Дома готов 8.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "node01"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-51.4116	-0.139803	0
+			}
+		}
+		{bone "bottom"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				-8.86082	0	0
+			}
+		}
+		{bone "top"
+			{parameters "Ground;"}
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-74.4838	-62.0088	65.6045
+			}
+		}
+		{bone "node02"
+			{Position -87.5481	-0.0819092	0}
+		}
+		{bone "node03"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				-73.3744	-44.0442	65.1141
+			}
+			{bone "entrance"
+				{Position 1.2355	-1.33829	-5.97221}
+				{VolumeView "entrance.ply"}
+			}
+		}
+	}
+}
+{Volume "attach1"
+	{Box 14.3181 33.1669 66.8485}
+	{Bone "bottom"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		14.3416	0.0768509	24.2519
+	}
+}
+{Volume "attach2"
+	{Box 24.4309 24.9647 13.5223}
+	{Bone "top"}
+	{Matrix34
+		-1	0	0
+		0	-1	0
+		0	0	1
+		18.375	2.214	2.67052
+	}
+}

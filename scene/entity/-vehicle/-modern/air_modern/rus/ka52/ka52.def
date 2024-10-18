@@ -1,0 +1,180 @@
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "Helicopter_M" "Ka52" "steel" "vision_lev_heli" "laser_spo" "IR_spo" "with_vitebsk" "heli_strike"}
+	{Extension "ka52.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"}}
+	{targetClass 	"Helicopter"}
+
+	{mass 9800}
+	
+	("air_armor" main_rotor(12) tail_rotor(10) cabin(3) engine(8) mechanics(6) electronics(5) fuel(5))
+
+	{Volume "armor"	{thickness 5}}
+	{Volume "armor1"	{thickness 5}}
+	{Volume "armor2"	{thickness 5}}
+	{Volume "armor3"	{thickness 5}}
+	{Volume "armor4"	{thickness 5}}
+	{Volume "armor5"	{thickness 5}}
+	{Volume "armor6"	{thickness 5}}
+	{volume "border1"	{thickness 10}}	
+	
+	{armor
+		{setting "glass_front"
+			{thickness 10}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "border1"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "main_armor"
+			{thickness 10 3 5 1}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "armor*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+	{extender "inventory"
+		{box
+		{size 8 11}
+			 {item "ammo bullet30_RUS_aph ap" 210}
+			 {item "ammo bullet30_RUS fg" 230}
+		}
+	}
+	
+	
+	
+	{Volume "catap_thruster1"	{thickness 3}}
+	{Volume "catap_thruster"	{thickness 3}}
+	{Volume "ejseat1"	{thickness 3}}
+	{Volume "ejseat"	{thickness 3}}
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+       	("part" args "part7")
+       	("part" args "part8")
+       	("part" args "retract_wheelr")
+       	("part" args "retract_wheell")
+       	("part" args "retract_wheelb")
+       	("part" args "ptur1")
+       	("part" args "ptur2")
+       	("part" args "nar1")
+       	("part" args "nar2")
+       	("part" args "WingL")
+       	("part" args "WingR")
+		
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_2A42_Ka50" filling "ammo bullet30_RUS_aph ap" 30}
+			{charger "driver1"}
+			{gunner "driver1"}
+		}
+;===============Правое крыло
+		{place "ptur2"
+			{weapon "9k121vixr_right" filled}
+			{foresight "foresight2"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			;{barrels 6}
+			{basic}
+		}
+		
+;==============Левое крыло
+		{place "ptur1"
+			{weapon "9k121vixr_left" filled}
+			{foresight "foresight3"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			;{barrels 6}
+			{basic}
+		}
+		
+;================Оба крыла   ==
+        {place "nar1"
+			{weapon "80mm_b820a_x2" filling "bullet80_DM cm ammo" 40}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter_"}
+			{barrels 40}
+			{basic}
+		}
+		
+		{place "soep1"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk1"}
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "soep2"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk2"}
+			{charger "driver"}
+			{gunner "driver"}
+		}		
+		{place "ptur5"
+			{weapon "strelets_left" filled}
+			{foresight "foresight7"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			{basic}
+		}
+		{place "ptur6"
+			{weapon "strelets_right" filled}
+			{foresight "foresight8"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			{basic}
+		}
+	}	
+;("CW_heli_chassis" Maxspeed(45) turnRadius(16) maxSlope(20))
+("CW_heli_chassis" 
+	Maxspeed(55) turnRadius(14) Acc(6.18) Climb(5.55)
+	Fuel(1459) Fuel_rate(2.92) Fuel_remain(1094))
+	{props "cwfs_fuel_1000"}
+		
+	{Sensor
+		{Visor "main"
+			{vision "mp_soldier"}
+			{bone "visor1"}
+		}
+		{Visor "goes451"
+			{vision "aircraft_optic_3g"}
+			{bone "visor2"}
+		}
+		{Visor "visor_radar"
+			{vision "radar_90grad"}
+			{bone "Visor_radar"}
+		}
+		{visor "shtora"				
+			{vision "shtora_visor"}
+			{bone "shtora_visor"}
+		}
+	}		
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "open1"}}
+			{reverse 	{end	"board_plane_left" -1} {base "open1" -1}}
+		}
+		{anm "driver1"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "open2"}}
+			{reverse 	{end	"board_plane_left" -1} {base "open2" -1}}
+		}
+	}
+
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}	
+	
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(driver1) bone(driver1) door(emit2) animation(driver1))
+}

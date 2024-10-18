@@ -1,0 +1,19 @@
+;Cold War
+{bullet
+	{tag "small fg ic pierce hmgun hrifle BS hcb_ammo ptr antiinf sharing fx_10_15 ui_ic"}
+              
+        {inventory
+		{size 2 1 }
+		{weight 10}
+		{block 10}
+	}
+	{mass 0.1}
+	{trace
+		{view "/texture/fx/tracerf"
+			{ScaleY 0.2}
+		}
+		{length 3.2}
+	}
+	{entity "ptrfl_ammo"}
+("cw_powder_charge" kg(0.017))
+}

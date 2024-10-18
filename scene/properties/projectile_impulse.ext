@@ -1,0 +1,209 @@
+;SDL
+(include "/properties/projectile.ext")
+
+	{collider "ammo"}	;желательно нарастить коллайдер до projectile, но пока с ним не работает двигатель х-59
+	{collider "projectile"}
+
+	{props "steel"}
+
+
+
+
+
+
+(define "impulse_cruise_missile"	;поддержка подсветочного наведения, колеблющийся вперед-назад маркер наведения, средний таргеткласс
+	{props  "-vis_level_targetable_missile" "-vis_level_missile" "vision_lev_small_UAV" "proj_impulse" "proj_impulse_cruise_missile"}
+	{targetClass "medium_UAV"}
+	{extension "/properties/animation/vehicle/proj_point_anm.ext"}
+	{component "antimissile_t"}
+	{component "body"}
+	{component "missile"}
+	{volume "body"
+		{component "body"}
+		{able  {visible} {bullet} {contact_ground} {contact} {blast} {select 0} {touch 0}}
+	}
+	{bone "basis"
+		{bone "cwps3_place1"
+			{Matrix34
+				1	0	0
+				0	1	0
+				0	0	1
+				(* 20 0)	(* 20 0)	(* 20 0)
+			}
+			{bone "cwps3_place"
+			}
+		}
+	}
+	{Placer
+		{place "cwps_proj_point"
+			{entity "cwps3_proj_point"}
+			{Linkbone "cwps3_place"}
+			{handlebone "Basis"}
+			{obstacle disable}
+		}
+	}
+	{Volume "targ_for_missile"
+		{able clear {Visible 1}{select 0} {bullet 1}} {Thickness 0.1} {component "missile"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "%bone"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			50	0	0
+		}
+	}
+	{Volume "target_front"
+		{able clear {Visible 1}{select 0} {bullet 1}} {Thickness 0.1} {component "antimissile_t"}
+		{Cylinder 7.5591 19.84252}
+		{Bone "%bone"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			50	0	0
+		}
+	}
+	{Volume "ground"
+		{able clear {contact_ground}}
+	}
+)
+(define "impulse_glide_bomb"	;противоракеты наводятся без захвата
+	{props  "vision_lev_glide_bomb" "-vis_level_targetable_missile" "-vis_level_missile" "-vision_lev_small_UAV" "proj_impulse" "proj_impulse_bomb"}
+	{targetclass "bomb"}
+	{Volume "check_for_sam"
+		{able clear {Visible 1} {select 0} {bullet 1}} {Thickness 0.1} {component "check_for_sam"}
+		{box 20 20 20}
+		{Bone "missle_foresight"}
+		{Position 0	-20	0}
+	}
+	{component "check_for_sam"
+		{RepairTime 1}
+    }
+	{component "body"}
+	{volume "body" {component "body"}}
+)
+(define "impulse_allow_manual_control"
+	{able "select"}
+	{props "vehicle" "allow_manual_control"}
+)
+(define "guidance_double"
+	{Weaponry
+		{place "targeting_sys_anti_jamming"
+			{weapon "missilets_%guidanceaj" filling "%country_%typeaj cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+		{place "targeting_sys"
+			{weapon "missilets_%guidance" filling "%country_%type cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+	}
+)
+(define "guidance_aj"
+	{Weaponry
+	    {place "targeting_sys_anti_jamming"
+			{weapon "missilets_%guidanceaj" filling "%country_%typeaj cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+	}
+)
+(define "impulse_missile_armor"
+	{armor
+		{setting "body"
+            {thickness %thickness}
+            {durability {blast {value %durability} } {pierce  {value %durability} }  }  
+            {threshold  {blast {value %thickness} } {pierce  {value %thickness} }}
+            {volumes "body" "select" "check_for_sam" "part1" "part2" "targ_for_missile"}
+        }
+	}
+)
+(define "impulse_engine"
+     {Placer
+	{place "missile"
+		{entity %missile}
+		{Linkbone "missile_point"}
+		{obstacle disable}
+	}
+     }
+	 {Volume "select" {able clear {touch}}}
+	 {Skeleton
+		{bone "basis"
+			{Orientation
+				1	0	0
+				0	1	0
+				0	0	-1
+			}
+			{bone revolute "gun_rot"
+				{Matrix34
+					1	0	0
+					0	1	0
+					0	0	1
+					0	0	0
+				}
+				{bone revolute "gun"
+					{Matrix34
+						1	0	0
+						0	0	1
+						0	-1	0
+						0	0	0
+					}
+					{bone "missle_foresight"
+						{Position %fore_offset	0	0}
+					}
+					{bone "cont_vol"
+						{Position %cont_offset	0	0}
+					}
+					{bone "missile_point"}
+				}
+			}
+		}
+	}
+	{Volume "body"
+		{Cylinder (* 0.02 %calibre) (* 0.02 %length)}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			0	0	0
+		}
+	}
+	{Volume "ground"
+		{Cylinder (* 0.02 %calibre) (* 0.02 %length)}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			0	0	0
+		}
+	}
+	{Volume "select"
+		{Cylinder (* 0.04 %calibre) (* 0.03 %length)}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			0	0	0
+		}
+	}
+	{volume "cont_vol"
+		{able clear {contact}}
+		{Box 0.01 25 25}
+		{Bone "cont_vol"}
+		{Position 1	0	0}
+	}
+)

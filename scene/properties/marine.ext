@@ -1,0 +1,142 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+
+{able "-emit_passangers_on_enemy"}
+
+("brain_vehicle")
+
+{Chassis "water"
+	("chassis_defaults")
+}
+{simulatorid "water"}
+{patherid "water"}
+{collider "marine"}
+{obstacleID "marine"}
+
+{extender "inventory"
+	{box
+		{Size 6 10}
+		{Weight 3000}
+	}
+}
+
+{sensor
+	{Visor "main"
+		{vision "marine_main"}
+		{bone "visor"}
+	}
+}
+(define "CW_stab_no_stabiliser"
+    {AccuracyByMotion
+        {MaxLinearSpeed 10} {ByLinearSpeed 0.2}
+        {MaxAngularSpeed 10} {ByAngularSpeed 0.4}
+        {DisorderTime 1} {OrderTime 2} 
+    }
+)
+(define "locomotion"
+	{MaxSpeed	25	}		
+	{StartTime	10	}		
+	{BrakeTime	2	}		
+	{StopTime	4	}		
+	{TurnRadius	8	}		
+	{SplineRadius 3	}		
+
+	{SteerOn	20	}
+	{SteerOff	40	}
+	{Gears 0.5 0.7 1.0} 
+	{RearGears 0.15 0.3} 
+)
+(define "marine_chassis"
+	{Chassis "water"
+		("chassis_defaults")
+	}
+	{chassis
+		{Locomotion 
+			{MaxSpeed	%speed	}
+			{maxSpeedAtMaxTurn	(* %speed 0.8)	}
+			{StartTime	%starttime	}
+			{BrakeTime	(* %starttime 0.5)	}
+			{StopTime	(* %starttime 1.5)	}
+			{TurnTime (* 7 (/ %turnrad %speed))}
+			{TurnRadius	%turnrad	}
+			{SplineRadius (* %turnrad 0.75)	}
+
+			{SteerOn	20	}
+			{SteerOff	40	}
+			{Gears 0.5 0.7 1.0}
+			{RearGears 0.15 0.3 0.7}
+			{GearSwitchDelay 5}
+		}
+	}
+)
+(define "armor_marine"
+	{armor
+		{setting "body"
+			{thickness (* %b %k)}
+			{volumes "body*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+)
+(define "armor_boat"	
+	{armor
+        {setting "body"
+            {thickness %body}
+            {durability
+                {blast
+					{value 15}
+                }
+        		{pierce
+                    {value 35}
+                }
+            }
+            {threshold
+                {blast
+					{value 1}
+                }
+        		{pierce
+                    {value 2}
+                }
+            }
+            {volumes "body*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "engine"
+            {thickness %body}
+            {durability
+                {blast
+					{value 5}
+                }
+        		{pierce
+                    {value 3}
+                }
+            }
+            {threshold
+                {blast
+					{value 2}
+                }
+        		{pierce
+                    {value 3}
+                }
+            }
+            {volumes "engine*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+	}
+)
+(define "armor_light"
+	("armor_marine" b(15) k(%0))
+)
+(define "armor_medium"
+	("armor_marine" b(55) k(%0))
+)
+(define "armor_heavy"
+	("armor_marine" b(85) k(%0))
+)
+
+("armor_medium" args 1)
+
+{targetClass "tank" "ap fg bullet"}
+{targetSelector "tank"}

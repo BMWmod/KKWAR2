@@ -1,0 +1,20 @@
+﻿;Created by Pheonix 
+{from "155mm_m776 gun"     ; "paladin" 39 калибров.
+	;Без GPS кучность и дальность на уровне обычного 155мм АРС
+	("CW_acc_artillery" mils(3.39))
+	{parameters "bullet155_USA satt"
+	    {gravity 1.7}
+		{range 370 370}	;M549A1 - 30km
+		("CW_acc_artillery_ars" mils(3.39))	
+		{cursor "cannon_on_fg_6"}	
+		{cursorReloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_GER satt"
+	    {gravity 1.7}
+		{range 370 370}	;M549A1 - 30km
+		("CW_acc_artillery_ars" mils(3.39))	
+		{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}	
+	}
+	
+}			

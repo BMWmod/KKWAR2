@@ -1,0 +1,28 @@
+{bullet
+	{tag "bullet stackable no_ricochet full_shock antiinf nobleed sharing fx_10_15 fx_ap ui_gas"}
+	{inventory
+		{size 2 1 }
+		{weight 11}
+		{block 3}
+	}
+	{mass 0.1}
+	{entity "23mm_shotgun_ammo_gas_short"}
+;	{damage flash	;Disabled in MOW2
+;		{radius 1.5 0.5} ; full flash radius, shorter flash radius
+;		{duration 5.0 2.0} ; max duration, min duration
+;	}
+	{damage add shockwave
+		{if fsm_tags "down" or in_fortification "trench" or in_house or cover_kind "vertical" "horizontal" "bush" "terrain"
+			{energy
+				0	2.5 	;1.53sec/unit
+				0.3	2.5
+				1	0
+			}
+		}
+		{energy
+				0	3.3 	;1.53sec/unit
+				0.5	3.3
+				1.5	0
+		}
+	}
+}

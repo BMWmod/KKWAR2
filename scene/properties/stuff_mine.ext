@@ -1,0 +1,130 @@
+;SDL
+game_entity
+
+{volume "select"
+	{able clear {select}}
+	{density 0}
+}
+{volume "detector" {tags "detector"}{able clear {contact}{blast}}{density 0}}
+{volume "detector1" {tags "detector"} {able clear {contact}{blast}}{density 0}}
+{volume "detector2" {tags "detector"} {able clear {contact}{blast}}{density 0}}
+{volume "detector3" {tags "detector"} {able clear {contact}{blast}}{density 0}}
+{volume "detector4" {tags "detector"} {able clear {contact}{blast}}{density 0}}
+
+{obstacleID "nothing"}
+{collider "nothing"}
+{simulation {able 1}}
+{constrain ground}
+{props "stuff" "no_blast_physics" "mine" "steel" "collectable" "nocover"}
+{extender "mine"}
+{mass 5}
+{skeleton
+	{bone "mined_view"
+		{matrix34
+			0  0  1
+			0 -1  0
+   			1  0  0
+   			0  0  0
+		}
+	}
+}
+{lodclass "stuff_small"}
+
+{armor
+	{setting "body"
+		{thickness 20}
+		{volumes "body*"}
+	}
+}
+(define "mine_camera"
+	{Extender "preview"
+		{"Stuff"
+			{camera
+				{origin -4.13031	7.55984	9.86582}
+				{lookat 0	0	0}
+				{fov (* 33 %scale)}
+			}
+			{lights
+				{"0"
+					{type directional}
+					{direction 0.414969	0.236377	-0.148073}
+				}
+				{"1"
+					{type directional}
+					{direction -0.175366	0.277374	-0.37724}
+				}
+				{"2"
+					{type directional}
+					{direction -0.0185673	-0.499351	0.0174254}
+				}
+			}
+		}
+		{"Stuff_secondary"
+			{camera
+				{origin -5.6732	10.2042	13.5145}
+				{lookat 0	0	0}
+				{fov (* 33 %scale)}
+			}
+			{lights
+				{"0"
+					{type directional}
+					{direction -0.175366	0.277374	-0.37724}
+				}
+				{"1"
+					{type directional}
+					{direction 0.414969	0.236377	-0.148073}
+				}
+				{"2"
+					{type directional}
+					{direction -0.0185673	-0.499351	0.0174254}
+				}
+			}
+		}
+	}
+)
+(define "high_mine_camera"
+	{Extender "preview"
+		{"Stuff"
+			{camera
+				{origin -4.13031	7.55984	(+ 10 %up)}
+				{lookat 0	0	%up}
+				{fov (* 33 %scale)}
+			}
+			{lights
+				{"0"
+					{type directional}
+					{direction 0.414969	0.236377	-0.148073}
+				}
+				{"1"
+					{type directional}
+					{direction -0.175366	0.277374	-0.37724}
+				}
+				{"2"
+					{type directional}
+					{direction -0.0185673	-0.499351	0.0174254}
+				}
+			}
+		}
+		{"Stuff_secondary"
+			{camera
+				{origin -5.6732	10.2042	(+ 13 %up)}
+				{lookat 0	0	%up}
+				{fov (* 33 %scale)}
+			}
+			{lights
+				{"0"
+					{type directional}
+					{direction -0.175366	0.277374	-0.37724}
+				}
+				{"1"
+					{type directional}
+					{direction 0.414969	0.236377	-0.148073}
+				}
+				{"2"
+					{type directional}
+					{direction -0.0185673	-0.499351	0.0174254}
+				}
+			}
+		}
+	}
+)

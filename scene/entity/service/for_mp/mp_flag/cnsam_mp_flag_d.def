@@ -1,0 +1,7 @@
+{actor
+	(include "mp_flag.inc")
+	 {texmod "cnsam"}
+	;(include "/set/resupply_generic.inc")
+	;("art_flag_cn")
+	{props "flag_delete"}
+}

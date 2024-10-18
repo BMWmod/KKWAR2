@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/bmpt/body"}
+	{bump "$/model/bmpt/body_bp"}
+	{specular "$/model/bmpt/body_sp"}
+	
+{blend none}
+}

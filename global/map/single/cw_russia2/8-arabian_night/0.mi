@@ -1400,7 +1400,6 @@
 		{Position -6277.99 2740.03}
 		{xform zl -8.57}
 		{Player 2}
-		{MaskPlayer 3}
 		{FsmState "stand"}
 		{MID 199}
 		{NameId 34 23}
@@ -1452,7 +1451,6 @@
 		{Position -6259.37 2526.49}
 		{xform zl -157.28}
 		{Player 2}
-		{MaskPlayer 3}
 		{MID 204}
 		{NameId 75 22}
 	}
@@ -6255,8 +6253,8 @@
 		}
 	}
 	{Human "mp2/usa/pilot" 0x83b9
-		{Position -8290.9 -91.96}
-		{xform zl 90 y 48.58 zw -27.16}
+		{Position -8290.66 -92.09}
+		{xform zl 90 y 52.65 zw -27.16}
 		{TexMod
 			{material "body" "desert"}
 		}
@@ -14872,6 +14870,9 @@
 		{Position 0 0}
 	}
 	{Entity "invisible_flols" 0x8031
+		{Position 0 0}
+	}
+	{Entity "invisible_flols" 0x8032
 	}
 	{Link 0x8038 {0x8000 "cwps_proj_point"}}
 	{Link 0x8040 {0x8003 "commander"}}
@@ -14957,7 +14958,7 @@
 	{Link 0x808c {0x8069 "mgun2_place"}}
 	{Link 0x808d {0x8069 "torpedo1_place"}}
 	{Link 0x808e {0x8069 "torpedo2_place"}}
-	{Link 0x8031 {0x8069 "landing_sys"}}
+	{Link 0x8032 {0x8069 "landing_sys"}}
 	{Link 0x8085 {0x8069 "maingun"}}
 	{Link 0x801a {0x8082 "vehicle9"}}
 	{Link 0x801c {0x8083 "vehicle9"}}
@@ -33484,7 +33485,7 @@
 							{type resume}
 						}
 					}
-					{"player"
+					{## "player"
 						{selector
 							{tag unmasked}
 						}
@@ -36612,7 +36613,7 @@
 						{operation set}
 						{player 8}
 					}
-					{"player"
+					{## "player"
 						{selector
 							{tag loyal_com}
 						}
@@ -36739,7 +36740,7 @@
 						{operation set}
 						{player 8}
 					}
-					{"player"
+					{## "player"
 						{selector
 							{tag loyalist}
 						}
@@ -49315,39 +49316,6 @@
 					{"delay"
 						{time 5}
 					}
-					{## "linker"
-						{selector
-							{source advanced}
-							{group
-								{select
-									{id
-										{id "0xc004"}
-									}
-								}
-							}
-						}
-						{action unlink}
-						{entities
-							{tag ph1_halid}
-						}
-					}
-					{## "linker"
-						{selector
-							{source standart}
-							{tag ph1_halid}
-						}
-						{action unlink}
-						{entities
-							{source advanced}
-							{group
-								{select
-									{id
-										{id "0xc004"}
-									}
-								}
-							}
-						}
-					}
 					{"emit"
 						{selector
 							{source advanced}
@@ -49406,7 +49374,7 @@
 						{operation set}
 						{player 8}
 					}
-					{"player"
+					{## "player"
 						{selector
 							{source advanced}
 							{group

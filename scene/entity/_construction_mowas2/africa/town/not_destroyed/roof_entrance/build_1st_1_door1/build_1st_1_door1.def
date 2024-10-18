@@ -1,0 +1,4 @@
+{game_entity
+	(include "/properties/roof_entrance.inc")
+	{Extension "build_1st_1_door1.mdl"}
+}

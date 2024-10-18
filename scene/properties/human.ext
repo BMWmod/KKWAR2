@@ -1,0 +1,333 @@
+;SDL
+
+;(mod not "mp"
+;{extender "vitality"
+;	{Energy
+;		{Load 				20 		40     100} ; equipment weight, kg
+;		{Update
+;			{stay	+9	    +5		+3		+3}	; fatigue per second
+;			{walk 	+5	    +3		+0		-2}	; max.fatigue = 100
+;			{slow	+3	    +0		-1		-4} 
+;			{normal	-1	    -2		-3	    -7}
+;			{fast	-1		-4		-9	   -14}
+;		}
+;		{movement_limits
+;			{Fast  	50 75}
+;			{Normal 10 50}
+;			{Slow	 0  0}
+;		}
+;		; если сделать {Slow xx yy}, то будет останавливаться после того, 
+;		; как energy станет меньше xx, и сможет ходить только когда 
+;		; energy станет больше yy
+;	}
+;}
+;)
+{extender "bodykit"}
+{extender "vitality"
+	{Health
+		{max		100}	; max health
+		{current	100}	; current health
+		{inc 0.005}			; health regeneration per second
+	}
+	{Energy
+;		{max		100}	; max stamina	;Disabled in MOW2
+;		{current	100}	; current stamina ;Disabled in MOW2
+		{Load				30		70		120}	; equipment weight (in kg)
+		{Update				; stamina regeneration/usage per second (depending on movement mode and load)		
+			; movement_mode		0-30kg		30-50kg		50-70kg		more 70 kg
+			;------------------------------------------------------------------------
+            {stay                +15           +10        +7          0}
+            {walk                +15           +7         +2          0}
+            {slow                +10           +5         +0.1        0}
+            {normal              +2.5          +0.1       +0.1        0}
+;            {fast                -5            -8         -12       -20}
+            {fast                -2            -4         -6       -10}
+		}
+;		{movement_limits
+;			{Fast		30		100}
+;			{Normal		15		29}
+;			{Slow		-1		5}
+;		}
+		{movement_limits
+			{Fast  	0 0}
+			{Normal 0 0}
+			{Slow  -1 11} ; turn slow mode off
+		}
+	}
+}
+
+{extender "inventory"
+	{box
+		{Size 7 10}
+		{Weight 100}
+	}
+	{hand_left}
+	{hand_right}
+	{armor "flashlight"
+		{mask "flashlight"}
+		{bone "flashlight"}
+	}
+	{armor "head"
+		{mask "head"}
+		{bone "head"}
+		{volumes "head"}
+		{pierceAbsorb ;percent of damage that is cut off
+			{"fg" 50}
+			{"pistol" 50}
+		}
+	}
+	{armor "body"	;в CW броники свои
+		{mask "body"}
+		{volumes "body" "foot1l" "foot1r" "foot2l" "foot2r"}
+		{bone "IK_UpDown"}
+		{pierceAbsorb ;percent of damage that is cut off
+			{"fg" 50}
+			{"pistol" 100}
+		}			
+		{HeatDamping 0.6}
+	}
+	{next_items "weapon rocketlauncher" "weapon mgun" "weapon smg" "weapon rifle" "weapon pistol" "weapon flame_thrower" "dynamite" "grenade ap" "grenade fg" "grenade smoke" "grenade signal"}
+}
+{extender "bodykit"
+	{"camouflage"
+		{drop_on_move}
+		{delay 5}
+		{"leafbush_01b" "" {no_link}} 		
+	}       	
+}
+{extender "stuff"
+	{item "human"}
+}
+
+{Sensor
+	{Visor "eyes"
+		{vision "human"}
+		{bone "visor"}	
+	}
+	{Visor "telescope"}
+;	{AttackZone 2.5}
+	{AttackZone 60.5}
+	{RecognizeTime 0.5}
+;	{InformRange 120 120}
+	{InformRange 120}	;changed in MOW2
+	(mod "mp"
+		{RememberTime 120}
+		{senselessAllowed 1}
+	)
+}
+
+{bone "foresight2"
+	{speed 3}
+}
+
+{Chassis "foot"			  										
+	;  speed S (km/h) animation A (km/h) rotation (degree/s)
+	;  animation speed = movement speed / A * animation scale 
+	{Crawl           
+		{Slow		3		5  100 }
+		{Normal		3.75	5  200 }
+		{Fast		5.25	5  200 }
+	}                     
+	{Swim                 
+		{Slow		1.5		5  200 }
+		{Normal		2.25	5  200 }
+		{Fast		3.75	5  200 }
+	}                     
+	{Run                  						
+		{Sneak		3.75	2	400 }   ; x 0.85
+		{Spot 		4.5  	2	400 }   ; x 0.5
+		{Walk 		5.25	1.8 400 }   ; x 0.48
+		{Slow		6  		3	800 }   ; x 1
+		{Normal	   10.5   	5  	800 }   ; x 0.55
+		{Fast	   13.5   	7  	800 }   ; x 0.33
+		{Bow   	   20.25  	7	1200 }   ; x 0.55
+	}
+	{Strafe
+		; 			m  m+v  km/h  speed	animation up 					animation down					; m+v = mask + value for strafe counter
+		{Forth		3  2 0	6.5   3		"walk_spot_gun_up_1"		  "walk_spot_gun_down_1"}			; 6.5 km/h move 2 km/h animation 0.37 scale --> in Run
+		{Forth		3  2 1	11.0  1 	"run_spot_gun_up" 			  "run_spot_gun_down"}    		  	
+		{Forth		8  0 0	13.2  1.2	"run_spot_gun_up" 			  "run_spot_gun_down"}				
+		{Left		4  0 0	10.5  1.22	"run_spot_back-strafe_gun_up" "run_spot_back-strafe_gun_down"}	
+		{Right		8  0 0	13.0  1.1	"run_spot_left-strafe_gun_up" "run_spot_left-strafe_gun_down"}	
+		{Back		8  0 0	10.5  1.22	"run_back_spot_gun_up" 		  "run_back_spot_gun_down"}			
+	}
+;	{Injured 0.50}	;Disabled in MOW2
+
+}
+
+{volume "body"	;for melee - melee works only if body is availible for shooting
+	{thickness 1.5}{tags "body_c"}
+}
+{volume "body1"	;old body
+	{thickness 1.5}{tags "body" "body_c"}
+}
+{volume "crit"
+	{thickness 0.5}{tags "body_c"}
+	{able {contact 1} {Visible 0}}
+}
+{volume "head"
+	{thickness 1.0}{tags "body_c"}
+}
+{volume "foot1r"
+	{thickness 1.5}{tags "body_c"}
+	{able {nolook 1} {Visible 0}}
+}
+{volume "foot2r"
+	{thickness 1.5}{tags "body_c"}
+	{able {nolook 1}}
+}
+{volume "foot1l"
+	{thickness 1.5}{tags "body_c"}
+	{able {nolook 1} {Visible 0}}
+}
+{volume "foot2l"
+	{thickness 1.5}{tags "body_c"}
+	{able {nolook 1}}
+}
+
+{extension "human_fsm.ext"}
+
+{mass 70}
+{obstacleID "human"}
+{PatherID	"human"}
+{collider   "human"}
+
+{simulation {able 1} {state 0}}
+{simulatorId "human"}
+;{simulatorId "particle_system"}
+
+{able "crew" "fight" "personage"}
+;{props "flesh" "human" "nocover" "inventory_transfer"}
+{props "flesh" "human" "nocover" "inventory_transfer" "collectable" "unit"}
+{targetClass 	"human"}
+{targetSelector "human"}
+
+(include "shadow/human.inc")
+
+{brain "human"
+	{const "bomb/detect_boom" 		2}
+	{const "bomb/danger_zone" 		7}
+	{const "fight/bind_time"		1.5}	; В секундах, минимальное время, выделяемое на добегание к цели в случае готовности к выстрелу. 
+							; Т.е. если юнит готов стрелять через N секунд, но может добежать к цели быстрее чем за Max(N, bind_time), то он побежит атаковать в мили.
+	{const "fight/bind_time_no_shot"	5}	; В секундах, время, выделяемое на добегание к цели в случае, если выстрел невозможен.
+	{const "fight/time_limit"		30}     ; В секундах, время по истечении которого приказ атаковать в мили будет принудительно прерван. 
+	{const "fight/time_interval"		20}	; В секундах. При запуске приказа атаковать в мили запускается таймер продолжительностью от time_interval до 1.5*time_interval, 
+							; следующий приказ атаковать в мили не будет отдан, пока этот таймер не достигент 0.
+	{const "advance/attack_disabled" 0}		; in sec, attack disabled after last command
+	{const "advance/enemy_close_range" 35}	; in meters, ignore enemy if farther then value
+	(include "morale.inc")	
+	(include "suppression.inc")
+	{const "withdraw/cooldown"		30}	; sec
+	{ConditionApproachForAttack 1}
+	{const "walking/idle_time"		8}	; time range in sec from idle_time to 1.5*idle_time before unit can start random walking inside holded zone
+	{const "action/idle_time"		8}	; time range in sec from idle_time to 1.5*idle_time before unit can start action with game entity
+	{const "civilian/alarm_radius"			70}	; suppression/signals receivng radius, can be larger than signal radiuses
+	{const "civilian/runaway_distance"		60}		; suppressed/alarmed civilian runaway distance
+	{const "civilian/crawlaway_distance"	15}		; suppressed/alarmed civilian crawlaway distance
+	{const "civilian/alarms"				10}		; alarms count before civilian runaway to the world boundary nearest side and delete
+	{const "civilian/clip_range"		20}	; once alarmed civilian can be deleted if distance to the haze bound in range of "clip_range"
+;old
+;	{const "fight/distance"			1.5}
+;	
+;	{const "bomb/detect_explosives" 7}		;detect explosives inside 7 meter radius
+;	{const "bomb/detect_grenades" 	5}		;detect grenades inside 5 meter radius
+;	{const "bomb/danger_zone_run" 	3}		;run away if danger is inside 0 - 3 meter radius
+;	{const "bomb/danger_zone_jump" 	4}		;jump away if danger is inside 3 - 4 meter radius
+;	{const "bomb/danger_zone_hide" 	6}		;hide if danger is inside 4 - 6 meter radius
+;from CtA
+;	{const "bomb/danger_zone" 		4}	;hide if danger is more than 5 meters away, otherwise run away
+;	{const "weapon/change_time"		20}	;disable ai weapon switch for 20 seconds
+;    {Properties
+;	    {ai_move
+;			{mode enable}
+;		}
+;		{advance_ratio 1}
+;		{retreat_ratio 3}
+;	}
+	
+}
+(define "accuracy_by_motion" ;  spreading depending on the speed of "body", "gun" volumes
+	{AccuracyByMotion
+        {MaxLinearSpeed %max_linear}               ;km/h
+        {ByLinearSpeed %accuracy_by_linear}
+        {MaxAngularSpeed %max_angular}             ;deg/s
+        {ByAngularSpeed %accuracy_by_angular}
+        {DisorderTime %disorder_time}              ;s
+        {OrderTime %order_time}                    ;s
+    }
+)
+
+{Weaponry
+	{place "hand_right"
+		{Rotate}
+		{SequentialAim 0}
+		{LinkBone "right_hand"}
+		{LinkAnimation "on"}
+		("accuracy_by_motion"
+			max_linear(10.00) accuracy_by_linear(0.75)
+			max_angular(15.00) accuracy_by_angular(0.80)
+			disorder_time(0.50) order_time(0.50)
+		)
+	}
+;	{ManualAccuracy 1.25}	
+}
+
+{extender "talk"
+	{talker "human"}
+}
+{extender "jump"
+	{test "climb"
+		{bone "climb"}
+		{animation "getover_middle"}
+	}
+	{test "climb"
+		{bone "left_climb"}
+		{animation "getover_middle_left"}
+	}
+	{test "climb"
+		{bone "right_climb"}
+		{animation "getover_middle_right"}
+	}
+}
+{extender "animation_sound"
+	{event "swim"
+		{play "human/step/swim"}
+	}
+	{event "step"
+		{play "human/step/ground" ; default sound if none of conditions below will fit
+			{if terrain_fx "road" play "human/step/road"}
+			{if terrain_fx "country_road" play "human/step/road"}
+			{if terrain_fx "ice" play "human/step/snow"}
+			{if terrain_fx "snow" play "human/step/snow"}
+			{if terrain_fx "sand" play "human/step/sand"}
+			{if terrain_fx "grass" play "human/step/grass"}
+			{if terrain_fx "shallow_water" play "human/walk/water"}
+			{if terrain_fx "water" play "human/walk/water"}
+		}
+	}
+	{event "dig"
+		{play "fortification/build/trench_digging"}
+	}
+	{event "dig_end"
+		{play "human/dig"}
+	}
+	{event "heal"
+		{play "human/healing"}
+	}
+	{event "pose_change"
+		{play "human/pose_change"}
+	}
+	{event "fall"
+		{play "human/body_fall"}
+	}
+	{event "crawl"
+		{play "human/pose_change"}
+	}
+	{event "metal_step"
+		{play "human/step/armored_metal"}
+	}
+}
+
+{lodclass "human"}
+  
+{IgnoreSaturation 1}

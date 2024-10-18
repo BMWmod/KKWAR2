@@ -1,0 +1,41 @@
+{from "pattern rpg_ammo"
+	{tag "big" "size2" "75to76" "fg" "rpg26" "fragmentary" "antiinf" "fx_90_110" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	;
+	{entity "rshg2"}
+	{view "RSHG2"
+		{tail "bazooka_tail_1gen" "tail"}
+	} 	
+	{possibleDamageRadius 12}
+	{damage fire           ;половина радиуса Шмеля
+		{radius 2.5}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.4}
+		{heating 50}
+		{time 1}
+	}
+	;ВВ - 1,15 кг, эквивалент 3 кг тротила
+;	{tag "he_07to2"}
+;	{damage add blastwave	 ; HE, FG anti-IFV
+;		{energy 6.5}
+;		{area 0.2 0.2}
+;	}
+;	{damage add blastwave	 ; HE antipersonnel
+;		{energy 1.2}
+;		{area 8.4 9.6}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-APC
+;		{energy 2.5}
+;		{area 0.9 1.1}
+;	}
+;БЧ 3,4 кг, ВВ 1,15 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.2) apc(0.4) end(2.6))
+("cw_contusion" t10(3.8) t6(5.4) t3(7.2) t0(9.5))
+} 	
+;- термобарическая (ОМ-100МИ-3Л), массой 0,9 кг 	
+;- фугасная (ЛП-30Т), массой 1,15 кг 	
+;Термобарической смесью снаряжались РШГ-2 первых выпусков, далее по результатам испытаний ТБ смесь была заменена фугасным составом ЛП-30Т 	
+;	

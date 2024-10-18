@@ -1,0 +1,28 @@
+{item
+	{tag "smallitemin1hand dropboxed antitank mine sharing fx_111_145"}
+	{entity "mine_antitank_tm83"}
+	{inventory
+		{size 3 4}
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 28.1}
+;9.6кг ТГ 40/60 (тротил/гексоген, экв около 1,47), масса ВВ для расчета 9,6/1,3*1,47=10,86)
+;Кумулятивный шаблон, там ударное ядро
+;{damage blastwave {energy 1.2} {area 5.9 6.7}}
+;{damage add blastwave {energy 2.5} {area 4 4.6}}
+;{damage add blastwave {energy 6.5} {area 3.1 3.5}}
+;{damage add blastwave {energy 11} {area 1.6 1.9}}
+
+;Очевидно, что в 28кг массы мины входят датчики и т.п., а сама оболочка довольно тонкая
+;БЧ 15 кг, ВВ 9,6 кг, ТЭ 1,36, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Кум(HEAT)
+("cw_blastwave_4" tank(0.8) ifv(2.8) apc(5.2) end(6.8))
+("cw_fragwave" e2_5(2.5) r2_5(19.3) e1_2(2.5) r1_2(19.3) chance(4.9))
+("cw_fragwave" e2_5(2.5) r2_5(31.7) e1_2(2.5) r1_2(31.7) chance(3.1))
+("cw_fragwave" e2_5(2.5) r2_5(39.7) e1_2(2.5) r1_2(39.7) chance(3.1))
+("cw_fragwave" e2_5(2.5) r2_5(53.5) e1_2(2.5) r1_2(53.5) chance(2.7))
+("cw_fragwave" e2_5(2.5) r2_5(71.9) e1_2(2.5) r1_2(71.9) chance(2.4))
+("cw_contusion" t10(7.7) t6(11.1) t3(14.8) t0(19.2))
+("cw_seismic_2")
+("cw_blast_mass_add" add(61.5))
+}

@@ -1,0 +1,43 @@
+{from "pattern fg"
+	{tag "big" "size4" "122to128fg" "d30ammo" "fx_111_145"}
+	{tag "fg_120_shell"} ; только для ammo.set
+	{detonationThickness 40}
+	{mass 28.2}
+	{inventory
+		{size 6 1}
+	}	
+	{entity "shell_rus_fg_122"}
+	{view "fg_fly_how"}
+	("art_shell_sound")
+	;примерные зоны поражения 
+	;http://window.edu.ru/window_catalog/pdf2txt?p_id=5210&p_page=10
+	;https://otvet.mail.ru/question/191533725
+	;4,4 кг ВВ A-IX-2 гексал, ЗВОФ82 с уменьшенным зарядом
+	;эквивалент 1,7, коэфф будет 1,3 - 5,75 кг для расчета
+;	{tag "he_2to4_5"}
+;	{damage blastwave {energy 0.7} {area 12.3 14.2}}
+;	{damage add blastwave {energy 1.2} {area 10.6 12.2}}
+;	{damage add blastwave {energy 2.5} {area 7 8}}
+;	{damage add blastwave {energy 6.5} {area 4.1 4.8}}
+;	{damage add blastwave {energy 11} {area 2 2.4}}
+;	{damage add blastwave	 ; HE, kinetic, direct hit
+;		{energy 20}
+;		{area 0.1 0.1}
+;	}
+;БЧ 21,76 кг, ВВ 4,4 кг, ТЭ 1,7, нач. скорость 690 м/с, тип оболочки - Гаубицы 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_3" tank() ifv(2.2) apc(4.5) end(7.5))
+("cw_direct_hit" energy(22))
+("cw_fragwave" e2_5(2.5) r2_5(4.3) e1_2(1.2) r1_2(10.8) chance(11.6))
+("cw_fragwave" e2_5(2.5) r2_5(5.6) e1_2(1.2) r1_2(14.8) chance(7.3))
+("cw_fragwave" e2_5(2.5) r2_5(6.4) e1_2(1.2) r1_2(17.4) chance(7.3))
+("cw_fragwave" e2_5(2.5) r2_5(8.1) e1_2(1.2) r1_2(21.9) chance(6.3))
+("cw_fragwave" e2_5(2.5) r2_5(10.4) e1_2(1.2) r1_2(27.7) chance(5.7))
+("cw_fragments" e1_2(1.2) r1_2(10.8) e1_0(1) r1_0(14.5) e0_7(0.7) r0_7(21) e0_25(0.25) r0_25(29.5) chance(11.6))
+("cw_fragments" e1_2(1.2) r1_2(14.8) e1_0(0.25) r1_0(14.8) e0_7(0.25) r0_7(14.8) e0_25(0.25) r0_25(14.8) chance(7.3))
+("cw_fragments" e1_2(1.2) r1_2(17.4) e1_0(0.25) r1_0(17.4) e0_7(0.25) r0_7(17.4) e0_25(0.25) r0_25(17.4) chance(7.3))
+("cw_fragments" e1_2(1.2) r1_2(21.9) e1_0(0.25) r1_0(21.9) e0_7(0.25) r0_7(21.9) e0_25(0.25) r0_25(21.9) chance(6.3))
+("cw_fragments" e1_2(1.2) r1_2(27.7) e1_0(0.25) r1_0(27.7) e0_7(0.25) r0_7(27.7) e0_25(0.25) r0_25(27.7) chance(5.7))
+("cw_contusion" t10(6.4) t6(9.3) t3(12.4) t0(16.1))
+("cw_seismic_3")
+}
+;http://www.russianarms.ru/forum/index.php/topic,11951.0.html

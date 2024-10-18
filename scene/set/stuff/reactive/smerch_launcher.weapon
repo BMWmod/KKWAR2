@@ -1,0 +1,57 @@
+{weapon_bullet
+	{tag "gun" "weapon" "skill_tankgun" "bullet"}	;"bullet" is needed for work of levelling and skills
+	("heavy_artillery")
+	{filling "ammo smerch" 12}
+	{fireSound "reactive_cw/missile_large"}
+	{burst {min 2} {short 2} {long 2} {noaiming}} ;noaiming мешает стрельбе по триггеру в СтА
+	{Automatic} ;нужно для стрельбы по триггеру
+	{recoveryTime 2.5} ;2с после 1-4 ракеты в залпе, 4с после 5-11. 
+	(mod "mp"
+		{burst {min 0} {short 1} {long 1} {noaiming}}
+	)
+	{range 475 475}  ;90км для большинства ракет
+	{aimRange 475}
+	{maxRange 475}
+	{rechargeTime 240}	;7 мин у Града, 13 мин тут.
+	("CW_XP_acc_artillery" mils(5))	;удвоено из баланса
+									;кучность Смерча в 2-3 раза больше Града, 0,21-0,3% от дальности, и бок не хуже дальности
+	{Spreading	
+		{SpreadPower	1.70}
+	}
+	{gravity 0.89}
+	("speed_mrls")
+	{cursor "cannon_on_fg_14"}
+	{cursorreloading "cannon_reload_fg_timer_240"}
+	
+	{parameters "9m528"	;ОФ 90км
+		{cursor "cannon_on_fg_14"}
+	    {cursorreloading "cannon_reload_fg_timer_240"}
+	}
+	{parameters "9m525"	;ПП кассетка 90км
+		{cursor "cannon_on_fg_3"}
+	    {cursorreloading "cannon_reload_fg_timer_240"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "9m55k3"	;мины ПОМ-2 70 км
+		{range 455 455}
+		{cursor "mine"}
+		{cursorreloading "cannon_reload_all_timer_240"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "9m531"	;DPICM кассетный
+		{cursor "cannon_on_heat_10"}
+		{cursorreloading "cannon_reload_heat_timer_240"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "9m533"	;СПБЭ
+		{cursor "cannon_on_heat_10"}
+		{cursorreloading "cannon_reload_heat_timer_240"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "9m529"	;ТБ
+		{cursor "burn"}
+		{cursorreloading "cannon_reload_heat_timer_240"}
+	}
+}	
+
+

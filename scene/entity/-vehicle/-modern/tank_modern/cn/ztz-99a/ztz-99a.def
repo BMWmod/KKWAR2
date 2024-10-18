@@ -1,0 +1,179 @@
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev06" "with_open_zpu" "has_autoloader" "cw_panorama" "Shtora" "laser_spo" "remote_mgun1" "autotrack_suo" "ztz_99" "5_barrels_smoke" "spall_liner"}
+	{targetSelector "tank"}
+	{extender "enumerator" {digit_folder "pla"}}
+
+    ;("armor_heavy" turret(480 40 252 25) body(224 40 50 30))    ;  башня 590/751КС - 580/620. корпус 600/765.
+																;lower glacis is 50mm, not 100
+	("armor_heavy" turret(480 40 252 25) body(240 40 50 30))
+;	("comp_armor_increment" turret(66) body(91))
+
+	("comp_armor_increment" turret(66) body(107))
+
+
+
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+
+	("d_a_FY5")  ;Chinese FY-4 
+	
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"emit_tank_1_hold" } {base "open_driver" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_Is-2"} {end "t72_zpy"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+		{anm "left"
+			{forward	{begin	"board_Is-2"}{end "seat_gunner_stand"}{base "open1"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "open1" -1}}
+		}
+	}
+(define "crew_human"	;посадка экипажа
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+(define "crew_mgun"			;посадка стрелков
+	{placer
+		{place "%place"
+			{group "%group"}
+			{linkbone "%bone"}
+			{visor "%visor"}
+			{openForCrush}
+		}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver)		    group(crew) door(emit0) animation(driver) visor(driver))
+	("crew_human" place(gunner)	 	group(crew) door(emit1) animation(left) visor(main))
+	("crew_mgun" place(commander)		group(crew) door(emit2) bone(commander) animation(right) visor(commander))
+
+;=================================================	
+	{sensor
+		{visor "driver"
+			{bone "Visor2"}		;триплекс
+		}
+		{visor "main"	;11.4x
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor1"}
+		}
+		{visor "commander"	;прицел командира 10x
+			{vision "tank_gunner_optic_IR_3g"}	;
+			{bone "Visor3"}
+		}
+		{visor "shtora"				
+			{vision "shtora_visor"}
+			{bone "shtora_visor"}
+		}
+	}
+;=================================================	
+	
+	{extender "inventory"
+		{box
+			{item "ammo bullet125_cn_h apcr" 13}
+			{item "ammo bullet125_cn_b cm" 6}
+			{item "ammo bullet125_cn fg" 18}
+			{item "ammo bullet125_rus rok" 3}
+			{item "ammo osv_fg" 150}
+			{item "ammo PKM_ammo" 1750}
+			;{item "ammo smoke_shtora" 12}	
+		}
+	}
+        ; штатное БК - 50% ОФС, 35% БПС, 15% КС/ТУР
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_ZPT-98" filling "ammo bullet125_cn_h apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.45))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "mgun"				;НСВТ
+			{weapon "qjz-89" filled}
+			{foresight "foresight3"} 
+			{gunner "commander"}
+			{charger "commander"}              
+			("CW_stab_no_stabiliser")
+			{basic}
+		}
+
+		{place "mgun2"				;Спаренный ПКТ
+			{type "mgun_coaxial"}
+			{weapon "type86_762mm" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.78))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "mgun1"				;LDSW
+			{weapon "ldsw_cn" filled}
+			{foresight "foresight4"}
+			{charger "commander"}
+			{gunner "commander"}
+		}
+	}
+
+	{mass 58000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(0.17))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(58)
+			Width(3.7)
+			Power(1500)
+			Realspeed(70)
+			Gamespeed(43) 
+		)
+		{RearGears		0.20 0.49}{GearSwitchDelay	0.01}}
+		("CW_fuelbag" Range(610) Fuelvolume(1645))
+		("CW_speed_lev" Gamespeed(43))
+		
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	("two_headlights")
+	{Extension "ztz-99a.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("recoil_side_common")
+	("CW_turr_speed" deg_per_s(40))	;also seems to be slow here https://www.youtube.com/watch?v=kWhDP8jpcb8&t=112s
+									;bust obviously faster here https://youtu.be/kWhDP8jpcb8?t=169
+	{bone "gun_rot"	{speed 0.005}}
+	("CW_bone_speed" bone(laser) deg_per_s(45))
+
+}

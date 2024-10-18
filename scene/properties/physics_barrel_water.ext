@@ -1,0 +1,12 @@
+(include "physics_generic.ext")
+
+{props "fountain_small" "water_capacity" "plastic" "capacity"}
+{mass 100}
+
+{volume "body"
+	{tags "water"}
+}
+
+{extender "stuff"
+	{item "barrel" filling "water" 50}
+}

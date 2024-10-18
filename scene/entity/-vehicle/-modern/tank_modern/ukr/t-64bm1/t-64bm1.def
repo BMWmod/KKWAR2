@@ -1,0 +1,193 @@
+;ASS edition by Timosh
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev05" "auto_dig_in" "remote_mgun" "has_autoloader" "4_barrels_smoke" "spall_liner"}
+
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+
+
+;Бронирование башни Т-64БМ - как у Б/БВ, но установка Ножа добавляет 110мм RHA на башню и 40 на корпус.
+;Итого на корпус выходит 592/630+240/430=732/1060
+	("armor_heavy" turret(534 210 70 50) body(222 80 50 20))
+	("comp_armor_increment" turret(20) body(7))
+
+	("armor_mantlet" t(15))
+	;("armor_engine"  t(50))
+ 
+
+
+	("d_a_noz") 
+
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"} {base "open1"}}
+			{reverse 	{end	"emit_tank_2_hold"}{base "open1" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "armor"
+			{forward	{begin	"board_highArmor"} 	{end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_tank_2"}}
+		}
+		{anm "armor1"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_2"}}
+			{reverse 	{end	"emit_body"}}
+		}
+		{anm "armor2"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+(define "crew_human"
+	{placer
+		{place "%place"
+			{group "crew"}
+			{visor "%visor"}
+		}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%anm"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver)		door(emit0) anm(driver) visor(driver))
+	("crew_human" place(gunner)		door(emit1) anm(left) visor(main))
+	("crew_human" place(charger)		door(emit2) anm(right) visor(charger))
+	{sensor		
+		{visor "driver"
+			{bone "Visor2"}
+		}
+		{visor "main"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor1"}
+		}
+		{visor "charger"				
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor3"}
+		}
+	}
+
+	(define "define_place"
+	{placer
+		{place "%place" {LinkBone "%bone"}{openForCrush} {turnoff {shadow}}{attach squat_lie}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} }
+	}
+	{Volume "%place"
+		{tags "attach" "attach_%place"}
+		{able clear {bullet 0} {touch 1}}
+	}
+)
+	("define_place" place(seat1) bone(seat01) door(emit3)  animation(armor1))
+	("define_place" place(seat2) bone(seat02) door(emit3)  animation(armor))
+	("define_place" place(seat3) bone(seat03) door(emit6)  animation(armor))
+	("define_place" place(seat4) bone(seat04) door(emit6)  animation(armor1))
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet125_rus_m apcr" 12}
+			{item "ammo bullet125_rus_a cm" 5}
+			{item "ammo bullet125_RUS fg" 12}
+			{item "ammo bullet125_RUS rok" 6}
+			{item "ammo Hcb_ammo" 75}
+			{item "ammo osv_fg" 75}
+			{item "ammo PKM_ammo" 1000}
+			;{item "ammo smoke_shtora" 8}	
+		}
+	}; штатное БК - 50% ОФС, 35% БПС, 15% КС/ТУР - 6 ТУР в любом случае.
+        ; БК 36 снарядов
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_KBAZ" filling "ammo bullet125_rus_m apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.50))
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun"	
+			{type "mgun_aa"}
+			{weapon "hcb" filled}
+			{foresight "foresight3"}
+			{gunner "charger"}
+			{charger "charger"}
+			{basic}
+			("CW_stab_abm" abm(0.86))
+			("CW_stab_no_suo")
+		}
+		{place "mgun1"
+			{type "mgun_coaxial"}
+			{weapon "PKT" filled}
+			{foresight "foresight5"}
+			{basic}
+			("CW_stab_abm" abm(0.87))
+			("CW_stab_ldwind_suo")
+		}
+	}
+
+	{mass 45000}
+	{Chassis
+		("tank_trace" fx("tracks_sm") step(0.3) len(0.85))
+		("CW_tracks"
+			Mass(45)
+			Width(3.41)
+			Power(850)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(700)
+			Fuelvolume(1670)
+		)
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	("two_headlights")
+	{Extension "t-64bm1.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+
+	
+	("CW_turr_speed" deg_per_s(35))
+; на Т-64Б с 1979..80г устанавливается Пушка 2А46М-1,  КУРВ 9К112-1; МЗ 6ЭЦ40-2С	
+; СУО 1А33-1 «Обь» (лазерный прицел-дальномер 1Г42; ТБВ 1В517; блок разрешения выстрела 1Г43; СТВ 2Э42)	
+	
+}

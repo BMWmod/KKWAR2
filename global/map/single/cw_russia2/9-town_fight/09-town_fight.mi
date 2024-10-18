@@ -231,7 +231,7 @@
 		{LastItem "aks47"}
 	}
 	{Human "single/arb/army_tankman" 0xc01d
-		{Position 674.43 -5813.7}
+		{Position 674.42 -5813.7}
 		{xform zl -178.47 y 0.75 zw 69.27}
 		{Player 0}
 		{MID 73}
@@ -505,7 +505,7 @@
 		{MID 911}
 	}
 	{Human "single/arb/army_vehicle_supporter" 0xe00b
-		{Position 262.96 -5779.41}
+		{Position 262.95 -5779.41}
 		{xform zl 91.12}
 		{Player 0}
 		{MID 1200}
@@ -6709,7 +6709,7 @@
 		}
 	}
 	{Human "single/arb/army_engineer" 0xc000
-		{Position 253.12 -5779.6}
+		{Position 253.11 -5779.61}
 		{xform zl 91.12}
 		{Player 0}
 		{MID 20}
@@ -10040,14 +10040,17 @@
 	{Link 0xe823 {0xc00b "commander"}}
 	{Link 0xe827 {0xc00b "gunner"}}
 	{Link 0x8010 {0xc00b "cwps_proj_point"}}
-	{Link 0x8049 {0xc01f "cwps_proj_point"}}
+	{Link 0xc016 {0xc01f "driver"}}
 	{Link 0xc01d {0xc01f "commander"}}
 	{Link 0xc00a {0xc01f "gunner"}}
-	{Link 0xc016 {0xc01f "driver"}}
-	{Link 0x8054 {0xc034 "cwps_proj_point"}}
-	{Link 0xc02a {0xc034 "gunner"}}
-	{Link 0xc024 {0xc034 "commander"}}
+	{Link 0x8049 {0xc01f "cwps_proj_point"}}
 	{Link 0xc026 {0xc034 "driver"}}
+	{Link 0xc024 {0xc034 "commander"}}
+	{Link 0xc02a {0xc034 "gunner"}}
+	{Link 0x8054 {0xc034 "cwps_proj_point"}}
+	{Link 0xc818 {0xc82b "driver"}}
+	{Link 0xc806 {0xc82b "commander"}}
+	{Link 0xc802 {0xc82b "gunner"}}
 	{Link 0xc804 {0xc82b "seat1"}}
 	{Link 0xc80f {0xc82b "seat2"}}
 	{Link 0xc81a {0xc82b "seat6"}}
@@ -10055,15 +10058,12 @@
 	{Link 0xc825 {0xc82b "seat8"}}
 	{Link 0xc811 {0xc82b "seat11"}}
 	{Link 0x8088 {0xc82b "cwps_proj_point"}}
-	{Link 0xc818 {0xc82b "driver"}}
-	{Link 0xc802 {0xc82b "gunner"}}
-	{Link 0xc806 {0xc82b "commander"}}
-	{Link 0x802e {0xc837 "vehicle9"}}
-	{Link 0x80c2 {0xc837 "cwps_proj_point"}}
-	{Link 0xc833 {0xc837 "charger"}}
-	{Link 0xc836 {0xc837 "commander"}}
 	{Link 0xc82f {0xc837 "driver"}}
 	{Link 0xc82d {0xc837 "gunner"}}
+	{Link 0xc833 {0xc837 "charger"}}
+	{Link 0xc836 {0xc837 "commander"}}
+	{Link 0x802e {0xc837 "vehicle9"}}
+	{Link 0x80c2 {0xc837 "cwps_proj_point"}}
 	{Link 0xb00e {0xb015 "driver"}}
 	{Link 0xb012 {0xb015 "gunner"}}
 	{Link 0xb014 {0xb015 "commander"}}
@@ -23492,6 +23492,7 @@
 		{event "kill_arab_tanks"}
 		{event "krug_control"}
 		{event "lose1"}
+		{event "mission_started"}
 		{event "test"}
 		{event "usa_kolonna_go"}
 		{event "usa_teh_destr"}
@@ -24099,13 +24100,13 @@
 					{"delay"
 						{time 1}
 					}
-					{"load_units"
+					{## "load_units"
 						{slot_name transfer_car}
 					}
 					{"delay"
 						{time 1}
 					}
-					{"load_units"
+					{## "load_units"
 						{slot_name loyalist_from_8_mission}
 					}
 					{"delay"
@@ -28574,6 +28575,11 @@
 							}
 						}
 					}
+					{"event"
+						{event "mission_started"}
+						{mode set}
+						{delay 0}
+					}
 				}
 			}
 			{"reinf/inf1"
@@ -28896,13 +28902,32 @@
 						{"1.entities"
 							{selector
 								{source advanced}
+								{ignore_captured_by_user 0}
 								{group
 									{include
 										{player
 											{player 0}
 										}
+										{prop
+											{prop human}
+										}
+									}
+									{exclude
 										{state
-											{state user_control}
+											{state dead}
+										}
+										{tag
+											{tag hidden}
+										}
+									}
+								}
+								{group
+									{include
+										{player
+											{player 8}
+										}
+										{prop
+											{prop human}
 										}
 									}
 									{exclude
@@ -28921,7 +28946,7 @@
 							}
 						}
 						{"2.event"
-							{id "go"}
+							{id "mission_started"}
 						}
 					}
 				}
@@ -30913,7 +30938,8 @@
 				}
 			}
 			{"36"
-				{position 297.179 -4937.47 0}
+				{position 296.176 -5246.77 0}
+				{transition "495"}
 				{commands
 					{"actor_state"
 						{control user}
@@ -31024,6 +31050,9 @@
 				{transition "51"}
 				{transition "52"}
 				{transition "50"}
+			}
+			{"495"
+				{position 306.353 -4939.66 0}
 			}
 			{"5"
 				{position -1698.79 -5503.5 0}
@@ -33717,9 +33746,9 @@
 			{width 69.6127}
 			{placer "line"}
 			{interval 60}
-			{actor 0xc82f -34.5449 4.25879 {reached 1}
+			{actor 0xc82f 34.5449 -4.2583 {reached 1}
 			}
-			{actor 0xc82d 34.5449 -4.2583 {reached 1}
+			{actor 0xc82d -34.5449 4.25879 {reached 1}
 			}
 		}
 		{formation
@@ -33736,14 +33765,14 @@
 			{id 3}
 			{dst 539.76 -4753.8}
 			{dir 0.114696 -0.993401}
-			{width 139.226}
+			{width 69.6128}
 			{placer "line"}
 			{interval 60}
 			{actor 0xc024 -69.1534 -7.98438 {reached 1}
 			}
-			{actor 0xc02a 0 0 {reached 1}
+			{actor 0xc02a 69.1534 7.98438 {reached 1}
 			}
-			{actor 0xc026 69.1534 7.98438 {reached 1}
+			{actor 0xc026 0 0 {reached 1}
 			}
 		}
 		{formation
@@ -33753,9 +33782,9 @@
 			{width 69.6128}
 			{placer "line"}
 			{interval 60}
-			{actor 0xc00a -33.1511 -10.606 {reached 1}
+			{actor 0xc00a -33.1511 -10.6064 {reached 1}
 			}
-			{actor 0xc01d 33.1511 10.6064 {reached 1}
+			{actor 0xc01d 33.1511 10.606 {reached 1}
 			}
 		}
 	}

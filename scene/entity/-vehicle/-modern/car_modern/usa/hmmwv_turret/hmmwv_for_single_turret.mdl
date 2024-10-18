@@ -1,0 +1,168 @@
+;Exported by: Timosh
+;Date:        Sun Sep  1 16:29:05 2024
+;File:        G:\?????? ? Pheonix\??????????????\??????\??????????\????? ? ????????\hamwee_1 final 1.max
+{Skeleton
+	{animation
+		{sequence "turn_to_1" {speed 0.33}}
+		{sequence "turn_to_2" {speed 0.33}}
+		{sequence "turn_to_3" {speed 0.33}}
+		{sequence "turn_to_4" {speed 0.33}}
+		{sequence "turn_to_5" {speed 0.33}}
+		{sequence "turn_to_6" {speed 0.33}}
+		{sequence "turn_to_7" {speed 0.33}}
+		{sequence "turn_to_8" {speed 0.33}}
+		{sequence "turn_to_9" {speed 0.33}}
+		{sequence "turn_to_10" {speed 0.33}}
+		{sequence "turn_to_11" {speed 0.33}}
+		{sequence "turn_to_12" {speed 0.33}}
+		{sequence "turn_to_13" {speed 0.33}}
+		{sequence "turn_to_14" {speed 0.33}}
+		{sequence "turn_to_15" {speed 0.33}}
+		{sequence "turn_to_0" {speed 0.33}}
+		{sequence "camera_up" {speed 0.33}}
+		{sequence "arrows" {speed 0.33}}
+	}
+	{bone "basis_turret"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "emit"
+			{Matrix34
+				0.707107	-0.707107	0
+				0.707107	0.707107	0
+				0	0	1
+				-31.6904	34.2136	-44.1339
+			}
+		}
+		{bone "rotator_turret"
+			{Position 0	0	0}
+			{bone revolute "turret"
+				{parameters "ID=turret;"}
+				{speed 0.03}
+				{Matrix34
+					0.999999	0	-0.00174522
+					0	1	-5.15003e-05
+					0.00174496	5.14966e-05	0.999999
+					0	0	0
+				}
+				{VolumeView "turret.ply"}
+				{bone "glass11"
+					{parameters "ID=glass;"}
+					{Position -1.05985	-12.7695	0.726235}
+					{VolumeView "glass11.ply"}
+				}
+				{bone "glass12"
+					{parameters "ID=glass;"}
+					{Position 7.06688	-10.7494	0.69969}
+					{VolumeView "glass12.ply"}
+				}
+				{bone "glass8"
+					{parameters "ID=glass;"}
+					{Position 20.2192	4.95957	-1.49572}
+					{VolumeView "glass8.ply"}
+				}
+				{bone "glass7"
+					{parameters "ID=glass;"}
+					{Position 20.2462	-4.96133	-1.51886}
+					{VolumeView "glass7.ply"}
+				}
+				{bone "glass10"
+					{parameters "ID=glass;"}
+					{Position -1.12912	12.7227	0.785477}
+					{VolumeView "glass10.ply"}
+				}
+				{bone "glass9"
+					{parameters "ID=glass;"}
+					{Position 7.00849	10.7346	0.749616}
+					{VolumeView "glass9.ply"}
+				}
+				{bone "mgun_rot"
+					{Position 15.2141	0.15702	2.48732}
+					{VolumeView "mgun_rot.ply"}
+					{bone "gunner"
+						{Matrix34
+							0.999999	0	0.00174495
+							0	1	5.14348e-05
+							-0.00174549	-5.14426e-05	0.999999
+							-15.1038	-0.280909	-25.8283
+						}
+					}
+					{bone revolute "mgun"
+						{limits -15 15}
+						{Matrix34
+							0.999999	0	0.00174495
+							-0.00174549	-5.14269e-05	0.999999
+							0	-1	-5.14191e-05
+							-9.61183	-0.236327	0.56395
+						}
+					}
+					{bone revolute "mgun_small"
+						{limits -15 15}
+						{Matrix34
+							0.999999	0	0.00174495
+							-0.00174549	-5.14269e-05	0.999999
+							0	-1	-5.14191e-05
+							-5.41427	-0.0334949	-1.30392
+						}
+					}
+				}
+				{bone "visor1"
+					{Matrix34
+						0.999999	0	0.00174495
+						0	1	5.12108e-05
+						-0.00174549	-5.12184e-05	0.999999
+						20.4285	0.0187029	6.80985
+					}
+				}
+			}
+		}
+		{bone "rotator_turret1"
+			{Position 0	0	0}
+			{bone "camerapoint"
+				{Position -26.4458	0	16.8186}
+				{bone "arrows3"
+					{Position 24.2162	0.0590515	-14.5187}
+					{visibility 0}
+					{VolumeView "arrows3.ply"}
+				}
+				{bone "arrows2"
+					{Position 24.2162	0.0590515	-14.5187}
+					{visibility 0}
+					{VolumeView "arrows2.ply"}
+				}
+				{bone "arrows1"
+					{Position 24.2162	0.0590515	-14.5187}
+					{visibility 0}
+					{VolumeView "arrows1.ply"}
+				}
+			}
+		}
+	}
+}
+{Volume "hole"
+	{Polyhedron "hole.vol"}
+	{Bone "turret"}
+	{Position -0.0248585	-0.0279824	14.7176}
+}
+{Volume "hole2"
+	{Box 2.4262 3.66743 6.48543}
+	{Bone "turret"}
+	{Matrix34
+		0.999999	0	0.0017449
+		0	1	5.14314e-05
+		-0.00174552	-5.14464e-05	0.999999
+		20.6729	0.050113	3.43313
+	}
+}
+{Volume "turret2"
+	{Polyhedron "turret2.vol"}
+	{Bone "turret"}
+	{Position 20.0109	-0.0563584	0.0428658}
+}
+{Volume "turret"
+	{Polyhedron "turret.vol"}
+	{Bone "turret"}
+	{Position 0.00113407	-0.0272163	-0.175114}
+}

@@ -1,0 +1,21 @@
+;SDL
+game_entity
+	{NoGetShadows}
+	{spriteview 
+		{sprite "/texture/common/service/mine_f.ebm"
+			{scale 0.25}
+		}
+		{offset 0 0 8}
+	}
+(define "damage_zone"
+	{decalview 
+		{sprite "/texture/common/service/damage_zone.ebm"
+			{visibility 0.25}
+			{scale (* 0.1 %r)}	;9.6м
+		}
+		{layer alpha}
+		{offset 0 0 8}
+		{usedirection}
+		{nogetshadows}
+	}
+)

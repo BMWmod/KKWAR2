@@ -1,0 +1,352 @@
+(define "rangefinder50"
+{Volume "rangefinder2"
+		{Polyhedron "rangefinder30.vol"}
+		{Bone "missle_foresight"}
+		{Matrix34
+			1	0	0
+			0	0	-1
+			0	1	0
+			50.6507	-9.84252	0
+		}
+}
+)
+
+(define "custom_maneuvrability"
+	{bone "stage_hor01"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_ver01"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor02"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_ver02"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor03"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_ver03"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor04"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_ver04"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor05"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_ver05"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor06"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_ver06"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor07"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_ver07"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor08"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_ver08"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor09"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_ver09"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor10"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_ver10"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor11"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_ver11"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor12"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_ver12"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor13"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_ver13"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor14"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_ver14"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor15"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_ver15"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor16"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_ver16"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor17"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_ver17"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor18"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_ver18"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor19"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_ver19"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor20"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_ver20"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor21"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_ver21"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor22"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_ver22"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor23"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_ver23"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor24"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_ver24"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor25"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_ver25"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor26"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_ver26"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor27"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_ver27"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor28"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_ver28"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor29"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_ver29"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor30"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_ver30"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor31"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_ver31"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor32"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_ver32"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor33"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_ver33"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor34"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_ver34"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor35"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_ver35"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor36"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_ver36"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor37"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_ver37"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor38"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_ver38"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor39"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_ver39"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor40"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_ver40"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+)
+;--------------old
+(define "maneuvrability_SAM"
+	("custom_maneuvrability" deg_per_s1(85) deg_per_s2(85) deg_per_s3(85) deg_per_s4(85)
+	deg_per_s5(85) deg_per_s6(85) deg_per_s7(85) deg_per_s8(85)
+	angle1(120) angle2(120) angle3(120) angle4(120) angle5(120) angle6(120) angle7(120) angle8(120))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+)
+(define "maneuvrability_AGM"
+	("custom_maneuvrability" deg_per_s1(50) deg_per_s2(50) deg_per_s3(50) deg_per_s4(50)
+	deg_per_s5(50) deg_per_s6(50) deg_per_s7(50) deg_per_s8(50)
+	angle1(90) angle2(90) angle3(90) angle4(90) angle5(90) angle6(90) angle7(90) angle8(90))
+)
+(define "maneuvrability_ATGM"
+	("custom_maneuvrability" deg_per_s1(50) deg_per_s2(50) deg_per_s3(50) deg_per_s4(50)
+	deg_per_s5(50) deg_per_s6(50) deg_per_s7(50) deg_per_s8(50)
+	angle1(90) angle2(90) angle3(90) angle4(90) angle5(90) angle6(90) angle7(90) angle8(90))
+)
+
+(define "maneuvrability_vertical_zur"
+	("custom_maneuvrability" deg_per_s1(250) deg_per_s2(250) deg_per_s3(100) deg_per_s4(100)
+	deg_per_s5(100) deg_per_s6(100) deg_per_s7(100) deg_per_s8(100)
+	angle1(149) angle2(149) angle3(160) angle4(160) angle5(160) angle6(160) angle7(160) angle8(160))
+	{sensor
+		{Visor "main"
+			{vision "vertical_antimissile"}
+			{bone "missile_point"}
+		}
+		{Visor "vertical"
+			{vision "vertical_antimissile_side"}
+			{bone "vertvisor_point"}
+		}
+	}
+	{targetSelector "antimissile"}
+)
+;-----------------------cwps3 maneuvrability
+(define "maneuvrability_SAM_cwps3"
+	("custom_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s) deg_per_s4(%deg_per_s)
+	deg_per_s5(%deg_per_s) deg_per_s6(%deg_per_s) deg_per_s7(%deg_per_s) deg_per_s8(%deg_per_s)
+	angle1(120) angle2(120) angle3(120) angle4(120) angle5(120) angle6(120) angle7(120) angle8(120))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+)
+
+(define "maneuvrability_SAMs_cwps3"
+	("custom_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s 0.95) deg_per_s4(%deg_per_s 0.9)
+	deg_per_s5(%deg_per_s 0.85) deg_per_s6(%deg_per_s 0.8) deg_per_s7(%deg_per_s 0.75) deg_per_s8(%deg_per_s 0.4)
+	angle1(120) angle2(120) angle3(120) angle4(120) angle5(120) angle6(120) angle7(120) angle8(120))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+)
+(define "maneuvrability_SAMs_short_cwps3"
+	("custom_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s 0.87) deg_per_s4(%deg_per_s 0.75)
+	deg_per_s5(%deg_per_s 0.7) deg_per_s6(%deg_per_s 0.7) deg_per_s7(%deg_per_s 0.7) deg_per_s8(%deg_per_s 0.7)
+	angle1(120) angle2(120) angle3(120) angle4(120) angle5(120) angle6(120) angle7(120) angle8(120))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+)
+(define "maneuvrability_cwps3"
+	("custom_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s) deg_per_s4(%deg_per_s)	deg_per_s5(%deg_per_s) deg_per_s6(%deg_per_s) deg_per_s7(%deg_per_s) deg_per_s8(%deg_per_s)
+	angle1(90) angle2(90) angle3(90) angle4(90) angle5(90) angle6(90) angle7(90) angle8(90))
+)
+(define "maneuvrability_vertical_zur_cwps3"
+	("custom_maneuvrability" deg_per_s1(100) deg_per_s2(%deg_per_s 1.5) deg_per_s3(%deg_per_s 0.77) deg_per_s4(%deg_per_s 0.51)
+	deg_per_s5(%deg_per_s 0.22) deg_per_s6(%deg_per_s 0.08) deg_per_s7(%deg_per_s 0.08) deg_per_s8(%deg_per_s 0.08)
+	angle1(170) angle2(170) angle3(160) angle4(160) angle5(160) angle6(160) angle7(160) angle8(160))
+	{sensor
+		{Visor "main"
+			{vision "vertical_antimissile"}
+			{bone "missile_point"}
+		}
+;		{Visor "vertical"
+;			{vision "vertical_antimissile_side"}
+;			{bone "vertvisor_point"}
+;		}
+	}
+	{targetSelector "antimissile"}
+)
+(define "maneuvrability_vertical_zur_engine_cwps3"
+	("custom_maneuvrability" deg_per_s1(100) deg_per_s2(%deg_per_s 1.5) deg_per_s3(%deg_per_s) deg_per_s4(%deg_per_s)
+	deg_per_s5(%deg_per_s) deg_per_s6(%deg_per_s) deg_per_s7(%deg_per_s) deg_per_s8(%deg_per_s)
+	angle1(170) angle2(170) angle3(160) angle4(160) angle5(160) angle6(160) angle7(160) angle8(160))
+	{sensor
+		{Visor "main"
+			{vision "vertical_antimissile"}
+			{bone "missile_point"}
+		}
+;		{Visor "vertical"
+;			{vision "vertical_antimissile_side"}
+;			{bone "vertvisor_point"}
+;		}
+	}
+	{targetSelector "antimissile"}
+)
+(define "cwps_rangefinder"
+	{props "cwps_rangefinder"}
+)
+(define "cwps_top_attack"
+	{props "cwps_top_attack" "cwps_rangefinder"}
+)
+(define "cwps_top_attack_long"
+	{props "cwps_top_attack" "cwps_rangefinder"}
+)
+(define "antiroof"
+	{props "cwps_antiroof"}
+	{Volume "second_det"
+		{Cylinder 0.88976 30.0}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			-1	0	0
+			0	1	0
+			0  50	7.45137e-005
+		}
+	}
+	{Volume "second_det1"
+		{Cylinder 0.88976 15.0}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			-1	0	0
+			0	1	0
+			0  25	7.45137e-005
+		}
+	}
+	{Volume "second_det2"
+		{Cylinder 0.88976 15.0}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			-1	0	0
+			0	1	0
+			0  10	7.45137e-005
+		}
+	}
+	{Volume "second_det" {tags "proximity"} {able clear {Overlap 0} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "second_det1" {tags "proximity"} {able clear {Overlap 0} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "second_det2" {tags "proximity"} {able clear {Overlap 0} {Visible 0}} {Thickness 0.1} {component "missile"}}
+)
+(define "antimissile_sensors"
+	;not used for vertical antimissiles
+	{sensor
+		{Visor "main"
+			{vision "antimissile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "close"
+			{vision "antimissile_close"}
+			{bone "missle_foresight"}
+		}
+		{Visor "sam"
+			{vision "antimissile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+
+)
+(define "targetable_missile"
+{props "targetable_missile" "vis_level_targetable_missile" "-vis_level_missile"}
+{targetClass 	"antiship_missile"}
+;дл€ подрыва при попадании «ѕ”
+;	{Volume "target1"
+;		{tags "target"} {able clear} {Thickness 0.1} {component "missile"}
+;		{Cylinder 7 70}
+;		{Bone "missile_point"}
+;		{Matrix34
+;			0	0	-1
+;			0	1	0
+;			1	0	0
+;			-7.08951	0	7.48852e-005
+;		}
+;	}
+;сюда радары наведени€ не стрел€ют, но попадают
+;	{Volume "targ_for_radar"
+;		{able clear {bullet 1}} {Thickness 0.1} {component "missile"}
+;		{Cylinder 5 10}
+;		{Bone "missile_point"}
+;		{Matrix34
+;			0	0	-1
+;			0	1	0
+;			1	0	0
+;			50.58407	7	0
+;		}
+;	}
+)
+(define "extended_proximity"
+;Redefinition of volumes don't work! Do not redefine volumes
+;{Volume "missile"
+;	{Cylinder 200.5591 35.2126}
+;	{Bone "missile_point"}
+;	{Matrix34
+;		0	0	-1
+;		0	1	0
+;		1	0	0
+;		24.6063	0	7.63714e-005
+;	}
+;}
+)
+
+(define "missile_antirad"
+;	{Weaponry
+;	    {place "targeting_sys_anti_jamming"
+;			{weapon "missilets_antirad" filling "%country_%type_aj cwps2 ammo" 200}
+;			{foresight "missle_foresight"}
+;			{charger "driver"}
+;			{gunner "driver"}
+;			{basic}
+;			{SequentialAim 0}
+;		}
+;		{place "targeting_sys"
+;			{weapon "missilets_antirad" filling "%country_%type cwps2 ammo" 200}
+;			{foresight "missle_foresight"}
+;			{charger "driver"}
+;			{gunner "driver"}
+;			{basic}
+;			{SequentialAim 0}
+;		}
+;	}
+	("cwps_rangefinder")
+	{props "-cwps_rangefinder" "cwps_antirad_%country"}
+	{targetSelector "missile_antirad"}
+)
+(define "allow_manual_control"
+	{props "allow_manual_control"}
+;	(mod "mp"{props  "vehicle"})
+	{props  "vehicle"}
+	{able "select"}
+	{Volume "control_probe" {able clear {Contact 1}} {Thickness 0.1}}
+	{Volume "control_probe"
+		{Cylinder 20 20}
+		{Bone "basis"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			0	0	0
+		}
+	}
+)
+
+

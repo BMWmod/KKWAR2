@@ -1,0 +1,17 @@
+;SDL
+actor
+	{PatherID "amphibia"}
+	{props "amphibia"}
+	{chassis "water"
+		{speed
+			{Slow	10	}	; km/h
+			{Normal	17	}
+			{Fast	30	}
+		}
+		{ignorePatherBounds}
+		{waterline 1.6}
+		{switch
+			{terrain "water" "deep_water"}
+		}	
+	}
+(include "armoredcar_m.ext")

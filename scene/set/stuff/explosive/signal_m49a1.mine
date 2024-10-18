@@ -1,0 +1,10 @@
+{item
+	{tag "smallitemin1hand dropboxed antipersonnel mine nokeep sharing"}
+	{entity "mine_signal_m49a1"}
+	{inventory
+		{size 1 2}
+		{weight 100}
+		{fsm "belt"}
+	}
+	{mass 1}
+}

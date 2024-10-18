@@ -1,0 +1,16 @@
+(include "snipe_airborne.inc")
+{parameters
+	{range_degrees "camera_fov"		40	90}
+	{range_degrees "camera_pitch_min"	-30	-30}	; Ќижний порог диапазона углов наклона камеры (90 - вертикально вверх, -90 - вертикально вниз)
+	{range_degrees "camera_pitch_max"	30	30}	; ¬ерхний порог диапазона углов наклона камеры (90 - вертикально вверх, -90 - вертикально вниз)
+	{visual_set "visual_set" "tps_mg"}
+	{float "zoom_steps"	3}
+	{range "camera_offset_up"		1.0	1.0}	
+
+	{range "camera_offset_side"		0.1	0.1}	; —мещение точки внимани€ по горизонтальной оси
+	{range "camera_offset_forward" 		0.1	0.1}	; —мещение точки внимани€ по продольной оси
+	{range "camera_distance"		1.6	1.6}
+	{sprite "sprite" "/interface/fullscreen/mask_none"}
+
+}
+{suitable "hmmwv_for_single_turret" 	{priority 22}}						; ”слови€ срабатывани€

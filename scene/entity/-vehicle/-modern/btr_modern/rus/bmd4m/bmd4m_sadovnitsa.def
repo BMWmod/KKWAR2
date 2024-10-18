@@ -1,0 +1,185 @@
+;Created by Pheonix
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "bmd4m" "amphibia" "vision_lev03" "has_autoloader" "cw_panorama" "3_barrels_smoke"}
+	{PatherID "amphibia"}
+        {targetClass "light_tank"}
+
+	{extension "crew.ext"}
+	{extender "enumerator"}
+
+;Расчеты см в документации, но бронезащите заметно выше того, что можно ждать от авиадесантируемой машины.
+	("armor_IFV" turret(23 14 14 5) body(39 23 13 7))
+	("armor_engine"  t(20))
+
+	{volume "apploque_front1"	{Thickness 7}}
+	{volume "apploque_front2"	{Thickness 7}}
+	{volume "apploque_front3"	{Thickness 7}}
+	{volume "apploque_front4"	{Thickness 7}}
+	{volume "apploque_side3"	{Thickness 20}}
+	{volume "apploque_side4"	{Thickness 20}}
+	{volume "apploque_rear1"	{Thickness 3}}
+	{volume "apploque_rear2"	{Thickness 3}}
+	{volume "apploque_rear3"	{Thickness 3}}
+	{volume "apploque_rear4"	{Thickness 3}}
+	{armor
+		{setting "apploque_front"
+			{thickness 7}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_front*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "apploque_side"
+			{thickness 20}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_side*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "apploque_rear"
+			{thickness 3}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_rear*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+
+
+	("shield_Challie2")
+
+	{extender "inventory"
+		{box
+			{item "ammo pkm_ammo" 5250}
+			{item "ammo bullet30_RUS ap" 170}
+			{item "ammo bullet30_RUS fg" 270}
+			{item "ammo bullet100a_RUS fg" 30}
+			{item "ammo bullet100a_RUS_h fg" 5}
+			{item "ammo bullet100a_RUS rok" 4}
+			{item "rpg26 weapon" 4 filling "rpg26 ammo" 1}	
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{weapon "100mm_2a70_1" filling "ammo bullet100a_RUS_h fg" 1}
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.68))
+			("CW_stab_autotrack_suo")
+			{basic}
+		}
+		{place "gun1"
+			{RestoreIKAfterAim}
+			{weapon "30mm_2A72" filling "ammo bullet30_RUS ap" 30}
+			{foresight "foresight6"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.68))
+			("CW_stab_autotrack_suo")
+		}
+		{place "mgun"
+			{weapon "pkt" filled}
+			{type "mgun_coaxial"}
+			{foresight "foresight3"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.84))
+			("CW_stab_autotrack_suo")
+		}
+		{place "mgun1"
+			{RestoreIKAfterAim}
+			{type "mgun_hull"}
+			{weapon "pkt" filled}
+			{foresight "foresight4"}
+			{gunner "driver"}
+			{charger "driver"}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun2"
+			{RestoreIKAfterAim}
+			{type "mgun_hull"}
+			{weapon "pkt" filled}
+			{foresight "foresight5"}
+			{gunner "driver"}
+			{charger "driver"}
+			("CW_stab_no_stabiliser")
+		}
+	}	
+	{sensor
+		{visor "panorama"
+		    {bone "Visor3"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+		{visor "main"
+		    {bone "Visor1"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+		{visor "mgun1"
+			{vision "vehicle_main"}
+		    {bone "Visor4"}
+		}
+		{visor "mgun2"
+			{vision "vehicle_main"}
+		    {bone "Visor5"}
+		}
+	}
+
+	{mass 15800}
+	{Chassis
+		("tank_trace" fx("tracks_sm") step(0.15) len(0.5))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(15.8)
+			Width(3.10)
+			Power(500)
+			Realspeed(70)
+			Gamespeed(43) 
+		)
+		{RearGears			0.12 0.29 0.5 0.68 1}}
+		("CW_fuelbag" Range(500) Fuelvolume(460))
+		("CW_speed_lev" Gamespeed(43))
+
+	}
+	{props "cwfs_fuel_400"}
+
+	("CW_amphibia" Waterline(1.65) )
+	("two_headlights")
+	{Extension "bmd4m_sadovnitsa.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(35))
+}
+
+

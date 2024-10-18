@@ -1,0 +1,146 @@
+﻿;Created by Pheonix 
+{from "pattern gun" 
+   	
+	{filling "155ammo" 3}
+	{fireSound "gun_cw/pzh2000_shot"}
+;	{reloadSound "cw/autoloader_leclerc"}
+	{recoveryTime 4.5}
+	{rechargeTime 6.3}
+	{range 322 322}	;M107 - 26 km
+;	{gravity 18}
+;	("speed" s(1220)) 
+	{gravity 1.9}
+	("speed_artillery") 
+	("100-128caliber")
+		;ФАР позволяет вести пристрелку лучше
+		;Для артсистем с УАС точность надо прописывать в каждом снраяде отдельно
+
+		;http://forum.guns.ru/forummessage/42/66.html
+								;Тут только данные по АРС, они намного менее точны
+									;данных по обычным ОФС нет, ставлю как придется.
+	("cw_angle_curve_variable_charge")
+	{calibre 155}
+	;("relaxationtime" rt(2))
+	{parameters "bullet155_USA satt"
+		{range 420 420}	;http://bastion-karpenko.ru/excalibur/  - 40 у Паладинов, 50 с более дальнобойных
+		("CW_acc_guided" kvo_meters(2))	;примерно
+		;http://vpk.name/news/102035_ekskalibur_kvo_1_m_na_dalnosti_48_km.html
+		;{cursor "gps"}
+		;{cursorreloading "gps_reload"}	
+		{cursor "cannon_on_fg_6"}	
+		;{cursor "cannon_on_fg_7"}
+		{cursorreloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_GER satt"
+	    {gravity 1.42}
+		{range 455 455}
+		("CW_acc_guided" kvo_meters(2))	;примерно
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_GER sal"
+		("CW_acc_artillery_radar" mils(2.35))
+	    {gravity 1.42}
+		{range 455 455}
+		{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_fr satt"	;30км для Mk1, 60км для Mk2 RAP
+	    {gravity 1.42}
+		{range 440 440}
+		("CW_acc_guided" kvo_meters(3))
+		{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_USA spbe"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 324 324}		; 27.5km L52
+		{gravity 2.05}
+		{cursor "cannon_on_heat_5"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "bullet155_USA cl"
+		("CW_acc_artillery_radar" mils(2.35))
+	    {gravity 2.1}
+		{range 300 300}	;M483A1 - 22km
+		{cursor "cannon_on_heat_3"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "bullet155_USA_h fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;M795 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_USA_h_r fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;M795 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_USA_ar fg"
+	    {gravity 1.65}
+		{range 400 400}	;M549A1 - 40km
+		("CW_acc_artillery_ars_radar" mils(2.35))	 ;АРС имеют кучность раза в 2 ниже, https://soapbox.manywords.press/2018/07/05/extended-range-full-bore-rounds/
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_USA_pgk fg"
+	    {gravity 1.65}
+		{range 400 400}	;M549A1 - 40km
+		("CW_acc_guided" kvo_meters(5))	;аналогично китайскому УР с таким же КВО
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_GER fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;DM-121 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_GER_r fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;DM-121 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_GER_ar fg"
+		("CW_acc_artillery_ars_radar" mils(2.35))
+	    {gravity 1.65}
+		{range 400 400}	;DM-131 - 40km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_NATO fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;L15A2 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_NATO_r fg"
+		("CW_acc_artillery_radar" mils(2.35))
+		{range 350 350}	;L15A2 - 30km
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_USA nc"
+		("CW_acc_artillery_radar" mils(2.35))
+		{cursor "cannon_on_nc"}
+		{cursorreloading "cannon_reload_nc"}
+	}
+	{parameters "bullet155_USA fg"
+		("CW_acc_artillery_radar" mils(2.35))
+	}
+}		
+; дальности - http://www.navweaps.com/Weapons/WNGER_61-52_MONARC.php				

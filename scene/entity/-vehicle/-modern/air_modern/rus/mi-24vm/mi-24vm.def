@@ -1,0 +1,194 @@
+
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	{props "Helicopter_M" "mi-35" "mi-24" "steel" "vision_lev_heli" "radar_spo" "heli_strike"}
+	{Extension "mi-24vm.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"}}
+	{targetClass 	"Helicopter"}
+
+	{mass 11200}
+
+{volume "body"	{tags "body"}	{component "body"} {thickness 2}}
+{volume "body1"	{tags "body"}	{component "body"} {thickness 2}}
+{volume "body2"	{tags "body"}	{component "body"} {thickness 2}}
+{volume "body3"	{tags "body"}	{component "body"} {thickness 2}}
+{volume "body4"	{tags "body"}	{component "body"} {thickness 2}}
+
+
+    {armor
+		("internal_devices" engine_th(8) mechanics_th(10) electronics_th(5) fuel_th(4))
+		("hull_and_rotors" main_rotor_th(8) tail_rotor_th(5) cabin_th(5))
+		{setting "border"
+			{thickness 10}
+			{durability  {blast {value 999}} {pierce {value 999}}}
+			{threshold  {blast {value 999}} {pierce {value 999}}}	
+			{volumes "border*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "armor"
+			{thickness 3 6 9 3}
+			{durability  {blast {value 999}} {pierce {value 999}}}
+			{threshold  {blast {value 999}} {pierce {value 999}}}	
+			{volumes "armor*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+    }
+
+	{extender "inventory"
+		{box
+			 {item "bullet23_115 bzt zenite" 200}
+			 {item "bullet23_115 ofzt zenite" 200}
+		}
+	}
+
+	{Weaponry
+		{place "gun"
+			{weapon "GSh-23L" filled}
+			{foresight "foresight1"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{barrels 2}
+			{shooter "shooter_upk_"}
+			{basic}
+			{rotate}
+		}
+;===============Правое крыло
+		{place "ptur2"
+			{weapon "ataka_x8" filled}
+			{foresight "foresight4"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{shooter "ptur2shooter"}
+			{barrels 2}
+			{basic}
+			{rotate}
+		}
+;==============Левое крыло
+
+;================Оба крыла   ==
+        {place "nar1"
+			{weapon "80mm_b820a_x2" filling "bullet80_DM cm ammo" 40}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter_"}
+			{barrels 40}
+			{basic}
+		}
+		
+	}	
+
+
+;================================
+;     	{Chassis
+;		{Locomotion ("locomotion")
+;			{Maxspeed 45}
+;			{turnRadius 21}
+;		}
+;		{maxSideSlope 15} ;degree
+;		{speed
+;			{Slow 1} ; km/h
+;			{Normal 1}
+;			{Fast 45}
+;		}
+;        }
+;	{Chassis "airborne"
+;			{Altitude 25}
+;		}
+;	{ChassisManager
+;			{Current "airborne"}
+;	}
+;("CW_heli_chassis" Maxspeed(45) turnRadius(21) maxSlope(15))
+("CW_heli_chassis" 
+	Maxspeed(55) turnRadius(21) Acc(3.59) Climb(3.47)
+	Fuel(1500) Fuel_rate(2.68) Fuel_remain(1125))
+	{props "cwfs_fuel_1500"}
+;==========================
+       	("part" args "wheel_back")
+       	("part" args "retract_wheelR")
+       	("part" args "retract_wheelL")
+       	("part" args "ptur1")
+       	("part" args "ptur2")
+       	("part" args "nar1")
+       	("part" args "nar2")
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+       	("part" args "part7")
+       	("part" args "part8")
+       	("part" args "part9")
+
+	{Sensor
+		{Visor "main"
+			{vision "mp_soldier"}
+			{bone "visor1"}
+		}
+		{Visor "raduga"
+			{vision "aircraft_optic_3g"}
+			{bone "visor2"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open" 0.5}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -0.5}}
+		}
+		{anm "driver1"
+			{forward	{begin	"board_big-highcar_driver"} {end "seat_driver_car"} {base "driver1_open" 0.5}}
+			{reverse 	{end	"board_big-highcar_driver" -1} {base "driver1_open" -0.5}}
+		}
+		{anm "left"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_passenger"} {base "doorl"}}
+			{reverse 	{end	"emit_body" 1}{base "doorl" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_passenger"} {base "doorr"}}
+			{reverse 	{end	"emit_body" 1}{base "doorr" -1}}
+		}
+	}
+(define "crew_human"
+	{placer
+		{place "%place"
+			{group "%group"}
+			{linkbone "%bone"}
+			{turnoff {sensor} {shadow}{targetable}}
+		}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+
+	("crew_human" place(driver) bone(driver) door(emit0) animation(driver) group(driver))
+	("crew_human" place(gunner) bone(driver1) door(emit1) animation(driver1) group(gunner))
+
+	("crew_human" place(seat0) bone(seat00) door(emit2) animation(left) group(desant))
+	("crew_human" place(seat1) bone(seat01) door(emit3) animation(right) group(desant))
+	("crew_human" place(seat2) bone(seat02) door(emit2) animation(left) group(desant))
+	("crew_human" place(seat3) bone(seat03) door(emit3) animation(right) group(desant))
+	("crew_human" place(seat4) bone(seat04) door(emit2) animation(left) group(desant))
+	("crew_human" place(seat5) bone(seat05) door(emit3) animation(right) group(desant))
+	("crew_human" place(seat6) bone(seat06) door(emit2) animation(left) group(desant))
+	("crew_human" place(seat7) bone(seat07) door(emit3) animation(right) group(desant))
+
+
+
+("cw_headlightl")
+        {bone "foresight_flare_1"
+		{speed 1}
+        }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+}
+

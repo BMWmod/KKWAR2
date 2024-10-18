@@ -1,0 +1,52 @@
+;Exported by: Администратор
+;Date:        Thu Sep 11 10:48:48 2014
+;File:        G:\Работа с Pheonix\Редактирование\Мои модели\Флот\Arley Burke\Хороший\Arley_Burke 64.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "node01"
+			{Position 59.074	0	0}
+		}
+		{bone "bottom"
+			{Position -9.36837	-2.41155	0}
+		}
+		{bone "node02"
+			{Matrix34
+				-1	0	0
+				0	-1	0
+				0	0	1
+				155.579	0	0
+			}
+		}
+		{bone "node03"
+			{Matrix34
+				0	-1	0
+				1	0	0
+				0	0	1
+				123.939	142.286	111.776
+			}
+		}
+		{bone "top"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				138.356	81.9661	112.422
+			}
+		}
+	}
+}
+{Volume "attach1"
+	{Box 16.3046 29.9077 42.2169}
+	{Bone "bottom"}
+	{Position 29.2865	-4.64961	21.1085}
+}
+{Volume "attach2"
+	{Box 17.5035 29.9077 37.1509}
+	{Bone "top"}
+	{Position 14.4837	-0.0515137	18.5683}
+}

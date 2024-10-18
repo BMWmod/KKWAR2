@@ -1,0 +1,154 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "assault" "vision_lev_plane" "su-25sm"}	
+;Будут стелсы, поэтому видимость будет разная для радаров миллиметрового, сантиметрового диапазонов и для оптики.
+	{Extension "su-25sm_support.mdl"}
+	("missile_aimpoint_custom" height(1.0) front(-2) side(0))
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+
+	{mass 14600}
+
+	{Volume "armor"}
+	{Volume "armor1"}
+	{Volume "armor2"}
+	{Volume "armor3"}
+	{Volume "armor4"}
+	{Volume "armor5"}
+	{Volume "armor6"}
+	{Volume "armor7"}
+	{Volume "armor8"}
+	{Volume "armor9"}
+	{Volume "armor10"}
+	{Volume "armor11"}
+	{Volume "armor12"}
+
+{volume "steering_eler_l" {thickness 40} {component "steering_eler_l"}}
+{volume "steering_eler_r" {thickness 40} {component "steering_eler_r"}}
+{volume "steering_elev" {thickness 40} {component "steering_elev"}}
+{volume "steering_rudder" {thickness 40} {component "steering_rudder"}}
+
+{armor
+	("air_armor" body(6) wing(5) avionics(4) engine(4) hydrosystem(4) electronics(5) fuel(10))
+	("armor_panel" name(armor) thickness(34 25 12 0.1))
+	{setting "armor"
+		{thickness 22 9 5 3}
+		{volumes "armor*"}
+		{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+	}
+}
+
+	{extender "inventory"
+		{box
+			{size 6 10}
+			{item "GSH-30_ammo ap ammo" 50}
+			{item "GSH-30_ammo fg ammo" 100}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "GSH-30-2" filling "GSH-30_ammo ap ammo" 100}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+;===============Левое крыло
+;==============Правое крыло
+;================Оба крыла
+		{place "ptur1"
+			{weapon "x_25ml_su25x2" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "nar1"
+			{weapon "80mm_b8_x2" filling "bullet80_DM fgh ammo" 40}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "B8shooter_"}
+			{barrels 40}
+			{basic}
+		}
+		{place "bomber"
+			{weapon "RBK_250x2" filled}
+			{foresight "foresight4"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "bomber1_"}
+			{barrels 2}
+			{basic}
+		}
+		{place "bomber1"
+			("abm_bomber")
+			{weapon "fab_250x2" filled}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "bomb_"}
+			{barrels 2}
+			{basic}
+		}
+		{place "ptur2"
+			{weapon "r60_su25x2" filled}
+			{foresight "foresight7"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+	}	
+
+("Chassis_parameters" 
+	Speed(77) TurnRadius(33) 
+	Fuel(3100) Fuel_remain(2468) Fuel_rate(4.15) 
+	Acc_hor(6.66) Maneuvrability_hor(6.17)
+	Acc_ver(6.25) Maneuvrability_ver(4.77)
+)
+	{props "cwfs_fuel_3000"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+      	("part" args "part7")
+      	("part" args "part8")
+
+;У Су-25СМ нет дополн. прицелов
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+	{texmod "vksred10"}
+}

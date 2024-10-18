@@ -1,0 +1,536 @@
+;SDL
+;defines for humanskin details
+;----------------------------------------------
+
+;random face
+(define "face"
+	    {bone "head1"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head1.ply"}
+		}
+		{bone "head2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head2.ply"}
+		}
+		{bone "head3"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head3.ply"}
+		}
+		{bone "head4"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head4.ply"}
+		}
+		{bone "head5"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head5.ply"}
+		}
+		{bone "head6"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head6.ply"}
+		}
+		{bone "head7"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head7.ply"}
+		}
+		{bone "head8"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				0.283466	0.0542202	18.015
+			}
+			{VolumeView "/entity/humanskin/%head/head8.ply"}
+		}
+)
+;If not separated, wrong mtls will be loaded (i.e. all head will receive the same, not depending on .mtl in skin folder)
+(define "random_face" ("face" head(head)))
+(define "random_face_cn" ("face" head(head_cn)))
+(define "random_face_wounded" ("face" head(head_wounded)))
+(define "random_face_arb" ("face" head(head_arb)))
+(define "random_face_usa" ("face" head(head_usa)))
+(define "random_face_cu" ("face" head(head_cu)))
+(define "random_face_cu_avispas" ("face" head(head_cu_avispas)))
+(define "random_face_tur" ("face" head(head_tur)))
+(define "random_face_ita" ("face" head(head_ita)))
+;---------------------------knee and elbow---------------------------
+
+
+;pair of US GEN3 knee shields, random 50%
+(define "gen3_random"
+		{bone "detail2"
+			{Position 2.27324	-0.0795755	10.3355}
+			{VolumeView "detail2.ply"}
+		}
+)
+;pair of RUS 6B51 knee shields, random 50%
+(define "sibz_6b51_niz_50percent"
+		{bone "detail1"
+			{Position 0.377069	0.0196574	16.1456}
+			{VolumeView "detail1.ply"}
+		}
+)
+;pair of RUS 6B51 knee shields, random 75%
+(define "sibz_6b51_niz_75percent"
+		{bone "detail1"
+			{Position 0.377069	0.0196574	16.1456}
+			{VolumeView "detail1.ply"}
+		}
+		{bone "detail2"
+			{Position 0.377069	0.0196574	16.1456}
+			{VolumeView "detail2.ply"}
+		}
+)
+;pair of RUS 6B51 knee and elbow shields, random 75%
+(define "sibz_6b51_75percent"
+		{bone "detail1"
+			{Position 0.377069	0.0196574	16.1456}
+			{VolumeView "detail1.ply"}
+		}
+		{bone "detail2"
+			{Position 0.377069	0.0196574	16.1456}
+			{VolumeView "detail2.ply"}
+		}
+)
+;unaired US tac knee shields, random 50% left 100% right
+(define "sibz_tac_50percent"
+		{bone "detail3"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				2.6181	2.33274	11.206
+			}
+			{VolumeView "detail3.ply"}
+		}
+		{bone "knee2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				2.61602	-2.50403	11.206
+			}
+			{VolumeView "detail4.ply"}
+		}
+)
+;unaired US tac knee and elbow shields, random 50% each 100% right knee
+(define "sibz_tac_full_50percent"
+		{bone "detail1"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-1.35238	-5.70257	23.1504
+			}
+			{VolumeView "detail1.ply"}
+		}
+		{bone "detail2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				-1.35238	5.71822	23.1504
+			}
+			{VolumeView "detail2.ply"}
+		}
+		{bone "detail3"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				2.6181	2.33274	11.206
+			}
+			{VolumeView "detail3.ply"}
+		}
+		{bone "knee2"
+			{Matrix34
+				0	1	0
+				-1	0	0
+				0	0	1
+				2.61602	-2.50403	11.206
+			}
+			{VolumeView "detail4.ply"}
+		}
+)
+;---------------------Eyes--------------------------------------
+;tactical glasses (light) ESS crossbow, random 50%
+(define "ess_crossbow_random"
+		{bone "detail_glasses"
+			{Position 0	0	-196.85}
+		     {VolumeView "ess_crossbow.ply"}
+		}
+)
+;---------------------Head--------------------------------------
+
+;hood closed, no random
+(define "hood_close"
+		{bone "hood"
+			{Position -0.0396955	-0.0771351	30.3673}
+			{VolumeView "hood_close.ply"}
+		}
+)
+;hood open, no random
+(define "hood_open"
+		{bone "hood"
+			{Position 0.581653	-0.000377536	32.3914}
+			{VolumeView "hood_open.ply"}
+		}
+)
+;hood gorka closed, no random
+(define "hood_gorka_close"
+		{bone "hood"
+			{Position 0.221565	0.0265307	30.8311}
+			{VolumeView "hood_gorka_close.ply"}
+		}
+)
+;hood gorka open, no random
+(define "hood_gorka_open"
+		{bone "hood"
+			{Position 0.221565	0.0265307	30.8311}
+			{VolumeView "hood_gorka_open.ply"}
+		}
+)
+;kufia
+(define "hood_kufia_open"
+		{bone "hood"
+			{Position -0.0397638	-0.0771654	30.3673}
+			{VolumeView "hood_kufia.ply"}
+		}
+)
+;kufia
+(define "hood_kufia"
+		{bone "hood"
+			{Position -0.0397638	-0.0771654	30.3673}
+			{VolumeView "hood_kufia.ply"}
+		}
+		{bone "detail_hood"
+			{Position -0.0397638	-0.0771654	30.3673}
+			{VolumeView "hood_kufia_detail.ply"}
+		}
+)
+;balaklava, no random
+(define "balaklava"
+		{bone "mask"
+			{Position 0	0	-196.85}
+			{VolumeView "balaklava.ply"}
+		}
+)
+;balaklava, random
+(define "balaklava_random"
+		{bone "detail_mask"
+			{Position 0	0	-196.85}
+			{VolumeView "balaklava.ply"}
+		}
+)
+;balaklava, no random
+(define "balaklava_cn"
+		{bone "mask"
+			{Position 0	0	-196.85}
+			{VolumeView "balaklava_cn.ply"}
+		}
+)
+;balaklava, random
+(define "balaklava_cn_random"
+		{bone "detail_mask"
+			{Position 0	0	-196.85}
+			{VolumeView "balaklava_cn.ply"}
+		}
+)
+;beard, no random
+(define "beard"
+		{bone "beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard.ply"}
+		}
+)
+;large beard, no random
+(define "beard_large"
+		{bone "beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard_large.ply"}
+		}
+)
+;beard, random
+(define "beard_random"
+		{bone "detail_beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard.ply"}
+		}
+)
+;large beard,  random
+(define "beard_large_random"
+		{bone "detail_beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard_large.ply"}
+		}
+)
+;beard,  random size
+(define "beard_random_size"
+		{bone "beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard.ply"}
+		}
+		{bone "detail_beard"
+			{Position 0	0	-196.85}
+			{VolumeView "beard_large.ply"}
+		}
+)
+;---------------------Body--------------------------------------
+
+;Leshiy or gilly suite
+(define "gilly"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "gilly.ply"}
+		}
+)
+;gas mask bag random
+(define "gas_bag"
+		{bone "detail_shoulderbag"
+			{Position 0	0	-196.85}
+			{VolumeView "gas_bag.ply"}
+		}
+)
+;gas mask bag gorka random
+(define "gas_bag_gorka"
+		{bone "detail_shoulderbag"
+			{Position 0	0	-196.85}
+			{VolumeView "gas_bag_big.ply"}
+		}
+)
+;Band on both hands (standart only)
+(define "band_lr"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_lr.ply"}
+		}
+)
+;Band on right hand (standart only)
+(define "band_r"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_r.ply"}
+		}
+)
+;Band on left hand (standart only)
+(define "band_l"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_l.ply"}
+		}
+)
+;Band on both hands (gorka only)
+(define "band_gorka_lr"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_gorka_lr.ply"}
+		}
+)
+;Band on right hand (gorka only)
+(define "band_gorka_r"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_gorka_r.ply"}
+		}
+)
+;Band on left hand (gorka only)
+(define "band_gorka_l"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "band_gorka_l.ply"}
+		}
+)
+
+;bushlat (standart form)
+(define "bushlat"
+		{bone "gilly"
+			{Position 0	0	-196.85}
+			{VolumeView "bushlat.ply"}
+		}
+)
+;kirza_boots (standart form)
+(define "kirza_boots"
+		{bone "boots"
+			{Position 0	0	-196.85}
+			{VolumeView "kirza_boots.ply"}
+		}
+)
+;RAF pilot equipment
+(define "raf_pilot"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "raf_gear.ply"}
+		}
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "detail_inflatable.ply"}
+		}
+)
+;PLA pilot equipment
+(define "pla_pilot"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "detail_inflatable.ply"}
+		}
+)
+;rus closed kobura
+(define "kobura_rus"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "kobura.ply"}
+		}
+)
+;rus knife on belt
+(define "knife"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "knife.ply"}
+		}
+)
+;rus knife on belt Gorka 
+(define "knife_gorka"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "knife_gorka.ply"}
+		}
+)
+;rus knife on leg left 
+(define "knife_left"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "knife_left.ply"}
+		}
+)
+;rus knife on leg right 
+(define "knife_right"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "knife_right.ply"}
+		}
+)
+;rus officer planshet
+(define "planshet_rus"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet.ply"}
+		}
+)
+;rus officer planshet for baggy uniform
+(define "planshet_rus_big"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet_big.ply"}
+		}
+)
+;rus ak-74 bag
+(define "akbag"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "akbag.ply"}
+		}
+)
+
+;western belt kobura
+(define "belt_kobura"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "belt_kobura.ply"}
+		}
+)
+;western belt empty
+(define "belt_empty"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "belt_empty.ply"}
+		}
+)
+;western tactical belt
+(define "tactical_belt"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "tactical_belt.ply"}
+		}
+)
+;western belt kobura for loosened outfit
+(define "belt_kobura_large"
+		{bone "kobura"
+			{Position 0	0	-196.85}
+			{VolumeView "belt_kobura_large.ply"}
+		}
+)
+;western tactical belt for loosened outfit
+(define "tactical_belt_large"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "tactical_belt_large.ply"}
+		}
+)
+;mgun belt around left shoulder
+(define "lenta_belt"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "lenta_belt.ply"}
+		}
+)
+;Iranian belt for smg
+(define "iran_belt_smg"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet_smg.ply"}
+		}
+)
+;Iranian belt for mgun
+(define "iran_belt_mgun"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet_mgun.ply"}
+		}
+)
+;Iranian belt for marksman
+(define "iran_belt_marksman"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet_marksman.ply"}
+		}
+)
+;Police belt BRS
+(define "police_belt_brs"
+		{bone "planshet"
+			{Position 0	0	-196.85}
+			{VolumeView "planshet.ply"}
+		}
+)

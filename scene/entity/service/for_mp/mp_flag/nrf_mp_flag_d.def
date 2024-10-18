@@ -1,0 +1,7 @@
+{actor
+	(include "mp_flag.inc")
+	 {texmod "nrf"}
+	;(include "/set/resupply_generic.inc")
+	;("avia_flag_nato")
+	{props "flag_delete"}
+}

@@ -1,0 +1,26 @@
+{item
+	{tag "itemin2hands dropboxed sharing" "fx_146_299"}
+	{entity "mine_antitank"}
+	{inventory
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 8}
+;	{damage blastwave
+;		{energy 16}
+;		{area 2 3}
+;	}
+;	{damage cumulative {damage 150} {distance 3}}
+;ТМ-89 масса ВВ 6.5кг бронебойность 200мм	
+;	{damage blastwave
+;		{energy 11}
+;		{area 2 4}
+;	}
+;{damage cumulative {damage 200} {distance 3}}
+;БЧ 11,5 кг, ВВ 6,7 кг, ТЭ 1,36, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_4" tank(0.1) ifv(2.5) apc(5) end(8))
+("cw_contusion" t10(6.8) t6(9.8) t3(13.4) t0(17.2))
+("cw_seismic_4")
+("cw_blast_mass_add" add(32.5))
+("cw_heat" energy(200))
+}

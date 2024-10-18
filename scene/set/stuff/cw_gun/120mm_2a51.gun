@@ -1,0 +1,64 @@
+;Created by Pheonix 
+{from "pattern gun"    ; "2c9"
+	{filling "120mm_nona"}
+	{fireSound "gun_cw/2a51"}
+	{reloadSound "cw/tankgun_r03"}
+	{rechargeTime 7.5}
+	{range 190 190}          ;3ОФ-49  8.8км
+	{gravity 2.9}
+	("speed" s(367)) 
+	("100-128caliber")
+	;{ZeroingAccuracy 0.75 0.65}
+	{calibre 5}
+	{healthDamage 500}	
+		;1/342 http://bastion-karpenko.ru/2s9-nona-s/
+								;и Таблицы стрельбы https://armyman.info/books/id-9841.html
+	;Для артсистем с УАС точность надо прописывать в каждом снраяде отдельно
+	("cw_angle_curve_variable_charge")
+	{cursor "cannon_on_fg_4"}
+	{cursorreloading "cannon_reload_fg"}	
+	{parameters "bullet120_cn satt"         ;6км
+		{range 1 1}
+		("CW_acc_guided_laser" kvo_meters(5))
+		{gravity 3.1}
+	}	
+	{parameters "bullet120_rus korr"         ;9км
+		{range 192 192}
+		("CW_acc_guided_laser" kvo_meters(2))	;примерно
+	}	
+	{parameters "bullet120_RUS rok"         ;3ОФ-50 АРС 12.8км
+		("CW_acc_artillery" mils(3.84))
+		{range 225 225}
+		{gravity 2.3}
+	}
+	{parameters "bullet120_RUS cm"          ;3БК-19  1км
+		("CW_acc_artillery" mils(2.92))
+		{range 100 100}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+	}	                    
+    {parameters "bullet120_RUS tb"          ;3ОФ-74  8.5км  перспектива.
+		("CW_acc_artillery" mils(2.92))
+		{range 190 190}
+	}
+	{parameters "bullet120_cn rok"         ;13км
+		("CW_acc_artillery" mils(2.92))
+		{range 235 235}
+		{gravity 2.3}
+	}
+	{parameters "bullet120_cn fg"         ;9.5км
+		("CW_acc_artillery" mils(2.92))
+		{range 195 195}
+	}	
+	{parameters "bullet120_rus fg"        
+		("CW_acc_artillery" mils(2.92))
+	}	
+	{parameters "bullet120_cn cl"         ;9.3км
+		("CW_acc_artillery" mils(2.92))
+		{range 193 193}
+		{cursor "cannon_on_heat_3"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}	
+	
+}

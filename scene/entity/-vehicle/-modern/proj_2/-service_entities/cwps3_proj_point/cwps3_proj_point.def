@@ -1,0 +1,63 @@
+{actor
+(define "guidtype_assets"
+	;{Volume "%type"{able clear {contact} {visible} {overlap} {bullet} {select 0}{touch 0}} {Thickness 0.1}{component "%type"}
+	;}
+	;{Volume "target_%type" {able clear {visible} {select 0} {touch 0}} {Thickness 0.1}{component "%type"}}
+	;{component "%type"}	;не удалять - отвечает за прицеливание
+	
+	
+	{Volume "%type"{able clear {contact 0} {visible} {overlap} {bullet 0} {select 0}{touch 0}} {Thickness 0.01} {component "%type"}
+	}
+	{Volume "target_%type" {able clear {contact 0} {visible 1} {overlap} {bullet 0} {select 0}{touch 0}} {Thickness 0.01} {component "%type"}}
+	{component "%type"}	;не удалять - отвечает за прицеливание
+
+)
+
+("guidtype_assets" type(rus_active))
+("guidtype_assets" type(rus_antiship))
+("guidtype_assets" type(rus_ir))
+("guidtype_assets" type(rus_laser))
+("guidtype_assets" type(rus_laser_spot))
+("guidtype_assets" type(rus_other))
+("guidtype_assets" type(rus_radpassive))
+
+("guidtype_assets" type(usa_active))
+("guidtype_assets" type(usa_antiship))
+("guidtype_assets" type(usa_ir))
+("guidtype_assets" type(usa_laser))
+("guidtype_assets" type(usa_laser_spot))
+("guidtype_assets" type(usa_other))
+("guidtype_assets" type(usa_radpassive))
+
+	{simulation {able 1} {disableLinked 1}}
+	{constrain none}
+	{props "nocover" "dummy"}
+	{lodclass "stuff_small"}
+	{simulatorId "grenade"}
+	{able "-select"}
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+		{const "withdraw/cooldown"		30} ; sec
+	}
+	{collider "proj_target"}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	
+	{props "-steel" "-wood" "proj_point" "vis_proj_point"}
+	
+	{obstacleID "nothing"}
+	{extender "stuff"
+		{item "empty_stuff"}
+	}
+	{targetClass 	"proj_cwps3"}
+	{Extension "cwps3_proj_point.mdl"}
+
+}

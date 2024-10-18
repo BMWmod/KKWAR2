@@ -1,0 +1,140 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+(include "armor_arena.ext")
+
+("brain_vehicle")
+
+{collider "train"}
+{PatherID  "railway"}
+{Chassis "railway"
+	{ignorePatherBounds}
+	{speed
+		{Slow	10	}	; km/h
+		{Normal	17	}
+		{Fast	30	}
+	}
+}
+
+{props "railway"}
+
+{volume "body"
+	{thickness 10}
+}
+{volume "fuel_tank_internal_a" {thickness 10} {component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_b" {thickness 10} {component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_c" {thickness 10} {component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_d" {thickness 10} {component "fuel_tank_internal_d"}}
+{volume "fuel_tank_external_a" {thickness 10} {component "fuel_tank_external_a"}}
+{volume "fuel_tank_external_b" {thickness 10} {component "fuel_tank_external_b"}}
+{volume "fuel_tank_external_c" {thickness 10} {component "fuel_tank_external_c"}}
+{volume "fuel_tank_external_d" {thickness 10} {component "fuel_tank_external_d"}}
+
+    {component "fuel_tank_internal_a" {tags "explosive"}}
+    {component "fuel_tank_internal_b" {tags "explosive"}}
+    {component "fuel_tank_internal_c" {tags "explosive"}}
+    {component "fuel_tank_internal_d" {tags "explosive"}}
+    {component "fuel_tank_external_a" {tags "explosive"}}
+    {component "fuel_tank_external_b" {tags "explosive"}}
+    {component "fuel_tank_external_c" {tags "explosive"}}
+    {component "fuel_tank_external_d" {tags "explosive"}}
+	
+{component "body"
+	{RepairTime 25}
+}
+(define "locomotion"
+	{MaxSpeed	25	}		; максимальная скорость, kmph
+	{StartTime	10	}		; время разгона до макс. скорости с 0, seconds
+	{BrakeTime	5	}		
+	{StopTime	10	}		
+)
+
+{autooperatable 0}
+(define "glass_volume"
+	{volume %0
+		{thickness 0.1}
+		{tags "glass"}
+	}
+)
+(define "window_volume"
+	{volume %0
+		{thickness 1}
+		{able {visible 0} {window}}
+	}
+)
+(define "armor_train_M"
+	{armor
+		{setting "body"
+			{thickness %body}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }			
+			{volumes "body*"}
+		}
+		{setting "cabin"
+			{thickness %cabin}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }
+			{volumes "cabin*"}
+		}
+		{setting "door"
+			{thickness %cabin}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }
+			{volumes "door*"}
+		}
+		{setting "engine"
+			{thickness %engine}
+			{durability
+                {blast {koef 1} {value (* 1.5 %engine)} } {pierce {value (* 1.5 %engine)} }
+            }
+            {threshold
+                {blast  {value (* 0.5 %engine)} } {pierce {value (* 0.5 %engine)} }
+            }	
+			{volumes "engine*"}
+		}
+		{setting "fuel"
+			{thickness %engine}
+			{durability
+                {blast {koef 1} {value (* 1.5 %engine)} } {pierce {value (* 1.5 %engine)} }
+            }
+            {threshold
+                {blast  {value (* 0.5 %engine)} } {pierce {value (* 0.5 %engine)} }
+            }	
+			{volumes "fuel*"}
+		}
+		{setting "wheel"
+			{thickness %wheel}
+			{durability
+                {blast {value %wheel_val} } {pierce {value %wheel_val} }
+            }
+            {threshold
+                {blast {value %wheel_val}} {pierce {value 2} }
+            }
+			{whole_wound}
+			{volumes "wheel*"}
+		}
+
+		{setting "shields"
+			{thickness 6}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}}				
+			{volumes "shield1*" "shield2*" "shield3*"}
+		}
+	}
+)
+(define "armor_train"
+    ("armor_train_M" body(4) cabin(4) dur_value(21) dur(1) thr(1) engine(12) wheel(2) wheel_val(2))
+)

@@ -1,0 +1,265 @@
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "medium_M" "turret_rotator" "vision_lev05""t62" "with_open_zpu" "cw_panorama"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+
+	;борт башни - от 111 до 160 мм, данные с wiki ru и wiki eng не совпадают, крыша - от 30 до 16 мм, взял 23мм среднее
+;http://btvt.narod.ru/4/t-62/t62.htm Тут для Т-62
+
+;http://military.tomsk.ru/blog/topic-299.html
+;http://btvt.narod.ru/4/t55_9.htm
+;У Т-62МД помимо 102мм лба корпуса и 242мм лба башни установлены пакеты допброни.
+;Допброня лба корпуса -30мм RHA+3х5мм (наверняка HSS) и все залито пенополиуретаном. Т. к. по движению снаряда оставлено место, предполагаю, что
+;принцип работы как у Т-72, со смещением листов. то есть наполнитель неснарядостойкий, его не учитываю (учет как воздух, 0,/0,2).
+;Итого 102+30х1+3х1,3х5х1,35х1.3+0/0,2*105(бонус многослойности 30%)(листы не под 60, а под 68, и (16хcos68)/(16хcos60)=1.35)=102+64/85.
+; Эквивалент 204+128/170
+;Толщина пакета листов допброни башни вдвое больше, наружный лист вдвое толще, из чего можно предпольжить, что и листов там вдвое больше:
+;Итого 218+128/190. Но только в зоне покрытия пакетов. Вне пакетов - 218
+;Крыша - среднее между 30 крышей и 20мм дном.
+;Борта башни - на глазок 150мм, точно там не выставить.
+
+("armor_heavy" turret(218 150 65 23) body(102 80 45 25))
+
+	("comp_armor_increment" turret(31) body(21))
+
+
+	{volume "turret_ring" {thickness 100}}
+	{volume "turret_ring1" {thickness 100}}
+
+	{armor
+		{setting "turret_ring"
+			{thickness 100}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "turret_ring*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+
+
+	;("armor_engine"  t(40 60 60 40))
+
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+
+
+
+
+
+
+	("crew_inside")
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_Is-2"} {end "t62_zpy"} {base "open2"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "open2" -1}}
+		}
+		{anm "left2"
+			{forward	{begin	"board_Is-2"} {end "t62_zpy"} {base "open2"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "open2" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_Is-2"} {end "t62_zpy"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+
+		{anm "armor"
+			{forward	{begin	"board_highArmor"} 	{end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_tank_2"}}
+		}
+		{anm "armor1"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_2"}}
+			{reverse 	{end	"emit_body"}}
+		}
+		{anm "armor2"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+
+
+
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+
+("crew_human" place(driver)		door(emit0) group(crew)		    animation(driver))
+("crew_human" place(gunner)	        door(emit1) group(crew)	            animation(left))
+("crew_human" place(commander)	        door(emit1) group(crew)	            animation(left2))
+
+	{placer
+		{place "charger"
+			{group "crew"}
+			{linkbone "gunner2"}
+			{turnoff {sensor} {shadow}}
+			{visor "up"}
+			{openForCrush}
+			{useVision}
+		}
+	}
+	{boarder
+		{door "emit2"}
+		{link "emit2" "charger" {anm "right"} {forward putoff} {reverse puton}}
+	}
+
+
+
+ 	{placer
+		{place "driver"	{visor "driver"}}
+		{place "charger" {visor "charger"}}
+		{place "gunner"	{visor "gunner"}}
+		{place "commander"	{visor "commander"}}
+	}
+
+	{sensor		
+		{visor "charger"	
+			{vision "tank_main-l"}			
+			{bone "Visor4"}
+		}
+		{visor "charger2"
+			{vision "vehicle_top_mgun"}				
+			{bone "mgun_dshkm"}
+		}
+		{visor "commander"
+			{bone "Visor3"}
+			{vision "tank_gunner_optic_IR_2g"} ;ТКН-3 панорама
+		}
+		{visor "main"
+			{vision "tank_gunner_optic_IR_2g"}	;ТШС-41У https://ru.wikipedia.org/wiki/%D0%A2-62
+;ночной канал
+			{bone "Visor1"}
+		}
+		{visor "gunner2"
+			{bone "Visor8"}
+			{vision "tank_gunner_optic_IR_2g"}
+	;ТШС-41У дневной, на лбу башни
+		}
+	}
+
+
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon mgun"}
+		}
+		{box		;16 БПС 8 КС и 16 ОФС, и, видимо, 2 ТУР
+
+            {item "ammo bullet115_RUS apcr" 15}
+			{item "ammo bullet115_RUS cm" 8}		
+			{item "ammo bullet115_RUS fg" 16}
+			
+;			{item "ammo bullet115_RUS rok" 2}	;Никаких ТУР на Т-62, только М
+			{item "ammo Hcb_ammo" 125}
+			{item "ammo osv_fg" 125}
+			{item "ammo PKM_ammo" 2750}
+
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "115mm_U-5TS" filling "ammo bullet115_RUS apcr" 1}	
+			{gunner "gunner"}
+			{charger "charger"} 
+			("CW_stab_abm" abm(0.22))
+			("CW_stab_no_suo")	;нет ЛД
+			;http://forums.airbase.ru/2013/04/t35479,2--l11-i-m58-vs-d-25t-i-m63t2.7844.html
+		}
+		{place "mgun"
+			{type "mgun_aa"}
+			{gunner "charger"}
+			{charger "charger"}
+			{weapon  "Dshk_m" filled}
+			{foresight "foresight3"}                 	
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun1"
+			{type "mgun_coaxial"}
+			{charger "gunner"}
+			{weapon  "PKT" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.41))
+			("CW_stab_no_suo")
+                }
+	}
+        
+	{mass 37500}
+	{Chassis
+		("tank_trace" fx("tracks_mid") step(0.3) len(1.5))
+		("CW_tracks"
+			Mass(37.5)
+			Width(3.59)
+			Power(580)
+			Realspeed(50)
+			Gamespeed(34) 
+			Range(650)
+			Fuelvolume(960)
+		)
+	}
+	{props "cwfs_fuel_600" "cwfs_extfuel_800"}
+
+	("two_headlights")
+	{Extension "t62_cw.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(16))
+	{bone "gun_rot"	{speed 0.005} {limits -16 6}	}
+	{bone "mgun_dshkm"	{limits 4 -72}}
+	{bone "mgun"	{speed 0.005} {limits -16 6}	}
+; дизель В-55В 580л/с.   2Э15 Метеор - 16гр/с полный оборот 22,5 сек. в-0,7..1 г-2,1..3
+	("cw_suspension_5tracks_alt" downmax(-17) upmax(36) r(0.5))
+}

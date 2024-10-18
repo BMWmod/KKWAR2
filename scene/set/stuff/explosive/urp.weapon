@@ -1,0 +1,31 @@
+{weapon_bullet
+	{tag "pistol to_hand cannot_lie nokeep sharing"}
+	
+	{filling "ammo pom_2" 1}
+	{fireSound	"pistol/tt"}
+	{mass 1.7}
+	{inventory
+		{size 2 1}
+		{weight 100}
+		{fsm "pistol"}
+	}
+	{states
+		{fire		"fire"	}
+		{aim 		"aim"	}
+		{can_aim	"can-aim"}
+	}
+	{foresight "Foresight3"}
+	{curve "cumulative"}
+	{entity "urp"}
+	{preloaded}
+
+	{cursor "cannon_on_fg_3"}
+	{cursorreloading "cannon_reload_fg"}
+	{ammoLocked}
+	{maxRange 20}
+	{aimRange 15}
+	{gravity 1}
+	{speed 10}
+	{calibre 68}
+	{spreading 2}
+}

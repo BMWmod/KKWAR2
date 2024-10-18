@@ -1,0 +1,157 @@
+;Created by Pheonix
+{ArmoredCar 
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "amphibia" "vision_lev04" "bmp2m" "cw_panorama" "autotrack_suo" "3_barrels_smoke" "spall_liner"}
+	{PatherID "amphibia"}
+	{targetClass "light_tank"}
+
+	{extender "enumerator"}
+        {extension "crew_2m_kit.ext"}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+
+;http://www.rusarmy.com/forum/topic4703.html 
+;http://otvaga2004.narod.ru/otvaga2004/armour-rus-bmp2/a_bmp2.htm
+	("armor_IFV"    turret(28 28 22 6) body(19 19 1 7) body2(19 19 1 7)) ;+6мм башня вкруг (кроме лба) за счет экранов
+
+	("armor_engine"  t(15))
+
+	("nera" thickness(10))
+	
+	("shield" args 2)
+
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+	{component "shieldr11" {tags "shield"}}
+	{component "shieldl11" {tags "shield"}}
+	{component "shieldr12" {tags "shield"}}
+	{component "shieldl12" {tags "shield"}}
+	{component "shieldr13" {tags "shield"}}
+	{component "shieldl13" {tags "shield"}}
+	{component "shieldr14" {tags "shield"}}
+	{component "shieldl14" {tags "shield"}}
+	{component "shieldr15" {tags "shield"}}
+	{component "shieldl15" {tags "shield"}}
+
+
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon link_mmg"}
+		}
+		{box
+			{item "9m133 cm" 4}		
+			{item "ammo bullet30_RUS ap" 130}
+			{item "ammo bullet30_RUS fg" 340}
+			{item "ammo pkm_ammo" 1750}
+			{item "ammo mortar pdd" 270}
+			{item "rpg26 weapon" 4 filling "rpg26 ammo" 1}
+            {item "rpg7_og-7v rpg7 ammo" 4}			
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_2A42" filling "ammo bullet30_RUS ap" 30}
+			("CW_stab_abm" abm(0.68))
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "gun2"
+;			{RestoreIKAfterAim}
+			{weapon "9m133x2" filling "ammo 9m133 cm" 2}		
+			{foresight "foresight2"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{shooter "shooterr"}
+			{barrels 2}
+			{basic}
+		}
+		{place "gun3"
+;			{RestoreIKAfterAim}
+			{weapon "9m133x2" filling "ammo 9m133 cm" 2}
+			{foresight "foresight3"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{shooter "shooterl"}
+			{barrels 2}
+			{basic}
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{foresight "foresight4"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{weapon "PKT" filling "ammo pkm_ammo" 250}
+			{basic}
+			("CW_stab_abm" abm(0.84))
+			("CW_stab_autotrack_wind_suo")
+               	 }
+       		 {place "mgun2"
+		        {weapon "ags30m weapon" filling "ammo mortar pdd" 30}          
+                        {foresight "foresight5"}
+                        {LinkAnimation "off"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}							 
+			("CW_stab_no_stabiliser")
+		}
+	}	
+
+	{mass 14200}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(1.15))
+		("CW_tracks"
+			Mass(14.2)
+			Width(3.15)
+			Power(300)
+			Realspeed(65)
+			Gamespeed(41) 
+			Range(600)
+			Fuelvolume(462)
+		)
+	}
+	{props "cwfs_fuel_300" "cwfs_extfuel_400"}
+
+	("CW_amphibia" Waterline(1.35) )
+	("two_headlights")
+	{Extension "bmp2m_kit_new.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(60))
+	("cw_suspension_6tracks" downmax(-17) upmax(29) r(0.4))
+
+}
+
+
+

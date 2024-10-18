@@ -1,0 +1,58 @@
+{from "pattern rpg_ammo"
+	{tag "rpg7" "big" "size3" "75to76" "no_ricochet" "fg" "fragmentary" "fx_shmel" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	{mass 4.5}	
+	{entity "tbg-7v"}
+	{view "tbg-7v_fly"
+		{tail "bazooka_tail" "tail"}
+	}
+        {inventory
+		{weight 100}
+		{size 4 1}
+	}
+	{possibleDamageRadius 15}
+	;1,8 кг капсула с термобарическим снаряжением ОМ-100Ми + 0.25кг А-IX-I (95% гексоген, ТЭ 1,6)
+	{tag "he_07to2"}
+	{damage fire
+		{radius 4}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;{damage add blastwave {energy 1.2} {area 11.3 13.1}}
+;{damage add blastwave {energy 2.5} {area 3.2 3.7}}
+;	{damage add blastwave	 ; HE, FG anti-IFV
+;		{energy 6.5}
+;		{area 0.6 0.65}
+;	}
+;БЧ 3,4 кг, ВВ 1,8 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.3) apc(2.1) end(4.3))
+("cw_contusion" t10(4.4) t6(6.2) t3(8.5) t0(11))
+("cw_blast_mass_add" add(7))
+
+}
+;выстрел ТБГ-7В П.В. в 1997 г.
+;калибр - 105 мм БЧ - термобар  тип ВВ ТБС. масса - 1.8(1.9) кг
+;Дальность прямого выстрела (эффективная дальность) – 150м. Прицельная - 200м./550м	
+;Радиус поражения на открытой местности – до 8 (до 10) м.	
+;Скорость полета: начальная – 120 м/с., максимальная –  м/с.	
+;Вес: выстрела – 4,5кг, гранаты – 3,1(3.4) кг		
+;Длина: выстрела – 950 мм, гранаты ТБГ-7 – 300 мм. 	
+;
+;	
+;http://militaryrussia.ru/blog/topic-437.html	
+;http://www.russianarms.ru/forum/index.php/topic,2092.0.html	
+;http://www.libma.ru/tehnicheskie_nauki/otechestvennye_protivotankovye_granatometnye_kompleksy/p19.php		
+;http://pirochem.net/index.php?id1=3&category=azgotov-prim-vv&author=dik-vn&book=2009&page=120		
+;	
+; 	
+;		
+;		
+;		
+;	
+;
+ 

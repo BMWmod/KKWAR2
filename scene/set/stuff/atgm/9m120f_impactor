@@ -1,0 +1,29 @@
+{from "pattern proj_impactor"
+	{entity "9m120f_impactor"}
+              {inventory
+		{weight 100}
+		{size 6 1}
+	}
+	{tag "no_ricochet" "big" "size4" "88to105" "-ap" "fx_shmel"} 
+
+	;9M120Ф экв. до 9.5кг тротила.обьем-детонир.фугас http://zid.ru/products/defence/51/detail/163
+;	{tag "he_2to4_5"}
+	{damage fire
+		{radius 9}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;        {damage add blastwave {energy 1.2} {area 15.6 17.9}}
+;        {damage add blastwave {energy 2.5} {area 6.2 7.2}}
+;        {damage add blastwave {energy 6.5} {area 2 2.4}}  
+;БЧ 7,4 кг, ВВ 5 кг, ТЭ 1, нач. скорость 500 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_4" tank(0.4) ifv(2.7) apc(4.8) end(6.5))
+("cw_contusion" t10(5.6) t6(8) t3(10.9) t0(14.1))
+("cw_blast_mass_add" add(28))
+}
+;масса ВВ около 3.1 кг к термобарическому расчету. первая волна удалена.

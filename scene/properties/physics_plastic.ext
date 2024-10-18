@@ -1,0 +1,8 @@
+(include "physics_generic.ext")
+
+{props "plastic"}
+{mass 5}
+
+{volume "body"
+	{thickness 2}
+}

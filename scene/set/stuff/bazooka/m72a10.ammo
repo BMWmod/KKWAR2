@@ -1,0 +1,22 @@
+{from "pattern rpg_ammo"
+	{tag "big" "size2" "75to76" "rpg18" "fg" "fragmentary antiinf" "fx_90_110" "rpg_shell"}
+	
+	{entity "m72a10"}
+	{view "m72a10"
+		{tail "bazooka_tail_1gen" "tail"}
+	} 
+	{mass 2.3} 
+	;М72А10 -  1.0кг ВВ Aluminized HE. 1х0.8=0.8кг к термобарическому расчету.
+;	{tag "he_07to2"} 
+ ;       {damage add blastwave {energy 1.2} {area 7.2 8.3}}
+  ;      {damage add blastwave {energy 2.5} {area 0.2 0.2}}
+;БЧ 1,5 кг, ВВ 1 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.2) apc(0.4) end(2.1))
+("cw_contusion" t10(3.7) t6(5.1) t3(6.9) t0(9.1))
+} 
+;1 волна удалена т.к. термобар.Применяется коэффицент 0.8 к твердым термобар.смесям.
+;https://ru.scribd.com/doc/131225039/%D0%9F%D0%B8%D1%80%D0%BE%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0-%D0%92%D0%92-2012
+;Пиросправка 2012. стр - 197.
+;https://www.nammo.com/globalassets/pdfs/ammobook/nammo_ammo-handbook_2016.pdf 
+;каталог Nammo. 
+	

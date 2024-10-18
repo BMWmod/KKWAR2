@@ -36433,7 +36433,7 @@
 	{Water 0x7f6 "pool3"
 		{Position 0 0 -760}
 	}
-	{Entity "trench_cannon_big_tank" 0x40e0
+	{Entity "trench_cannon_big_t72" 0x40e0
 		{Position 62.98 -4189.15 -756.44}
 		{xform zl 7.65}
 		{Fogable never}
@@ -36443,7 +36443,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x2157
+	{Entity "trench_cannon_big_t72" 0x2157
 		{Position 98.01 -2758.51 137.76}
 		{xform zl 34.61}
 		{Fogable never}
@@ -36453,7 +36453,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x11cc
+	{Entity "trench_cannon_big_t72" 0x11cc
 		{Position 1186.11 379.2 142.44}
 		{xform zl -49.5}
 		{TexMod
@@ -36467,7 +36467,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x302b
+	{Entity "trench_cannon_big_t72" 0x302b
 		{Position 1317.06 994.34 153.49}
 		{xform zl 12.07}
 		{TexMod
@@ -36893,7 +36893,7 @@
 		}
 		{Fogable never}
 	}
-	{Entity "trench_cannon_big_tank" 0x880
+	{Entity "trench_cannon_big_t72" 0x880
 		{Position 2225.87 312.64 206.92}
 		{xform zl -93.5}
 		{Fogable never}
@@ -36903,7 +36903,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x4191
+	{Entity "trench_cannon_big_t72" 0x4191
 		{Position 2961.56 387.33 237.41}
 		{xform zl -27.06}
 		{Fogable never}
@@ -36913,7 +36913,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x700d
+	{Entity "trench_cannon_big_t72" 0x700d
 		{Position 3021.41 1039.8 214.47}
 		{xform zl 3.44}
 		{Fogable never}
@@ -36923,7 +36923,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x5075
+	{Entity "trench_cannon_big_t72" 0x5075
 		{Position 1994.22 -1340.86 270.88}
 		{xform zl 72.16}
 		{Fogable never}
@@ -36933,7 +36933,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x600e
+	{Entity "trench_cannon_big_t72" 0x600e
 		{Position 2566.3 -1733.13 271.42}
 		{xform zl 13.64}
 		{Fogable never}
@@ -36943,7 +36943,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x4835
+	{Entity "trench_cannon_big_t72" 0x4835
 		{Position 2529.51 -2840.52 264.41}
 		{xform zl -4.22}
 		{Fogable never}
@@ -36953,7 +36953,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x12c1
+	{Entity "trench_cannon_big_t72" 0x12c1
 		{Position 5550.01 -3946.89 260.14}
 		{xform zl -78.65}
 		{Fogable never}
@@ -36963,7 +36963,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x303e
+	{Entity "trench_cannon_big_t72" 0x303e
 		{Position 6146.19 -3269.47 233.36}
 		{xform zl 4.35}
 		{Fogable never}
@@ -36973,7 +36973,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0xc02
+	{Entity "trench_cannon_big_t72" 0xc02
 		{Position 6395.31 -1673.89 279.69}
 		{xform zl -25.23}
 		{Fogable never}
@@ -36983,7 +36983,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x2159
+	{Entity "trench_cannon_big_t72" 0x2159
 		{Position 6469.2 -1247.85 297.27}
 		{xform zl 2.69}
 		{Fogable never}
@@ -36993,7 +36993,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x183a
+	{Entity "trench_cannon_big_t72" 0x183a
 		{Position 6428.29 -594.57 294.79}
 		{xform zl 44.92}
 		{Fogable never}
@@ -38065,7 +38065,7 @@
 		}
 		{Fogable never}
 	}
-	{Entity "trench_cannon_big_tank" 0x7f4
+	{Entity "trench_cannon_big_t72" 0x7f4
 		{Position 6281.36 1759.82 330.52}
 		{xform zl -43}
 		{TexMod
@@ -38078,7 +38078,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x6839
+	{Entity "trench_cannon_big_t72" 0x6839
 		{Position 7410.97 1425.08 388.91}
 		{xform zl -156.09}
 		{TexMod
@@ -38091,7 +38091,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x1228
+	{Entity "trench_cannon_big_t72" 0x1228
 		{Position 7937.64 1412.63 404.64}
 		{xform zl -50.36}
 		{TexMod
@@ -38104,7 +38104,7 @@
 			}
 		}
 	}
-	{Entity "trench_cannon_big_tank" 0x442f
+	{Entity "trench_cannon_big_t72" 0x442f
 		{Position 8253.97 1882.12 412.78}
 		{xform zl 5.79}
 		{TexMod

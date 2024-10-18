@@ -1,0 +1,144 @@
+;ASS edition by Timosh
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev05" "auto_dig_in" "remote_mgun" "has_autoloader" "spall_liner"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+;Т-64 с 2А42-1
+
+
+
+
+;	("armor_t64a_1981_multilayer" turret(351 351 70 50) body(475 87 44 109))  ;должно быть
+	("armor_heavy" turret(424 210 70 50) body(150 80 40 100))  
+	("comp_armor_increment" turret(50) body(15))
+
+	("armor_engine"  t(40 80 80 40))
+
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	
+
+;	("crew_4_human_extended")
+	("crew_3_human")
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_Is-2"} {end "seat_m7_mgunner"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_Is-2"} {end "seat_m7_mgunner"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+
+		{anm "armor"
+			{forward	{begin	"board_highArmor"} 	{end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_tank_2"}}
+		}
+		{anm "armor1"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_2"}}
+			{reverse 	{end	"emit_body"}}
+		}
+		{anm "armor2"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+	}
+	
+	("seat_human" place(seat1) bone(seat01) door(emit3)  animation(armor1))
+	("seat_human" place(seat2) bone(seat02) door(emit4)  animation(armor))
+	("seat_human" place(seat3) bone(seat03) door(emit5)  animation(armor1))
+	("seat_human" place(seat4) bone(seat04) door(emit6)  animation(armor1))
+
+	{extender "inventory"
+		{box        ; БК 37 выстрелов
+			{item "ammo PKM_ammo" 1750}
+			{item "ammo bullet125_rus_b cm" 6}
+			{item "ammo bullet125_rus_z apcr" 12}
+			{item "ammo bullet125_RUS fg" 18}
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_2A46_1" filling "ammo bullet125_rus_z apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.21))
+			("CW_stab_no_suo")
+		}
+		{place "mgun"
+			{charger "gunner"}
+			{weapon "PKM" filled}
+			{foresight "foresight3"}
+			{basic}
+			("CW_stab_abm" abm(0.45))
+			("CW_stab_no_suo")
+                }
+	}
+
+	{mass 38500}
+	{Chassis
+		("tank_trace" fx("tracks_sm") step(0.3) len(0.85))
+		("CW_tracks"
+			Mass(38.5)
+			Width(3.41)
+			Power(700)
+			Realspeed(50)
+			Gamespeed(34) 
+			Range(700)
+			Fuelvolume(1500)
+		)
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	("two_headlights")
+	{Extension "t64.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+
+	
+	{bone "gun_rot"
+		{limits -14 6}
+		{speed 0.004}
+        }
+	("CW_turr_speed" deg_per_s(20))
+
+	
+	
+}

@@ -1,0 +1,20 @@
+{item
+	{tag "smallitemin1hand dropboxed antitank mine sharing fx_111_145"}
+	{entity "mine_antitank_m19"}
+	{inventory
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 13}
+;Для подземных ПТ мин надо убирать первые две фугасные волны, т. к. грунт мешает распространению удара в стороны.
+;9,5кг взрывчатки тип B (ТЭ 11,9-12,8кг, коэффициент 1,35, масса ВВ для расчета 9,5*1,35/1,3=9,86)
+;{damage add blastwave {energy 2.5} {area 7.9 9.1}}
+;{damage add blastwave {energy 6.5} {area 6 6.9}}
+;{damage add blastwave {energy 11} {area 3.2 3.7}}
+;Пластмассовая оболочка, нет осколков
+;БЧ 12,5 кг, ВВ 9,5 кг, ТЭ 1,35, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_4" tank(1) ifv(3.5) apc(6.4) end(8.5))
+("cw_contusion" t10(7.6) t6(11) t3(14.8) t0(19.1))
+("cw_seismic_4")
+("cw_blast_mass_add" add(60.5))
+}

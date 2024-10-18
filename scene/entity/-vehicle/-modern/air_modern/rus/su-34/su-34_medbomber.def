@@ -1,0 +1,164 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "su-34"}	
+	{Extension "su-34_medbomber.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+		("armor_panel" name(armor) thickness(17 11 8 0.1))
+		("armor_panel" name(glass) thickness(5))
+		{setting "armor"
+			{thickness 17 11 8 0.1}
+			{volumes "armor*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "glass"	;фонарь из ситалла
+			{thickness 5}
+			{volumes "glass*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{size 10 16}
+			{item "GSH-30_ammo ap ammo" 150}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "GSH-30-1" filling "GSH-30_ammo ap ammo" 30}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "bomber1"
+			("abm_bomber")
+			{weapon "fab_250x24" filled}
+			{barrels 24}
+			{foresight "foresight7"}
+			{shooter "bomberb_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+		{place "bomber2"
+			{weapon "kab-500x6" filled}
+			{barrels 6}
+			{foresight "foresight7"}
+			{shooter "bomberc_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+		{place "ptur3"
+			{weapon "rvvsdx2" filled}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+	}
+
+{mass 32087}
+("Chassis_parameters" 
+	Speed(85) TurnRadius(31) 
+	Fuel(12100) Fuel_remain(5000) Fuel_rate(4.54) 
+	Acc_hor(7.23) Maneuvrability_hor(6.07)
+	Acc_ver(5.50) Maneuvrability_ver(3.25)
+)
+	{props "cwfs_fuel_10k"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+       	("part" args "part7")
+       	("part" args "part8")
+       	("part" args "ecm")
+       	("part" args "ecm1")
+       	("part" args "ecm_pod")
+       	("part" args "radarL")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_100km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_4g_platan"}
+			{bone "Visor_OLS"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"seat_driver_car"} {end "seat_driver_car"}}
+			{reverse	{end	"seat_driver_car" 1}}
+		}
+		{anm "ladder"
+			{forward	{speed 1.5} {loop "stand_upstairs"}}
+			{reverse	{speed 1.5} {loop "stand_upstairs" -1}}
+		}
+		{anm "ladder_bind"
+		}
+	}
+	{Placer
+		{place "driver" 
+			{linkbone "driver"}
+			{turnoff {sensor} {shadow} {targetable}}
+		}			
+		{place "driver1"  
+			{linkbone "driver1"}
+			{turnoff {sensor} {shadow} {targetable}}
+		}				
+	}
+	{boarder
+		{door "emit1" {auto_release_time 1.2}}
+		{door "emit2" {auto_release_time 1.2}}
+		{node "node1"}
+		{node "node2"}
+		{node "node3"}
+		{link "emit1" "node1"  {anm "[fsm]"} {forward putoff} {reverse puton}}
+		{link "emit2" "node1"  {anm "[fsm]"} {forward putoff} {reverse puton}}
+		{link "node1" "node2"  {anm "ladder_bind"}}		
+		{link "node2" "node3"  {anm "ladder"}}
+		{link "node3" "driver"  {anm "driver"}}
+		{link "node3" "driver1"  {anm "driver"}}
+;		{link "emit1" "driver"  {anm "[fsm]"} {forward putoff} {reverse puton}}		;Нужно, пока нет поддержки нодов
+;		{link "emit2" "driver1"    {anm "[fsm]"} {forward putoff} {reverse puton}}		;Нужно, пока нет поддержки нодов
+	}
+
+	
+	
+	
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+        {bone "gun_rot1" {limits -5 0}}
+
+}

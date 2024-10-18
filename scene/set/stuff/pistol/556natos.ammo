@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet small stackable SS109 smg pistol 556Nato 556NatoMB pierce sharing fx_bul_small ui_smg"}
+	{inventory
+		{weight 5}
+		{block 20}
+		{size 1 1}
+		{fsm "belt"}
+	}
+	{mass 0.012}
+	{entity "556nato"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.11}
+	
+		}
+		{length 0.0}
+	}
+("cw_powder_charge" kg(0.0017))
+}

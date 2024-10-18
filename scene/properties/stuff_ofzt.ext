@@ -1,0 +1,7 @@
+;by Pheonix
+(include "stuff_small.ext")
+{props "zenite" "steel"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+{volume "body" {thickness 2}}
+{collider "zenite"}

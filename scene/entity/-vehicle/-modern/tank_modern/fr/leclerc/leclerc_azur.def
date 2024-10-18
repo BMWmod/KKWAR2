@@ -1,0 +1,214 @@
+{actor
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev05" "laser_spo" "cw_blow_panels" "has_apu"  "cw_panorama" "has_autoloader" "leclerc" "5_barrels_smoke"}
+	{targetSelector "tank"}
+
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret1"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret2"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret3"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret4"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+
+;	("armor_heavy_leclerc" turret1(696 264 40 3) turret2(621 264 40 3) turretmain(264 40 20 3) body(696 124 45 20))   	;желаемые
+	("armor_heavy_leclerc" turret1(706 264 40 3) turret2(671 264 40 3) turretmain(264 40 20 3) body(656 144 45 20)) 
+	("armor_mantlet" t(100)) 
+	;("armor_engine"  t(30))
+
+	{volume "apploque_turret1"	{Thickness 418}}
+	{armor
+		{setting "apploque_turret1"
+;			{thickness 418}	;желаемые
+			{thickness 418}			
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_turret1"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+	}
+	("comp_armor_increment" turret(118 126 53 53) body(105 21 21 21))
+
+	{extender "shield"
+		{on}
+	}
+	{volume "shieldl1"	{thickness 42} {component "shieldl1"}}
+	{volume "shieldr1"	{thickness 42} {component "shieldr1"}}
+
+	{volume "shieldl3"	{thickness 7} {component "shieldl3"}}
+	{volume "shieldr3"	{thickness 7} {component "shieldr3"}}
+	{volume "shieldl4"	{thickness 7} {component "shieldl4"}}
+	{volume "shieldr4"	{thickness 7} {component "shieldr4"}}
+	{volume "shieldl5"	{thickness 7} {component "shieldl5"}}
+	{volume "shieldr5"	{thickness 7} {component "shieldr5"}}
+	{volume "shieldl6"	{thickness 7} {component "shieldl6"}}
+	{volume "shieldr6"	{thickness 7} {component "shieldr6"}}
+	{volume "shieldl7"	{thickness 7} {component "shieldl7"}}
+	{volume "shieldr7"	{thickness 7} {component "shieldr7"}}
+	{volume "shieldl8"	{thickness 7} {component "shieldl8"}}
+	{volume "shieldr8"	{thickness 7} {component "shieldr8"}}
+	{volume "shieldl9"	{thickness 7} {component "shieldl9"}}
+	{volume "shieldr9"	{thickness 7} {component "shieldr9"}}
+	{volume "shieldl10"	{thickness 7} {component "shieldl10"}}
+	{volume "shieldr10"	{thickness 7} {component "shieldr10"}}
+
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	("shield_Leo2")
+("nera" thickness(42))
+
+
+;====================================
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "seat_gunner_stand"}{base "open_c"}}
+			{reverse 	{end	"emit_tank_2_hold"}	{base "open_c" -1}}
+		}
+	}
+	("crew_inside")	
+	{placer
+		{place "driver" {group "crew"} {visor "driver"}}
+	}
+	{boarder
+		{door "emit1"}
+		{link "emit1" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+	}
+	("crew_human" place(gunner)	 	door2(emit3) visor(main))
+	("crew_human" place(commander)		door1(emit2) visor(commander))
+
+	{sensor
+		{visor "main"	;наводчика
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor1"}
+		}
+		{visor "commander"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor3"}
+		}
+		{visor "mgun"
+			{vision "tank_gunner_optic_IR_1g"}
+			{bone "Visor4"}
+		}
+	}
+
+
+;=================================================	
+	{extender "inventory"
+		{box
+			{item "ammo bullet120_FR apcr" 20}
+			{item "ammo bullet120_FR cm" 9}
+			{item "ammo bullet120_FR fg" 10}
+			{item "ammo 50Nato" 1000}
+			{item "ammo 762Nato" 1800}
+			;{item "ammo smoke_shtora" 10}	
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "120mm_CN_120_26" filling "ammo bullet120_FR apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}                 
+			("CW_stab_abm" abm(0.59))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{weapon "browning_m2hb" filled}
+			{foresight "foresight3"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.92))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "mgun1"
+			{type "mgun_aa"}
+			{weapon "FN_MAG" filled}
+			{gunner "commander"}
+			{charger "commander"}  
+			{foresight "foresight4"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+	}
+
+	{mass 57000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(1.0))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(57.0)
+			Width(3.71)
+			Power(1500)
+			Realspeed(71)
+			Gamespeed(43) 
+		)
+		{RearGears		0.20 0.40 0.65}}
+		("CW_fuelbag" Range(550) Fuelvolume(1300))
+		("CW_speed_lev" Gamespeed(43))
+	}
+	{props "cwfs_fuel_1000"}
+
+	{Extension "leclerc_azur.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("two_headlights")
+	("CW_turr_speed" deg_per_s(40))
+	("recoil_side_common")
+}

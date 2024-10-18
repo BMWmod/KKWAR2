@@ -1,0 +1,12 @@
+;Created by Pheonix 
+{from "120mm_2A51 gun"
+	{rechargeTime 8.5}	;7 выс/мин, т. к. у Ноны снаряды распиханы под башней и в надг полках, 
+						;а у PLL они в двух укладках в корпусе за башней, туда надо ходить.
+
+						
+	{parameters "bullet120_cn satt"         ;6км
+		{range 175 175}
+		("CW_acc_guided_laser" kvo_meters(5))
+		{gravity 3.1}
+	}					
+}

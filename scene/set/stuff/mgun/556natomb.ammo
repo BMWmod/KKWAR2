@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet stackable SS109  mgun 556Nato pierce sharing fx_bul_small ui_smg"}
+	{inventory
+		{weight 1}
+		{block 100}
+		{size 2 1}
+		{fsm "belt"}
+	}
+	{mass 0.012}
+	{entity "556natomb"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.11}
+			{Light 1}
+		}
+		{length 0.0}
+	}
+("cw_powder_charge" kg(0.0017))
+}

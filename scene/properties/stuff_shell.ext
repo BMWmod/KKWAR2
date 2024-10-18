@@ -1,0 +1,110 @@
+;SDL
+(include "stuff.ext")
+{Volume "body"
+	{thickness 4}
+	{able {touch} {bullet 0} {visible 0} {blast}}
+}
+{props "nocover" "steel" "stuff_shell"}
+{lodclass "stuff_small"}
+{collider "ammo"}
+{fogable auto}
+(include "/properties/shadow/round.inc")
+(define "cw_advanced_bullet"	;cw_advanced_bullet bone is necessary for all other shell applications 
+	{skeleton
+		{bone "cw_advanced_bullet"}
+	}
+)
+(define "cw_self_destroy_0_7sec"
+	{skeleton
+		{bone "cw_advanced_bullet"}
+		{bone "cw_self_destroy_0_7sec"}
+	}
+)
+(define "cw_self_destroy_1sec"
+	{skeleton
+		{bone "cw_advanced_bullet"}
+		{bone "cw_self_destroy_1sec"}
+	}
+)
+(define "cw_self_destroy_2sec"
+	{skeleton
+		{bone "cw_advanced_bullet"}
+		{bone "cw_self_destroy_2sec"}
+	}
+)
+(define "cw_self_destroy_2sec"
+	{skeleton
+		{bone "cw_advanced_bullet"}
+		{bone "cw_self_destroy_2sec"}
+	}
+)
+(define "cw_altitude_fuse_5m"	;artillery shells with radioproximity - cw_shell_r_detector
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_5m"}
+	}
+)
+(define "cw_altitude_fuse_7m"	;M27AW - cw_rocket_aw_detector
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_7m"}
+	}
+)
+(define "cw_altitude_fuse_10m"	;proximity air bombs (fg and tb) - cw_shell_cl_detector_lowalt
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_10m"}
+	}
+)
+(define "cw_altitude_fuse_15m"	;common artillery cluster shells - cw_shell_cl_detector
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_15m"}
+	}
+)
+(define "cw_altitude_fuse_20m"	;SMART artillery shell - cw_shell_spbe_detector
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_20m"}
+	}
+)
+(define "cw_altitude_fuse_25m"	;cluster rockets - cw_rocket_cl_detector
+	{skeleton
+		{bone "cw_altitude_fuse"}
+		{bone "cw_altitude_fuse_25m"}
+	}
+)
+(define "cw_proximity_fuse"
+	{skeleton
+		{bone "cw_proximity_fuse"
+			{Orientation
+				0	0	-1
+				0	1	0
+				1	0	0
+			}
+		}
+	}
+	{Volume "rangefinder"
+		{Box (* 20 %radius) (* 20 %length)}
+		{Bone "cw_altitude_fuse"}
+		{Position 0	0	(* 10 %length)}
+		{able clear}
+		{thickness 4}
+		{density 0}
+	}
+)
+(define "cwbs_152mm_shell_sound"	;shells produce fall sounds after 1.5s - use for medium-speed shells
+	{skeleton
+		{bone "cwbs_152mm_shell_sound"}
+	}
+)
+(define "cwbs_122mm_shell_sound"	;shells produce fall sounds after 0.5s - use for medium-speed shells
+	{skeleton
+		{bone "cwbs_122mm_shell_sound"}
+	}
+)
+(define "cwbs_mortar_sound"	;shells produce fall sounds lower than 35m - use for slow shells
+	{skeleton
+		{bone "cwbs_mortar_sound"}
+	}
+)

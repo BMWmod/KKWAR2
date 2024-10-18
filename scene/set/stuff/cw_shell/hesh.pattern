@@ -1,0 +1,12 @@
+{bullet
+	{tag "ammo shell itemin2hands no_ricochet hesh hesh_type_dmg sharing ui_ap"}
+	{tag "hesh_shell"} ; только для ammo.set
+	;{detonationThickness 2}
+	{inventory
+		{size 5 1}
+		{weight 100}
+		{fsm "stuff"}
+	}
+	;{entity "shell_fg_med"}
+	;{cumulative 120.04}
+}

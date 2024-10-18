@@ -1,0 +1,688 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+(include "car_crew.ext")
+(include "armor_arena.ext")
+(include "tank_bodykit.ext")
+
+{able "emit_passangers_on_enemy"}
+("brain_vehicle")
+
+;========================CtA
+(define "components_car"
+    {component "engine"
+        {RepairTime %repair_engine}
+    }
+    {component "wheelright1"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelright2"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelright3"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelright4"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelleft1"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelleft2"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelleft3"
+        {RepairTime %repair_wheel}
+    }
+    {component "wheelleft4"
+        {RepairTime %repair_wheel}
+    }
+)
+(define "wheel_custom"
+	{volume "%v"
+		{thickness 0.5}
+		{tags "wheel"}
+		{component "%c"}
+		{able {NoWoundDecal}}
+	}
+	{component "%c"
+		{RepairTime 10}
+		{tags "wheel"}
+	}
+)
+(define "maxspeed"	{MaxSpeed       (* %0 %1 0.75)})
+(define "animation_resume")
+(define "chassis_add"
+    {Chassis
+        {Locomotion
+			("maxspeed" args %speed 0.6)
+		}
+        {speed
+			{Fast %speed}
+        }
+	}
+)
+(include "accuracy_by_motion.inc")
+
+(define "Speed"
+	{Slow	15}
+	{Normal	30}
+)
+(define "Fast"   
+	{Fast (* 0.8 %s)}  
+)
+(define "Fast2"   
+	{Fast (* 0.5 %s)}  
+)
+;========================
+(define "accuracy_by_motion" ; 	spreading depending on the speed of "body", "gun" volumes
+	{AccuracyByMotion
+		{MaxLinearSpeed %max_linear}               ;km/h
+		{ByLinearSpeed %accuracy_by_linear}
+		{MaxAngularSpeed %max_angular}             ;deg/s
+		{ByAngularSpeed %accuracy_by_angular}
+		{DisorderTime %disorder_time}              ;s
+		{OrderTime %order_time}                    ;s
+	}
+)
+
+;================================================
+(define "CW_stab_2D_0_2class"
+    {AccuracyByMotion
+        {MaxLinearSpeed 25} {ByLinearSpeed 0.8}
+        {MaxAngularSpeed 20} {ByAngularSpeed 1}
+        {DisorderTime 3} {OrderTime 0} 
+    }
+)
+(define "CW_stab_2D_0_5class"
+    {AccuracyByMotion
+        {MaxLinearSpeed 20} {ByLinearSpeed 0.6}
+        {MaxAngularSpeed 15} {ByAngularSpeed 0.9}
+        {DisorderTime 3} {OrderTime 0} 
+    }
+)
+(define "CW_stab_2D_1_0class"
+    {AccuracyByMotion
+        {MaxLinearSpeed 15} {ByLinearSpeed 0.4}
+        {MaxAngularSpeed 10} {ByAngularSpeed 0.8}
+        {DisorderTime 3} {OrderTime 0} 
+    }
+)
+(define "CW_stab_no_stabiliser"
+    {AccuracyByMotion
+        {MaxLinearSpeed 10} {ByLinearSpeed 0.2}
+        {MaxAngularSpeed 10} {ByAngularSpeed 0.4}
+        {DisorderTime 3} {OrderTime 0} 
+    }
+)
+(define "CW_stab_no_stabiliser_grad"
+    {AccuracyByMotion
+        {MaxLinearSpeed 15} {ByLinearSpeed 0.04}
+        {MaxAngularSpeed 15} {ByAngularSpeed 0.08}
+        {DisorderTime 3} {OrderTime 0} 
+    }
+)
+(define "CW_stab_abm" 
+    {AccuracyByMotion  {ByLinearSpeed %abm} {ByAngularSpeed (- 1 (*(- 1 %abm) 0.5))}}
+)
+(define "CW_stab_no_suo"
+    {AccuracyByMotion  {MaxLinearSpeed 15} {MaxAngularSpeed 12} {DisorderTime 3} {OrderTime 0}}
+)
+(define "CW_stab_ld_suo"
+    {AccuracyByMotion  {MaxLinearSpeed 25} {MaxAngularSpeed 15} {DisorderTime 4.5} {OrderTime 0}}
+)
+(define "CW_stab_ldwind_suo"
+    {AccuracyByMotion  {MaxLinearSpeed 30} {MaxAngularSpeed 20} {DisorderTime 6} {OrderTime 0}}
+)
+(define "CW_stab_autotrack_suo"	
+    {AccuracyByMotion  {MaxLinearSpeed 25} {MaxAngularSpeed 30} {DisorderTime 6} {OrderTime 0}}
+)
+(define "CW_stab_autotrack_wind_suo"	
+    {AccuracyByMotion  {MaxLinearSpeed 30} {MaxAngularSpeed 35} {DisorderTime 6} {OrderTime 0}}
+)
+
+
+{hearingBias 4.5}
+{collider "car"}
+{props "car" "wheeled" "emit_on_sink" "tractor" "standart_netting" "cw_tractored" "aas_vehicle"}
+{targetClass "car"}
+{targetSelector "tank_bullet"}
+
+(mod "mp"
+	{able "ally_crew"}
+)
+
+{placer
+	{place "driver"
+		{visor "main"}
+		{UseVision 0}
+	}
+}
+{extender "bodykit"
+	{"camouflage"
+		{delay 5}
+		{drop_on_move}
+		{"leafbush_01b_scale06" "visor"} ;entity bone
+		{"leafbush_01b_scale06" "visor1"} ;entity bone
+		{"leafbush_01b_scale06" "visor2"} ;entity bone
+		{"leafbush_01b_scale06" "visor3"} ;entity bone		
+		{"leafbush_01b_scale05" "seat01"} ;entity bone
+		{"leafbush_01b_scale04" "seat02"} ;entity bone
+		{"leafbush_01b_scale05" "seat03"} ;entity bone
+		{"leafbush_01b_scale04" "seat04"} ;entity bone	
+		{"leafbush_01b_scale06" "mgun"} ;entity bone
+		{"leafbush_01b_scale05" "cover1"} ;entity bone
+		{"leafbush_01b_scale05" "cover2"} ;entity bone
+		{"leafbush_01b_scale05" "cover3"} ;entity bone
+		{"leafbush_01b_scale05" "cover4"} ;entity bone
+		{"leafbush_01b_scale04" "fxsmoke1"} ;entity bone
+		{"leafbush_01b_scale05" "fxsmoke2"} ;entity bone
+		{"leafbush_01b_scale04" "enumerator"} ;entity bone
+		{"leafbush_01b_scale04" "enumerator1"} ;entity bone	
+		{"leafbush_01b_scale06" "emit0"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell1"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr1"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell2"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr2"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell3"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr3"} ;entity bone			
+		{"leafbush_01b_scale04" "wheell4"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelr4"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft1"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright1"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft2"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright2"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft3"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright3"} ;entity bone			
+		{"leafbush_01b_scale04" "wheelleft4"} ;entity bone			
+		{"leafbush_01b_scale04_reverse" "wheelright4"} ;entity bone			
+	}       	
+}
+{extender "inventory"
+	{box
+		{Size 6 8}
+		{weight 10000}
+		{item "buksir_tros" 1}
+	}
+}
+(mod "mp"
+{extender "inventory"
+	{box
+		{Size 6 8}
+		{weight 10000}
+              	  {item "repair_kit"}
+              	  {item "can"}
+				  {item "netting_kit" 1}
+	}
+}
+)
+
+{volume "cabin" {thickness hollow 2} {component "cabin"} }
+{volume "cabin1" {thickness hollow 2} {component "cabin"} }
+{volume "cabin2" {thickness hollow 2} {component "cabin"} }
+{volume "body" {thickness 3} {component "body"}}
+{volume "body1" {thickness 3} {component "body"}}
+{volume "body2" {thickness 3} {component "body"}}
+{volume "body3" {thickness 3} {component "body"}}
+{volume "body4" {thickness 3} {component "body"}}
+{volume "body5" {thickness 3} {component "body"}}
+{volume "body6" {thickness 3} {component "body"}}
+{volume "body7" {thickness 3} {component "body"}}
+{volume "body8" {thickness 3} {component "body"}}
+{volume "body9" {thickness 3} {component "body"}}
+{volume "body10" {thickness 3} {component "body"}}
+{volume "body11" {thickness 3} {component "body"}}
+{volume "body12" {thickness 3} {component "body"}}
+{volume "body13" {thickness 3} {component "body"}}
+{volume "body14" {thickness 3} {component "body"}}
+{volume "body15" {thickness 3} {component "body"}}
+{volume "body16" {thickness 3} {component "body"}}
+{volume "body17" {thickness 3} {component "body"}}
+{volume "body18" {thickness 3} {component "body"}}
+{volume "body19" {thickness 3} {component "body"}}
+{volume "bodyback" {thickness 2} {whole_wound} {component "bodyback"}}
+{volume "bodyback1" {thickness 2} {whole_wound} {component "bodyback"}}
+{volume "bodyback2" {thickness 2} {whole_wound} {component "bodyback"}}
+{volume "glass"
+	{thickness 0.1}
+}
+{volume "engine" {thickness 7} {component "engine"} {tags "component_internal"}}
+{volume "engine1" {thickness 7} {component "engine"} {tags "component_internal"}}
+{volume "engine2" {thickness 7} {component "engine"} {tags "component_internal"}}
+{volume "engine3" {thickness 7} {component "engine"} {tags "component_internal"}}
+{volume "mrap" {thickness 7} {able clear {blast}} {component "body"}}
+{volume "mrap1" {thickness 7} {able clear {blast}} {component "body"}}
+{volume "mrap2" {thickness 7} {able clear {blast}} {component "body"}}
+
+;{volume "mgun" {component "mgun"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun1" {component "mgun1"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun2" {component "mgun2"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun3" {component "mgun3"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun4" {component "mgun4"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun5" {component "mgun5"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun6" {component "mgun6"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun20" {component "mgun20"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+;{volume "mgun21" {component "mgun21"}{able clear {bullet 1}{BLAST 1} {NoWoundDecal}}}
+
+
+
+
+
+
+
+
+
+
+{volume "inventory" {able clear}{thickness 2}}
+;{volume "fuel" {able clear}{thickness 2}}
+{volume "fuel" {tags "fuel_tank_internal_a"}{component "fuel_tank_internal_a"}{thickness 2}}
+	
+{component "body" {RepairTime 25} }
+{component "bodyback" {RepairTime 25} }
+{component "cabin" {RepairTime 15} }
+{component "engine" {RepairTime 15} }
+{component "fuel"}
+{component "turret" {RepairTime 30} }
+
+
+;    {component "mgun" {RepairTime 15} }
+;    {component "mgun1" {RepairTime 15} }
+;    {component "mgun2" {RepairTime 15} }
+;    {component "mgun3" {RepairTime 15} }
+;    {component "mgun4" {RepairTime 15} }
+;    {component "mgun5" {RepairTime 15} }
+;    {component "mgun6" {RepairTime 15} }
+	
+;    {component "gun" {RepairTime 30} }
+;    {component "gun1" {RepairTime 30} }
+;    {component "gun2" {RepairTime 30} }
+;    {component "gun3" {RepairTime 30} }
+
+;====================================================
+;New volumes
+
+(include "aas_tank_apc_common.inc")
+
+(define "aas_armor_components_car"
+		("aas_armor_component" volumes(mgun) thickness(15))
+		("aas_armor_component" volumes(turret_ring) thickness(5))
+		("aas_armor_component" volumes(front_wheels) thickness(5))
+		("aas_armor_component" volumes(driver_panel) thickness(3))
+		("aas_armor_component" volumes(transmission) thickness(8))
+		("aas_armor_component" volumes(autoloader) thickness(8))
+		("aas_armor_component" volumes(turret_move_engine) thickness(5))
+		("aas_armor_component_custom" volumes(stabilizer) thickness(%stab) dur_b(8) dur_p(8) thr_b(8) thr_p(8))
+		("aas_armor_component" volumes(gunner_panel) thickness(3))
+		("aas_armor_component" volumes(apu) thickness(5))
+		("aas_armor_component" volumes(ammo_storage_main) thickness(15))
+		("aas_armor_component" volumes(ammo_storage_autocannon) thickness(15))
+		("aas_armor_component" volumes(ammo_storage_mgun) thickness(15))
+		("aas_armor_component" volumes(driver_triplex) thickness(3))
+		("aas_armor_component" volumes(commander_triplex) thickness(3))
+		("aas_armor_component" volumes(additional_triplex) thickness(3))
+		("aas_armor_component" volumes(shtora_visor) thickness(3))
+		("aas_armor_component" volumes(panel_engine_connectors) thickness(3))
+		("aas_armor_component" volumes(ppu) thickness(3))
+		("aas_armor_component" volumes(fuel_tank_internal) thickness(21))
+		("aas_armor_component" volumes(fuel_tank_external) thickness(21))
+)
+
+
+;{volume "mgun" {component "mgun"}{able clear {bullet
+
+{Chassis "wheel"
+	("chassis_defaults")
+	{speed
+		{Slow	10	}
+		{Normal	20	}
+		{Fast	25	}
+	}
+}
+
+(define "locomotion"
+	{MaxSpeed	25	}		
+	{StartTime	15	}		
+	{maxSpeedAtMaxTurn 15}
+	{BrakeTime	2	}		
+	{StopTime	4	}		
+	{TurnRadius	8	}		
+	{Gears		0.1 0.5 0.8 1.0} 
+	{RearGears	0.35}	
+	{SteerOn	20}			
+	{SteerOff	40}         
+	{SplineRadius 1}		
+)
+
+
+(define "armor_car"
+	("components_tank" repair(1.0))
+	{armor
+		("aas_armor_components" stab(10))
+		{setting "body"
+			{threshold
+				{blast 					
+					{value 4}
+				}								
+				{pierce 
+					{value 3}
+				}
+			}						
+			{durability 
+				{blast 					
+					{value 7}
+				}			
+				{pierce
+					{value %pb}
+				}
+			}				
+			{volumes "body*"}
+			{fragment_pass_threshold 1}
+		}
+		{setting "body_back"
+			{threshold
+				{blast 					
+					{value 5}
+				}								
+				{pierce 
+					{value 1}
+				}
+			}						
+			{durability 
+				{blast 					
+					{value 10}
+				}			
+				{pierce
+					{value 50}
+				}
+			}				
+			{volumes "bodyback*"}
+		}
+		{setting "engine"
+			{threshold								
+				{blast 					
+					{value 5}
+				}								
+				{pierce 
+					{value 3}
+				}
+			}						
+			{durability 		
+				{blast 					
+					{value 10}
+				}							
+				{pierce
+					{value %pe}				
+				}
+			}		
+			{whole_wound}		
+			{volumes "engine*"}
+		}
+		{setting "wheel"
+			{thickness 5}
+			{threshold
+				{blast 
+					{value 10}
+				}				
+				{pierce 
+					{value 1}
+				}
+			}			
+			{durability 
+				{blast 
+					{value 10}
+				}				
+				{pierce 
+					{value 10}
+				}
+			}			
+			{whole_wound}
+			{volumes "wheel*"}
+		}
+		{setting "cabin"
+			{thickness 5}
+			{threshold
+				{blast 
+					{value 1}
+				}
+			}
+			{durability 
+				{blast 					
+					{value 10}
+				}			
+				{pierce					
+					{value 15}
+				}			
+			}
+			{volumes "cabin*"}
+		}
+			{setting "shields"
+				{thickness 5}
+				{threshold
+					{blast 					
+						{value 8}
+					}								
+					{pierce 
+						{value 7}
+					}
+				}
+				{durability 
+					{blast 					
+						{value 17}
+					}			
+					{pierce
+						{value 22}
+					}
+				}				
+				{volumes "shield1*" "shiel2*" "shield3*"}
+			}
+		}
+		{sensor
+			{visor "view-around"
+                {vision "moto_around"}
+				{bone "basis"}
+			}		
+			{visor "main"
+				{vision "vehicle_main"}
+			}		
+		}
+)
+
+(define "armor_light"
+	("armor_car" b(10) k(%0) bb(0.5) pb(50) pe(100))
+)
+(define "armor_medium"
+	("armor_car" b(15) k(%0) bb(0.5) pb(100) pe(150))
+)
+(define "armor_heavy"
+	("armor_car" b(15) k(%0) bb(0.5) pb(150) pe(200))
+)
+(define "armor_fuel"
+	("armor_car" b(10) k(%0) bb(6) pb(50) pe(100))
+)
+(define "MaxSpeed"   
+	{MaxSpeed (* 1.0 %s)}  
+)
+
+(define "MaxSpeed2"   
+	{MaxSpeed (* 0.5 %s)}  
+)
+
+(define "maxSpeedAtMaxTurn"   
+	{maxSpeedAtMaxTurn (* 0.5 %s)}  
+)
+(define "glass_volume"
+	{volume %0
+		{thickness 0.1}
+		{tags "glass"}
+	}
+)
+(define "window_volume"
+	{volume %0
+		{thickness 1}
+		{able {visible 0} {window}}
+	}
+)
+(define "armor_car_M"
+	("components_tank" repair(1.0))
+	{armor
+		("aas_armor_components" stab(10))
+		{setting "body"
+			{thickness %body}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }			
+			{volumes "body*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "cabin"
+			{thickness %cabin}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }
+			{volumes "cabin*" "door*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "turret"
+			{thickness %body}
+			{durability
+                {blast {koef %dur} {value %dur_value} } {pierce {value (* 2 %dur_value)} }
+            }
+            {threshold
+                {blast {koef %thr} }{pierce {koef 1}}
+            }			
+			{volumes "turret*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "mrap"
+			{thickness %mrap}
+			{durability
+                {blast {koef 1} {value %mrap_val} } {pierce {value %mrap_val} }
+            }
+            {threshold
+                {blast {koef 1} }{pierce {koef 1}}
+            }			
+			{volumes "mrap*"}
+			{fragment_pass_threshold 1}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "engine"
+			{thickness %engine}
+			{durability
+                {blast {koef 1} {value (* 1.0 %engine)} } {pierce {value (* 1.0 %engine)} }
+            }
+            {threshold
+                {blast  {value (* 0.75 %engine)} } {pierce {value (* 0.75 %engine)} }
+            }	
+			{volumes "engine*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "body_back"
+			{thickness %body_back}
+			{durability
+                {blast {value 10} } {pierce {value 10} }
+            }
+            {threshold
+                {blast {value 3} }{pierce {value 3} }
+            }
+			{volumes "bodyback*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+
+		{setting "wheel"
+			{thickness %wheel}
+			{durability
+                {blast {value %wheel_val} } {pierce {value %wheel_val} }
+            }
+            {threshold
+                {blast {value %wheel_val}} {pierce {value 2} }
+            }
+			{whole_wound}
+			{volumes "wheel*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+
+		{setting "shields"
+			{thickness 6}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}}				
+			{volumes "shield1*" "shield2*" "shield3*"}
+			{fragment_pass_threshold 1}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+	(mod "mp"
+		{sensor
+			{visor "view-around"
+                {vision "moto_around"}
+				{bone "basis"}
+			}		
+			{visor "main"
+				{vision "vehicle_main"}
+			}		
+		}
+	)
+)
+(define "armor_car_civilian"
+    ("armor_car_M" body(0.75) cabin(0.75) dur_value(5) dur(0.5) thr(0.25) engine(2) body_back(1) wheel(2) wheel_val(1) mrap(1) mrap_val(1))
+)
+(define "armor_car_truck"
+    ("armor_car_M" body(0.75) cabin(0.75) dur_value(10) dur(0.5) thr(0.25) engine(4) body_back(1) wheel(2) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_BR1"
+    ("armor_car_M" body(2.5) cabin(2.5) dur_value(17) dur(1) thr(1) engine(12) body_back(1) wheel(2) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_BR2"
+    ("armor_car_M" body(3.5) cabin(3.5) dur_value(19) dur(1) thr(1) engine(12) body_back(1) wheel(2) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_BR3"
+    ("armor_car_M" body(4) cabin(4) dur_value(21) dur(1) thr(1) engine(12) body_back(1) wheel(2) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_STANAG1"
+    ("armor_car_M" body(5) cabin(5) dur_value(24) dur(1) thr(1) engine(12) body_back(1) wheel(3) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_BR4"
+    ("armor_car_M" body(7) cabin(7) dur_value(27) dur(1) thr(1) engine(12) body_back(1) wheel(3) wheel_val(2) mrap(1) mrap_val(1))
+)
+(define "armor_car_STANAG2a"	
+    ("armor_car_M" body(9) cabin(9) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(5) mrap_val(5))
+)
+(define "armor_car_STANAG2b"
+    ("armor_car_M" body(9) cabin(9) dur_value(30) dur(1) thr(2.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(8) mrap_val(8))
+)
+(define "armor_car_STANAG2_custom"
+    ("armor_car_M" body(9) cabin(9) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(%mrap) mrap_val(%mrap_val))
+)
+(define "armor_car_BR5"
+    ("armor_car_M" body(12) cabin(12) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(15) mrap_val(80))
+)
+(define "armor_car_BR5_custom"
+    ("armor_car_M" body(12) cabin(12) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(%mrap) mrap_val(%mrap_val))
+)
+(define "armor_car_STANAG3a"	
+    ("armor_car_M" body(12) cabin(12) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(15) mrap_val(80))
+)
+(define "armor_car_STANAG3b"
+    ("armor_car_M" body(12) cabin(12) dur_value(30) dur(1) thr(2.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(18) mrap_val(90))
+)
+(define "armor_car_STANAG3_custom"
+    ("armor_car_M" body(12) cabin(12) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(%mrap) mrap_val(%mrap_val))
+)
+(define "armor_car_BR6"
+    ("armor_car_M" body(22) cabin(22) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(20) mrap_val(100))
+)
+(define "armor_car_STANAG4"
+    ("armor_car_M" body(35) cabin(35) dur_value(30) dur(1) thr(1.5) engine(12) body_back(1) wheel(5) wheel_val(2) mrap(20) mrap_val(100))
+)

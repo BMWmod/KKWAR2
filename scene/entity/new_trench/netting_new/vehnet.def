@@ -1,0 +1,71 @@
+{actor
+	{collider "construction"}
+	{obstacleID "construction"}
+	{mass 300}
+	(include "/properties/construction_generic.inc")
+	{targetClass 	"none"}
+	{boarder}
+{placer {crew}}
+	{able "-select"}
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	("armor_light" args 0.7)
+	{props "fence" "wood" "construction" "animated_crush" "vision_lev01"}
+	{Extension "vehnet.mdl"}
+	{Volume "body1"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body2"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body3"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body4"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body5"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body6"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body7"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "body"
+		{thickness 0.2}
+		{tags "body"}
+		{able {visible 0} {touch}}
+	}
+	{Volume "netting"
+		{thickness 0.2}
+		{tags "body" }
+		{able clear {visible 1} {bullet 0}}
+	}
+	{Volume "select"
+		{thickness 0.2}
+		{able clear}
+	}
+	{lodclass "decor_medium"}
+}

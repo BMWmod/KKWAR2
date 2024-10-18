@@ -1,0 +1,12 @@
+{actor
+(include "/properties/stuff_mine.ext")
+	{Extension "flashmine_jumper.mdl"}
+	(include "/properties/shadow/round.inc")
+	{props "flashmine_jumper" "-mine"}
+	{Volume "body"
+		{density 0}
+	}
+	{extender "stuff"
+		{item "flashmine_jumper"}
+	}
+}

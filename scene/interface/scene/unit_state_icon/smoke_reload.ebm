@@ -1,0 +1,22 @@
+{bitmap
+	{Animation  Play Loop}
+	{blend alpha}
+	{Frame  "smoke_reload/smoke_reload-01.png" 50}
+	{Frame  "smoke_reload/smoke_reload-02.png" 50}
+	{Frame  "smoke_reload/smoke_reload-03.png" 50}
+	{Frame  "smoke_reload/smoke_reload-04.png" 50}
+	{Frame  "smoke_reload/smoke_reload-05.png" 50}
+	{Frame  "smoke_reload/smoke_reload-06.png" 50}
+	{Frame  "smoke_reload/smoke_reload-07.png" 50}
+	{Frame  "smoke_reload/smoke_reload-08.png" 50}
+	{Frame  "smoke_reload/smoke_reload-09.png" 50}
+	{Frame  "smoke_reload/smoke_reload-10.png" 50}
+	{Frame  "smoke_reload/smoke_reload-09.png" 50}
+	{Frame  "smoke_reload/smoke_reload-08.png" 50}
+	{Frame  "smoke_reload/smoke_reload-07.png" 50}
+	{Frame  "smoke_reload/smoke_reload-06.png" 50}
+	{Frame  "smoke_reload/smoke_reload-05.png" 50}
+	{Frame  "smoke_reload/smoke_reload-04.png" 50}
+	{Frame  "smoke_reload/smoke_reload-03.png" 50}
+	{Frame  "smoke_reload/smoke_reload-02.png" 50}
+}

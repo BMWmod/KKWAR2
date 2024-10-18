@@ -1,0 +1,140 @@
+;Created by Pheonix
+{actor
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.1))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{props "light_M" "turret_rotator" "vision_lev03" "bredly" "autotrack_suo" "cw_panorama" "4_barrels_smoke" "spall_liner"}
+	{extender "enumerator"}
+        {extension "crew.ext"}
+	{targetClass "light_tank"}	
+    {Volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+    {Volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{Volume "gun2"
+		{component "gun2"}
+		{thickness 10}
+	}
+
+;корпус лоб 6.5сталь+6.5сталь+25алюминий=30мм
+;корпус борт низ - 6.5сталь+6.5сталь+25алюминий=30, верх - 25алюминий=17мм среднее - 23мм
+;корпус корма 6.5сталь+6.5сталь+25алюминий=30мм
+;корпус крыша - не указана, взял  25алюминий=17мм
+;Башню не нашел, взял 25мм алюм. по кругу+6.5мм стали лоб. Углы наклона у башни и корпуса вроде похожие, и защищенность, значит, тоже будет близкой к корпусу.	
+;На лоб и борт корпуса (сверху) и башни добавлены 30мм листы стали.
+
+("armor_IFV_multivolume_med" turret(47 40 10 10) body1(61 59 40 18) body2(61 59 40 8))
+
+
+	{volume "turret_ring_armor" {thickness 80}}
+
+	{armor
+		{setting "turret_ring_armor"
+			{thickness 80}		
+			{durability {blast {value 50}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "turret_ring_armor*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+
+	
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+{component "shieldl1" {tags "shield"}} 
+ {component "shieldr1" {tags "shield"}} 
+ {component "shieldr2" {tags "shield"}} 
+ {component "shieldl3" {tags "shield"}} 
+ {component "shieldr3" {tags "shield"}} 
+ {component "shieldl4" {tags "shield"}} 
+ {component "shieldr4" {tags "shield"}} 
+ {component "shieldl5" {tags "shield"}} 
+ {component "shieldr5" {tags "shield"}} 
+ {component "shieldl6" {tags "shield"}} 
+ {component "shieldr6" {tags "shield"}} 
+ {component "shieldl7" {tags "shield"}} 
+ {component "shieldr7" {tags "shield"}} 
+ {component "shieldl8" {tags "shield"}} 
+ {component "shieldr8" {tags "shield"}} 
+ {component "shieldr9" {tags "shield"}}
+
+
+	{extender "inventory"
+		{box
+			{item "ammo tow2e" 3}
+			{item "ammo tow2b" 2}		
+			{item "ammo bullet25_USA ap" 195}
+			{item "ammo bullet25_USA fg" 675}
+			{item "ammo 762Nato" 2100}
+			;{item "ammo smoke_shtora" 8}	
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "25mm_M242" filling "ammo bullet25_USA ap" 30}
+			{foresight "foresight1"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.66))
+			("CW_stab_autotrack_suo")    ;IBAS имеет АСЦ
+		}
+		{place "gun2"
+			{weapon "weapon TOWx2" filling "ammo tow2e" 2}
+			{foresight "foresight6"}
+			{barrels 2}
+			{basic}
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{foresight "foresight2"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{weapon "m240_optic" filled}
+			{basic}
+			("CW_stab_abm" abm(0.75))
+			("CW_stab_autotrack_suo")    ;IBAS имеет АСЦ
+		}
+	}	
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_3g"}	;Как ни странно, на Бредли прицел лучше, чем на М1 вплоть до поздних М1А1.
+		}
+		{visor "add"
+			{bone "Visor3"}
+			{vision "tank_gunner_optic_IR_3g"}
+		}
+	}
+
+	{mass 30000}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.2) len(0.15))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(30)
+			Width(3.3)
+			Power(600)
+			Realspeed(56)
+			Gamespeed(37) 
+		)
+		{RearGears		0.2 0.46}}
+		("CW_fuelbag" Range(400) Fuelvolume(662))
+		("CW_speed_lev" Gamespeed(37))
+	}
+	{props "cwfs_fuel_400" "cwfs_extfuel_600"}
+
+	("two_headlights")
+	{Extension "m2a3.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(60))
+}
+;http://afvdb.50megs.com/usa/m2bradley.html
+

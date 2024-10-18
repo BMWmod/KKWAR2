@@ -1,0 +1,17 @@
+{bullet
+	{tag "small ptr pierce hcb_ammo sharing fx_10_15 fx_ap ui_hmgun"}
+	{inventory
+		{size 2 1 }
+		{weight 20}
+		{block 5}
+	}
+	{mass 0.1}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.1}
+		}
+		{length 2}
+	}
+	{entity "ptr_ammo"}
+("cw_powder_charge" kg(0.017))
+}

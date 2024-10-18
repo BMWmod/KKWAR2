@@ -1,0 +1,34 @@
+{from "pattern rpg_ammo"
+	{tag "big" "size2" "122to128fg" "fg" "fragmentary" "antiinf" "fx_90_110" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	{mass 5.9}	;вес с контейнером
+	{entity "smaw_rocket_fg"}
+	{view "SMAW_rocket_fg"
+		{tail "bazooka_tail" "tail"}
+	}
+        {inventory
+		{weight 100}
+		{size 3 1}
+	}
+	{possibleDamageRadius 10}
+	;1,1 кг ВВ Aluminized Comp A-3. 1.1х0.8=0.88кг к термобарическому расчету.
+;	{tag "he_07to2"}
+;	{damage add blastwave	 ; HE antipersonnel
+;		{energy 1.2}
+;		{area 7.5 8.6}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-APC
+;		{energy 2.5}
+;		{area 0.3 0.3}
+;	}
+;БЧ 3,4 кг, ВВ 1,1 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.2) apc(0.4) end(2.4))
+("cw_contusion" t10(3.8) t6(5.3) t3(7.1) t0(9.3))
+}
+;https://ru.scribd.com/doc/150603747/Mk-153-SMAW-83mm-Launcher-Manual#download&from_embed
+;1 волна удалена т.к. термобар.Применяется коэффицент 0.8 к твердым термобар.смесям.
+;https://ru.scribd.com/doc/131225039/%D0%9F%D0%B8%D1%80%D0%BE%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0-%D0%92%D0%92-2012
+;Пиросправка 2012. стр - 197.
+;
+;
+; 

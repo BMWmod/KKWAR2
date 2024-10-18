@@ -1,0 +1,34 @@
+{from "pattern rpg_ammo"
+	{tag  "big" "size4" "88to105" "fg" "fragmentary" "antiinf" "fx_90_110" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	
+	{entity "shmel_fl_ammo"}
+	{view "shmel_fl_ammo"
+		{tail "bazooka_tail" "tail"}
+	}
+        {inventory
+		{weight 100}
+		{size 5 1}
+	}
+	{possibleDamageRadius 15}
+	{damage fire
+		{radius 10}
+		{heating 3}
+		{time 7}
+	}
+	;Примерно 2,1 кг, но т. к зажигательный - делим на 2
+;	{damage add blastwave	 ; HE antipersonnel
+;		{energy 1.2}
+;		{area 4 4}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-APC
+;		{energy 2.5}
+;		{area 0.6 0.6}
+;	}
+;БЧ 3,4 кг, ВВ 2,1 кг, ТЭ 0,5, нач. скорость 0 м/с, тип оболочки - Снаряды 45-100мм, тип БЧ - Термобар(FUEL)
+;БЧ 3,4 кг, ВВ 2,1 кг, ТЭ 0,5, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.2) apc(0.4) end(1.4))
+("cw_contusion" t10(3.4) t6(4.8) t3(6.5) t0(8.4))
+("cw_blast_mass_add" add(10))
+}
+ 

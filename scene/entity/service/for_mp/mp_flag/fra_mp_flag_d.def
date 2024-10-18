@@ -1,0 +1,7 @@
+{actor
+	(include "mp_flag.inc")
+	 {texmod "fra"}
+	;(include "/set/resupply_generic.inc")
+	;("land_troops_flag_nato")	
+	{props "flag_delete"}
+}

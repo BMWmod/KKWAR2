@@ -1,0 +1,245 @@
+;Expotr,DEF by Pheonix
+;Pheonix game 2010 (c)
+;ASS edition by Pheonix
+
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev06" "t72_cw" "with_open_zpu" "has_autoloader" "6_barrels_smoke" "spall_liner"}
+	{targetSelector "tank"}
+
+	{extender "enumerator"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+    ("armor_heavy" turret(532 280 50 80) body(204 80 100 40))    ; ВЛД 87г - 505БПС/569КС.
+	("comp_armor_increment" turret(34) body(25))
+	
+	("armor_mantlet" t(15))
+	;("armor_engine"  t(50))
+
+	{volume "armor_turret_ring" {thickness 80}}
+	{armor
+		{setting "armor_turret_ring"
+			{thickness 80 1 1 1}		
+			{durability {blast {value 50}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "armor_turret_ring*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+	("shield_t-64a_1981")
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl6" {tags "shield"}}
+	{component "shieldr6" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	{component "shieldr7" {tags "shield"}}
+	{component "shieldl7" {tags "shield"}}
+	{component "shieldr8" {tags "shield"}}
+	{component "shieldl8" {tags "shield"}}
+	{component "shieldr9" {tags "shield"}}
+	{component "shieldl9" {tags "shield"}}
+	{component "shieldr10" {tags "shield"}}
+	{component "shieldl10" {tags "shield"}}
+
+	("d_a_Kontakt1")  
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_Is-2"} {end "t72_zpy"}}
+			{reverse 	{end	"emit_tank_1_hold"}}
+		}
+		{anm "left"
+			{forward	{begin	"board_Is-2"}{end "seat_gunner_stand"}{base "open1"}}
+			{reverse 	{end	"emit_tank_1_hold"} {base "open1" -1}}
+		}
+	}
+(define "crew_human"	;посадка экипажа
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+(define "crew_mgun"			;посадка стрелков
+	{placer
+		{place "%place"
+			{group "%group"}
+			{linkbone "%bone"}
+			{visor "%visor"}
+			{openForCrush}
+		}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	("crew_human" place(driver)		    group(crew) door(emit0) animation(driver) visor(driver))
+	("crew_mgun" place(commander)		group(crew) door(emit2) bone(gunner2) animation(right) visor(commander))
+	("crew_human" place(gunner)	 	group(crew) door(emit1) animation(left) visor(main) visor(gunner))
+;=================================================	
+	{sensor
+		{visor "driver"
+			{vision "moto"}
+			{bone "Visor2"}		;триплекс
+		}
+		{visor "main"	;прицел наводчика 1к13
+			{vision "tank_gunner_optic_3g"}
+			{bone "Visor1"}
+		}
+		{visor "gunner"	;прицел-дублер наводчика ТПД-К1
+			{vision "tank_gunner_optic_3g"}
+			{bone "Visor3"}
+		}
+		{visor "commander"	;прицел командира
+			{vision "tank_gunner_optic_2g"}	;триплекс ТКН-3МК 
+			{bone "Visor4"}
+		}
+	}
+;=================================================	
+
+	{extender "inventory"
+		{box
+			{item "ammo bullet125_rus_m apcr" 12}
+			{item "ammo bullet125_rus_a cm" 6}
+			{item "ammo bullet125_RUS fg" 20}
+			{item "ammo bullet125_RUS rok" 6}
+			{item "ammo osv_fg" 150}
+			{item "ammo PKM_ammo" 1750}
+			;{item "ammo smoke_shtora" 12}	
+		}
+	}
+        ; штатное БК - 50% ОФС, 35% БПС, 15% КС/ТУР - 6 ТУР в любом случае.
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "125mm_2A46M" filling "ammo bullet125_rus_m apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}
+			("CW_stab_abm" abm(0.42))
+			("CW_stab_ld_suo")
+		}
+		{place "mgun"				;НСВТ
+			{weapon "hcb" filled}
+			{foresight "foresight3"} 
+			{gunner "commander"}
+			{charger "commander"}              
+			("CW_stab_no_stabiliser")
+			{basic}
+		}
+
+		{place "mgun2"				;Спаренный ПКТ
+			{type "mgun_coaxial"}
+			{weapon "PKT" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.78))
+			("CW_stab_ld_suo")
+		}
+		{place "spot"
+			{weapon "spot" filled}
+			{foresight "foresight6"}
+			;{charger "commander"}
+			{gunner "commander"}
+			{SequentialAim 0}
+			;{basic}
+		}
+	}
+
+	{mass 44500}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(1.2))
+		("CW_tracks"
+			Mass(44.5)
+			Width(3.6)
+			Power(840)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(700)
+			Fuelvolume(1800)
+		)
+	}
+	{props "cwfs_fuel_700" "cwfs_extfuel_1500"}
+
+	("two_headlights")
+	{extension "/properties/animation/vehicle/visor90deg/visor90deg_anm.ext"}	;visor fix for 90deg turned turrets
+	{Extension "t72b_single.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(24))
+;СТБ 2Э42-2 24гр/сек 	ТОИЭ Т-72Б
+	{bone "gun_rot"	{speed 0.005} {limits -6 13}}
+	{bone "mgun_rot"	{limits -4 75}}
+}
+;А теперь посмотрим что происходило в серии на конвейере завода в то время пока Т-72Б или "Изделие 184" проектировался. В это время шел массовый серийный выпуск танка Т-72А ("Изделие 172М1")
+;- установлена пушка 2А46М (быстроразъемное соединение ствола пушки с казенником) вместо 2А46 с 1.04.81 г. с машины  Я04ВТ1584
+;- башня 172.10.077СБ сентябрь 1982г попала в производство и  начала устанавливаться ограниченно в 1983г.
+;- вместо ТПД-К1 введён комплекс 1А40 - 1983г.
+;- введен надбой на серийной башне 172.10.073СБ (2 полугодие 1983г с машины Ф05ВТ3908)
+;- установлен левый наружный ящик ЗИП, труба ОПТВ перенесена на кормовой ящик (2 полугодие 1983г с машины Ф05ВТ3908)
+;- новая ходовая часть - 1983г
+;- стабилизатор 2Э42-2 (ограниченно) 1984г
+;- КУВ "Свирь" - установочная партия 1984г
+;- двигатель В-84 - установочная партия 1984г.			
+;За время производства Т-72А бронирование башни усиливалось как минимум 2 раза (в 1980 и в 1983 г). Т-72Б досталась башня последней модификации Т-72А			
+;чертеж 172.10.077СБ. от сентября 1982г а в декабре извещением №1293 она была заменена на башню чертежа 172.10.100СБ, хорошо известную по Т-72Б. Правда в серии 100-я башня появилась только с марта 1985 года и уже на Т-72Б.			
+;"Изделия 184" (усовершенствованный Т-72А) вводились следующие изменения:
+;- башня 172.10.077СБ нач.1982г
+;- новая ходовая часть - 09.07.1982
+;- башня 172.10.100СБ 19.07.1982г для 184 и 02.12.1982г для 184-1
+;- стабилизатор 2Э42-2 - 02.12.1982г
+;- КУВ "Свирь" - 1984г (до этого отрабатывался на об.177)
+;- комплекс управления огнем 1А40-1 -1984г
+;- комплекс НДЗ 10.01.84г
+;- двигатель А-65 март 1984г.
+;- неоднократно менялась структура ВЛД			
+;На момент принятия на вооружение облик Т-72Б в общих чертах выглядел так: 
+;- комплекс управляемого вооружения 9К120 «Свирь»;
+;- двигатель В-84 (А-65);
+;- навесная динамическая защита;
+;- новая ходовая часть (весьма серьезные изменения);
+;- стабилизатор 2Э42-2;
+;- башня 172.10.100СБ;
+;- новая структура ВЛД;
+;- комплекс управления огнем 1А40-1;
+;- пушка 2А46М.			
+;Однако возможности промышленности внесли в процесс серийного пр-ва Т-72Б свои коррективы			
+;Пушка выпускалась не ритмично и иногда приходилось ставить 2А46. Таким образом облик Т-72Б (точнее Б1) с января по март 1985 года таков:
+;- двигатель В-84 (А-65);
+;- новая ходовая часть (весьма серьезные изменения);
+;- стабилизатор 2Э28М;
+;- башня 172.10.077СБ;
+;- новая структура ВЛД;
+;- комплекс управления огнем 1А40
+;- пушка 2А46/46М вперемешку.			
+

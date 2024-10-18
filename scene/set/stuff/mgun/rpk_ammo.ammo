@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet stackable mgun 545 pierce sharing fx_bul_small ui_smg"}
+	{inventory
+		{weight 1.42}
+		{block 70}
+		{size 2 1}
+		{fsm "belt"}
+	}
+	{mass 0.01}
+	{entity "rpk74mag"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.11}
+			{Light 1}
+		}
+		{length 0.0}
+	}
+("cw_powder_charge" kg(0.003))
+}

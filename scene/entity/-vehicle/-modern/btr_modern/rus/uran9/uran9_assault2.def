@@ -1,0 +1,153 @@
+{ArmoredCar 
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "vision_lev04" "uran9" "remote_turret" "remote_mgun" "remote_gun" "cw_panorama" "3_barrels_smoke"}
+	{props "ecm_vulnerable_rus"}
+	{targetClass "light_tank"}
+
+	{autooperatable 1}
+	{placer
+	  {crew 0}
+	  {place "driver" remove}
+	}
+	("armor_IFV" turret(10 5 2 5) body(10 10 10 5))
+	("armor_engine"  t(10))
+
+	{Volume "apploque_turret1" {Thickness 5}}
+	{Volume "apploque_turret2" {Thickness 5}}
+	{Volume "apploque_turret" {Thickness 5}}
+	{Volume "apploque_side1" {Thickness 5}}
+	{Volume "apploque_side2" {Thickness 5}}
+	{armor
+		{setting "apploque_"
+			{thickness 10 5 2 5}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+	}
+
+	{extender "shield"
+		{on}
+	}
+	{component "shieldl1" {tags "shield"}} 
+ 	{component "shieldr1" {tags "shield"}} 
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+
+	("shield_t-64a_1981")
+
+	{extender "inventory"
+		{box
+			{item "ammo pkm_ammo" 800}	;200 заряжено	
+			{item "ammo bullet30_RUS ap" 120}
+			{item "ammo bullet30_RUS fg" 150}
+			;{item "ammo smoke_shtora" 6}	
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_2A72_robot" filling "ammo bullet30_RUS ap" 30}
+			{foresight "foresight1"}
+			{gunner "driver"}
+			{charger "driver"}
+			{basic}
+			("CW_stab_abm" abm(0.35))
+			("CW_stab_autotrack_suo")
+		}
+		{place "mgun"
+			{RestoreIKAfterAim}
+			{weapon "pkt" filled}
+			{type "mgun_coaxial"}
+			{foresight "foresight3"}
+			{gunner "driver"}
+			{charger "driver"}
+			{basic}
+			("CW_stab_abm" abm(0.53))
+			("CW_stab_autotrack_suo")
+		}
+		{place "gun2"
+			{RestoreIKAfterAim}
+			{weapon "ataka_x4_robot weapon" filling "9m120 fg ammo" 4}
+			{foresight "foresight4"}
+			{gunner "driver"}
+			{charger "driver"}
+			{barrels 4}
+			{shooter "none"}
+			{basic}
+		}
+		{place "gun3"
+			{RestoreIKAfterAim}
+			{weapon "ShmelM_x12_robot" filling "ammo ShmelM_ammo fg" 12}
+			{foresight "foresight7"}
+			{gunner "driver"}
+			{charger "driver"}
+			{basic}
+			{barrels 24}
+			{Shooter "shooter_Shmel_"}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun21"			
+			{type "mgun_left"}
+			{weapon "3xshtora" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight21"}
+			{barrels 3}
+			;{basic}
+			
+		}
+		{place "mgun20"			
+			{type "mgun_right"}
+			{weapon "3xshtora" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight20"}
+			{barrels 3}
+			;{basic}
+			
+		}
+	}	
+	{sensor
+		{visor "panorama"
+		    {bone "Visor3"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+		{visor "main"
+		    {bone "Visor1"}
+			{vision "tank_gunner_optic_IR_2g"}
+		}
+		{visor "back"
+			{vision "vehicle_main"}
+		    {bone "Visor4"}
+		}
+	}
+
+	{mass 10000}
+	{Chassis
+        ("tank_trace" fx("tracks_sm") step(0.25) len(0.3))
+		("CW_tracks"
+			Mass(10)
+			Width(2.5)
+			Power(300)
+			Realspeed(60)
+			Gamespeed(39) 
+			Range(1000)
+			Fuelvolume(370)
+		)
+	}
+	{props "cwfs_fuel_300"}
+
+	("two_headlights")
+	{Extension "uran9_assault2.mdl"}
+	("missile_aimpoint_tanksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(30))
+	("CW_bone_speed" bone(pilonl_rot) deg_per_s(10))
+}

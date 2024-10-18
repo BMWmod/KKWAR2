@@ -1,0 +1,47 @@
+;Created by Pheonix 
+{from "pattern gun"     ; "МСТА" 39 калибров
+   	
+	{filling "bullet152_RUS"}
+	{fireSound "gun_cw/dana_shot"}
+	{reloadSound "cw/dana_reload"}
+	{rechargeTime 10}
+	{range 285 285}    ; 18700м - 270им.
+;	{gravity 19}
+;	("speed" s(1200)) 
+	{gravity 1.9}
+	("speed_artillery") 
+	("100-128caliber")
+	{ZeroingAccuracy 0.75 0.5}
+	{calibre 5}
+	("CW_acc_artillery" mils(2.75))	;it is 2A64
+	("cw_angle_curve_variable_charge")
+	{cursor "cannon_on_fg_5"}
+	{cursorreloading "cannon_reload_fg"}
+	;("relaxationtime" rt(3))
+	("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+     {parameters "bullet152_RUS rok"     ;ЗО-23  26км.
+		{cursor "cannon_on_heat_3"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+   {parameters "korr"
+		{range 320 320}
+		{gravity 3.0}
+		{speed 100}
+		{cursor "cannon_on_fg_6"}
+		;{cursor "cannon_on_fg_7"}
+		{cursorreloading "cannon_reload_fg"}
+	}                   
+	{parameters "bullet152_RUS_a"       ;ОФ-25  17.4км - 255 им.
+		{range 275 275}
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet152_RUS_h"       ;Активно реактивный 20.5 км.
+		{range 300 300}
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+}

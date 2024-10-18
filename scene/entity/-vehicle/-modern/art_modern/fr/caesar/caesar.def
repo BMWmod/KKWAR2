@@ -1,0 +1,116 @@
+{Entity
+	(include "/properties/car.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.1))
+	{collider "truck"}
+	{props "vehicle" "turret" "turret_rotator" "wheeled" "6_wheels" "windowed" "vision_lev05" "cw_artillery" "-standart_netting" "long_netting" "skill_override_car"}
+	{extender "enumerator" {digit_folder "black"} {group "2digit"}}
+	;это небронированный грузовик, но с защищенной кабиной. Спасет экипаж, но не артустановку.
+	("armor_car_M" body(0.75) cabin(8) dur_value(10) dur(0.5) thr(0.25) engine(4) body_back(1) wheel(2) wheel_val(2) mrap(5) mrap_val(5))
+
+	{volume "part1"
+		{tags "part"}
+		{thickness 20}
+	}
+	{volume "part2"
+		{tags "part"}
+		{thickness 3}
+	}
+;====================================
+	{extension "crew.ext"}
+;5 сменных солдат - для MOW2
+	{extender "cannon"
+		{animation
+			{move   "" "" "" "" ""}
+			{reload "" "" "cannon_155gpf_charger" "cannon_155gpf_charger" "cannon_155gpf_charger"}
+			{aim    "" "" "" "" ""}
+			{fire   "" "" "cannon_gunlayer_fire-alert" "cannon_gunlayer_fire-alert" "cannon_gunlayer_fire-alert"}
+		}
+		{animation
+			{switch close}
+		}
+		{driver {workers "driver"}}
+		{move {workers "driver" "seat9" "seat6" "seat8"  "seat7"}}
+		{attack {workers "seat5" "gunner" "charger" "charger2" "charger3"}}
+		{rotate_ik_Limit 0}
+	}
+;3 сменных солдата - Штурм
+;	{extender "cannon"
+;		{animation
+;			{move   "" "" ""}
+;			{reload "" "" "cannon_155gpf_charger"}
+;			{aim    "" "" ""}
+;			{fire   "" "" "cannon_gunlayer_fire-alert"}
+;		}
+;		{animation
+;			{switch close}
+;		}
+;		{move {workers "driver" "seat9" "seat6"}}
+;		{attack {workers "seat5" "gunner" "charger"}}
+;		{rotate_ik_Limit 0}
+;	}
+
+;====================================
+	{sensor
+		{visor "driver"
+			{vision "vehicle_main"}
+			{bone "visor2"}
+		}
+	}
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	("wheel" args "wheelright2")
+	("wheel" args "wheelleft2")
+	("wheel" args "wheelright3")
+	("wheel" args "wheelleft3")
+
+
+	{extender "inventory"
+		{box     ;БК 18 снарядов в собственной укладке
+			{Size 8 8}
+			{weight 10000}		
+			;номенклатура широкая, но в укладке всего 18, не разгуляешься.
+			{item "ammo bullet155_GER fg" 9}
+            {item "ammo bullet155_GER_ar fg" 4}    		           	
+			{item "ammo bullet155_USA cl" 3}  
+			{item "ammo bullet155_fr satt" 1}  
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "155mm_L52_caesar" filling "ammo bullet155_GER fg" 1}
+			{gunner "gunner"}
+			{charger "charger"}        	
+			{foresight "foresight1"}
+			("CW_stab_artillery_rt" rechargetime(14))
+		}
+	}
+	
+  {mass 17700}
+  {Chassis
+	("CW_wheels"
+		Mass(17.7)
+		Turnradius(13.1)
+		Power(240)
+		Realspeed(80)
+		Gamespeed(47) 
+		Range(600)
+		Fuelvolume(200)
+	)
+	("car_trace" fx("tracewheel02") step(0.09) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+	("car_trace" fx("tracewheel02") step(0.09) wheell("wlr") wheelr("wrr") bonel("FXtraceL2") boner("FXtraceR2"))
+	{DisableMoveWhileFiring}
+  }
+  {props "cwfs_ext_only" "cwfs_extfuel_200"}
+	("two_headlights")
+	
+	{Extension "caesar.mdl"}
+	("missile_aimpoint_trucksize")
+	("cwts_buksir")
+	{bone "gun_rot"
+		{speed 0.005}
+	}
+	("CW_turr_speed" deg_per_s(15))	;нет данных
+	
+}

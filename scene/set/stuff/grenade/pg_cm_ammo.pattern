@@ -1,0 +1,4 @@
+{from "pg_ammo pattern"
+	{tag "sharing -ui_gra_launch ui_gra_launch_cm"}
+	{tag "-fg_pod cm_pod"} ; только для ammo.set
+}	    

@@ -1,0 +1,29 @@
+[
+	{
+		"_id": "cw_russia3",
+        "category": "story",
+ 		"modId":  "cold war 1_7_6",
+		"currency":"rub",
+		"display_order":3,
+		"enabled":true,
+        "mission_results": "only_first_win",
+		"money": {"freeXp":0,"silver":0},
+		"node": {
+				"s11":{"level":2,"map":["s11-three_tankmen"],"open":true,"open_up":["s11a"],"tree_x":2,"tree_y":1},
+				"s11a":{"level":3,"map":["s11a-base"],"opened_by":["s11"],"open_up":["s12"],"tree_x":1,"tree_y":1.5},
+				"s12":{"level":3,"map":["s12-stiletto"],"opened_by":["s11a"],"open_up":["s12a"],"tree_x":2,"tree_y":2},
+				"s12a":{"level":3,"map":["s12a-base"],"opened_by":["s12"],"open_up":["s13"],"tree_x":1,"tree_y":2.5},
+				"s13":{"level":3,"map":["s13-solnok"],"opened_by":["s12a"],"open_up":["s13a"],"tree_x":2,"tree_y":3},
+				"s13a":{"level":3,"map":["s13a-base"],"opened_by":["s13"],"open_up":["s14"],"tree_x":1,"tree_y":3.5},
+				"s14":{"level":3,"map":["s14-atlantic_wall"],"opened_by":["s13a"],"open_up":["s15"],"tree_x":2,"tree_y":4},
+				"s15":{"level":3,"map":["s15-leviafan"],"opened_by":["s14"],"open_up":["s15a"],"tree_x":2,"tree_y":5},
+				"s15a":{"level":3,"map":["s15a-base"],"opened_by":["s15"],"open_up":["s16"],"tree_x":1,"tree_y":5.5},
+				"s16":{"level":3,"map":["s16-matanzas"],"opened_by":["s15a"],"open_up":["s16a"],"tree_x":2,"tree_y":6},
+				"s16a":{"level":3,"map":["s16a-base"],"opened_by":["s16"],"open_up":["s17"],"tree_x":1,"tree_y":6.5},
+				"s17":{"final":true,"level":2,"map":["s17-kabesas"],"opened_by":["s16a"],"tree_x":2,"tree_y":7}				
+		},
+		"tags":["rus"],
+		"image":"cw_russia3.jpg",
+		"image_preview":"cw_russia3_preview.jpg"
+	}
+]

@@ -1,0 +1,23 @@
+{item
+	{tag "smallitemin1hand dropboxed antitank mine sharing fx_111_145"}
+	{entity "mine_antitank_pktm1r"}
+	{inventory
+		{size 3 3}
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 20}
+;Кумулятивный шаблон, там ударное ядро
+	;2.8 кг ВВ
+;{damage blastwave {energy 1.2} {area 3.7 4.2}}
+;{damage add blastwave {energy 2.5} {area 1.9 2.2}}
+;{damage add blastwave {energy 6.5} {area 0.4 0.5}}
+;БЧ 8 кг, ВВ 2,8 кг, ТЭ 1,6, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Кум(HEAT)
+("cw_blastwave_3" tank() ifv(0.1) apc(1.7) end(4.1))
+("cw_fragwave" e2_5(2.5) r2_5(19.3) e1_2(2.5) r1_2(19.3) chance(4.8))
+("cw_fragwave" e2_5(2.5) r2_5(22.2) e1_2(2.5) r1_2(22.2) chance(3.1))
+("cw_fragwave" e2_5(2.5) r2_5(23.9) e1_2(2.5) r1_2(23.9) chance(3))
+("cw_fragwave" e2_5(2.5) r2_5(27.3) e1_2(2.5) r1_2(27.3) chance(2.6))
+("cw_fragwave" e2_5(2.5) r2_5(32) e1_2(2.5) r1_2(32) chance(2.4))
+("cw_contusion" t10(5.4) t6(7.7) t3(10.5) t0(13.7))
+}

@@ -1,0 +1,101 @@
+;Created by Pheonix
+{ArmoredCar 
+	(include "/properties/armoredcar.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.0))
+	{props "vehicle" "tank" "armored_car_M" "turret" "wheeled" "with_gun" "vision_lev03" "8_wheels" "has_apu" "remote_turret" "remote_gun" "remote_mgun" "sam" "sam_radar" "spall_liner"}
+	{targetClass "armoredcar"}
+	{extension "crew.ext"}
+
+	("armor_btr" turret(6 6 6 6) body(19 19 1 7))
+	
+	{extender "inventory"
+		{box
+			{item "ammo bullet30_USA cm" 500}	;оценка
+			{item "ammo 762Nato" 400} 
+			{item "agm-114 l ammo" 2}
+			{item "ammo fim-92a_ammo" 4}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_M230LF" filling "ammo bullet30_USA cm" 100}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.71))
+			("CW_stab_autotrack_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{foresight "foresight3"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{weapon "m240_optic" filled}
+			{basic}
+			("CW_stab_abm" abm(0.75))
+			("CW_stab_autotrack_suo")
+		}
+		{place "gun2"
+			{weapon "weapon Hellfire_x2" filling "agm-114 l ammo" 2}
+			{foresight "foresight5"}
+			{charger "gunner"}				
+			{gunner "gunner"}
+			{sequentialAim 0}
+			{barrels 2}
+			{shooter "none"}
+			{basic}
+		}
+		{place "gun3"				
+			{RestoreIKAfterAim}
+			{weapon "fim-92a_x4" filling "ammo fim-92a_ammo" 4}				
+			{foresight "foresight"}				
+			{charger "gunner"}				
+			{gunner "gunner"}
+			{sequentialAim 0}
+			{barrels 4}	
+			{shooter "none"}
+			{basic}	
+		}
+
+	}
+	
+	{sensor
+		{visor "main"
+			{vision "radar_around_shorad"}	
+		}
+		{visor "add_visor"
+			{vision "vehicle_main"}	
+			{bone "visor3"}		
+		}
+		{visor "optics"
+			{vision "tank_gunner_optic_IR_3g"}	
+			{bone "visor4"}		
+		}
+	}	
+	{mass 15000}
+	{Chassis
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlr") wheelr("wrr") bonel("FXtraceL4") boner("FXtraceR4"))
+		("CW_wheels"
+			Mass(15)
+			Turnradius(17.7)
+			Power(350)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(500)
+			Fuelvolume(200)
+		)
+
+	}
+	{props "cwfs_ext_only" "cwfs_extfuel_200"}
+	("sam_radar" type(usa))
+
+	("two_headlights")
+	{Extension "shorad.mdl"}
+	("missile_aimpoint_trucksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(57))
+}
+

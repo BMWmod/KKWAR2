@@ -1,0 +1,19 @@
+;Cold War
+{bullet
+  {tag "bullet small stackable pistol pierce sharing fx_bul_med ui_pistol"}
+  {inventory
+    {weight 8.33}
+    {block 12}
+    {size 1 1}
+    {fsm "belt"}
+  }
+  {mass 0.013}
+  {entity "762x41pss"}
+  {trace
+    {view "/texture/fx/trace2"
+      {ScaleY 0.09}
+    }
+    {length 0.0}
+  }
+("cw_powder_charge" kg(0.001))
+}

@@ -1,0 +1,21 @@
+[
+	{
+		"_id": "additional",
+        "category": "story",
+ 		"modId":  "cold war 1_7_6",
+		"currency":"rub",
+		"display_order":4,
+		"enabled":true,
+        "mission_results": "only_first_win",
+		"money": {"freeXp":0,"silver":0},
+		"node": {
+				"n00":{"level":2,"map":["1-mission"],"open":true,"open_up":["n01"],"tree_x":2.5,"tree_y":1},
+				"n01":{"level":3,"map":["2-mission"],"opened_by":["n00"],"open_up":["n02"],"tree_x":2.5,"tree_y":2},
+				"n02":{"level":3,"map":["3-mission"],"opened_by":["n01"],"open_up":["n03"],"tree_x":2.5,"tree_y":3},
+				"n03":{"final":true,"level":2,"map":["4-damba"],"opened_by":["n02"],"tree_x":2.5,"tree_y":4}				
+		},
+		"tags":["rus"],
+		"image":"additional.jpg",
+		"image_preview":"additional_preview.jpg"
+	}
+]

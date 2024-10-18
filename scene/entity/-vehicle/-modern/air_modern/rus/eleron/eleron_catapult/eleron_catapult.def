@@ -1,0 +1,65 @@
+{actor
+	(include "/properties/cannon_mgun_mod.ext")
+	(include "/properties/shadow/tank.inc"  scale(0.3))
+	{props "collectable" "vision_lev02_can"}
+	("cw_armor_mgun")
+	{extender "stuff"
+		{item "eleron_catapult"}
+	}
+	{extender "inventory"
+		{box
+			{Size 3 3}
+			{weight 200}
+			
+			{item "ammo eleron3sv" 2}
+
+		}	
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "eleron3sv_cat" filled}
+			{foresight "foresight1"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+		}
+	}
+	{extender "cannon"
+		{animation
+			{move "mortar_driver_r" ""}
+			{reload "" "cannon_kpvt_charger"}
+		}
+		{animation
+			{switch close}
+		}
+		{move {workers "driver"} {obstacle "close"}}
+		{attack {workers "gunner"} {obstacle "open"}}
+	}
+	("crew_inside")
+	("crew_human" place(driver) bone(driver1)	door(emit1) animation(driver))
+	("crew_human" place(gunner)	bone(gunner)	door(emit1) animation(gunner))
+	{placer
+		{place "gunner" {UseVision 0}}
+		{place "commander" remove}
+		{place "driver1" remove}
+		{place "driver2" remove}
+	}
+	{boarder
+		{anm "gunner"
+			{forward	{end "lie_take_item_begin"}}
+		}
+		{anm "driver"
+			{forward {end "mortar_driver_r"}}
+		}
+		{link "driver" "gunner"}
+	}
+
+	{Extension "eleron_catapult.mdl"}
+	("missile_aimpoint_stansize")
+
+{Volume "select"
+		{able{obstacle 0} {Bullet 0} {Contact 0} {Select 1} {Blast 0} {Overlap 0} {Touch 1} {Contact_ground 0}}
+	}
+
+	{mass 10}
+}

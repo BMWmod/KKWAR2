@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet stackable  7H14 rifle sniper 762x51_x20 Pkm_ammo sharing fx_bul_med ui_rifle"}
+	{inventory
+		{weight 10}
+		{block 10}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.023}
+	{entity "svd_ammo"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.18}
+			{Light 0.4}
+		}
+		{length 2.7}
+	}
+("cw_powder_charge" kg(0.003))
+}

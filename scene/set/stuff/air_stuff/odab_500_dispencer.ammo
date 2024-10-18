@@ -1,0 +1,45 @@
+{from "pattern proj_impactor"
+	
+	{tag "ammo"}
+	{tag "itemin2hands"}
+	{tag "no_ricochet" "fg" "fragmentary" "big" "size4" "odab"}
+	{tag "bomb"} ; только для ammo.set
+	{inventory
+		{size 6 2}
+		{weight 1000}
+		{noView}
+		{fsm "stuff"}
+	}	
+	{mass 500}
+	{entity "odab_500"}
+	{view "odab_500"
+		{tail ""}
+	}
+	;193 кг огнесмеси, что эквивалентно около 500кг ВВ
+;	{damage add blastwave	 ; HE antipersonnel
+;		{energy 1.2}
+;		{area 15 20}
+;	}
+;	{damage add blastwave	 ; HE, FG anti-APC
+;		{energy 2.5}
+;		{area 10 15}
+;	}
+;	{damage add blastwave	 ; HE, FG antitank 
+;		{energy 22}
+;		{area 8 12}
+;	}
+	{damage add fire
+			{radius 12}
+			{heating 40}
+			{time 1}
+	}
+;Для крупных ОДАБ приходится снижать тротиловый эквивалент, т.к. радиусы получаются неиграбельно большими
+;БЧ 500 кг, ВВ 193 кг, ТЭ 0,5, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_4" tank(4.3) ifv(6.3) apc(12.5) end(14.6))
+("cw_contusion" t10(14.9) t6(21.7) t3(29) t0(37.5))
+("cw_seismic_4")
+("cw_blast_mass_add" add(1908))
+	;Давление внутри взрыва ОДАБ достаточно для уничтожения танка.
+}
+
+

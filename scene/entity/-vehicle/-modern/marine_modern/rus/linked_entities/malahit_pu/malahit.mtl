@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/pr1234_ovod/malahit"}
+	{blend none}
+}

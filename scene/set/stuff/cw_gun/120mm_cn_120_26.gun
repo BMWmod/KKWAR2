@@ -1,0 +1,154 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    
+   	{tag "agf"}
+	{filling "bullet120_NATO" 3}
+	{fireSound "gun_cw/cn_120_26"}
+	{reloadSound "cw/autoloader_leclerc"}
+	{RecoveryTime 5.8}
+	{rechargeTime 6.8}
+	{range 150 155}
+	("speed" s(1150)) 
+	("100-128caliber")
+	{calibre 15}
+	("damage4" a(1) b(1) c(1) d(1) e(1))
+	{projectileDamage 0}
+	("CW_acc_common" mils(0.25))
+	
+	{cursor "cannon_on_ap_3"}
+	{cursorreloading "cannon_reload_ap"}
+	{parameters "bullet120_ger apcr"
+		("CW_APCR_damage_WC1800" penetr_2000m(630))
+		{range 150 155}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Lec_APCR"}
+		;{cursorreloading "Lec_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_fr apcr"
+		("CW_APCR_damage_DU1650" penetr_2000m(610))
+		{range 150 155}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Lec_APCR"}
+		;{cursorreloading "Lec_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_USA apcr"
+		("CW_APCR_damage_DU1650" penetr_2000m(710))
+		{range 150 155}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Lec_APCR"}
+		;{cursorreloading "Lec_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_USA_s apcr"
+		("CW_APCR_damage_DU1650" penetr_2000m(663))
+		{range 150 155}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Lec_APCR"}
+		;{cursorreloading "Lec_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_USA apcr_h"
+		("CW_APCR_damage_DU1650" penetr_2000m(800))
+		{range 150 155}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Lec_APCR"}
+		;{cursorreloading "Lec_APCR_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_GER abm"
+		{range 1 1}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Leo2_HE"}
+		;{cursorreloading "Leo2_HE_reload"}
+		;{cursor "cannon_on_fg_15"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1150))
+		{spreading
+;			{SpreadXYRatio	10}	;взрыв-то по таймеру, поэтому рассеяние по дальности всего порядка 10м.
+			{SpreadPower	1.7}
+			{BurstAccuracy 100 85 75}
+			{SpreadYadjust	2}
+		}
+	}
+	{parameters "bullet120_ger fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Lec_HE"}
+		;{cursorreloading "Lec_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1150))
+	}
+	{parameters "bullet120_idf fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.3))
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(900))
+	}
+	{parameters "fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.13))
+		
+		;{cursor "Lec_HE"}
+		;{cursorreloading "Lec_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1100))
+	}
+	{parameters "bullet120_USA ap"
+		{range 150 155}
+		("CW_acc_common" mils(0.13))
+		
+		;{cursor "Lec_HEAT"}
+		;{cursorreloading "Lec_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(1100))
+	}
+	{parameters "bullet120_IDF cm"
+		{range 150 155}
+		("CW_acc_common" mils(0.25))
+		
+		;{cursor "Lec_HEAT"}
+		;{cursorreloading "Lec_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(1400))
+	}
+	{parameters "cm"
+		{range 150 155}
+		("CW_acc_common" mils(0.25))
+		
+		;{cursor "Lec_HEAT"}
+		;{cursorreloading "Lec_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(1400))
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+		{range 230 230}	;12000 +10
+	}
+}
+

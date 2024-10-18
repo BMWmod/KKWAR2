@@ -1,0 +1,74 @@
+;Created by Pheonix
+{ArmoredCar 
+	(include "/properties/armoredcar.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.0))
+	{props "vehicle" "tank" "armored_car_M" "turret" "wheeled" "with_gun" "vision_lev03" "8_wheels" "has_apu" "remote_turret" "remote_gun" "remote_mgun" "8_barrels_smoke" "spall_liner"}
+	{targetClass "armoredcar"}
+	{extension "crew.ext"}
+
+	("armor_btr" turret(6 6 6 6) body(19 19 1 7))
+	
+	{extender "inventory"
+		{box
+			{item "ammo mk30abm apcr_h" 78}
+			{item "ammo mk30abm_abm fg" 68}
+			{item "ammo 762Nato" 300}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "30mm_Mk44_bushmaster2" filling "ammo mk30abm_abm fg" 10}
+			{foresight "foresight1"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			("CW_stab_abm" abm(0.37))	;no data, but naval Mk44 have approx 1 mrad
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{foresight "foresight3"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{weapon "m240_optic" filled}
+			{basic}
+			("CW_stab_abm" abm(0.75))
+			("CW_stab_autotrack_suo")
+		}
+	}
+	
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_3g"}	
+		}
+		{visor "add_visor"
+			{vision "vehicle_main"}	
+			{bone "visor3"}		
+		}
+	}	
+	{mass 18500}
+	{Chassis
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlr") wheelr("wrr") bonel("FXtraceL4") boner("FXtraceR4"))
+		("CW_wheels"
+			Mass(18.5)
+			Turnradius(17.7)
+			Power(350)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(500)
+			Fuelvolume(200)
+		)
+
+	}
+	{props "cwfs_ext_only" "cwfs_extfuel_200"}
+
+	("two_headlights")
+	{Extension "m1296.mdl"}
+	("missile_aimpoint_trucksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(57))
+}
+

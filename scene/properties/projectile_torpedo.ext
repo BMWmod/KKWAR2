@@ -1,0 +1,247 @@
+;SDL
+;game_entity
+actor
+
+{able "-select"}
+
+;{props "grenade"}
+{props "steel" "stuff" "nocover"}
+{simulation {able 1} {disableLinked 1}}
+{constrain ground}
+
+{lodclass "part_big"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+
+(include "/properties/shadow/round.inc")
+{Chassis "human_carrier"
+	{locomotion
+		{StopTime	0.2}
+		{BrakeTime	0.7}
+		{TurnRadius	3}
+		{TurnStart	0.8}
+		{TurnStop	0.5}
+		{Gears		0.35 0.5 0.7 1.0}
+		{RearGears	0.33 0.5}
+		{MaxSpeed	1}
+		{StartTime	1}
+		{TurnTime	2}
+		{TurnRadius	2}
+	}
+	{FuelBag
+		{volume 0 }	; liters
+		{remain 0 }
+		{fuel "fuel"}
+	}
+}
+{mass 100}
+(define "missile_placer"
+{props "%speed" "%type_seeker"}
+     {Placer
+	{place "missile"
+		{entity %missile}
+		{Linkbone "missile_point"}
+		{obstacle disable}
+	}
+     }
+	{Weaponry
+		{place "targeting_sys"
+			{weapon "missilets_%guidance%speed" filling "%country_%type cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+	}
+	{Volume "missile"
+		{Cylinder (* 0.01 %calibre) 40}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			24.5	0	0
+		}
+	}
+	{Volume "target"
+		{Cylinder (* 0.01 %calibre) 20}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			-4.6	0	0
+		}
+	}
+)
+(define "precomputed_traj"
+	{Weaponry
+		{place "targeting_sys"
+			{weapon "missilets_%speed" filling "%country_%type cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+	}
+)
+
+;Типы пойнтеров наведения:
+;laser - ракета с лазерным наведением (на пятно) либо с наведением по лучу лазера.
+;Хеллфайер, Вихрь, Фагот-Конкурс, танковые ПТУР
+;active - ракета с активной ГСН. Зенитные ракеты, ПЗРК, многие воздух-воздух, Javelin
+;other - другие. Радиокомандные, наведение по проводам (TOW, Малютка)
+;Особой разницы нет, нужно для уменьшения помех со стороны других ракет.
+
+	{props "proj_dummy" "vision_lev_submarine"}
+
+	{Volume "precursor" {able clear {Overlap 0}} {density 0}}	;нужен для надежной работы детонатора - отодвигает границу точного обсчета столкновений. Не менее 120м.
+	{Volume "rangefinder" {able clear {Overlap 0}} {density 0}}
+	
+	{Volume "missile" {tags "missile"} {able clear {Overlap 1} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "proximity" {tags "proximity"} {able clear {Overlap 1} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "target" {tags "missile"} {able clear {Overlap 0} {Visible 1}} {Thickness 0.1} {component "missile"}}
+	
+	{component "missile"}
+	{obstacleID "nothing"}
+	{collider "projectile"}
+	{constrain none}
+	{extender "stuff"
+		{item "empty_stuff"}
+	}
+
+	{sensor
+		{RecognizeTime 0.01}
+		{InformRange 0.1}	;changed in MOW2
+		{Visor "main"
+			{vision "sonar_torpedo"}
+			{bone "missle_foresight"}
+		}
+	}
+
+	{autooperatable 1}
+	{placer
+		{crew 0}
+		{place "driver" remove}
+	}
+
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	{extender "inventory"
+		{box
+			{Size 6 2}
+			{weight 500}
+		}
+	}
+
+	{targetSelector "missile"}
+	{targetClass 	"none"}
+
+(define "torpedo_maneuvrability"
+	{bone "stage_hor01"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor02"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor03"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor04"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor05"            	{speed (* %deg_per_s1 0.000355) } {limits -%angle1 %angle1}}
+	{bone "stage_hor06"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor07"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor08"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor09"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor10"            	{speed (* %deg_per_s2 0.000355) } {limits -%angle2 %angle2}}
+	{bone "stage_hor11"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor12"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor13"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor14"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor15"            	{speed (* %deg_per_s3 0.000355) } {limits -%angle3 %angle3}}
+	{bone "stage_hor16"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor17"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor18"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor19"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor20"            	{speed (* %deg_per_s4 0.000355) } {limits -%angle4 %angle4}}
+	{bone "stage_hor21"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor22"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor23"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor24"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor25"            	{speed (* %deg_per_s5 0.000355) } {limits -%angle5 %angle5}}
+	{bone "stage_hor26"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor27"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor28"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor29"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor30"            	{speed (* %deg_per_s6 0.000355) } {limits -%angle6 %angle6}}
+	{bone "stage_hor31"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor32"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor33"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor34"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor35"            	{speed (* %deg_per_s7 0.000355) } {limits -%angle7 %angle7}}
+	{bone "stage_hor36"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor37"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor38"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor39"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+	{bone "stage_hor40"            	{speed (* %deg_per_s8 0.000355) } {limits -%angle8 %angle8}}
+)
+
+;-----------------------cwps3 maneuvrability
+
+(define "maneuvrability_torpedo_cwps3"
+	("torpedo_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s) deg_per_s4(%deg_per_s)
+	deg_per_s5(%deg_per_s) deg_per_s6(%deg_per_s) deg_per_s7(%deg_per_s) deg_per_s8(%deg_per_s)
+	angle1(120) angle2(120) angle3(120) angle4(120) angle5(120) angle6(120) angle7(120) angle8(120))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+	{props "underwater_launch" "cwps_torpedo"}
+)
+(define "maneuvrability_torpedo_around_cwps3"
+	("torpedo_maneuvrability" deg_per_s1(%deg_per_s) deg_per_s2(%deg_per_s) deg_per_s3(%deg_per_s) deg_per_s4(%deg_per_s)
+	deg_per_s5(%deg_per_s) deg_per_s6(%deg_per_s) deg_per_s7(%deg_per_s) deg_per_s8(%deg_per_s)
+	angle1(180) angle2(180) angle3(180) angle4(180) angle5(180) angle6(180) angle7(180) angle8(180))
+	{sensor
+		{Visor "sam"
+			{vision "torpedo_small"}
+			{bone "missle_foresight"}
+		}
+	}
+	{props "underwater_launch" "cwps_torpedo"}
+)
+
+(define "LR_torpedo"
+	{Weaponry
+		{place "targeting_sys"
+			{weapon "missilets_long" filling "%country_%type cwps2 ammo" 200}
+			{foresight "missle_foresight"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+			{SequentialAim 0}
+		}
+	}
+)
+(define "allow_manual_control"
+;	{props "allow_manual_control"}
+;	(mod "mp"{props  "vehicle"})
+;	{able "select"}
+;	{Volume "control_probe" {able clear {Contact 1}} {Thickness 0.1}}
+;	{Volume "control_probe"
+;		{Cylinder 20 20}
+;		{Bone "basis"}
+;		{Matrix34
+;			0	0	-1
+;			0	1	0
+;			1	0	0
+;			0	0	0
+;		}
+;	}
+	{able "select"}
+	{props "vehicle" "allow_manual_control"}
+)

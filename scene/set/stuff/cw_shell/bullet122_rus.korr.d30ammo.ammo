@@ -1,0 +1,26 @@
+{from "pattern korr"
+	{tag "big" "size4" "122to128fg" "d30ammo" "fx_111_145"}
+	{tag "fg_120_shell"} ; только для ammo.set
+	{detonationThickness 40}
+	{mass 28}
+
+	{inventory
+		{size 6 1}
+	}	
+	{entity "kitolov2m_122"}
+	{view "kitolov2m_122"}
+	("art_shell_sound")
+	;ВВ, вероятно, гексал
+;БЧ 12,25 кг, ВВ 5,3 кг, ТЭ 1,7, нач. скорость 690 м/с, тип оболочки - Гаубицы 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_3" tank() ifv(2.5) apc(5) end(8))
+("cw_direct_hit" energy(15))
+("cw_fragwave" e2_5(2.5) r2_5(22.7) e1_2(2.5) r1_2(22.7) chance(7.3))
+("cw_fragwave" e2_5(2.5) r2_5(25.4) e1_2(2.5) r1_2(25.4) chance(4.6))
+("cw_fragwave" e2_5(2.5) r2_5(28.1) e1_2(2.5) r1_2(28.1) chance(4.6))
+("cw_fragwave" e2_5(2.5) r2_5(33) e1_2(2.5) r1_2(33) chance(4))
+("cw_fragwave" e2_5(2.5) r2_5(39.7) e1_2(2.5) r1_2(39.7) chance(3.6))
+("cw_contusion" t10(6.8) t6(9.8) t3(13.3) t0(17.1))
+("cw_seismic_4")
+("cw_blast_mass_add" add(14.5))
+
+}

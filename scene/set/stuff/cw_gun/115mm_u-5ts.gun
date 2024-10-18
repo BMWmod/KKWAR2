@@ -1,0 +1,72 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "Т62"  	
+   	{tag "agf"}
+	{filling "bullet115_RUS" 3}
+	{fireSound "gun_cw/115mm_d68"}
+	{reloadSound "cw/gun73reload"}
+	{RecoveryTime 12.00}
+	{rechargeTime 15}
+	{range 150 150}	;т.к.ЗУОФ6 идет как "увеличенной дальности"
+	("speed" s(800)) 
+	("100-128caliber")
+	{calibre 15}	
+	("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+	{projectileDamage 0}
+	{cursor "cannon_on_ap_3"}
+	{cursorreloading "cannon_reload_ap"}
+
+    {parameters "bullet115_Rus fg"
+		{range 150 150}	;
+		("CW_acc_common" mils(0.28))    ;
+		;{cursor "T62_HE"}
+		;{cursorreloading "T62_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(800))
+	}
+	{parameters "bullet115_Rus apcr"             ; ПК
+         ;ЗУБМ13
+		("CW_APCR_damage_DU1650" penetr_2000m(380))
+		{range 145 145}	;1870м http://btvt.narod.ru/4/t62weapon.htm
+		("CW_acc_common" mils(0.31))
+		;{cursor "T62_APCR"}
+		;{cursorreloading "T62_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1615))
+	}
+	{parameters "bullet115_Rus apcr_h"             ; ПК
+         ;ЗУБМ9
+		("CW_APCR_damage_WC1800" penetr_2000m(340))
+		{range 145 145}	;1870м http://btvt.narod.ru/4/t62weapon.htm
+		("CW_acc_common" mils(0.31))
+		;{cursor "T62_APCR"}
+		;{cursorreloading "T62_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1615))
+	}
+	{parameters "bullet115_Rus cm"
+		{range 145 145}	;2250м http://btvt.narod.ru/4/t62weapon.htm
+		("CW_acc_common" mils(0.31))    ;оценка
+		;{cursor "T62_HEAT"}
+		;{cursorreloading "T62_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(950))
+	}
+	{parameters "rok"
+;		("accuracy_4" r1(0.1) r2(0.1) r3(0.1) r4(0.1))
+		{range 150 150}	;5000м, обычный 9М117 или 9М117М (100мм), но с окольцовкой для движения в 115мм ГСП.
+		("CW_acc_common" mils(0))
+		;{cursor "1K13"}
+		;{cursorreloading "1K13_reload"}
+		{cursor "cannon_on_heat_2"}
+		{cursorreloading "cannon_reload_heat"}
+		{speed 1000}
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+	}
+}       

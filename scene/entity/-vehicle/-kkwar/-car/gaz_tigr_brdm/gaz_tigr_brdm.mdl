@@ -254,8 +254,8 @@
                         0	1	0
                         6.76896	0.0706822	-1.17711
                     }
-                    {VolumeView "gun_rot.ply"}
-                    {Bone "visor1"
+                    {volumeview "gun_rot.ply"}
+                    {bone "visor1"
                         {Matrix34
                             1	0	0
                             0	-0.0226902	0.999743

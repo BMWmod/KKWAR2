@@ -1,0 +1,69 @@
+﻿;Created by Pheonix 
+{from "pattern gun"     
+   	
+	{filling "155_cn"}
+	{fireSound "gun_cw/plz05_shot155mm"}
+	{reloadSound "cw/msta_reload"}
+	{rechargeTime 8}
+	{range 322 322} ;ERFB/WP - 26km.
+;	{gravity 18}
+;	("speed" s(1200)) 
+	{gravity 2.0}
+	("speed_artillery") 
+	("100-128caliber")
+	{ZeroingAccuracy 0.75 0.5}
+	;Для артсистем с УАС точность надо прописывать в каждом снраяде отдельно
+	;no data, cannon is L54 vs L47  Msta-S and L52 of PZH2000
+	("cw_angle_curve_variable_charge")
+	{calibre 155}
+	{cursor "cannon_on_fg_5"}
+	{cursorreloading "cannon_reload_fg"}
+	;("relaxationtime" rt(3))
+	{parameters "bullet155_cn satt"
+		{gravity 1.7}
+			("speed" s(450))
+		{range 480 480}
+		("CW_acc_guided" kvo_meters(3))	;реально 40м, намного точнее обычных ОФС на 100км, но сравнимо с обычными ОФС на 25км.
+											;Я проставил такой же разброс, как если бы у Мсты на 25км была кучность 40м 
+											;(1,6 mils, реально 70) - это 10,4м. КВО тогда 18,4, а проставить в CW_acc_guided надо 9
+		{cursor "cannon_on_fg_6"}	
+		{cursorreloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_cn korr"
+		{range 320 320}
+		("CW_acc_guided_laser" kvo_meters(2))	;примерно, это Краснополь
+		{cursor "cannon_on_fg_6"}	
+		{cursorreloading "cannon_reload_fg"}	
+	}
+	{parameters "bullet155_cn cl"
+		("CW_acc_artillery" mils(2.35))
+		{cursor "cannon_on_heat_3"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "bullet155_cn_rok fg"
+		("CW_acc_artillery_ars" mils(2.35))
+		("speed" s(425))
+		{gravity 1.7}
+		{range 423 423}	;53км АРС ОФ с донным ГГ
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_cn fg"
+		("CW_acc_artillery" mils(2.35))
+		{cursor "cannon_on_fg_5"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_cn_r fg"
+		("CW_acc_artillery" mils(2.35))
+		{cursor "cannon_on_fg_5"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet155_cn sm"
+		("CW_acc_artillery" mils(2.35))
+		{cursor "cannon_on_fg_5"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+		
+}			

@@ -1,0 +1,42 @@
+;SDL
+(include "stuff_small.ext")
+{props "grenade" "steel"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+{volume "body" {thickness 0}}
+{volume "contact_ground"
+    {thickness 0}
+    {box 10 10 10}
+    {Position 0 0 0}
+    {able clear {contact_ground 1}}
+    {bone "root"}
+    {material "dummy"}
+}
+{collider "grenade"}
+
+(define "camera_handgrenade"
+	{Extender "preview"
+		{"Stuff"
+			{camera
+				{origin -2.26494	4.31714	0.0124696}
+				{lookat -0.192572	-0.496231	0.0124688}
+				{fov (* 31 %scale)}
+				{horizon -152.17}
+			}
+			{lights
+				{"0"
+					{type point}
+					{position -4.22782	5.691653	5.5911}
+				}
+				{"1"
+					{type directional}
+					{direction 0.0783768	-0.397715	-0.292712}
+				}
+				{"2"
+					{type point}
+					{position 4.20775	-5.085273	-4.02173}
+				}
+			}
+		}
+	}
+)

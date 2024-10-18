@@ -1,0 +1,789 @@
+;SDL
+{tag "rifle_grenade"}	;для отображения радиуса стрельбы
+;=================CW guns============================================================================================
+(define "damage4"                                                                                                         
+	{projectileDamageTable {20 %a} {75 %b} {105 %c} {120 %d} {140 %e} {165 (* 0.6 %e)} {200 (* 0.5 %e)} {255 (* 0.3 %e)} }
+)
+(define "damage5"                ; Для кум и ракет                                                                                         
+	{projectileDamageTable {20 %a} {75 %b} {105 %c} {120 %d} {140 %e} {165 %f} {200 %l} {255 %g} }
+)
+
+(define "CW_APCR_damage_WC1800"  ;tungsten carbide, 1800mps initial speed 
+	{projectileDamageTable 
+		{20 (* 1.101 %penetr_2000m)}
+		{75 (* 1.090 %penetr_2000m)}
+		{100 (* 1.060 %penetr_2000m)}
+		{110 (* 1.029 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.970 %penetr_2000m)}
+		{140 (* 0.941 %penetr_2000m)}
+		{145 (* 0.912 %penetr_2000m)}
+		{150 (* 0.882 %penetr_2000m)}
+		{165 (* 0.843 %penetr_2000m)}
+		{185 (* 0.757 %penetr_2000m)}
+		{200 (* 0.660 %penetr_2000m)}
+		{255 (* 0.451 %penetr_2000m)}
+	}
+)
+(define "CW_APCR_damage_WC1500"  ;tungsten carbide, 1500mps initial speed 
+	{projectileDamageTable 
+		{20 (* 1.159 %penetr_2000m)}
+		{75 (* 1.122 %penetr_2000m)}
+		{100 (* 1.080 %penetr_2000m)}
+		{110 (* 1.040 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.960 %penetr_2000m)}
+		{140 (* 0.923 %penetr_2000m)}
+		{145 (* 0.886 %penetr_2000m)}
+		{150 (* 0.850 %penetr_2000m)}
+		{165 (* 0.798 %penetr_2000m)}
+		{185 (* 0.671 %penetr_2000m)}
+		{200 (* 0.529 %penetr_2000m)}
+		{255 (* 0.277 %penetr_2000m)}
+	}
+)
+(define "CW_APCR_damage_DU1650"  ;depleted uranium, 1650mps initial speed 
+	{projectileDamageTable 
+		{20 (* 1.084 %penetr_2000m)}
+		{75 (* 1.069 %penetr_2000m)}
+		{100 (* 1.046 %penetr_2000m)}
+		{110 (* 1.023 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.972 %penetr_2000m)}
+		{140 (* 0.947 %penetr_2000m)}
+		{145 (* 0.922 %penetr_2000m)}
+		{150 (* 0.896 %penetr_2000m)}
+		{165 (* 0.866 %penetr_2000m)}
+		{185 (* 0.801 %penetr_2000m)}
+		{200 (* 0.714 %penetr_2000m)}
+		{255 (* 0.595 %penetr_2000m)}
+	}
+)
+(define "CW_APCR_damage_ST1800"  ;steel, 1800mps initial speed 
+	{projectileDamageTable 
+		{20 (* 1.329 %penetr_2000m)}
+		{75 (* 1.295 %penetr_2000m)}
+		{100 (* 1.177 %penetr_2000m)}
+		{110 (* 1.077 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.925 %penetr_2000m)}
+		{140 (* 0.834 %penetr_2000m)}
+		{145 (* 0.746 %penetr_2000m)}
+		{150 (* 0.627 %penetr_2000m)}
+		{165 (* 0.482 %penetr_2000m)}
+		{185 (* 0.240 %penetr_2000m)}
+		{200 (* 0.156 %penetr_2000m)}
+		{255 (* 0.087 %penetr_2000m)}
+	}
+)
+(define "CW_APCR_damage_ST1500"  ;steel, 1500mps initial speed 
+	{projectileDamageTable 
+		{20 (* 1.567 %penetr_2000m)}
+		{75 (* 1.511 %penetr_2000m)}
+		{100 (* 1.410 %penetr_2000m)}
+		{110 (* 1.236 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.867 %penetr_2000m)}
+		{140 (* 0.740 %penetr_2000m)}
+		{145 (* 0.643 %penetr_2000m)}
+		{150 (* 0.557 %penetr_2000m)}
+		{165 (* 0.434 %penetr_2000m)}
+		{185 (* 0.231 %penetr_2000m)}
+		{200 (* 0.133 %penetr_2000m)}
+		{255 (* 0.074 %penetr_2000m)}
+	}
+)
+(define "CW_AP_damage_midcaliber"  ;57mm AU-220 P shells, use with caution
+	{projectileDamageTable 
+		{20 (* 1.60 %penetr_2000m)}
+		{75 (* 1.57 %penetr_2000m)}
+		{100 (* 1.43 %penetr_2000m)}
+		{110 (* 1.21 %penetr_2000m)}
+		{120 %penetr_2000m}
+		{130 (* 0.895 %penetr_2000m)}
+		{140 (* 0.790 %penetr_2000m)}
+		{145 (* 0.711 %penetr_2000m)}
+		{150 (* 0.640 %penetr_2000m)}
+		{165 (* 0.519 %penetr_2000m)}
+		{185 (* 0.289 %penetr_2000m)}
+		{200 (* 0.173 %penetr_2000m)}
+		{255 (* 0.101 %penetr_2000m)}
+	}
+)
+(define "CW_small_AP_damage"  ;steel AP
+	{projectileDamageTable 
+		{20 (* 1.91 %penetr_1000m)}
+		{75 (* 1.43 %penetr_1000m)}
+		{100 %penetr_1000m}
+		{108 (* 0.900 %penetr_1000m)}
+		{110 (* 0.770 %penetr_1000m)}
+		{120 (* 0.510 %penetr_1000m)}
+		{130 (* 0.400 %penetr_1000m)}
+		{140 (* 0.300 %penetr_1000m)}
+		{145 (* 0.238 %penetr_1000m)}
+		{150 (* 0.176 %penetr_1000m)}
+		{165 (* 0.104 %penetr_1000m)}
+	}
+)
+(define "CW_small_APCR_damage_WC"  ;tungsten carbide small APCR
+	{projectileDamageTable 
+		{20 (* 1.43 %penetr_1000m)}
+		{75 (* 1.18 %penetr_1000m)}
+		{100 %penetr_1000m}
+		{108 (* 0.950 %penetr_1000m)}
+		{110 (* 0.890 %penetr_1000m)}
+		{120 (* 0.790 %penetr_1000m)}
+		{130 (* 0.710 %penetr_1000m)}
+		{140 (* 0.630 %penetr_1000m)}
+		{145 (* 0.566 %penetr_1000m)}
+		{150 (* 0.502 %penetr_1000m)}
+		{165 (* 0.401 %penetr_1000m)}
+	}
+)
+(define "CW_small_APCR_damage_DU"  ;depleted uranium small APCR
+	{projectileDamageTable 
+		{20 (* 1.19 %penetr_1000m)}
+		{75 (* 1.13 %penetr_1000m)}
+		{100 %penetr_1000m}
+		{108 (* 0.960 %penetr_1000m)}
+		{110 (* 0.920 %penetr_1000m)}
+		{120 (* 0.830 %penetr_1000m)}
+		{130 (* 0.710 %penetr_1000m)}
+		{140 (* 0.620 %penetr_1000m)}
+		{145 (* 0.542 %penetr_1000m)}
+		{150 (* 0.463 %penetr_1000m)}
+		{165 (* 0.346 %penetr_1000m)}
+	}
+)
+(define "CW_accuracy"   
+	{spreading 
+		{radiusTable 
+			{0 0}
+			{75 %75}
+			{100 %100}
+			{108 %108}
+			{120 %120}
+			{140 %140}
+			{145 %145}
+			{150 %150}
+			{165 %165}
+			{185 (* 1.6 %165)}
+			{200 (* 2 %165)}
+			{255 (* 3 %165)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1.0}
+	}
+)
+
+;1 mils on 70m means 50% hits in 2-meter wide vertical stripe, or 25% hits in 2x2 square (aiming in the center), or 66% hits in 4x4 square
+
+(define "CW_XP_acc_common"	;experiments show, that we need to set here 0.45 of needed radius in meters
+						;and SpreadPower about 1.7 to have a normal-like distribution
+						;Experimentally. T-72A (0.27 mils by APFSDS) hits T-90A in 2000(100) in 59%
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* %mils 1.52)}
+			{100 (* %mils 3.04)}
+			{108 (* %mils 4.56)}
+			{115 (* %mils 5.32)}
+			{120 (* %mils 6.08)}
+			{140 (* %mils 7.61)}
+			{145 (* %mils 9.12)}
+			{150 (* %mils 12.15)}
+			{165 (* %mils 15.21)}
+			{185 (* %mils 24.3)}
+			{200 (* %mils 30.42)}
+			{255 (* %mils 45.61)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1.0}
+		{SmokeHitMultiplier 3}
+	}
+)
+(define "CW_XP_acc_artillery"	;Artillery have large enough spreading, too unaccurate for us on large distances.
+							;So, after 1000(70)m it will grow lineary (on old scale) with distance, not exponentially
+							;Normalized to old spreading of Msta-S (Vd/Xmax=1/363 means 2.75 mils)
+							;Use range spreading Vd, not side spreading
+							;Still, on close distance SPHs are more or less accurate. I.e. Msta-S has
+							;11m side dev. on 24.5km - 0.45 mils, or 0.16 of Vd-calculated spreading
+							;so we'll apply common gun coeffs with 0.16 multiplier for ranges up to 1.5km
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* %mils 0.24)}
+			{100 (* %mils 0.49)}
+			{108 (* %mils 0.73)}
+			{115 (* %mils 0.85)}
+			{120 (* %mils 0.97)}
+			{140 (* %mils 1.8)}
+			{150 (* %mils 2.5)}
+			{250 (* %mils 4.5)}
+			{270 (* %mils 4.7)}
+			{290 (* %mils 5.0)}
+			{320 (* %mils 6.25)}
+			{350 (* %mils 7.5)}
+			{500 (* %mils 9.0)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 1.01}	;против артиллерии дымы неэффективны
+	}
+)
+(define "CW_XP_acc_artillery_ars"	;Rocket-assisted shells show less accuracy then common only when fired
+									;on 25km and further. No penalty up to 25km.
+									;1.5x penalty on 30km and 2x penalty further
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* %mils 0.24)}
+			{100 (* %mils 0.49)}
+			{108 (* %mils 0.73)}
+			{115 (* %mils 0.85)}
+			{120 (* %mils 0.97)}
+			{140 (* %mils 1.8)}
+			{150 (* %mils 2.5)}
+			{250 (* %mils 4.5)}
+			{270 (* %mils 4.7)}
+			{290 (* %mils 5.0)}
+			{320 (* %mils 6.25)}
+			{350 (* %mils 11.3)}
+			{370 (* %mils 13.0)}
+			{500 (* %mils 18.0)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 1.01}	;против артиллерии дымы неэффективны
+	}
+)
+;пристрелка артиллерии
+;есть заметная начальная ошибка определения координат себя и цели, выливающаяся в результирующую ошибку прицеливания
+;Начальная ошибка прицеливания зависит от качества СУО
+;Ошибка прицеливания может быть уменьшена только пристрелкой
+;На дистанциях прямой видимости пристрелка не нужна (стрельба идет в прямой видимости)
+;На дистанциях до 8 км пристрелка возможна частично - свои взрывы еще видны, хотя дальность до них оценить сложно
+;На дистанциях свыше 10км для пристрелки нужен внешний источник - корректировщик.
+;С корректировщиком возможно полностью устранить ошибку прицеливания за несколько выстрелов (в зав. от качества СУО)
+
+;ZeroingAccuracy - первый выстрел НЕ указывается
+;ZeroingAccuracyMultiplierBySpotter - первый выстрел УКАЗЫВАЕТСЯ
+;%error - ошибка прицеливания, в макросах cw_zeroingaccuracy на нее домножаются коэффициенты
+(define "cw_zeroingaccuracy_standart"	;для обычной САУ
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+			;без корректировщика
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error)) ;первый выстрел снижает ошибку на 34%
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))	;второй и далее - на 50%, но не до нуля
+			}}
+			{Distance 185	{AccuracyTable 
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+			}}
+			{Distance 200	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+	}
+	{spreading 
+			;С корректировщиком
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 1.0 %error)) (+ %mils %error)) ;первый выстрел - ошибка 100%
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error))  ;второй - уже 66%
+					(/ (+ %mils (* 0.25 %error)) (+ %mils %error))  ;второй - уже 25%
+					(/ (+ %mils (* 0 %error)) (+ %mils %error)) ;четвертый - вилка - ошибка устранена
+			}
+	}
+)
+(define "cw_zeroingaccuracy_advanced"	;для САУ с улучшенной СУО (например, позиционирование GPS)
+	;улучшенная пристрелка вторым выстрелом, полная - третьим
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))
+			}}
+			{Distance 185	{AccuracyTable 
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+			}}
+			{Distance 200	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+	}
+	{spreading 
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 1.0 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0 %error)) (+ %mils %error))
+			}
+	}
+
+)
+(define "cw_zeroingaccuracy_radar"	;для САУ с улучшенной СУО (например, позиционирование GPS)
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error)) 	;радар позволяет частично корректировать и по дальности
+					(/ (+ %mils (* 0.33 %error)) (+ %mils %error)) 	;радар позволяет частично корректировать и по дальности
+			}}
+			{Distance 185	{AccuracyTable 
+					(/ (+ %mils (* 0.8 %error)) (+ %mils %error))  	;радар позволяет частично корректировать и по дальности
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error)) 	;радар позволяет частично корректировать и по дальности
+			}}
+			{Distance 200	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+	}
+	{spreading 
+		;отличная пристрелка уже первым выстрелом
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 1.0 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.25 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0 %error)) (+ %mils %error))
+			}
+	}
+
+)
+(define "cw_zeroingaccuracy_light"	;для легких гаубиц калибра 122 и менее, с менее точной СУО либо ее отсутствием
+									;где для пристрелки нужно на выстрел больше
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+			;без корректировщика
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))
+			}}
+			{Distance 185	{AccuracyTable 
+					(/ (+ %mils (* 0.95 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+			}}
+			{Distance 200	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+	}
+	{spreading 
+			;С корректировщиком
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 1.0 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.40 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.20 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0 %error)) (+ %mils %error))
+			}
+	}
+)
+(define "cw_zeroingaccuracy_tankgun"	;для танковых пушек пристрелка требует 6 выстрелов и устраняет только 1/3 ошибки
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					(/ (+ %mils (* 0.2 %error)) (+ %mils %error))
+			}}
+			;без корректировщика
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.80 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.70 %error)) (+ %mils %error))
+			}}
+			{Distance 160	{AccuracyTable 
+					(/ (+ %mils (* 0.95 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.90 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.80 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.70 %error)) (+ %mils %error))
+			}}
+			{Distance 170	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+	}
+	{spreading 
+			;С корректировщиком
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.37 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.28 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.21 %error)) (+ %mils %error))
+			}
+	}
+)
+(define "cw_zeroingaccuracy_mortar"	;для минометов до 10км, где влияет своя пристрелка
+	{ZeroingAccuracy 
+			{Distance 140	{AccuracyTable 
+					0.99 
+					0.99 
+			}}
+			;без корректировщика
+			{Distance 150	{AccuracyTable 
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.66 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.55 %error)) (+ %mils %error))
+			}}
+			{Distance 185	{AccuracyTable 
+					(/ (+ %mils (* 0.95 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.85 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.80 %error)) (+ %mils %error)) 
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+			}}
+	}
+	{spreading 
+			;С корректировщиком
+			{ZeroingAccuracyMultiplierBySpotter 
+					(/ (+ %mils (* 1.0 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.75 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.6 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))
+					(/ (+ %mils (* 0.5 %error)) (+ %mils %error))
+			}
+	}
+)
+;значение error и прибавка к mils должны быть равны!
+(define "CW_acc_artillery"
+("CW_XP_acc_artillery" mils( (+ %mils 2.75) ))
+("cw_zeroingaccuracy_standart" mils(%mils) error(2.75))
+)
+(define "CW_acc_artillery_ars"
+("CW_XP_acc_artillery_ars" mils( (+ %mils 2.75) ))
+("cw_zeroingaccuracy_standart" mils(%mils) error(2.75))
+)
+(define "CW_acc_artillery_advanced"
+("CW_XP_acc_artillery" mils( (+ %mils 2.5) ))
+("cw_zeroingaccuracy_advanced" mils(%mils) error(2.5))
+)
+(define "CW_acc_artillery_ars_advanced"
+("CW_XP_acc_artillery_ars" mils( (+ %mils 2.5) ))
+("cw_zeroingaccuracy_advanced" mils(%mils) error(2.5))
+)
+(define "CW_acc_artillery_radar"
+("CW_XP_acc_artillery" mils( (+ %mils 2.5) ))
+("cw_zeroingaccuracy_radar" mils(%mils) error(2.5))
+)
+(define "CW_acc_artillery_ars_radar"
+("CW_XP_acc_artillery_ars" mils( (+ %mils 2.5) ))
+("cw_zeroingaccuracy_radar" mils(%mils) error(2.5))
+)
+(define "CW_acc_artillery_light"
+("CW_XP_acc_artillery" mils( (+ %mils 3.5) ))
+("cw_zeroingaccuracy_light" mils(%mils) error(3.5))
+)
+(define "CW_acc_artillery_ars_light"
+("CW_XP_acc_artillery_ars" mils( (+ %mils 3.5) ))
+("cw_zeroingaccuracy_light" mils(%mils) error(3.5))
+)
+(define "CW_acc_artillery_mortar"
+("CW_XP_acc_artillery" mils( (+ %mils 3.5) ))
+("cw_zeroingaccuracy_light" mils(%mils) error(3.5))
+)
+(define "CW_acc_artillery_ars_mortar"
+("CW_XP_acc_artillery_ars" mils( (+ %mils 3.5) ))
+("cw_zeroingaccuracy_light" mils(%mils) error(3.5))
+)
+(define "CW_acc_artillery_tankgun"
+("CW_XP_acc_artillery" mils( (+ %mils 10) ))
+	{spreading 
+		{SpreadXYRatio	0.2}	;несмотря на довольно настильную стрельбу, разброс по боку и по дальности близок.
+	}
+("cw_zeroingaccuracy_tankgun" mils(%mils) error(10))
+{TimeToReadyAfterAim {0 3} {1000 3} }
+
+)
+
+(define "tank_indirect_fire"
+		{gravity 5.15}
+		{range 210 210}	;реально 200, добавляем 10м
+		{RecoveryTime 12}
+		{rechargeTime 12}
+		("CW_acc_artillery_tankgun" mils(%mils))
+		;Обычно на первом месте - не кучность пушки, а ошибка азимутального указателя и угломера - если нет хорошей FCS, приспособленной для непрямого огня.
+)
+
+
+(define "CW_XP_acc_heli"	;for helicopters unguided aircraft missile
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* 0.5 %mils 0.375)} ; 0.5 компенсация вертикального разброса
+			{100 (* 0.5 %mils 0.5)}
+			{125 (* 0.75 %mils 1.0)}
+			{150 (* 0.75 %mils 2.5)}
+			{250 (* 0.75 %mils 4.5)}
+
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 3}
+	}
+)	
+(define "CW_XP_acc_guided"	;for guided shells - do not grow with distance
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* %kvo_meters 0.6)}
+			{100 (* %kvo_meters 0.8)}
+			{125 (* %kvo_meters 1.2)}
+			{150 (* %kvo_meters 2.0)}
+			{250 (* %kvo_meters 2.0)}
+			{280 (* %kvo_meters 2.0)}
+			{350 (* %kvo_meters 2.0)}
+			{420 (* %kvo_meters 2.0)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+	}
+)
+
+;Because accuracy modifier from veterancy can not be less than 1, we declare initial accuracy as 1/2 of real
+;Those who can't use tank, will receive bonus 1 and very unaccurate gun
+;tankmen receive bonuses 4.25-5.5 and use weapons with nominal accuracy
+;In MOW2 there is no veterancy, so accuracy multiplyer is 1
+(define "CW_acc_common"
+	("CW_XP_acc_common" mils( %mils 1 ))
+)
+(define "CW_acc_heli"
+	("CW_XP_acc_heli" mils( %mils 1 ))
+)
+(define "CW_acc_guided"	;обычное ВТО с инерциалкой и (опционально) GPS/Глонасс наведением
+	("CW_XP_acc_guided" kvo_meters( (+ %kvo_meters 10) ))
+	{spreading 
+		{SmokeHitMultiplier 1.01}	;т.к. GPS
+		{ZeroingAccuracyMultiplierBySpotter (/%kvo_meters (+ %kvo_meters 10))}
+	}
+)
+(define "CW_acc_guided_laser"	
+	("CW_XP_acc_guided" kvo_meters( (+ %kvo_meters 13) ));лазерные без наведения должны идти только по инерциалке, это хуже gps
+	{spreading 
+		{SmokeHitMultiplier 3}	;т.к. оптика/лазер
+		{ZeroingAccuracyMultiplierBySpotter (/%kvo_meters (+ %kvo_meters 13))}
+	}
+)
+;Grenade launchers do not use any skill, thats why they do not have 5x modifier
+(define "CW_acc_grlaunch"	;Grenade launchers are too unaccurate for us when using atillery scale.
+							;So, they have separate accuracy scale, four times more accurate then common weapons
+							;Use side spreading
+	{spreading 
+		{radiusTable 
+			{0 0.01}
+			{75 (* %mils 0.38)}
+			{100 (* %mils 0.75)}
+			{108 (* %mils 1.2)}
+			{120 (* %mils 1.50)}
+			{140 (* %mils 1.9)}
+			{145 (* %mils 2.28)}
+			{150 (* %mils 3.03)}
+			{155 (* %mils 3.8)}
+			{165 (* %mils 6.08)}
+			{185 (* %mils 7.6)}
+			{255 (* %mils 11.4)}
+		}
+		{BurstRecoveryTime 0.5}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 3}
+	}
+)
+
+
+
+
+
+
+;=================CW missiles and bombs============================================================================================
+(define "accuracy_s25ld" 
+	{spreading 
+		{radiusTable {0 0} {20 7.5} {40 7.5} {80 7.5} {120 7.5} {190 7.5}{200 75}}	;multiplyed by 5 for veterancy
+	}
+)
+
+;http://forums.airforce.ru/sovremennost/printfriendly1429-207/
+;old formula, supposingly for WW2 era, is KVO(meters)=10*H(km)+ 0.1V(km/h)
+;SVP-24 of modernized Su-24 gives KVO(meters)=2*H(km)+ 0.015V(km/h)
+;For modern, but not so advances bombing sights and targeting radars we can approx. evaluate difference with SVP-24 
+
+;Range of bomb flight depends on altitude and plane speed
+
+;default
+
+;range 85m is on alt 20m - 1000m real
+;range 100m  is on alt 30m - 5000m real
+;range 125m  is on alt 40m - 8000m real
+;range 140m  is on alt 50m - 15000m real
+
+;range 1.41*V is on alt 20m - 1000m real
+;range 1.59*V is on alt 25m - 3000m real
+;range 1.73*V  is on alt 30m - 5000m real
+;range 2.04*V  is on alt 40m - 8000m real
+;range 2.14*V  is on alt 44m - 10000m real
+
+;extended altitude
+
+;range 85m is on alt 20m - 1000m real
+;range 100m  is on alt 30m - 2000m real
+;range 125m  is on alt 40m - 5000m real
+;range 140m  is on alt 50m - 7000m real
+;range 152m  is on alt 70m - 10000m real
+
+;range 1.41*V is on alt 20m - 1000m real
+;range 1.59*V is on alt 25m - 1500m real
+;range 1.73*V  is on alt 30m - 2000m real
+;range 2.04*V  is on alt 40m - 5000m real
+;range 2.14*V  is on alt 44m - 6000m real
+;range 2.5*V  is on alt 65m - 10000m real		;approx
+
+
+;(* %bomb_accuracy (+ (* (* 2 %sight_quality) H) (* (* 0.015 %sight_quality) %airspeed))
+
+;lower sight_quality and bomb_accuracy means lower spreading.
+;by default both are 1, but Platan of Su-34 and EOTS of F-35 can be set as 0.75
+;Not applicable for guided bombs and cluster munitions
+;Because of scale spreading is two times smaller then real?, like artillery is.
+
+;multiplyed by 5 for veterancy
+;In MOW2 there is no veterancy, so accuracy multiplyer is 1
+
+(define "accuracy_unguided_bomb" 
+	{spreading 
+		{radiusTable 
+			{0 (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 0.2) (* (* 0.015 %sight_quality) %airspeed)))} 
+			{(* %gamespeed 1.41) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 1) (* (* 0.015 %sight_quality) %airspeed)))} 
+			{(* %gamespeed 1.59) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 1.5) (* (* 0.015 %sight_quality) %airspeed)))}
+			{(* %gamespeed 1.73) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 2) (* (* 0.015 %sight_quality) %airspeed)))}
+			{(* %gamespeed 2.04) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 5) (* (* 0.015 %sight_quality) %airspeed)))}
+			{(* %gamespeed 2.14) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 6) (* (* 0.015 %sight_quality) %airspeed)))}
+			{(* %gamespeed 2.5) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 10) (* (* 0.015 %sight_quality) %airspeed)))}
+			{(* %gamespeed 3) (* 1 %bomb_accuracy (+ (* (* 2 %sight_quality) 15) (* (* 0.015 %sight_quality) %airspeed)))}
+		}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 1.2}
+	}
+)
+;In MOW2 there is no veterancy, so accuracy multiplyer is 1
+
+(define "accuracy_kab" 
+	{spreading 
+		{radiusTable 
+			{0 (+ %kvo_meters 7)}
+			{1000 (+ %kvo_meters 7)}
+		}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 1.01}	;для GPS
+		{ZeroingAccuracyMultiplierBySpotter (/%kvo_meters (+ %kvo_meters 7))}
+	}
+)
+(define "accuracy_kab_optical" 
+	{spreading 
+		{radiusTable 
+			{0(* %kvo_meters 1.0)}
+			{1000(* %kvo_meters 1.0)}
+		}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 3}	;для оптических
+		;корреляционная ГСН изначально видит цель сама. 
+		;Ей не подходит изображение, снятое с другого угла обзора.
+		{ZeroingAccuracyMultiplierBySpotter 0.99}
+	}
+)
+(define "accuracy_kab_laser" 
+	{spreading 
+		{radiusTable 
+			{0 (+ %kvo_meters 10)}
+			{1000 (+ %kvo_meters 10)}
+		}
+		{SpreadPower	1.7}
+		{SpreadXYRatio	1}
+		{SmokeHitMultiplier 3}	;для лазерных
+		{ZeroingAccuracyMultiplierBySpotter (/%kvo_meters (+ %kvo_meters 10))}
+	}
+)
+
+;=================CtA============================================================================================
+;=================misc============================================================================================
+(define "accuracy_3" {spreading {radiusTable {0 0} {70 %r1} {110 %r2} {150 %r3} {270 %r4}}})
+(define "damage" {projectileDamageTable {10 %a} {30 %b} {75 %c} {70 %d} {120 %e} {140 %e} {140 %e} {165 %e} })
+(define "14-20caliber" {projectileDamageThreshold 1.1})
+(define "37-57caliber" {projectileDamageThreshold 1.1})
+(define "75-76caliber" {projectileDamageThreshold 1.15})
+(define "85-93caliber" {projectileDamageThreshold 1.15})
+(define "100-128caliber" {projectileDamageThreshold 1.15})
+(define "howitzer_caliber" {projectileDamageThreshold 1.15})
+(define "range_zenite_modern"
+	{spreading 1
+		{SpreadXYRatio	1.2}
+		{SpreadPower	1.2}
+		{BurstAccuracy 85 80 75}
+	}
+	{SpreadTolerance 0.5}
+	{range 100 120}	
+    {RelaxationTime 0.2}
+	{gravity 2}
+)
+(define "heavy_howitzer"
+	("howitzer_caliber")
+	{bullet_view "howitzer_shell"
+		{tail "shell_tail" "root"}
+	}
+	{ZeroingAccuracy 0.8 0.6}
+	{DisableRicochet}
+	{aimtype adaptive}
+	{traceFreq 0}
+    {RelaxationTime 2}
+	{speed 90}
+	{gravity 3}
+)
+(define "relaxationtime"
+(mod "mp"
+	{tag "prepare"}
+	{Special
+		{Mode aim}
+		{PrepareTime 0}
+		{PrepareCursor "aimed_shot_aa"}
+	}
+	{RelaxationTime %rt}
+)
+)
+;=================CW on MOW2============================================================================================
+(define "cw_angle_curve_fixed_charge"
+	{##aimtype angle_by_distance 
+		0 0 
+		%d0_33 10 
+		%d0_5 15 
+		%d0_75 24 
+		(* %d 0.95) 36 
+		(* %d 1.02) 45 
+	}
+)
+(define "cw_angle_curve_variable_charge"
+	{##aimtype angle_by_distance 
+		0 0 
+		150 40 
+		500 45 
+	}
+)

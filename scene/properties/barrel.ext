@@ -1,0 +1,37 @@
+;SDL
+game_entity
+
+{volume "body"
+	{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	{thickness 1}
+}
+{volume "select"
+	{able clear {select}}
+	{density 0}
+}
+{props "explosive_barrel" "steel" "capacity" "stuff"}
+
+{obstacleID "construction"}
+{collider "particle.small"}
+
+{simulation {able 1}}
+{constrain ground}
+
+{extender "stuff"
+	{item "barrel"}
+}
+
+{lodclass "decor_small"}
+{armor
+	{setting "body"
+		{whole_wound}
+		{durability
+			{pierce	{koef 0.99}}
+		}
+		{health_reducing
+			{pierce {koef 0}}
+			{blast {koef 0}}
+		}
+		{threshold_weakness_calibre 14}
+	}
+}

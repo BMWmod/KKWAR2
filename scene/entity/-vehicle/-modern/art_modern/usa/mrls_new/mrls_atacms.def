@@ -1,0 +1,72 @@
+{entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "light_M" "turret_rotator" "vision_lev03" "cw_artillery" "skill_override_car"}
+        {extension "crew.ext"}
+
+;	("armor_heavy" turret(10 10 10 10) body(20 20 20 13))
+	("armor_light" turret(6 6 6 6) body(6 6 6 6))
+	("armor_engine"  t(6))
+
+	{extender "inventory"
+		{box
+			{Size 7 6}
+			{weight 3000}
+			{item "ammo ATACMS fg" 2}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "weapon ATACMS" filling "ammo ATACMS fg" 2}
+			{foresight "foresight"}
+			{Barrels 2}
+			{charger "gunner"}
+			{gunner "gunner"}
+;			{StationaryFiring}	;мешает движению при перезарядке у ОТРК
+		}
+
+	}	
+	{brain
+		{properties
+			{fire_mode hold}	;Это я нашел у нашей гаубицы Б4.
+		}
+	}
+	{placer
+		{place "driver" {group "crew"} {linkbone "driver"}}
+		{place "gunner" {group "crew"} {linkbone "gunner"}}
+	}
+	{sensor
+		{visor "driver"
+			{bone "driver"}
+			{vision "vehicle_main"}
+		}
+		{visor "main"
+			{bone "gunner"}
+			{vision "vehicle_main"}
+		}	
+	}
+	{mass 25300}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.4) len(0.73))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(25)
+			Width(2.97)
+			Power(500)
+			Realspeed(64)
+			Gamespeed(41) 
+		)
+		{RearGears		0.2 0.46}}
+		("CW_fuelbag" Range(480) Fuelvolume(662))
+		("CW_speed_lev" Gamespeed(41))
+		{DisableMoveWhileFiring}
+	}
+	{props "cwfs_fuel_600"}
+
+	("two_headlights")
+	{Extension "m-270_atacms.mdl"}
+	("missile_aimpoint_tanksize")
+	("CW_turr_speed" deg_per_s(30))
+
+}

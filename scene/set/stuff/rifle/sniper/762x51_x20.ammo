@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet  stackable rifle M118 sniper 762nato pierce sharing fx_bul_med ui_rifle"}
+	{inventory
+		{weight 5}
+		{block 20}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.025}
+	{entity "762x51_x20"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.18}
+			{Light 0.4}
+		}
+		{length 2.7}
+	}
+("cw_powder_charge" kg(0.003))
+}

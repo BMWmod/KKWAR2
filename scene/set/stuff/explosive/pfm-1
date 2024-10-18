@@ -1,0 +1,18 @@
+{item
+	{tag "smallitemin1hand dropboxed nokeep size1 fx_25_40"}
+	{entity "pfm-1"}
+	
+	{mass 0.1}
+	;{damage blastwave
+	;	{energy 0.5}
+	;	{area 0.5 0.8}
+	;}	
+	;http://saper.isnet.ru/mines-2/pfm-1.html
+	;0.04кг ВВ
+;	{damage blastwave {energy 0.7} {area 3.1 3.6}}   ;0.037г 
+;    {damage add blastwave {energy 1.2} {area 0.1 0.1}}
+;Осколочный дамаг убираем
+;БЧ 0,08 кг, ВВ 0,04 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - оскол. Гранаты, тип БЧ - Безобол(IED)
+("cw_direct_hit" energy(0.7))
+
+}

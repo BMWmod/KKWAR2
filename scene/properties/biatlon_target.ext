@@ -1,0 +1,46 @@
+actor
+	{targetClass "human"}
+;	{brain "actor"}
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	{collider "construction"}
+	{obstacleID "construction"}
+	{mass 20}
+	(include "/properties/construction_generic.inc")
+	("armor_light" args 0.7)
+
+	{props "wood" "fence" "animated_crush" "target"}
+	{volume "body"
+		{Tags "body"}
+		{thickness 1}
+	}
+	{lodclass "decor_medium"}
+	{autooperatable 1}
+	{placer
+		{crew 0}
+		{place "driver" remove}
+	}
+	{simulation {able 1} {disableLinked 1}}
+	{Chassis "track"
+	{locomotion
+		{StopTime	0.2}
+		{BrakeTime	0.7}
+		{TurnRadius	3}
+		{TurnStart	0.8}
+		{TurnStop	0.5}
+		{Gears		0.35 0.5 0.7 1.0}
+		{RearGears	0.33 0.5}
+		{MaxSlope   50}
+		{FallSlope  60}
+		{MaxSpeed	12}
+		{StartTime	2}
+		{TurnTime	4}
+		{TurnRadius	2}
+	}
+	}

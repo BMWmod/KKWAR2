@@ -1,0 +1,28 @@
+{from "pattern proj_impactor"
+	{entity "9m114f_impactor"}
+              {inventory
+		{weight 100}
+		{size 6 1}
+	}
+	{tag "no_ricochet" "AA_missile" "big" "size4" "88to105" "-ap" "fx_shmel"} 
+	;БЧ-9H132Ф  масса ВВ около 3,1 кг
+	{tag "he_2to4_5"}
+	{damage fire
+		{radius 9}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;	{damage add blastwave {energy 1.2} {area 15.6 17.9}}
+;        {damage add blastwave {energy 2.5} {area 6.2 7.2}}
+;        {damage add blastwave {energy 6.5} {area 2 2.4}} 
+;БЧ 5,4 кг, ВВ 3,1 кг, ТЭ 1, нач. скорость 500 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(1.7) apc(3.5) end(5.5))
+("cw_contusion" t10(4.8) t6(6.8) t3(9.3) t0(11.9))
+("cw_blast_mass_add" add(20))
+}
+;масса ВВ около 3.1 кг к термобарическому расчету. первая волна удалена.

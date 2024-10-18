@@ -1,0 +1,21 @@
+;Cold War
+{bullet
+	{tag "bullet stackable pierce hmgun M2 nato_ptr fx_10_15 fx_ap ui_hmgun"}
+	{tag "small hmgun hrifle pierce SLAP  ptr_nato  antiinf 50nato sharing fx_10_15 fx_ap"}
+              
+    {inventory
+		{size 2 1 }
+		{weight 10}
+		{block 10}
+	}
+	{trace
+		{view "/texture/fx/trace7"
+			{ScaleY 0.2}
+		}
+		{length 3.0}
+	}
+	{mass 0.13}
+	
+	{entity "50natoap_ammo"}
+("cw_powder_charge" kg(0.017))
+}

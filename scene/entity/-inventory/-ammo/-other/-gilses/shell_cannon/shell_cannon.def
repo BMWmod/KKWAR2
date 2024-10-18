@@ -1,0 +1,33 @@
+;{game_entity
+{actor
+	{extension "/properties/piece.ext"}
+	{Extension "shell_cannon.mdl"}
+	{able "-select"}
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	{Volume "body1"
+		{tags "body"}
+		{thickness 5}
+		{able clear {contact} {bullet} {blast} {contact_ground} {visible}}
+		{density 0.5}
+	}
+	{Volume "body2"
+		{tags "body"}
+		{thickness 5}
+		{able clear {contact_ground}}
+		{density 5}
+	}
+	{obstacleID "stuff"}
+	{collider "stuff"}
+	{props "dummy" "steel" "gilza" "big" "nocover"}
+	{simulation {able 1}}
+	{constrain none}
+	{lodclass "stuff_small"}
+	{targetClass "none"}
+}

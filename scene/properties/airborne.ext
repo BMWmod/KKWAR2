@@ -1,0 +1,184 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+(include "car_crew.ext")
+{collider "airborne"}
+{props "airborne"}
+{targetClass "airborne"}
+{targetSelector "cannon_bullet"}
+{brain "airborne" {state "airborne"}}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+
+{Chassis "wheel"
+	("chassis_defaults")
+	{locomotion
+		{MaxSpeed 	 	30 }  
+		{StartTime 		4  }  
+		{BrakeTime 		1  }  
+		{StopTime		2  } 
+	}
+(mod "mp"
+			{FuelBag
+				{volume 2200 }	
+				{rate	320 }   
+				{remain 2000 }
+				{fuel "fuel"}
+			}
+		)
+}
+{Chassis "airborne"
+	("chassis_defaults")
+	{locomotion
+		{Maxspeed 		95 } ; kmph
+ 	  	{turnRadius 	40 } ; m
+		{StartTime 		6  } 
+		{BrakeTime 		4  }  
+		{StopTime		7  }  
+	}
+(mod "mp"
+			{FuelBag
+				{volume 500 }	
+				{rate	1 }   
+				{remain 495 }
+				{fuel "fuel"}
+			}
+		)
+	{dontUseSlope}
+	{ignorePatherBounds}
+	{disableBackward}
+	{sideSlopeSpeed 25}			;degree/s
+	{maxSideSlope 15}			;degree
+	{maxElevationSpeed 5}		;m/s
+	{elevationAcceleration 2}	;m/s^2
+}
+{chassisManager
+	{current "wheel"}
+}
+{simulatorId "airborne"}
+
+{extender "inventory"
+	{box
+		{Size 8 6}
+		{weight 20000}
+	}
+}
+
+{volume "propeller"
+	{tags "part"}
+	{thickness 15}
+}
+{volume "engine"
+	{tags "body" "inflammable" "component_internal"}
+	{thickness 15}
+         }
+{volume "body"
+	{tags "body"}
+	{thickness 20}      
+}
+{volume "body_back"
+	{tags "body"}
+	{thickness hollow 20}     
+
+}
+{volume "cabine"
+	{tags "part"}
+	{thickness 15}
+        
+}
+{volume "wingr1"
+	{tags "inflammable" "part"}
+	{component "wingright"}
+	{thickness 15} 
+     
+}
+{volume "wingl1"
+	{tags "inflammable" "part"}
+	{component "wingleft"}
+	{thickness 15} 
+     
+}
+{volume "wingr2"
+	{tags "inflammable" "part"}
+	{thickness 15} 
+     
+}
+{volume "wingl2"
+	{tags "inflammable" "part"}
+	{thickness 15}
+      
+}
+{volume "wheel_back"
+	{tags "part"}
+	{thickness 10}
+      
+}
+{volume "retract_wheelR"
+	{tags "part"}
+	{thickness 10}
+      
+}
+{volume "retract_wheelL"
+	{tags "part"}
+	{thickness 10}
+      
+}	
+{component "propeller"
+	{RepairTime 10}
+}
+{component "engine"
+	{RepairTime 25}
+}
+{component "body"
+	{RepairTime 25}
+}
+{component "cabine"
+	{RepairTime 15}
+}
+{component "body_back"
+	{RepairTime 25}
+}
+{component "wingright"
+	{RepairTime 25}
+}
+{component "wingleft"
+	{RepairTime 25}
+}
+{component "wingr2"
+	{RepairTime 25}
+}
+{component "wingl2"
+	{RepairTime 25}
+}
+{component "wheel_back"
+	{RepairTime 10}
+	{tags "mover"}
+}
+{component "retract_wheelR"
+	{RepairTime 10}
+	{tags "mover"}
+}
+{component "retract_wheelL"
+	{RepairTime 15}
+	{tags "mover"}
+}
+
+(define "locomotion"
+	{StartTime	5	}		
+	{BrakeTime	2	}		
+	{StopTime	4	}		
+	{SteerOn	15}			
+	{SteerOff	15}         
+	{SplineRadius 5}		
+)
+
+(define "part"
+	{volume %0
+		{tags "part"}
+		{thickness 20}
+		
+	}
+	{component %0}
+)

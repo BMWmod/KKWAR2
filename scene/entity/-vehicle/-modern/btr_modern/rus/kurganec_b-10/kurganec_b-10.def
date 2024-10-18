@@ -1,0 +1,144 @@
+{game_entity
+	(include "/properties/tank_amph.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{collider "tank.light"}
+	{props "light_M" "turret_rotator" "vision_lev04" "laser_spo" "Shtora" "amphibia"  "remote_mgun" "remote_turret" "kurganec" "autotrack_suo" "DUM" "6_barrels_smoke" "spall_liner"}
+	{extension "crew.ext"}
+
+	("armor_IFV" turret(30 15 15 12) body(39 17 6 8))
+	("armor_engine"  t(20))
+	("d_a_kaktus_bmp3") ;similar characteristics
+	{volume "apploque_side1"	{Thickness 5}}
+	{volume "apploque_side2"	{Thickness 5}}
+{volume "mrap" {tags "mrap"}{thickness 25} {able clear {blast}} {component "body"}}
+	
+	{armor
+		{setting "apploque_side"
+			{thickness 25 3 3 3}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_side*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+		{setting "mrap"
+			{thickness 25}
+			{durability
+                {blast {koef 1} {value 100} } {pierce {value 100} }
+            }
+            {threshold
+                {blast {koef 1} }{pierce {koef 1}}
+            }			
+			{volumes "mrap*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}	
+	{extender "inventory"
+		{box
+            {item "ammo Hcb_ammo" 1000}		;1000 в версии с 12.7 данные с Армии-16
+			;{item "ammo smoke_shtora" 12}
+		}
+	}
+
+	{Weaponry
+        ("restore_ik_time")
+		{place "mgun"
+			{weapon "Kord" filled}
+			{type "mgun_coaxial"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight3"}
+			{LinkAnimation "off"}
+			{basic}
+			("CW_stab_abm" abm(0.86))
+			("CW_stab_autotrack_suo")
+		}
+		{place "mgun20"			;дым гранатометы
+			{type "mgun_left"}
+			{weapon "6xepocha_a" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight20"}
+			{shooter "Shootera_"}
+			{barrels 6}
+			;{basic}
+		}
+		{place "mgun21"			;дым гранатометы
+			{type "mgun_right"}
+			{weapon "6xepocha_b" filled}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{foresight "foresight21"}
+			{shooter "Shooterb_"}
+			{barrels 6}
+			;{basic}
+		}
+	}
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_2g"}	;данные с Армии-16 - дальность обнаружения 3/1,5
+		}
+		{visor "commander1"
+			{vision "tank_driver"}
+			{bone "Visor4"}
+		}
+		{visor "cam1"				
+			{vision "vehicle_top_mgun"}
+			{bone "Visor5"}
+		}
+		{visor "cam2"				
+			{vision "vehicle_top_mgun"}
+			{bone "Visor6"}
+		}
+		{visor "cam3"				
+			{vision "vehicle_top_mgun"}
+			{bone "Visor7"}
+		}
+		{visor "cam4"				
+			{vision "vehicle_top_mgun"}
+			{bone "Visor8"}
+		}
+		{visor "shtora_visor1"				
+			{vision "shtora90_visor"}
+			{bone "shtora_visor1"}
+		}
+		{visor "shtora_visor2"				
+			{vision "shtora90_visor"}
+			{bone "shtora_visor2"}
+		}
+		{visor "shtora_visor3"				
+			{vision "shtora90_visor"}
+			{bone "shtora_visor3"}
+		}
+	}
+	{mass 23000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(0.85))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(23)
+			Width(3.25)
+			Power(750)
+			Realspeed(75)
+			Gamespeed(45) 
+		)
+		{RearGears		0.20 0.40}}
+		("CW_fuelbag" Range(500) Fuelvolume(700))
+		("CW_speed_lev" Gamespeed(45))
+	}
+	{props "cwfs_fuel_700"}
+
+	("CW_amphibia" Waterline(1.4) )
+	("two_headlights")
+	("cw_headlightt")
+	
+	{Extension "kurganec_b-10.mdl"}
+	("missile_aimpoint_trucksize")
+
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(40))	;данные с Армии-16
+	{bone "gun_rot"
+		{limits -70 8}	;данные с Армии-16
+	}
+
+}

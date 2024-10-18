@@ -1,0 +1,241 @@
+{Entity
+	
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev05" "leopard2" "laser_spo" "cw_blow_panels1" "cw_panorama" "has_apu" "remote_mgun1" "8_barrels_smoke" "spall_liner"}
+	{props "remote_turret"}	;нет ручного механического привода башни, только 2 электрических
+	{targetSelector "tank"}
+
+	("armor_heavy_multivolume" turret(610 306 25 70) body1(70 25 25 122)  body2(70 25 25 122)) 
+	("armor_mantlet" t(200)) 
+	;("armor_engine"  t(30))
+
+	{volume "apploque_front"	{Thickness 70}}
+	{volume "apploque_side1"	{Thickness 10}}
+	{volume "apploque_side2"	{Thickness 10}}
+	
+	{volume "apploque_front"	{Thickness 70}}
+	{volume "apploque_side1"	{Thickness 10}}
+	{volume "apploque_side2"	{Thickness 10}}
+	
+	{volume "shieldl1"	{thickness 50} {component "shieldl1"}}
+	{volume "shieldl2"	{thickness 10} {component "shieldl2"}}
+	{volume "shieldl3"	{thickness 10} {component "shieldl3"}}
+	{volume "shieldl4"	{thickness 40} {component "shieldl4"}}
+	{volume "shieldl5"	{thickness 114} {component "shieldl5"}}
+
+	{volume "shieldr1"	{thickness 50} {component "shieldr1"}}
+	{volume "shieldr2"	{thickness 10} {component "shieldr2"}}
+	{volume "shieldr3"	{thickness 10} {component "shieldr3"}}
+	{volume "shieldr4"	{thickness 40} {component "shieldr4"}}
+	{volume "shieldr5"	{thickness 114} {component "shieldr5"}}
+
+
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	
+	{armor
+		{setting "apploque_front"
+;			{thickness 475 328 68 70}		;желаемое
+			{thickness 560 366 80 70}		;измеренное
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_front*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+		{setting "apploque_side"
+			{thickness 50 5 25 25}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_side*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+		{setting "shield1"
+			{thickness 50}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}}
+			{volumes "shieldl1" "shieldr1" "shieldl2" "shieldr2" "shieldl3" "shieldr3" "shieldl6" "shieldr6" "shieldl7" "shieldr7" "shieldl8" "shieldr8"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "shield4"
+			{thickness 40 40 5 5}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}}
+			{volumes "shieldl4" "shieldr4"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "shield5"
+			{thickness 114 40 5 5}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}} 
+			{volumes "shieldl5" "shieldr5"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+		{setting "shield9"
+			{thickness 10}
+			{durability {blast {value 40}} {pierce  {koef 999}}}
+			{threshold {blast {value 10}}}
+			{volumes "shieldl9" "shieldr9"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+	("comp_armor_increment" turret(96 42 71 71) body(79 30 40 40))
+
+	{extender "shield"
+		{on}
+	}
+
+
+
+
+;====================================
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_tank_left"} {end "seat_gunner_stand"}{base "open_c"}}
+			{reverse 	{end	"emit_tank_2_hold"} {base "open_c" -1}}
+		}
+		{anm "armor"
+			{forward	{begin	"board_highArmor"} 	{end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_tank_2"}}
+		}
+		{anm "armor1"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_2"}}
+			{reverse 	{end	"emit_body"}}
+		}
+		{anm "armor2"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+	("crew_inside")	
+	{placer
+		{place "driver" {group "crew"} {visor "driver"}}
+	}
+	{boarder
+		{door "emit0"}
+		{link "emit0" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+	}
+	("crew_human" place(commander)		door1(emit2) door2(emit1) visor(commander))
+	("crew_human" place(gunner)	 	door1(emit2) door2(emit1) visor(gunner))
+	("crew_human" place(charger)	 	door1(emit2) door2(emit1) visor(none))
+
+	{sensor
+		{visor "driver"
+			{vision "vehicle_main_IR"}
+			{bone "Visor2"}
+		}
+		{visor "gunner"	;
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor1"}
+		}
+		{visor "commander"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor3"}
+		}
+		{visor "up"
+			{vision "vehicle_top_mgun"}
+			{bone "mgun3"}
+		}
+		{visor "add"	;https://en.wikipedia.org/wiki/FLW_remote_weapon_station#FLW_200
+			{vision "tank_gunner_optic_IR_2g"}
+			{bone "Visor4"}
+		}
+	}
+
+
+;=================================================	
+	{extender "inventory"
+		{box
+			{item "ammo bullet120_GER apcr" 18}
+			;{item "ammo bullet120_GER cm" 8}
+			{item "ammo bullet120_GER abm" 18}	;минус 5 снарядов для размещения доп. бронеплиты на брюхе.
+			{item "ammo 762Nato" 4750}
+			;https://en.wikipedia.org/wiki/FLW_remote_weapon_station#FLW_200	только 32 гранаты
+			;{item "ammo smoke_shtora" 16}	
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "120mm_Rh120L55" filling "ammo bullet120_GER apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}                 
+			("CW_stab_abm" abm(0.52))
+			("CW_stab_ld_suo")
+		}
+		{place "mgun1"
+			{type "mgun_aa"}
+;			{weapon "browning_m2hb" filled}
+			{weapon "hk_gmg" filled}
+			{foresight "foresight6"}
+;			{linkbone "mgun2"}
+			{linkbone "gmg"}
+			{gunner "commander"}
+			{charger "commander"} 
+			{basic}
+			("CW_stab_abm" abm(0.90))
+			("CW_stab_ld_suo")
+		}
+		{place "mgun"
+			{type "mgun_coaxial"}
+			{weapon "MG3_tank" filled}
+			{foresight "foresight5"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.98))
+			("CW_stab_ld_suo")
+		}
+	}
+
+	{mass 77000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(0.17))
+		;http://www.army-technology.com/projects/leopard-2-a7-main-battle-tank/
+		{Locomotion ("CW_track_moveparam" 
+			Mass(77)
+			Width(3.7)
+			Power(1500)
+			Realspeed(72)	
+			Gamespeed(44) 
+		)
+		{RearGears		0.20 0.41}{GearSwitchDelay	0.01}}
+		("CW_fuelbag" Range(500) Fuelvolume(1200))
+		("CW_speed_lev" Gamespeed(44))
+	
+	}
+	{props "cwfs_fuel_500" "cwfs_extfuel_1000"}
+
+	("two_headlights")
+	{Extension "leopard_2a7plus.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("recoil_side_common")
+	("CW_turr_speed" deg_per_s(40))
+	("cw_suspension_7tracks" downmax(-12) upmax(25) r(0.44))
+}
+

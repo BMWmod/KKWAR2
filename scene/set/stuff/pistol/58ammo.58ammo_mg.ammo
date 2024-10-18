@@ -1,0 +1,19 @@
+;Cold War
+{bullet
+	{tag "bullet small stackable DVC12 mgun pierce sharing fx_bul_small ui_mgun"}
+	{inventory
+		{weight 0.5}
+		{block 200}
+		{size 2 2}
+		{fsm "belt"}
+	}
+	{mass 0.025}
+	{entity "qjy_ammo"}
+	{trace
+		{view "/texture/fx/trace5"
+			{ScaleY 0.13}
+		}
+		{length 1.2}
+	}
+("cw_powder_charge" kg(0.0017))
+}

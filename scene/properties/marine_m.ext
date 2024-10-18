@@ -1,0 +1,315 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+
+{able "-emit_passangers_on_enemy" "-repaired"}
+
+("brain_vehicle")
+
+{simulatorid "water"}
+{patherid "water"}
+{collider "marine.heavy"}
+{obstacleID "marine"}
+{lodclass "none"}
+;{props "marine_M"}
+
+
+{extender "inventory"
+	{box
+		{Size 8 12}
+		{Weight 20000}
+	}
+}
+
+{sensor
+	{Visor "main"
+		{vision "marine_main"}
+		{bone "visor"}
+	}
+	{RecognizeTime 0.1}
+	{InformRange 400}	;changed in MOW2
+}
+(define "chassis_defaults"
+	{speed
+		{Slow	10	}	; km/h
+		{Normal	17	}
+		{Fast	30	}
+	}
+)
+(define "locomotion"
+	{MaxSpeed	45	}
+	{StartTime	3	}
+	{BrakeTime	2	}
+	{StopTime	3	}
+	{TurnRadius	100	}
+	{SplineRadius 3	}
+	{TurnTime		10}
+
+	{SteerOn	20	}
+	{SteerOff	40	}
+	{Gears 0.2 0.5 0.7 1.0}
+	{RearGears 0.15 0.3}
+)
+(define "marine_chassis"
+	{Chassis "water"
+		("chassis_defaults")
+	}
+	{chassis
+		{Locomotion 
+			{MaxSpeed	%speed	}
+			{maxSpeedAtMaxTurn	(* %speed 0.8)	}
+			{StartTime	%starttime	}
+			{BrakeTime	(* %starttime 0.5)	}
+			{StopTime	(* %starttime 1.5)	}
+			{TurnTime (* 7 (/ %turnrad %speed))}
+			{TurnRadius	%turnrad	}
+			{SplineRadius (* %turnrad 0.5)	}
+
+			{SteerOn	20	}
+			{SteerOff	40	}
+			{Gears 0.5 0.7 1.0}
+			{RearGears 0.15 0.3 0.7}
+			{GearSwitchDelay 5}
+		}
+	}
+)
+(define "armor_marine"
+{armor
+        {setting "body"
+            {thickness %bod}
+            {durability
+                {blast
+                    {koef %dur}
+	      {value %dur_value}
+                }
+        		{pierce
+                    {koef %pierce_dur}
+                }
+            }
+            {threshold
+                {blast
+                    {koef %thr}
+	      {value %thr_value}
+                }
+            }
+;            {volumes "body3" "body1" "body" "body2" "body4" "bridge_support"}
+            {volumes "body*" "bridge_support*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "bridge"
+            {thickness (* 0.5 %bod)}
+            {durability
+                {blast
+                    {koef (* 0.5 %dur)}
+	      {value (* 0.5 %dur_value)}
+                }
+        		{pierce
+                    {koef (* 0.5 %pierce_dur)}
+                }
+            }
+            {threshold
+                {blast
+                    {koef (* 0.65 %thr)}
+	      {value (* 0.65 %thr_value)}
+                }
+        		;{pierce
+                ;    {koef 1}
+        		;}
+            }
+            {volumes "bridge" "bridge1" "bridge2" "bridge3" "bridge4" "bridge5" "bridge6" "anten"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+}
+)
+(define "armor_light"	;fast light non-armored ships and boats
+    ("armor_marine" bod(%body)  dur(1) thr(1) pierce_dur(999) dur_value(60) thr_value(10))
+)
+(define "armor_light_missile_ship"	;light missile ships
+    ("armor_marine" bod(%body)  dur(1) thr(1) pierce_dur(999) dur_value(100) thr_value(15))
+)
+(define "armor_medium"	;destroyers and cruisers
+    ("armor_marine" bod(%body)  dur(2) thr(1.5) pierce_dur(999) dur_value(150) thr_value(35))
+)
+(define "armor_heavy"	;ships with constructive defence - vulnerable for 155mm
+    ("armor_marine" bod(%body)  dur(2) thr(2) pierce_dur(999) dur_value(200) thr_value(60))
+)
+
+{targetClass "marine_heavy"}
+{targetSelector "tank"}
+
+	{Volume "ballast1"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	{Volume "ballast2"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	{Volume "ballast3"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	{Volume "ballast4"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	{Volume "ballast5"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	{Volume "ballast6"
+		{tags "float"}
+		{Able clear {float}}
+	}
+	;{Able {visible 0}} необходимо для избежания тормозов.
+	{Volume "body3" {tags "body3" "hull"} {thickness 20} {component "body3"} {Able {visible 0}}}
+	{Volume "body1" {tags "body1" "hull"} {thickness 20} {component "body1"} {Able {visible 0}}}
+	{Volume "body" {tags "body" "hull"} {thickness 20} {component "body"} {Able {visible 0}}}
+	{Volume "body2" {tags "body2" "hull"} {thickness 20} {component "body2"} {Able {visible 0}}}
+	{Volume "body4" {tags "body4" "hull"} {thickness 20} {component "body4"} {Able {visible 0}}}
+	{Volume "body3a" {tags "body3" "hull"} {thickness 20} {component "body3"} {Able {visible 0}}}
+	{Volume "body1a" {tags "body1" "hull"} {thickness 20} {component "body1"} {Able {visible 0}}}
+	{Volume "bodya" {tags "body" "hull"} {thickness 20} {component "body"} {Able {visible 0}}}
+	{Volume "body2a" {tags "body2" "hull"} {thickness 20} {component "body2"} {Able {visible 0}}}
+	{Volume "body4a" {tags "body4" "hull"} {thickness 20} {component "body4"} {Able {visible 0}}}
+	{Volume "body3b" {tags "body3" "hull"} {thickness 20} {component "body3"} {Able {visible 0}}}
+	{Volume "body1b" {tags "body1" "hull"} {thickness 20} {component "body1"} {Able {visible 0}}}
+	{Volume "bodyb" {tags "body" "hull"} {thickness 20} {component "body"} {Able {visible 0}}}
+	{Volume "body2b" {tags "body2" "hull"} {thickness 20} {component "body2"} {Able {visible 0}}}
+	{Volume "body4b" {tags "body4" "hull"} {thickness 20} {component "body4"} {Able {visible 0}}}
+	{Volume "body3_vis" {tags "body3" "hull_vis"} {thickness 20} {component "body3"} {Able clear {visible 1}}}
+	{Volume "body1_vis" {tags "body1" "hull_vis"} {thickness 20} {component "body1"} {Able clear {visible 1}}}
+	{Volume "body_vis" {tags "body" "hull_vis"} {thickness 20} {component "body"} {Able clear {visible 1}}}
+	{Volume "body2_vis" {tags "body2" "hull_vis"} {thickness 20} {component "body2"} {Able clear {visible 1}}}
+	{Volume "body4_vis" {tags "body4" "hull_vis"} {thickness 20} {component "body4"} {Able clear {visible 1}}}
+
+	{Volume "bridge_holder" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_supporta" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_supportb" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support1" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support2" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support3" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support4" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support5" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support6" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support7" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support8" {tags "bridge_support" "hull"} {thickness 20} {component "bridge_support"} {Able {visible 0}}}
+	{Volume "bridge_support_vis" {tags "bridge_support" "hull_vis"} {thickness 20} {component "bridge_support"} {Able clear {visible 1}}}
+
+	{Volume "bridge" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge1" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge2" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge3" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge4" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge5" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge6" {tags "bridge" "hull"} {thickness 20} {component "bridge"} {Able {visible 0}}}
+	{Volume "bridge_vis" {tags "bridge" "hull_vis"} {thickness 20} {component "bridge"} {Able clear {visible 1}}}
+
+	{component "body3"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "body1"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "body"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "body2"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "body4"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "bridge"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "bridge_support"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	{component "anten"
+		{RepairTime 100}
+		{tags "noDestroyedView" "repair_lev3" "repair_lev2"}
+	}
+	
+	
+	(define "submarine"
+		{props "submarine"  "vision_lev_submarine"}
+		{targetClass "submarine"}
+		{Volume "body3_vis" {tags "body3" "hull_vis"} {thickness 10} {component "body3sub"} {Able clear {visible 1}}}
+		{Volume "body1_vis" {tags "body1" "hull_vis"} {thickness 20} {component "body1sub"} {Able clear {visible 1}}}
+		{Volume "body_vis" {tags "body" "hull_vis"} {thickness 20} {component "bodymsub"} {Able clear {visible 1}}}
+		{Volume "body2_vis" {tags "body2" "hull_vis"} {thickness 20} {component "body2sub"} {Able clear {visible 1}}}
+		{Volume "body4_vis" {tags "body4" "hull_vis"} {thickness 20} {component "body4sub"} {Able clear {visible 1}}}
+		{Volume "body3_vissub" {tags "body3" "hull_vissub"} {thickness 1000} {component "body3"} {Able clear {visible 1} {bullet 1}}}
+		{Volume "body1_vissub" {tags "body1" "hull_vissub"} {thickness 1000} {component "body1"} {Able clear {visible 1} {bullet 1}}}
+		{Volume "body_vissub" {tags "body" "hull_vissub"} {thickness 1000} {component "body"} {Able clear {visible 1} {bullet 1}}}
+		{Volume "body2_vissub" {tags "body2" "hull_vissub"} {thickness 1000} {component "body2"} {Able clear {visible 1} {bullet 1}}}
+		{Volume "body4_vissub" {tags "body4" "hull_vissub"} {thickness 1000} {component "body4"} {Able clear {visible 1} {bullet 1}}}
+		{component "bodymsub" {tags "bodysub"}}
+		{component "body1sub" {tags "bodysub"}}
+		{component "body2sub" {tags "bodysub"}}
+		{component "body3sub" {tags "bodysub"}}
+		{component "body4sub" {tags "bodysub"}}
+
+	)
+	
+	
+	
+	
+	
+	
+(define "part"
+	{volume %0
+		{tags "part"}
+		{thickness 20}
+		{component %0}
+	}
+	{component %0}
+)
+(define "marine_part_big"
+	{Volume %vol
+		{tags "part_big"}
+		{thickness 20}
+		{component "%name"}
+		{Able {visible 0}}	;иначе тормоза
+	}
+	{component "%name"
+	}
+	{armor
+		{setting "%name"
+			{thickness %th}
+			{durability
+				{blast
+					{koef %dur}
+		  {value %dur_value}
+			   }
+			{pierce
+					{koef %pierce_dur}
+				}
+			}
+			{threshold
+				{blast
+					{koef %thr}
+		  {value %thr_value}
+				}
+			}
+			{volumes %vol}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+)
+
+
+
+
+
+

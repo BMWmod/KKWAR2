@@ -1,0 +1,175 @@
+;SDL
+actor
+
+(include "vehicle.ext")
+(include "cannon_crew.ext")
+(include "cannon_armor.ext")
+
+;(include "shadow/tank.inc"  scale(0.7))
+(include "selection/vehicle.inc"  scale(0.7))
+{PatherID "cannon.carried"}
+{simulation {able 1} {disableLinked 1}}
+{obstacleID "tank"}
+{collider "cannon"}
+{constrain ground}
+{props "mg_stan" "vehicle" "steel" "cannon" "emit_on_sink" "ignore_uplink_fogged" "trace_interceptor" "anm_mgun_lie"}
+{able "emit_crew_on_injure"}
+{targetClass "cannon" "bullet"}
+{targetSelector "cannon_bullet"}
+
+{brain "vehicle" 
+	{state "vehicle"}
+}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+
+{placer
+	{crew}
+	{place "commander" {visor "commander"}}
+	{place "driver1" {visor "commander"}}
+	{place "driver2" {visor "commander"}}
+}
+
+{extender "bodykit"
+	{"camouflage"
+		{drop_on_move}
+		{delay 5}
+		{"leafbush_01b_scale06" "basis"}
+	}       	
+}
+
+{sensor
+	{visor "main"
+		{vision "cannon_mgun"}
+	}
+	{visor "commander"
+		{vision "cannon_crew"}
+		{bone "turret"}
+	}
+}
+
+{extender "inventory"
+	{Box
+		{Size 6 6}
+		{weight 1000}
+;		(mod "mp"
+;			{item "plant" 3 {cell 0 1}}
+;		)
+	}
+}
+
+;не раскомменчивать, иначе отрубится стрельба
+;{Weaponry
+;	{ManualAccuracy 1.0}
+;	{place "mgun"
+;		{charger "gunner"}
+;		{LinkBone "mgun"}
+;		{LinkAnimation "off"}
+;	}
+;}  	
+;{Weaponry
+;    {ManualAccuracy 1}
+;    {place "gun2"
+;        {charger "gunner"}
+;    }
+;}
+
+("crew_2_human")
+("crew_human" place(driver1) bone(driver1)	door(emit1) animation(driver1))
+("crew_human" place(driver2) bone(driver2)	door(emit2) animation(driver2))
+{boarder
+	{anm "gunner"
+		{forward	{end "pose_mgun_stan"}}
+	}
+	{anm "commander"
+		{forward	{end "pose_mg_stan_charger"}}
+	}
+	{anm "driver1"
+		{forward {end "mgun_browning_driver_r"}}
+	}
+	{anm "driver2"
+		{forward {end "mgun_browning_driver_l"}}
+	}
+	{link "driver1" "gunner"}
+	{link "driver2" "commander"}
+}
+
+{extender "cannon"
+	{animation
+		{switch "close"}
+		{move "mgun_browning_driver_r" "mgun_browning_driver_l"}
+		{aim "" ""}
+		{fire  "" ""}
+		{reload  "mgun_stan_charger" ""}
+	}
+	{attack {workers "gunner" "commander"}}
+}
+	{extender "cannon"
+		{state move}
+		{animation
+			{switch "close"}
+			{move "mgun_browning_driver_r" "mgun_browning_driver_l"}
+			{aim "" ""}
+			{fire  "" ""}
+			{reload  "" "mgun_stan_down"}
+		}
+		{move {workers "driver1" "driver2"} {obstacle "close"}}
+		{attack {workers "gunner" "commander"}}
+		{attack "gunner_stand" {workers "gunner_stand" "commander_stand"} {obstacle "open"}}
+		{selector_gunner {name "gunner"}
+			{if linked and in_fortification "trench" {name "gunner_stand"}}
+		}
+	}
+{Chassis "human_carrier"
+	("loco_carrier")
+}
+{volume "body" {thickness 6}}
+{volume "body1" {thickness 6}}
+{volume "body2" {thickness 6}}
+{volume "body3" {thickness 6}}
+{volume "body4" {thickness 6}}
+{volume "body5" {thickness 6}}
+{volume "body6" {thickness 6}}
+{component "body" {RepairTime 20}}
+{volume "turret" {thickness 6}}
+{volume "turret1" {thickness 6}}
+{volume "turret2" {thickness 6}}
+{volume "turret3" {thickness 6}}
+{volume "turret4" {thickness 6}}
+{component "turret" {RepairTime 20}}
+{volume "gun" {thickness 6}}
+{component "gun" {RepairTime 20}}
+{volume "gun2" {thickness 6}}
+{component "gun2" {RepairTime 20}}
+
+{volume "shield" {thickness 10}}
+{component "shield" {RepairTime 20}}
+
+{extender "shield"
+	{on}
+	{no_blast}
+}
+
+{armor
+	{setting "shield"
+		{volumes "*shield*"}
+		{thickness 10}
+	}
+}
+
+{mass 50}
+
+{volume "select"
+	{able clear {select}}
+	{density 0}
+}
+{component "body"
+	{RepairTime 15}
+}
+
+{extender "talk"
+	{talker "cannon"}
+}
+
+("armor_light" args 0.7)

@@ -1,0 +1,39 @@
+
+{from "pattern cm"
+	{tag "big" "size3" "122to128" "bullet120_israel" "bullet120_NATO" "fx_111_145" "for_heli"}
+	{inventory
+		{size 6 1}
+	}	
+	{mass 22.7}
+	{entity "shell_usa_ap_120"} 
+	{view "fg_fly"}
+	{trace
+		{view "/texture/fx/trace" {ScaleY 0.2}}
+		{length 2}
+	}
+	;ВВ Сomp A3 тип 2 -  Т.Э. - 1.3 масса ВВ 0.97 кг, подкалиберный кумулятивно-осколочный ;http://uxoinfo.com/blogcfc/client/includes/uxopages/Mulvaney_Details.cfm?Ord_Id=P151
+;	{tag "he_07to2"}
+;{damage blastwave {energy 0.7} {area 5.6 6.4}}
+;{damage add blastwave {energy 1.2} {area 3.9 4.4}}
+;	{damage cumulative
+;		{damage 420}
+;		{distance 3}
+;	}
+;БЧ 11,4 кг, ВВ 0,97 кг, ТЭ 1,22, нач. скорость 1410 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - КумФуг(HE-HEAT)
+("cw_blastwave_1" tank() ifv() apc() end(0.2))
+("cw_direct_hit" energy(7))
+("cw_fragwave" e2_5(2.5) r2_5(0.9) e1_2(1.2) r1_2(6) chance(6.9))
+("cw_fragwave" e2_5(2.5) r2_5(2.4) e1_2(1.2) r1_2(9.8) chance(4.4))
+("cw_fragwave" e2_5(2.5) r2_5(3.6) e1_2(1.2) r1_2(12.3) chance(4.3))
+("cw_fragwave" e2_5(2.5) r2_5(5.9) e1_2(1.2) r1_2(16.9) chance(3.7))
+("cw_fragwave" e2_5(2.5) r2_5(9.3) e1_2(2.5) r1_2(9.3) chance(3.4))
+("cw_fragments" e1_2(1.2) r1_2(6) e1_0(1) r1_0(9.1) e0_7(0.7) r0_7(14.2) e0_25(0.25) r0_25(14.2) chance(6.9))
+("cw_fragments" e1_2(1.2) r1_2(9.8) e1_0(0.25) r1_0(9.8) e0_7(0.25) r0_7(9.8) e0_25(0.25) r0_25(9.8) chance(4.4))
+("cw_fragments" e1_2(1.2) r1_2(12.3) e1_0(0.25) r1_0(12.3) e0_7(0.25) r0_7(12.3) e0_25(0.25) r0_25(12.3) chance(4.3))
+("cw_fragments" e1_2(1.2) r1_2(16.9) e1_0(0.25) r1_0(16.9) e0_7(0.25) r0_7(16.9) e0_25(0.25) r0_25(16.9) chance(3.7))
+("cw_contusion" t10(0) t6(0) t3(6.7) t0(8.8))
+("cw_heat" energy(420))
+
+}
+;Comp A3 тип 2 - 91% гексогена 9% воска трот.экв. - 1.22
+;https://dockeryarmory.com/composition-a-3-a-4/

@@ -1,0 +1,576 @@
+{mission
+	{Players
+		{count 18}
+		{diplomacy
+		    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+			1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+		}
+	}
+	;This trailer is needed for work of CWPS3 and land-targeted missiles like Tomahawk or Taurus in multiplayer.
+	;Do not ask why.
+	{Entity "trailer" 0x9fff
+		{Position 10000 10000 -990}
+		{Player 1}
+	} 
+	{Helpers
+		{triggers
+		    {"link"
+				{condition
+					{terms
+						{"1.near"
+							{units
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{prop
+											{prop bmd2}
+										}
+										{state
+											{state "operatable moveable chassis_work user_control"}
+										}
+									}
+									{exclude
+										{state
+											{state dead}
+										}
+										{state
+											{state linked}
+										}
+									}
+								}
+							}
+							{near_to
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{prop
+											{prop "an-12bk"}
+										}
+										{state
+											{state "operatable moveable chassis_work user_control"}
+										}
+									}
+									{exclude
+										{state
+											{state dead}
+										}
+									}
+								}
+							}
+							{distance 150}
+						}
+					}
+				}
+				{actions
+					{"linker"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop "an-12bk"}
+									}
+									{state
+										{state "operatable moveable chassis_work user_control"}
+									}
+								}
+								{exclude
+									{state
+										{state dead}
+									}
+								}
+							}
+							{amount 1
+							}
+						}
+						{entities
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop bmd2}
+									}
+									{state
+										{state "operatable moveable chassis_work user_control"}
+									}
+								}
+								{exclude
+									{state
+										{state dead}
+									}
+									{state
+										{state linked}
+									}
+								}
+							}
+							{amount 1
+							}
+						}
+						{place
+							{type specific}
+							{name vehicle1}
+						}
+					}
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop "an-12bk"}
+									}
+									{state
+										{state "operatable moveable chassis_work user_control"}
+									}
+								}
+								{exclude
+									{state
+										{state dead}
+									}
+									{tag
+										{tag place1_busy}
+									}
+								}
+							}
+							{amount 1
+							}
+						}
+						{tag_add place1_busy}
+					}
+					{## "delay"
+						{time 1}
+					}
+					{"effect"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{select
+									{tag
+										{tag place1_busy}
+									}
+								}
+								{include
+									{state
+										{state "operatable moveable chassis_work user_control"}
+									}
+								}
+								{exclude
+									{state
+										{state dead}
+									}
+								}
+							}
+						}
+						{effect check_vdvstate}
+					}
+					{"trigger"
+						{name "link"}
+					}
+				}
+			}
+			{"service/cw_auto_landing/team_a"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{tag need_auto_landing}
+							}
+						}
+					}
+				}
+				{actions
+					
+					{"waypoint"
+						{who
+							{type actor}
+							{actors
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{tag
+											{tag need_auto_landing}
+										}
+										{tag
+											{tag team_a}
+										}
+									}
+								}
+							}
+						}
+						{action
+							{type start}
+							{waypoint "0"}
+						}
+					}
+					{"delay"
+						{time 1.0}
+					}
+					{"entity_state"
+						{selector
+							{tag need_auto_landing}
+						}
+						{tag_remove need_auto_landing}
+					}
+					{"trigger"
+						{name "service/cw_auto_landing/team_a"}
+					}
+				}
+			}
+			{"service/cw_auto_landing/give_team_a_tag"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{prop
+											{prop airborne_m}
+										}
+									}
+									{exclude
+										{tag
+											{tag team_a}
+										}
+										{tag
+											{tag team_b}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{select
+									{zone
+										{zone "cw_auto_landing_team_a"}
+									}
+								}
+								{include
+									{prop
+										{prop airborne_m}
+									}
+								}
+								{exclude
+									{tag
+										{tag team_a}
+									}
+									{tag
+										{tag team_b}
+									}
+								}
+							}
+						}
+						{tag_add team_a}
+					}
+					{"trigger"
+						{name "service/cw_auto_landing/give_team_a_tag"}
+					}
+				}
+			}
+			{"service/cw_auto_landing/give_team_b_tag"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{prop
+											{prop airborne_m}
+										}
+									}
+									{exclude
+										{tag
+											{tag team_b}
+										}
+										{tag
+											{tag team_a}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{select
+									{zone
+										{zone "cw_auto_landing_team_b"}
+									}
+								}
+								{include
+									{prop
+										{prop airborne_m}
+									}
+								}
+								{exclude
+									{tag
+										{tag team_b}
+									}
+									{tag
+										{tag team_a}
+									}
+								}
+							}
+						}
+						{tag_add team_b}
+					}
+					{"trigger"
+						{name "service/cw_auto_landing/give_team_b_tag"}
+					}
+				}
+			}
+			{"service/cw_auto_landing/team_b"
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{tag need_auto_landing}
+							}
+						}
+					}
+				}
+				{actions
+					
+					{"waypoint"
+						{who
+							{type actor}
+							{actors
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{tag
+											{tag need_auto_landing}
+										}
+										{tag
+											{tag team_b}
+										}
+									}
+								}
+							}
+						}
+						{action
+							{type start}
+							{waypoint "6"}
+						}
+					}
+					{"delay"
+						{time 1.0}
+					}
+					{"entity_state"
+						{selector
+							{tag need_auto_landing}
+						}
+						{tag_remove need_auto_landing}
+					}
+					{"trigger"
+						{name "service/cw_auto_landing/team_b"}
+					}
+				}
+			}
+			{"service/cw_autotakeoff_mp"
+				{autoreset}
+				{condition
+					{terms
+						{"1.entities"
+							{selector
+								{source advanced}
+								{ignore_captured_by_user 0}
+								{group
+									{include
+										{prop
+											{prop cw_autotakeoff_mp}
+										}
+										{order eMoveTask
+										}
+									}
+									{exclude
+										{tag
+											{tag cw_autotakeoff_activated}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				{actions
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop cw_autotakeoff_mp}
+									}
+									{order eMoveTask
+									}
+								}
+								{exclude
+									{tag
+										{tag cw_autotakeoff_activated}
+									}
+								}
+							}
+						}
+						{tag_add takeoff_speed}
+					}
+					{"air_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop cw_autotakeoff_mp}
+									}
+									{tag
+										{tag takeoff_speed}
+									}
+								}
+								{exclude
+									{tag
+										{tag cw_autotakeoff_activated}
+									}
+								}
+							}
+						}
+						{altitude 35}
+					}
+					{"action"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop cw_autotakeoff_mp}
+									}
+									{tag
+										{tag takeoff_speed}
+									}
+								}
+								{exclude
+									{tag
+										{tag cw_autotakeoff_activated}
+									}
+								}
+							}
+						}
+						{action move}
+						{target
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop human}
+									}
+								}
+								{exclude
+									{tag
+										{tag cw_autotakeoff_activated}
+									}
+									{prop
+										{prop cw_autotakeoff_mp}
+									}
+									{state
+										{state linked}
+									}
+								}
+							}
+							{sort
+								{type entity}
+								{entity
+									{source advanced}
+									{ignore_captured_by_user 0}
+									{group
+										{include
+											{prop
+												{prop cw_autotakeoff_mp}
+											}
+										}
+										{exclude
+											{tag
+												{tag cw_autotakeoff_activated}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					{"entity_state"
+						{selector
+							{source advanced}
+							{ignore_captured_by_user 0}
+							{group
+								{include
+									{prop
+										{prop cw_autotakeoff_mp}
+									}
+									{tag
+										{tag takeoff_speed}
+									}
+								}
+								{exclude
+									{tag
+										{tag cw_autotakeoff_activated}
+									}
+								}
+							}
+						}
+						{tag_add cw_autotakeoff_activated}
+					}
+					{"delay"
+						{time 0.01}
+					}
+					{"trigger"
+						{name "service/cw_autotakeoff_mp"}
+					}
+				}
+			}
+		}
+	}
+}

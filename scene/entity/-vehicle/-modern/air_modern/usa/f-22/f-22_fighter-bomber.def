@@ -1,0 +1,150 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_stealth" "F-22"}	
+
+	{Extension "f-22_fighter-bomber.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+
+
+	{mass 30206}
+
+
+	{Volume "fuel_tank_internal_b1"
+		{component "fuel_tank_internal_b"}
+	}
+	{Volume "fuel_tank_internal_c1"
+		{component "fuel_tank_internal_c"}
+	}
+	{Volume "fuel_tank_internal_d1"
+		{component "fuel_tank_internal_d"}
+	}
+
+
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	        {setting "fuel_tank_internal_b1" {thickness 3}
+	            {durability  {blast {value 30}} {pierce {value 35}}}
+	            {threshold  {blast {value 3}} {pierce {value 3}}}	
+	            {volumes "fuel_tank_internal_b1"}
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+	        }
+	        {setting "fuel_tank_internal_c1" {thickness 3}
+	            {durability  {blast {value 30}} {pierce {value 35}}}
+	            {threshold  {blast {value 3}} {pierce {value 3}}}	
+	            {volumes "fuel_tank_internal_c1"}
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+	        }
+	        {setting "fuel_tank_internal_d1" {thickness 3}
+	            {durability  {blast {value 30}} {pierce {value 35}}}
+	            {threshold  {blast {value 3}} {pierce {value 3}}}	
+	            {volumes "fuel_tank_internal_d1"}
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+	        }
+	}
+
+	{extender "inventory"
+		{box
+			{clear}
+			{item "M61ammo vulcan20mm ammo" 400}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "VulcanA2" filling "vulcan20mm ammo" 80}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+;================Оба крыла
+		{place "ptur"
+			{weapon "AIM-120C7x2" filled}
+			{foresight "foresight2"}
+;			{shooter "AIM120C_shooter_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "ptur1"
+			{weapon "aim-9lx2" filled}
+			{foresight "foresight3"}
+;			{shooter "AIM9M_shooter_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "bomber"
+			{weapon "GBU-38x2_F-35 weapon" filled}
+			{barrels 2}
+			{foresight "foresight4"}
+			{shooter "bomber_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+		
+	}	
+
+("Chassis_parameters" 
+	Speed(103) TurnRadius(28) 
+	Fuel(8200) Fuel_remain(3382) Fuel_rate(3.82) 
+	Acc_hor(8.91) Maneuvrability_hor(8.48)
+	Acc_ver(8.97) Maneuvrability_ver(10.94)
+)
+	{props "cwfs_fuel_8000"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+      	("part" args "part7")
+      	("part" args "part8")
+      	("part" args "part9")
+      	("part" args "part10")
+      	("part" args "part11")
+      	("part" args "part12")
+
+;У А-10 нет дополн. прицелов
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_200km"}
+			{bone "Visor_radarX"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("cw_headlightl")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+}

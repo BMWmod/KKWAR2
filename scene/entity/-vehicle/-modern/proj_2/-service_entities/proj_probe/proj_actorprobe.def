@@ -1,0 +1,34 @@
+{actor
+;	(include "/properties/stuff_grenade.ext")
+	{Extension "proj_probe.mdl"}
+	{Volume "body" {able clear {bullet}} {Thickness 0.1}}
+	{props "steel" "-wood"}
+	{obstacleID "nothing"}
+	{collider "nothing"}
+;	{extender "stuff"
+;		{item "empty_stuff"}
+;	}
+{able "-select"}
+{simulation {able 1} {disableLinked 1}}
+{constrain none}
+{props "nocover"}
+{lodclass "stuff_small"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+	{obstacleID "nothing"}
+	{collider "nothing"}
+
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+}

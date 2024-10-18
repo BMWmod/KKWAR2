@@ -1,0 +1,152 @@
+; by Kemper
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{props "medium_M" "turret_rotator" "turret" "vision_lev05" "sam" "sam_radar" "4_barrels_smoke"}
+
+	{extender "enumerator"}
+
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret1"
+		{tags "turret"}
+		{component "turret"}
+	}
+	{volume "turret2"
+		{tags "turret"}
+		{component "turret"}
+	}
+{volume "border1"
+    {thickness 10}
+}
+{volume "radar1_shield"
+    {thickness 10}
+}
+{volume "gun_l"
+    {tags "no_target"}
+    {thickness 20}
+    {able {Visible 0} {Obstacle 0} {Contact 0}}
+    {component "gun"}
+}
+{volume "gun_r"
+    {tags "no_target"}
+    {thickness 20}
+    {able {Visible 0} {Obstacle 0} {Contact 0}}
+    {component "gun"}
+}
+
+{boarder
+	{anm "driver"
+		{forward	{begin	"board_sd222_driver"} {base "open_driver"}}
+		{reverse 	{end	"emit_sd222_driver" } {base "close_driver"}}
+	}
+	{anm "gunner"
+		{forward	{begin	"board_tank_right"}}
+		{reverse 	{end	"emit_tank_1_hold"}}
+	}
+	{anm "commander"
+		{forward	{begin	"board_tank_left"}}
+		{reverse 	{end	"emit_tank_1_hold"}}
+	}
+}
+
+(define "crew_human"
+	{placer
+		{place "%place" {group "%group"} {visor "%visor"}}
+	}
+	{boarder
+		{door "%door"}
+		{link "%door" "%place" {anm "%animation"} {forward putoff} {reverse puton}}
+	}
+)
+	
+("crew_human" place(driver)		door(emit0) group(crew)		animation(driver)	    visor(driver))
+("crew_human" place(gunner)		door(emit1) group(crew)	    	animation(gunner)	    visor(main))
+("crew_human" place(commander)	door(emit2) group(crew)	   	 animation(commander)	    visor(radar))
+
+
+
+
+	("armor_medium" turret(12) body(70 30 20 20))	;из польской брошюры. данные подтверждаются gerWiki
+	;("armor_engine"  t(15 20 15 10))
+	{armor
+        {setting "turret"
+            {thickness 12}
+            {durability
+                {blast {koef 1} {value 60} } {pierce {koef 999} }
+            }
+            {threshold
+                {blast {koef 1} {value 20} }
+            }
+            {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+	}
+	
+	
+	{extender "inventory"
+		{box
+			{item "bullet35 ap ammo" 200}
+			{item "bullet35 fg ammo" 400}
+			{item "bullet35 apcr ammo" 40}
+			;{item "ammo smoke_shtora" 8}	
+		}
+	}	
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			("abm_zenite")
+			{RestoreIKAfterAim}
+			{weapon "35mm_Oerlikon_KDA" filling "bullet35 ap ammo" 40}
+			{foresight "foresight1"}
+			{charger "gunner"}
+			{Barrels 2}
+			("CW_stab_abm" abm(0.80))
+			("CW_stab_autotrack_suo")
+		}
+	}
+	{mass 47500}
+	{Chassis				
+		("tank_trace" fx("tracks_mid") step(0.52) len(0.7))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(42.2)
+			Width(3.37)
+			Power(819)
+			Realspeed(65)
+			Gamespeed(41) 
+		)
+		{RearGears		0.20 0.50}}
+		("CW_fuelbag" Range(600) Fuelvolume(985))
+		("CW_speed_lev" Gamespeed(41))
+	}
+	{props "cwfs_fuel_800"}
+
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_1g"}	
+		}
+		{visor "radar"
+			{vision "radar_around"}		;это - радар.
+			{bone "visor3"}
+		}
+	}
+	("sam_radar" type(usa))
+	("two_headlights")
+	{Extension "gepard.mdl"}
+	("missile_aimpoint_tanksize")
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(60))
+
+}

@@ -1,0 +1,46 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    
+   	
+	{filling "bullet_105_how"}
+	{fireSound "gun_cw/l118_ 105mm_shot"}
+	{reloadSound "cw/l118_ 105mm_reload"}
+	{rechargeTime 7} ; По видео https://youtu.be/yYQYlzka9Ts?t=161
+	{range 257 257}
+	{ZeroingAccuracy 0.75 0.5 0.33}
+;	{gravity 9.5}
+;	("speed" s(800)) 
+	{gravity 2.5}
+	("speed_artillery") 
+	("100-128caliber")
+	{calibre 5}	
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	("damage4" a(1) b(1) c(1) d(1) e(1))
+	("CW_acc_artillery_light" mils(1.83))
+	("cw_angle_curve_fixed_charge" d0_33(165) d0_5(180) d0_75(220) d(257))
+	{cursorreloading "cannon_reload_fg"}
+	;("relaxationtime" rt(2)) ; есть СУО + в отличии от Д-30 не ваншотит танки
+    {parameters "bullet105how_uk fg"	
+		{range 257 257}	
+	}
+    {parameters "bullet105how_uk sm"	
+		{range 250 250}	
+		;{cursor "cannon_on_dm_0"}
+		{cursor "cannon_on_sm"}
+		{cursorreloading "cannon_reload_sm"}
+	}            
+    {parameters "bullet105how_usa fg"	
+		{range 250 250}	
+	}
+	{parameters "bullet105how_usa_ar fg"	; https://books.google.ru/books?id=xI6hYQKyNscC&pg=PA31&lpg=PA31&dq=M913+RAP&source=bl&ots=sl9QtX9NfT&sig=ACfU3U228zGPLP1j_EljmK9gSVMMHaD-QQ&hl=ru&sa=X&ved=2ahUKEwiY1Pu0_475AhWCk4sKHX5CCHwQ6AF6BAgdEAM#v=onepage&q=M913%20RAP&f=false
+		{range 295 295}
+        {gravity 2.1}
+        ("CW_acc_artillery_ars_light" mils(1.83))		
+		("cw_angle_curve_fixed_charge" d0_33(180) d0_5(200) d0_75(250) d(295))
+	}
+    {parameters "bullet105how_usa sm"	
+		{range 250 250}	
+		;{cursor "cannon_on_dm_0"}
+		{cursor "cannon_on_sm"}
+		{cursorreloading "cannon_reload_sm"}
+	}             
+}

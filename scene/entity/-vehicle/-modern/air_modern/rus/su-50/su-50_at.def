@@ -1,0 +1,163 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_stealth" "su-50" "smalluav_irn_control"  "with_vitebsk"}	
+
+	{Extension "su-50_at.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+
+
+	{mass 30000}
+
+	{Volume "fuel_tank_internal_c1"
+		{component "fuel_tank_internal_c"}
+	}
+	{Volume "fuel_tank_internal_d1"
+		{component "fuel_tank_internal_d"}
+	}
+
+
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	        {setting "fuel_tank_internal_c1" {thickness 3}
+	            {durability  {blast {value 30}} {pierce {value 35}}}
+	            {threshold  {blast {value 3}} {pierce {value 3}}}	
+	            {volumes "fuel_tank_internal_c1"}
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{fragment_pass_threshold 0}
+	        }
+	        {setting "fuel_tank_internal_d1" {thickness 3}
+	            {durability  {blast {value 30}} {pierce {value 35}}}
+	            {threshold  {blast {value 3}} {pierce {value 3}}}	
+	            {volumes "fuel_tank_internal_d1"}
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{fragment_pass_threshold 0}
+	        }
+	}
+
+	{extender "inventory"
+		{box
+			{clear}
+			{item "GSH-30_ammo ap ammo" 120}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "GSH-30-1" filling "GSH-30_ammo ap ammo" 30}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+;================Оба крыла
+		{place "ptur"
+			{weapon "x-38mte_x4" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		{place "ptur1"
+			{weapon "rvv-mdx2" filled}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+		{place "soep1"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk1"}
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "soep2"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk2"}
+			{charger "driver"}
+			{gunner "driver"}
+		}		
+	}	
+
+("Chassis_parameters" 
+	Speed(103) TurnRadius(25) 
+	Fuel(11100) Fuel_remain(3356) Fuel_rate(3.87) 
+	Acc_hor(11.05) Maneuvrability_hor(10.58)
+	Acc_ver(8.94) Maneuvrability_ver(9.21)
+)
+	{props "cwfs_fuel_10k"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+      	("part" args "part7")
+      	("part" args "part8")
+      	("part" args "part9")
+      	("part" args "part10")
+      	("part" args "part11")
+      	("part" args "part12")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_200km"}
+			{bone "Visor_radarX"}
+		}
+		{Visor "radarX_L"
+			{vision "aircraft_radar_X_side"}
+			{bone "Visor_radarX_L"}
+		}
+		{Visor "radarX_R"
+			{vision "aircraft_radar_X_side"}
+			{bone "Visor_radarX_R"}
+		}
+;		{Visor "radarL"	;наличие крыльевого L-радара пока не подтверждено
+;			{vision "aircraft_radarL_150km"}
+;			{bone "Visor_radarL"}
+;		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_3g"}
+			{bone "Visor_OLS"}
+		}
+		{visor "shtora"				
+			{vision "shtora_visor"}
+			{bone "visor_driver"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+
+
+("cw_headlightl")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+}

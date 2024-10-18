@@ -1,0 +1,10 @@
+{bullet
+	{tag "bullet stackable full_shock antiinf nobleed sharing fx_10_15 fx_ap ui_rubber"}
+	{inventory
+		{size 2 1 }
+		{weight 11}
+		{block 3}
+	}
+	{mass 0.1}
+	{entity "23mm_shotgun_ammo_rubber"}
+}

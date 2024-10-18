@@ -1,0 +1,38 @@
+;Created by Pheonix 
+{from "pattern gun"     ; "Малка"
+   	
+	{filling "bullet203_rus"}
+	{fireSound "gun_cw/2a44/"}
+	{reloadSound "cw/2a44_reload"}
+	{rechargeTime 24}	;2.5 выс/мин для Пиона
+	{range 388 388}         ;3ВОФ34 - 37.4км
+;	{gravity 19}
+;	("speed" s(1200)) 
+	{gravity 1.7}
+	("speed_artillery") 
+	("100-128caliber")
+		;высокая цена выстрела, полностью устраняется колебание ствола/машины 
+							;(отвал+долгая перезарядка без смещения ствола на линию заряжания), современная СУО
+	{calibre 5}
+	{healthDamage 500}
+	{cursor "cannon_on_fg_5"}
+	{cursorReloading "cannon_reload_fg"}
+	("CW_acc_artillery_advanced" mils(1.95))
+	("cw_angle_curve_variable_charge")
+	{parameters "bullet203_rus cl"     ;3О14  30.4км.
+	    ;;("damage4" a(4) b(4) c(4) d(4) e(4))
+		{gravity 1.9}
+		{range 351 351}
+		{cursor "cannon_on_fg_3"}
+		{cursorReloading "cannon_reload_fg"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "bullet203_rus rok"       ;3ВОФ35  47.5 км.
+	    {gravity 1.6}
+		{range 415 415}
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorReloading "cannon_reload_fg"}
+		("CW_acc_artillery_ars_advanced" mils(1.95))
+	}
+}

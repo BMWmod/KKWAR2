@@ -1,0 +1,42 @@
+;SDL
+actor
+	{PatherID "amphibia"}
+	{props "amphibia"}
+	{chassis "water"
+		{speed
+			{Slow	10	}	; km/h
+			{Normal	17	}
+			{Fast	30	}
+		}
+		{ignorePatherBounds}
+		{waterline 1.6}
+		{switch
+			{terrain "water" "deep_water"}
+		}	
+	}
+(include "tank_unarmed_m.ext")
+	{Chassis
+		{switch
+			{exitFromWater}
+			{terrain not "water" "deep_water"}
+		}
+	}
+(define "accuracy_by_motion" ; 	spreading depending on the speed of "body", "gun" volumes
+	{AccuracyByMotion
+		{MaxLinearSpeed %max_linear}               ;km/h
+		{ByLinearSpeed %accuracy_by_linear}
+		{MaxAngularSpeed %max_angular}             ;deg/s
+		{ByAngularSpeed %accuracy_by_angular}
+		{DisorderTime %disorder_time}              ;s
+		{OrderTime %order_time}                    ;s
+	}
+)
+
+
+(define "restore_ik_time"
+	{RestoreIKTime 4}
+)
+
+{props "with_gun"}
+{targetClass "tank" "ap fg bullet"}
+{targetSelector "tank"}

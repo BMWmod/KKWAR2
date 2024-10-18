@@ -1,0 +1,34 @@
+{from "pattern rok"
+	{tag "big" "size4" "fg" "122to128fg" "fragmentary" "d30ammo" "fx_111_145"}
+	{tag "fg_120_shell"} ; только для ammo.set
+    {detonationThickness 40}
+	{inventory
+		{size 6 1}
+	}	
+	{mass 21.4}
+	{entity "shell_122mm_cn_rok"}
+{view "fg_fly_how"}
+	("art_shell_sound")
+	;2,41 кг ВВ A-IX-2 гексал, АРС
+;	{tag "he_2to4_5"}
+;	{damage blastwave {energy 0.7} {area 8.3 9.6}}
+;	{damage add blastwave {energy 1.2} {area 6.7 7.7}}
+;	{damage add blastwave {energy 2.5} {area 3.2 3.7}}
+;	{damage add blastwave {energy 6.5} {area 0.2 0.2}}
+;	{damage add blastwave {energy 11} {area 0.1 0.1}}; HE, kinetic, direct hit
+;БЧ 21,76 кг, ВВ 2,1 кг, ТЭ 1,7, нач. скорость 690 м/с, тип оболочки - Гаубицы 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_2" tank() ifv() apc(0.7) end(4.1))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(2.2) chance(12.3))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(3.5) chance(7.8))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(4.5) chance(7.8))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(6.3) chance(6.7))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(8.9) chance(6.1))
+("cw_fragments" e1_2(1.2) r1_2(2.2) e1_0(1) r1_0(6) e0_7(0.7) r0_7(12.4) e0_25(0.25) r0_25(21) chance(12.3))
+("cw_fragments" e1_2(1.2) r1_2(3.5) e1_0(1) r1_0(9) e0_7(0.7) r0_7(18.2) e0_25(0.25) r0_25(18.2) chance(7.8))
+("cw_fragments" e1_2(1.2) r1_2(4.5) e1_0(1) r1_0(10.9) e0_7(0.7) r0_7(21.9) e0_25(0.25) r0_25(21.9) chance(7.8))
+("cw_fragments" e1_2(1.2) r1_2(6.3) e1_0(1) r1_0(14.3) e0_7(0.25) r0_7(14.3) e0_25(0.25) r0_25(14.3) chance(6.7))
+("cw_fragments" e1_2(1.2) r1_2(8.9) e1_0(1) r1_0(19) e0_7(0.25) r0_7(19) e0_25(0.25) r0_25(19) chance(6.1))
+("cw_contusion" t10(0) t6(7.2) t3(9.7) t0(12.6))
+("cw_seismic_2")
+("cw_blast_mass_add" add(8.5))
+}

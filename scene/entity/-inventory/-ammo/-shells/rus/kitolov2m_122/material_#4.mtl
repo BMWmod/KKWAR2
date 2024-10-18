@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "kitolov 2mk122"}
+	{blend none}
+}

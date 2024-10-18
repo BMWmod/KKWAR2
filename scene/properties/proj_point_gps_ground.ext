@@ -1,0 +1,76 @@
+
+
+{able "-select"}
+{simulation {able 1} {disableLinked 1}}
+{constrain none}
+{props "nocover"}
+{lodclass "stuff_small"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+{tag "cwps_ground_attack"}
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	{collider "proj_target"}
+
+{Skeleton
+	{bone "basis"
+		{parameters "SteerMax=45;Wheelradius=0.30;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+	}
+}
+{Volume "body"
+	{able clear {contact 0} {overlap} {visible} {bullet 1} {select 0}} {Thickness 0.1} {component "body"}
+	{Box 1 1 1}
+	{Bone "basis"}
+	{Position 0	0	35}
+}
+{Volume "target"
+	{able clear {visible} {select 0}} {Thickness 0.1} {component "body"}
+	{Box 1 1 1}
+	{Bone "basis"}
+	{Position 0	0	35}
+}
+	{component "body"}
+	{props "-steel" "-wood" "proj_point" "vis_proj_point" "proj_point_gps_ground"}
+	{obstacleID "nothing"}
+	{extender "stuff"
+		{item "empty_stuff"}
+	}
+(define "proj_thick"
+	{armor
+		{setting "body"
+			{thickness 10}
+			{threshold  {blast {value 1000}}}
+			{durability {blast {value 1000}}}
+			{volumes "body*"}
+		}
+	}
+)
+{Volume "target_gorka"
+	{Box 25 25 25}
+	{Bone "basis"}
+	{Position 0	0	650}
+}
+{Volume "vis_det"
+	{Box 0.1 0.1 600}
+	{Bone "basis"}
+	{Position 0	0	300}
+}
+{Volume "target_gorka" {able clear {visible} {bullet 1} {select 0}} {Thickness 0.1} {tags "1"} {component "body"}}
+{Volume "vis_det" {able clear {visible}} {component "body"}}
+

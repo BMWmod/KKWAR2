@@ -1,0 +1,16 @@
+(include "physics_generic.ext")
+
+{props "explosive_barrel" "steel" "capacity"}
+{mass 100}
+
+{volume "body"
+	{thickness 3}
+}
+{volume "body1"
+	{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast} {obstacle}}
+	{thickness 3}
+}
+
+{extender "stuff"
+	{item "barrel" filling "fuel" 50}
+}

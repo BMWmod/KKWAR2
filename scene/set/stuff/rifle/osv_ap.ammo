@@ -1,0 +1,19 @@
+;Cold War
+{bullet
+	{tag "small ptr pierce hmgun hrifle 7H34 hcb_ammo antiinf sharing fx_10_15 fx_ap ui_ap"}
+	{inventory
+		{size 2 1 }
+		{weight 10}
+		{block 10}
+	}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.2}
+		}
+		{length 3.0}
+	}
+
+	{mass 0.1}
+	{entity "ptr_ammo"}
+("cw_powder_charge" kg(0.017))
+}

@@ -1,0 +1,14 @@
+{bullet
+	{tag "dropboxed gra_launch no_ricochet sharing ui_gra_launch"}
+	{tag "fg_pod"} ; только для ammo.set
+                           
+	{inventory
+		{size 1 1}
+		{weight 66}
+		
+	}	
+	{entity "pd_ammo"}
+	{view "pd_ammo"
+		{tail "grenade_tail"}
+	}	{detonationThickness 1}
+}	    

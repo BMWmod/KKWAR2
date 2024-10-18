@@ -1,0 +1,13 @@
+{"pbr/ground_parallax" 
+
+	{diffuse "border_concrete02b"
+		{Axis 128 128}
+		{AlphaChannel 1}
+	}
+	{bump "border_concrete02b_bp"}
+	{roughness "border_concrete02b_rg"}
+	{ao "border_concrete02b_ao"}
+	{height "border_concrete02b_prlx"}
+
+	{Blend blend}
+}

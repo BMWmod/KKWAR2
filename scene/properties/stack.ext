@@ -1,0 +1,17 @@
+	(include "/properties/construction.inc")
+	("armor_stack")
+	("armor_use_volume_thickness")
+	{armor
+		{setting "body"
+			{thickness 0.2}
+		}
+	}
+	{props  "wood" "construction" "stack" "straw" "burning"}
+	{Volume "body"
+		{Tags  "body" "fire"}
+		{Thickness 1}
+	}
+	{Volume "fire0"
+		{able clear}
+	}
+	{lodclass "decor_medium"}

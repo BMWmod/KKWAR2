@@ -1,0 +1,256 @@
+{Entity
+	
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.4))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+	{props "heavy_M" "turret_rotator" "vision_lev05" "with_open_zpu" "has_apu" "has_autoloader" "autotrack_suo" "6_barrels_smoke"}
+	{targetSelector "tank"}
+	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+;	("armor_heavy" turret(250 150 60 215) body(177 60 120 35)) ;вычисленное
+	("armor_heavy" turret(340 206 60 215) body(177 60 120 35)) 
+	;("armor_engine"  t(50))
+
+
+	{volume "apploque_inter1"	{Thickness 30}}
+	{volume "apploque_inter2"	{Thickness 30}}
+	{volume "apploque_inter3"	{Thickness 30}}
+	{volume "apploque_inter4"	{Thickness 30}}
+	{volume "apploque_side1"	{Thickness 70}}
+	{volume "apploque_side2"	{Thickness 70}}
+	{volume "apploque_side3"	{Thickness 70}}
+	{volume "apploque_side4"	{Thickness 70}}
+	{volume "apploque_side5"	{Thickness 70}}
+	{volume "apploque_turret1"	{Thickness 150}}
+	{volume "apploque_turret2"	{Thickness 150}}
+	{volume "apploque_turret3"	{Thickness 150}}
+	{volume "apploque_turret4"	{Thickness 150}}
+	{volume "apploque_turret5"	{Thickness 150}}
+	{volume "apploque_turret6"	{Thickness 150}}
+	{armor
+		{setting "apploque_inter"
+			{thickness 30}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_inter*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+		{setting "apploque_side"
+			{thickness 45 70 90 10}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_side*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+		{setting "apploque_turret"
+;			{thickness 170 112 80 45}	;вычисленное	
+;			{thickness 234 154 80 45}	;без многослойки
+			{thickness 207 137 71 40}		
+			{durability {blast {value 100}} {pierce {koef 999}}}
+			{threshold {blast {koef 2} {value 50}}}
+			{volumes "apploque_turret*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{fragment_pass_threshold 1}
+		}
+	}
+	("comp_armor_increment" turret(27 17 9 5) body(10))
+
+
+	{extender "shield"
+		{on}
+	}
+
+
+	{component "shieldl1" {tags "shield"}}
+	{component "shieldl2" {tags "shield"}}
+	{component "shieldl3" {tags "shield"}}
+	{component "shieldl4" {tags "shield"}}
+	{component "shieldl5" {tags "shield"}}
+
+	{component "shieldr1" {tags "shield"}}
+	{component "shieldr2" {tags "shield"}}
+	{component "shieldr3" {tags "shield"}}
+	{component "shieldr4" {tags "shield"}}
+	{component "shieldr5" {tags "shield"}}
+	("shield_t-64a_1981")
+
+	{armor
+		{setting "shield"
+			{thickness 45}
+			{durability {blast {value 60}} {pierce  {koef 999}}}
+			{threshold {blast {value 20}}}
+			{volumes "shield*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+
+;====================================
+{boarder
+		{anm "driver"
+			{forward	{begin	"board_pz4_driver"} {end "seat_gunner_stand"} {base "open_driver"}}
+			{reverse 	{end	"board_pz4_driver" -1} {base "open_driver" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_tank_right"} {end "seat_gunner_stand"}{base "open"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_Is-2"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "back"
+			{forward	{begin	"board_sd222_driver"}}
+			{reverse 	{end	"emit_sd222_driver"}}
+		}
+		{anm "armor2"
+			{forward	{begin	"board_lowArmor"} {end "pose_seat_armor_1"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+	("crew_inside")	
+	{placer
+		{place "driver" {group "crew"} {visor "driver"}}
+	}
+	{boarder
+		{door "emit0"}
+		{link "emit0" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+		{link "emit2" "gunner" {anm "back"} {forward putoff} {reverse puton}}
+		{link "emit2" "charger" {anm "back"} {forward putoff} {reverse puton}}
+	}
+	("crew_human" place(gunner)	 	door1(emit2) visor(main))
+	("crew_human" place(charger)	 	door2(emit2) visor(commander))
+	("crew_human_visible" 	place(gunner2)	door1(emit1) visor(up))
+
+
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_3g"}
+		}
+		{visor "commander"
+			{vision "tank_gunner_optic_IR_3g"}
+			{bone "Visor4"}
+		}
+		{visor "back"
+			{vision "tank_driver"}
+			{bone "Visor3"}
+		}
+		{visor "up"
+			{vision "vehicle_top_mgun"}
+			{bone "mgun3"}
+		}
+	}
+
+
+;=================================================	
+	{extender "inventory"
+		{weapon "mgun"
+			{mask "weapon mgun"}
+		}
+		{box
+			{Size 8 10}
+			{weight 2000}
+			{item "ammo bullet120_GER apcr" 17}
+			{item "ammo bullet120_IDF cm" 10}
+			{item "ammo bullet120_IDF fg" 20}
+			{item "Browning_m2HB" filled {user "mgun"}}
+			{item "ammo 50Nato" 300}
+			{item "ammo 762Nato" 3000}
+			{item "mortar of ammo" 10}
+;			{item "mortar fl ammo" 5}
+			{item "mortar sm ammo" 10}
+			;{item "ammo smoke_shtora" 12}	
+		}
+	}
+
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "MG253" filling "ammo bullet120_GER apcr" 1}	
+			{gunner "gunner"}
+			{charger "gunner"}                 
+			("CW_stab_abm" abm(0.37))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "gun1"
+			{weapon "Min_modern" filling "ammo mortar of" 1}
+			{gunner "charger"}
+			{charger "charger"}
+			{foresight "foresight6"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun1"
+			{type "mgun_coaxial"}
+			{weapon "FN_MAG" filled}
+			{foresight "foresight4"}
+			{gunner "gunner"}
+			{charger "gunner"} 
+			{basic}
+			("CW_stab_abm" abm(0.85))
+			("CW_stab_autotrack_wind_suo")
+		}
+		{place "mgun2"
+			{type "mgun_aa"}
+			{weapon "FN_MAG" filled}
+			{foresight "foresight7"}
+			{gunner "gunner2"}
+			{charger "gunner2"}                 
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun"
+			{type "mgun_hull"}
+			{LinkBone "mgun2"}
+			{LinkAnimation "off"}
+			{gunner "gunner"}
+			{charger "gunner"}
+			{basic}
+			{foresight "foresight5"}
+			("CW_stab_abm" abm(0.89))
+			("CW_stab_autotrack_wind_suo")
+		}
+	}
+
+	{mass 65000}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.47) len(1.0))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(65.0)
+			Width(3.72)
+			Power(1500)
+			Realspeed(65)
+			Gamespeed(41) 
+		)
+		{RearGears		0.20 0.40 0.51}}
+		("CW_fuelbag" Range(500) Fuelvolume(1400))
+		("CW_speed_lev" Gamespeed(41))
+	}
+	{props "cwfs_fuel_800" "cwfs_extfuel_1000"}
+
+	("two_headlights")
+	{Extension "merkava_mk4.mdl"}
+	("missile_aimpoint_custom" height(1.5) front(-1.5) side(0))
+	{props "cwps3_fixmarker6"}
+	("cwts_buksir")
+	{texmod "Olive"}
+	("CW_turr_speed" deg_per_s(34))
+}
+
+
+
+
+

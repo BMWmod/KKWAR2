@@ -1,0 +1,11 @@
+{item
+	{tag "smallitemin1hand dropboxed antipersonnel mine sharing nokeep"}
+	{entity "mine_antipersonnel_pob"}
+	{inventory
+		{size 1 2}	;мина пластиковая, весит вполовину от ОЗМ-72
+		{weight 100}
+		{fsm "belt"}
+	}
+	{mass 2.5}
+	;Прыгающая, дамаг в БЧ
+}

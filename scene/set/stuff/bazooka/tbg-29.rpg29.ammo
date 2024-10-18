@@ -1,0 +1,37 @@
+{from "pattern rpg_ammo"
+	{tag "rpg29" "big" "size3" "75to76" "no_ricochet" "fg" "fragmentary" "fx_shmel" "rpg_shell"}
+	{tag "rpg_he"} ; только для ammo.set
+	{mass 6.7}	;http://roe.ru/catalog/sukhoputnye-vosyka/strelkovoe-oruzhie/granatomety/tbg-29v/	
+	{entity "tbg-29"}
+	{view "tbg-29"
+		{tail "pfaust_tail" "tail"}
+	}
+        {inventory
+		{weight 100}
+		{size 4 1}
+	}
+	{possibleDamageRadius 15}
+	;1,8 кг,
+	{tag "he_07to2"}
+	{damage fire
+		{radius 4}
+		{heating 15}
+		{time 2}
+	}
+	{damage add fire
+		{radius 0.7}
+		{heating 50}
+		{time 1}
+	}
+;{damage add blastwave {energy 1.2} {area 11.3 13.1}}
+;{damage add blastwave {energy 2.5} {area 3.2 3.7}}
+;	{damage add blastwave	 ; HE, FG anti-IFV
+;		{energy 6.5}
+;		{area 0.6 0.65}
+;	}
+;БЧ 3,4 кг, ВВ 1,8 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - Термобар(FUEL)
+("cw_blastwave_tb_3" tank() ifv(0.3) apc(2.1) end(4.3))
+("cw_contusion" t10(4.4) t6(6.2) t3(8.5) t0(11))
+("cw_blast_mass_add" add(7))
+}
+ 

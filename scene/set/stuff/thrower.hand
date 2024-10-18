@@ -1,0 +1,19 @@
+{weapon_throwing
+	{inventory {noView}}
+	{states
+		{fire	"fire"  	 }
+		{reload "reload"	 }
+		{unload "unload"	 }
+		{aim 	"aim-thrower"}
+		{can_aim "can-aim-thrower"}
+	}
+	{foresight "Foresight2"}
+	{foresight_up "foresight_up"}
+	{foresight_top "foresight_top"}
+	{foresight_near "foresight_near"}
+	{fireSound	"chn/grenade_pin"}
+	{AimingTolerance 3}				; degree
+	{aimRange 30}					; m
+	{gravity  1}
+	{filling "throwable"}
+}

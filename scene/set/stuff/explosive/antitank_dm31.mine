@@ -1,0 +1,25 @@
+{item
+	{tag "smallitemin1hand dropboxed antitank mine sharing fx_111_145"}
+	{entity "mine_antitank_dm31"}
+	{inventory
+		{weight 100}
+		{fsm "stuff"}
+	}
+	{mass 8.4}
+;3.9кг взрывчатки Composition B (ТЭ 4кг, коэффициент 1,33).
+;Для подземных ПТ мин надо убирать первые две фугасные волны, т. к. грунт мешает распространению удара в стороны.
+;	{damage add blastwave {energy 2.5} {area 5.6 6.4}}
+;	{damage add blastwave {energy 6.5} {area 2.8 3.2}}
+;	{damage add blastwave {energy 11} {area 0.7 0.9}}
+;	{damage cumulative {damage 170} {distance 3}}
+;БЧ 8,4 кг, ВВ 3,9 кг, ТЭ 1,33, нач. скорость 0 м/с, тип оболочки - Снаряды 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_3" tank() ifv(0.8) apc(3) end(6))
+("cw_fragwave" e2_5(2.5) r2_5(24.1) e1_2(2.5) r1_2(24.1) chance(4.5))
+("cw_fragwave" e2_5(2.5) r2_5(39.4) e1_2(2.5) r1_2(39.4) chance(2.9))
+("cw_fragwave" e2_5(2.5) r2_5(40.3) e1_2(2.5) r1_2(40.3) chance(2.8))
+("cw_fragwave" e2_5(2.5) r2_5(44.5) e1_2(2.5) r1_2(44.5) chance(2.4))
+("cw_fragwave" e2_5(2.5) r2_5(51.2) e1_2(2.5) r1_2(51.2) chance(2.2))
+("cw_contusion" t10(5.7) t6(8.1) t3(11) t0(14.3))
+("cw_seismic_3")
+("cw_blast_mass_add" add(15.5))
+}

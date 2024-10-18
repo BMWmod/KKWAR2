@@ -1,0 +1,12 @@
+{bullet
+	{tag "ammo shell itemin2hands cm no_ricochet cumulative cm_type_dmg sharing ui_cm"}
+	{tag "cm_shell"} ; только для ammo.set
+	{detonationThickness 2}
+	{inventory
+		{size 5 1}
+		{weight 100}
+		{fsm "stuff"}
+	}
+	;{entity "shell_fg_med"}
+;	{cumulative 0.04}
+}

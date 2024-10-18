@@ -1,0 +1,46 @@
+{weapon_bullet
+	{tag "gun" "weapon" "skill_tankgun" "bullet"}	;"bullet" is needed for work of levelling and skills
+	("heavy_artillery")
+	{filling "ammo phl03" 12}
+	{fireSound "reactive_cw/missile_large"}
+	{burst {min 2} {short 2} {long 2} {noaiming}} ;noaiming мешает стрельбе по триггеру в СтА
+	{Automatic} ;нужно для стрельбы по триггеру
+	{recoveryTime 2.5} ;2с после 1-4 ракеты в залпе, 4с после 5-11. 
+	(mod "mp"
+		{burst {min 0} {short 1} {long 1} {noaiming}}
+	)
+	{range 488 488}  ;130км для ракет с умеьшенной БЧ
+	{aimRange 488}
+	{maxRange 488}
+	{rechargeTime 240}	;7 мин у Града, 13 мин тут.
+	("CW_XP_acc_artillery" mils(6.6))	;удвоено из баланса, как и для других тяжелых РСЗО
+									;кучность составляет 1/300, что чуть хуже Смерча
+	{Spreading	
+		{SpreadPower	1.70}
+		{SpreadXYRatio	1.3} ;1.3, т.к вертикальный разброс полчается слишком малым при 2.0
+	}
+	{gravity 0.87}
+	("speed_mrls")
+	{cursor "cannon_on_fg_14"}
+	{cursorreloading "cannon_reload_fg_timer_240"}
+	{parameters "bre3"	;управл ОФ 
+		("CW_acc_guided" kvo_meters(5)) ; аналог gmlrs
+		{range 488 488}
+		{cursor "cannon_on_fg_14"}
+	    {cursorreloading "cannon_reload_fg_timer_240"}
+		{Spreading	
+		    {SpreadXYRatio	1.0}
+	    }
+	}
+	{parameters "bre2"	;ОФ 130км
+		{cursor "cannon_on_fg_14"}
+	    {cursorreloading "cannon_reload_fg_timer_240"}
+	}
+	{parameters "brc4"	;DPICM кассетный
+		{cursor "cannon_on_heat_10"}
+		{cursorreloading "cannon_reload_heat_timer_240"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+}	
+
+

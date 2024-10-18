@@ -1,0 +1,101 @@
+{ArmoredCar 
+	(include "/properties/armoredcar.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.0))
+	(include "/properties/selection/vehicle.inc"  scale(1.0))
+	{props "vehicle" "turret_rotator" "tank" "armored_car_M" "turret" "wheeled" "with_gun" "vision_lev03" "8_wheels" "with_open_zpu" "remote_gun" "remote_mgun" "has_autoloader" "4_barrels_smoke" "spall_liner"}
+	{targetClass "armoredcar"}
+	{extension "crew.ext"}
+
+	("armor_btr" turret(15 15 10 8) body(19 19 0 19))
+
+	{extender "inventory"
+		{box
+			{item "ammo 50Nato" 400}
+			{item "ammo 762Nato" 400} 
+			{item "ammo bullet105_usa apcr_h" 5}
+			{item "ammo bullet105_usa cm" 5}
+			{item "ammo bullet105_usa fg" 8}
+			;{item "ammo smoke_shtora" 16}	
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{charger "gunner"}
+			{gunner "gunner"}
+			{RestoreIKAfterAim}
+			{weapon "105mm_M68A1E4" filling "ammo bullet105_usa apcr_h" 1}
+			("CW_stab_abm" abm(0.46))
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun"
+			{RestoreIKAfterAim}
+			{type "mgun_coaxial"}
+			{foresight "foresight3"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{weapon "m240_optic" filled}
+			{basic}
+			("CW_stab_abm" abm(0.75))
+			("CW_stab_ldwind_suo")
+		}
+		{place "mgun1"
+			{type "mgun_aa"}
+			{weapon "browning_m2hb" filled}
+			{gunner "gunner2"}
+			{charger "gunner2"}
+			{LinkBone "mgun1"}
+			{LinkAnimation "off"}
+			{foresight "foresight4"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+	}
+	
+	{placer 
+		{place "gunner2" {group "crew"} {linkbone "gunner2"} {turnoff {targetable 0}} {visor "gunner2"} {openForCrush}}
+	}
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_IR_2g"}	;основной прицел наводчика. Увеличение больше, угол зрения меньше
+		}
+		{visor "up"
+			{vision "vehicle_top_mgun"}
+			{bone "mgun"}
+		}
+	}	
+;=================================================	
+	("wheel" args "wheelright1")
+	("wheel" args "wheelleft1")
+	("wheel" args "wheelright2")
+	("wheel" args "wheelleft2")
+	("wheel" args "wheelright3")
+	("wheel" args "wheelleft3")
+	("wheel" args "wheelright4")
+	("wheel" args "wheelleft4")
+
+	{mass 13880}
+	{Chassis
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlf") wheelr("wrf") bonel("FXtraceL1") boner("FXtraceR1"))
+		("car_trace" fx("tracewheel02") step(0.09) wheell("wlr") wheelr("wrr") bonel("FXtraceL3") boner("FXtraceR3"))
+		("CW_wheels"
+			Mass(13.8)
+			Turnradius(17.7)
+			Power(350)
+			Realspeed(100)
+			Gamespeed(55) 
+			Range(500)
+			Fuelvolume(200)
+		)
+	}
+	{props "cwfs_ext_only" "cwfs_extfuel_200"}
+
+	("two_headlights")
+	{Extension "m1128.mdl"}
+	("missile_aimpoint_trucksize")
+        ("recoil_side_common")
+	("cwts_buksir")
+	("CW_turr_speed" deg_per_s(60))
+
+}
+

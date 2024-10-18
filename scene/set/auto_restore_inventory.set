@@ -1,0 +1,994 @@
+(define "rule_warehouse_static"
+	{rule "warehouse_static"
+		{condition is_near_warehouse "static"}
+		{amount_for_restore_start 0.99}
+		{warehouse_type "static"}
+	}
+)
+(define "rule_warehouse_consumable"
+	{rule "warehouse_consumable"
+		{condition not is_warehouse_consumable and is_near_warehouse "consumable"}
+		{amount_for_restore_start 0.99}
+		{warehouse_type "consumable"}
+	}
+)
+(define "rule_friendly_territory"
+	{rule "friendly_territory"
+		{condition territory_type "friendly" and not territory_surrounded}
+		{amount_for_restore_start 0}
+	}
+)
+(define "rule_warehouse_static_check_tags"
+	{rule "warehouse_static"
+		{condition not tags "no_inventory_autorestore" and is_near_warehouse "static"}
+		{amount_for_restore_start 0.99}
+		{warehouse_type "static"}
+	}
+)
+(define "rule_warehouse_consumable_check_tags"
+	{rule "warehouse_consumable"
+		{condition not tags "no_inventory_autorestore" and not is_warehouse_consumable and is_near_warehouse "consumable"}
+		{amount_for_restore_start 0.99}
+		{warehouse_type "consumable"}
+	}
+)
+(define "rule_friendly_territory_check_tags"
+	{rule "friendly_territory"
+		{condition not tags "no_inventory_autorestore" and territory_type "friendly" and not territory_surrounded}
+		{amount_for_restore_start 0}
+	}
+)
+(define "rule_captured_flag"
+	{rule "captured_flag"
+		{condition in_captured_map_point}
+		{amount_for_restore_start 0.5}
+	}
+)
+
+{recovery_rules
+	{"battlezones*"
+		("rule_warehouse_static")
+		("rule_warehouse_consumable")
+		("rule_captured_flag")
+	}
+	{"combat*"
+		("rule_warehouse_static")
+		("rule_warehouse_consumable")
+	}	
+	{"groundcontrol*"
+		("rule_warehouse_static")
+		("rule_warehouse_consumable")
+		;("rule_friendly_territory")
+	}
+	{"frontline_*"
+		("rule_warehouse_static")
+		("rule_warehouse_consumable")
+		("rule_friendly_territory")
+	}
+	{"tutorial"
+		("rule_warehouse_static")
+		("rule_warehouse_consumable")
+		("rule_friendly_territory_check_tags")
+	}	
+	{"mission"
+		("rule_warehouse_static_check_tags")
+		("rule_warehouse_consumable_check_tags")
+		("rule_friendly_territory_check_tags")
+	}
+	{"mission_combat"
+		("rule_warehouse_static_check_tags")
+		("rule_warehouse_consumable_check_tags")
+	}
+	{""; editor
+		("rule_warehouse_static_check_tags")
+		("rule_warehouse_consumable_check_tags")
+	}
+}
+
+(define "supply_all"
+
+
+;{ "40x53_usapg ammo cm"(* (/ 3 30 ) %k)}	
+;время пополнения единицы вычисляется как 3 за 30 штук с коэффициентом K, т.е. 3/30=0.1с*K за пополнение 1 гранаты 
+	(define "smallarms_rus"
+		{ "standart ammo"(* (/ 1 10 ) %k)}				
+		{ "pistol ammo"(* (/ 1 10 ) %k)}				
+		{ "9mm ammo"(* (/ 1 10 ) %k)}				
+		{ "545 ammo"(* (/ 1 30 ) %k)}				
+		{ "rpk_ammo ammo"(* (/ 1 45 ) %k)}				
+		{ "762 ammo"(* (/ 1 30 ) %k)}				
+		{ "762x41pss ammo"(* (/ 1 10 ) %k)}				
+		{ "pkm_ammo ammo"(* (/ 4 100 ) %k)}				
+		{ "osv_ap ammo"(* (/ 1 5 ) %k)}				
+		{ "osv_fg ammo"(* (/ 1 5 ) %k)}				
+		{ "osv_fl ammo"(* (/ 1 5 ) %k)}				
+		{ "762x51_x20 ammo"(* (/ 1 10 ) %k)}
+		{ "8_6x70_x10 ammo"(* (/ 1 10 ) %k)}		
+		{ "svd_ammo ammo"(* (/ 1 10 ) %k)}				
+		{ "svdk_ammo ammo"(* (/ 1 10 ) %k)}				
+		{ "vin_ammo ammo"(* (/ 1 10 ) %k)}
+		{ "mortar pd a ammo"(* (/ 1 1 ) %k)}
+		{ "mortar pd p ammo"(* (/ 1 1 ) %k)}
+		{ "mortar pd pm ammo"(* (/ 1 1 ) %k)}
+		{ "mortar pd m ammo"(* (/ 1 1 ) %k)}
+		{ "f1 grenade"(* (/ 1 1 ) %k)}
+		{ "rgd grenade"(* (/ 1 1 ) %k)}
+		{ "rgn grenade"(* (/ 1 1 ) %k)}
+		{ "rgo grenade"(* (/ 1 1 ) %k)}
+		{ "smoke grenade"(* (/ 1 1 ) %k)}
+		{ "bandage"(* (/ 1 1 ) %k)}
+		{ "ur_83p_ammo ammo"(* (/ 25 1 ) %k)}
+	)
+	(define "uav_rus"
+		{ "eleron3sv ammo"(* (/ 100 1 ) 0.6)}
+	)
+	(define "uav_kamikadze_rus"
+		{ "lancet3m cm ammo"(* (/ 150 1 ) %k)}
+	)
+	(define "uav_kamikadze_usa"
+		{ "switchblade600 ammo"(* (/ 200 1 ) %k)}
+	)
+	(define "smallarms_west"	;common for usa and nato
+		{ "standart ammo"(* (/ 1 10 ) %k)}				
+		{ "pistol ammo"(* (/ 1 10 ) %k)}				
+		{ "9mm ammo"(* (/ 1 10 ) %k)}				
+		{ "556nato ammo"(* (/ 1 30 ) %k)}				
+		{ "556natos ammo"(* (/ 1 30 ) %k)}	
+		{ "556natomb ammo"(* (/ 2 100 ) %k)}						
+		{ "762nato ammo"(* (/ 4 100 ) %k)}	
+		{ "762x51_x20 ammo"(* (/ 1 10 ) %k)}	
+		{ "762 ammo"(* (/ 1 30 ) %k)}	
+		{ "12mm_shotgun ammo"(* (/ 1 10 ) %k)}				
+		{ "nato_ptr ap ammo"(* (/ 1 10 ) %k)}				
+		{ "nato_ptr sn ammo"(* (/ 1 10 ) %k)}				
+		{ "8_6x70_x10 ammo"(* (/ 1 10 ) %k)}				
+		{ "103x77_x5 ammo"(* (/ 1 10 ) %k)}	
+		{ "bandage"(* (/ 1 1 ) %k)}
+		
+		{ "pkm_ammo ammo"(* (/ 4 100 ) %k)}
+	)
+	(define "smallarms_usa"
+		{ "nato_pg cm ammo"(* (/ 1 1 ) %k)}
+		{ "40x46_natopg fg ammo"(* (/ 1 1 ) %k)}
+		{ "grenade_xm25 ammo cm"(* (/ 1 1 ) %k)}
+		{ "grenade_xm25 ammo fg"(* (/ 1 1 ) %k)}
+		{ "m61 grenade"(* (/ 1 1 ) %k)}
+		{ "m67 grenade"(* (/ 1 1 ) %k)} 
+		{ "rq11raven"(* (/ 100 1 ) 0.6)}
+		{ "switchblade300 ammo"(* (/ 51 1 ) %k)}
+	)
+	(define "smallarms_nato"
+		{ "40x46ammo 40x46_natopg ammo cm"(* (/ 1 1 ) %k)}
+		{ "40x46ammo 40x46_gerpg ammo fg"(* (/ 1 1 ) %k)}
+		{ "grenade_famas fg ammo"(* (/ 3 1 ) %k)}
+		{ "grenade_famas cm ammo"(* (/ 3 1 ) %k)}
+		{ "grenade_famas sm ammo"(* (/ 3 1 ) %k)}
+		{ "dm51gr grenade"(* (/ 1 1 ) %k)}
+		{ "of37_grenade grenade"(* (/ 1 1 ) %k)}
+		{ "m61 grenade"(* (/ 1 1 ) %k)}
+		{ "m67 grenade"(* (/ 1 1 ) %k)}
+		{ "aladin"(* (/ 100 1 ) %k)}
+		{ "switchblade300 ammo"(* (/ 51 1 ) %k)}
+	)
+	(define "smallarms_cn"
+		{ "standart ammo"(* (/ 1 10 ) %k)}				
+		{ "pistol ammo"(* (/ 1 10 ) %k)}				
+		{ "58ammo 58ammo_basic ammo"(* (/ 1 30 ) %k)}				
+		{ "58ammo 58ammo_drum ammo"(* (/ 1 70 ) %k)}				
+		{ "58ammo 58ammo_sn ammo"(* (/ 1 10 ) %k)}				
+		{ "cn_pg fg ammo"(* (/ 1 1 ) %k)}
+		{ "type86p grenade"(* (/ 1 1 ) %k)}
+		{ "smoke grenade"(* (/ 1 1 ) %k)}
+		{ "bandage"(* (/ 1 1 ) %k)}
+		{ "ch802"(* (/ 100 1 ) %k)}
+	)
+	(define "hmgun_rus"
+		{ "hcb_ammo ammo"(* (/ 1 50 ) %k)}				
+		{ "dshkm_ammo ammo"(* (/ 1 50 ) %k)}				
+		{ "kpvt_ammo ammo"(* (/ 1 25 ) %k)}				
+		{ "kpvt_bst ammo"(* (/ 1 25 ) %k)}				
+		{ "kpvt_mdz ammo"(* (/ 1 25 ) %k)}				
+	)
+	(define "hmgun_cn"
+		{ "hcb_ammo ammo"(* (/ 1 50 ) %k)}				
+	)
+	(define "hmgun_usa"
+		{ "50nato ammo"(* (/ 1 50 ) %k)}
+		{ "50natoap ammo"(* (/ 1 50 ) %k)}					
+	)
+	(define "hmgun_nato"
+		{ "50nato ammo"(* (/ 1 50 ) %k)}	
+		{ "hcb_ammo ammo"(* (/ 1 50 ) %k)}				
+		{ "dshkm_ammo ammo"(* (/ 1 50 ) %k)}		
+	)
+
+	;---------------grenades----------------
+
+	(define "ags30"
+		{ "mortar pdb ammo"(* (/ 3 30 ) %k)}				
+		{ "mortar pdd ammo"(* (/ 3 30 ) %k)}				
+	)
+	(define "mk19_usa"
+		{ "40x53ammo 40x53_usapg ammo cm"(* (/ 3 30 ) %k)}	
+		{ "mk19_ammo ammo fg"(* (/ 3 30 ) %k)}	
+		{ "mk19_ammo ammo cm"(* (/ 3 30 ) %k)}	
+		{ "40x53_usapg ammo cm"(* (/ 3 30 ) %k)}	
+	)
+	(define "mk19_nato"
+		{ "40x53_natopg ammo cm"(* (/ 3 30 ) %k)}	
+		{ "40x53_natopg ammo fg"(* (/ 3 30 ) %k)}	
+		{ "40x53_gerpg ammo cm"(* (/ 3 30 ) %k)}	
+		{ "40x53_gerpg ammo fg"(* (/ 3 30 ) %k)}	
+	)
+	(define "ags_cn"
+		{ "35x32ammo fg ammo"(* (/ 3 30 ) %k)}
+		{ "35x32ammo cm ammo"(* (/ 3 30 ) %k)}							
+	)
+	(define "mortar_usa"
+		{ "81mm of ammo"(* (/ 3 4 ) %k)}				
+		{ "mortar 60mm of ammo"(* (/ 1 1 ) %k)}				
+	)
+	(define "mortar_rus"
+		{ "82mm of ammo"(* (/ 3 4 ) %k)}
+	)
+	(define "mortar_cn"
+		{ "82mm er ammo"(* (/ 3 4 ) %k)}
+	)
+	(define "type63_cn"
+		{ "type63_rocket fg ammo"(* (/ 8 2 ) %k)}
+	)
+	;---------------rpgs----------------
+
+	(define "rpg_rus"
+		{ "pg-7vl rpg7 ammo"(* (/ 1 1 ) %k)}
+		{ "rpg16 ammo"(* (/ 1 1 ) %k)}		
+		{ "tbg-7v rpg7 ammo"(* (/ 2 1 ) %k)}				
+		{ "rpg7_og-7v rpg7 ammo"(* (/ 2 1 ) %k)}				
+		{ "pg-7vr rpg7 ammo"(* (/ 3 1 ) %k)}				
+		{ "pg-29v rpg29 ammo"(* (/ 3 1 ) %k)}				
+		{ "tbg-29 rpg29 ammo"(* (/ 3 1 ) %k)}				
+	)
+
+	(define "rpg_usa"
+		{ "smaw cm ammo"(* (/ 2 1 ) %k)}				
+		{ "smaw fg ammo"(* (/ 2 1 ) %k)}
+		{ "gustaf3 heat551 ammo"(* (/ 2 1 ) %k)}				
+		{ "gustaf3 heat751 ammo"(* (/ 2 1 ) %k)}	
+	)
+
+	(define "rpg_nato"
+		{ "pzf3 dm12a1 ammo"(* (/ 2 1 ) %k)}				
+		{ "pzf3 dm22 ammo"(* (/ 2 1 ) %k)}				
+		{ "pzf3 dm22i ammo"(* (/ 2 1 ) %k)}				
+		{ "pzf3 dm32 ammo"(* (/ 2 1 ) %k)}				
+		{ "gustaf3 heat551 ammo"(* (/ 2 1 ) %k)}				
+		{ "gustaf3 heat751 ammo"(* (/ 2 1 ) %k)}				
+	)
+
+	(define "rpg_cn"
+		{ "pg-7vl rpg7 ammo"(* (/ 1 1 ) %k)}				
+		{ "pg-29v rpg29 ammo"(* (/ 3 1 ) %k)}				
+		{ "heat_pf98 cm ammo"(* (/ 3 1 ) %k)}				
+		{ "heat_pf98 fg ammo"(* (/ 3 1 ) %k)}				
+	)
+	;---------------autocannons----------------
+	(define "autocannons_rus"
+		{ "bullet23 bzt zenite ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet23 ofzt zenite ammo"(* (/ 2 10 ) %k)}
+		{ "bullet23_115 bzt zenite"(* (/ 3 10 ) %k)}				
+		{ "bullet23_115 ofzt zenite"(* (/ 3 10 ) %k)}				
+		{ "bullet30_rus ap ammo"(* (/ 2 30 ) %k)}				
+		{ "bullet30_rus fg ammo"(* (/ 2 30 ) %k)}	
+		{ "bullet57_rus ap ammo"(* (/ 2 25 ) %k)}				
+		{ "bullet57_rus fg ammo"(* (/ 2 25 ) %k)}	
+		{ "gsh-30_ammo fg ammo"(* (/ 2 10 ) %k)}				
+		{ "gsh-30_ammo ap ammo"(* (/ 2 10 ) %k)}				
+	)
+	(define "autocannons_usa"
+		{ "m61ammo vulcan20mm ammo"(* (/ 2 20 ) %k)}	
+		{ "m61ammo vulcan20mma ammo"(* (/ 2 20 ) %k)}	
+		{ "m61ammo vulcan20mmb ammo"(* (/ 2 20 ) %k)}	
+		{ "bullet25_usa ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet25_usa fg ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet30_usa cm ammo"(* (/ 2 10 ) %k)}				
+		{ "gau-8 ap ammo"(* (/ 2 10 ) %k)}				
+		{ "gau-8 fg ammo"(* (/ 2 10 ) %k)}
+		{ "mk30abm apcr_h ammo"(* (/ 10 10 ) %k)}				
+		{ "mk30abm_abm mk30abm fg ammo"(* (/ 10 10 ) %k)}			
+	)
+	(define "autocannons_nato"
+		{ "bullet20_139 ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet20_139 fg ammo"(* (/ 2 10 ) %k)}	
+		{ "m61ammo vulcan20mm ammo"(* (/ 2 10 ) %k)}	
+		{ "m61ammo vulcan20mma ammo"(* (/ 2 10 ) %k)}	
+		{ "m61ammo vulcan20mmb ammo"(* (/ 2 10 ) %k)}	
+		{ "bullet25_fr ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet25_fr fg ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet27_ger ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet27_ger fg ammo"(* (/ 2 10 ) %k)}				
+		{ "mk30abm apcr ammo"(* (/ 10 10 ) %k)}				
+		{ "mk30abm_abm mk30abm fg ammo"(* (/ 10 10 ) %k)}				
+		{ "bullet30_gb ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet30_gb fg ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet35 ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet35 apcr ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet35 fg ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet40_nato abm ammo"(* (/ 12 10 ) %k)}				
+		{ "bullet40_nato apcr ammo"(* (/ 12 10 ) %k)}				
+		{ "bullet40_nato fg ammo"(* (/ 3 10 ) %k)}				
+	)
+	(define "autocannons_cn"
+		{ "bullet23_115 bzt zenite"(* (/ 3 10 ) %k)}				
+		{ "bullet23_115 ofzt zenite"(* (/ 3 10 ) %k)}				
+		{ "bullet30_rus ap_cn ap ammo"(* (/ 2 30 ) %k)}				
+		{ "bullet30_rus apcr_cn ap ammo"(* (/ 3 30 ) %k)}				
+		{ "bullet30_rus fg fg_cn ammo"(* (/ 2 30 ) %k)}	
+		{ "bullet35_cn ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet35_cn fg ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet25_cn ap ammo"(* (/ 2 10 ) %k)}				
+		{ "bullet25_cn fg ammo"(* (/ 2 10 ) %k)}				
+	)
+
+	;---------------shells----------------
+
+	(define "telson"
+		{ "bullet68_fr cm ammo"(* (/ 4 6 ) %k)}
+		{ "bullet68_fr fg ammo"(* (/ 4 6 ) %k)}				
+	)
+	(define "hydra"
+		{ "bullet70_hydra ammo"(* (/ 3 9 ) %k)}				
+	)
+	(define "73mm"
+		{ "bullet73_rus fg ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet73_rus cm ammo"(* (/ 2 1 ) %k)}				
+		{ "grenade_spg9 fg ammo"(* (/ 2 1 ) %k)}				
+		{ "grenade_spg9 cm ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "c13"
+		{ "bullet122s13 fg ammo"(* (/ 3 1 ) %k)}			
+	)
+	(define "c8"
+		{ "bullet80_dm fg ammo"(* (/ 5 10 ) %k)}				
+		{ "bullet80_dm fgh ammo"(* (/ 50 10 ) %k)}				
+		{ "bullet80_dm cm ammo"(* (/ 10 10 ) %k)}				
+	)
+	(define "c5"
+		{ "c5 fg ammo"(* (/ 6 10 ) %k)}				
+		{ "c5 cm ammo"(* (/ 6 10 ) %k)}				
+	)
+	(define "brmi90"
+		{ "brmi-90 ammo"(* (/ 20 2 ) %k)}				
+	)
+	(define "100mm"
+		{ "bullet100_rus fg ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet100_rus cm ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet100_rus apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet100_rus ap ammo"(* (/ 3 1 ) %k)}				
+	)
+	(define "100mm_bmp3"
+		{ "bullet100a_rus fg 2a70ammo ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet100a_rus rok 2a70ammo ammo"(* (/ 3 1 ) %k)}				
+	)
+	(define "100mm_rapira"
+		{ "bullet100_rus_rapira fg ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet100_rus_rapira cm ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet100_rus_rapira apcr ammo"(* (/ 2 1 ) %k)}
+
+		{ "bullet100_cn_rapira apcr ammo"(* (/ 3 1 ) %k)}
+		{ "bullet100_cn_rapira cm ammo"(* (/ 3 1 ) %k)}
+		{ "bullet100_cn_rapira fg ammo"(* (/ 3 1 ) %k)}
+		{ "bullet100_cn_rapira rok ammo"(* (/ 15 1 ) %k)}	
+	)
+	(define "105mm_usa"
+		{ "bullet105_usa fg bullet105_nato ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_usa cm bullet105_nato ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_usa apcr bullet105_nato ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_usa apcr_h bullet105_nato ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_usa ap bullet105_nato ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_usa sm ammo"(* (/ 2 1 ) %k)}
+		{ "bullet105how_usa fg ammo"(* (/ 15 5 ) %k)}
+		{ "bullet105how_usa_ar fg ammo"(* (/ 20 1 ) %k)}
+		{ "bullet105how_usa sm ammo"(* (/ 5 1 ) %k)}				
+	)
+	(define "105mm_nato"
+		{ "bullet105how_uk fg ammo"(* (/ 15 5 ) %k)}
+		{ "bullet105how_uk sm ammo"(* (/ 5 1 ) %k)}				
+	)
+	(define "105mm_idf"
+		{ "bullet105_idf fg ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_idf cm ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_idf apcr ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet105_idf ap ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet105_idf sm ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "105mm_ger"
+		{ "bullet105_ger ap ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "105mm_fr_short"
+		{ "bullet105a_fr apcr ammo"(* (/ 1 1 ) %k)}				
+		{ "bullet105a_fr cm ammo"(* (/ 1 1 ) %k)}				
+		{ "bullet105a_fr fg ammo"(* (/ 1 1 ) %k)}				
+	)
+	(define "105mm_cn"
+		{ "bullet105_cn apcr_h ammo"(* (/ 5 1 ) %k)}
+		{ "bullet105_cn cm ammo"(* (/ 5 1 ) %k)}
+		{ "bullet105_cn fg ammo"(* (/ 5 1 ) %k)}
+		{ "bullet105_cn rok ammo"(* (/ 15 1 ) %k)}	
+	)
+	(define "115mm"
+		{ "bullet115_rus apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet115_rus apcr_h ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet115_rus cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet115_rus fg ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet115_rus rok ammo"(* (/ 5 1 ) %k)}				
+	)
+	(define "120mm_uk"
+		{ "bullet120_uk apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet120_uk apcr_h ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet120_uk sm ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet120_uk hesh ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "120mm_usa"
+		{ "bullet120_usa apcr bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_usa apcr_h bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_usa_s apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet120_usa cm bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_usa ap bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_usa fg bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}
+		{ "bullet120_ger abm bullet120_nato ammo"(* (/ 3 1 ) %k)}	
+		;{ "bullet120_ger fg bullet120_nato bullet120_israel ammo"(* (/ 3 1 ) %k)}
+		{ "bullet120_idf cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet120_idf fg ammo"(* (/ 3 1 ) %k)}				
+		{ "lahat rok ammo"(* (/ 25 1 ) %k)}		
+		{ "bullet120_usa sm ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "120mm_ger"
+		{ "bullet120_ger apcr bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_ger cm bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}	
+		{ "bullet120_ger abm bullet120_nato ammo"(* (/ 3 1 ) %k)}	
+	    { "bullet120_ger fg bullet120_nato bullet120_israel ammo"(* (/ 3 1 ) %k)}	
+	)
+	(define "120mm_fr"
+		{ "bullet120_fr apcr bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_fr cm bullet120_nato bullet120_israel ammo"(* (/ 2 1 ) %k)}		
+		{ "bullet120_fr fg bullet120_nato bullet120_israel ammo"(* (/ 3 1 ) %k)}				
+	)
+	(define "120mm_idf"
+		{ "bullet120_idf cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet120_idf fg ammo"(* (/ 3 1 ) %k)}				
+		{ "lahat rok ammo"(* (/ 25 1 ) %k)}				
+	)
+	(define "120mm_nato_mine"
+		{ "bullet120_usa_mine fg ammo"(* (/ 3 2 ) %k)}	
+		{ "bullet120_ger_mine bullet120_rus ammo"(* (/ 3 2 ) %k)}
+		{ "bullet120_fr_mine bullet120_rus bullet120_nato_mine ammo"(* (/ 3 2 ) %k)}
+	)
+	(define "120mm_rus_mine"
+		{ "bullet120_rus fg ammo"(* (/ 6 1 ) %k)}				
+		{ "bullet120_rus cm ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet120_rus rok ammo"(* (/ 8 1 ) %k)}
+		{ "bullet120_rus_mine bullet120_2b11_mine fg ammo"(* (/ 5 2 ) %k)}		
+	)
+	(define "120mm_cn_mine"
+		{ "bullet120_cn fg ammo"(* (/ 6 1 ) %k)}							
+		{ "bullet120_cn cl ammo"(* (/ 8 1 ) %k)}
+		{ "bullet120_cn rok ammo"(* (/ 15 1 ) %k)}		
+		{ "bullet120_cn_m bullet120_2b11_mine fg ammo"(* (/ 5 2 ) %k)}		
+	)
+	(define "122mm"
+		{ "bullet122_rus fg d30ammo ammo"(* (/ 10 1 ) %k)}				
+		{ "bullet122_rus cm d30ammo ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet122_rus rok d30ammo ammo"(* (/ 15 1 ) %k)}
+		{ "bullet122_cn fg d30ammo ammo"(* (/ 10 1 ) %k)}
+		{ "bullet122_cn rok d30ammo ammo"(* (/ 20 1 ) %k)}	
+		{ "bullet122_cn cm d30ammo ammo"(* (/ 10 1 ) %k)}
+		{ "bullet122_rus sm d30ammo ammo"(* (/ 3 1 ) %k)}				
+	)
+	(define "125mm"
+		{ "bullet125_h_rus rok ammo"(* (/ 10 1 ) %k)}				
+		{ "tur_kobra ammo"(* (/ 10 1 ) %k)}				
+		{ "tur_kombat ammo"(* (/ 10 1 ) %k)}				
+		{ "bullet125_rus rok ammo"(* (/ 10 1 ) %k)}	
+		
+		{ "bullet125_rus_z apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus_m apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus_v apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus_s2 apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus apcr_h ammo"(* (/ 2 1 ) %k)}	
+		{ "bullet125_rus_s1 apcr ammo"(* (/ 2 1 ) %k)}				
+		
+		{ "bullet125_rus_a cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet125_rus_b cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet125_rus cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet125_rus cm_e ammo"(* (/ 3 1 ) %k)}	
+		
+		{ "bullet125_rus fg ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet125_rus fgh ammo"(* (/ 3 1 ) %k)}	
+		{ "bullet125_rus_t fg ammo"(* (/ 3 1 ) %k)}	
+	)
+	(define "125mm_cn"
+			
+		{ "bullet125_rus rok ammo"(* (/ 10 1 ) %k)}	
+		
+		{ "bullet125_cn apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_cn_h apcr ammo"(* (/ 2 1 ) %k)}				
+		
+		{ "bullet125_cn_b cm ammo"(* (/ 3 1 ) %k)}				
+		
+		{ "bullet125_cn fg ammo"(* (/ 3 1 ) %k)}				
+	)
+	(define "125mm_nato"
+		{ "bullet125_rus_z apcr ammo"(* (/ 2 1 ) %k)}	
+		{ "bullet125_rus_e apcr ammo"(* (/ 2 1 ) %k)}				
+		{ "bullet125_rus_p apcr ammo"(* (/ 2 1 ) %k)}	
+		{ "bullet125_rus_a cm ammo"(* (/ 3 1 ) %k)}				
+		{ "bullet125_rus_b cm ammo"(* (/ 3 1 ) %k)}	
+		{ "bullet125_rus fgh ammo"(* (/ 3 1 ) %k)}
+		{ "bullet125_rus fg ammo"(* (/ 3 1 ) %k)}	
+		{ "bullet125_rus_o fg ammo"(* (/ 3 1 ) %k)}
+	)
+	(define "152mm"
+		{ "bullet152_rus rok ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet152_rus fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet152_rus_r fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet152_rus sm ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet152_rus_a fg bullet152_rus ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet152_rus_korr2 fg bullet152_rus ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet152_rus_h fg ammo"(* (/ 25 1 ) %k)}				
+		{ "bullet152_rus_h korr ammo"(* (/ 80 1 ) %k)}
+	)
+	(define "203mm"
+		{ "bullet203_rus fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet203_rus cl ammo"(* (/ 30 1 ) %k)}	
+		{ "bullet203_rus rok ammo"(* (/ 15 99 ) %k)}
+	)
+	(define "155mm_usa"
+		{ "bullet155_usa cl ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_usa fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_usa satt ammo"(* (/ 80 1 ) %k)}				
+		{ "bullet155_usa_ar fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_usa_h fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet155_usa_h_r fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet155_usa_pgk fg ammo"(* (/ 60 1 ) %k)}
+	)
+	(define "155mm_nato"
+		{ "bullet155_ger fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_ger_r fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_ger_ar fg ammo"(* (/ 25 1 ) %k)}				
+		{ "bullet155_nato fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_nato_r fg ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_usa spbe ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_usa cl ammo"(* (/ 15 1 ) %k)}
+		{ "bullet152_rus_a fg bullet152_rus ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet155_usa_h fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet155_usa_h_r fg ammo"(* (/ 15 1 ) %k)}		
+		{ "bullet155_usa_pgk fg ammo"(* (/ 60 1 ) %k)}
+		{ "bullet155_fr satt ammo"(* (/ 80 1 ) %k)}
+		
+		{ "bullet152_rus_a fg ammo"(* (/ 15 1 ) %k)}	
+	)
+	(define "155mm_cn"
+		{ "bullet155_cn 155_cn cl ammo"(* (/ 15 1 ) %k)}				
+		{ "bullet155_cn 155_cn fg ammo"(* (/ 15 1 ) %k)}
+		{ "bullet155_cn_r 155_cn fg ammo"(* (/ 15 1 ) %k)}
+		{ "bullet155_cn_rok 155_cn fg ammo"(* (/ 15 1 ) %k)}	
+		{ "bullet155_cn 155_cn satt ammo"(* (/ 40 1 ) %k)}
+		
+		{ "bullet152_rus_a fg bullet152_rus ammo"(* (/ 15 1 ) %k)}
+		{ "bullet152_rus rok ammo"(* (/ 15 1 ) %k)}
+	)
+	;---------------missiles----------------
+
+	(define "atacms"
+		{ "atacms fg ammo"(* (/ 130 1 ) %k)}
+	    { "atacms ammo"(* (/ 130 1 ) %k)}		
+	)
+	(define "iskander"
+		{ "iskander tb ammo"(* (/ 200 1 ) %k)}			;лимит 3000		
+		{ "iskander fg ammo"(* (/ 200 1 ) %k)}			;лимит 3000		
+	)
+	(define "df15"
+		{ "df15b fg ammo"(* (/ 100 1 ) %k)}
+		{ "df15b tb ammo"(* (/ 250 1 ) %k)}
+	)
+	(define "phl03"
+		{ "phl03 bre3 fg ammo"(* (/ 160 4 ) %k)}
+	)
+	(define "grad"
+		{ "grad rok ammo"(* (/ 100 8 ) %k)}
+		{ "tos1a fg ammo"(* (/ 30 2 ) %k)}	
+		{ "grad cl ammo"(* (/ 50 10 ) %k)}				
+		{ "grad fg ammo"(* (/ 50 10 ) %k)}				
+		{ "grad spbe ammo"(* (/ 50 10 ) %k)}				
+		{ "grad mine ammo"(* (/ 50 10 ) %k)}				
+	)
+	(define "smerch"
+		{ "smerch tornado_s 9m528 fg ammo"(* (/ 130 3 ) %k)}
+		{ "tornado_s 9m542 fg ammo"(* (/ 150 3 ) %k)}
+	)
+	(define "grad_cn"
+		{ "grad fgh ammo"(* (/ 100 8 ) %k)}
+		{ "grad clcn ammo"(* (/ 50 10 ) %k)}	
+	)
+	(define "lars2"
+		{ "lars2 fg ammo"(* (/ 70 9 ) %k)}				
+		{ "lars2 mine ammo"(* (/ 10 9 ) %k)}	
+	)
+	(define "m270"
+		{ "m270 fg ammo"(* (/ 480 6 ) %k)}
+		{ "gmrlser ammo"(* (/ 480 6 ) %k)}	
+		;{ "m270 cl ammo"(* (/ 20 6 ) %k)}		
+	)
+	(define "m270_nato"
+		{ "m270 fg ammo"(* (/ 480 6 ) %k)}		
+		;{ "m270 cl ammo"(* (/ 20 6 ) %k)}		
+	)
+	(define "shahed136"
+		{ "shahed136 base ammo"(* (/ 70 1 ) %k)}
+	)
+
+
+	;---------------atgms----------------
+
+	(define "atgm_rus"
+		{ "9k14m ammo"(* (/ 4 1 ) %k)}				
+		{ "9k115-2 cm ammo"(* (/ 6 1 ) %k)}				
+		{ "9k115-2 cm_e ammo"(* (/ 6 1 ) %k)}				
+		{ "9m114m shturm cm ammo"(* (/ 20 1 ) %k)}				
+		{ "9m114m shturm fg ammo"(* (/ 20 1 ) %k)}				
+		{ "9m120 shturm cm ammo"(* (/ 10 1 ) %k)}				
+		{ "9m120 shturm fg ammo"(* (/ 20 1 ) %k)}				
+		{ "9m133 fg ammo"(* (/ 20 1 ) %k)}				
+		{ "9m133 cm ammo"(* (/ 10 1 ) %k)}				
+		{ "9m133 cm_e ammo"(* (/ 10 1 ) %k)}				
+		{ "9m133 tb ammo"(* (/ 20 1 ) %k)}				
+		{ "fagot_concurs 9m111 ammo"(* (/ 6 1 ) %k)}				
+		{ "fagot_concurs 9m111m ammo"(* (/ 6 1 ) %k)}				
+		{ "fagot_concurs 9m113 ammo"(* (/ 10 1 ) %k)}				
+		{ "fagot_concurs 9m113m ammo"(* (/ 10 1 ) %k)}				
+		{ "fagot_concurs 9m113m1 ammo"(* (/ 10 1 ) %k)}				
+		{ "strela10 9m333 ammo"(* (/ 9 1 ) %k)}
+		{ "9m330 ammo"(* (/ 20 2 ) %k)}	
+		{ "shershen cm ammo"(* (/ 9 2 ) %k)}
+		{ "shershen fg ammo"(* (/ 9 2 ) %k)}	
+		
+	)
+	(define "atgm_usa"
+		{ "tow_missile tow_rock ammo"(* (/ 8 1 ) %k)}	
+		{ "tow_missile tow2e ammo"(* (/ 10 1 ) %k)}		
+		{ "tow_missile tow2b ammo"(* (/ 10 1 ) %k)}	
+		{ "tow_missile tow2_fg ammo"(* (/ 15 1 ) %k)}						
+		{ "tow_missile tow2d ammo"(* (/ 10 1 ) %k)}					
+		{ "jav_rock f ammo"(* (/ 30 1 ) %k)}		
+		{ "javf_rock ammo"(* (/ 30 1 ) %k)}		
+		{ "jav_rock ammo"(* (/ 27 1 ) %k)}		
+		{ "agm-114 k ammo"(* (/ 10 4 ) %k)}
+		{ "agm-114 l ammo"(* (/ 75 1 ) %k)}
+		{ "aim-9l_ammo ammo"(* (/ 10 1 ) %k)}
+		{ "aim-120c7 ammo"(* (/ 25 2 ) %k)}
+		{ "mistral_missile ammo"(* (/ 15 2 ) %k)}
+		{ "spike-er2 spike-er ammo"(* (/ 61 1 ) %k)}			
+	)
+	(define "atgm_nato"
+		{ "tow_missile tow2e ammo"(* (/ 10 1 ) %k)}
+		{ "tow_missile tow2_fg ammo"(* (/ 15 1 ) %k)}
+		{ "tow_missile tow2b ammo"(* (/ 10 1 ) %k)}	
+		{ "hot_rock hot3 ammo"(* (/ 10 1 ) %k)}				
+		{ "milan_rock cm ammo"(* (/ 4 1 ) %k)}				
+		{ "milan_rock milan-er ammo"(* (/ 6 1 ) %k)}				
+		{ "spike-er spike-er ammo"(* (/ 65 1 ) %k)}				
+		{ "spike-lr ammo"(* (/ 51 1 ) %k)}
+		{ "spike_nlos cm ammo"(* (/ 60 1 ) %k)}                                             	
+		{ "eryx_rock ammo"(* (/ 3 1 ) %k)}				
+		{ "mmp_missile ammo"(* (/ 51 1 ) %k)}
+		{ "jav_rock ammo"(* (/ 30 1 ) %k)}	
+		{ "agm-114 k ammo"(* (/ 10 1 ) %k)}
+		{ "aim-9l_ammo ammo"(* (/ 5 1 ) %k)}
+		{ "xmim-115avt1 ammo"(* (/ 20 2 ) %k)}
+		{ "ammo starstreak_ammo"(* (/ 30 3 ) %k)}
+	)
+	(define "atgm_cn"
+		{ "hj73 hj73c"(* (/ 4 1 ) %k)}				
+		{ "hj9_missile ammo"(* (/ 10 1 ) %k)}				
+		{ "hj-10 ammo"(* (/ 51 1 ) %k)}				
+		{ "hj8e hj8 ammo"(* (/ 10 3 ) %k)}
+		{ "hj8h hj8 ammo"(* (/ 10 3 ) %k)}
+		{ "hq7b ammo"(* (/ 9 1 ) %k)}				
+		{ "red_arrow12_rock ammo"(* (/ 20 1 ) %k)}		
+		{ "ten_lei_ammo cm ammo"(* (/ 51 1 ) %k)}
+		{ "hq7b ammo"(* (/ 20 2 ) %k)}	
+	)
+
+	(define "sam_rus"
+		{ "strela10 9m37 ammo"(* (/ 9 1 ) %k)}				
+		{ "strela10 9m333 ammo"(* (/ 9 2 ) %k)}				
+		{ "9m31 ammo"(* (/ 9 1 ) %k)}	
+		{ "9m338 ammo"(* (/ 10 4 ) %k)}
+		{ "9m330 ammo"(* (/ 20 2 ) %k)}
+		{ "9m38 buk ammo"(* (/ 50 1 ) %k)}				
+		{ "9m317 buk ammo"(* (/ 25 2 ) %k)}				
+		{ "9m311 ammo"(* (/ 25 2 ) %k)}
+		{ "pantsir 57e6e ammo"(* (/ 20 6 ) %k)}
+		{ "r_27er ammo"(* (/ 5 1 ) %k)}				
+		{ "r-3c ammo"(* (/ 5 1 ) %k)}				
+		{ "r60_su25 ammo"(* (/ 5 1 ) %k)}				
+		{ "r-73 ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-ae ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-md ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-sd ammo"(* (/ 5 1 ) %k)}					
+	)
+	(define "sam_usa"
+		{ "patriot ammo"(* (/ 25 2 ) %k)}		;лимит 3000		
+		{ "adats ammo"(* (/ 50 4 ) %k)}	
+		{ "aim-9l_ammo ammo"(* (/ 5 2 ) %k)}				
+		{ "aim-120c7 ammo"(* (/ 5 2 ) %k)}
+		{ "xmim-115avt1 ammo"(* (/ 13 2 ) %k)}	
+	)
+	(define "sam_nato"
+		{ "xmim-115avt1 ammo"(* (/ 13 2 ) %k)}
+		{ "sampt ammo"(* (/ 25 2 ) %k)}
+		{ "aim-9l_ammo ammo"(* (/ 5 2 ) %k)}				
+		{ "aim-120c7 ammo"(* (/ 5 2 ) %k)}		
+	)
+	(define "sam_cn"
+		{ "hq7b ammo"(* (/ 10 2 ) %k)}
+		{ "9m330 ammo"(* (/ 13 2 ) %k)}
+		{ "hq16 hq16b ammo"(* (/ 25 2 ) %k)}	
+		{ "pl5e2 ammo"(* (/ 5 1 ) %k)}		
+		{ "pl12 ammo"(* (/ 5 1 ) %k)}	
+		{ "pl8b ammo"(* (/ 5 1 ) %k)}				
+		{ "r-73 ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-sd ammo"(* (/ 5 2 ) %k)}			
+	)
+
+	(define "manpads_rus"
+		{ "igla_s ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "manpads_usa"
+		{ "fim-92a_ammo ammo"(* (/ 2 1 ) %k)}				
+	)
+	(define "manpads_nato"
+		{ "fim-92a_ammo ammo"(* (/ 2 1 ) %k)}	
+		{ "mistral_missile ammo"(* (/ 15 1 ) %k)}			
+	)
+	(define "manpads_cn"
+		{ "fn6a_ammo ammo"(* (/ 2 1 ) %k)}	
+	)
+	;особо тяжелые бомбы и ракеты имеют половинную цену
+
+	(define "air_stuff_rus"	
+		{ "vixr_ammo ammo"(* (/ 12 2 ) %k)}
+		{ "germes ammo"(* (/ 40 2 ) %k)}				
+		{ "fab_250 ammo"(* (/ 10 1 ) %k)}				
+		{ "fab_250_270 ammo"(* (/ 60 6 ) %k)}				
+		{ "fab_500 ammo"(* (/ 12 1 ) %k)}
+		{ "umpk_500 ammo"(* (/ 25 1 ) %k)}
+		{ "kab-250 ammo"(* (/ 25 1 ) %k)}				
+		{ "kab-500s ammo"(* (/ 30 1 ) %k)}
+		{ "kab-500kr ammo"(* (/ 30 1 ) %k)}	
+		{ "odab_500 ammo"(* (/ 25 1 ) %k)}				
+		{ "pbk-500u ammo"(* (/ 25 1 ) %k)}				
+		{ "rbk_250 ammo"(* (/ 12 1 ) %k)}				
+		{ "rbk_500 ammo"(* (/ 12 1 ) %k)}
+		{ "kmgu2 ammo"(* (/ 5 4 ) %k)}		
+		{ "s25ld ammo"(* (/ 20 1 ) %k)}				
+		{ "x_25ml_su25_ammo ammo"(* (/ 80 1 ) %k)}				
+		{ "x31p ammo"(* (/ 90 2 ) %k)}				
+		{ "x-38mte ammo"(* (/ 75 1 ) %k)}			
+		{ "x59m ammo"(* (/ 125 1 ) %k)}				
+		{ "r_27er ammo"(* (/ 5 1 ) %k)}				
+		{ "r-3c ammo"(* (/ 5 1 ) %k)}				
+		{ "r60_su25 ammo"(* (/ 5 1 ) %k)}				
+		{ "r-73 ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-ae ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-md ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-sd ammo"(* (/ 5 1 ) %k)}				
+	)
+	(define "air_stuff_usa"
+		{ "aim-9l_ammo ammo"(* (/ 5 2 ) %k)}				
+		{ "aim-120c7 ammo"(* (/ 5 2 ) %k)}				
+		{ "agm-114 k ammo"(* (/ 10 1 ) %k)}				
+		{ "agm-114 k2 ammo"(* (/ 10 1 ) %k)}				
+		{ "agm-114 l ammo"(* (/ 10 1 ) %k)}	
+	    { "agm-114 r ammo"(* (/ 10 1 ) %k)}	
+		{ "agm-114 n ammo"(* (/ 10 1 ) %k)}				
+		{ "agm-65d ammo"(* (/ 22 1 ) %k)}				
+		{ "agm-65g ammo"(* (/ 30 1 ) %k)}				
+		{ "agm88 ammo"(* (/ 80 2 ) %k)}
+		{ "agm-84d ammo"(* (/ 20 1 ) %k)}	
+		{ "agm-154 ammo"(* (/ 50 1 ) %k)}				
+		{ "cbu-97 ammo"(* (/ 30 1 ) %k)}
+		{ "gbu10 ammo"(* (/ 30 1 ) %k)}	
+		{ "gbu-31 ammo"(* (/ 30 1 ) %k)}				
+		{ "gbu-38 ammo"(* (/ 30 1 ) %k)}
+		{ "jdam_er ammo"(* (/ 30 1 ) %k)}
+		{ "sdb1 ammo"(* (/ 150 8 ) %k)}	
+		{ "jsm ammo"(* (/ 100 1 ) %k)}
+		{ "slam_er ammo"(* (/ 125 1 ) %k)}
+		{ "mk_82 ammo"(* (/ 10 2 ) %k)}
+		{ "spike_nlos cm ammo"(* (/ 70 1 ) %k)}
+		{ "spike_nlos fg ammo"(* (/ 70 1 ) %k)}	
+	)
+	(define "air_stuff_nato"
+		{ "agm-65d ammo"(* (/ 22 1 ) %k)}
+		{ "aim-9l_ammo ammo"(* (/ 5 2 ) %k)}
+		{ "mistral_missile ammo"(* (/ 15 1 ) %k)}				
+		{ "agm-114 k ammo"(* (/ 10 1 ) %k)}
+		{ "trigat ammo"(* (/ 10 1 ) %k)}				
+		{ "aim-120c7 ammo"(* (/ 5 2 ) %k)}				
+		{ "brimstone ammo"(* (/ 60 1 ) %k)}				
+		{ "alarm_missile ammo"(* (/ 80 2 ) %k)}
+		{ "agm-154 ammo"(* (/ 50 1 ) %k)}
+		{ "sdb1 ammo"(* (/ 150 8 ) %k)}
+		{ "gbu10 ammo"(* (/ 30 1 ) %k)}				
+		{ "gbu16 ammo"(* (/ 30 1 ) %k)}				
+		{ "kleinbombe-44 ammo"(* (/ 20 56 ) %k)}		;они легкие, но в их цену входит сбраываемая пу		
+		{ "taurus ammo"(* (/ 125 1 ) %k)}				
+		{ "mk_82 ammo"(* (/ 60 6 ) %k)}				
+	)
+	(define "air_stuff_cn"	
+		{ "akd-10 ammo"(* (/ 12 2 ) %k)}
+		{ "ag300m ammo"(* (/ 20 2 ) %k)}
+		{ "cs-bbm2 ammo"(* (/ 20 2 ) %k)}
+		{ "bomb250_3 fg ammo"(* (/ 40 4 ) %k)}				
+		{ "bomb250_3 ic ammo"(* (/ 60 6 ) %k)}		
+		{ "ls6 ammo"(* (/ 25 1 ) %k)}
+		{ "rbk_cn cl ammo"(* (/ 12 1 ) %k)}				
+		{ "rbk_cn tb ammo"(* (/ 12 1 ) %k)}				
+		{ "ld10 ammo"(* (/ 40 2 ) %k)}
+		{ "ft3 ammo"(* (/ 50 5 ) %k)}	
+		{ "c802akg ammo"(* (/ 125 1 ) %k)}				
+		{ "pl5e2 ammo"(* (/ 5 1 ) %k)}		
+		{ "pl12 ammo"(* (/ 5 1 ) %k)}	
+		{ "pl8b ammo"(* (/ 5 1 ) %k)}				
+		{ "r-73 ammo"(* (/ 5 1 ) %k)}				
+		{ "rvv-sd ammo"(* (/ 5 1 ) %k)}				
+	)
+
+	;---------------misc----------------
+
+	(define "smokes"
+		{ "smoke ammo"(* (/ 1 1 ) %k)}				
+		;{ "smoke_shtora ammo"(* (/ 1 1 ) %k)}				
+	)
+	(define "kaz"
+		{ "afganit ammo"(* (/ 1 1 ) %k)}	
+		{ "arena ammo"(* (/ 1 1 ) %k)}				
+		{ "drozd ammo"(* (/ 1 1 ) %k)}				
+		{ "smoke_kzvp ammo"(* (/ 1 1 ) %k)}				
+		{ "trophy ammo"(* (/ 5 1 ) %k)}				
+	)
+	(define "mines"
+		{ "antipersonnel mine"(* (/ 1 1 ) %k)}				
+		{ "antitank mine"(* (/ 1 1 ) %k)}				
+		{ "ksf_cassette kpom2 ammo"(* (/ 1 1 ) %k)}				
+		{ "ksf_cassette kptm ammo"(* (/ 1 1 ) %k)}				
+		{ "ksf_cassette ksf ammo"(* (/ 1 1 ) %k)}				
+	)
+
+	;------------------------------ammobox
+
+	(define "ammobox_rus"
+		{ "mp_cwr_rus_common"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_rus_common1"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_rus_common2"(* (/ 100 1 ) %k)}
+		{ "mp_smallbox_rus"(* (/ 100 1 ) %k)}	
+	)
+	(define "ammobox_usa"
+		{ "mp_cwr_usa_common"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_usa_common1"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_usa_common2"(* (/ 100 1 ) %k)}
+		{ "mp_smallbox_usa"(* (/ 100 1 ) %k)}	
+	)
+	(define "ammobox_nato"
+		{ "mp_cwr_nato_common"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_nato_common1"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_nato_common2"(* (/ 100 1 ) %k)}	
+		{ "mp_smallbox_nato"(* (/ 100 1 ) %k)}	
+	)
+	(define "ammobox_cn"
+		{ "mp_cwr_cn_common"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_cn_common1"(* (/ 100 1 ) %k)}				
+		{ "mp_cwr_cn_common2"(* (/ 100 1 ) %k)}	
+		{ "mp_smallbox_cn"(* (/ 100 1 ) %k)}	
+	)
+	;====================================другие пополнители=====================
+
+				("smallarms_rus")
+				("smallarms_west")
+				("smallarms_usa")
+				("smallarms_nato")
+				("hmgun_rus")
+				("hmgun_usa")
+				("hmgun_nato")
+				("ags30")
+				("mk19_usa")
+				("mk19_nato")
+				("mortar_usa")
+				("mortar_rus")
+				("uav_kamikadze_rus")
+				("uav_rus")
+				("autocannons_rus")
+				("autocannons_usa")
+				("autocannons_nato")
+				("hydra")
+				("73mm")
+				("c5")
+				("c8")
+				("c13")
+				("100mm")
+				("100mm_bmp3")
+				("100mm_rapira")
+				("105mm_usa")
+				("105mm_nato")
+				("105mm_idf")
+				("105mm_ger")
+				("105mm_fr_short")
+				("115mm")
+				("120mm_uk")
+				("120mm_usa")
+				("120mm_ger")
+				("125mm_nato")
+				("120mm_fr")
+				("120mm_idf")
+				("120mm_nato_mine")
+				("120mm_rus_mine")
+				("122mm")
+				("125mm")
+				("152mm")
+				("203mm")
+				("105mm_idf")
+				("105mm_usa")
+				("105mm_nato")
+				("155mm_usa")
+				("155mm_nato")
+
+				("atacms")
+				("iskander")
+				("grad")
+				("smerch")
+				("lars2")
+				("m270")
+
+				("smokes")
+				("kaz")
+				("mines")
+				
+				("rpg_rus")
+				("rpg_usa")
+				("rpg_nato")
+				
+				("atgm_rus")
+				("atgm_usa")
+				("atgm_nato")
+				
+				("sam_rus")
+				("sam_usa")
+				("sam_nato")
+				("manpads_rus")
+				("manpads_usa")
+				("manpads_nato")
+
+				("air_stuff_rus")
+				("air_stuff_usa")
+				("air_stuff_nato")
+				
+				("ammobox_rus")
+				("ammobox_usa")
+				("ammobox_nato")
+				
+				{ "mp_cwr_nato_artpvo"(* (/ 300 1 ) %k)}	
+				{ "mp_cwr_rus_artpvo"(* (/ 300 1 ) %k)}	
+				{ "mp_cwr_usa_artpvo"(* (/ 300 1 ) %k)}	
+
+				{ "mp_cwr_nato_avia"(* (/ 300 1 ) %k)}	
+				{ "mp_cwr_rus_avia"(* (/ 300 1 ) %k)}	
+				{ "mp_cwr_usa_avia"(* (/ 300 1 ) %k)}	
+			
+)
+
+{recovery_items
+;k - общий коэффициент цены снабжения. Соотношение цен перенесено из MOW2
+	("supply_all" k(0.01))
+}

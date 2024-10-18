@@ -1,0 +1,282 @@
+;SDL
+;(include "stuff.ext")
+game_entity
+	{extender "stuff"}
+	
+	{volume "body"
+		{able clear {visible} {bullet} {select} {contact_ground} {touch} {contact} {blast}}
+	}
+	{volume "select"
+		{able clear {select}}
+		{density 0}
+	}
+
+	{obstacleID "stuff"}
+	{collider "stuff"}
+	{props "sand" "stuff" "collectable"}
+	{simulation {able 1} {disableLinked 1}}
+	{constrain ground}
+
+	{lodclass "stuff_small"}
+	{extender "detail"
+		{random}
+	}
+;--------------------Camera------------------
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 13.6001	-0.88847	8.67015}
+			{lookat 0.49153	-0.00697708	0.77717}
+			{fov 45}
+			{horizon 91.0361}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position -14.399	-2.94441	-1.56207}
+			}
+			{"1"
+				{type directional}
+				{direction -0.0919267	0.296462	0.391995}
+			}
+			{"2"
+				{type point}
+				{position 37.621	-29.5284	64.4883}
+			}
+		}
+	}
+	{"Stuff_primary"
+		{camera
+			{origin 38.4543	-2.37703	24.2241}
+			{lookat 0.619761	0.0887032	0.488399}
+			{fov 45}
+			{horizon 90.8474}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position -14.399	-2.94441	-1.56207}
+			}
+			{"1"
+				{type directional}
+				{direction -0.0897624	0.314653	0.378069}
+			}
+			{"2"
+				{type point}
+				{position 37.621	-29.5284	64.4883}
+			}
+		}
+	}
+}
+	
+;--------------------------------------------
+	
+(define "medic_supply"
+	{extender "supply_zone"
+		{resupply
+			{item "bandage" 1 				{max 10}	{value 1}}
+		}
+		{radius 			10}
+		{resupplyPeriod 	2}
+		{regenerationPeriod 0}
+		{limit 				20}
+	}
+)
+	
+	
+	
+	
+{props "nocover" "armor_plate"}
+{lodclass "human"}
+;{RimLight}	;Disabled in MOW2
+
+
+	{Volume "select"
+		{able {touch}}
+	}
+	
+	(define "armor_plate"
+		{Volume "front_plate"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "rear_plate"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "sider_plate"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "sidel_plate"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "front_ceramic"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "rear_ceramic"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "sider_ceramic"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "sidel_ceramic"
+			{tags "armor_plate"}
+			{able clear {bullet}}
+		}
+		{Volume "soft_plate"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{Volume "soft_plate1"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{Volume "soft_plate2"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{Volume "soft_plate3"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{Volume "soft_plate4"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{Volume "soft_plate5"
+			{able clear {bullet} {blast} {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{armor
+	        {setting "front"
+				{thickness %thickness}
+				{durability {blast {value 100}} {pierce {value 100}}}
+				{threshold {blast {value 3}} {pierce {value 3}}}
+				{volumes "front_plate*"}
+			}
+			{setting "rear"
+				{thickness %thickness}
+				{durability {blast {value 100}} {pierce {value 100}}}
+				{threshold {blast {value 3}} {pierce {value 3}}}
+				{volumes "rear_plate*"}
+			}
+			{setting "side"
+				{thickness %thickness}
+				{durability {blast {value 100}} {pierce {value 100}}}
+				{threshold {blast {value 3}} {pierce {value 3}}}
+				{volumes "sider_plate*" "sidel_plate*"}
+			}
+	        {setting "front_cer"
+				{thickness %thickness}
+				{durability {blast {value 15}} {pierce {value 15}}}
+				{threshold {blast {value 1.5}} {pierce {value 1.5}}}
+				{volumes "front_ceramic*"}
+			}
+			{setting "rear_cer"
+				{thickness %thickness}
+				{durability {blast {value 15}} {pierce {value 15}}}
+				{threshold {blast {value 1.5}} {pierce {value 1.5}}}
+				{volumes "rear_ceramic*"}
+			}
+			{setting "side_cer"
+				{thickness %thickness}
+				{durability {blast {value 15}} {pierce {value 15}}}
+				{threshold {blast {value 1.5}} {pierce {value 1.5}}}
+				{volumes "sider_ceramic*" "sidel_ceramic*"}
+			}
+			{setting "soft_plate"
+				{thickness %soft}
+				{durability {blast {value 80}} {pierce {value 80}}}
+				{threshold {blast {value 0.4}} {pierce {value 0.4}}}
+				{volumes "soft_plate*"}
+			}
+		}
+	)
+	(define "custom_armor_plate"
+		{Volume "%volume"
+			{tags "armor_plate"}
+			{able clear {bullet} {contact} {contact_ground}}
+		}
+		{armor
+	        {setting "%volume"
+				{thickness %thickness}
+				{durability {blast {value 100}} {pierce {value 100}}}
+				{threshold {blast {value 3}} {pierce {value 3}}}
+				{volumes "%volume"}
+			}
+		}
+	)
+	(define "custom_ceramic_plate"
+		{Volume "%volume"
+			{able clear {bullet} {contact} {contact_ground}}
+		}
+		{armor
+	        {setting "%volume"
+				{thickness %thickness}
+				{durability {blast {value 15}} {pierce {value 15}}}
+				{threshold {blast {value 1.5}} {pierce {value 1.5}}}
+				{volumes "%volume"}
+			}
+		}
+	)
+	(define "classnoarmor" 
+		{Volume "soft_plate"
+			{able clear {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{armor
+			{setting "soft_plate"
+				{thickness 0.1}
+				{durability {blast {value 80}} {pierce {value 80}}}
+				{threshold {blast {value 0.4}} {pierce {value 0.4}}}
+				{volumes "soft_plate*"}
+			}
+		}
+	)
+	(define "class1RUS" 
+		{Volume "soft_plate"
+			{able clear {contact} {contact_ground} {touch}}{tags "soft_plate"}
+		}
+		{armor
+			{setting "soft_plate"
+				{thickness 0.7}
+				{durability {blast {value 80}} {pierce {value 80}}}
+				{threshold {blast {value 0.4}} {pierce {value 0.4}}}
+				{volumes "soft_plate*"}
+			}
+		}
+	)
+	;class and what it fully stops at distance 10m
+	
+
+(define "class2RUS" ("armor_plate" thickness(1.2 1 1 1) soft(0.7)))	
+(define "class3RUS" ("armor_plate" thickness(3.3 1 1 1) soft(0.7)))	
+(define "class4RUS" ("armor_plate" thickness(4.8 1 1 1) soft(0.7)))	
+(define "class5RUS" ("armor_plate" thickness(5.5 1 1 1) soft(0.7)))	
+(define "class5aRUS" ("armor_plate" thickness(5.8 1 1 1) soft(0.7)))
+(define "class6RUS" ("armor_plate" thickness(6.2 1 1 1) soft(0.7)))
+(define "class6aRUS" ("armor_plate" thickness(6.7 1 1 1) soft(0.7)))
+
+(define "classBr2RUS" ("class2RUS"))
+(define "classBr3RUS" ("class3RUS"))
+(define "classBr4RUS" ("class5RUS"))
+(define "classBr5RUS" ("class6aRUS"))
+(define "classBr6RUS" ("armor_plate" thickness(20 1 1 1) soft(0.7)))		
+
+(define "class3aUSA" ("class2RUS") {props "armor_plate_usa"})
+(define "class3USA" ("class5RUS") {props "armor_plate_usa"})
+(define "class4USA" ("class6aRUS") {props "armor_plate_usa"})
+
+(define "classBr4euro" ("class2RUS"))
+(define "classBr5euro" ("class4RUS"))
+(define "classBr6euro" ("class5RUS"))
+(define "classBr7euro" ("class6aRUS"))
+
+(define "classSK1ger" ("class2RUS"))
+(define "classSK2ger" ("class2RUS"))
+(define "classSK3ger" ("class3RUS"))
+(define "classSK4ger" ("class5RUS"))
+
+(define "class2CN" ("class2RUS"))
+(define "class3CN" ("armor_plate" thickness(1 1 1 1) soft(0.7)))
+(define "class4CN" ("class2RUS"))
+(define "class5CN" ("class3RUS"))
+(define "class6CN" ("class5RUS"))

@@ -1,0 +1,65 @@
+{position_check
+	{forbidden_zones "spawn_forbidden*"}
+	{distance
+		; раccтояния cчитаютcя до окружноcти, опиcывающей юнита!
+		{enemy 125		; default settings
+					; condition 'not dead' hardcoded
+			{if props "map_point" 0}					
+			{if game "combat" 20
+			;	{if house 60}
+				{if props "tank" 70}
+			}
+			{if game "battlezones" 20
+				{if props "tank" 70}
+				{if props "flag_point" 120}
+			}			
+			{if house 135}
+			{if props "tank" 135}
+			{if tags "paratrooper" or props "car" "armoredcar" "cannon" 135}	
+			{if not observed 125}
+			{if props "human" 135
+				{if breed_mask "*/tankman" 100}
+				{if breed_mask "*/artilleryman" 100}
+				{if breed_mask "*/scout" 0}
+				{if breed_mask "*/apc_m3scout_scout" 0}					
+				{if breed_mask "*/saboteur*" 0}	
+				{if breed_mask "*/sniper_elite" 0}
+				{if breed_mask "*/brandenburger*" 0}				
+			}
+		}
+		{ally 0
+			{if house 10}
+			{if props "flag_point" 120}
+		}	
+		{neutral 0
+			{if house 10}
+			{if props "flag_point" 120}
+		}	
+	}
+}
+(define "crew_units"
+	{"tankman(%side)" "mp2/%side/tankman"}      ; mp unit name - breeds
+	{"vehicle_supporter(%side)" "mp2/%side/vehicle_supporter"}
+	;{"mp2/%side/pilot" "mp2/%side/pilot"}
+)
+
+{withdraw
+	{spawn_forbidden_condition ; уcловие запрета вызова отозванных юнитов
+		{if props "airborne" 1
+			{if use_budget and not withdrawn_recovering 0
+				{if props "paratroopers_carrier" 1}	
+			}
+		}	
+	}
+	{crew_groups	; cкладывать экипаж без техники в указанные юниты
+		("crew_units" side(rus))
+		("crew_units" side(usa))
+		("crew_units" side(NSO))
+;		("crew_units" side(idf))
+;		("crew_units" side(ger))
+;		("crew_units" side(fr))
+;		("crew_units" side(ita))
+;		("crew_units" side(irn))
+;		("crew_units" side(cn))
+	}
+}

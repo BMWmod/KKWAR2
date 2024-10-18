@@ -1,0 +1,174 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "M1A1"
+   	{tag "agf"}
+	{filling "bullet120_NATO" 3}
+	{fireSound "gun_cw/m256"}
+	{reloadSound "cw/abrams-reload"}
+	{RecoveryTime 7.9}
+	{rechargeTime 7.9}
+	{range 150 155}
+	("speed" s(1150)) 
+	("100-128caliber")
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	{calibre 15}
+;	("damage4" a(338) b(325) c(299) d(260) e(221));Есть не бронебойный, а противобункерный. Ставлю бронебойность произвольно, из баланса
+	("damage4" a(90) b(90) c(90) d(90) e(90))
+	("CW_acc_common" mils(0.33))
+	
+	;{cursor "Abrams_hedp"}
+	;{cursorreloading "Abrams_hedp_reload"}
+	{cursor "cannon_on_heat"}
+	{cursorreloading "cannon_reload_heat"}
+	{parameters "bullet120_fr apcr"
+      	;	("damage4" a(740) b(702) c(641) d(617) e(567))
+		("CW_APCR_damage_DU1650" penetr_2000m(580))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Abrams_apcr"}
+		;{cursorreloading "Abrams_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_GER apcr"
+      	;	("damage4" a(740) b(690) c(627) d(600) e(545))
+		("CW_APCR_damage_WC1500" penetr_2000m(600))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Abrams_apcr"}
+		;{cursorreloading "Abrams_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_USA apcr"
+        ;	("damage4" a(816) b(775) c(707) d(680) e(625))
+		("CW_APCR_damage_DU1650" penetr_2000m(680))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Abrams_apcr"}
+		;{cursorreloading "Abrams_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_GER abm"
+		{range 150 155}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Leo2_HE"}
+		;{cursorreloading "Leo2_HE_reload"}
+		;{cursor "cannon_on_fg_15"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1150))
+		{spreading
+;			{SpreadXYRatio	10}	;взрыв-то по таймеру, поэтому рассеяние по дальности всего порядка 10м.
+			{SpreadPower	1.7}
+			{BurstAccuracy 100 85 75}
+			{SpreadYadjust	2}
+		}
+	}
+	{parameters "bullet120_idf fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.3))
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(900))
+	}
+	{parameters "bullet120_USA_s apcr"
+        ;	("damage4" a(816) b(775) c(707) d(680) e(625))
+		("CW_APCR_damage_DU1650" penetr_2000m(635))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Abrams_apcr"}
+		;{cursorreloading "Abrams_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_USA apcr_h"
+		("CW_APCR_damage_DU1650" penetr_2000m(770))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Abrams_apcr"}
+		;{cursorreloading "Abrams_apcr_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1675))
+	}
+	{parameters "bullet120_IDF cm"
+		{range 150 155}
+		("CW_acc_common" mils(0.33))
+		
+		;{cursor "Abrams_heat"}
+		;{cursorreloading "Abrams_heat_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(1400))
+	}
+	{parameters "cm"
+		{range 150 155}
+		("CW_acc_common" mils(0.33))
+		
+		;{cursor "Abrams_heat"}
+		;{cursorreloading "Abrams_heat_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(1400))
+	}
+	{parameters "bullet120_usa fg"
+		{range 150 155}
+		{projectileDamageTable {0 90} {50 90} {65 90} {100 90} {140 90}}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Abrams_he"}
+		;{cursorreloading "Abrams_he_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1100))
+	}
+    {parameters "fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Abrams_he"}
+		;{cursorreloading "Abrams_he_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1100))
+	}
+    {parameters "bullet120_fr fg"
+		{range 150 155}
+		("CW_acc_common" mils(0.2))
+		
+		;{cursor "Abrams_he"}
+		;{cursorreloading "Abrams_he_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(1100))
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(0.4))	;примерно соответствующий разброс
+		;FBCB2 позволяет получать данные для непрямой стрельбы - вместо квадранта и азимутального указателя.
+		;Корректировка все равно требуется, начальная ошибка определения координат та же, но зато выставление азимута и угла точное, по номинальной точности пушки.
+		;Предположительно, с 2010г система установлена на все М1.
+		{range 240 240}	;13000 +10
+	}
+}
+;США используют совершенно читерский методом измерения бронебойности (M829A3 пробил 300мм под 60 гр лишь 4 раза из 36, а M829A2 - 7 из 45 по 250мм/60гр,
+;но для них даны именно эти значения - 600 и 500 под 90гр, а кое-где и выше) 
+;http://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%BD%D0%B5%D0%BF%D1%80%D0%BE%D0%B1%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C
+;http://en.academic.ru/dic.nsf/enwiki/1880841 - наиболее, ИМХО, реальные данные. Укажу 680мм/2км, чтоб у нас был лучше КС, а у США - БПС
+;http://otvaga2004.mybb.ru/viewtopic.php?id=594&p=25

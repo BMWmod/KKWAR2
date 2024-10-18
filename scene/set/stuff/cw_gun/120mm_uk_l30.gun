@@ -1,0 +1,65 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    
+   	{tag "agf"}
+	{filling "bullet120_UK" 3}
+	{fireSound "gun_cw/120mm_challenger2"}
+	{reloadSound "cw/abrams-reload"}
+	{RecoveryTime 7.9}
+	{rechargeTime 7.9}
+	{range 150 155}
+	
+	("speed" s(670)) 
+	{gravity 0.8}
+	("100-128caliber")
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	{calibre 15}
+	{projectileDamageTable {1 460}};L31 HESH
+	("CW_acc_common" mils(0.13))
+	
+	;{cursor "Chell2_HESH"}
+	;{cursorreloading "Chell2_HESH_reload"}
+	{cursor "cannon_on_fg_4"}
+	{cursorreloading "cannon_reload_fg"}
+	{parameters "apcr"
+        ;	("damage4" a(696) b(660) c(604) d(580) e(533))
+		("CW_APCR_damage_WC1800" penetr_2000m(580))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Chell2_apcr"}
+		;{cursorreloading "Chell2_apcr_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1534))
+	}
+	{parameters "apcr_h"
+        ;	("damage4" a(840) b(797) c(729) d(700) e(643))
+		("CW_APCR_damage_DU1650" penetr_2000m(700))
+		{range 150 155}
+		{RecoveryTime 6.0}
+		("CW_acc_common" mils(0.14))
+		
+		;{cursor "Chell2_apcr"}
+		;{cursorreloading "Chell2_apcr_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}
+    {parameters "sm"
+		{range 150 155}
+		("CW_acc_common" mils(0.13))
+		
+		;{cursor "Chell2_sm"}
+		;{cursorreloading "Chell2_sm_reload"}
+		;{cursor "cannon_on_sm_2"}
+		{cursor "cannon_on_sm_0"}
+		{cursorreloading "cannon_reload_sm"}
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+		{range 220 220}	;11000 +10
+	}
+}
+

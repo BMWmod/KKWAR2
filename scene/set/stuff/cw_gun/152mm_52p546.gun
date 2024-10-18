@@ -1,0 +1,56 @@
+;Created by Pheonix 
+{from "pattern gun"     ; "ƒ-20"
+   	
+;	{filling "2a33_ammo"}
+	{filling "bullet152_RUS"}
+	{fireSound "gun_cw/d20_shot"}
+	{reloadSound "cw/autoloader_leclerc"}
+	{rechargeTime 8}
+	{range 275 275}
+;	{gravity 15}
+;	("speed" s(1000)) 
+	{gravity 2.2}
+	("speed_artillery") 
+	("100-128caliber")
+	{ZeroingAccuracy 0.75 0.62}
+	("CW_acc_artillery" mils(3.45))
+	("cw_angle_curve_variable_charge")
+	{calibre 5}
+	{cursor "cannon_on_fg_5"}
+	{cursorreloading "cannon_reload_fg"}
+	;("relaxationtime" rt(3))
+	;("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+    {parameters "bullet152_RUS rok"     ;«Œ-23  26ÍÏ.
+	    ("damage4" a(4) b(4) c(4) d(4) e(4))
+		{range 275 275}
+		{cursor "cannon_on_heat_3"}
+		{cursorreloading "cannon_reload_heat"}
+	    {Spreading {SpreadYadjust	3.0} }
+	}
+	{parameters "korr"
+		{range 300 300}
+		{gravity 3.0}
+		{speed 100}
+		{cursor "cannon_on_fg_6"}
+		;{cursor "cannon_on_fg_7"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet152_RUS_a"       ;Œ‘-25  17.4ÍÏ - 255 ËÏ.
+		{range 275 275}
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+	{parameters "bullet152_RUS_h"       ;— ‰ÓÌÌ˚Ï √√ 20.5 ÍÏ.
+		{range 300 300}
+		{cursor "cannon_on_fg_5"}
+		;{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+	}
+}
+
+
+
+
+
+

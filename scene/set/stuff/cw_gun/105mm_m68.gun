@@ -1,0 +1,137 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "M1_Abrams"
+	{tag "agf"}
+	{filling "bullet105_NATO" 3}
+	{fireSound "gun_cw/m68"}
+	{reloadSound "cw/abrams-reload"}
+	{RecoveryTime 6.7}
+	{rechargeTime 6.7}
+	{range 145 145}
+	("speed" s(737))
+	("100-128caliber")
+	{calibre 15}
+	("damage4" a(200) b(200) c(200) d(200) e(200)) ;М393 бронебойно-фугасный
+	("CW_acc_common" mils(0.26));оценка
+	
+	;{cursor "tankgun_HESH"}
+	;{cursorreloading "tankgun_HESH_reload"}	
+	;{cursor "cannon_on_fg_4"}
+	;{cursorreloading "cannon_reload_fg"}
+	{cursor "cannon_on_hesh"}
+	{cursorreloading "cannon_reload_hesh"}
+
+	{parameters "bullet105_USA apcr_h"
+		("CW_APCR_damage_DU1650" penetr_2000m(420))	;http://echo501.tripod.com/Military/105ammo.htm
+		{range 145 145}
+		{RecoveryTime 5.0}
+		("CW_acc_common" mils(0.26))	;оценк
+		
+		;{cursor "tankgun_APCR"}
+		;{cursorreloading "tankgun_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1475))
+	}
+	{parameters "bullet105_USA apcr"
+		("CW_APCR_damage_WC1500" penetr_2000m(350))	;;http://gspo.ru/lofiversion/index.php/t386-300.html
+		{range 145 145}
+		{RecoveryTime 5.0}
+		("CW_acc_common" mils(0.26));оценка
+		
+		;{cursor "tankgun_APCR"}
+		;{cursorreloading "tankgun_APCR_reload"}	
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1475))
+	}
+	
+	{parameters "bullet105_cn apcr_h"	;BTA2
+		("CW_APCR_damage_WC1500" penetr_2000m(600))	;+9% due to test target hardness 380BHN
+		{range 145 145}
+		{RecoveryTime 5.0}
+		("CW_acc_common" mils(0.26))	;оценк
+		
+		;{cursor "tankgun_APCR"}
+		;{cursorreloading "tankgun_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1540))
+	}
+	{parameters "bullet105_cn apcr"	;DTW-2
+		("CW_APCR_damage_WC1500" penetr_2000m(501))	;+9% due to test target hardness 380BHN
+		{range 145 145}
+		{RecoveryTime 5.0}
+		("CW_acc_common" mils(0.26));оценка
+		
+		;{cursor "tankgun_APCR"}
+		;{cursorreloading "tankgun_APCR_reload"}	
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1530))
+	}
+
+	{parameters "bullet105_cn rok"             ; GP105 - копия Бастиона, но дальность до 5 км
+		("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+		{range 1 1}                  
+		("CW_acc_common" mils(0))
+		
+		{cursor "cannon_on_heat_2"}
+		{cursorreloading "cannon_reload_heat"}
+		{speed 1000}
+	}
+
+	{parameters "bullet105_IDF apcr"
+		("CW_APCR_damage_WC1500" penetr_2000m(475))	;http://echo501.tripod.com/Military/105ammo.htm
+		{range 145 145}
+		{RecoveryTime 5.0}
+		("CW_acc_common" mils(0.26));оценка
+		
+		;{cursor "tankgun_APCR"}
+		;{cursorreloading "tankgun_APCR_reload"}	
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+
+		("speed" s(1475))
+	}
+	{parameters "cm"
+		("CW_acc_common" mils(0.26))
+		
+		;{cursor "tankgun_HEAT"}
+		;{cursorreloading "tankgun_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+
+		{range 145 145}
+		("speed" s(1174))
+	}
+	{parameters "fg"
+		("CW_acc_common" mils(0.26))
+		
+		;{cursor "tankgun_HE"}
+		;{cursorreloading "tankgun_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+
+		{range 145 145}
+		("speed" s(1174))
+	}
+	{parameters "sm"
+		("CW_acc_common" mils(0.26))
+		
+		;{cursor "tankgun_SM"}
+		;{cursorreloading "tankgun_SM_reload"}
+		{cursor "cannon_on_sm"}
+		{cursorreloading "cannon_reload_sm"}
+
+		{range 145 145}
+		("speed" s(1174))
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+		{range 195 195}	;8000 +10
+	}
+}

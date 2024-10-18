@@ -1,0 +1,34 @@
+{weapon_bullet
+	{inventory
+		{fsm "smg"}
+	}
+	{states
+		{reload		"reload"}
+		{unload		"unload"}
+		{fire		"fire"	}
+		{aim 		"aim"	}
+		{can_aim	"can-aim"}
+	}
+	{Spreading
+		{BurstRecoveryTime 0.5}
+		{BurstAccuracy 100}
+		{SpreadRadius 5}
+	}
+	{reloadSound "reload.smg"}
+	{foresight "Foresight3"}
+	{speed 60}
+	{calibre 7.62}
+    	{AimingTolerance 5}
+	{cursor "mgun_on_0"}
+	{cursorreloading "cannon_reload_all"}
+	{curve "bullet"}
+	;На дистанции примерно 3*AimRange пуля/снаряд исчезают
+	{RicochetEnergyDamping	; penetration energy damping after ricochet (angle - damping)
+		{0	1}
+		{20	1}
+		{30	0.8}
+		{45	0.4}
+		{60	0}	
+	}
+;	{ArmorPassability 100}
+}

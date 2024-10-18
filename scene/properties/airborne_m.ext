@@ -1,0 +1,981 @@
+;SDL
+actor
+
+;===============================cwps3
+(include "vehicle.ext")
+
+{collider "airborne_medium"}
+{props "airborne" "airborne_m" "radar_spo" "ir_spo" "able_paradrop" "unit"}
+		;added until good air mechanics will exist
+		;{props "cw_autotakeoff"}
+		
+{props "cw_autotakeoff_mp"} 	;to takeoff in MP when spawned
+
+{obstacleID "plane"}
+{targetClass "airborne"}
+{targetSelector "cannon_bullet"}
+{brain "vehicle" {state "airborne"}}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+{ZClipVisibility 1}
+(define "chassis_defaults"
+	{FuelBag
+		{volume 200 }	; liters
+		{rate	20 }   	; liters per kilometer
+		{remain 150 }
+		{fuel "fuel"}
+	}
+	{speed
+		{Slow	5	}	; km/h
+		{Normal	15	}
+		{Fast	30	}
+	}
+)
+
+{Chassis "wheel"
+	("chassis_defaults")
+	{locomotion
+		{MaxSpeed 	 	30 } 
+		{StartTime 		4  } 
+		{BrakeTime 		1  } 
+		{StopTime		2  } 
+	}
+		(mod "mp"
+			{FuelBag
+				{volume 2200 }	
+				{rate	320 }   
+				{remain 2000 }
+				{fuel "fuel"}
+			}
+		)
+}
+{Chassis "airborne"
+	("chassis_defaults")
+	{locomotion
+		{Maxspeed 		95 } ; kmph
+ 	  	{turnRadius 	40 } ; m
+;		{StartTime 		6  }  ;in LP
+;		{BrakeTime 		4  }  ;in LP
+;		{StopTime		7  }  ;in LP
+		{StartTime 		4  } 
+		{BrakeTime 		6  } 
+		{StopTime		10  } 
+	}
+(mod "mp"
+			{FuelBag
+				{volume 500 }	
+				{rate	1 }   
+				{remain 495 }
+				{fuel "fuel"}
+			}
+		)
+	{dontUseSlope}
+	{ignorePatherBounds}
+	{disableBackward}
+	{sideSlopeSpeed 25}			
+	{maxSideSlope 15}			
+	{maxElevationSpeed 5}		
+	{elevationAcceleration 2}
+}
+{chassisManager
+	{current "wheel"}
+}
+{simulatorId "airborne"}
+
+(define "locomotion"
+	{StartTime	5	}		
+	{BrakeTime	2	}		
+	{StopTime	4	}		
+	{SteerOn	15}			
+	{SteerOff	15}         
+	{SplineRadius 5}		
+)
+
+;Единый макрос для шасси
+;Комментарии см в мануале
+
+{props "cwfs_fuel"}
+
+(define "Chassis_parameters"
+     {Chassis "wheel"
+	("chassis_defaults")
+	{FuelBag
+		{volume (* 0.5 %Fuel) }	; liters
+		{rate	(* %Fuel_rate 5) }   	; liters per kilometer
+		{remain (* 0.5 %Fuel_remain) }
+		{fuel "fuel"}
+	}
+	{locomotion
+		{MaxSpeed 	 	50 } 
+;		{StartTime 		150 } ;in LP
+;		{BrakeTime 		4 }  ;in LP
+;		{StopTime		7 }  ;in LP
+		{StartTime 		100 } 
+		{BrakeTime 		2 } 
+		{StopTime		4 } 
+		{maxSpeedAtMaxTurn 	15}
+		{TurnRadius		15}
+		{Gears		0.2 0.3 0.5 0.8 1.0}
+		{RearGears	0.05}
+	}
+	{disableBackward}
+     }
+     {Chassis "airborne"
+	{FuelBag
+		{volume (* 0.5 %Fuel) }	; liters
+		{rate	(* %Fuel_rate 50) }   	; liters per kilometer
+;		(mod "mp"
+;			{rate	1 }   
+;		)
+		{remain (* 0.5 %Fuel_remain) }
+		{fuel "fuel"}
+	}
+;	{speed
+;		{Slow	10	}	; km/h
+;		{Normal	17	}
+;		{Fast	30	}
+;	}
+	{locomotion
+		{Maxspeed 		%Speed } ; kmph
+ 	  	{turnRadius 	%TurnRadius } ; m
+		{StartTime 		(* %Speed 0.15)  }  ;in LP
+		{BrakeTime 		(* %Speed 0.05)  }  ;in LP
+		{StopTime		(* %Speed 0.08)  }  ;in LP
+		{StartTime 		(* %Speed 0.03)  } 
+		{BrakeTime 		(* %Speed 0.08)  } 
+		{StopTime		(* %Speed 0.12)  } 
+	}
+	{dontUseSlope}
+	{ignorePatherBounds}
+	{disableBackward}
+;	{sideSlopeSpeed (* %Acc_hor 5)}			;degree/s
+	;увеличена в 1.5 раза на MOW2
+	{sideSlopeSpeed (* %Acc_hor 7.5)}			;degree/s
+	{maxSideSlope (* %Maneuvrability_hor 7.5)}			;degree
+;	{maxElevationSpeed (* %Acc_ver 1.5)}		;m/s
+;	{elevationAcceleration (* %Maneuvrability_ver 0.8)}	
+	;верт маневренность увеличена в 2 - 3 раза на MOW2
+	{maxElevationSpeed (* %Acc_ver 3)}		;m/s	;увел в 2 раза
+	{elevationAcceleration (* %Maneuvrability_ver 2.4)}		;увел в 3 раза
+     }
+     {chassisManager
+	{current "wheel"}
+     }
+     {simulatorId "airborne"}
+)
+
+{extender "inventory"
+	{box
+		{Size 6 6}
+		{weight 4000}
+	}
+}
+	{Sensor
+		{Visor "pilot"
+			{vision "mp_soldier"}
+			{bone "visor_driver"}
+		}
+	}
+;==================Ходовая
+
+
+
+{volume "wheel_front_support"	{tags "part"}	{thickness 8}	{component "wheel_back"}}
+{volume "wheel_right_support"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheel_right_support1"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheel_left_support"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}
+{volume "wheel_left_support1"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}	
+{volume "wheelfront"	{tags "part"}	{thickness 8}	{component "wheel_back"}}
+{volume "wheelback"	{tags "part"}	{thickness 8}	{component "wheel_back"}}
+{volume "wheelright"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheelleft"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}
+{volume "wheelright1"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheelleft1"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}
+{volume "wheel_back"	{tags "part"}	{thickness 8}	{component "wheel_back"}}
+{volume "wheel_front"	{tags "part"}	{thickness 8}	{component "wheel_back"}}
+{volume "wheel_right"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheel_left"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}
+{volume "wheel_right1"	{tags "part"}	{thickness 8}	{component "retract_wheelR"}}
+{volume "wheel_left1"	{tags "part"}	{thickness 8}	{component "retract_wheelL"}}
+;==================Корпус
+
+{volume "body"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}}{thickness 3}}
+{volume "body1"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}} {thickness 3}}
+{volume "body2"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}} {thickness 3}}
+{volume "body3"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}} {thickness 3}}
+{volume "body4"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}} {thickness 3}}
+{volume "body5"	{tags "body" "RAD_emit" "RAD_emit_2gen"}	{component "body"} {able {blast 0}} {thickness 3}}
+
+{volume "wingr1"	{tags "inflammable" "avionics" "wing" "RAD_emit" "RAD_emit_2gen"}	{component "wingr1"}	{thickness hollow 3} }
+{volume "wingl1"	{tags "inflammable" "avionics" "wing" "RAD_emit" "RAD_emit_2gen"}	{component "wingl1"}	{thickness hollow 3} }
+{volume "wingr2"	{tags "inflammable" "avionics" "wing" "RAD_emit" "RAD_emit_2gen"}	{component "wingr2"}	{thickness hollow 3} }
+{volume "wingl2"	{tags "inflammable" "avionics" "wing" "RAD_emit" "RAD_emit_2gen"}	{component "wingl2"}	{thickness hollow 3} }
+
+{volume "aileron1"	{tags "inflammable" "part" "avionics"}	{component "aileron_l"}	{thickness hollow 3} }
+{volume "aileron2"	{tags "inflammable" "part" "avionics"}	{component "aileron_r"}	{thickness hollow 3} }
+{volume "aileron3"	{tags "inflammable" "part" "avionics"}	{component "aileron_l"}	{thickness hollow 3} }
+{volume "aileron4"	{tags "inflammable" "part" "avionics"}	{component "aileron_r"}	{thickness hollow 3} }
+
+{volume "elevator"	{tags "inflammable" "part" "avionics"}	{component "elevator"}	{thickness hollow 3} }
+{volume "elevator1"	{tags "inflammable" "part" "avionics"}	{component "elevator_l"}	{thickness hollow 3} }
+{volume "elevator2"	{tags "inflammable" "part" "avionics"}	{component "elevator_r"}	{thickness hollow 3} }
+{volume "elevator3"	{tags "inflammable" "part" "avionics"}	{component "elevator_l"}	{thickness hollow 3} }
+{volume "elevator4"	{tags "inflammable" "part" "avionics"}	{component "elevator_r"}	{thickness hollow 3} }
+
+
+{volume "rudder"	{tags "inflammable" "part" "avionics"}	{component "rudder"}	{thickness hollow 3} }
+{volume "rudder1"	{tags "inflammable" "part" "avionics"}	{component "rudder_l"}	{thickness hollow 3} }
+{volume "rudder2"	{tags "inflammable" "part" "avionics"}	{component "rudder_r"}	{thickness hollow 3} }
+{volume "rudder3"	{tags "inflammable" "part" "avionics"}	{component "rudder_l"}	{thickness hollow 3} }
+{volume "rudder4"	{tags "inflammable" "part" "avionics"}	{component "rudder_r"}	{thickness hollow 3} }
+
+{volume "stabilizer"	{tags "inflammable" "part" "avionics"}	{component "stabilizer"}	{thickness hollow 3} }
+{volume "stabilizer1"	{tags "inflammable" "part" "avionics"}	{component "stabilizer_l"}	{thickness hollow 3} }
+{volume "stabilizer2"	{tags "inflammable" "part" "avionics"}	{component "stabilizer_r"}	{thickness hollow 3} }
+{volume "stabilizer3"	{tags "inflammable" "part" "avionics"}	{component "stabilizer_l"}	{thickness hollow 3} }
+{volume "stabilizer4"	{tags "inflammable" "part" "avionics"}	{component "stabilizer_r"}	{thickness hollow 3} }
+
+{volume "tail"	{tags "inflammable" "avionics"}	{component "tail"}	{thickness hollow 3} }
+{volume "tail1"	{tags "inflammable" "avionics"}	{component "tail_l"}	{thickness hollow 3} }
+{volume "tail2"	{tags "inflammable" "avionics"}	{component "tail_r"}	{thickness hollow 3} }
+{volume "tail3"	{tags "inflammable" "avionics"}	{component "tail_l"}	{thickness hollow 3} }
+{volume "tail4"	{tags "inflammable" "avionics"}	{component "tail_r"}	{thickness hollow 3} }
+
+{volume "flap1"	{tags "inflammable" "part" "avionics"}	{component "flap_l"}	{thickness 3} }
+{volume "flap2"	{tags "inflammable" "part" "avionics"}	{component "flap_r"}	{thickness 3} }
+{volume "flap3"	{tags "inflammable" "part" "avionics"}	{component "flap_l"}	{thickness 3} }
+{volume "flap4"	{tags "inflammable" "part" "avionics"}	{component "flap_r"}	{thickness 3} }
+
+{volume "wingfront1"	{tags "inflammable" "part" "avionics"}	{thickness 3} }
+{volume "wingfront2"	{tags "inflammable" "part" "avionics"}	{thickness 3} }
+{volume "wingfront3"	{tags "inflammable" "part" "avionics"}	{thickness 3} }
+{volume "wingfront4"	{tags "inflammable" "part" "avionics"}	{thickness 3} }
+
+{volume "glass"	{tags "part"}{thickness 3} }
+{volume "glass1"	{tags "part"}{thickness 3} }
+{volume "glass2"	{tags "part"}{thickness 3} }
+
+{volume "balancer"	{thickness 3} {able clear}}	;ничего не делает, балансирует самолет.
+;==================Двигатели и служебные волумы ик ловушек и систем подавления ик-наведения ракет
+
+{volume "engine" {tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "engine"}}
+{volume "engine1"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "engine1"}}
+{volume "engine2"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "engine2"}}
+{volume "enginea"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "enginea"}}
+{volume "engineb"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "engineb"}}
+{volume "enginec"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "enginec"}}
+{volume "engined"	{tags "body" "inflammable" "IR_emit" "IR_emit_2gen"}	{component "engined"}}
+
+
+{volume "flare_fly1" {tags "IR_emit" "IR_emit_2gen"}	{thickness 0} {component "flare_fly_l"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "flare_fly2" {tags "IR_emit" "IR_emit_2gen"}	{thickness 0} {component "flare_fly_r"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "flare_fly3" {tags "IR_emit"}	{thickness 0} {component "flare_fly_l"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "flare_fly4" {tags "IR_emit"}	{thickness 0} {component "flare_fly_r"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+{volume "chaff_fly1" {tags "RAD_emit" "RAD_emit_2gen"}	{thickness 0} {component "chaff_fly_l"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "chaff_fly2" {tags "RAD_emit" "RAD_emit_2gen"}	{thickness 0} {component "chaff_fly_r"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "chaff_fly3" {tags "RAD_emit"}	{thickness 0} {component "chaff_fly_l"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "chaff_fly4" {tags "RAD_emit"}	{thickness 0} {component "chaff_fly_r"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+{volume "ir_defence_sys_1gen_1" {tags "IR_emit"}	{thickness 0} {component "ir_defence_sys_1gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ir_defence_sys_1gen_2" {tags "IR_emit"}	{thickness 0} {component "ir_defence_sys_1gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ir_defence_sys_1gen_3" {tags "IR_emit"}	{thickness 0} {component "ir_defence_sys_1gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+{volume "ir_defence_sys_2gen_1" {tags "IR_emit" "IR_emit_2gen"}	{thickness 0} {component "ir_defence_sys_2gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ir_defence_sys_2gen_2" {tags "IR_emit" "IR_emit_2gen"}	{thickness 0} {component "ir_defence_sys_2gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ir_defence_sys_2gen_3" {tags "IR_emit" "IR_emit_2gen"}	{thickness 0} {component "ir_defence_sys_2gen"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+{volume "ECM_defence_sys_1" {tags "RAD_emit"}	{thickness 0} {component "ECM_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ECM_defence_sys_2" {tags "RAD_emit"}	{thickness 0} {component "ECM_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ECM_defence_sys_3" {tags "RAD_emit"}	{thickness 0} {component "ECM_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+{volume "ECM_pod_defence_sys_1" {tags "RAD_emit" "RAD_emit_2gen"}	{thickness 0} {component "ECM_pod_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ECM_pod_defence_sys_2" {tags "RAD_emit" "RAD_emit_2gen"}	{thickness 0} {component "ECM_pod_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+{volume "ECM_pod_defence_sys_3" {tags "RAD_emit" "RAD_emit_2gen"}	{thickness 0} {component "ECM_pod_defence_sys"} {able clear {Visible 0} {Contact 0} {bullet 0}}}
+
+;==================Внутреннее оборудование
+
+{volume "pilot_panel" {thickness 5} {component "pilot_panel"} {able {Contact 0} {contact_ground 0}}}
+{volume "pilot_panel1" {thickness 5} {component "pilot_panel"} {able {Contact 0} {contact_ground 0}}}
+{volume "pilot_panel2" {thickness 5} {component "pilot_panel"} {able {Contact 0} {contact_ground 0}}}
+{volume "pilot_panel3" {thickness 5} {component "pilot_panel"} {able {Contact 0} {contact_ground 0}}}
+
+{volume "steering_eler_l" {thickness 5} {component "steering_eler_l"}}
+{volume "steering_eler_r" {thickness 5} {component "steering_eler_r"}}
+{volume "steering_elev" {thickness 5} {component "steering_elev"}}
+{volume "steering_elev1" {thickness 5} {component "steering_elev"}}
+{volume "steering_elev2" {thickness 5} {component "steering_elev"}}
+{volume "steering_rudder" {thickness 5} {component "steering_rudder"}}
+{volume "steering_rudder1" {thickness 5} {component "steering_rudder"}}
+{volume "steering_rudder2" {thickness 5} {component "steering_rudder"}}
+
+{volume "hydrosystem" {component "hydrosystem"}}
+{volume "hydrosystem1" {component "hydrosystem"}}
+{volume "hydrosystem2" {component "hydrosystem"}}
+{volume "hydrosystem3" {component "hydrosystem"}}
+{volume "hydrosystem4" {component "hydrosystem"}}
+{volume "hydrosystem5" {component "hydrosystem"}}
+{volume "hydrosystem6" {component "hydrosystem"}}
+{volume "hydrosystem7" {component "hydrosystem"}}
+{volume "hydrosystem8" {component "hydrosystem"}}
+{volume "hydrosystem9" {component "hydrosystem"}}
+{volume "hydrosystem10" {component "hydrosystem"}}
+{volume "hydrosystem11" {component "hydrosystem"}}
+{volume "hydrosystem12" {component "hydrosystem"}}
+{volume "hydrosystem13" {component "hydrosystem"}}
+{volume "hydrosystem14" {component "hydrosystem"}}
+{volume "hydrosystem_tank" {component "hydrosystem_tank"}}
+{volume "hydrosystem_tank1" {component "hydrosystem_tank"}}
+
+
+{volume "antifire"	{thickness 5} {component "antifire"}}
+{volume "antifire1"	{thickness 5} {component "antifire"}}
+{volume "antifire2"	{thickness 5} {component "antifire"}}
+
+{volume "PPU"	{thickness 5} {component "PPU"}}
+{volume "PPU1"	{thickness 5} {component "PPU"}}
+
+{volume "APU"	{thickness 8} {component "APU"}}
+{volume "APU1"	{thickness 8} {component "APU"}}
+
+{volume "ECM"	{thickness 5} {component "ECM"}}
+{volume "ECM1"	{thickness 5} {component "ECM"}}
+
+{volume "ir_active_def_1"	{thickness 5} {component "ir_active_def"}}
+{volume "ir_active_def_2"	{thickness 5} {component "ir_active_def"}}
+{volume "ir_active_def_3"	{thickness 5} {component "ir_active_def"}}
+
+{volume "ir_active_def_2gen_1"	{thickness 5} {component "ir_active_def_2gen"} }
+{volume "ir_active_def_2gen_2"	{thickness 5} {component "ir_active_def_2gen"} }
+{volume "ir_active_def_2gen_3"	{thickness 5} {component "ir_active_def_2gen"} }
+
+{volume "ECM_pod"	{tags "part"} {thickness 5} {component "ECM_pod"}}
+{volume "ECM_pod1"	{tags "part"} {thickness 5} {component "ECM_pod"}}
+{volume "targeting_pod"	{tags "part"} {thickness 5} {component "targeting_pod"}}
+
+{volume "radarX"	{component "radarX"}}
+{volume "radarX1"	{component "radarX"}}
+{volume "radarL"	{component "radarL"}}
+{volume "radarL1"	{component "radarL"}}
+
+{volume "ols"	{component "ols"}}
+{volume "ols1"	{component "ols1"}}
+{volume "ols2"	{component "ols2"}}
+
+{volume "electronics"	{thickness 3} {component "electronics"}}
+{volume "electronics1"	{thickness 3} {component "electronics"}}
+{volume "electronics2"	{thickness 3} {component "electronics"}}
+
+;==================Вооружение
+{volume "laser_td"	{thickness 5} {component "laser_td"}}
+{volume "radar_td"	{thickness 5} {component "radar_td"}}
+
+{volume "gun"	{thickness 8} {component "gun"}    {able {Visible 0} {Obstacle 0} {Contact 0}}}
+
+{volume "ptur"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6"	{tags "part"} {thickness 8} {component "ptur6"}}
+{volume "ptura"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1a"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2a"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3a"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4a"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5a"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6a"	{tags "part"} {thickness 8} {component "ptur6"}}
+{volume "pturb"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1b"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2b"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3b"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4b"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5b"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6b"	{tags "part"} {thickness 8} {component "ptur6"}}
+{volume "pturc"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1c"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2c"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3c"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4c"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5c"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6c"	{tags "part"} {thickness 8} {component "ptur6"}}
+{volume "pturd"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1d"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2d"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3d"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4d"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5d"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6d"	{tags "part"} {thickness 8} {component "ptur6"}}
+{volume "pture"	{tags "part"} {thickness 8} {component "ptur"}}
+{volume "ptur1e"	{tags "part"} {thickness 8} {component "ptur1"}}
+{volume "ptur2e"	{tags "part"} {thickness 8} {component "ptur2"}}
+{volume "ptur3e"	{tags "part"} {thickness 8} {component "ptur3"}}
+{volume "ptur4e"	{tags "part"} {thickness 8} {component "ptur4"}}
+{volume "ptur5e"	{tags "part"} {thickness 8} {component "ptur5"}}
+{volume "ptur6e"	{tags "part"} {thickness 8} {component "ptur6"}}
+
+{volume "nar"	{tags "part"} {thickness 8} {component "nar"}}
+{volume "nara"	{tags "part"} {thickness 8} {component "nar"}}
+{volume "nar1"	{tags "part"} {thickness 8} {component "nar1"}}
+{volume "nar1a"	{tags "part"} {thickness 8} {component "nar1"}}
+{volume "nar2"	{tags "part"} {thickness 8} {component "nar2"}}
+{volume "nar2a"	{tags "part"} {thickness 8} {component "nar2"}}
+{volume "nar3"	{tags "part"} {thickness 8} {component "nar3"}}
+{volume "nar3a"	{tags "part"} {thickness 8} {component "nar3"}}
+{volume "nar4"	{tags "part"} {thickness 8} {component "nar4"}}
+{volume "nar4a"	{tags "part"} {thickness 8} {component "nar4"}}
+{volume "nar5"	{tags "part"} {thickness 8} {component "nar5"}}
+{volume "nar5a"	{tags "part"} {thickness 8} {component "nar5"}}
+{volume "nar6"	{tags "part"} {thickness 8} {component "nar6"}}
+{volume "nar6a"	{tags "part"} {thickness 8} {component "nar6"}}
+
+{volume "flares1"	{thickness 5} {component "flares1"}}
+{volume "flares2"	{thickness 5} {component "flares2"}}
+{volume "chaff1"	{thickness 5} {component "chaff1"}}
+{volume "chaff2"	{thickness 5} {component "chaff2"}}
+
+;==================Баки и боеукладки
+
+{volume "fuel_tank_internal_a" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_b" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_c" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_d" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_d"}}
+{volume "fuel_tank_internal_a1" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_b1" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_c1" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_d1" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_d"}}
+{volume "fuel_tank_internal_a2" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_a"}}
+{volume "fuel_tank_internal_b2" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_b"}}
+{volume "fuel_tank_internal_c2" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_c"}}
+{volume "fuel_tank_internal_d2" {tags "fuel_tank_internal"}	{component "fuel_tank_internal_d"}}
+{volume "fuel_tank_external_a" {tags "fuel_tank_external"}	{component "fuel_tank_external_a"}}
+{volume "fuel_tank_external_b" {tags "fuel_tank_external"}	{component "fuel_tank_external_b"}}
+{volume "fuel_tank_external_c" {tags "fuel_tank_external"}	{component "fuel_tank_external_c"}}
+{volume "fuel_tank_external_d" {tags "fuel_tank_external"}	{component "fuel_tank_external_d"}}
+
+{volume "ammo_storage_autocannon"	{thickness 8} {component "ammo_storage_autocannon"}}
+{volume "ammo_storage_autocannon1"	{thickness 8} {component "ammo_storage_autocannon"}}
+
+
+;==================Список компонентов
+
+;==================Ходовая, двигатели, шасси
+{component "body"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "wingr1" {RepairTime 25}{tags "mover" "avionics" "repair_lev3" "repair_lev2"}}
+{component "wingl1" {RepairTime 25}{tags "mover" "avionics" "repair_lev3" "repair_lev2"}}
+{component "wingr2" {RepairTime 25}{tags "mover" "avionics" "repair_lev3" "repair_lev2"}}
+{component "wingl2" {RepairTime 25}{tags "mover" "avionics" "repair_lev3" "repair_lev2"}}
+
+{component "aileron_l"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "aileron_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "elevator"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "elevator_l"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "elevator_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "rudder"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "rudder_l"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "rudder_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+
+{component "stabilizer"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+{component "stabilizer_l"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+{component "stabilizer_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+{component "tail"		{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+{component "tail_l"		{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+{component "tail_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 15}}
+
+{component "flap_l"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "flap_r"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}}
+
+
+{component "wheel_back"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}	{tags "mover"}}
+{component "retract_wheelR"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}	{tags "mover"}}
+{component "retract_wheelL"	{tags "avionics" "repair_lev3" "repair_lev2"} {RepairTime 10}	{tags "mover"}}
+
+{component "engine"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "engine1"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "engine2"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "enginea"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "engineb"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "enginec"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "engined"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+
+;==================Внутреннее оборудование
+
+{component "pilot_panel"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+{component "steering_eler_l"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+{component "steering_eler_r"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+{component "steering_elev"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+{component "steering_rudder"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+
+{component "hydrosystem"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+{component "hydrosystem_tank"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+{component "antifire"	{RepairTime 7} {tags "repair_lev3" "repair_lev2"}}
+{component "PPU"	{RepairTime 5} {tags "repair_lev2"}}
+{component "APU"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+{component "ECM"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+{component "ECM_pod"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+{component "targeting_pod"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+
+{component "ir_active_def"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+{component "ir_active_def_2gen"	{RepairTime 15} {tags "repair_lev3" "repair_lev2"}}
+
+{component "radarX"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "radarL"	{RepairTime 25} {tags "repair_lev3" "repair_lev2"}}
+{component "ols"}
+{component "ols1"}
+{component "ols2"}
+{component "electronics"	{RepairTime 10} {tags "repair_lev3" "repair_lev2"}}
+
+;==================Вооружение
+{component "laser_td"	{repairtime 15} {tags "repair_lev3" "repair_lev2"}}	;лазерное и радарное ус-ва наведения
+{component "radar_td"	{repairtime 15} {tags "repair_lev3" "repair_lev2"}}
+
+{component "gun"	{RepairTime 10} {tags "repair_lev2"}}
+{component "ptur"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur1"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur2"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur3"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur4"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur5"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "ptur6"	{RepairTime 12} {tags "repair_lev3" "repair_lev2"}}
+{component "nar"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar1"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar2"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar3"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar4"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar5"	{RepairTime 7} {tags "repair_lev2"}}
+{component "nar6"	{RepairTime 7} {tags "repair_lev2"}}
+
+{component "flares1"	{RepairTime 5} {tags "repair_lev3" "repair_lev2"}}	;это - пусковые ловушек и установки противодействия
+{component "flares2"	{RepairTime 5} {tags "repair_lev3" "repair_lev2"}}
+{component "chaff1"	{RepairTime 5} {tags "repair_lev3" "repair_lev2"}}	
+{component "chaff2"	{RepairTime 5} {tags "repair_lev3" "repair_lev2"}}
+
+;это - служебные компоненты, отвечающие за возможность нацеливания на ловушки и сбои наведения при активном противодействии
+{component "flare_fly_l"}
+{component "flare_fly_r"}
+{component "chaff_fly_l"}
+{component "chaff_fly_r"}
+
+;это - служебные компоненты, отвечающие за возможность перезарядки самонаводящихся ракет на пилонах
+;{component "missile1"}
+;{component "missile2"}
+;{component "missile3"}
+;{component "missile4"}
+
+;==================Баки и боеукладки
+
+{component "fuel_tank_internal_a" {tags "fuel_tank_internal"}{RepairTime 7}}
+{component "fuel_tank_internal_b" {tags "fuel_tank_internal"}{RepairTime 7}}
+{component "fuel_tank_internal_c" {tags "fuel_tank_internal"}{RepairTime 7}}
+{component "fuel_tank_internal_d" {tags "fuel_tank_internal"}{RepairTime 7}}
+{component "fuel_tank_external_a" {tags "fuel_tank_external"}{RepairTime 5}}
+{component "fuel_tank_external_b" {tags "fuel_tank_external"}{RepairTime 5}}
+{component "fuel_tank_external_c" {tags "fuel_tank_external"}{RepairTime 5}}
+{component "fuel_tank_external_d" {tags "fuel_tank_external"}{RepairTime 5}}
+
+{component "ammo_storage_autocannon"}
+
+{component "hweap_indicator"}
+{component "spo_indicator"}
+
+
+;==================Корпус
+    {volume "target_hight"
+    {thickness 0.1}
+    {box 5 5 5}
+    {Position 0 0 0}
+    {able clear {bullet 1}}
+    {bone "basis"}
+	{tags "target_hight"}
+	{component "target_hight"}
+    {material "dummy"}
+    }
+	{component "target_hight"
+            {RepairTime 1}
+    }
+;==================Бронирование и живучесть.
+;У вертолетов броня дифференцирована не только по стороне, но и по волумам
+;Внутреннее оборудование изготовлено в расчете на работу при пробитиях. То есть, одного пробития кожуха может быть
+;недостаточно, чтобы вывести из строя главный редуктор, сильно пробить топливный бак, вызвать потерю давления в 
+;гидросистеме. Часть оборудования (напр. гидросистема) дублирована.
+
+;==================Живучесть корпуса и винтов
+(define "hull"
+        {setting "body"
+            {thickness %Body_th}
+            {durability  {blast {koef 1} {value 60}} {pierce {koef 1} {value 100}}}				
+            {threshold  {blast {koef 1} {value %Body_th}} {pierce {koef 1} {value %Body_th}}}	
+            {volumes "body*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "wing" 
+            {thickness %Wing_th}
+            {durability  {blast {koef 1}{value 15}} {pierce {koef 1}{value 80}}}				
+            {threshold  {blast {koef 1}{value %Wing_th}} {pierce {koef 1}{value %Wing_th}}}	
+            {volumes "wing*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "aileron" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 5}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "aileron*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "elevator" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 5}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "elevator*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "rudder" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 5}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "rudder*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "flap" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 5}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "flap*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "stabilizer" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 5}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "stabilizer*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "tail" 
+            {thickness %Avionics_th}
+            {durability  {blast {value 8}} {pierce {value 80}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "tail*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+)
+
+(define "hull_UAV"
+        {setting "body"
+            {thickness %Body_th}
+            {durability  {blast {value (* %Body_th 1)}} {pierce {value (* %Body_th 1)}}}				
+            {threshold  {blast {value %Body_th}} {pierce {value %Body_th}}}	
+            {volumes "body*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "wing" 
+            {thickness %Wing_th}
+            {durability  {blast {value (* %Wing_th 1)}} {pierce {value (* %Wing_th 1)}}}				
+            {threshold  {blast {value %Wing_th}} {pierce {value %Wing_th}}}	
+            {volumes "wing*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "aileron" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "aileron*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "elevator" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "elevator*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "rudder" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}				
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "rudder*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "flap" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}			
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "flap*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "stabilizer" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}			
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "stabilizer*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "tail" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}		
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "tail*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "wheel" 
+            {thickness %Avionics_th}
+            {durability  {blast {value (* %Avionics_th 2)}} {pierce {value (* %Avionics_th 1)}}}		
+            {threshold  {blast {value %Avionics_th}} {pierce {value %Avionics_th}}}	
+            {volumes "wheel*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+)
+;==================Живучесть внутренних систем
+
+(define "internal_devices"
+        {setting "engine" {thickness %engine_th}
+            {durability  {blast {value (* %engine_th 2)}} {pierce {value 30}}}			;Условных хитпойнтов до поломки
+            {threshold  {blast {value (* %engine_th 0.5)}} {pierce {value %engine_th}}}		;Порог бронебойности для нанесения ущерба
+            {volumes "engine*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "hydrosystem" {thickness %hydrosystem_th}
+            {durability  {blast {value 5}} {pierce {value 15}}}
+            {threshold  {blast {value %hydrosystem_th}} {pierce {value %hydrosystem_th}}}	
+            {volumes "hydrosystem*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "OLS" {thickness %electronics_th}
+            {durability  {blast {value 7}} {pierce {value 15}}}
+            {threshold  {blast {value %electronics_th}} {pierce {value %electronics_th}}}	
+            {volumes "OLS*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "radar" {thickness %electronics_th}
+            {durability  {blast {value 7}} {pierce {value 15}}}
+            {threshold  {blast {value %electronics_th}} {pierce {value %electronics_th}}}	
+            {volumes "radar*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_a" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 35}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_a*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_b" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 35}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_b*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_c" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 35}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_c*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_d" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 35}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_d*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_a" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 15}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_a"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_b" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 15}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_b"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_c" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 15}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_c"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_d" {thickness %fuel_th}
+            {durability  {blast {value 10}} {pierce {value 15}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_d"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+)
+(define "internal_devices_UAV"
+        {setting "engine" {thickness %engine_th}
+            {durability  {blast {value (* %engine_th 2)}} {pierce {value (* %engine_th 3)}}}			;Условных хитпойнтов до поломки
+            {threshold  {blast {value %engine_th}} {pierce {value %engine_th}}}		;Порог бронебойности для нанесения ущерба
+            {volumes "engine*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "hydrosystem" {thickness %hydrosystem_th}
+            {durability  {blast {value (* %hydrosystem_th 2)}} {pierce {value (* %hydrosystem_th 3)}}}
+            {threshold  {blast {value %hydrosystem_th}} {pierce {value %hydrosystem_th}}}	
+            {volumes "hydrosystem*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "OLS" {thickness %electronics_th}
+            {durability  {blast {value (* %electronics_th 2)}} {pierce {value (* %electronics_th 3)}}}
+            {threshold  {blast {value %electronics_th}} {pierce {value %electronics_th}}}	
+            {volumes "OLS*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "radar" {thickness %electronics_th}
+            {durability  {blast {value (* %electronics_th 2)}} {pierce {value (* %electronics_th 3)}}}
+            {threshold  {blast {value %electronics_th}} {pierce {value %electronics_th}}}	
+            {volumes "radar*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_a" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_a*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_b" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_b*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_c" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_c*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_internal_d" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_internal_d*"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_a" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_a"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_b" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_b"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_c" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_c"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+        {setting "fuel_tank_external_d" {thickness %fuel_th}
+            {durability  {blast {value (* %fuel_th 2)}} {pierce {value (* %fuel_th 3)}}}
+            {threshold  {blast {value %fuel_th}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank_external_d"}
+			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+)
+(define "armor_panel"
+        {setting "%name" {thickness %thickness}
+            {durability  {blast {value 999}} {pierce {value 999}}}
+            {threshold  {blast {value 999}} {pierce {value 999}}}	
+            {volumes "%name"}
+			{fragment_pass_threshold 1}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+        }
+)
+
+(define "air_armor"
+	("hull" Body_th(%body) Body_dur_blast(150) Body_dur_pierce(250) Wing_th(%wing) Avionics_th(%avionics))
+	("internal_devices" engine_th(%engine) hydrosystem_th(%hydrosystem) electronics_th(%electronics) fuel_th(%fuel))
+)
+
+(define "small_UAV_armor"
+	("hull_UAV" Body_th(1.25) Wing_th(1.25) Avionics_th(1.25))
+	("internal_devices_UAV" engine_th(0.25) hydrosystem_th(0.25) electronics_th(0.25) fuel_th(0.25))
+)
+
+(define "part"
+	{volume %0
+		{tags "part"}
+		{thickness 20}
+		
+	}
+	{component %0}
+)
+(define "part_thin"
+	{volume %0
+		{tags "part"}
+		{thickness 3}
+		
+	}
+	{component %0}
+)
+(define "plex_glass"
+	{volume %0
+		{tags "glass"}
+		{thickness 3}
+	}
+)
+(define "abm_bomber" ;  spreading does not depend on speed, but is affected by turn rate.
+    {AccuracyByMotion
+        {MaxLinearSpeed 200}               ;km/h
+        {ByLinearSpeed 1}
+        {MaxAngularSpeed 20}             ;deg/s
+        {ByAngularSpeed 0.5}
+        {DisorderTime 1}              ;s
+        {OrderTime 1}                    ;s
+    }
+)
+(define "abm_jet"
+{AccuracyByMotion
+        {MaxLinearSpeed 200}               ;km/h
+        {ByLinearSpeed 1}
+        {MaxAngularSpeed 100}             ;deg/s
+        {ByAngularSpeed 0.5}
+        {DisorderTime 1}              ;s
+        {OrderTime 1}                    ;s
+}
+)

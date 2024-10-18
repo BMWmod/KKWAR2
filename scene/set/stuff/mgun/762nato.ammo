@@ -1,0 +1,21 @@
+;Cold War
+{bullet
+	{tag "bullet stackable M80 mgun 762x51_x20 pierce sharing fx_bul_med ui_mgun"}
+	{inventory
+		{weight 1}
+		{block 100}
+		{size 2 1}
+		{fsm "belt"}
+	}
+	{mass 0.025}
+	{entity "762nato"}
+	
+	{trace
+		{view "/texture/fx/trace6"
+			{ScaleY 0.13}
+			{Light 1}
+		}
+		{length 1.2}
+	}
+("cw_powder_charge" kg(0.0017))
+}

@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+  {tag "bullet small stackable 58ammo_basic DBP10 smg pistol pierce sharing fx_bul_small ui_smg"}
+	{inventory
+		{weight 1.42}
+		{block 70}
+		{size 2 1}
+		{fsm "belt"}
+	}
+	{mass 0.01}
+	{entity "qbb95_ammo"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.11}
+			{Light 1}
+		}
+		{length 0.0}
+	}
+("cw_powder_charge" kg(0.0017))
+}

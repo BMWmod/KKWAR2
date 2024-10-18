@@ -1,0 +1,120 @@
+{actor
+
+(include "/properties/vehicle.ext")
+(include "/properties/selection/vehicle.inc"  scale(0.7))
+{PatherID	"human"}
+{simulation {able 1} {disableLinked 1}}
+{obstacleID "human"}
+{collider "cannon"}
+{constrain ground}
+{props "steel" "emit_on_sink"}
+{able "emit_crew_on_injure"}
+{targetClass "cannon" "bullet"}
+{targetSelector "cannon_bullet"}
+{brain "vehicle" 
+	{state "vehicle"}
+}
+
+	(include "/properties/shadow/tank.inc"  scale(0.3))
+	{props "collectable" "vision_lev03_can"}
+(define "armor_handshield_cw"
+	{armor
+		{setting "body"
+			{thickness %body}
+			{threshold  {blast {value %body_t}} {pierce  {value 999}}}	
+			{durability {blast {value %body_d}} {pierce  {value 999}}}	
+			{volumes "body*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		}
+	}
+)
+	("armor_handshield_cw" body(5.4 1.1 1.1 1.1) body_t(6) body_d(20))
+	{extender "stuff"
+		{item "vant_vm_shield_stan"}
+	}
+	{extender "inventory"
+		{weapon "pistol"
+			{mask "weapon pistol"}
+		}
+		{box
+			{Size 2 3}
+			{weight 100}
+			{item "aps" filled {user "pistol"}}
+			{item "ammo standart" 100}
+		}	
+	}
+	{Weaponry
+		{place "pistol"
+			{gunner "gunner"}
+			{charger "gunner"}
+			{type "mgun_main"}
+			{LinkBone "pistol_link"}
+			{LinkAnimation "off"}
+			{Rotate}
+		}
+	}
+	{Volume "select"
+		{able{obstacle 0} {Bullet 0} {Contact 0} {Select 1} {Blast 0} {Overlap 0} {Touch 1} {Contact_ground 0}}
+		{density 0}
+	}
+{volume "body" {component "body"}}
+{volume "body1" {component "body"}}
+{component "body"}
+	{mass 24}
+	
+{extender "talk"
+	{talker "cannon"}
+}
+	
+{placer
+	{crew}
+	{place "driver" {group "crew"}{linkbone "driver"} {openForCrush}}
+	{place "gunner" {group "crew"} {linkbone "driver"} {openForCrush}}
+}
+	{boarder
+		{anm "driver"
+			{forward	{begin	"stand_pick_2hand_begin"} {end "shield_stand"}}
+			{reverse	{end	"stand_pick_2hand_end"}}
+		}
+		{door "emit1"}
+		{link "driver" "gunner"}
+		{link "emit1" "driver" {anm "driver"} {forward putoff} {reverse puton}}
+		{link "emit1" "gunner" {anm "driver"} {forward putoff} {reverse puton}}
+	}
+(define "loco_params"
+	{StopTime	0.2}
+	{BrakeTime	0.7}
+	{TurnRadius	3}
+	{TurnStart	0.8}
+	{TurnStop	0.5}
+	{Gears		0.35 0.5 0.7 1.0}
+	{RearGears	0.33 0.5}
+)
+(define "loco_carrier"
+	{locomotion
+		("loco_params")
+		{FallSlope  60}
+		{MaxSpeed	7}
+		{StartTime	2}
+		{TurnTime	2}
+		{TurnRadius	2}
+	}
+)
+{Chassis "human_carrier"
+	("loco_carrier")
+}
+	
+{extender "cannon"
+	{animation
+		{switch "close"}
+		{move "shield_move"}
+		{aim ""}
+		{fire  "shield_stand"}
+		{reload  ""}
+	}
+	{move {workers "driver"}}
+	{attack {workers "gunner"}}
+}
+	
+	{Extension "vant_vm_shield.mdl"}
+}

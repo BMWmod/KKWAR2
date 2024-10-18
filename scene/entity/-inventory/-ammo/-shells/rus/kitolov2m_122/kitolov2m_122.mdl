@@ -1,0 +1,61 @@
+;Exported by: Kasutaja
+;Date:        Wed Apr  5 13:39:36 2023
+;File:        C:\Users\Kasutaja\Desktop\??????? 2? 120-122??\??????? 2? 122??.max
+{Skeleton
+	{bone "body"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{VolumeView "body.ply"}
+		{bone "tail"
+			{parameters "Voxels=0;"}
+			{Position -8.29192	0.107668	0.047885}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	0	1
+		0	-1	0
+		1.8547	0.707982	-0.0482671
+	}
+}
+{Volume "select"
+	{Box 22.0866 2.59843 2.59843}
+	{Bone "body"}
+	{Matrix34
+		0.857	0	0
+		0	0	0.857
+		0	-0.857	0
+		1.61617	-0.420279	-0.0839242
+	}
+}
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin -3.66106	-88.379	-4.47128}
+			{lookat -0.321152	11.2759	0.341809}
+			{fov 16.5929}
+			{horizon 179.83}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position 1.98683	9.74047	9.06978}
+			}
+			{"1"
+				{type directional}
+				{direction -0.0793779	0.377597	-0.317993}
+			}
+			{"2"
+				{type point}
+				{position -6.64781	10.5276	6.30224}
+			}
+		}
+	}
+}

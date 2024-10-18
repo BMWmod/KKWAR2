@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/new_entities/tower_cellular_communication/vishka"}
+	{blend test}
+}

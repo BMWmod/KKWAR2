@@ -1,0 +1,248 @@
+;Created by Pheonix 
+{from "pattern tank_gun"    ; "Т64A"	
+	{tag "agf"}
+	{filling "2a46ammo" 3}
+	{fireSound "gun_cw/125mm_2a46/"}
+	{reloadSound "cw/t72-reload"}
+	{RecoveryTime 5.6}
+	{rechargeTime 6.6}
+	{range 150 155}
+	("speed" s(760)) 
+	{gravity 1.15}
+	("100-128caliber")
+	{calibre 15}
+;	("accuracy_4" r1(1.2) r2(1.4) r3(1.9) r4(2.4))
+	; a - 20, b - 50, c - 80, d -100, e - 120 
+	("damage4" a(0.3) b(0.3) c(0.3) d(0.3) e(0.3))   ; 
+	("CW_acc_common" mils(0.27))
+	
+	{parameters "bullet125_Rus_z apcr"             ; ПК 3БМ22 "Заколка" 
+		("CW_APCR_damage_ST1800" penetr_2000m(410))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1760))
+	}
+	{parameters "bullet125_Rus_v apcr"             ; ПК 3БМ32 "Вант"
+		("CW_APCR_damage_DU1650" penetr_2000m(540))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}
+	{parameters "Bullet125_Rus_m apcr"             ; ПК 3БМ42 "Манго"  450x1.08=486mm
+		("CW_APCR_damage_WC1800" penetr_2000m(486))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}	
+	{parameters "Bullet125_Rus_e apcr"             ; ПК  EPpSv-97  
+		("CW_APCR_damage_WC1800" penetr_2000m(500))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}		
+	{parameters "Bullet125_Rus_p apcr"             ; ПК  "PRONIT"  
+		("CW_APCR_damage_WC1800" penetr_2000m(540))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		{cursor "cannon_on_apcr"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}	
+	{parameters "bullet125_rus apcr"
+		("CW_APCR_damage_DU1650" penetr_2000m(648))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}	     
+	{parameters "bullet125_cn apcr"             ; DTW-125
+		("CW_APCR_damage_WC1800" penetr_2000m(654))	;+9% due to test target hardness 380BHN
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "TPDK1_APCR"}
+		;{cursorreloading "TPDK1_APCR_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}	
+	{parameters "bullet125_cn_h apcr"             ; DTC-10
+		("CW_APCR_damage_WC1800" penetr_2000m(709))	;+9% due to test target hardness 380BHN
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "TPDK1_APCR"}
+		;{cursorreloading "TPDK1_APCR_reload"}
+		;{cursor "cannon_on_apcr"}
+		{cursor "cannon_on_apcr_5"}
+		{cursorreloading "cannon_reload_apcr"}
+		("speed" s(1700))
+	}
+	{parameters "bullet125_Rus_a cm"
+		("CW_acc_common" mils(0.21))
+		
+		;{cursor "1A40_HEAT"}
+		;{cursorreloading "1A40_HEAT_reload"}
+		;{cursor "cannon_on_apcr"}
+		;{cursorreloading "cannon_reload_apcr"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(930))
+		{range 150 155}
+	}
+	{parameters "bullet125_Rus cm"
+		("CW_acc_common" mils(0.21))
+		
+		;{cursor "1A40_HEAT"}
+		;{cursorreloading "1A40_HEAT_reload"}
+		;{cursor "cannon_on_apcr"}
+		;{cursorreloading "cannon_reload_apcr"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(950))
+		{range 150 155}
+	}
+	{parameters "bullet125_Rus_b cm"
+		("CW_acc_common" mils(0.21))
+		
+		;{cursor "1A40_HEAT"}
+		;{cursorreloading "1A40_HEAT_reload"}
+		;{cursor "cannon_on_apcr"}
+		;{cursorreloading "cannon_reload_apcr"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(930))
+		{range 150 155}
+	}	
+	{parameters "bullet125_Rus cm_e"
+		("CW_acc_common" mils(0.21))
+		
+		;{cursor "1A40_HEAT"}
+		;{cursorreloading "1A40_HEAT_reload"}
+		;{cursor "cannon_on_apcr"}
+		;{cursorreloading "cannon_reload_apcr"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		("speed" s(930))
+		{range 150 155}
+	}
+	{parameters "bullet125_cn_b cm"
+		("CW_acc_common" mils(0.21))
+		
+		;{cursor "TPDK1_HEAT"}
+		;{cursorreloading "TPDK1_HEAT_reload"}
+		{cursor "cannon_on_heat"}
+		{cursorreloading "cannon_reload_heat"}
+		{range 150 155}
+		("speed" s(930))
+	}
+	{parameters "Bullet125_Rus_t fg"
+		("CW_acc_common" mils(0.28))
+		
+		;{cursor "1A40_HE"}
+		;{cursorreloading "1A40_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(760))
+		{range 1 1}
+	}
+	{parameters "Bullet125_Rus_o fg"
+		("CW_acc_common" mils(0.28))
+		
+		;{cursor "1A40_HE"}
+		;{cursorreloading "1A40_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(760))
+		{range 150 155}
+	}
+	{parameters "Bullet125_Rus fg"
+		("CW_acc_common" mils(0.28))
+		
+		;{cursor "1A40_HE"}
+		;{cursorreloading "1A40_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(760))
+		{range 150 155}
+	}
+	{parameters "bullet125_cn fg"
+		("CW_acc_common" mils(0.28))
+		
+		;{cursor "TPDK1_HE"}
+		;{cursorreloading "TPDK1_HE_reload"}
+		{cursor "cannon_on_fg_4"}
+		{cursorreloading "cannon_reload_fg"}
+		("speed" s(760))
+		{range 150 155}
+	}
+	{parameters "ap"
+		("damage4" a(125) b(115) c(107) d(100) e(50))
+		{range 150 155}
+		("CW_acc_common" mils(0.27))
+		
+		;{cursor "1A40_APCR"}
+		;{cursorreloading "1A40_APCR_reload"}
+		;{cursor "cannon_on_fg_4"}
+		;{cursorreloading "cannon_reload_fg"}
+		{cursor "cannon_on_ap_3"}
+		{cursorreloading "cannon_reload_ap"}
+		("speed" s(1830))
+	}
+	{parameters attack_ground_forced
+		("tank_indirect_fire" mils(1.5))
+	}
+}	
+; 3БМ22 "Заколка" п/в 1976г - Данный снаряд являлся наиболее распространенным в Советской Армии в конце 70-х - начале 80-х гг, и хотя более не производится, накоплен в больших количествах и по-прежнему разрешен к применению. 	
+; Масса активной части без ВУ (3БМ22)….4,485 кг,Материал сердечника…карбид вольфрама,Длина активной части (3БМ22)...558 мм,Длина корпуса снаряда....400 мм,Диаметр корпуса снаряда....36 мм,Длина сердечника...71 мм,Диаметр сердечника....20 мм
+; Нормативная бронепробиваемость на 2000 м, при 0/60 гр………380/200 мм,Средняя бронепробиваемость на 2000 м, при 0 гр………430 мм,Начальная скорость.....1760 м/с.  	
+; 
+; 3БМ32 "Вант" п/в 1985г - Первый советский монолитный урановый БОПС.Вместе с 3БМ42 остается самым распространенным БОПС Российской армии.	
+; Масса активной части без ВУ (3БМ32)….4,85 кг,Материал корпуса активной части…«материал Б» (урановый сплав),Длина активной части (3БМ32)….480 мм,Длина корпуса снаряда..380 мм,Диаметр корпуса снаряда..30 мм 
+; Нормативная бронепробиваемость на 2000 м, при 0/60 гр………500/250 мм,Средняя бронепробиваемость на 2000 м, при 0 гр………560 мм,Начальная скорость...1700 м/с.	
+; 
+; 3БМ42 "Манго" п/в 1986г -  Снаряд широко распространен в Российской армии, а также экспортировался и производится за рубежом.Имеет очень сложную конструкцию и два сердечника из высокопрочного вольфрамового сплава большого удлинения	 	
+; Масса активной части без ВУ (3БМ42)………4,85 кг,Материал сердечника.....сплав ВНЖ (вольфрам-никель-железо),Длина активной части (3БМ42)………574 мм,Длина сердечника....420 мм,Диаметр сердечника....18 мм
+; Нормативная бронепробиваемость на 2000 м, при 0/60 гр………450/230 мм,Средняя бронепробиваемость на 2000 м, при 0 гр………500 мм,Начальная скорость.....1700 м/с.  	
+; 
+; 3БМ48 "Cвинец" п/в 1991г -  Самый мощный серийный советский 125-мм ОБПС.Снаряд имеет длину, близкую к предельно допустимой для стандартных советских автоматов заряжания. 	
+; Масса активной части без ВУ (3БМ32)….5,2 кг,Материал корпуса активной части…«материал Б» (урановый сплав),Длина активной части (3БМ48)….635 мм,Длина корпуса снаряда.. мм,Диаметр корпуса снаряда.. мм 
+; Нормативная бронепробиваемость на 2000 м, при 0/60 гр………600/300 мм,Средняя бронепробиваемость на 2000 м, при 0 гр………650 мм,Начальная скорость...1700 м/с.	
+; 
+; 3БМ59 "Свинец 1" п/в 201..г -  	
+; Масса активной части без ВУ (3БМ59)…., кг,Материал сердечника…,Длина активной части (3БМ59)... мм,Длина корпуса снаряда.... мм,Диаметр корпуса снаряда.... мм,Длина сердечника... мм,Диаметр сердечника.... мм
+; Нормативная бронепробиваемость на 2000 м, при 0/60 гр……… мм,Средняя бронепробиваемость на 2000 м, при 0 гр……… мм,Начальная скорость..... м/с.  	
+; 
+; 3БМ44М "Лекало" п/в 1996г - Снаряд повышенного могущества с вольфрамовым сердечником сверх-высокого удлинения. Снаряд имеет длину 740 мм и не может быть размещен в АЗ Т-72 без доработки. 	
+; Масса активной части без ВУ (3БМ42М)….5,0 кг,Материал усовершенствованный сплав на основе карбида вольфрама,Длина активной части (3БМ42М)….730 мм,Длина корпуса снаряда..570 мм,Диаметр корпуса снаряда..22 мм 
+; Нормативная бронепробиваемость на 2000 м, при 0 гр………более 650 мм,Средняя бронепробиваемость на 2000 м, при 0 гр………600-650 мм,Начальная скорость...1750 м/с.	
+; 

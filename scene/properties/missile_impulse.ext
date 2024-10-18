@@ -1,0 +1,109 @@
+;SDL
+;game_entity
+actor
+
+{able "-select"}
+	{extension "/properties/animation/proj/impulse_proj_anm.ext"}
+
+	;{props "grenade"}
+{props "steel" "stuff" "nocover"}
+{simulation {able 1} {disableLinked 1}}
+{constrain ground}
+{mass 100}
+
+{lodclass "part_big"}
+{simulatorId "grenade"}
+{body {proper body sensible} {permit body}}
+
+(include "/properties/shadow/round.inc")
+{Chassis "human_carrier"
+	{locomotion
+		{StopTime	0.2}
+		{BrakeTime	0.7}
+		{TurnRadius	3}
+		{TurnStart	0.8}
+		{TurnStop	0.5}
+		{Gears		0.35 0.5 0.7 1.0}
+		{RearGears	0.33 0.5}
+		{MaxSpeed	1}
+		{StartTime	1}
+		{TurnTime	2}
+		{TurnRadius	2}
+	}
+	{FuelBag
+		{volume 0 }	; liters
+		{remain 0 }
+		{fuel "fuel"}
+	}
+}
+{mass 100}
+
+;Типы пойнтеров наведения:
+;laser - ракета с лазерным наведением (на пятно) либо с наведением по лучу лазера.
+;Хеллфайер, Вихрь, Фагот-Конкурс, танковые ПТУР
+;active - ракета с активной ГСН. Зенитные ракеты, ПЗРК, многие воздух-воздух, Javelin
+;other - другие. Радиокомандные, наведение по проводам (TOW, Малютка)
+;Особой разницы нет, нужно для уменьшения помех со стороны других ракет.
+
+	{props "proj_dummy" "proj_impulse" "steel" "vis_level_missile"}
+
+	{Volume "precursor" {able clear {Overlap 0}} {density 0}}	;нужен для надежной работы детонатора - отодвигает границу точного обсчета столкновений. Не менее 120м.
+	{Volume "rangefinder" {able clear {Overlap 1}} {density 0}}
+	{Volume "rangefinder1" {able clear {Overlap 1}} {density 0}}
+	{Volume "rangefinder2" {able clear {Overlap 1}} {density 0}}
+	
+	{Volume "missile" {tags "missile"} {able clear {Overlap 1} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "body" {tags "missile"} {able clear {Overlap 1} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "proximity" {tags "proximity"} {able clear {Overlap 1} {Visible 0}} {Thickness 0.1} {component "missile"}}
+	{Volume "target" {tags "missile"} {able clear {Overlap 0} {Visible 1}} {Thickness 0.1} {component "missile"}}
+	
+	{component "missile"}
+	{component "missile_fuel1"} {component "missile_fuel2"} {component "missile_fuel3"} {component "missile_fuel4"}
+	{component "missile_fuel5"} {component "missile_fuel6"} {component "missile_fuel7"}
+	{obstacleID "nothing"}
+	{collider "projectile"}
+	{constrain water}
+	{extender "stuff"
+		{item "empty_stuff"}
+	}
+
+	{sensor
+		{RecognizeTime 0.01}
+		{InformRange 0.1}
+		{Visor "main"
+			{vision "missile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "close"
+			{vision "missile_close"}
+			{bone "missle_foresight"}
+		}
+	}
+
+	{autooperatable 1}
+	{placer
+		{crew 0}
+		{place "driver" remove}
+	}
+
+	{brain "vehicle"
+		{state "vehicle"}
+		{const "crush/min_danger_zone_time" 	1}
+		{const "crush/min_danger_zone_length"	1}
+	}
+	{Weaponry
+		{ManualAccuracy 1.0}	;теперь это обязательный блок
+	}
+	{extender "inventory"
+		{box
+			{Size 6 2}
+			{weight 500}
+		}
+	}
+
+	{targetSelector "missile"}
+	{targetClass 	"none"}
+
+(include "/properties/missile_cwps3_defines.ext")
+(include "/properties/missile_impulse_defines.ext")
+

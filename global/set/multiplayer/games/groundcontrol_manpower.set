@@ -1,0 +1,61 @@
+;SDL
+
+{game
+	{class "groundcontrol"}	
+	{teammatch}
+	{player_army on}
+	{parameters
+		{freezeTime 180}
+		{flag_capture_time 5.0}
+		{island_melt_time 0.75}
+		{points_table 0 0 0.06 7.5 0.25 31.25 0.5 62.5 0.8 81.5 1 105}
+		{grid_step 5}
+		{area_surround_percent 4}
+		{time_table 0 0.25}
+		{unit_score_ratio 0.1}	
+		{mission_layers
+			"fauna"
+			"local"	
+			"/pvp_inc/groundcontrol_music"
+			"/pvp_inc/groundcontrol_music_gameover"				
+			"/cw_commonscripts/break_line_event"
+			"local_environment"	
+			"/cw_commonscripts/common_sp_scripts"
+			"/cw_commonscripts/common_mp_scripts"
+			"/cw_commonscripts/cw_mp_texmods"
+			"/cw_commonscripts/cwfs_scripts"
+			"/cw_commonscripts/cw_creep"
+			;"/cw_commonscripts/cw_mp_creep_rotation"
+		}
+		{wks 
+			{def 1.3}
+		}
+		{capture_threshold 1}
+		{weight_table 0 0.2 0.2 0.75 0.4 1.5 0.6 3 0.8 5 1 10}
+		{weight_in_surround 0.05}
+		{total_grid_score 2000}
+		{frontline_break_width 50}
+		{frontline_break_depth 75}
+		{wait_all_players}		
+	}
+	{settings
+		{options 			gameDuration}
+		{optionsAdvanced 	floraRespawn friendlyFire fogOfWar showPiercing commanderTypeIcons}
+		{fogOfWar 			fog_realistic}
+		{difficulty 		normal}
+		{gameDuration		60} ; min
+;		{gameDuration		15} ; min
+;		{impregnableTimeout	5}	; sec
+		{scoreFinal			2500}
+		{floraRespawn 		0}
+		{friendlyFire}
+		{showPiercing}
+		{commanderTypeIcons	0}
+		{allowUnitTransferPvP}
+	}
+;	{bots_play_profiles
+;	"bot_manpower_ger_6;bot_manpower_rus_6;bot_manpower_usa_6"}	
+;	{play_profile_filter "groundctontrol_manpower*"}
+	{without_play_profile}
+	(include "presets_vehicles_manpower.inc")
+}

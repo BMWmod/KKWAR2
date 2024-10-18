@@ -1,0 +1,36 @@
+{from "pattern proj_impactor"
+	{entity "krasnopol_impactor"}
+              {inventory
+		{weight 100}
+		{size 7 2}
+	}
+	{tag "no_ricochet" "fg" "big" "size4" "88to105" "pierce" "ptrk" "fx_146_299"} 
+	;6.5 кг ВВ http://bastion-karpenko.narod.ru/Lazern.pdf
+;	{tag "he_4_5to8"}
+;{damage blastwave {energy 0.7} {area 12.8 14.7}}
+;{damage add blastwave {energy 1.2} {area 11 12.6}}
+;{damage add blastwave {energy 2.5} {area 7.3 8.4}}
+;{damage add blastwave {energy 6.5} {area 4.5 5.1}}
+;{damage add blastwave {energy 11} {area 2.2 2.6}}
+;	{damage add blastwave	 ; HE, kinetic, direct hit
+;		{energy 25}
+;		{area 0.5 1.0}
+;	}
+;direct_hit недостаточен, т.к. подрыв идет на расстоянии от цели.
+;БЧ 50 кг, ВВ 6,5 кг, ТЭ 1,3, нач. скорость 810 м/с, тип оболочки - Гаубицы 101+мм, тип БЧ - ОФ(HE)
+("cw_blastwave_3" tank() ifv(2.4) apc(4.8) end(7.8))
+("cw_direct_hit_extended" energy(25))
+("cw_fragwave" e2_5(1.2) r2_5(0) e1_2(1.2) r1_2(6) chance(18.4))
+("cw_fragwave" e2_5(2.5) r2_5(0.5) e1_2(1.2) r1_2(9.7) chance(11.6))
+("cw_fragwave" e2_5(2.5) r2_5(1.3) e1_2(1.2) r1_2(12.2) chance(11.5))
+("cw_fragwave" e2_5(2.5) r2_5(3) e1_2(1.2) r1_2(16.8) chance(9.9))
+("cw_fragwave" e2_5(2.5) r2_5(5.8) e1_2(1.2) r1_2(23.1) chance(9.1))
+("cw_fragments" e1_2(1.2) r1_2(6) e1_0(1) r1_0(9.8) e0_7(0.7) r0_7(16.2) e0_25(0.25) r0_25(24.7) chance(18.4))
+("cw_fragments" e1_2(1.2) r1_2(9.7) e1_0(1) r1_0(15.1) e0_7(0.7) r0_7(24.4) e0_25(0.25) r0_25(24.4) chance(11.6))
+("cw_fragments" e1_2(1.2) r1_2(12.2) e1_0(1) r1_0(18.6) e0_7(0.7) r0_7(29.6) e0_25(0.25) r0_25(29.6) chance(11.5))
+("cw_fragments" e1_2(1.2) r1_2(16.8) e1_0(1) r1_0(24.8) e0_7(0.25) r0_7(24.8) e0_25(0.25) r0_25(24.8) chance(9.9))
+("cw_fragments" e1_2(1.2) r1_2(23.1) e1_0(0.25) r1_0(23.1) e0_7(0.25) r0_7(23.1) e0_25(0.25) r0_25(23.1) chance(9.1))
+("cw_contusion" t10(6.7) t6(9.6) t3(13) t0(16.8))
+("cw_seismic_4")
+("cw_blast_mass_add" add(17.8))
+}

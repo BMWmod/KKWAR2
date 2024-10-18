@@ -1,0 +1,129 @@
+{Entity
+	(include "/properties/tank.ext")
+	(include "/properties/shadow/tank.inc"  scale(1.2))
+	(include "/properties/selection/vehicle.inc"  scale(1.2))
+
+	{extender "enumerator"}
+	{collider "tank.heavy"}
+	{props "Light_M" "vision_lev06" "turret_rotator" "with_open_zpu" "cw_artillery" "spall_liner"}
+
+	{volume "body"
+		{tags "body"}
+		{component "body"}
+	
+	}
+  	{volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{volume "turret"
+		{tags "turret"}
+		{component "turret"}
+	}
+
+	("armor_IFV" turret(29 29 29 29) body(23 23 23 23))
+
+	{boarder
+		{anm "left"
+			{forward	{begin	"board_sherman_left"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "right"
+			{forward	{begin	"board_sherman_right"} {end "seat_gunner_stand"}}
+			{reverse 	{end	"emit_tank_2_hold"}}
+		}
+		{anm "armor"
+			{forward	{begin	"board_HighArmor"} 	{end "seat_armor"}}
+			{reverse 	{end	"emit_tank_2"}}
+		}
+		{anm "armor1"
+			{forward	{begin	"board_HighArmor"} {end "seat_armor"}}
+			{reverse 	{end	"emit_body"}}
+		}
+	}
+
+	("crew_3_human")
+;	("crew_human_visible" 	place(gunner)	doorL(emit1) doorL(emit2) visor(main))
+;	("crew_human_visible" 	place(gunner)	doorL(emit3) doorL(emit3) visor(back))
+	("gunner_visible")
+
+	
+	{extender "inventory"
+		{box
+			{Size 8 7}
+			{weight 3000}		
+			{item "ammo bullet155_USA_h fg" 15} 
+            {item "ammo bullet155_USA_h_r fg" 5}			
+            {item "ammo bullet155_USA_pgk fg" 3}			
+			{item "ammo bullet155_USA cl" 5}
+			{item "ammo bullet155_USA_ar fg" 10}
+			{item "ammo 50Nato" 400}			
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{RestoreIKAfterAim}
+			{weapon "155mm_M284" filling "ammo bullet155_USA_h fg" 1}
+			{gunner "gunner"}
+			{charger "charger"}        	
+			{AccuracyByMotion
+				{MaxLinearSpeed 20} {ByLinearSpeed 0.2}
+				{MaxAngularSpeed 115} {ByAngularSpeed 0.0}
+				{DisorderTime 1.2} {OrderTime 0} 
+			}
+		}
+		{place "mgun"
+			{weapon "browning_m2hb" filled}
+			{foresight "foresight4"}
+			{gunner "gunner2"}
+			{charger "gunner2"}
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+	}
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_2g"}
+		}
+		{visor "top"
+			{vision "vehicle_top_mgun"} 
+			{bone "Mgun"}
+		}
+	}
+	{mass 31500}
+	{Chassis
+		("tank_trace" fx("tracks_big") step(0.5) len(1.5))
+		{Locomotion ("CW_track_moveparam" 
+			Mass(31.5)
+			Width(3.15)
+			Power(405)
+			Realspeed(56)
+			Gamespeed(37) 
+		)
+		{RearGears		0.20 0.49}}
+		("CW_fuelbag" Range(350) Fuelvolume(511))
+		("CW_speed_lev" Gamespeed(37))
+
+	}
+	{props "cwfs_fuel_500"}
+
+	{Extension "paladin.mdl"}
+	("missile_aimpoint_tanksize")
+	{texmod "wood"}
+
+	{bone "gun_rot"
+		{speed 0.005}
+		{limits -75 5}
+	}
+	{bone "mgun_rot2"
+		{limits -60 15}
+	}
+	("cwts_buksir")
+	("two_headlights")
+        ("recoil_side_common")
+	("CW_turr_speed" deg_per_s(11))   ; 11 гр/сек - http://pentagonus.ru/publ/samokhodnaja_gaubica_m109_istorija_sozdanija_i_ehtapy_razvitija_2014/6-1-0-2478
+
+}
+  
+

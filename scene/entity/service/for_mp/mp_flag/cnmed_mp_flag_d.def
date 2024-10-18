@@ -1,0 +1,7 @@
+{actor
+	(include "mp_flag.inc")
+	 {texmod "cnmed"}
+	;(include "/set/resupply_generic.inc")
+	;("land_troops_flag_cn")	
+	{props "flag_delete"}
+}

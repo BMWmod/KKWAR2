@@ -1,0 +1,22 @@
+{composite
+	{"mlrs_burst_close"
+		{loudness "hmissile_close"}
+		{max_played_per_source 4}
+		{start_offset 0.0}
+	}
+	{"mlrs_burst_medium"
+		{loudness "hmissile_medium"}
+		{max_played_per_source 4}
+		{start_offset 0.0}
+	}
+	{"mlrs_burst_far"
+		{loudness "hmissile_far"}
+		{max_played_per_source 4}
+		{start_offset 0.0}
+	}	
+	{"mlrs_burst_distant"
+		{loudness "hmissile_distant"}
+		{max_played_per_source 4}
+		{start_offset 0.0}
+	}		
+}

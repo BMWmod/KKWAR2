@@ -1,0 +1,20 @@
+;Cold War
+{bullet
+	{tag "bullet  stackable SP5 rifle sniper pierce sharing fx_bul_med ui_rifle"}
+	{inventory
+		{weight 5}
+		{block 20}
+		{size 1 1}
+		{fsm "belt"}
+	}	
+	{mass 0.024}
+	{entity "vin_ammo"}
+	{trace
+		{view "/texture/fx/trace2"
+			{ScaleY 0.2}
+			{Light 0.5}
+		}
+		{length 2.8}
+	}
+("cw_powder_charge" kg(0.001))
+}
