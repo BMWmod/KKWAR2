@@ -54,7 +54,7 @@
 	{crew_groups	; cкладывать экипаж без техники в указанные юниты
 		("crew_units" side(rus))
 		("crew_units" side(usa))
-		("crew_units" side(NSO))
+;		("crew_units" side(NSO))
 ;		("crew_units" side(idf))
 ;		("crew_units" side(ger))
 ;		("crew_units" side(fr))
