@@ -21,3 +21,4 @@ html_interface\global\interface\metagame\page\assets\img\commanders\army
 в нём map.lnk прописать путь до карты multi/#common/MAP-NAME
 
 сама карта по пути multi/#common/
+МАКС ДАУН
