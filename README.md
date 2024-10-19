@@ -7,7 +7,7 @@ C:\Users\%username%\AppData\Local\Men of War II\packages\editor-local-changes
 -Путь до ваших локальных изменений (т.е карты) 
 
 
-
+html_interface\global\interface\metagame\page\assets\img\commanders\army
 
 
 ########################
