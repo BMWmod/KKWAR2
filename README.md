@@ -11,9 +11,7 @@ html_interface\global\interface\metagame\page\assets\img\commanders\army
 
 макс хуесос
 ########################
-макс кретин
-примерно как пропичывать карты понятно
-макс чмо
+
 название карты! Далее MAP-NAME. Должен совпадать с названием ванильной карты из МОВ2 к примеру airfield
 все другие папки должны будут называтся airfield
 
@@ -21,4 +19,3 @@ html_interface\global\interface\metagame\page\assets\img\commanders\army
 в нём map.lnk прописать путь до карты multi/#common/MAP-NAME
 
 сама карта по пути multi/#common/
-МАКС ДАУН
