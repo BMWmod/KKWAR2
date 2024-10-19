@@ -29,6 +29,7 @@
 	{"ural-4320_fuel"					{tags "man_power common"}  {button "2_supl"} {group "fuel"}			{icon 203} {charge 240} {fore 1}}
 	{"ural375"							{tags "man_power common"}  {button "2_supl"} {group "truck"}		{icon 204} {charge 120} {fore 1}}
 	{"mtlb"								{tags "man_power common"}  {button "2_supl"} {group "btr1"}			{icon 205} {charge 250} {fore 1.0}}
+	{"t72av_koz"								{tags "man_power common"}  {button "2_supl"} {group "t72av_MANGAL"}			{icon 666} {charge 250} {fore 1.0}}
 	
 	{"tankman(rus)"						{tags "man_power common tankman"}  {button "2_supl"} {group "eng"}	{icon 206} {charge 1} {cost 20} {fore 1}} 
 	{"vehicle_supporter(rus)"			{tags "man_power common vs"}  {button "2_supl"} {group "support"}	{icon 207} {charge 30} {cost 25} {fore 1}} 

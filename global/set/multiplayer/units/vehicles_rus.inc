@@ -28,6 +28,8 @@
 {"ural_eng" ("v_s" t(all) s(rus) sc(25) cw(0) cp(1) n(2))}
 {"ural-4320_fuel" ("v_s" t(all) s(rus) sc(15) cw(0) cp(1) n(2))}
 
+{"t72av_koz" ("v_s" t(all) s(rus) sc(10) cw(0) cp(1) n(0))}
+
 {"rus_las_designator" ("v_s" t(all) s(rus) sc(10) cw(0) cp(1) n(1))}
 {"eleron_control" ("v_s" t(all) s(rus) sc(30) cw(5) cp(2) n(1))}
 {"eleron_catapult" ("v_s" t(all) s(rus) sc(45) cw(5) cp(2) n(1))}
