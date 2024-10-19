@@ -1,0 +1,22 @@
+{from "pattern proj_impactor"
+	{entity "rl_2_impactor"}
+              {inventory
+		{weight 100}
+		{size 8 1}
+	}
+	{tag  "big" "size2" "88to105" "AA_missile" "-ap" "-rocketlauncher" "-low_speed" "fx_90_110"}
+
+
+	{damage blastwave	 ; fragmentary
+		{energy 0.7}
+		{area 4.5 5}
+	}
+	{damage add blastwave	 ; HE antipersonnel
+		{energy 1.2}
+		{area 3.2 3.8}
+	}
+	{damage add blastwave	 ; HE, FG anti-APC
+		{energy 2.5}
+		{area 0.6 1.2}
+	}
+}

@@ -1,0 +1,14 @@
+{from "pattern ap"
+	{tag "size1" "pierce" "big" "autocannon_small" "fx_45_89" "fx_ap"}
+	{mass 6.61}
+	{inventory
+		{size 4 1}
+	}	
+	{entity "shell_ap_br_271sp"}
+	{trace
+		{view "/texture/fx/trace" {ScaleY 0.2}}
+		{length 2}
+	}
+		{damage blastwave {energy 0.7} {area 1.9 2.2}}
+		{damage add blastwave {energy 1.2} {area 1.4 1.6}}
+}

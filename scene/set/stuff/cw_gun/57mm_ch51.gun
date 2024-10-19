@@ -1,0 +1,28 @@
+{from "pattern tank_gun"
+   	
+	{filling "bullet57_ussr" 1}
+	{fireSound "gun/ch51_shot"}
+	{reloadSound "t34_reload"}
+	{RecoveryTime 4}
+	{rechargeTime 4}
+	{range 110 110}
+	("speed" s(952)) 
+	("37-57caliber")
+	{calibre 57}
+	("CW_acc_common" mils(0.32))
+	;("CW_acc_common_130" mils(0.32))
+	;{cursor "T62_HE"}
+	;{cursorReloading "T62_HE_reload"}
+	{cursor "cannon_on_fg_2"}
+	{cursorReloading "cannon_reload_fg"}
+
+	{projectileDamageTable
+		{10 114} {50 109} {70 98}
+		{85 90} {100 82} {120 69} {140 50} {160 10}
+	}
+	{parameters "ap"             ; ��-365�
+		{cursor "cannon_on_ap_3"}
+		{cursorReloading "cannon_reload_ap"}
+	}
+                    
+}	           

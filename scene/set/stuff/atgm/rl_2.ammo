@@ -1,0 +1,10 @@
+{from "pattern proj_pointer"
+	{entity "rl_2"}	
+		
+	{mass 900.0} ;масса ракеты 40 кг,в ТПК - 70
+	        {inventory		
+		{weight 100}		
+		{size 8 1}	
+	}	
+	{tag  "big" "size2" "88to105" "-AA_missile" "-ap" "-rocketlauncher" "no_ricochet" "-low_speed"} 	
+}
