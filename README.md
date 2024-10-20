@@ -9,7 +9,6 @@ C:\Users\%username%\AppData\Local\Men of War II\packages\editor-local-changes
 
 html_interface\global\interface\metagame\page\assets\img\commanders\army
 
-макс хуесос
 ########################
 
 название карты! Далее MAP-NAME. Должен совпадать с названием ванильной карты из МОВ2 к примеру airfield
