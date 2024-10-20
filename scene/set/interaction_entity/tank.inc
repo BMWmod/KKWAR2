@@ -1054,10 +1054,14 @@
 	{on spawn
 		{add_view	"flash_cannon_small"		"flashbarrel1"			"Foresight1"}
 	}
-	{on fire "gun"
-            {spawn "dust_shot_small" "basis"}
-            {spawn "tank_canon_fire_small" "Foresight1" x}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1"			"basis"}
 	}
+;	{on fire "gun"
+;            {spawn "dust_shot_small" "basis"}
+;            {spawn "tank_canon_fire_small" "Foresight1" x}
+;	}
 	{on blast_hit
 		{if min_energy 8
 			{impulse up 2 0.5 dir 1 0.2}
@@ -1076,10 +1080,14 @@
 	{on spawn
 		{add_view	"flash_cannon_small"		"flashbarrel1"			"Foresight1"}
 	}
-	{on fire "gun"
-       	{spawn "dust_shot_small" "basis"}
-        {spawn "tank_canon_fire_small" "Foresight1" x}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1"			"basis"}
 	}
+;	{on fire "gun"
+;       	{spawn "dust_shot_small" "basis"}
+;        {spawn "tank_canon_fire_small" "Foresight1" x}
+;	}
 	{on blast_hit
 		{if min_energy 14
 			{impulse up 3 0.1 dir 6 0.1}
@@ -1107,10 +1115,14 @@
 		{add_view	"flash_cannon_medium"		"flashbarrel1"			"Foresight1"}
 		{add_view	"flash_cannon_medium"		"flashbarrel2"			"Foresight2"}
 	}
-	{on fire "gun"
-       	{spawn "dust_shot_norm" "basis"}
-        {spawn "tank_canon_fire" "Foresight1" x}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_norm_link"		"flashbarrel1"			"basis"}
 	}
+;	{on fire "gun"
+;       	{spawn "dust_shot_norm" "basis"}
+;        {spawn "tank_canon_fire" "Foresight1" x}
+;	}
 
 	{on blast_hit
 		{if min_energy 16
@@ -1149,9 +1161,13 @@
 		{add_view	"flash_cannon_medium"		"flashbarrel2"			"Foresight2"}
 		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
 	}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_big_link"		"flashbarrel1"			"basis"}
+	}
 	{on fire "gun" 
-    		  {spawn "dust_shot_big" "basis"}
-    		  {spawn "tank_canon_fire" "Foresight1" x}
+;		{spawn "dust_shot_big" "basis"}
+;		{spawn "tank_canon_fire" "Foresight1" x}
 		{view start "smoke_add"}
 		{delay 0.16 "shell_off"
 		{view start "zenite_smoke"}
@@ -1208,10 +1224,14 @@
 		{add_view	"flash_cannon_small"		"flashbarrel1"			"Foresight1"}
 		{call "update_syst_on_spawn"}
 	}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1"			"basis"}
+	}
 	{on fire "gun" 
-            {spawn "dust_shot_small" "basis"}
-            {spawn "tank_canon_fire_small" "Foresight1" x}
-            ("cw_check_shooting" weap_id(gun))
+;        {spawn "dust_shot_small" "basis"}
+;        {spawn "tank_canon_fire_small" "Foresight1" x}
+        ("cw_check_shooting" weap_id(gun))
 	}
 	{on blast_hit
 	  {if volume "mrap"
@@ -1360,10 +1380,14 @@
 		{add_view	"flash_cannon_small"		"flashbarrel1"			"Foresight1"}
 		{call "update_syst_on_spawn"}
 	}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1"			"basis"}
+	}
 	{on fire "gun"
-       	{spawn "dust_shot_small" "basis"}
-        {spawn "tank_canon_fire_small" "Foresight1" x}
-                    ("cw_check_shooting" weap_id(gun))
+;       {spawn "dust_shot_small" "basis"}
+;       {spawn "tank_canon_fire_small" "Foresight1" x}
+        ("cw_check_shooting" weap_id(gun))
 	}
 	{on blast_hit
 	  {if volume "mrap"
@@ -1433,18 +1457,14 @@
 		{add_view	"flash_cannon_medium"		"flashbarrel2"			"Foresight2"}
 		{call "update_syst_on_spawn"}
 	}
-;	{on "init_burnout"
-;	      {if rand 0.3
-;			{add_view "fire_ammo_burnout_barr1" "ammo_burnout1" "Foresight1"}
-;			{add_view "fire_ammo_burnout_barr2" "ammo_burnout2" "Foresight1"}
-;			{add_view "fire_ammo_burnout_barr3" "ammo_burnout3" "Foresight1"}
-;			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
-;	       }
-;	}
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_norm_link"		"flashbarrel1"			"basis"}
+	}
 	{on fire "gun"
-       	{spawn "dust_shot_norm" "basis"}
-        {spawn "tank_canon_fire" "Foresight1" x}
-	         ("cw_check_shooting" weap_id(gun))
+;    	{spawn "dust_shot_norm" "basis"}
+;   	{spawn "tank_canon_fire" "Foresight1" x}
+	    ("cw_check_shooting" weap_id(gun))
 	}
 
 	{on blast_hit

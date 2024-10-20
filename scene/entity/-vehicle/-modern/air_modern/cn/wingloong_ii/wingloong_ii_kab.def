@@ -1,0 +1,93 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "wingloong_ii" "vision_lev_UAV" "-radar_spo" "-IR_spo"}	
+	{Extension "wingloong_ii_kab.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+	{targetClass 	"airborne"}
+	{mass 4200}
+
+	{armor
+	("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{item "ammo cs-bbm2" 4}
+		}
+	}
+	{Weaponry
+;===============Левое крыло
+;==============Правое крыло
+;================Оба крыла
+        {place "gun"
+			{weapon "spot" filled}
+			{foresight "visor_ols"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+;        {place "gun1"
+;			{weapon "rus_las_designator" filled}
+;			{foresight "visor_ols"}
+;			{charger "driver"}
+;			{gunner "driver"}
+;			{barrels 4}
+;			{basic}
+;		}
+		{place "bomber"
+			{weapon "cs-bbm2x4_wl2 weapon" filled}
+			{barrels 4}
+			{foresight "foresight2"}
+			{shooter "bomber_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+	}	
+	("Chassis_parameters" 
+		Speed(45) TurnRadius(35) 
+		Fuel(1300) Fuel_remain(338) Fuel_rate(0.30) 
+		Acc_hor(2.43) Maneuvrability_hor(1.02) ;Maneuvrability_hor(7.02)
+		Acc_ver(3.05) Maneuvrability_ver(2.78)
+	)
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+	{Sensor
+		{Visor "driver"
+			{vision "tank_gunner_optic_1g"}
+			{bone "visor_driver"}
+		}
+		{Visor "radarX_L"
+			{vision "aircraft_radar_X_side"}
+			{bone "Visor_radarX_L"}
+		}
+		{Visor "radarX_R"
+			{vision "aircraft_radar_X_side"}
+			{bone "Visor_radarX_R"}
+		}
+		{Visor "OLS"
+			{vision "aircraft_optic_IR_4g"}
+			{bone "visor_OLS"}
+		}
+	}
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+	
+}

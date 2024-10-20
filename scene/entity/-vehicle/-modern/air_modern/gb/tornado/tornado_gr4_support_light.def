@@ -1,0 +1,114 @@
+﻿{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "tornado" "tornado_gr4" "-IR_spo" "tornado_gr4_support"}	
+	{Extension "tornado_gr4_support_light.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"
+		{digit_folder "black"}
+	}
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{Size 6 10}
+			{clear}
+			{item "bullet27_GER fg ammo" 180}
+			{item "bullet27_GER ap ammo" 90}
+			{item "ammo aim-9l_ammo" 2}
+			{item "bullet70_Hydra ammo" 38}
+			{item "ammo gbu16" 2}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "27mm_mauzer_bk27" filling "bullet27_GER ap ammo" 90}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "nar1"
+			{weapon "70mm_lau51x2" filling "bullet70_Hydra ammo" 38}
+			{foresight "foresight10"}
+			{shooter "shooter"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 38}
+			{basic}
+		}
+		{place "bombera"
+			{weapon "GBU16x2_tornado weapon" filled}
+			{barrels 2}
+			{shooter "bombera_"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			{basic}
+		}
+		{place "ptur1"
+			{weapon "aim-9lx2 weapon" filled}
+			{foresight "foresight5"}
+			{shooter "none"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+	}
+	{mass 18925}
+	("Chassis_parameters" 
+		Speed(98) TurnRadius(34) 
+		Fuel(5090) Fuel_remain(3467) Fuel_rate(2.94) 
+		Acc_hor(3.9) Maneuvrability_hor(5.98)
+		Acc_ver(5.80) Maneuvrability_ver(3.36)
+	)
+	{props "cwfs_fuel_5000"}
+
+	;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+	;==========================
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+	{Sensor
+		{Visor "radarX"	;radar cannot detect air or ground targets
+			{vision "harm_passive_radar"}
+			{bone "Visor_radarX"}
+		}
+		{Visor "visor_OLS"
+			{vision "aircraft_optic_IR_2g"}
+			{bone "visor_OLS"}
+		}
+	}
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(driver1) bone(driver1) door(emit2) animation(driver))
+	{Placer
+		{place "driver" {turnOff {sensor} {shadow} {targetable}}}			
+		{place "driver1" {turnOff {sensor} {shadow} {targetable}}}			
+	}
+	(mod "mp"
+		{Chassis "airborne"
+				{Altitude 25}
+			}
+		{ChassisManager
+				{Current "airborne"}
+		}
+	)
+	("two_headlights")
+	("cw_headlightt")
+    {bone "foresight_flare_1"
+		{speed 1}
+    }
+    {bone "foresight_flare_1a"
+		{speed 1}
+    }
+}

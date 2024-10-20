@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_common" 
+		missile(m47dragon_rock) 
+		stuff(m47dragon_rock_impactor) 
+		country(usa) type(other) 
+		calibre(127) length(852)
+		speed(slow) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(46))
+}

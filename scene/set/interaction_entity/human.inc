@@ -53,76 +53,79 @@
 		{link_sound "knife_stub" "weapon/melee/knife_stub"}
 		{link_sound "shovel_stub" "weapon/melee/shovel_stub"}
 		{link_sound "mine_detected" "weapon/demining"}
-;		{link_sound "pose_changed" "human/pose_change"}
-;		{link_sound "heal" "human/healing"}
+		{link_sound "pose_changed" "human/pose_change"}
+		{link_sound "heal" "human/healing"}
 		{link_sound "cut_wire" "human/barber_wire_cut"}
 		{link_sound "burn" "detonation/matches_install"}
-;		{link_sound "trench" "fortification/build/trench_digging"}
+		{link_sound "trench" "fortification/build/trench_digging"}
 		
 		{link_sound "pour" "vehicle/refueling"}
-		
 		{if able "burning"
 			{call "add_burn_fx"}
 			{view start "burn_fire"}
 		}
 		{call "start_update_lights"}
-		{if tagged "cw_face1"	;face loading
+		
+		;tags remove - temporary, in order not to spam tags.
+		 {tags remove "cw_face1"} {tags remove "cw_face2"} {tags remove "cw_face3"} {tags remove "cw_face4"}
+		 {tags remove "cw_face5"} {tags remove "cw_face6"} {tags remove "cw_face7"} {tags remove "cw_face8"}
+		{if flag "cw_face1"	;face loading
 			{bone show "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face2"
+		else flag "cw_face2"
 			{bone hide "head1"} {bone show "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face3"
+		else flag "cw_face3"
 			{bone hide "head1"} {bone hide "head2"} {bone show "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face4"
+		else flag "cw_face4"
 			{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone show "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face5"
+		else flag "cw_face5"
 			{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone show "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face6"
+		else flag "cw_face6"
 			{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone show "head6"} {bone hide "head7"} {bone hide "head8"} 
-		else  tagged "cw_face7"
+		else flag "cw_face7"
 			{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone show "head7"} {bone hide "head8"} 
-		else  tagged "cw_face8"
+		else flag "cw_face8"
 			{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 			{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone show "head8"} 
 		else	;random face select
 			{if rand 0.125
 				{bone show "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face1"}
+				{set "cw_face1" 1}
 			else  rand 0.143
 				{bone hide "head1"} {bone show "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face2"}
+				{set "cw_face2" 1}
 			else  rand 0.167
 				{bone hide "head1"} {bone hide "head2"} {bone show "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face3"}
+				{set "cw_face3" 1}
 			else  rand 0.2
 				{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone show "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face4"}
+				{set "cw_face4" 1}
 			else  rand 0.25
 				{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone show "head5"} {bone hide "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face5"}
+				{set "cw_face5" 1}
 			else  rand 0.33
 				{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone show "head6"} {bone hide "head7"} {bone hide "head8"} 
-				{tags add "cw_face6"}
+				{set "cw_face6" 1}
 			else  rand 0.5
 				{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone show "head7"} {bone hide "head8"} 
-				{tags add "cw_face7"}
+				{set "cw_face7" 1}
 			else
 				{bone hide "head1"} {bone hide "head2"} {bone hide "head3"} {bone hide "head4"}
 				{bone hide "head5"} {bone hide "head6"} {bone hide "head7"} {bone show "head8"} 
-				{tags add "cw_face8"}
+				{set "cw_face8" 1}
 			}
 		}
 	    {tags remove "bleeding"}
@@ -1721,15 +1724,15 @@
 	{on "burn_start_sound"
 		{play_sound "burn"}
 	}
-;	("action_play_sound" 				action(barricade)				delay_next_sound(1))			;{on "barricade...
-;	("action_play_sound" 				action(barbwire) 				delay_next_sound(2.5 0.5))		;{on "barbwire...
-;	("action_play_sound" 				action(hedgehog) 				delay_next_sound(2))			;{on "hedgehog...
-;	("action_play_sound_and_check_stop" action(camouflage)				delay_next_sound(2))			;{on "camouflage...
-;	;("action_play_sound" 				action(heal) 					delay_next_sound(2))			;{on "heal...(start_heal & stop_heal)
-;	("action_play_sound" 				action(cut_wire) 				delay_next_sound(2))			;{on "cut_wire...
-;	;("action_play_sound" 				action(trench) 					delay_next_sound(2))			;{on "trench...
+	("action_play_sound" 				action(barricade)				delay_next_sound(1))			;{on "barricade...
+	("action_play_sound" 				action(barbwire) 				delay_next_sound(2.5 0.5))		;{on "barbwire...
+	("action_play_sound" 				action(hedgehog) 				delay_next_sound(2))			;{on "hedgehog...
+	("action_play_sound_and_check_stop" action(camouflage)				delay_next_sound(2))			;{on "camouflage...
+	("action_play_sound" 				action(heal) 					delay_next_sound(2))			;{on "heal...(start_heal & stop_heal)
+	("action_play_sound" 				action(cut_wire) 				delay_next_sound(2))			;{on "cut_wire...
+	("action_play_sound" 				action(trench) 					delay_next_sound(2))			;{on "trench...
 	
-;	("action_play_sound" 				action(pour)					delay_next_sound(5))			;{on "pour(_in|_out)...
+	("action_play_sound" 				action(pour)					delay_next_sound(5))			;{on "pour(_in|_out)...
 
 }
 {"armor_plate"

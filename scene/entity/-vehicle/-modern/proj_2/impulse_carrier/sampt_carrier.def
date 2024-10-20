@@ -1,0 +1,14 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_medium")
+	("guidance_common" 
+		missile(sampt) 
+		stuff(sampt_impactor) 
+		country(usa) type(radpassive) 
+		calibre(180) length(4900)
+		speed(fast) guidance(propsam))
+	("maneuvrability_vertical_zur_engine_impulse" deg_per_s(68))
+	("cwps_rangefinder")
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+	{targetSelector "missile"}
+}

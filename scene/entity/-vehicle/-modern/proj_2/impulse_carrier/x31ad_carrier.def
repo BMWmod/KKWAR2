@@ -1,0 +1,16 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "fast"}
+	("antiship_missile" 
+		missile(x31ad) 
+		stuff(x31ad_impactor) 
+		country(rus) type(antiship) 
+		calibre(360) length(4700)
+		speed(fast) guidance())
+	("maneuvrability_impulse" deg_per_s(17))
+	;Good maneuvrability
+	;При высокой скорости ракета оказалась способна выполнять маневры с большими перегрузками, достигавшими на испытаниях 10g
+	;http://rbase.new-factoria.ru/missile/wobb/x31p/x31p.shtml
+	("targetable_missile")
+
+}

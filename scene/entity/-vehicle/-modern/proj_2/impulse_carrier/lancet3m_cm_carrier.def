@@ -1,0 +1,33 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "propfan"}
+	("guidance_common" 
+		missile(lancet3m_cm) 
+		stuff(lancet3m_cm_impactor) 
+		country(rus) type(other) 
+		calibre(600) length(1500)
+		speed(slow) guidance(prop))
+	("maneuvrability_impulse" deg_per_s(60))
+	;неизвестна даже приблизительно. Должна быть достаточна для поражения быстродвижущихся автомобилей с невыгодных углов.
+	{sensor
+		{Visor "add"
+			{vision "aircraft_optic_2g"}
+			{bone "missle_foresight"}
+		}
+	}
+	("allow_manual_control")
+	("targetable_missile")
+	{targetClass 	"medium_UAV"}
+	{Volume "missile1"
+		{Cylinder (* 0.01 76) 80}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			24.5	0	0
+		}
+	}
+	{Volume "missile1" {able clear {contact 1}}}
+
+}

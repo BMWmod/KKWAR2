@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "cwps_gorka" "tandem"}
+	("guidance_common" 
+		missile(9m117cn) 
+		stuff(9m117cn_impactor) 
+		country(rus) type(laser) 
+		calibre(100) length(1050)
+		speed(normal) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(60))
+}

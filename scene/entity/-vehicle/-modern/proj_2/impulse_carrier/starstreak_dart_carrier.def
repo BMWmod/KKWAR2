@@ -1,0 +1,10 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_common" 
+		missile(starstreak_dart) 
+		stuff(starstreak_dart_impactor) 
+		country(usa) type(laser_aa) 
+		calibre(22) length(520)
+		speed(fast) guidance(3pointsam))
+	("maneuvrability_impulse" deg_per_s(30))
+}

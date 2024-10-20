@@ -1,0 +1,31 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem" "propfan"}
+	("guidance_common" 
+		missile(switchblade300) 
+		stuff(switchblade300_impactor) 
+		country(usa) type(other) 
+		calibre(76) length(495)
+		speed(slow) guidance(prop_switchblade300))
+	("maneuvrability_impulse" deg_per_s(90))
+	{sensor
+		{Visor "add"
+			{vision "aircraft_optic_IR_1g"}
+			{bone "missle_foresight"}
+		}
+	}
+	("allow_manual_control")
+	("targetable_missile")
+	{Volume "missile1"
+		{Cylinder (* 0.01 76) 80}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			24.5	0	0
+		}
+	}
+	{Volume "missile1" {able clear {contact 1}}}
+
+}

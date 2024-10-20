@@ -127,7 +127,7 @@
 {"mortarfr_trailer" ("v_trailer" c1(hmmwv_m998_tent) c2(mortarfr) t(all) s(usa) sc(200) cw(5) cp(20) n(2) secondcrew(mp2/usa/vehicle_supporter:2))}
 
 {"m1a1_fep" ("v_t" t(all) s(usa) sc(200) cw(0) cp(60) n(4))}
-{"ah1z" ("v_heli" t(all) s(usa) sc(250) cw(0) cp(80) crew(mp2/usa/vertpilot_viper:2))}
+{"ah1z" ("v_custom" t(all) s(usa) sc(250) cw(0) cp(80) crew(mp2/usa/vertpilot_viper:2))}
 
 
 {"m939i_usmc" ("v_s_inf" c1(m939) t(all) s(usa) sc(110) cw(0) cp(25) n(1) secondcrew(mp2/usa/usmc_com:1 mp2/usa/usmc_zamcom:5 mp2/usa/usmc_light_mgun:2 mp2/usa/usmc_smg:1 mp2/usa/usmc_marksman:1 mp2/usa/usmc_bazooker:1))}

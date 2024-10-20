@@ -1,0 +1,20 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_medium")
+	("guidance_common" 
+		missile(9m338) 
+		stuff(9m338_impactor) 
+		country(rus) type(active_asm) 
+		calibre(200) length(2940)
+		speed(fast) guidance(propsam))
+	("maneuvrability_SAMs_short_impulse" deg_per_s(34))
+	{sensor
+		{Visor "sam"
+			{vision "missile_sam"}
+			{bone "missle_foresight"}
+		}
+	}
+	("antimissile_sensors")
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+	{targetSelector "antimissile"}
+}

@@ -16,12 +16,12 @@
 		{setting "armor"
 			{thickness 17 11 8 0.1}
 			{volumes "armor*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "glass"	;фонарь из ситалла
 			{thickness 5}
 			{volumes "glass*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	{extender "inventory"
@@ -29,6 +29,13 @@
 			{clear}
 			{size 6 10}
 			{item "GSH-30_ammo ap ammo" 150}
+			{item "ammo x31p" 1}
+			{item "ammo pbk-500u" 1}
+			{item "ammo s25ld" 4}
+			{item "ammo fab_250" 12}
+			{item "ammo kab-500s" 2}
+			{item "rvv-sd ammo" 2}
+			{item "r-73 ammo" 2}
 		}
 	}
 	{Weaponry

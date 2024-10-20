@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity")
+	{props "tandem"}
+	("guidance_common" 
+		missile(vixr) 
+		stuff(vixr_impactor) 
+		country(rus) type(laser) 
+		calibre(130) length(2750)
+		speed(normal) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(37))
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+}

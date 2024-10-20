@@ -37,7 +37,7 @@
 	{setting "armor"
 		{thickness 22 9 5 3}
 		{volumes "armor*"}
-		{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 	}
 }
 
@@ -46,6 +46,10 @@
 			{size 6 10}
 			{item "GSH-30_ammo ap ammo" 50}
 			{item "GSH-30_ammo fg ammo" 100}
+			{item "r-73 ammo" 2}
+			{item "bullet80_DM cm ammo" 40}
+			{item "bullet122s13 fg ammo" 10}
+			{item "fab_250 ammo" 2}
 		}
 	}
 	{Weaponry

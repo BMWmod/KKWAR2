@@ -449,7 +449,8 @@
 		{add_view 	"smoke_zenit" 	"zenite_smoke2" 		"tail"}
 
         {tags add "cannon_proj"}
-
+		{add_view	"dust_shot_norm_link"		"startsmoke_norm"			"basis"}
+		{add_view	"dust_shot_big_link"		"startsmoke_big"			"basis"}
 	}
 	{on fire "gun" overload
 		("low_speed_bullet")
@@ -457,13 +458,18 @@
 		{view start "startsmoke"}
 		{volumes "gun" disable bullet blast}
 		
-		{if terrain_fx "ground"	{spawn "dust_shot_norm" "basis"}
-		else terrain_fx "country_road"	{spawn "dust_shot_norm" "basis"}
-		else terrain_fx "sand"	{spawn "dust_shot_big" "basis"}
+		{if terrain_fx "ground"	or terrain_fx "country_road"	
+;			{spawn "dust_shot_norm" "basis"}
+			{view start "startsmoke_norm"}
+		else terrain_fx "sand"	
+;			{spawn "dust_shot_big" "basis"}
+			{view start "startsmoke_big"}
 		}
 		
 		{delay 0.4
 			{view pause "rok_tail"}
+			{view pause "startsmoke_big"}
+			{view pause "startsmoke_norm"}
 		}
 		{delay 0.12 
 			{view start "zenite_smoke2"}
@@ -709,7 +715,6 @@
 }
 {"ptur_konkurs"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x {tags add "Foresight1"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	{on "cut_parts" overload
@@ -749,7 +754,6 @@
 }
 {"kornet_stan"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x {tags add "Foresight1"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	{on "cut_parts" overload
@@ -791,7 +795,6 @@
 }
 {"hj73_stan"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x {tags add "foresight1_spawn"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	{on "cut_parts" overload
@@ -829,7 +832,6 @@
 }
 {"hj8_stan"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x {tags add "Foresight1"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	{on "cut_parts" overload
@@ -851,7 +853,6 @@
 }
 {"milan_stan"
 	{on fire "gun" 
-;		{spawn "proj_probe" "foresight1_spawn" x {tags add "foresight1_spawn"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	{on "cut_parts" overload
@@ -1012,7 +1013,6 @@
 }
 {"spg_9"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x}
 		{set "gun"}{call "proj_probe"}
 		{spawn "startsmoke" "tail" x}
 	}
@@ -1082,17 +1082,31 @@
 {"medium cannon"
 	{on spawn
 		{add_view	"flash_cannon_small"	"flashbarrel1"	"Foresight1"}
+		{add_view	"tank_canon_fire_link"		"flashbarrel1s"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1s"			"Foresight1"}
 	}
 	{on fire "gun"
-       	{spawn "dust_shot_small" "basis"}
-        {spawn "tank_canon_fire_small" "Foresight1" x}
+		{view start "flashbarrel1s"}
+		{delay 0.42
+			{view pause "flashbarrel1s"}
+		}
+;       	{spawn "dust_shot_small" "basis"}
+;        {spawn "tank_canon_fire_small" "Foresight1" x}
 	}
 }
 
 {"truck_mortar"
+	{on spawn
+		{add_view	"startsmoke_link"		"flashbarrel1s"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1s"			"Foresight1"}
+	}
 	{on fire "gun"
-		{spawn "startsmoke" inv_normal}
-		{spawn "circledust_norm2" "basis"}
+		{view start "flashbarrel1s"}
+		{delay 0.42
+			{view pause "flashbarrel1s"}
+		}
+;		{spawn "startsmoke" inv_normal}
+;		{spawn "circledust_norm2" "basis"}
 		{ani_play "recoil"}
 		{call "spawn_shell"}
 		("cw_check_shooting" weap_id(gun))
@@ -1106,8 +1120,13 @@
 
 		{add_view	"flash_cannon_big"		"flashbarrel1"	"Foresight1"}
 		{add_view	"spheredust_big"	"dust"			"turret"}
+		{add_view	"canon_gaub_fire_link"		"flashbarrel1s"			"Foresight1"}
 	}
 	{on fire "gun" overload
+		{view start "flashbarrel1s"}
+		{delay 0.42
+			{view pause "flashbarrel1s"}
+		}
 		{ani_play "recoil"}
         {spawn "canon_gaub_fire" "Foresight1" x}
         {view start "flashbarrel1"}
@@ -1423,14 +1442,42 @@
 		}
 	}
 }	
+(define "towed_cannon_gun"
+	{on spawn		
+		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"smoke_gun1"}
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"smoke_gun2"}
+		{add_view	"canon_gaub_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1"			"basis"}
+    }
+    {on fire "gun"
+;			{spawn "tank_canon_fire_small" "smoke_gun1"   x}
+;			{spawn "tank_canon_fire_small" "smoke_gun2"   x}
+ ;   	 	{spawn "canon_gaub_fire" "Foresight1" x}
+ ;     		{spawn "dust_shot_big_2" "basis"}
+		{view start "flashbarrel1"}
+		{delay 0.42
+			{view pause "flashbarrel1"}
+		}
+		{view start "smoke_add"}
+		{delay 0.16 "shell_off"
+			{view start "zenite_smoke"}
+			{view pause "smoke_add"}
+			{view pause "flashbarrel_gun"}
+				{delay 5
+					{view pause "zenite_smoke"}
+				}
+		}
+	}
+)
 {"cannon D30"
 	{on spawn		
 		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
-    	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x}
+		{add_view	"dust_shot_big_2_link"		"smoke_add"			"basis"}
+    }
+    {on fire "gun" 
 		{set "gun"}{call "proj_probe"}
-      		{spawn "dust_shot_big_2" "basis"}
+;      		{spawn "dust_shot_big_2" "basis"}
 		{view start "smoke_add"}
 		{delay 0.16 "shell_off"
 			{view start "zenite_smoke"}
@@ -1452,11 +1499,11 @@
 {"cannon mt12_rapira"
 	{on spawn		
 		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
+		{add_view	"dust_shot_big_2_link"		"smoke_add"			"basis"}
+    }
     {on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x}
 		{set "gun"}{call "proj_probe"}
-      		{spawn "dust_shot_big_2" "basis"}
+;      		{spawn "dust_shot_big_2" "basis"}
 		{view start "smoke_add"}
 		{delay 0.16 "shell_off"
 			{start_sound "weapon/shot/shell"}
@@ -1477,22 +1524,7 @@
 	}	
 }
 {"cannon 2a65_msta_b"
-	{on spawn		
-		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
-    {on fire "gun" 
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
-      		{spawn "dust_shot_big_2" "basis"}
-		{view start "smoke_add"}
-		{delay 0.16 "shell_off"
-			{view start "zenite_smoke"}
-			{view pause "smoke_add"}
-			{view pause "flashbarrel_gun"}
-				{delay 5
-					{view pause "zenite_smoke"}
-				}
-		}
-	}	
+	("towed_cannon_gun")
 	{on "cut_parts"
 		("cut_part" args "wheelleft")
 		("cut_part" args "wheelright")
@@ -1502,22 +1534,7 @@
 	}	
 }
 {"cannon pl-66"
-	{on spawn		
-		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
-    {on fire "gun" 
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
-      		{spawn "dust_shot_big_2" "basis"}
-		{view start "smoke_add"}
-		{delay 0.16 "shell_off"
-			{view start "zenite_smoke"}
-			{view pause "smoke_add"}
-			{view pause "flashbarrel_gun"}
-				{delay 5
-					{view pause "zenite_smoke"}
-				}
-		}
-	}	
+	("towed_cannon_gun")
 	{on "cut_parts"
 		("cut_part" args "wheelleft")
 		("cut_part" args "wheelright")
@@ -1527,22 +1544,7 @@
 	}	
 }
 {"fh-70"
-	{on spawn		
-		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
-    {on fire "gun" 
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
-      		{spawn "dust_shot_big_2" "basis"}
-		{view start "smoke_add"}
-		{delay 0.16 "shell_off"
-			{view start "zenite_smoke"}
-			{view pause "smoke_add"}
-			{view pause "flashbarrel_gun"}
-				{delay 5
-					{view pause "zenite_smoke"}
-				}
-		}
-	}	
+	("towed_cannon_gun")
 	{on "cut_parts"
 		("cut_part" args "wheelleft")
 		("cut_part" args "wheelright")
@@ -1553,24 +1555,7 @@
 	}	
 }
 {"cannon m777"
-	{on spawn		
-		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}	
-    	}
-    {on fire "gun"
-			{spawn "tank_canon_fire_small" "smoke_gun1"   x}
-			{spawn "tank_canon_fire_small" "smoke_gun2"   x}
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
-      		{spawn "dust_shot_big_2" "basis"}
-		{view start "smoke_add"}
-		{delay 0.16 "shell_off"
-			{view start "zenite_smoke"}
-			{view pause "smoke_add"}
-			{view pause "flashbarrel_gun"}
-				{delay 5
-					{view pause "zenite_smoke"}
-				}
-		}
-	}	
+	("towed_cannon_gun")
 	{on "spawn_shell" overload
 		{start_sound "weapon/shot/shell"}
 		{add_view "smoke_zenit" "smoke_shell" "fx_invers"}

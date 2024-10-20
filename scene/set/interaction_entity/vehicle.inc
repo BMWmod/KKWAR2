@@ -124,6 +124,7 @@
 		{add_view	 "flash_gun_big"	"flashbarrel7"	"foresight7"}
 		{add_view	 "flash_cannon_small"	"flashbarrel20"	"foresight20"}
 		{add_view	 "flash_cannon_small"	"flashbarrel21"	"foresight21"}
+		{call "init1_gun"}
 	}
 	{on "stop_on"
 		{ani_stop "start"}

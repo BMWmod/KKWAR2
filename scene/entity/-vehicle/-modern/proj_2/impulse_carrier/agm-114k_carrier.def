@@ -1,0 +1,14 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_arc"
+		missile(agm-114k) 
+		stuff(agm-114k_impactor) 
+		country(usa) type(laser) 
+		calibre(178) length(1650)
+		speed(fast) guidance(prop)
+		weapon(missilets_arc_160)
+	)
+	("maneuvrability_impulse" deg_per_s(34))
+
+}

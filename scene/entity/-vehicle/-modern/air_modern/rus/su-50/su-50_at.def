@@ -27,14 +27,14 @@
 	            {durability  {blast {value 30}} {pierce {value 35}}}
 	            {threshold  {blast {value 3}} {pierce {value 3}}}	
 	            {volumes "fuel_tank_internal_c1"}
-				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 				{fragment_pass_threshold 0}
 	        }
 	        {setting "fuel_tank_internal_d1" {thickness 3}
 	            {durability  {blast {value 30}} {pierce {value 35}}}
 	            {threshold  {blast {value 3}} {pierce {value 3}}}	
 	            {volumes "fuel_tank_internal_d1"}
-				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 				{fragment_pass_threshold 0}
 	        }
 	}
@@ -43,6 +43,8 @@
 		{box
 			{clear}
 			{item "GSH-30_ammo ap ammo" 120}
+			{item "x-38mte ammo" 4}
+			{item "rvv-md ammo" 2}
 		}
 	}
 	{Weaponry

@@ -17,13 +17,14 @@
 		{setting "armor"
 			{thickness 7.5}
 			{volumes "armor*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	{extender "inventory"
 		{box
 			{item "bullet23_115 bzt zenite ammo" 50}
 			{item "bullet23_115 ofzt zenite ammo" 100}
+			{item "ammo fab_250" 4}
 		}
 	}
 	{Weaponry

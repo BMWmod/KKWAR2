@@ -24,7 +24,7 @@
 	{setting "armor"
 		{thickness 4}
 		{volumes "armor*"}
-		{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+		{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 	}
 }
 

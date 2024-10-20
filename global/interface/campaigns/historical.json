@@ -1,7 +1,7 @@
 [
 	{
 		"_id": "historical",
-        "category": "story",
+        "category": "historical",
  		"modId":  "cold war 1_7_6",
 		"currency":"rub",
 		"display_order":5,

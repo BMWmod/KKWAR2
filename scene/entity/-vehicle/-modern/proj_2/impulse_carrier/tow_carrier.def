@@ -1,0 +1,10 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_common" 
+		missile(tow_rock) 
+		stuff(tow_impactor) 
+		country(usa) type(other) 
+		calibre(152) length(1170)
+		speed(normal) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(45))
+}

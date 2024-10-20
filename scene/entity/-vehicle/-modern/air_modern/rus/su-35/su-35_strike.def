@@ -1,0 +1,119 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "su-35"}	
+	{Extension "su-35_strike.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{size 10 16}
+			{item "GSH-30_ammo ap ammo" 120}
+			{item "ammo x59m" 2}
+			{item "ammo kab-250" 9}
+			{item "ammo r-73" 2}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "GSH-30-1" filling "GSH-30_ammo ap ammo" 30}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "ptur6"
+			{weapon "x59x2" filled}
+			{foresight "foresight9"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "bomber"
+			{weapon "kab-250x9 weapon" filled}
+			{barrels 9}
+			{foresight "foresight6"}
+			{shooter "bomber_"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+		{place "ptur"
+			{weapon "r73x2" filled}
+			{foresight "foresight4"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+	}
+
+{mass 25825}
+("Chassis_parameters" 
+	Speed(92) TurnRadius(30) 
+	Fuel(11500) Fuel_remain(5163) Fuel_rate(4.79) 
+	Acc_hor(8.91) Maneuvrability_hor(7.54)
+	Acc_ver(7.35) Maneuvrability_ver(7.63)
+)
+	{props "cwfs_fuel_10k"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "ecm")
+       	("part" args "ecm1")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_350km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_3g"}
+			{bone "Visor_OLS"}
+		}
+	}
+
+		{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+
+	
+	
+	
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+	{texmod "blue"}
+}

@@ -219,19 +219,10 @@
 	{armor
 		{setting "shield"
 			{thickness %0}
-			{health_reducing
-				{pierce {koef 0}}
-				{blast {koef 0}}
-			}
-		{durability
-         	{blast
-                {koef 1}
-         	}
-          	{pierce
-             	{value 300}
-          	 }
-        }
-		{volumes "shield*"}
+			{durability {blast {value 100}} {pierce  {koef 999}}}
+			{threshold {blast {value %0}}}
+			{volumes "shield*"}
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )

@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity")
+	("guidance_common" 
+		missile(igla_s) 
+		stuff(igla_s_impactor) 
+		country(rus) type(ir) 
+		calibre(72) length(1630)
+		speed(normal) guidance(propsam))
+	("maneuvrability_SAMs_short_impulse" deg_per_s(44))
+}

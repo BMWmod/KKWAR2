@@ -1601,10 +1601,14 @@
 }
 {"pcp001_cs_sm1"
 	("bj2022_sound")
+	{on spawn
+		{add_view	"startsmoke_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_small_link"		"flashbarrel1"			"basis"}
+	}
 	{on fire "gun" 
 		{ani_play "fire"}
-		{spawn "tank_canon_fire_small" "Foresight1" x}
-		{spawn "startsmoke" inv_normal}
+;		{spawn "tank_canon_fire_small" "Foresight1" x}
+;		{spawn "startsmoke" inv_normal}
 	}
 }
 {"lyt2021"
@@ -1874,7 +1878,7 @@
 		{stop_sound "rotate_turret"}
 	}
 	{on fire "gun" 
-		{spawn "startsmoke_big" inv_normal}
+;		{spawn "startsmoke_big" inv_normal}
 		 {if rand 0.5
       			{spawn "dust_shot_big_2" "basis"}
 		}
@@ -2135,7 +2139,6 @@
 {"hmmwv_tow"
 	("hmmwv_sound")
 	{on fire "gun"
-;		{spawn "proj_probe" "Foresight1" x {tags add "Foresight1"}}
 		{set "gun"}{call "proj_probe"}
 	}
 	("commonzpu_params" gunner(gunner) zpu_mgun(gun) anim(into_hatch_btr90) pose(seat_m7_mgunner))
@@ -2386,7 +2389,6 @@
 }
 {"toyota_hilux_kornet"
 	{on fire "gun" 
-;		{spawn "proj_probe" "Foresight1" x {tags add "Foresight1"}}
 		{set "gun"}{call "proj_probe"}
 		{spawn "startsmoke" "tail" x}
 		{spawn "startsmoke" inv_normal}

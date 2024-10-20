@@ -1,0 +1,25 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_medium")
+;	{props "fast"}
+	("guidance_common" 
+		missile(ld10) 
+		stuff(ld10_impactor) 
+		country(rus) type(antirad) 
+		calibre(360) length(3850)
+		speed(fast) guidance())
+
+	("maneuvrability_impulse" deg_per_s(45))
+	;Ракета является модификацией УРВВ СД SD-10A, имеет ту же БЧ и летные хаактеристики.
+	;Поэтому и маневренность столь же высокая.
+	{sensor
+		{Visor "htc-pod"
+			{vision "harm_passive_radar"}
+			{bone "missle_foresight"}
+		}	
+	}
+	;vision range unknown, but same range should mean similar lockon capabilities
+	("missile_antirad" country(rus) type(antirad))
+	("targetable_missile")
+
+}

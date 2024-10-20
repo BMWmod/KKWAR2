@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity")
+	{props "tandem"}
+	("guidance_common" 
+		missile(lahat) 
+		stuff(lahat_impactor) 
+		country(usa) type(laser) 
+		calibre(105) length(975)
+		speed(normal) guidance(prop))
+	("maneuvrability_impulse" deg_per_s(40))
+	("cwps_top_attack")
+}

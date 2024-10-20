@@ -26,14 +26,14 @@
 			{durability  {blast {value 999}} {pierce {value 999}}}
 			{threshold  {blast {value 999}} {pierce {value 999}}}	
 			{volumes "border*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "armor"
 			{thickness 3 6 9 3}
 			{durability  {blast {value 999}} {pierce {value 999}}}
 			{threshold  {blast {value 999}} {pierce {value 999}}}	
 			{volumes "armor*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
     }
 
@@ -41,6 +41,8 @@
 		{box
 		     {size 6 8}
 			 {item "ammo hcb_ammo" 1170}
+			{item "9m114m cm ammo" 4}
+			{item "bullet80_DM cm ammo" 80}
 		}
 	}
 	{Weaponry

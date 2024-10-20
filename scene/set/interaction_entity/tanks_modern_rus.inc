@@ -574,17 +574,22 @@
 {"2s7"
 	{on spawn
 		("rand_texmod_1" name1(camo))
+		{add_view 	"dust_shot_big_link"		"flashbarrel1"			"basis"}
+		{add_view 	"dust_shot_big_link"		"flashbarrel1"			"dirt1"}
+		{add_view 	"dust_shot_big_link"		"flashbarrel1"			"dirt4"}
+		{add_view 	"canon_gaub_fire_link"		"flashbarrel1"			"dirt4"}
 	}
 	("t72_sound")
     {on fire "gun" 
 		("tank_gun")
-      	{spawn "dust_shot_big" "basis"}
-      	{spawn "dust_shot_big" "dirt1"}
-      	{spawn "dust_shot_big" "dirt4"}
-    	{spawn "canon_gaub_fire" "Foresight1" x}
+;      	{spawn "dust_shot_big" "basis"}
+;      	{spawn "dust_shot_big" "dirt1"}
+;      	{spawn "dust_shot_big" "dirt4"}
+;    	{spawn "canon_gaub_fire" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 		(define "otval_fx"
-			{spawn "%fx" "dirt1"}{spawn "%fx" "dirt2"}{spawn "%fx" "dirt3"}{spawn "%fx" "dirt4"}
+;turn on after fog of war fix
+;			{spawn "%fx" "dirt1"}{spawn "%fx" "dirt2"}{spawn "%fx" "dirt3"}{spawn "%fx" "dirt4"}
 		)
 		{if terrain_fx "snow"	("otval_fx" fx(snow_hit_big))
 		else terrain_fx "sand"	("otval_fx" fx(sand_hit_big))
@@ -692,6 +697,8 @@
 	{on "init_gun2"
 		{set "radar_up" 0}
 		{add_view	"rok_tail"	"rok_tail_gun2"	"tail01"}
+		{add_view 	"startsmoke_link"		"rok_tail_gun2"			"foresight1"}
+		{add_view 	"startsmoke_link"		"rok_tail_gun2"			"tail01"}
 	}
 	{on fire "gun2" overload
 		{delay 0.5 {ik_enable "turret" 0} {set "radar_up" 1}}
@@ -699,9 +706,8 @@
 		("low_speed_bullet")
 		{ani_play "fire"}
 		{view start "rok_tail_gun2"}
-		{spawn "startsmoke" "foresight1" x}
-		{spawn "startsmoke" "tail01" x}
-;		{spawn "proj_probe" "foresight1" x {tags add "foresight1"}}
+;		{spawn "startsmoke" "foresight1" x}
+;		{spawn "startsmoke" "tail01" x}
 		{set "gun2"}{call "proj_probe"}
 		{delay 0.4 {view pause "rok_tail_gun2"}}
 		("cw_check_shooting" weap_id(gun2))
@@ -1017,12 +1023,34 @@
 	("brdm_sound")	
 	{on ik begin "turret" {play_sound "rotate_turret" 1}}
 	{on ik end "turret" {stop_sound "rotate_turret"}}
+	{on spawn
+		{add_view 	"startsmoke_link"		"tail00"			"shooter00"}
+		{add_view 	"startsmoke_link"		"tail01"			"shooter01"}
+		{add_view 	"startsmoke_link"		"tail02"			"shooter02"}
+		{add_view 	"startsmoke_link"		"tail03"			"shooter03"}
+	}
 	{on fire "gun2" 
 		("low_speed_bullet")
-		{if name "00"	{delay 0.1 {spawn "9k31_carrier" "shooter00"   x}{spawn "startsmoke" "shooter00" x}}
-		else name "01"	{delay 0.1 {spawn "9k31_carrier" "shooter01"   x}{spawn "startsmoke" "shooter01" x}}
-		else name "02"	{delay 0.1 {spawn "9k31_carrier" "shooter02"   x}{spawn "startsmoke" "shooter02" x}}
-		else name "03"	{delay 0.1 {spawn "9k31_carrier" "shooter03"   x}{spawn "startsmoke" "shooter03" x}}
+		{if name "00"	{delay 0.1 {spawn "9k31_carrier" "shooter00"   x}
+;		{spawn "startsmoke" "shooter00" x}
+		{view start "shooter00"}
+		{delay 0.4 {view pause "shooter00"}}
+		}
+		else name "01"	{delay 0.1 {spawn "9k31_carrier" "shooter01"   x}
+;		{spawn "startsmoke" "shooter01" x}
+		{view start "shooter01"}
+		{delay 0.4 {view pause "shooter01"}}
+		}
+		else name "02"	{delay 0.1 {spawn "9k31_carrier" "shooter02"   x}
+;		{spawn "startsmoke" "shooter02" x}
+		{view start "shooter02"}
+		{delay 0.4 {view pause "shooter02"}}
+		}
+		else name "03"	{delay 0.1 {spawn "9k31_carrier" "shooter03"   x}
+;		{spawn "startsmoke" "shooter03" x}
+		{view start "shooter03"}
+		{delay 0.4 {view pause "shooter03"}}
+		}
 		}
 		{ani_play "fire"}
 	}
@@ -1201,14 +1229,23 @@
 		{add_view 	"smoke_zenit" 	"zenite_smoke" 		"foresight1"}
 		{add_view		"stop_signal"	"stop_signal"		"FXstop3"}	
 		{view hide "stop_signal"}
-    	}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"basis"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"turret"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"opora1"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"opora2"}
+		{add_view	"startsmoke_otrk_link"		"flashbarrel1s"			"turret"}
+    }
 	("9k72_sound")
     	{on fire "gun" 
-      		{spawn "dust_shot_big_2" "basis"}
-      		{spawn "dust_shot_big_2" "turret"}
-      		{spawn "dust_shot_big_2" "opora1"}
-      		{spawn "dust_shot_big_2" "opora2"}
-      		{spawn "startsmoke_otrk" "turret"}
+;      		{spawn "dust_shot_big_2" "basis"}
+;      		{spawn "dust_shot_big_2" "turret"}
+;      		{spawn "dust_shot_big_2" "opora1"}
+;      		{spawn "dust_shot_big_2" "opora2"}
+;      		{spawn "startsmoke_otrk" "turret"}
+			{view start "flashbarrel1s"}
+			{delay 0.4
+				{view pause "flashbarrel1s"}
+			}
 		{Volumes "ammo_storage_main" disable contact bullet blast}
 		{delay 300 {Volumes "ammo_storage_main" enable contact bullet blast}}
 	}
@@ -1329,13 +1366,21 @@
 	{on spawn
 		{Volumes "ammo_storage_main" enable contact bullet blast}
 		{Volumes "ammo_storage_main1" enable contact bullet blast}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"basis"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"FXtraceL4"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"FXtraceR4"}
 		{set "radar_up" 0}
 	}
 	("9k72_sound")
     {on fire "gun" 
-      		{spawn "dust_shot_big_2" "basis"}
-      		{spawn "dust_shot_big_2" "FXtraceL4"}
-      		{spawn "dust_shot_big_2" "FXtraceR4"}
+;      		{spawn "dust_shot_big_2" "basis"}
+;      		{spawn "dust_shot_big_2" "FXtraceL4"}
+;      		{spawn "dust_shot_big_2" "FXtraceR4"}
+			{view start "flashbarrel1s"}
+			{delay 0.4
+				{view pause "flashbarrel1s"}
+			}
+			
 		{if not flag "radar_up"
 			{Volumes "ammo_storage_main" disable contact bullet blast}
 			{set "radar_up" 1}
@@ -1411,23 +1456,24 @@
 }
 {"smerch_common"
 	{on spawn
-		{add_view 	"startsmoke_big" 		"tail00" 		"tail00"}
-		{add_view 	"startsmoke_big" 		"tail01" 		"tail01"}
-		{add_view 	"startsmoke_big" 		"tail02" 		"tail02"}
-		{add_view 	"startsmoke_big" 		"tail03" 		"tail03"}
-		{add_view 	"startsmoke_big" 		"tail04" 		"tail04"}
-		{add_view 	"startsmoke_big" 		"tail05" 		"tail05"}
-		{add_view 	"startsmoke_big" 		"tail06" 		"tail06"}
-		{add_view 	"startsmoke_big" 		"tail07" 		"tail07"}
-		{add_view 	"startsmoke_big" 		"tail08" 		"tail08"}
-		{add_view 	"startsmoke_big" 		"tail09" 		"tail09"}
-		{add_view 	"startsmoke_big" 		"tail10" 		"tail10"}
-		{add_view 	"startsmoke_big" 		"tail11" 		"tail11"}
+		{add_view 	"startsmoke_big_link" 		"tail00" 		"tail00"}
+		{add_view 	"startsmoke_big_link" 		"tail01" 		"tail01"}
+		{add_view 	"startsmoke_big_link" 		"tail02" 		"tail02"}
+		{add_view 	"startsmoke_big_link" 		"tail03" 		"tail03"}
+		{add_view 	"startsmoke_big_link" 		"tail04" 		"tail04"}
+		{add_view 	"startsmoke_big_link" 		"tail05" 		"tail05"}
+		{add_view 	"startsmoke_big_link" 		"tail06" 		"tail06"}
+		{add_view 	"startsmoke_big_link" 		"tail07" 		"tail07"}
+		{add_view 	"startsmoke_big_link" 		"tail08" 		"tail08"}
+		{add_view 	"startsmoke_big_link" 		"tail09" 		"tail09"}
+		{add_view 	"startsmoke_big_link" 		"tail10" 		"tail10"}
+		{add_view 	"startsmoke_big_link" 		"tail11" 		"tail11"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel_gun"			"basis"}
 		("rand_texmod_1" name1(wood))
 	}
 	("9k72_sound")
 	{on fire "gun" 
-     		{spawn "dust_shot_big_2" "basis"}
+;     	{spawn "dust_shot_big_2" "basis"}
 		{ani_play "fire"}
 		{view start "flashbarrel_gun"}
 		{view start "smoke_add"}
@@ -1437,7 +1483,10 @@
 		}
 		(define "fire_barrel"
 			name "%0"
-				{spawn "startsmoke_big" "tail%0" x}
+				{view start "tail%0"}
+				{delay 0.4
+					{view pause "tail%0"}
+				}
 		)
 			{if    ("fire_barrel" args 00)
 			  else ("fire_barrel" args 01)
@@ -1538,6 +1587,19 @@
 		{add_view 	"rok_tail"		"tail05"			"tail05"}
 		{add_view 	"rok_tail"		"tail06"			"tail06"}
 		{add_view 	"rok_tail"		"tail07"			"tail07"}
+		{add_view 	"startsmoke_link"		"tail03"			"R_shooter03"}
+		{add_view 	"startsmoke_link"		"tail04"			"R_shooter04"}
+		{add_view 	"startsmoke_link"		"tail05"			"R_shooter05"}
+		{add_view 	"startsmoke_link"		"tail06"			"R_shooter06"}
+		{add_view 	"startsmoke_link"		"tail07"			"R_shooter07"}
+		{add_view 	"startsmoke_link"		"tail00"			"tail00"}
+		{add_view 	"startsmoke_link"		"tail01"			"tail01"}
+		{add_view 	"startsmoke_link"		"tail02"			"tail02"}
+		{add_view 	"startsmoke_link"		"tail03"			"tail03"}
+		{add_view 	"startsmoke_link"		"tail04"			"tail04"}
+		{add_view 	"startsmoke_link"		"tail05"			"tail05"}
+		{add_view 	"startsmoke_link"		"tail06"			"tail06"}
+		{add_view 	"startsmoke_link"		"tail07"			"tail07"}
 	}
 	{on fire "gun2" overload
 		(define "fire_barrel"
@@ -1699,6 +1761,30 @@
 		{add_view 	"rok_tail"		"tail09"			"tail09"}
 		{add_view 	"rok_tail"		"tail10"			"tail10"}
 		{add_view 	"rok_tail"		"tail11"			"tail11"}
+		{add_view 	"startsmoke_link"		"tail00"			"R_shooter00"}
+		{add_view 	"startsmoke_link"		"tail01"			"R_shooter01"}
+		{add_view 	"startsmoke_link"		"tail02"			"R_shooter02"}
+		{add_view 	"startsmoke_link"		"tail03"			"R_shooter03"}
+		{add_view 	"startsmoke_link"		"tail04"			"R_shooter04"}
+		{add_view 	"startsmoke_link"		"tail05"			"R_shooter05"}
+		{add_view 	"startsmoke_link"		"tail06"			"R_shooter06"}
+		{add_view 	"startsmoke_link"		"tail07"			"R_shooter07"}
+		{add_view 	"startsmoke_link"		"tail08"			"R_shooter08"}
+		{add_view 	"startsmoke_link"		"tail09"			"R_shooter09"}
+		{add_view 	"startsmoke_link"		"tail10"			"R_shooter10"}
+		{add_view 	"startsmoke_link"		"tail11"			"R_shooter11"}
+		{add_view 	"startsmoke_link"		"tail00"			"tail00"}
+		{add_view 	"startsmoke_link"		"tail01"			"tail01"}
+		{add_view 	"startsmoke_link"		"tail02"			"tail02"}
+		{add_view 	"startsmoke_link"		"tail03"			"tail03"}
+		{add_view 	"startsmoke_link"		"tail04"			"tail04"}
+		{add_view 	"startsmoke_link"		"tail05"			"tail05"}
+		{add_view 	"startsmoke_link"		"tail06"			"tail06"}
+		{add_view 	"startsmoke_link"		"tail07"			"tail07"}
+		{add_view 	"startsmoke_link"		"tail08"			"tail08"}
+		{add_view 	"startsmoke_link"		"tail09"			"tail09"}
+		{add_view 	"startsmoke_link"		"tail10"			"tail10"}
+		{add_view 	"startsmoke_link"		"tail11"			"tail11"}
 	}
 	{on fire "gun2" overload
 		(define "fire_barrel"
@@ -1715,8 +1801,8 @@
 						}
 					}
 					{view start "tail%0"}
-					{spawn "startsmoke" "R_shooter%0" x}
-					{spawn "startsmoke" "tail%0" x}
+;					{spawn "startsmoke" "R_shooter%0" x}
+;					{spawn "startsmoke" "tail%0" x}
 					{delay 0.4
 						{view pause "tail%0"}
 					}
@@ -2184,14 +2270,16 @@
 
 		{add_view	 	"BMP2_canon_fire"	"flashbarrel1"		"Foresight1"}
 		{add_view	 	"BMP2_canon_fire"	"flashbarrel2"		"Foresight2"}
+		{add_view	"autocannon_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"autocannon_fire_link"		"flashbarrel2"			"Foresight2"}
     	}
 	("t90_sound")
 ;	("atgm_multi_launcher" weapon(gun2) foresight(foresight4) tail(tailR_))
 ;	("atgm_multi_launcher" weapon(gun3) foresight(foresight3) tail(tailL_))
 	("custom_sh_multi_launcher" weapon(gun2) foresight(foresight4) tail(taill_) shooter(shooterl_))
 	("custom_sh_multi_launcher" weapon(gun3) foresight(foresight3) tail(tailr_) shooter(shooterr_))
-    	{on fire "gun" overload
-		{spawn "autocannon_fire" "Foresight1" x}
+    {on fire "gun" overload
+;		{spawn "autocannon_fire" "Foresight1" x}
 		{view start "flashbarrel1"}
 		{delay 0.42 {view pause "flashbarrel1"}}
 		{ani_play "fire"}
@@ -2203,8 +2291,8 @@
 		}
 		("cw_check_shooting" weap_id(gun))
 	}
-    	{on fire "gun1" overload
-		{spawn "autocannon_fire" "Foresight2" x}
+    {on fire "gun1" overload
+;		{spawn "autocannon_fire" "Foresight2" x}
 		{view start "flashbarrel2"}
 		{delay 0.42 {view pause "flashbarrel2"}}
 		{ani_play "fire1"}
@@ -2292,30 +2380,30 @@
 }
 {"tos-1a_solntsepek"
 	{on spawn
-		{add_view 	"startsmoke_big" 		"rok_tail00" 		"tail_00"}
-		{add_view 	"startsmoke_big" 		"rok_tail01" 		"tail_01"}
-		{add_view 	"startsmoke_big" 		"rok_tail02" 		"tail_02"}
-		{add_view 	"startsmoke_big" 		"rok_tail03" 		"tail_03"}
-		{add_view 	"startsmoke_big" 		"rok_tail04" 		"tail_04"}
-		{add_view 	"startsmoke_big" 		"rok_tail05" 		"tail_05"}
-		{add_view 	"startsmoke_big" 		"rok_tail06" 		"tail_06"}
-		{add_view 	"startsmoke_big" 		"rok_tail07" 		"tail_07"}
-		{add_view 	"startsmoke_big" 		"rok_tail08" 		"tail_08"}
-		{add_view 	"startsmoke_big" 		"rok_tail09" 		"tail_09"}
-		{add_view 	"startsmoke_big" 		"rok_tail10" 		"tail_10"}
-		{add_view 	"startsmoke_big" 		"rok_tail11" 		"tail_11"}
-		{add_view 	"startsmoke_big" 		"rok_tail12" 		"tail_12"}
-		{add_view 	"startsmoke_big" 		"rok_tail13" 		"tail_13"}
-		{add_view 	"startsmoke_big" 		"rok_tail14" 		"tail_14"}
-		{add_view 	"startsmoke_big" 		"rok_tail15" 		"tail_15"}
-		{add_view 	"startsmoke_big" 		"rok_tail16" 		"tail_16"}
-		{add_view 	"startsmoke_big" 		"rok_tail17" 		"tail_17"}
-		{add_view 	"startsmoke_big" 		"rok_tail18" 		"tail_18"}
-		{add_view 	"startsmoke_big" 		"rok_tail19" 		"tail_19"}
-		{add_view 	"startsmoke_big" 		"rok_tail20" 		"tail_20"}
-		{add_view 	"startsmoke_big" 		"rok_tail21" 		"tail_21"}
-		{add_view 	"startsmoke_big" 		"rok_tail22" 		"tail_22"}
-		{add_view 	"startsmoke_big" 		"rok_tail23" 		"tail_23"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail00" 		"tail_00"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail01" 		"tail_01"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail02" 		"tail_02"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail03" 		"tail_03"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail04" 		"tail_04"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail05" 		"tail_05"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail06" 		"tail_06"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail07" 		"tail_07"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail08" 		"tail_08"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail09" 		"tail_09"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail10" 		"tail_10"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail11" 		"tail_11"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail12" 		"tail_12"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail13" 		"tail_13"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail14" 		"tail_14"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail15" 		"tail_15"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail16" 		"tail_16"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail17" 		"tail_17"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail18" 		"tail_18"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail19" 		"tail_19"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail20" 		"tail_20"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail21" 		"tail_21"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail22" 		"tail_22"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail23" 		"tail_23"}
 		("rand_texmod_0")
 	}
 	("t90_sound")
@@ -2352,10 +2440,10 @@
 			  else ("fire_barrel" args 22)
 			  else ("fire_barrel" args 23)
 			}
-		{spawn "startsmoke_big" inv_normal}
-		 {if rand 0.5
-      			{spawn "dust_shot_big_2" "basis"}
-		}
+;		{spawn "startsmoke_big" inv_normal}
+;		 {if rand 0.5
+;      			{spawn "dust_shot_big_2" "basis"}
+;		}
 		{ani_play "fire"}
 		("cw_check_shooting" weap_id(gun))
 	}

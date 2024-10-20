@@ -1,0 +1,25 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem" "propfan"}
+	("guidance_common" 
+		missile(shahed136_base) 
+		stuff(shahed136_base_impactor) 
+		country(rus) type(other) 
+		calibre(600) length(2000)
+		speed(slow) guidance(prop))
+	("maneuvrability_impulse" deg_per_s(60))
+	("targetable_missile")
+	{targetClass 	"medium_UAV"}
+	{Volume "missile1"
+		{Cylinder (* 0.01 76) 80}
+		{Bone "missile_point"}
+		{Matrix34
+			0	0	-1
+			0	1	0
+			1	0	0
+			24.5	0	0
+		}
+	}
+	{Volume "missile1" {able clear {contact 1}}}
+
+}

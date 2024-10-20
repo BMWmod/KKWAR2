@@ -537,7 +537,7 @@ actor
             }			
 			{volumes "body*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "cabin"
 			{thickness %cabin}
@@ -549,7 +549,7 @@ actor
             }
 			{volumes "cabin*" "door*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "turret"
 			{thickness %body}
@@ -561,7 +561,7 @@ actor
             }			
 			{volumes "turret*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "mrap"
 			{thickness %mrap}
@@ -573,7 +573,7 @@ actor
             }			
 			{volumes "mrap*"}
 			{fragment_pass_threshold 1}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "engine"
 			{thickness %engine}
@@ -585,7 +585,7 @@ actor
             }	
 			{volumes "engine*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "body_back"
 			{thickness %body_back}
@@ -597,7 +597,7 @@ actor
             }
 			{volumes "bodyback*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 
 		{setting "wheel"
@@ -611,7 +611,7 @@ actor
 			{whole_wound}
 			{volumes "wheel*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 
 		{setting "shields"
@@ -620,7 +620,7 @@ actor
 			{threshold {blast {value 10}}}				
 			{volumes "shield1*" "shield2*" "shield3*"}
 			{fragment_pass_threshold 1}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	(mod "mp"

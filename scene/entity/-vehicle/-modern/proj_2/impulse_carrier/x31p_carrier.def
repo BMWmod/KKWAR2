@@ -1,0 +1,24 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "fast"}
+	("guidance_arc"
+		missile(x31p) 
+		stuff(x31p_impactor) 
+		country(rus) type(antirad)
+		calibre(360) length(4700)
+		speed(fast) guidance()
+		weapon(missilets_antirad))
+	("maneuvrability_impulse" deg_per_s(17))
+	;Good maneuvrability
+	;При высокой скорости ракета оказалась способна выполнять маневры с большими перегрузками, достигавшими на испытаниях 10g
+	;http://rbase.new-factoria.ru/missile/wobb/x31p/x31p.shtml
+	{sensor
+		{Visor "htc-pod"
+			{vision "harm_passive_radar"}
+			{bone "missle_foresight"}
+		}	
+	}
+	;vision range unknown, but same range should mean similar lockon capabilities
+	("targetable_missile")
+
+}

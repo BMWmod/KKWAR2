@@ -1,0 +1,20 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}	;https://en.missilery.info/missile/spike-sr
+	("guidance_arc"
+		missile(spike-sr) 
+		stuff(spike-sr_impactor) 
+		country(usa) type(ir) 
+		calibre(110) length(700)
+		speed(slow) guidance(prop)
+		weapon(missilets_arc_200)
+	)
+	("maneuvrability_impulse" deg_per_s(75))
+	{sensor
+		{Visor "add"
+			{vision "tank_gunner_optic_IR_1g"}	;Визор явно хуже спайка-LR
+			{bone "missle_foresight"}
+		}
+	}
+
+}

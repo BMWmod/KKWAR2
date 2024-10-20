@@ -1,0 +1,14 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_medium")
+	("guidance_common" 
+		missile(hq7b) 
+		stuff(hq7b_impactor) 
+		country(rus) type(active_asm) 
+		calibre(156) length(3000)
+		speed(fast) guidance(3pointsam))
+	("maneuvrability_SAMs_short_impulse" deg_per_s(44))
+	("antimissile_sensors")	;capable to detect 0.1m2 RCS targets
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+	{targetSelector "antimissile"}
+}

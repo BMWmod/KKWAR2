@@ -193,47 +193,47 @@ actor
 			{threshold  {blast {value %t_thr}}}	; 
 			{durability {blast {value %t_dur}}}	; 
 			{volumes "turret*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "gun_rot"
 			{thickness %tur}
 			{threshold  {blast {value %t_thr}}}	; 
 			{durability {blast {value %t_dur}}}	; 
 			{volumes "gun_rot*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "gun"
 			{thickness %tur}
 			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
 			{durability {blast {value (* 0.8 %t_dur)}}}	; 
 			{volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "gun2"
 			{thickness %tur}
 			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
 			{durability {blast {value (* 0.8 %t_dur)}}}	; 
 			{volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "gun3"
 			{thickness %tur}
 			{threshold  {blast {value (* 0.8 %t_thr)}}}	; 
 			{durability {blast {value (* 0.8 %t_dur)}}}	; 
 			{volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "shield"
 			{thickness %s}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "body"
 			{thickness %b}
 			{threshold  {blast {value %t_thr}}}	
 			{durability {blast {value %t_dur}}}	
 			{volumes "body*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )

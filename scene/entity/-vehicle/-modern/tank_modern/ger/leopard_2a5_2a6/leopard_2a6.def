@@ -51,7 +51,7 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_front*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 		}
 		{setting "apploque_side"
@@ -59,7 +59,7 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 		}
 		{setting "shield1"
@@ -67,28 +67,28 @@
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shieldl1" "shieldr1"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "shield23"
 			{thickness 10}
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shieldl2" "shieldr2" "shieldl3" "shieldr3"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "shield4"
 			{thickness 40 40 5 5}
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shieldl4" "shieldr4"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "shield5"
 			{thickness 114 40 5 5}
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}} 
 			{volumes "shieldl5" "shieldr5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 

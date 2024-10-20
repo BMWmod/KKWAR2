@@ -60,7 +60,6 @@
 
 		{call "update_weaponry"}
 		{call "update_hatch_on_spawn"}
-		{call "check_alt"}
 		{components "flare_fly_l" break}
 		{components "flare_fly_r" break}
 		{components "chaff_fly_l" break}
@@ -86,13 +85,6 @@
 		
 		{call "disable_aututakeoff_on_spawn"}
 		{tags remove "need_auto_landing"}
-	}
-	{on "check_alt"
-	    {if altitude 65 {components "target_hight" break}
-		else
-		{components "target_hight" repair}
-		}
-		{delay 1 {call "check_alt"}}
 	}
 ;	{on "disable_aututakeoff_on_spawn"
 ;		{tags add "cw_autotakeoff_activated"}
@@ -210,17 +202,46 @@
 			{delay 0.3 "start_check_altitude" {call "check_altitude"}}
 }
 	{on "check_altitude"
-	       {if flag "engine_started"
-		{if not altitude -3
-			{call "fall"}
-			{call "collide"}
-			{delay 0.1 {constrain_velocity 80}}
-			{delay 0.3 {constrain_velocity 80}}
+		{if has_order "withdraw" 
+			{kill_delay "takeoff_again"}
+			{delay 25 "takeoff_again" {tags remove "cw_autotakeoff_activated"}{tags add "return_after_withdraw"}}
 		}
-		{delay 0.5 "check_altitude"
-			{call "check_altitude"}
+		
+	    {if altitude 65 {components "target_hight" break}
+		else
+		{components "target_hight" repair}
 		}
-	      }
+	    {if flag "engine_started"
+			{if not altitude -3
+				{impulse up 0.5 forward 5}
+				{call "fall"}
+				{call "collide"}
+				{call "tear_wheelright"}
+				{call "tear_wheelleft"}
+				{call "tear_wheelfront"}
+				{call "tear_wingl1"}
+				{call "tear_wingl2"}
+				{call "tear_wingr1"}
+				{call "tear_wingr2"}
+				{call "tear_part"}
+				{call "mp_destroy"}
+				{delay 0.05 {constrain_velocity 80}}
+				{delay 0.1 {constrain_velocity 80}}
+				{delay 0.2 {constrain_velocity 80}}
+				{delay 0.3 {constrain_velocity 80}}
+				{delay 0.4 {constrain_velocity 80}}
+			}
+	    }
+		{kill_delay "check_altitude"}
+		{if altitude 15
+			{delay 1.5 "check_altitude"
+				{call "check_altitude"}
+			}
+		else
+			{delay 0.5 "check_altitude"
+				{call "check_altitude"}
+			}
+		}
 	}
 
 	{on "takeoff_load" overload
@@ -254,7 +275,7 @@
 		{view pause "on_mud"}
 		{view pause "on_country_road"}
 		{view pause "on_snow"}
-		{delay 0.3 "start_check_altitude" {call "check_altitude"}}
+		{delay 0.3 "start_check_altitude" {call "check_altitude"}{tags remove "return_after_withdraw"}}
 	}
 
 	{on "landing" overload
@@ -269,6 +290,7 @@
 		{stop_sound "fly"}
 		{if not tagged "air_brake" {ani_play "air_brake"} {tags add "air_brake"} {play_sound "air_brake"}}
 		{if tagged "flaps_off" {ani_play "flaps_off" -1} {tags remove "flaps_off"}{play_sound "flaps"}}
+		{tags remove "return_after_withdraw"}
 	}
 	{on "landing_load" overload
 		{call "update_lights"}
@@ -280,9 +302,11 @@
 		{stop_sound "fly"}
 		{if not tagged "air_brake" {ani_play "air_brake"} {tags add "air_brake"} {play_sound "air_brake"}}
 		{if tagged "flaps_off" {ani_play "flaps_off" -1} {tags remove "flaps_off"}{play_sound "flaps"}}
+		{tags remove "return_after_withdraw"}
 	}
 	{on engine on overload
 		{call "engine_on"}
+		{call "check_altitude"}
 	}
 
 	{on engine off overload 
@@ -402,7 +426,7 @@
 		{if velocity 30
 			{if terrain_pp "road"
 			else terrain_pp "country_road"
-			else 
+			else not tagged "return_after_withdraw" 
 				{components "wheel_back" break}
 				{components "retract_wheelR" break}
 				{components "retract_wheelL" break}
@@ -423,7 +447,7 @@
 		}
        }
 	{delay 0.2
-	   {if flag "engine_started"
+	    {if flag "engine_started"
 	        {if not chassis "airborne"
 				{call "check_takeoff_speed"}
 	         else  not tagged "takeoff_speed"
@@ -437,6 +461,7 @@
 			  }
 	        }
 	    }
+		{tags remove "return_after_withdraw"}
 	}
 
 }
@@ -573,7 +598,7 @@
 	("update_hatch_aero" wind(false))
 }
 {on operatable off
-	{if chassis "airborne" {call "fall"}}
+;	{if chassis "airborne" {call "fall"}}	;приводит к падению самолета при возврате
 	("update_hatch_aero" wind(false))
 }
 {on crew in
@@ -963,83 +988,6 @@
 	("cut_glass" glass_name(glass8))
 	("cut_glass" glass_name(glass9))
 ;bombs do not explode when pierced, only from electric detonator
-;	else ("pierce_bomb" bomb_name(bomb_00) bomber_name(bomber_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_01) bomber_name(bomber_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_02) bomber_name(bomber_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_03) bomber_name(bomber_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_04) bomber_name(bomber_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_05) bomber_name(bomber_05) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_06) bomber_name(bomber_06) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_07) bomber_name(bomber_07) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_08) bomber_name(bomber_08) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_09) bomber_name(bomber_09) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_10) bomber_name(bomber_10) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_11) bomber_name(bomber_11) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_12) bomber_name(bomber_12) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_13) bomber_name(bomber_13) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_14) bomber_name(bomber_14) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_15) bomber_name(bomber_15) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_16) bomber_name(bomber_16) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_17) bomber_name(bomber_17) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_18) bomber_name(bomber_18) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_19) bomber_name(bomber_19) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_20) bomber_name(bomber_20) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_21) bomber_name(bomber_21) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_22) bomber_name(bomber_22) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_23) bomber_name(bomber_23) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_24) bomber_name(bomber_24) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_25) bomber_name(bomber_25) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_26) bomber_name(bomber_26) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_27) bomber_name(bomber_27) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_28) bomber_name(bomber_28) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_29) bomber_name(bomber_29) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomb_30) bomber_name(bomber_30) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_00) bomber_name(bombera_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_01) bomber_name(bombera_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_02) bomber_name(bombera_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_03) bomber_name(bombera_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_04) bomber_name(bombera_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_05) bomber_name(bombera_05) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_06) bomber_name(bombera_06) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_07) bomber_name(bombera_07) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_08) bomber_name(bombera_08) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_09) bomber_name(bombera_09) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bomba_10) bomber_name(bombera_10) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_00) bomber_name(bomberb_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_01) bomber_name(bomberb_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_02) bomber_name(bomberb_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_03) bomber_name(bomberb_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_04) bomber_name(bomberb_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_05) bomber_name(bomberb_05) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_06) bomber_name(bomberb_06) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_07) bomber_name(bomberb_07) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_08) bomber_name(bomberb_08) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_09) bomber_name(bomberb_09) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombb_10) bomber_name(bomberb_10) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_00) bomber_name(bomberc_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_01) bomber_name(bomberc_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_02) bomber_name(bomberc_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_03) bomber_name(bomberc_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_04) bomber_name(bomberc_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_05) bomber_name(bomberc_05) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_06) bomber_name(bomberc_06) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_07) bomber_name(bomberc_07) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_08) bomber_name(bomberc_08) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_09) bomber_name(bomberc_09) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombc_10) bomber_name(bomberc_10) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_00) bomber_name(bomberd_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_01) bomber_name(bomberd_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_02) bomber_name(bomberd_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_03) bomber_name(bomberd_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_04) bomber_name(bomberd_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombd_05) bomber_name(bomberd_05) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_00) bomber_name(bombere_00) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_01) bomber_name(bombere_01) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_02) bomber_name(bombere_02) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_03) bomber_name(bombere_03) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_04) bomber_name(bombere_04) expl_chance(0.5))
-;	else ("pierce_bomb" bomb_name(bombe_05) bomber_name(bombere_05) expl_chance(0.5))
-
 	}
       };конец запрета на пробивание указателем ПТУР
 ;===========================================другие компоненты, авионика?
@@ -1611,265 +1559,230 @@
 		;например, прицел имеет площадь проекции в целом 0,3м2, так что шанс 0.3/2=0.15
 
 		(define "frag_to_blast" 
-		(define "check_damage_frag"
-			else component "%component" 
-			 {if rand %p or not stuff "ammo"
-			  {spawn "metal_hit_bul"}
-			  {blastwave c4 %e r0 0.1 r1 0.2 position}
-			 }
-		)
+			(define "check_damage_frag"
+				else component "%component" 
+				 {if rand %p or not stuff "ammo"
+				  {if rand %splitter {spawn "metal_hit_bul"}}
+				  {blastwave c4 (+ %e 0.2) r0 0.04 r1 0.05 position} 
+				 }
+			)
 		min_energy %e 
 		{if component "body"  {blastwave c4 %e r0 0.01 r1 0.02 position}{spawn "metal_hit_bul"}
-		("check_damage_frag" component(wingr1)  p(0.05))
-		("check_damage_frag" component(wingl1)  p(0.05))
-		("check_damage_frag" component(wingr2)  p(0.05))
-		("check_damage_frag" component(wingl2)  p(0.05))
-		("check_damage_frag" component(aileron_l)  p(0.05))
-		("check_damage_frag" component(aileron_r)  p(0.05))
-		("check_damage_frag" component(elevator)  p(0.05))
-		("check_damage_frag" component(elevator_l)  p(0.05))
-		("check_damage_frag" component(elevator_r)  p(0.05))
-		("check_damage_frag" component(rudder)  p(0.05))
-		("check_damage_frag" component(rudder_l)  p(0.05))
-		("check_damage_frag" component(rudder_r)  p(0.05))
-		("check_damage_frag" component(stabilizer)  p(0.05))
-		("check_damage_frag" component(stabilizer_l)  p(0.05))
-		("check_damage_frag" component(stabilizer_r)  p(0.05))
-		("check_damage_frag" component(tail)  p(0.05))
-		("check_damage_frag" component(tail_l)  p(0.05))
-		("check_damage_frag" component(tail_r)  p(0.05))
-		("check_damage_frag" component(flap_l)  p(0.05))
-		("check_damage_frag" component(flap_r)  p(0.05))
+		("check_damage_frag" component(wingr1)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(wingl1)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(wingr2)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(wingl2)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(aileron_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(aileron_r)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(elevator)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(elevator_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(elevator_r)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(rudder)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(rudder_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(rudder_r)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(stabilizer)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(stabilizer_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(stabilizer_r)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(tail)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(tail_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(tail_r)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(flap_l)  p(0.05) splitter(%splitter))
+		("check_damage_frag" component(flap_r)  p(0.05) splitter(%splitter))
 		
-		("check_damage_frag" component(wheel_back)  p(0.2))
-		("check_damage_frag" component(retract_wheelR)  p(0.2))
-		("check_damage_frag" component(retract_wheelL)  p(0.2))
-		("check_damage_frag" component(engine)  p(1))
-		("check_damage_frag" component(engine1)  p(1))
-		("check_damage_frag" component(engine2)  p(1))
-		("check_damage_frag" component(enginea)  p(1))
-		("check_damage_frag" component(engineb)  p(1))
-		("check_damage_frag" component(enginec)  p(1))
-		("check_damage_frag" component(engined)  p(1))
+		("check_damage_frag" component(wheel_back)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(retract_wheelR)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(retract_wheelL)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(engine)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engine1)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engine2)  p(1) splitter(%splitter))
+		("check_damage_frag" component(enginea)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engineb)  p(1) splitter(%splitter))
+		("check_damage_frag" component(enginec)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engined)  p(1) splitter(%splitter))
 		
-		("check_damage_frag" component(pilot_panel)  p(0.25))
-		("check_damage_frag" component(steering_eler_l)  p(0.2))
-		("check_damage_frag" component(steering_eler_r)  p(0.2))
-		("check_damage_frag" component(steering_elev)  p(0.2))
-		("check_damage_frag" component(steering_rudder)  p(0.2))
-		("check_damage_frag" component(hydrosystem)  p(0.2))
-		("check_damage_frag" component(hydrosystem_tank)  p(0.1))
-		("check_damage_frag" component(antifire)  p(0.1))
-		("check_damage_frag" component(PPU)  p(0.75))
-		("check_damage_frag" component(APU)  p(0.75))
-		("check_damage_frag" component(ECM)  p(0.25))
-		("check_damage_frag" component(ECM_pod)  p(0.5))
-		("check_damage_frag" component(targeting_pod)  p(0.5))
-		("check_damage_frag" component(ir_active_def)  p(0.1))
-		("check_damage_frag" component(ir_active_def_2gen)  p(0.1))
-		("check_damage_frag" component(radarX)  p(0.25))
-		("check_damage_frag" component(radarL)  p(0.25))
-		("check_damage_frag" component(OLS)  p(0.15))
-		("check_damage_frag" component(ols1)  p(0.15))
-		("check_damage_frag" component(ols2)  p(0.15))
-		("check_damage_frag" component(electronics)  p(0.2))
-		("check_damage_frag" component(laser_td)  p(0.15))
-		("check_damage_frag" component(radar_td)  p(0.15))
+		("check_damage_frag" component(pilot_panel)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(steering_eler_l)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(steering_eler_r)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(steering_elev)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(steering_rudder)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(hydrosystem)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(hydrosystem_tank)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(antifire)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(PPU)  p(0.75) splitter(%splitter))
+		("check_damage_frag" component(APU)  p(0.75) splitter(%splitter))
+		("check_damage_frag" component(ECM)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(ECM_pod)  p(0.5) splitter(%splitter))
+		("check_damage_frag" component(targeting_pod)  p(0.5) splitter(%splitter))
+		("check_damage_frag" component(ir_active_def)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(ir_active_def_2gen)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(radarX)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(radarL)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(OLS)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(ols1)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(ols2)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(electronics)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(laser_td)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(radar_td)  p(0.15) splitter(%splitter))
 		
-		("check_damage_frag" component(gun)  p(0.1))
-		("check_damage_frag" component(ptur)  p(0.3))
-		("check_damage_frag" component(ptur1)  p(0.3))
-		("check_damage_frag" component(ptur2)  p(0.3))
-		("check_damage_frag" component(ptur3)  p(0.3))
-		("check_damage_frag" component(ptur4)  p(0.3))
-		("check_damage_frag" component(ptur5)  p(0.3))
-		("check_damage_frag" component(ptur6)  p(0.3))
-		("check_damage_frag" component(nar)  p(0.3))
-		("check_damage_frag" component(nar1)  p(0.3))
-		("check_damage_frag" component(nar2)  p(0.3))
-		("check_damage_frag" component(nar3)  p(0.3))
-		("check_damage_frag" component(nar4)  p(0.3))
-		("check_damage_frag" component(nar5)  p(0.3))
-		("check_damage_frag" component(nar6)  p(0.3))
+		("check_damage_frag" component(gun)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(ptur)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur1)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur2)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur3)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur4)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur5)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur6)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar1)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar2)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar3)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar4)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar5)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar6)  p(0.3) splitter(%splitter))
 		
-		("check_damage_frag" component(flares1)  p(0.1))
-		("check_damage_frag" component(flares2)  p(0.1))
-		("check_damage_frag" component(chaff1)  p(0.1))
-		("check_damage_frag" component(chaff2)  p(0.1))
+		("check_damage_frag" component(flares1)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(flares2)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(chaff1)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(chaff2)  p(0.1) splitter(%splitter))
 		
-		("check_damage_frag" component(fuel_tank_internal_a)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_b)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_c)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_d)  p(1))
-		("check_damage_frag" component(fuel_tank_external_a)  p(1))
-		("check_damage_frag" component(fuel_tank_external_b)  p(1))
-		("check_damage_frag" component(fuel_tank_external_c)  p(1))
-		("check_damage_frag" component(fuel_tank_external_d)  p(1))
+		("check_damage_frag" component(fuel_tank_internal_a)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_b)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_c)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_d)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_a)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_b)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_c)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_d)  p(1) splitter(%splitter))
 
-		("check_damage_frag" component(ammo_storage_autocannon)  p(0.25))
+		("check_damage_frag" component(ammo_storage_autocannon)  p(0.25) splitter(%splitter))
 		 else {blastwave c4 %e r0 0.01 r1 0.02 position}{spawn "metal_hit_bul"}
 		}
 		)
-		{if ("frag_to_blast" e(55))
-		else ("frag_to_blast" e(50))
-		else ("frag_to_blast" e(45))
-		else ("frag_to_blast" e(40))
-		else ("frag_to_blast" e(35))
-		else ("frag_to_blast" e(30))
-		else ("frag_to_blast" e(28))
-		else ("frag_to_blast" e(25))
-		else ("frag_to_blast" e(22))
-		else ("frag_to_blast" e(20))
-		else ("frag_to_blast" e(18))
-		else ("frag_to_blast" e(16))
-		else ("frag_to_blast" e(14))
-		else ("frag_to_blast" e(12))
-		else ("frag_to_blast" e(10))
-		else ("frag_to_blast" e(8))
-		else ("frag_to_blast" e(6.5))
-		else ("frag_to_blast" e(5))
-		else ("frag_to_blast" e(4))
-		else ("frag_to_blast" e(3))
-		else ("frag_to_blast" e(2.5))
-		else ("frag_to_blast" e(2))
-		else ("frag_to_blast" e(1.5))
-		else ("frag_to_blast" e(1))
-		else ("frag_to_blast" e(0.7))
-		else ("frag_to_blast" e(0.5))
+		{if ("frag_to_blast" e(54.9) splitter(1))
+		else ("frag_to_blast" e(49.9) splitter(1))
+		else ("frag_to_blast" e(44.9) splitter(1))
+		else ("frag_to_blast" e(39.9) splitter(1))
+		else ("frag_to_blast" e(34.9) splitter(1))
+		else ("frag_to_blast" e(29.9) splitter(1))
+		else ("frag_to_blast" e(27.9) splitter(1))
+		else ("frag_to_blast" e(24.9) splitter(1))
+		else ("frag_to_blast" e(21.9) splitter(1))
+		else ("frag_to_blast" e(19.9) splitter(1))
+		else ("frag_to_blast" e(17.9) splitter(1))
+		else ("frag_to_blast" e(15.9) splitter(1))
+		else ("frag_to_blast" e(13.4) splitter(1))
+		else ("frag_to_blast" e(10.9) splitter(1))
+		else ("frag_to_blast" e(9.9) splitter(1))
+		else ("frag_to_blast" e(7.9) splitter(1))
+		else ("frag_to_blast" e(6.4) splitter(1))
+		else ("frag_to_blast" e(4.9) splitter(1))
+		else ("frag_to_blast" e(3.9) splitter(0.7))
+		else ("frag_to_blast" e(2.9) splitter(0.4))
+		else ("frag_to_blast" e(2.4) splitter(0.2))
+		else ("frag_to_blast" e(1.9) splitter(0.2))
+		else ("frag_to_blast" e(1.4) splitter(0.2))
+		else ("frag_to_blast" e(0.9) splitter(0.2))
+		else ("frag_to_blast" e(0.6) splitter(0.2))
+		else ("frag_to_blast" e(0.4) splitter(0))
 		}
 		
 	}
 	
 {on break overload
+	(define "critical_system"
+		{if not tagged "crit_system_destroyed"
+			{tags add "crit_system_destroyed"}
+		else
+			{components "body" break}
+			{call "mp_destroy"}
+		}
+	)
+	(define "avionics_break"
+		else component "%component"
+		{tags add "%component_damaged"}
+		{if not tagged "destroyed" {if not tagged "no_messages" {damage_report "%component" "%msg:%msg_damaged"}} }
+	)	
+	(define "engine_break"
+	  else component "%engine"
+		{tags add "%engine_damaged"}
+		{spawn "tank_die_particle"}
+		{burn fx "smoke_black" fake}
+		{if not tagged "destroyed"
+			("stop_damage_sound")
+			{play_sound "%engine_damage"}
+			{if not tagged "no_messages" {damage_report "%engine" "engine1_damaged"}}
+		}
+		{if rand %crit_sys
+			("critical_system")
+		}
+		{if rand %fire_chance
+			{call "_burn"}
+		}
+		{view start "%engine_smoke"}
+		{delay 20
+			{view pause "%engine_smoke"}
+		}
+	)
+	(define "fuel_tank_break"
+	  else component "%fuel_tank"
+		{if not tagged "destroyed"
+			("stop_damage_sound")
+			{play_sound "fuel_tank_damage"}
+		     {if not tagged "no_messages" {damage_report "%fuel_tank" "fuel:fuel_tank_damaged"}}
+		     {if rand 0.8
+			{burn fx "smoke_dead_norm" fake}
+			{fire radius 4 time 1 heating 3}
+			{call "_burn"}
+			{if rand 0.8
+				{spawn "ex_air_big"}
+				{fragments c4 1 r0 2 r1 6 position}
+			}
+		     }
+		}
+	)
+	(define "ptur_break"
+	   else component "%ptur"
+		{tags add "%ptur_damaged"}
+		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "%ptur" "ptur_damaged"}}}
+		{spawn "ex_air_big"}
+		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
+	)
+	(define "nar_break"
+	   else component "%nar"
+		{tags add "%nar_damaged"}
+		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "%nar" "nar:nar_damaged"}}}
+		{spawn "ex_air_big"}
+		{if not tagged "destroyed"	{fragments c4 1.5 r0 2 r1 3.5 position}}
+	)
 ;======Корпус=====
 	{if component "body"
 		{tags add "body_brake"}
 		{call "stat_break"}
 		{chassis_work 0}
 		{call "mp_destroy"}
-	else component "wingl1"
-		{tags add "wingl1_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "wingl1" "wing:wing_damaged"}}
-		}
-		{if rand 0.5
-		       {if not work "wingl2"
-			{call "fall"}
-		       }
-		}
-	else component "wingl2"
-		{tags add "wingl2_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "wingl2" "wing:wing_damaged"}}
-		}
-		{if rand 0.5
-		       {if not work "wingl1"
-			{call "fall"}
-		       }
-		}
-	else component "wingr1"
-		{tags add "wingr1_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "wingr1" "wing:wing_damaged"}}
-		}
-		{if rand 0.5
-		       {if not work "wingr2"
-			{call "fall"}
-		       }
-		}
-	else component "wingr2"
-		{tags add "wingr2_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "wingr2" "wing:wing_damaged"}}
-		}
-		{if rand 0.5
-		       {if not work "wingr1"
-			{call "fall"}
-		       }
-		}
+		
 
+	("avionics_break" component(wingl1) msg(wing)) {if rand 0.5 {if not work "wingl2" {call "fall"} } }
+	("avionics_break" component(wingl2) msg(wing)) 	{if rand 0.5 {if not work "wingl1" {call "fall"} } }
+	("avionics_break" component(wingr1) msg(wing)) 	{if rand 0.5 {if not work "wingr2" {call "fall"} } }
+	("avionics_break" component(wingr2) msg(wing)) 	{if rand 0.5 {if not work "wingr1" {call "fall"} } }
 ;======Авионика=====
-	else component "aileron_l"
-		{tags add "aileron_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "aileron_l" "aileron:aileron_damaged"}}
-		}
-	else component "aileron_r"
-		{tags add "aileron_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "aileron_r" "aileron:aileron_damaged"}}
-		}
-	else component "elevator"
-		{tags add "elevator_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "elevator" "elevator:elevator_damaged"}}
-		}
-	else component "elevator_l"
-		{tags add "elevator_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "elevator_l" "elevator:elevator_damaged"}}
-		}
-	else component "elevator_r"
-		{tags add "elevator_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "elevator_r" "elevator:elevator_damaged"}}
-		}
-	else component "rudder"
-		{tags add "rudder_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "rudder" "rudder:rudder_damaged"}}
-		}
-	else component "rudder_l"
-		{tags add "rudder_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "rudder_l" "rudder:rudder_damaged"}}
-		}
-	else component "rudder_r"
-		{tags add "rudder_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "rudder_r" "rudder:rudder_damaged"}}
-		}
-	else component "stabilizer"
-		{tags add "stabilizer_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "stabilizer" "airstabilizer:stabilizer_damaged"}}
-		}
-	else component "stabilizer_l"
-		{tags add "stabilizer_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "stabilizer_l" "airstabilizer:stabilizer_damaged"}}
-		}
-	else component "stabilizer_r"
-		{tags add "stabilizer_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "stabilizer_r" "airstabilizer:stabilizer_damaged"}}
-		}
-	else component "tail"
-		{tags add "tail_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "tail" "tail:tail_damaged"}}
-		}
-	else component "tail_l"
-		{tags add "tail_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "tail_l" "tail:tail_damaged"}}
-		}
-	else component "tail_r"
-		{tags add "tail_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "tail_r" "tail:tail_damaged"}}
-		}
-	else component "flap_l"
-		{tags add "flap_l_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "flap_l" "flap:flap_damaged"}}
-		}
-	else component "flap_r"
-		{tags add "flap_r_damaged"}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "flap_r" "flap:flap_damaged"}}
-		}
-
+	("avionics_break" component(aileron_l) msg(aileron)) 
+	("avionics_break" component(aileron_r) msg(aileron)) 
+	("avionics_break" component(elevator) msg(elevator)) 
+	("avionics_break" component(elevator_l) msg(elevator)) 
+	("avionics_break" component(elevator_r) msg(elevator)) 
+	("avionics_break" component(rudder) msg(rudder)) 
+	("avionics_break" component(rudder_l) msg(rudder)) 
+	("avionics_break" component(rudder_r) msg(rudder)) 
+	("avionics_break" component(stabilizer) msg(stabilizer)) 
+	("avionics_break" component(stabilizer_l) msg(stabilizer)) 
+	("avionics_break" component(stabilizer_r) msg(stabilizer)) 
+	("avionics_break" component(tail) msg(tail)) 
+	("avionics_break" component(tail_l) msg(tail)) 
+	("avionics_break" component(tail_r) msg(tail)) 
+	("avionics_break" component(flap_l) msg(flap)) 
+	("avionics_break" component(flap_r) msg(flap)) 
 ;======Шасси=====
 	else component "wheel_back"
 		{tags add "wheel_back_damaged"}
@@ -1896,129 +1809,24 @@
 		{if not tagged "destroyed"
 			{if not tagged "no_messages" {damage_report "engine" "engine_damaged"}}
 		}
-		{if not tagged "crit_system_destroyed"
-			{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 		{if rand 0.4
 			{call "_burn"}
 		}
-	else component "engine1"
-		{tags add "engine1_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "engine1_damage"}
-			{if not tagged "no_messages" {damage_report "engine1" "engine1_damaged"}}
-		}
-		{if not tagged "crit_system_destroyed"
-			{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
-		{if rand 0.4
-			{call "_burn"}
-		}
-		{view start "engine1_smoke"}
-		{delay 20
-			{view pause "engine1_smoke"}
-		}
-	else component "engine2"
-		{tags add "engine2_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "engine2_damage"}
-			{if not tagged "no_messages" {damage_report "engine2" "engine2_damaged"}}
-		}
-		{if not tagged "crit_system_destroyed"
-			{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
-		{if rand 0.4
-			{call "_burn"}
-		}
-		{view start "engine2_smoke"}
-		{delay 20
-			{view pause "engine2_smoke"}
-		}
-	else component "enginea"
-		{tags add "enginea_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "enginea" "enginea_damaged"}}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "enginea_smoke"}
-		{delay 20
-			{view pause "enginea_smoke"}
-		}
-	else component "engineb"
-		{tags add "engineb_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "engineb" "engineb_damaged"}}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "engineb_smoke"}
-		{delay 20
-			{view pause "engineb_smoke"}
-		}
-	else component "enginec"
-		{tags add "enginec_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "enginec" "enginec_damaged"}}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "enginec_smoke"}
-		{delay 20
-			{view pause "enginec_smoke"}
-		}
-	else component "engined"
-		{tags add "engined_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			{if not tagged "no_messages" {damage_report "engined" "engined_damaged"}}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "engined_smoke"}
-		{delay 20
-			{view pause "engined_smoke"}
-		}
+		("engine_break" engine(engine1) fire_chance(0.4) crit_sys(1))
+		("engine_break" engine(engine2) fire_chance(0.4) crit_sys(1))
+		("engine_break" engine(enginea) fire_chance(0.2) crit_sys(0))
+		("engine_break" engine(engineb) fire_chance(0.2) crit_sys(0))
+		("engine_break" engine(enginec) fire_chance(0.2) crit_sys(0))
+		("engine_break" engine(engined) fire_chance(0.2) crit_sys(0))
 ;======Управление=====
-
 	else component "pilot_panel"
 		{tags add "driver_panel_damaged"}
 		{if not tagged "destroyed"
 			{if not tagged "no_messages" {damage_report "driver_panel" "driver_panel_damaged"}}
 		}
 		{spawn "tank_die_particle"}
-		{if not tagged "crit_system_destroyed"
-			{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 	else component "steering_eler_l"
 		{tags add "steering_eler_l_damaged"}
 		{if not tagged "destroyed"
@@ -2173,127 +1981,14 @@
 		{spawn "tank_die_particle"}
 
 ;=====Баки=====
-	else component "fuel_tank_internal_a"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_internal_a" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_internal_b"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		    {if not tagged "no_messages"  {damage_report "fuel_tank_internal_b" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_internal_c"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_internal_c" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_internal_d"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_internal_d" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_external_a"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_external_a" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_external_b"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_external_b" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_external_c"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		    {if not tagged "no_messages"  {damage_report "fuel_tank_external_c" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-	else component "fuel_tank_external_d"
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "fuel_tank_damage"}
-		     {if not tagged "no_messages" {damage_report "fuel_tank_external_d" "fuel:fuel_tank_damaged"}}
-		     {if rand 0.8
-			{burn fx "smoke_dead_norm" fake}
-			{fire radius 4 time 1 heating 3}
-			{call "_burn"}
-			{if rand 0.8
-				{spawn "ex_air_big"}
-				{fragments c4 3 r0 2 r1 6 position}
-			}
-		     }
-		}
-
+	("fuel_tank_break" fuel_tank(fuel_tank_internal_a))
+	("fuel_tank_break" fuel_tank(fuel_tank_internal_b))
+	("fuel_tank_break" fuel_tank(fuel_tank_internal_c))
+	("fuel_tank_break" fuel_tank(fuel_tank_internal_d))
+	("fuel_tank_break" fuel_tank(fuel_tank_external_a))
+	("fuel_tank_break" fuel_tank(fuel_tank_external_b))
+	("fuel_tank_break" fuel_tank(fuel_tank_external_c))
+	("fuel_tank_break" fuel_tank(fuel_tank_external_d))
 ;=====Вооружение=====
 
 	else component "gun"
@@ -2304,77 +1999,22 @@
 			{if not tagged "no_messages" {damage_report "gun" "gun_damaged"}}
 		}
 		{spawn "tank_die_particle"}
-	else component "ptur"
-		{tags add "ptur_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur" "ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur1"
-		{tags add "ptur1_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur1" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur2"
-		{tags add "ptur2_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur2" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur3"
-		{tags add "ptur3_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur3" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur4"
-		{tags add "ptur4_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur4" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur5"
-		{tags add "ptur5_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur5" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "ptur6"
-		{tags add "ptur6_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "ptur6" "ptur:ptur_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{fragments c4 2 r0 3 r1 4 position}}
-	else component "nar"
-		{tags add "nar_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar" "nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar1"
-		{tags add "nar1_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar1" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar2"
-		{tags add "nar2_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar2" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar3"
-		{tags add "nar3_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar3" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar4"
-		{tags add "nar4_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar4" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar5"
-		{tags add "nar5_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar5" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
-	else component "nar6"
-		{tags add "nar6_damaged"}
-		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "nar6" "nar:nar_damaged"}}}
-		{spawn "ex_air_big"}
-		{if not tagged "destroyed"	{blastwave c4 4 r0 0.3 r1 0.5 position}	{fragments c4 1.5 r0 2 r1 3.5 position}}
+		
 
+	("ptur_break" ptur(ptur))
+	("ptur_break" ptur(ptur1))
+	("ptur_break" ptur(ptur2))
+	("ptur_break" ptur(ptur3))
+	("ptur_break" ptur(ptur4))
+	("ptur_break" ptur(ptur5))
+	("ptur_break" ptur(ptur6))
+	("nar_break" nar(nar))
+	("nar_break" nar(nar1))
+	("nar_break" nar(nar2))
+	("nar_break" nar(nar3))
+	("nar_break" nar(nar4))
+	("nar_break" nar(nar5))
+	("nar_break" nar(nar6))
 	else component "flares1"
 		{tags add "flares1_damaged"}
 		{if not tagged "no_messages" {if not tagged "destroyed"	{damage_report "flares1" "flares:flares_damaged"}}}
@@ -2391,11 +2031,11 @@
 	else component "ammo_storage_autocannon"
 		{if not tagged "destroyed"
 		{spawn "ex_air_big"}
-		{fragments c4 3 r0 2 r1 6}
-		{delay 0.2 0.5	{spawn "ex_air_big"}	{fragments c4 3 r0 2 r1 6 position}}
-		{delay  0.6 1	{spawn "ex_air_big"}	{fragments c4 3 r0 2 r1 6 position}}
-		{delay 1 1.2	{spawn "ex_air_big"}	{fragments c4 3 r0 2 r1 6 position}}
-		{delay 1.3 1.5	{spawn "ex_air_big"}	{fragments c4 3 r0 2 r1 6 position}}
+		{fragments c4 1.2 r0 2 r1 6}
+		{delay 0.2 0.5	{spawn "ex_air_big"}	{fragments c4 1.2 r0 2 r1 6 position}}
+		{delay  0.6 1	{spawn "ex_air_big"}	{fragments c4 1.2 r0 2 r1 6 position}}
+		{delay 1 1.2	{spawn "ex_air_big"}	{fragments c4 1.2 r0 2 r1 6 position}}
+		{delay 1.3 1.5	{spawn "ex_air_big"}	{fragments c4 1.2 r0 2 r1 6 position}}
 		{if rand 0.3 {clear_inventory}{tags add "cwfs_set_fuel"}}
 		{if rand 0.2 {call "_explosion"}}
 		}
@@ -2955,90 +2595,61 @@
 
 		{delay 0.1 {call "check_moveability"}}
 	}
-
-	{on "tear_wheelright" overload
+	(define "tear_wheel"
 		{spawn "spheredust_big_short"}
 		{component destroy}
 		{volume disable contact contact_ground}
-		{tear "piece_big_airborne_wing" bone from_volume
-			{impulse up 2 1 dir 2 1}
+		{if velocity 30
+			{tear "piece_big_airborne_wing" bone from_volume {impulse up 0 1 forward 10 2} }
+		else
+			{tear "piece_big_airborne_wing" bone from_volume {impulse up 2 1 dir 2 1} }
 		}
+	)
+	{on "tear_wheelright" overload
+		("tear_wheel")
 	}
 	{on "tear_wheelleft" overload
-		{spawn "spheredust_big_short"}
-		{component destroy}
-		{volume disable contact contact_ground}
-		{tear "piece_big_airborne_wing" bone from_volume
-			{impulse up 2 1 dir 2 1}
-		}
+		("tear_wheel")
 	}
 	{on "tear_wheelfront" overload
-		{spawn "spheredust_big_short"}
-		{component destroy}
-		{volume disable contact contact_ground}
-		{tear "piece_big_airborne_wing" bone from_volume
-			{impulse up 2 1 dir 2 1}
-		}
+		("tear_wheel")
 	}
-	{on "tear_wingl1" overload
-		{tags add "wingl1_teared"}
+	(define "tear_wing"
+		{tags add "%wing_teared"}
 		{spawn "spheredust_big_short"}
-		{components "wingl1" destroy}
+		{components "%wing" destroy}
 		{volume disable contact contact_ground}
-		{view start "fire_body_l"}
-		{tear "piece_big_airborne_wing" bone "wingl1"
-			{impulse up 2 1 dir 2 1}
-			{add_view "aero_die_fire"		"fire_wingl1"		"fxfire_wingl1_1"}
-			{add_view "aero_die_fire"		"fire_wingl1"		"fxfire_wingl1_2"}
-			{view start "fire_wingl1"}
-			{delay 60 20 {view stop "fire_wingl1"}}
+		{view start "%fire_fueltank"}
+		{if velocity 30
+			{tear "piece_big_airborne_wing" bone "%wing"
+				{impulse up 0 1 forward 10 2}
+				{add_view "aero_die_fire"		"fire_%wing"		"fxfire_%wing_1"}
+				{add_view "aero_die_fire"		"fire_%wing"		"fxfire_%wing_2"}
+				{view start "fire_%wing"}
+				{delay 60 20 {view stop "fire_%wing"}}
+			}
+		else
+			{tear "piece_big_airborne_wing" bone "%wing"
+				{impulse up 2 1 dir 2 1}
+				{add_view "aero_die_fire"		"fire_%wing"		"fxfire_%wing_1"}
+				{add_view "aero_die_fire"		"fire_%wing"		"fxfire_%wing_2"}
+				{view start "fire_%wing"}
+				{delay 60 20 {view stop "fire_%wing"}}
+			}
 		}
-		{delay 60 20 {view stop "fire_body_l"}}
+		{delay 60 20 {view stop "%fire_fueltank"}}
+	)
+	{on "tear_wingl1" overload
+		("tear_wing" wing(wingl1) fire_fueltank(fire_body_l))
 	}
 	{on "tear_wingr1" overload
-		{tags add "wingr1_teared"}
-		{spawn "spheredust_big_short"}
-		{components "wingr1" destroy}
-		{volume disable contact contact_ground}
-		{view start "fire_body_r"}
-		{tear "piece_big_airborne_wing" bone "wingr1"
-			{impulse up 2 1 dir 2 1}
-			{add_view "aero_die_fire"		"fire_wingr1"		"fxfire_wingr1_1"}
-			{add_view "aero_die_fire"		"fire_wingr1"		"fxfire_wingr1_2"}
-			{view start "fire_wingr1"}
-			{delay 60 20 {view stop "fire_wingr1"}}
-		}
-		{delay 60 20 {view stop "fire_body_r"}}
+		("tear_wing" wing(wingr1) fire_fueltank(fire_body_r))
 	}
 	{on "tear_wingl2" overload
-		{tags add "wingl2_teared"}
-		{spawn "spheredust_big_short"}
-		{components "wingl2" destroy}
-		{volume disable contact contact_ground}
-		{view start "fire_wingl1_2"}
-		{tear "piece_big_airborne_wing" bone "wingl2"
-			{impulse up 2 1 dir 2 1}
-			{add_view "aero_die_fire"		"fire_wingl2"		"fxfire_wingl2_1"}
-			{add_view "aero_die_fire"		"fire_wingl2"		"fxfire_wingl2_2"}
-			{view start "fire_wingl2"}
-			{delay 60 20 {view stop "fire_wingl2"}}
-		}
-		{delay 60 20 {view stop "fire_wingl1_2"}}
+		("tear_wing" wing(wingl2) fire_fueltank(fire_wingl1_2))
 	}
 	{on "tear_wingr2" overload
-		{tags add "wingr2_teared"}
-		{spawn "spheredust_big_short"}
-		{components "wingr2" destroy}
-		{volume disable contact contact_ground}
-		{view start "fire_wingr1_2"}
-		{tear "piece_big_airborne_wing" bone "wingr2"
-			{impulse up 2 1 dir 2 1}
-			{add_view "aero_die_fire"		"fire_wingr2"		"fxfire_wingr2_1"}
-			{add_view "aero_die_fire"		"fire_wingr2"		"fxfire_wingr2_2"}
-			{view start "fire_wingr2"}
-			{delay 60 20 {view stop "fire_wingr2"}}
-		}
-		{delay 60 20 {view stop "fire_wingr1_2"}}
+		("tear_wing" wing(wingr2) fire_fueltank(fire_wingr1_2))
 	}
 	{on "tear_part" overload
 		{if component "aileron_l" {tags add "aileron_l_teared"}
@@ -3060,8 +2671,10 @@
 			{spawn "spheredust_big_short"}
 			{component destroy}
 			{volume disable contact contact_ground}
-			{tear "piece_big_airborne_wing" bone from_volume
-				{impulse up 2 1 dir 2 1}
+			{if velocity 30
+				{tear "piece_big_airborne_wing" bone from_volume {impulse up 0 1 forward 10 2} }
+			else
+				{tear "piece_big_airborne_wing" bone from_volume {impulse up 2 1 dir 2 1} }
 			}
 		}
 	}
@@ -3230,35 +2843,40 @@
 
 	}
 	(define "eject_end"
-		{on animation_end "%fx_bone_name"
-		     {view pause "fx_%fx_bone_name"}
- 		     {tear "piece_big_airborne_wing" bone "%eject_bone_name"	{impulse up 2 1 forward -1 1}}
-		     {if altitude 26
-		          {with_linked_entity "%crewman"
+	 {if altitude 26
+		  {with_linked_entity "%crewman"
 			{delay 0.2 ("paradrop_crew_member_with_alt" args 5)}
-		          }
-		      else altitude 21
-		          {with_linked_entity "%crewman"
+		  }
+	  else altitude 21
+		  {with_linked_entity "%crewman"
 			{delay 0.2 ("paradrop_crew_member_with_alt" args 4)}
-		          }
-		      else altitude 16
-		          {with_linked_entity "%crewman"
+		  }
+	  else altitude 16
+		  {with_linked_entity "%crewman"
 			{delay 0.2 ("paradrop_crew_member_with_alt" args 3)}
-		          }
-		      else altitude 8
-		          {with_linked_entity "%crewman"
+		  }
+	  else altitude 8
+		  {with_linked_entity "%crewman"
 			{delay 0.2 ("paradrop_crew_member_with_alt" args 2)}
-		          }
-		      else altitude 4
-		          {with_linked_entity "%crewman"
+		  }
+	  else altitude 4
+		  {with_linked_entity "%crewman"
 			{delay 0.2 ("paradrop_crew_member_with_alt" args 1)}
-		          }
-		      else
-		      }
-		}
+		  }
+	  else
+	  }
 	)
-		("eject_end" crewman(driver) fx_bone_name(eject) eject_bone_name(catapult))
-		("eject_end" crewman(gunner) fx_bone_name(eject1) eject_bone_name(catapult1))
+	{on animation_end "eject"
+	 {view pause "fx_eject"}
+	 {tear "piece_big_airborne_wing" bone "catapult"	{impulse up 2 1 forward -1 1}}
+		("eject_end" crewman(driver))
+	}
+	{on animation_end "eject1"
+	 {view pause "fx_eject1"}
+	 {tear "piece_big_airborne_wing" bone "catapult1"	{impulse up 2 1 forward -1 1}}
+		("eject_end" crewman(driver1))
+		("eject_end" crewman(gunner))
+	}
 
 	{on fire "gun"
 		{view start "flashbarrel1"}

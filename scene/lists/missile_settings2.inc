@@ -399,12 +399,12 @@
 	}
 	{on "destroyed_by_kaz" overload}
 }
-{("CWPS_impulse_proj" missilename(spike-lr) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(12) imp(20) flight_time(7.4) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(700))}
-{("CWPS_impulse_proj" missilename(spike-sr) rotation(0) rand_move(0) smoke_vulnerable(0.5) decoyprob(0.3) vel(10) imp(17) flight_time(6) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(700))}
-{("CWPS_impulse_proj" missilename(spike-er) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(12) imp(20) flight_time(8) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(1000))}
-{("CWPS_impulse_proj" missilename(spike-er2) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(12) imp(20) flight_time(8.7) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(1000))}
-{("CWPS_impulse_proj_eject" missilename(spike_nlos) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(10) imp(17) flight_time(15) tail(proj_jet_atgm) eng_time(2))("cm_jet" dmg(1000))}
-{("CWPS_impulse_proj_eject" missilename(spike_nlos_fg) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(10) imp(17) flight_time(15) tail(proj_jet_atgm) eng_time(2))}
+{("CWPS_impulse_proj" missilename(spike-lr) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0)  vel(12) imp(20) flight_time(7.77) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(700))}
+{("CWPS_impulse_proj" missilename(spike-sr) rotation(0) rand_move(0) smoke_vulnerable(0.5) decoyprob(0.3)  vel(10) imp(17) flight_time(6) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(700))}
+{("CWPS_impulse_proj" missilename(spike-er) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0)  vel(12) imp(20) flight_time(8.9) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(1000))}
+{("CWPS_impulse_proj" missilename(spike-er2) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0)   vel(12) imp(20) flight_time(9.6) tail(proj_jet_atgm) eng_time(1))("cm_jet" dmg(1000))}
+{("CWPS_impulse_proj_eject" missilename(spike_nlos) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0)  vel(10) imp(17) flight_time(17) tail(proj_jet_atgm) eng_time(2))("cm_jet" dmg(1000))}
+{("CWPS_impulse_proj_eject" missilename(spike_nlos_fg) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0)  vel(10) imp(17) flight_time(17) tail(proj_jet_atgm) eng_time(2))}
 
 {("CWPS_impulse_proj" missilename(sraw_rock) rotation(0) rand_move(0) smoke_vulnerable(0) decoyprob(0) vel(17) imp(29) flight_time(2.3) tail(proj_jet_atgm) eng_time(1))("tracer" tracer(tracer_tow) bone(tail))
 	{on "stuff_detonate" overload

@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_precomputed" 
+		missile(sraw_rock) 
+		stuff(sraw_rock_impactor) 
+		country(usa) type(other) 
+		calibre(140) length(1500)
+		speed(normal) guidance(prop))
+	("maneuvrability_inertial" deg_per_s(70))
+	("antiroof")
+}

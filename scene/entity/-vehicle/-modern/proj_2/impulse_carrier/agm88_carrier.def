@@ -1,0 +1,19 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_arc"
+		missile(agm88) 
+		stuff(agm88_impactor) 
+		country(usa) type(antirad)
+		calibre(250) length(4170)
+		speed(fast) guidance()
+		weapon(missilets_antirad))
+	("maneuvrability_impulse" deg_per_s(27))
+	{sensor
+		{Visor "htc-pod"
+			{vision "harm_passive_radar"}
+			{bone "missle_foresight"}
+		}	
+	}
+	("missile_antirad" country(usa) type(antirad))
+	("targetable_missile")
+}

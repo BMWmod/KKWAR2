@@ -1,0 +1,23 @@
+﻿{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_arc"
+		missile(spike-er2) 
+		stuff(spike-er2_impactor) 
+		country(usa) type(other) 
+		calibre(300) length(1670)
+		speed(slow) guidance(prop)
+		weapon(missilets_arc_200)
+	)
+	("maneuvrability_impulse" deg_per_s(20))
+	{sensor
+		{Visor "add"
+			{vision "tank_gunner_optic_3g"}	;https://www.youtube.com/watch?v=XdDOHgcLGRI
+												;танк был замечен с 6 км.
+			{bone "missle_foresight"}
+		}
+	}
+	("cwps_top_attack")
+	("allow_manual_control")
+	("targetable_missile")
+}

@@ -29,14 +29,14 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "border1"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "main_armor"
 			{thickness 10 3 5 1}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "armor*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 
@@ -45,6 +45,9 @@
 		{size 8 11}
 			 {item "ammo bullet30_RUS_aph ap" 210}
 			 {item "ammo bullet30_RUS fg" 230}
+			{item "germes ammo" 8}
+			{item "bullet80_DM cm ammo" 40}
+			{item "ammo igla_S" 4}	
 		}
 	}
 	

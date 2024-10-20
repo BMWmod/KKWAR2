@@ -1,0 +1,17 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "rastrub_carrier"}
+	("antiship_missile" 
+		missile(rastrub) 
+		stuff(rastrub_impactor) 
+		country(rus) type(antiship) 
+		calibre(1000) length(7200)
+		speed(slow) guidance())
+	("maneuvrability_impulse" deg_per_s(19))
+;	("custom_maneuvrability" deg_per_s1(10) deg_per_s2(19) deg_per_s3(19) deg_per_s4(19)
+;	deg_per_s5(19) deg_per_s6(19) deg_per_s7(19) deg_per_s8(19)
+;	angle1(170) angle2(170) angle3(170) angle4(170) angle5(170) angle6(170) angle7(170) angle8(170))
+	("targetable_missile")
+	{props "ignore_linked_pointer"}
+
+}

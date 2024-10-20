@@ -1,0 +1,115 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "F-35" "F-35C" "carrier_based"}	
+	{Extension "f-35c_strike.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+
+
+	{mass 22240}
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{item "aim-120c7 ammo" 2}
+			{item "jsm ammo" 6}
+		}
+	}
+	{Weaponry
+		{place "ptur"
+			{weapon "AIM-120C7x2" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "ptur2"
+			{weapon "jsmx6" filled}
+			{foresight "foresight7"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 6}
+			{basic}
+		}
+		
+	}
+("Chassis_parameters" 
+	Speed(83) TurnRadius(34) 
+	Fuel(8960) Fuel_remain(5561) Fuel_rate(5.33) 
+	Acc_hor(6.95) Maneuvrability_hor(5.73)
+	Acc_ver(5.84) Maneuvrability_ver(4.25)
+)
+	{props "cwfs_fuel_8000"}
+
+	;F-35A  имеет максимальную перегрузку 9g, B и C - 7g, но при этом нагрузка на крыло высока (больше Су-25), и углова¤ скорость виража поменьше F-22 и Су (а радиус - побольше)
+	;У С больше крыло - меньше скорость и больше маневренность. У легких вариантов радиус разворота 25.
+	
+
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+      	("part" args "part7")
+      	("part" args "part8")
+      	("part" args "part9")
+      	("part" args "part10")
+      	("part" args "part11")
+      	("part" args "part12")
+       	("part" args "part13")
+       	("part" args "part14")
+       	("part" args "part15")
+       	("part" args "part16")
+      	("part" args "part17")
+      	("part" args "part18")
+      	("part" args "part19")
+      	("part" args "part20")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_150km"}
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_4g"}
+			{bone "Visor_OLS"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("cw_headlightl")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+
+}

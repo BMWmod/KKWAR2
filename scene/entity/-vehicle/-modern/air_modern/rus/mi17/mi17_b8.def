@@ -1,0 +1,179 @@
+;Exported by Pheonix
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "Helicopter_M" "steel" "vision_lev_heli" "heli_with_ropes"}
+	{Extension "mi17_b8.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"}}
+        {texmod "b8"}
+	{targetClass 	"Helicopter"}
+
+	{mass 11100}
+;Бронирована только кабина, локальными вставками. По некоторым данным, бронированы двиги и редуктор, но 
+;источник непроверенный, чертежа нет, да и цифра аж в 8мм стали вызвала сомнение. Поэтому брони двигов нет.
+;Стекла не бронированы
+{volume "body1"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body2"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body3"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body4"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body5"	{tags "body"}	{component "body"} {thickness 3}}
+
+{volume "border1"	{thickness 8}}	;Накладные понели в кабине защищают с боков.
+{volume "border2"	{thickness 8}}
+{volume "border3"	{thickness 8}}	
+{volume "border4"	{thickness 8}}
+
+("air_armor" main_rotor(12) tail_rotor(7) cabin(3) engine(8) mechanics(6) electronics(5) fuel(5))
+
+	{extender "inventory"
+		{box	
+			{Size 8 12}
+			{weight 6000}
+			{item "bullet80_DM cm ammo" 40}
+		}
+	}
+
+	{Weaponry
+;================Оба крыла   ==
+        {place "nar1"
+			{weapon "80mm_b820a_x2" filling "bullet80_DM cm ammo" 40}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter_"}
+			{barrels 40}
+			{basic}
+		}		
+        {place "nar2"
+			{weapon "80mm_b820a_x2" filling "bullet80_DM cm ammo" 40}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter1_"}
+			{barrels 40}
+			{basic}
+		}
+        {place "nar3"
+			{weapon "80mm_b820a_x2" filling "bullet80_DM cm ammo" 40}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter2_"}
+			{barrels 40}
+			{basic}
+		}
+	}
+
+;================================
+;     	{Chassis
+;		{Locomotion ("locomotion")
+;			{Maxspeed 38}
+;			{turnRadius 16}
+;		}
+;		{maxSideSlope 17} ;degree
+;		{speed
+;			{Slow 1} ; km/h
+;			{Normal 1}
+;			{Fast 38}
+;		}
+;        }
+;	{Chassis "airborne"
+;			{Altitude 25}
+;		}
+;		{ChassisManager
+;			{Current "airborne"}
+;		}
+;("CW_heli_chassis" Maxspeed(38) turnRadius(16) maxSlope(17))
+("CW_heli_chassis" 
+	Maxspeed(50) turnRadius(14) Acc(4.96) Climb(5.63)
+	Fuel(1450) Fuel_rate(3.02) Fuel_remain(1088))
+	{props "cwfs_fuel_1000"}
+
+;==========================
+;       	("part" args "propeller")
+;	("part" args "propeller1")
+
+       	("part" args "propeller")
+	("part" args "propeller_tail")
+       	("part" args "wheelfront")
+       	("part" args "wheelleft")
+       	("part" args "wheelright")
+       	("part" args "nar1")
+       	("part" args "nar2")
+       	("part" args "nar3")
+       	("part" args "nar4")
+       	("part" args "nar5")
+       	("part" args "nar6")
+       	("part" args "wingl")
+       	("part" args "wingr")
+
+	{Sensor
+		{Visor "main"
+			{bone "visor1"}
+		}
+	
+	}
+	
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_sd222_driver"} {end "seat_driver_car"} {base "open"}}
+			{reverse 	{end	"board_sd222_driver" -1} {base "open" -1}}
+		}
+		{anm "passanger"
+			{forward	{begin	"board_SdKfz251-1"} {end "seat_passenger"} {base "open"}}
+			{reverse 	{end	"emit_body"} {base "open" -1}}
+		}
+		{anm "down"
+			{forward {speed 3} {loop "climb_down_rope" 1} {fix_orientation}}
+		}
+
+		{door "ropel_node5"}
+		{node "ropel_point1a"}
+		{node "emit_ropel"}
+
+
+		{link "ropel_point1a" "ropel_node5"	{anm "down"}}
+		{link "emit_ropel"	"ropel_point1a"}
+	}
+
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(commander) bone(commander) door(emit1) animation(driver))
+
+	{Placer
+		{place "driver" {turnOff {targetable}}{visor "main"}}			
+		{place "commander" {turnOff {targetable}}{visor "main"}}			
+	}
+	
+(define "passenger"
+	{placer
+		{place "%place"
+			{group "passengers"}
+			{linkbone "%bone"}
+			{turnoff {sensor} {shadow}}
+		}
+	}
+	{boarder
+		{link "emit_ropel"	"%place" {anm "passanger"}}	
+;		{link "emit1"	"%place" {anm "passanger"}}; CtA only
+	}
+)
+
+	("passenger" place(seat1) bone(seat01) animation(passanger))
+	("passenger" place(seat2) bone(seat02) animation(passanger))
+	("passenger" place(seat3) bone(seat03) animation(passanger))
+	("passenger" place(seat4) bone(seat04) animation(passanger))
+	("passenger" place(seat5) bone(seat05) animation(passanger))
+	("passenger" place(seat6) bone(seat06) animation(passanger))
+	("passenger" place(seat7) bone(seat07) animation(passanger))
+	("passenger" place(seat8) bone(seat08) animation(passanger))
+	("passenger" place(seat9) bone(seat09) animation(passanger))
+	("passenger" place(seat10) bone(seat10) animation(passanger))
+	("passenger" place(seat11) bone(seat11) animation(passanger))
+	("passenger" place(seat12) bone(seat12) animation(passanger))
+
+}
+

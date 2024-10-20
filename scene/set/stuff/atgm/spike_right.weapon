@@ -1,0 +1,32 @@
+{from "pattern proj_weapon_air"
+	{tag "gun"}
+
+	{filling "ammo spike_nlos" 4}
+	{fillingVisible "RocketR"}
+	{fireSound "bazooka_cw/spike_shot"}
+	{mass 47}
+	{recoveryTime 30}
+	;СУ одноканальная (у представленного КП 1 пульт управления, у пусковой 1 антенна), так что скорострельность не должна быть высокой
+	{rechargeTime 120}	
+	;т. к. ракеты тяжелые, перезарядка по времени как самоходный ПТРК
+	{inventory {noView}}
+;	{cursor "SPIKE"}
+;	{cursorreloading "SPIKE_reload"}
+	;{cursor "spike"}
+	{cursor "cannon_on_heat_2"}
+	{cursorreloading "cannon_reload_heat"}
+	;{cursorreloading "cannon_reload_heat_timer_120"}
+
+	("damage" a(1) b(1) c(1) d(1) e(1))
+	{projectileDamage 0}
+        {maxRange 300}
+	{aimRange 300}
+	{gravity 100}
+	{speed 1000}
+	{parameters "fg"
+		{cursor "cannon_on_fg_6"}
+		{cursorreloading "cannon_reload_fg"}
+		;{cursor "spike_fg"}
+		;{cursorreloading "cannon_reload_fg_timer_120"}
+	}
+}

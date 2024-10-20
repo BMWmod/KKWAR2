@@ -31,19 +31,19 @@
 	            {durability  {blast {value 30}} {pierce {value 35}}}
 	            {threshold  {blast {value 3}} {pierce {value 3}}}	
 	            {volumes "fuel_tank_internal_b1"}
-				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 	        }
 	        {setting "fuel_tank_internal_c1" {thickness 3}
 	            {durability  {blast {value 30}} {pierce {value 35}}}
 	            {threshold  {blast {value 3}} {pierce {value 3}}}	
 	            {volumes "fuel_tank_internal_c1"}
-				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 	        }
 	        {setting "fuel_tank_internal_d1" {thickness 3}
 	            {durability  {blast {value 30}} {pierce {value 35}}}
 	            {threshold  {blast {value 3}} {pierce {value 3}}}	
 	            {volumes "fuel_tank_internal_d1"}
-				{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+				{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 	        }
 	}
 
@@ -51,6 +51,9 @@
 		{box
 			{clear}
 			{item "M61ammo vulcan20mm ammo" 400}
+			{item "aim-120c7 ammo" 2}
+			{item "ammo aim-9l_ammo" 2}
+			{item "ammo GBU-38" 2}
 		}
 	}
 	{Weaponry

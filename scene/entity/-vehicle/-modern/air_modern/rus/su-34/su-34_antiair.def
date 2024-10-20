@@ -16,18 +16,20 @@
 		{setting "armor"
 			{thickness 17 11 8 0.1}
 			{volumes "armor*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "glass"	;фонарь из ситалла
 			{thickness 5}
 			{volumes "glass*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	{extender "inventory"
 		{box
 			{clear}
 			{item "GSH-30_ammo ap ammo" 150}
+			{item "ammo r_27er" 6}
+			{item "r-73 ammo" 4}
 		}
 	}
 	{Weaponry
