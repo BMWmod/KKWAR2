@@ -1,10 +1,10 @@
 {mission
 	{Clips
 		{"[auto]"
-			{world -8656.76 -10088.4 6599.5 9745.62}
-			{camera -8185.93 -9601.24 5960.67 9219.92}
-			{pather -8148.61 -9583.96 6075.67 9223.84}
-			{haze -8648.61 -10084 6575.67 9723.84}
+			{world -6785.12 -14769.3 6599.5 14800.5}
+			{camera -6266.89 -14737.9 5960.67 14787.2}
+			{pather -6274.9 -14736.7 6075.67 14870.5}
+			{haze -6774.9 -15236.7 6575.67 15370.5}
 		}
 		{"groundcontrola"
 			{world -6785.12 -10088.4 6599.5 -2355.21}
@@ -74,7 +74,7 @@
 		}
 	}
 	{Entity "flag_point" 0x8006
-		{Position -1160.52 -3355.49}
+		{Position -345.96 -8123.96}
 		{xform scale 1.4}
 		{Saturation 0}
 		{Fogable never}
@@ -95,7 +95,7 @@
 		{MID 36}
 	}
 	{Entity "flag_point" 0xc000
-		{Position -2370.57 2359.54}
+		{Position -3375.48 4556.87}
 		{xform scale 1.4}
 		{Saturation 0}
 		{Fogable never}
@@ -116,7 +116,7 @@
 		{MID 1}
 	}
 	{Entity "map_point" 0x8024
-		{Position 3061.35 -9372.12}
+		{Position 1933.45 -13729.7}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a7}
@@ -129,7 +129,7 @@
 		{MID 5}
 	}
 	{Entity "map_point" 0x8025
-		{Position 2061.35 -9372.12}
+		{Position 933.45 -13729.7}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a6}
@@ -142,7 +142,7 @@
 		{MID 8}
 	}
 	{Entity "map_point" 0x8026
-		{Position -2267 -9379.46}
+		{Position -623.66 -13568.9}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a3}
@@ -155,7 +155,7 @@
 		{MID 18}
 	}
 	{Entity "map_point" 0x8027
-		{Position -6928.87 -8698.51}
+		{Position -3241.21 -14255.5}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a2}
@@ -168,7 +168,7 @@
 		{MID 19}
 	}
 	{Entity "map_point" 0x8028
-		{Position -1267 -9379.46}
+		{Position -4226.71 -13439.1}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a4}
@@ -181,7 +181,7 @@
 		{MID 21}
 	}
 	{Human "special/radio" 0x8029
-		{Position -4808.81 -5304.4}
+		{Position -1258.87 -14015.1}
 		{xform zl 179.84}
 		{MaterialParams
 			{"material1"
@@ -193,7 +193,7 @@
 		{MID 2}
 	}
 	{Human "special/radio" 0x802a
-		{Position -1628.73 966.75}
+		{Position -1814.93 14696.1}
 		{xform zl 118.8}
 		{MaterialParams
 			{"material1"
@@ -205,7 +205,7 @@
 		{MID 3}
 	}
 	{Entity "spawn_point" 0x802b
-		{Position -1000 5500}
+		{Position -313.47 14130.2}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b5}
@@ -215,7 +215,7 @@
 		{MID 57}
 	}
 	{Entity "spawn_point" 0x802c
-		{Position -1284.29 9114.86}
+		{Position 2027.4 13577.7}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b8}
@@ -235,7 +235,7 @@
 		{MID 60}
 	}
 	{Entity "spawn_point" 0x802e
-		{Position -9279 -8861.93}
+		{Position -4845.14 -14263.2}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a1}
@@ -245,7 +245,7 @@
 		{MID 61}
 	}
 	{Entity "spawn_point" 0x802f
-		{Position -3199.45 6649.69}
+		{Position -2655.42 14121.2}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b4}
@@ -255,7 +255,7 @@
 		{MID 62}
 	}
 	{Entity "spawn_point" 0x8030
-		{Position 2061.35 -9372.12}
+		{Position 933.45 -13729.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a6}
@@ -265,7 +265,7 @@
 		{MID 63}
 	}
 	{Entity "spawn_point" 0xc00e
-		{Position -267 -9379.46}
+		{Position -2022.25 -13440.1}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a5}
@@ -285,7 +285,7 @@
 		{MID 66}
 	}
 	{Entity "spawn_point" 0xc010
-		{Position -1267 -9379.46}
+		{Position -4231.36 -13441.9}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a4}
@@ -295,7 +295,7 @@
 		{MID 67}
 	}
 	{Entity "spawn_point" 0xc011
-		{Position -4046.71 9099.27}
+		{Position -4234.6 13988.4}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b3}
@@ -305,7 +305,7 @@
 		{MID 68}
 	}
 	{Entity "spawn_point" 0x8031
-		{Position -2267 -9379.46}
+		{Position -623.66 -13568.9}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a3}
@@ -315,7 +315,7 @@
 		{MID 69}
 	}
 	{Entity "spawn_point" 0x8032
-		{Position -3284.29 9114.86}
+		{Position -1717.63 14239.5}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b6}
@@ -325,7 +325,7 @@
 		{MID 70}
 	}
 	{Entity "spawn_point" 0x8033
-		{Position -2284.29 9114.86}
+		{Position 246.35 14002}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b7}
@@ -335,7 +335,7 @@
 		{MID 71}
 	}
 	{Entity "spawn_point" 0x8049
-		{Position 3061.35 -9372.12}
+		{Position 1933.45 -13729.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a7}
@@ -345,7 +345,7 @@
 		{MID 74}
 	}
 	{Entity "spawn_point" 0xc012
-		{Position 4061.35 -9372.12}
+		{Position 2933.45 -13729.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a8}
@@ -355,7 +355,7 @@
 		{MID 75}
 	}
 	{Entity "spawn_point" 0x804a
-		{Position -6928.87 -8698.51}
+		{Position -3245.31 -14257.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a2}
@@ -365,7 +365,7 @@
 		{MID 22}
 	}
 	{Entity "map_point" 0x804b
-		{Position -9279 -8861.93}
+		{Position -4851.17 -14260.4}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a1}
@@ -378,7 +378,7 @@
 		{MID 14}
 	}
 	{Entity "map_point" 0x804c
-		{Position -267 -9379.46}
+		{Position -2022.25 -13440.1}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a5}
@@ -391,7 +391,7 @@
 		{MID 59}
 	}
 	{Entity "map_point" 0x8045
-		{Position 4061.35 -9372.12}
+		{Position 2933.45 -13729.7}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a8}
@@ -404,7 +404,7 @@
 		{MID 20}
 	}
 	{Entity "map_point" 0x8034
-		{Position -2284.29 9114.86}
+		{Position 246.35 14002}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b7}
@@ -417,7 +417,7 @@
 		{MID 45}
 	}
 	{Entity "map_point" 0x8035
-		{Position -3284.29 9114.86}
+		{Position -1717.63 14239.5}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b6}
@@ -430,7 +430,7 @@
 		{MID 7}
 	}
 	{Entity "map_point" 0x8036
-		{Position -4046.71 9099.27}
+		{Position -4234.6 13988.4}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b3}
@@ -443,7 +443,7 @@
 		{MID 17}
 	}
 	{Entity "map_point" 0x8037
-		{Position -5046.71 9099.27}
+		{Position -3299.2 14223.3}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b2}
@@ -469,7 +469,7 @@
 		{MID 9}
 	}
 	{Entity "map_point" 0x8039
-		{Position -3199.45 6649.69}
+		{Position -2655.42 14121.2}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b4}
@@ -482,7 +482,7 @@
 		{MID 6}
 	}
 	{Entity "map_point" 0x803a
-		{Position -1000 5500}
+		{Position -313.47 14130.2}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b5}
@@ -495,7 +495,7 @@
 		{MID 12}
 	}
 	{Entity "map_point" 0x803b
-		{Position -1284.29 9114.86}
+		{Position 2027.4 13577.7}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b8}
@@ -508,13 +508,13 @@
 		{MID 4}
 	}
 	{Entity "capture" 0x80a2
-		{Position -362.02 5259.8}
+		{Position -3362.26 4543.62}
 	}
 	{Entity "capture" 0x80a3
-		{Position -58.42 -5697.34}
+		{Position -322.61 -8167.35}
 	}
 	{Entity "spawn_point" 0x803c
-		{Position 5061.35 -9372.12}
+		{Position 3933.45 -13729.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a9}
@@ -524,7 +524,7 @@
 		{MID 10}
 	}
 	{Entity "map_point" 0x803d
-		{Position 5061.35 -9372.12}
+		{Position 3933.45 -13729.7}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a9}
@@ -537,7 +537,7 @@
 		{MID 13}
 	}
 	{Entity "spawn_point" 0x803e
-		{Position -284.29 9114.86}
+		{Position 3027.4 13577.7}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b9}
@@ -547,7 +547,7 @@
 		{MID 15}
 	}
 	{Entity "map_point" 0x803f
-		{Position -284.29 9114.86}
+		{Position 3027.4 13577.7}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b9}
@@ -560,7 +560,7 @@
 		{MID 16}
 	}
 	{Entity "spawn_point" 0x8040
-		{Position 570.48 9117.12}
+		{Position 3882.17 13580}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b10}
@@ -570,7 +570,7 @@
 		{MID 23}
 	}
 	{Entity "map_point" 0x8041
-		{Position 570.48 9117.12}
+		{Position 3882.17 13580}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b10}
@@ -583,7 +583,7 @@
 		{MID 24}
 	}
 	{Entity "spawn_point" 0x8042
-		{Position 1570.48 9117.12}
+		{Position 4882.17 13580}
 		{xform zl -90}
 		{Extender "spawn_point"
 			{mapPoint b11}
@@ -593,7 +593,7 @@
 		{MID 25}
 	}
 	{Entity "map_point" 0x8043
-		{Position 1570.48 9117.12}
+		{Position 4882.17 13580}
 		{xform zl -90}
 		{Extender "map_point"
 			{name b11}
@@ -606,7 +606,7 @@
 		{MID 26}
 	}
 	{Entity "map_point" 0x8044
-		{Position 6061.35 -9372.12}
+		{Position 4933.45 -13729.7}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a10}
@@ -619,7 +619,7 @@
 		{MID 27}
 	}
 	{Entity "map_point" 0x8046
-		{Position 5581.72 -9294.71}
+		{Position 4453.82 -13652.3}
 		{xform zl 90}
 		{Extender "map_point"
 			{name a11}
@@ -632,7 +632,7 @@
 		{MID 28}
 	}
 	{Entity "spawn_point" 0x8047
-		{Position 6061.35 -9372.12}
+		{Position 4933.45 -13729.7}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a10}
@@ -642,7 +642,7 @@
 		{MID 29}
 	}
 	{Entity "spawn_point" 0x8048
-		{Position 5581.72 -9294.71}
+		{Position 4453.82 -13652.3}
 		{xform zl 90}
 		{Extender "spawn_point"
 			{mapPoint a11}
@@ -652,7 +652,7 @@
 		{MID 30}
 	}
 	{Entity "flag_point" 0x8000
-		{Position 3883.66 -337.57}
+		{Position 3799.17 1055.36}
 		{xform scale 1.4}
 		{Saturation 0}
 		{Fogable never}
@@ -672,8 +672,30 @@
 		{Player 0}
 		{MID 31}
 	}
-	{Tags "hidden" "radio_a" "cw_face2" 0x8029}
-	{Tags "hidden" "radio_b" "cw_face8" 0x802a}
+	{Tags "keep_places_without_door" 0x3040}
+	{Tags "keep_places_without_door" 0x700a}
+	{Tags "keep_places_without_door" 0x3f}
+	{Tags "keep_places_without_door" 0x63}
+	{Tags "keep_places_without_door" 0x1c00}
+	{Tags "keep_places_without_door" 0x3c10}
+	{Tags "keep_places_without_door" 0x62d1}
+	{Tags "keep_places_without_door" 0x62eb}
+	{Tags "keep_places_without_door" 0x51ac}
+	{Tags "cwfs_check_fuel" 0x3313}
+	{Tags "cwfs_check_fuel" 0x3327}
+	{Tags "cwfs_check_fuel" 0x342d}
+	{Tags "cwfs_check_fuel" 0x3451}
+	{Tags "cwfs_check_fuel" 0x3458}
+	{Tags "cwfs_check_fuel" 0x345b}
+	{Tags "cwfs_check_fuel" 0x72b3}
+	{Tags "cwfs_check_fuel" 0x72b7}
+	{Tags "keep_places_without_door" 0x885}
+	{Tags "keep_places_without_door" 0x5a82}
+	{Tags "keep_places_without_door" 0x247d}
+	{Tags "keep_places_without_door" 0x70e5}
+	{Tags "installed" "scud_dummy" 0x3f82}
+	{Tags "hidden" "radio_a" 0x8029}
+	{Tags "hidden" "radio_b" 0x802a}
 	{Tags "pointer" "main_a" 0x80a2}
 	{Tags "pointer" "main_b" 0x80a3}
 	{Inventory 0x8029
@@ -688,6 +710,11 @@
 			{clear}
 			{item "b33r" {cell 0 0}}
 			{item "winterhat" {cell 2 0}{user "head"}}
+		}
+	}
+	{Brain 0x3f82
+		{Properties
+			{fire_mode hold}
 		}
 	}
 	{Environment "arena_mp/day"}
@@ -706,7 +733,7 @@
 		{event "flags/initalized"}
 		{event "start_true"}
 		{zone "poly"
-			{position 20.0032 -194.439 -350}
+			{position 20.0032 -194.439 0}
 			{Name "allmap"}
 			{Point -6742.84 -9771.73}
 			{Point -6738.24 9777.14}
@@ -714,7 +741,7 @@
 			{Point 6795.07 -9792.08}
 		}
 		{zone "poly"
-			{position -1452.97 -2245.81 -350}
+			{position -1452.97 -2245.81 0}
 			{Name "f1"}
 			{Point -728.31 -773.807}
 			{Point -1398.37 -164.686}
@@ -723,7 +750,7 @@
 			{Point 1195.78 -457.129}
 		}
 		{zone "poly"
-			{position 577.108 2875.59 -350}
+			{position 577.108 2875.59 0}
 			{Name "f2"}
 			{Point -1123 -797.856}
 			{Point -973.189 897.689}
