@@ -166,6 +166,39 @@
     {content "%c1 ( mp2/%na/vehicle_supporter:%n ) %c2 ( %secondcrew )"}
 	{main "%c2"}
 )
+
+;====================================MOW2 defines==================
+(define "set_default"
+	{charge %ch}
+    {sc 1}
+    {tags "%tag %side"}
+	{side "%side"}
+    {cw 1}
+    {cp %cp}
+	{level %lvl}
+	{cost 0}
+	{fore 1}
+	("spawn_distance_default")
+	{cwe 0}			; capture enemy territory
+	{cwa 1.0} 		; hold ally territory / support ally advancement
+	{cwn 1.0} 		; capture neutral territory
+)
+; vehicle with tankmans
+(define "set_v"		("set_default"		con(v) ch(0) sc(0) tag(1) side(no) n(1) cw(1) cp(1) lvl(1) sd(default) th(1)))
+
+; vehicle with supporters
+(define "set_vs"	("set_default"		con(v) ch(0) sc(0) tag(1) side(no) n(1) cw(1) cp(1) lvl(1) sd(default) th(1)))
+
+; mortars
+(define "set_vsm"	("set_default"		con(v) ch(0) sc(0) tag(1) side(no) n(1) cw(1) cp(1) lvl(1) sd(default) th(1)))
+
+;btr
+(define "set_251_1"	("set_default"		con(v) ch(0) sc(0) tag(1) side(no) n(1) cw(1) cp(1) lvl(1) sd(default) th(1)))
+
+;техника под управлением лётчиков
+(define "set_v_p"	("set_default"		con(v) ch(0) sc(0) tag(1) side(no) n(1) cw(1) cp(1) lvl(1) sd(default) th(1)))
+;======================================================
+
 	(include "vehicles_rus.inc")
 	(include "vehicles_usa.inc")
 	(include "vehicles_nato.inc")

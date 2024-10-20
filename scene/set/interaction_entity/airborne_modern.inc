@@ -1475,7 +1475,7 @@
 	("air_multibarrel_launcher" weapon(ptur2) shooter(Shooter_r31_) missile(x31p) flashbarrel(Shooter_r31_))
 	("air_multibarrel_launcher" weapon(ptur3) shooter(Shooter_r73rvvsd_) missile(rvv-sd) flashbarrel(Shooter_r73rvvsd_))
 	("air_multibarrel_launcher" weapon(ptur5) shooter(Shooter_x58_) missile(x-38mte) flashbarrel(Shooter_x58_))
-	("air_multibarrel_launcher" weapon(ptur6) shooter(Shooter_x59_) missile(x59x) flashbarrel(Shooter_x59_))
+	("air_multibarrel_launcher" weapon(ptur6) shooter(Shooter_x59_) missile(x59m) flashbarrel(Shooter_x59_))
 	;self-shooting fix, does not work with makroses
 	{on fire "bomber" {with_linked_entity "driver"	{volumes "body_c" disable bullet} {delay 1 {volumes "body_c" enable bullet}}}
 					{with_linked_entity "driver1"	{volumes "body_c" disable bullet} {delay 1 {volumes "body_c" enable bullet}}}	}
@@ -1560,7 +1560,7 @@
 	("air_multibarrel_launcher" weapon(ptur) shooter(Shooter_r73rvvsd_) missile(r-73) flashbarrel(Shooter_r73rvvsd_))
 	("air_multibarrel_launcher_6drop" weapon(ptur3) shooter(Shooter_rvvsd_) missile(rvv-sd) flashbarrel(Shooter_rvvsd_))
 	("air_multibarrel_launcher" weapon(ptur5) shooter(Shooter_x38_) missile(x-38mte) flashbarrel(Shooter_x38_))
-	("air_multibarrel_launcher" weapon(ptur6) shooter(Shooter_x59_) missile(x59x) flashbarrel(Shooter_x59_))
+	("air_multibarrel_launcher" weapon(ptur6) shooter(Shooter_x59_) missile(x59m) flashbarrel(Shooter_x59_))
 
 	;self-shooting fix, does not work with makroses
 	{on fire "bomber" {with_linked_entity "driver"	{volumes "body_c" disable bullet} {delay 1 {volumes "body_c" enable bullet}}} }

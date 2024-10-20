@@ -1,0 +1,143 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+
+	{props "airborne_M" "fighter" "vision_lev_plane" "eurofighter"}	
+	{Extension "eurofighter_antirad.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{size 6 10}
+			{item "bullet27_ger ap ammo" 140}
+			{item "aim-120c7 ammo" 4}
+			{item "ammo aim-9l_ammo" 2}
+			{item "ammo alarm_missile" 4}
+		}
+	}
+	
+{volume "towed_decoy1"	{tags "part"}	{component "towed_decoy1"}	{thickness 1} {able clear {contact 1}{bullet 1}{BLAST 1} {NoWoundDecal}}}
+{volume "towed_decoy2"	{tags "part"}	{component "towed_decoy2"}	{thickness 1} {able clear {contact 1}{bullet 1}{BLAST 1} {NoWoundDecal}}}
+{component "towed_decoy1"	{tags "repair_lev3" "repair_lev2"} {RepairTime 10}}
+{component "towed_decoy2"	{tags "repair_lev3" "repair_lev2"} {RepairTime 10}}
+	{Placer
+		{place "cwps_emitter1"
+			{entity "cwps3_proj_point"}
+			{Linkbone "cwps_emitter1"}
+			{handlebone "Basis"}
+			{obstacle disable}
+		}
+		{place "cwps_emitter2"
+			{entity "cwps3_proj_point"}
+			{Linkbone "cwps_emitter2"}
+			{handlebone "Basis"}
+			{obstacle disable}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "27mm_mauzer_bk27x2" filling "bullet27_GER ap ammo" 10}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "ptur2"
+			{weapon "AIM-120C7x4" filled}
+			{foresight "foresight6"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		{place "ptur5"
+			{weapon "alarmx4 weapon" filled}
+			{foresight "Foresight8"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		{place "ptur4"
+			{weapon "Brimstonex6" filled}
+			{foresight "Foresight9"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 6}
+			{basic}
+		}
+		{place "ptur1"
+			{weapon "aim-9lx2" filled}
+			{foresight "foresight5"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+	}
+{mass 16096}
+("Chassis_parameters" 
+	Speed(103) TurnRadius(28) 
+	Fuel(5000) Fuel_remain(4331) Fuel_rate(2.78) 
+	Acc_hor(8.85) Maneuvrability_hor(8.14)
+	Acc_ver(7.71) Maneuvrability_ver(9.02)
+)	
+	{props "cwfs_fuel_5000"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+	
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+       	("part" args "part7")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_185km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_2g"}
+			{bone "Visor_OLS"}
+		}
+		{Visor "targeting-pod"
+			{vision "aircraft_optic_IR_2g"}
+			{bone "visor_pod"}
+		}
+	}
+	
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_thor_driver" 0.3} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_thor_driver" -0.3} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+	(mod "mp"
+		{Chassis "airborne"
+				{Altitude 25}
+			}
+		{ChassisManager
+				{Current "airborne"}
+		}
+	)
+	("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+}

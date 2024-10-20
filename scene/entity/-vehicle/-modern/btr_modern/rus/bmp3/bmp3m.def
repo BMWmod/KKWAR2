@@ -22,14 +22,14 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "armor_left*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "appliquef"
 			{thickness 10}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "armor_right*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 		

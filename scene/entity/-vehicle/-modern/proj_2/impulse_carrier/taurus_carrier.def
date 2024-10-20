@@ -1,0 +1,17 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_arc" ;и для дальнобойных ракет.
+		missile(taurus) 
+		stuff(taurus_impactor) 
+		country(usa) type(other) 
+		calibre(900) length(5000)
+		speed(normal) guidance()
+		weapon(missilets_long))
+	("maneuvrability_impulse" deg_per_s(17))
+	{props "cwps_rangefinder" "ignore_linked_pointer"}
+	("targetable_missile")
+	{targetSelector "corr"}
+	
+	
+	
+}

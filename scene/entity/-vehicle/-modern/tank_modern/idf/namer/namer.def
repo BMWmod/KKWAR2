@@ -37,7 +37,7 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_inter*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 		}
 		{setting "apploque_side"
@@ -45,7 +45,7 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 		}
 	}
@@ -73,7 +73,7 @@
 			{durability {blast {value 60}} {pierce  {koef 999}}}
 			{threshold {blast {value 20}}}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 

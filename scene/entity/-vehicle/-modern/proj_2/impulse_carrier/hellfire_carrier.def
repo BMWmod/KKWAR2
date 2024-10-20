@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_arc"
+		missile(hellfire) 
+		stuff(hellfire_impactor) 
+		country(usa) type(active) 
+		calibre(178) length(1650)
+		speed(fast) guidance(prop)
+		weapon(missilets_arc_160)
+	)
+	("maneuvrability_impulse" deg_per_s(34))
+}

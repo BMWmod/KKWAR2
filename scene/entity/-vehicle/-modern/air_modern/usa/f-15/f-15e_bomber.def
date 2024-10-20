@@ -1,0 +1,116 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "-IR_spo" "f-15"}	
+	{Extension "f-15e_bomber.mdl"}
+
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+	
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{size 6 18}
+			{item "M61ammo vulcan20mm ammo" 300}
+			{item "mk_82 ammo" 19}
+			{item "ammo aim-9l_ammo" 4}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "VulcanA2" filling "vulcan20mm ammo" 170}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+
+		{place "bomber"
+			{weapon "mk82x19_f-15e" filled}
+			{foresight "foresight4"}
+			{charger "driver1"}
+			{gunner "driver1"}
+			{barrels 19}
+			{shooter "bomber_"}
+			{basic}
+		}			
+		{place "ptur1"
+			{weapon "aim-9lx4" filled}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		
+	}
+
+{mass 23326}
+("Chassis_parameters" 
+	Speed(87) TurnRadius(35) 
+	Fuel(10237) Fuel_remain(3560) Fuel_rate(3.45) 
+	Acc_hor(6.25) Maneuvrability_hor(5.45)
+	Acc_ver(5.72) Maneuvrability_ver(5.53)
+)
+	{props "cwfs_fuel_10000"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================       	
+		("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+       	("part" args "part7")
+       	("part" args "part8")
+		
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_100km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_2g_wide"}	;это FLIR для автосоледования рельефу. Чисто обзорная вещь, 
+			{bone "ols"}							;не для поиска целей.
+		}
+	}
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+		{anm "driver1"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(driver1) bone(driver1) door(emit1) animation(driver1))
+	{Placer
+		{place "driver" {turnOff {sensor} {shadow} {targetable}}}			
+		{place "driver1" {turnOff {sensor} {shadow} {targetable}}}			
+	}
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+		
+}
+
+

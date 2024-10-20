@@ -1,0 +1,26 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("antiship_missile"
+		missile(granit) 
+		stuff(granit_impactor) 
+		country(rus) type(antiship) 
+		calibre(1114) length(7000)
+		speed(normal) guidance()
+	)
+	("maneuvrability_impulse" deg_per_s(19))
+	("targetable_missile")
+	{props "heavy_antiship" "forced_launch"}
+	{sensor
+		{Visor "antiship_main"
+			{vision "largeantiship_missile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "largeantiship_missile_close"
+			{vision "largeantiship_missile_close"}
+			{bone "missle_foresight"}
+		}
+	}
+;	{collider "airborne_medium"}
+	("armor_heavy_antiship" th(40))	;40мм под 60 град, но из-за скорости пробой зениток и ракет возрастает
+
+}

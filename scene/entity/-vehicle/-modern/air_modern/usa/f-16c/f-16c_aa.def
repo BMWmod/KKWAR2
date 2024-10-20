@@ -1,0 +1,99 @@
+﻿{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "f-16c"}	
+	{Extension "f-16c_aa.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator"}
+
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{size 6 10}
+			{item "M61ammo vulcan20mm ammo" 400}
+			{item "aim-120c7 ammo" 4}
+			{item "aim-9l ammo" 2}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "VulcanA2" filling "vulcan20mm ammo" 111}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "ptur"
+			{weapon "AIM-120C7x4" filled}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		{place "ptur1"
+			{weapon "aim-9lx2" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		
+		
+	}
+
+{mass 11803}
+("Chassis_parameters" 
+	Speed(86) TurnRadius(33) 
+	Fuel(3105) Fuel_remain(2994) Fuel_rate(2.04) 
+	Acc_hor(7.05) Maneuvrability_hor(6.26)
+	Acc_ver(6.39) Maneuvrability_ver(4.44)
+)
+	{props "cwfs_fuel_3000"}
+
+;Maneuvrability - маневренность по десятибалльной шкале. 10 - истребитель с УВТ, 1 - стратегический бомбардировщик.
+;==========================
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_100km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+	}
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+(mod "mp"
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+)
+("two_headlights")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+
+}

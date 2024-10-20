@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "fast"}
+	("guidance_common" 
+		missile(x_25ml_su25_ammo) 
+		stuff(x_25ml_su25_ammo_impactor) 
+		country(rus) type(laser) 
+		calibre(275) length(3750)
+		speed(fast) guidance(propsam))
+	("maneuvrability_impulse" deg_per_s(13))
+}

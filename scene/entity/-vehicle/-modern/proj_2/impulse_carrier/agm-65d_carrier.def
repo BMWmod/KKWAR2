@@ -1,0 +1,10 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_common" 
+		missile(agm-65d) 
+		stuff(agm-65d_impactor) 
+		country(usa) type(ir) 
+		calibre(305) length(2500)
+		speed(normal) guidance(prop))
+	("maneuvrability_impulse" deg_per_s(35))
+}

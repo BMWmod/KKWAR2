@@ -1,0 +1,12 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity")
+	("guidance_common" 
+		missile(r60_su25) 
+		stuff(r60_su25_impactor) 
+		country(rus) type(ir) 
+		calibre(120) length(2096)
+		speed(fast) guidance(propsam))
+	("maneuvrability_SAMs_short_impulse" deg_per_s(56))
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+}

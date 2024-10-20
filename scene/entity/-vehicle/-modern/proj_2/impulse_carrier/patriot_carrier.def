@@ -1,0 +1,20 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_extended")
+	("guidance_common" 
+		missile(patriot) 
+		stuff(patriot_impactor) 
+		country(usa) type(radpassive) 
+		calibre(410) length(5310)
+		speed(fast) guidance(propsam))
+	("maneuvrability_SAMs_impulse" deg_per_s(34))
+	{sensor
+		{Visor "main"
+			{vision "LRmissile"}
+			{bone "missle_foresight"}
+		}
+	}
+	("antimissile_sensors")
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+	{targetSelector "missile"}
+}

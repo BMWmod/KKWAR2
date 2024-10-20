@@ -30,21 +30,21 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_front"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_down"
 			{thickness 385 297 174 10}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_front1"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_side"
 			{thickness 30 10 10 10}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_inter*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	("comp_armor_increment" turret(26 26 26 26) body(106 79 61 10))	;turret верх, body низ.

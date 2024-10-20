@@ -1,5 +1,9 @@
 ;-------------------------------------------=======================Defines=============================
-;=======================Sound=============================
+;=======================mow2=============================
+(define "pz2_sound")
+(define "pz3_spg_sound")
+(define "m3a1_sound")
+;=======================CW=============================
 (define "t34_sound"
 	{on "add_movement_sound" overload
 		{link_sound "move"				"vehicle/groundborne/t34/t34_tracks"}
@@ -656,8 +660,11 @@
 	}
 )
 (define "autocannon"
+	{on "init1_gun"
+		{add_view	"tank_canon_fire_small_link"		"flashbarrel1"			"Foresight1"}
+	}
 	{on fire "gun" overload
-		{spawn "tank_canon_fire_small" "Foresight1" x}
+;		{spawn "tank_canon_fire_small" "Foresight1" x}
 		{view start "flashbarrel1"}
 		{delay 0.42
 			{view pause "flashbarrel1"}
@@ -669,8 +676,11 @@
 ;	{on "init_gun" overload}	;чтобы не было факела из пушки при выгорании
 )
 (define "autocannon_muzzle_brake"
+	{on "init1_gun"
+		{add_view	"autocannon_fire_muzzle_brake_link"		"flashbarrel1"			"Foresight1"}
+	}
 	{on fire "gun" overload
-		{spawn "autocannon_fire_muzzle_brake" "Foresight1" x}
+;		{spawn "autocannon_fire_muzzle_brake" "Foresight1" x}
 		{view start "flashbarrel1"}
 		{delay 0.42
 			{view pause "flashbarrel1"}
@@ -689,13 +699,14 @@
 			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
 	       }
 	}
-    {on fire "gun" 
+	{on "init1_gun"
+		{add_view	"tank_canon_fire_3_link"		"flashbarrel1"			"Foresight1"}
+	}
+   {on fire "gun" 
 		("tank_gun")
-;		{if not tagged "no_power"	{spawn "proj_probe" "Foresight1" x}
-;		else{spawn "proj_probe" "Foresight1" x {tags add "no_power"}}}
 		{set "gun"}{call "proj_probe"}
 		{spawn "dust_shot_normal" "basis"}
-    	 	{spawn "tank_canon_fire_3" "Foresight1" x}
+;    	{spawn "tank_canon_fire_3" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 	}
 )
@@ -708,14 +719,14 @@
 			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
 	       }
 	}
-    {on fire "gun" 
+ 	{on "init1_gun"
+		{add_view	"tank_canon_fire_3_link"		"flashbarrel1"			"Foresight1"}
+	}
+	{on fire "gun" 
 		("tank_gun")
 		{set "gun"}{call "proj_probe"}
-;		{if not tagged "no_power"	{spawn "proj_probe" "Foresight1" x}
-;		else{spawn "proj_probe" "Foresight1" x {tags add "no_power"}}}
-		
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "tank_canon_fire_3" "Foresight1" x}
+		{spawn "dust_shot_big" "basis"}
+;		{spawn "tank_canon_fire_3" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 	}
 )
@@ -728,10 +739,14 @@
 			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
 	       }
 	}
+ 	{on "init1_gun"
+		{add_view	"canon_gaub_fire_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_big_link"		"flashbarrel1"			"basis"}
+	}
     {on fire "gun" 
 		("tank_gun")
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
+;		{spawn "dust_shot_big" "basis"}
+;		{spawn "canon_gaub_fire" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 	}
 )
@@ -788,11 +803,12 @@
 	}
 )
 (define "gatling_gun"
-	{on "init_gun"
+ 	{on "init1_gun"
 		{add_view       "zenit_gilz"	"shell"	        "%FXshell"}	
+		{add_view	"autocannon_fire_link"		"flashbarrel1"			"Foresight1"}
 	}
 	{on fire "gun" overload
-		{spawn "autocannon_fire" "Foresight1" x}
+;		{spawn "autocannon_fire" "Foresight1" x}
 		{view start "flashbarrel1"}
 		{view start "shell"}
 		{kill_delay "shell"}
@@ -822,8 +838,11 @@
 	("25-50mm_gilza" fxshell(fxshell_canon))
 )
 (define "30mm_2a42_gun1"
+ 	{on "init_gun"
+		{add_view	"autocannon_fire_muzzle_brake_link"		"flashbarrel2"			"Foresight6"}
+	}
 	{on fire "gun1" overload
-		{spawn "autocannon_fire_muzzle_brake" "Foresight6" x}
+;		{spawn "autocannon_fire_muzzle_brake" "Foresight6" x}
 		{view start "flashbarrel2"}
 		{delay 0.42
 			{view pause "flashbarrel2"}
@@ -850,7 +869,6 @@
 	}
     {on fire "gun" 
 		("low_speed_bullet")
-;		{spawn "proj_probe" "Foresight1" x}
 		{set "gun"}{call "proj_probe"}
 		{view start "smoke_add"}
 		{delay 0.16 "shell_off"
@@ -871,16 +889,16 @@
 			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
 	       }
 	}
-	{on "init_gun"
+ 	{on "init1_gun"
 		{add_view 	"smoke_ejector" 	"zenite_smoke" 		"foresight1"}
+		{add_view	"tank_canon_fire_3_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_normal_link"		"flashbarrel1"			"basis"}
 	}
     {on fire "gun" 
 		("low_speed_bullet")
-;		{if not tagged "no_power"	{spawn "proj_probe" "Foresight1" x}
-;		else{spawn "proj_probe" "Foresight1" x {tags add "no_power"}}}
       	{set "gun"}{call "proj_probe"}
-		{spawn "dust_shot_normal" "basis"}
-    	{spawn "tank_canon_fire_3" "Foresight1" x}
+;		{spawn "dust_shot_normal" "basis"}
+;    	{spawn "tank_canon_fire_3" "Foresight1" x}
 		{view start "flashbarrel_gun"}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 		{view start "smoke_add"}
@@ -930,8 +948,10 @@
 			{add_view "fire_ammo_burnout_barr4" "ammo_burnout4" "Foresight1"}
 	       }
 	}
-	{on "init_gun"
+ 	{on "init1_gun"
 		{add_view 	"smoke_ejector_fast" 	"zenite_smoke" 		"foresight1"}
+		{add_view	"tank_canon_fire_3_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_big_link"		"flashbarrel1"			"basis"}
 	}
 	{on fire "gun" 
 		{view start "flashbarrel_gun"}
@@ -942,11 +962,9 @@
 			{view pause "flashbarrel_gun"}
 			{delay 0.8 {view pause "zenite_smoke"}}
 		}
-;		{if not tagged "no_power"	{spawn "proj_probe" "Foresight1" x}
-;		else{spawn "proj_probe" "Foresight1" x {tags add "no_power"}}}
 		{set "gun"}{call "proj_probe"}
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "tank_canon_fire_3" "Foresight1" x}
+;		{spawn "dust_shot_big" "basis"}
+;		{spawn "tank_canon_fire_3" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 	}
 )
@@ -954,12 +972,13 @@
 (define "custom_single_launcher"
 	{on "init_%weapon"
 		{add_view	"rok_tail"	"rok_tail_%weapon"	"%tail"}
+		{add_view	"startsmoke_link"	"rok_tail_%weapon"	"%foresight"}
 	}
 	{on fire "%weapon" overload
 		("low_speed_bullet")
 		{view start "rok_tail_%weapon"}
 		{delay 0.4 {view pause "rok_tail_%weapon"}}
-		{spawn "startsmoke" "%foresight" x}
+;		{spawn "startsmoke" "%foresight" x}
 		{delay 0.1 {spawn "%missile_carrier" "%foresight"   x}}
 		("cw_check_shooting" weap_id(%weapon))
 	}
@@ -967,13 +986,14 @@
 (define "atgm_single_launcher"
 	{on "init_%weapon"
 		{add_view	"rok_tail"	"rok_tail_%weapon"	"%tail"}
+		{add_view	"startsmoke_link"	"rok_tail_%weapon"	"%foresight"}
+		{add_view	"startsmoke_link"	"rok_tail_%weapon"	"%tail"}
 	}
 	{on fire "%weapon" overload
 		("low_speed_bullet")
 		{view start "rok_tail_%weapon"}
-		{spawn "startsmoke" "%foresight" x}
-		{spawn "startsmoke" "%tail" x}
-;		{spawn "proj_probe" "%foresight" x {tags add "%foresight"}}
+;		{spawn "startsmoke" "%foresight" x}
+;		{spawn "startsmoke" "%tail" x}
 		{set "%weapon"}{call "proj_probe"}
 		{delay 0.4 {view pause "rok_tail_%weapon"}}
 		("cw_check_shooting" weap_id(%weapon))
@@ -990,14 +1010,30 @@
 		{add_view 	"rok_tail"		"%tail05"			"%tail05"}
 		{add_view 	"rok_tail"		"%tail06"			"%tail06"}
 		{add_view 	"rok_tail"		"%tail07"			"%tail07"}
+		{add_view 	"startsmoke_link"		"%tail00"			"%tail00"}
+		{add_view 	"startsmoke_link"		"%tail01"			"%tail01"}
+		{add_view 	"startsmoke_link"		"%tail02"			"%tail02"}
+		{add_view 	"startsmoke_link"		"%tail03"			"%tail03"}
+		{add_view 	"startsmoke_link"		"%tail04"			"%tail04"}
+		{add_view 	"startsmoke_link"		"%tail05"			"%tail05"}
+		{add_view 	"startsmoke_link"		"%tail06"			"%tail06"}
+		{add_view 	"startsmoke_link"		"%tail07"			"%tail07"}
+		{add_view	"startsmoke_link"	"%tail00"	"%shooter00"}
+		{add_view	"startsmoke_link"	"%tail01"	"%shooter01"}
+		{add_view	"startsmoke_link"	"%tail02"	"%shooter02"}
+		{add_view	"startsmoke_link"	"%tail03"	"%shooter03"}
+		{add_view	"startsmoke_link"	"%tail04"	"%shooter04"}
+		{add_view	"startsmoke_link"	"%tail05"	"%shooter05"}
+		{add_view	"startsmoke_link"	"%tail06"	"%shooter06"}
+		{add_view	"startsmoke_link"	"%tail07"	"%shooter07"}
 	}
 	{on fire "%weapon" overload
 		(define "fire_barrel"
 			name "%0"
 				{delay 0.1 {spawn "%missile_carrier" "%shooter%0"   x}}
 				{view start "%tail%0"}
-				{spawn "startsmoke" "%shooter%0" x}
-				{spawn "startsmoke" "%tail%0" x}
+;				{spawn "startsmoke" "%shooter%0" x}
+;				{spawn "startsmoke" "%tail%0" x}
 				{delay 0.4
 					{view pause "%tail%0"}
 				}
@@ -1025,6 +1061,22 @@
 		{add_view 	"%tailfx"		"%tail05"			"%tail05"}
 		{add_view 	"%tailfx"		"%tail06"			"%tail06"}
 		{add_view 	"%tailfx"		"%tail07"			"%tail07"}
+		{add_view 	"startsmoke_vert_link"		"%tail00"			"%tail00"}
+		{add_view 	"startsmoke_vert_link"		"%tail01"			"%tail01"}
+		{add_view 	"startsmoke_vert_link"		"%tail02"			"%tail02"}
+		{add_view 	"startsmoke_vert_link"		"%tail03"			"%tail03"}
+		{add_view 	"startsmoke_vert_link"		"%tail04"			"%tail04"}
+		{add_view 	"startsmoke_vert_link"		"%tail05"			"%tail05"}
+		{add_view 	"startsmoke_vert_link"		"%tail06"			"%tail06"}
+		{add_view 	"startsmoke_vert_link"		"%tail07"			"%tail07"}
+		{add_view	"startsmoke_vert_link"	"%tail00"	"%shooter00"}
+		{add_view	"startsmoke_vert_link"	"%tail01"	"%shooter01"}
+		{add_view	"startsmoke_vert_link"	"%tail02"	"%shooter02"}
+		{add_view	"startsmoke_vert_link"	"%tail03"	"%shooter03"}
+		{add_view	"startsmoke_vert_link"	"%tail04"	"%shooter04"}
+		{add_view	"startsmoke_vert_link"	"%tail05"	"%shooter05"}
+		{add_view	"startsmoke_vert_link"	"%tail06"	"%shooter06"}
+		{add_view	"startsmoke_vert_link"	"%tail07"	"%shooter07"}
 	}
 	{on fire "%weapon" overload
 		{volumes "gun_recoil" enable blast}
@@ -1034,8 +1086,8 @@
 		(define "fire_barrel"
 			name "%0"
 				{view start "%tail%0"}
-				{spawn "startsmoke_vert" "%shooter%0" x}
-				{spawn "startsmoke" "%tail%0" x}
+;				{spawn "startsmoke_vert" "%shooter%0" x}
+;				{spawn "startsmoke" "%tail%0" x}
 				{bone show "missile_vis_%0"}
 				{delay 0.05
 					{bone show "missile_vis_a_%0"}
@@ -1072,6 +1124,22 @@
 		{add_view 	"%tailfx"		"%tail05"			"%tail05"}
 		{add_view 	"%tailfx"		"%tail06"			"%tail06"}
 		{add_view 	"%tailfx"		"%tail07"			"%tail07"}
+		{add_view 	"startsmoke_vert_link"		"%tail00"			"%tail00"}
+		{add_view 	"startsmoke_vert_link"		"%tail01"			"%tail01"}
+		{add_view 	"startsmoke_vert_link"		"%tail02"			"%tail02"}
+		{add_view 	"startsmoke_vert_link"		"%tail03"			"%tail03"}
+		{add_view 	"startsmoke_vert_link"		"%tail04"			"%tail04"}
+		{add_view 	"startsmoke_vert_link"		"%tail05"			"%tail05"}
+		{add_view 	"startsmoke_vert_link"		"%tail06"			"%tail06"}
+		{add_view 	"startsmoke_vert_link"		"%tail07"			"%tail07"}
+		{add_view	"startsmoke_vert_link"	"%tail00"	"%shooter00"}
+		{add_view	"startsmoke_vert_link"	"%tail01"	"%shooter01"}
+		{add_view	"startsmoke_vert_link"	"%tail02"	"%shooter02"}
+		{add_view	"startsmoke_vert_link"	"%tail03"	"%shooter03"}
+		{add_view	"startsmoke_vert_link"	"%tail04"	"%shooter04"}
+		{add_view	"startsmoke_vert_link"	"%tail05"	"%shooter05"}
+		{add_view	"startsmoke_vert_link"	"%tail06"	"%shooter06"}
+		{add_view	"startsmoke_vert_link"	"%tail07"	"%shooter07"}
 	}
 	{on fire "%weapon" overload
 		{volumes "gun_recoil" enable blast}
@@ -1080,11 +1148,10 @@
 
 		(define "fire_barrel"
 			name "%0"
-;				{spawn "proj_probe" "%foresight" x {tags add "%shooter%0"}}
 				{set "%weapon"}{call "proj_probe"}
 				{view start "%tail%0"}
-				{spawn "startsmoke_vert" "%shooter%0" x}
-				{spawn "startsmoke" "%tail%0" x}
+;				{spawn "startsmoke_vert" "%shooter%0" x}
+;				{spawn "startsmoke" "%tail%0" x}
 				{bone show "missile_vis_%0"}
 				{delay 0.05
 					{bone show "missile_vis_a_%0"}
@@ -1136,24 +1203,7 @@
 
 		(define "fire_barrel"
 			name "%0"
-;				{spawn "proj_probe" "%foresight" x {tags add "%shooter%0"}}
 				{set "%weapon"}{call "proj_probe"}
-;				{view start "%tail%0"}
-;				{spawn "startsmoke_vert" "%shooter%0" x}
-;				{spawn "startsmoke" "%tail%0" x}
-;				{bone show "missile_vis_%0"}
-;				{delay 0.05
-;					{bone show "missile_vis_a_%0"}
-;				}
-;				{delay 0.38
-;					{bone hide "missile_vis_%0"}
-;					{bone hide "missile_vis_a_%0"}
-;					{view pause "%tail%0"}
-;				}
-;				{delay 0.45
-;					{ani_play "fire_restore"}
-;				}
-				
 				{delay 0.2 
 					{bone show "missile_vis_%0"}
 					{delay 0.1
@@ -1198,16 +1248,31 @@
 		{add_view 	"rok_tail"		"%tail05"			"%tail05"}
 		{add_view 	"rok_tail"		"%tail06"			"%tail06"}
 		{add_view 	"rok_tail"		"%tail07"			"%tail07"}
+		{add_view 	"startsmoke_link"		"%tail00"			"%tail00"}
+		{add_view 	"startsmoke_link"		"%tail01"			"%tail01"}
+		{add_view 	"startsmoke_link"		"%tail02"			"%tail02"}
+		{add_view 	"startsmoke_link"		"%tail03"			"%tail03"}
+		{add_view 	"startsmoke_link"		"%tail04"			"%tail04"}
+		{add_view 	"startsmoke_link"		"%tail05"			"%tail05"}
+		{add_view 	"startsmoke_link"		"%tail06"			"%tail06"}
+		{add_view 	"startsmoke_link"		"%tail07"			"%tail07"}
+		{add_view	"startsmoke_link"	"%tail00"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail01"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail02"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail03"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail04"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail05"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail06"	"%foresight"}
+		{add_view	"startsmoke_link"	"%tail07"	"%foresight"}
 	}
 	{on fire "%weapon" overload
 		("low_speed_bullet")
-;		{spawn "proj_probe" "%foresight" x  {tags add "%foresight"}}
 		{set "%weapon"}{call "proj_probe"}
 		(define "fire_barrel"
 			name "%0"
 				{view start "%tail%0"}
-				{spawn "startsmoke" "%foresight" x}
-				{spawn "startsmoke" "%tail%0" x}
+;				{spawn "startsmoke" "%foresight" x}
+;				{spawn "startsmoke" "%tail%0" x}
 				{delay 0.4
 					{view pause "%tail%0"}
 				}
@@ -1234,6 +1299,22 @@
 		{add_view 	"rok_tail"		"%tail05"			"%tail05"}
 		{add_view 	"rok_tail"		"%tail06"			"%tail06"}
 		{add_view 	"rok_tail"		"%tail07"			"%tail07"}
+		{add_view 	"startsmoke_link"		"%tail00"			"%tail00"}
+		{add_view 	"startsmoke_link"		"%tail01"			"%tail01"}
+		{add_view 	"startsmoke_link"		"%tail02"			"%tail02"}
+		{add_view 	"startsmoke_link"		"%tail03"			"%tail03"}
+		{add_view 	"startsmoke_link"		"%tail04"			"%tail04"}
+		{add_view 	"startsmoke_link"		"%tail05"			"%tail05"}
+		{add_view 	"startsmoke_link"		"%tail06"			"%tail06"}
+		{add_view 	"startsmoke_link"		"%tail07"			"%tail07"}
+		{add_view	"startsmoke_link"	"%tail00"	"%shooter00"}
+		{add_view	"startsmoke_link"	"%tail01"	"%shooter01"}
+		{add_view	"startsmoke_link"	"%tail02"	"%shooter02"}
+		{add_view	"startsmoke_link"	"%tail03"	"%shooter03"}
+		{add_view	"startsmoke_link"	"%tail04"	"%shooter04"}
+		{add_view	"startsmoke_link"	"%tail05"	"%shooter05"}
+		{add_view	"startsmoke_link"	"%tail06"	"%shooter06"}
+		{add_view	"startsmoke_link"	"%tail07"	"%shooter07"}
 	}
 	{on fire "%weapon" overload
 		("low_speed_bullet")
@@ -1241,9 +1322,8 @@
 		(define "fire_barrel"
 			name "%0"
 				{view start "%tail%0"}
-				{spawn "startsmoke" "%shooter%0" x}
-				{spawn "startsmoke" "%tail%0" x}
-;				{spawn "proj_probe" "%foresight" x  {tags add "%shooter%0"}}
+;				{spawn "startsmoke" "%shooter%0" x}
+;				{spawn "startsmoke" "%tail%0" x}
 				{set "%weapon"}{call "proj_probe"}
 				{delay 0.4
 					{view pause "%tail%0"}

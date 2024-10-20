@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_medium")
+	("guidance_common" 
+		missile(rvv-sd) 
+		stuff(rvv-sd_impactor) 
+		country(rus) type(active_asm) 
+		calibre(200) length(3600)
+		speed(fast) guidance(propsam))
+	("antimissile_sensors")
+	("maneuvrability_SAMs_impulse" deg_per_s(45))
+	{targetSelector "missile"}
+}

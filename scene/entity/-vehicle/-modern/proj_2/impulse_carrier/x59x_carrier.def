@@ -1,0 +1,39 @@
+{actor
+	(include "/properties/projectile_impulse.ext")
+	{props "x59m_test"}
+	{extender "stuff"
+		{item "x59m_impactor"}
+	}	
+	("impulse_engine" missile("x59m_impactor_link")
+	fore_offset(57) cont_offset(-150)
+	calibre(380) length(5700)
+	)
+	
+	("impulse_cruise_missile" bone(missile_point) )
+	("guidance_aj" country(rus) typeaj(antiship_aj) guidanceaj(long))
+	("impulse_allow_manual_control")
+	("impulse_missile_armor" thickness(3) durability(30))
+	{props "ecm_vulnerable_rus"}
+
+
+
+	
+	{sensor
+		{Visor "main"
+			{vision "LRmissile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "add"
+			{vision "tank_gunner_optic_2g"}
+			{bone "missle_foresight"}
+		}
+		{Visor "antiship_main"
+			{vision "antiship_missile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "antiship_close"
+			{vision "antiship_missile_close"}
+			{bone "missle_foresight"}
+		}
+	}
+}

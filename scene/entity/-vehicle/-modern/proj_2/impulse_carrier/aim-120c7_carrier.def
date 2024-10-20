@@ -1,0 +1,14 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("proximity_extended")
+	("guidance_common" 
+		missile(aim-120c7) 
+		stuff(aim-120c7_impactor) 
+		country(usa) type(active_asm) 
+		calibre(178) length(3660)
+		speed(fast) guidance(propsam))
+	("maneuvrability_SAMs_impulse" deg_per_s(45))
+	("antimissile_sensors")
+	{props "radioproximity"}	;срабатывает только на металлические объекты
+	{targetSelector "missile"}
+}

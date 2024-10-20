@@ -1,0 +1,98 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_plane" "mig29"}	
+	{Extension "mig-29s_aa.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"} {group "2digit"}}
+	{armor
+		("air_armor" body(3) wing(3) avionics(3) engine(3) hydrosystem(3) electronics(3) fuel(3))
+	}
+	{extender "inventory"
+		{box
+			{clear}
+			{item "GSH-30_ammo ap ammo" 120}
+			{item "ammo r_27er" 2}
+			{item "ammo r-73" 4}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "GSH-30-1" filling "GSH-30_ammo ap ammo" 30}	;встроенная пушка
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "ptur1"
+			{weapon "r27erx2" filled}
+			{foresight "foresight2"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 2}
+			{basic}
+		}
+		{place "ptur"
+			{weapon "r73x4" filled}
+			{foresight "foresight3"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 4}
+			{basic}
+		}
+		
+	}
+	{mass 14981}
+	("Chassis_parameters" 
+		Speed(83) TurnRadius(29) 
+		Fuel(4570) Fuel_remain(4044) Fuel_rate(3.57) 
+		Acc_hor(9.06) Maneuvrability_hor(7.86)
+		Acc_ver(7.43) Maneuvrability_ver(5.93)
+	)
+	{props "cwfs_fuel_4000"}
+
+       	("part" args "part1")
+       	("part" args "part2")
+       	("part" args "part3")
+       	("part" args "part4")
+       	("part" args "part5")
+       	("part" args "part6")
+	{Sensor
+		{Visor "radarX"
+			{vision "aircraft_radarX_100km"}	;for fighter-type target
+			{bone "Visor_radarX"}
+		}
+		{Visor "ols"
+			{vision "aircraft_optic_IR_2g"}
+			{bone "Visor_OLS"}
+		}
+	}
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+	}
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}
+	(mod "mp"
+		{Chassis "airborne"
+				{Altitude 25}
+			}
+		{ChassisManager
+				{Current "airborne"}
+		}
+	)
+	("two_headlights")
+	("cw_headlightt")
+        {bone "foresight_flare_1"
+		{speed 1}
+       }
+        {bone "foresight_flare_1a"
+		{speed 1}
+        }
+
+}

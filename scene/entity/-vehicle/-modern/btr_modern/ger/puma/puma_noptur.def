@@ -37,14 +37,14 @@
 			{durability {blast {koef 1} {value 30} } {pierce {koef 999} } }
             {threshold {blast  {koef 1} {value 10} }  }
 			{volumes "apploque_front*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_side"
 			{thickness 20 20 3 20}		
 			{durability {blast {koef 1} {value 30} } {pierce {koef 999} } }
             {threshold {blast  {koef 1} {value 10} }  }
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 		}
 	}

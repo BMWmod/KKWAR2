@@ -22,14 +22,14 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_front*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_side"
 			{thickness 4}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 

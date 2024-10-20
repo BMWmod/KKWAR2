@@ -1,0 +1,12 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "horizon_align"}
+	("guidance_common" 
+		missile(tow2b) 
+		stuff(tow2b_impactor) 
+		country(usa) type(other) 
+		calibre(152) length(1170)
+		speed(normal) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(45))
+	("antiroof")
+}

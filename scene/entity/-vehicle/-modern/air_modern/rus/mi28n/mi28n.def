@@ -43,28 +43,28 @@
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "border1" "border2" "border3"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "light_armor"
 			{thickness 2}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "border4" "armor2"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "glass_side"
 			{thickness 5}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "border5" "border6" "border7" "border8"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "main_armor"
 			{thickness 30 30 1 1}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "armor" "armor3"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 	{extender "inventory"
@@ -73,6 +73,8 @@
 			{weight 6000}
 			 {item "ammo bullet30_RUS_aph ap" 95}
 			 {item "ammo bullet30_RUS fg" 125}
+			{item "9m120 cm ammo" 16}
+			{item "bullet80_DM cm ammo" 40}
 		}
 	}
 	{Weaponry

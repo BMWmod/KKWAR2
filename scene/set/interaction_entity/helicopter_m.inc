@@ -76,13 +76,6 @@
 		;added until good air mechanics will exist
 		;{tags add "cw_autotakeoff_activated"}
 		{tags remove "time_to_escape_after_hit"}
-		{call "check_alt"}
-	}
-	{on "check_alt"
-		{if not altitude 30 {tags add "low_altitude"}
-			else {tags remove "low_altitude"}
-		}
-		{delay 1 {call "check_alt"}}
 	}
 	{on "link_flare_fx"
 		{link_sound "flare"	"weapon/shot/reactive/Flare"}
@@ -289,6 +282,7 @@
 	}
 	{on engine on overload
 		{call "engine_on"}
+		{call "check_altitude"}
 		{delay 1
 			{view start "engine_steam1"}
 			{view start "engine_steam2"}
@@ -300,22 +294,41 @@
 		{delay 0.3 "start_check_altitude" {call "check_altitude"}}
 	}
 	{on "check_altitude"
-	       {if flag "engine_started"
+		{if not altitude 30 {tags add "low_altitude"}
+			else {tags remove "low_altitude"}
+		}
+		{if has_order "withdraw" 
+			{kill_delay "takeoff_again"}
+			{delay 15 "takeoff_again" {tags remove "cw_autotakeoff_activated"}}
+		}
+		{if flag "engine_started"
 			{if altitude 10
 			else altitude -3
 				{spawn "heli_wind_dummy" {impulse up -35 com}}
 				{delay 0.2 {spawn "heli_wind_dummy" {impulse up -35 com}}}
 				{delay 0.4 {spawn "heli_wind_dummy" {impulse up -35 com}}}
 			else 
+				{impulse up 0.5 forward 5}
 				{call "fall"}
 				{call "collide"}
+				{call "mp_destroy"}
+				{delay 0.05 {constrain_velocity 40}}
 				{delay 0.1 {constrain_velocity 40}}
+				{delay 0.2 {constrain_velocity 40}}
 				{delay 0.3 {constrain_velocity 40}}
-			}
-			{delay 0.6 "check_altitude"
-				{call "check_altitude"}
+				{delay 0.4 {constrain_velocity 40}}
 			}
 	      }
+			{kill_delay "check_altitude"}
+			{if altitude 15
+				{delay 1.5 "check_altitude"
+					{call "check_altitude"}
+				}
+			else
+				{delay 0.5 "check_altitude"
+					{call "check_altitude"}
+				}
+			}
 		  {if tagged "cwhs_speed_changed"
 			  {if tagged "cwhs_accelerate_me"
 				  {if not tagged "cwhs_nose_down"
@@ -451,28 +464,28 @@
 
 
 
-{on "secondary_damage"
-	{if stuff "AA_missile" 
-	else stuff "fg" 
-		{fragments c4 0.5 r0 1.4 r1 1.5 position}
-	else stuff  "hmgun"
-		{fragments c4 0.5 r0 0.1 r1 0.2 position}
-	else stuff "rok"
-		{blastwave c4 3 r0 0.8 r1 0.9 position}
-		{fragments c4 0.5 r0 1.0 r1 1.1 position}
-	else stuff "ptrk"
-		{blastwave c4 3 r0 0.8 r1 0.9 position}
-		{fragments c4 0.5 r0 1.0 r1 1.1 position}
-	else stuff "cm"
-		{blastwave c4 3 r0 0.7 r1 0.8 position}
-		{fragments c4 0.5 r0 0.9 r1 1.0 position}
-	else stuff "rocketlauncher"
-		{blastwave c4 3 r0 0.7 r1 0.8 position}
-		{fragments c4 0.5 r0 0.9 r1 1.0 position}
-	else stuff  "autocannon_small"
-		{fragments c4 0.5 r0 0.3 r1 0.4 position}
-	}
-}
+;{on "secondary_damage"
+;	{if stuff "AA_missile" 
+;	else stuff "fg" 
+;		{fragments c4 0.5 r0 1.4 r1 1.5 position}
+;	else stuff  "hmgun"
+;		{fragments c4 0.5 r0 0.1 r1 0.2 position}
+;	else stuff "rok"
+;		{blastwave c4 3 r0 0.8 r1 0.9 position}
+;		{fragments c4 0.5 r0 1.0 r1 1.1 position}
+;	else stuff "ptrk"
+;		{blastwave c4 3 r0 0.8 r1 0.9 position}
+;		{fragments c4 0.5 r0 1.0 r1 1.1 position}
+;	else stuff "cm"
+;		{blastwave c4 3 r0 0.7 r1 0.8 position}
+;		{fragments c4 0.5 r0 0.9 r1 1.0 position}
+;	else stuff "rocketlauncher"
+;		{blastwave c4 3 r0 0.7 r1 0.8 position}
+;		{fragments c4 0.5 r0 0.9 r1 1.0 position}
+;	else stuff  "autocannon_small"
+;		{fragments c4 0.5 r0 0.3 r1 0.4 position}
+;	}
+;}
 
 {on crew out
 	{if not tagged "destroyed"
@@ -574,15 +587,15 @@
 		else stuff "ic autocannon_small"
 			{fire radius 0.5 time 0.3 heating 60}
 		}
-		{if component "body" {call "secondary_damage"}
-		else component "engine" {call "secondary_damage"}
-		else component "engine1" {call "secondary_damage"}
-		else component "engine2" {call "secondary_damage"}
-		else component "tail_shaft" {call "secondary_damage"}
-		else component "main_reductor" {call "secondary_damage"}
-		else component "glass" {call "secondary_damage"}
-		else component "parts" {call "secondary_damage"}
-		}
+;		{if component "body" {call "secondary_damage"}
+;		else component "engine" {call "secondary_damage"}
+;		else component "engine1" {call "secondary_damage"}
+;		else component "engine2" {call "secondary_damage"}
+;		else component "tail_shaft" {call "secondary_damage"}
+;		else component "main_reductor" {call "secondary_damage"}
+;		else component "glass" {call "secondary_damage"}
+;		else component "parts" {call "secondary_damage"}
+;		}
 ;=====баки=====
 	{if component "fuel_tank_internal_a"
 		{burn fx "smoke_aero_big" fake}
@@ -1134,102 +1147,129 @@
 
 		(define "frag_to_blast" 
 		
-		(define "check_damage_frag"
-			else component "%component" 
-			 {if rand %p or not stuff "ammo"
-			  {spawn "metal_hit_bul"}
-			  {blastwave c4 %e r0 0.1 r1 0.2 position} 
-			 }
-		)
+			(define "check_damage_frag"
+				else component "%component" 
+				 {if rand %p or not stuff "ammo"
+				  {if rand %splitter {spawn "metal_hit_bul"}}
+				  {blastwave c4 (+ %e 0.2) r0 0.1 r1 0.2 position} 
+				 }
+			)
 		min_energy %e 
 		{if component "wing"  {blastwave c4 %e r0 0.01 r1 0.02 position}{spawn "metal_hit_bul"}
-		("check_damage_frag" component(wheel_back)  p(0.2))
-		("check_damage_frag" component(retract_wheelR)  p(0.2))
-		("check_damage_frag" component(retract_wheelL)  p(0.2))
-		("check_damage_frag" component(engine)  p(1))
-		("check_damage_frag" component(engine1)  p(1))
-		("check_damage_frag" component(engine2)  p(1))
-		("check_damage_frag" component(propeller)  p(0.1))
-		("check_damage_frag" component(tail_rotor)  p(0.1))
+		("check_damage_frag" component(wheel_back)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(retract_wheelR)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(retract_wheelL)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(engine)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engine1)  p(1) splitter(%splitter))
+		("check_damage_frag" component(engine2)  p(1) splitter(%splitter))
+		("check_damage_frag" component(propeller)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(tail_rotor)  p(0.1) splitter(%splitter))
 		
-		("check_damage_frag" component(main_reductor)  p(0.5))
-		("check_damage_frag" component(tail_shaft)  p(0.2))
-		("check_damage_frag" component(pilot_panel)  p(0.25))
-		("check_damage_frag" component(hydrosystem)  p(0.2))
-		("check_damage_frag" component(APU)  p(0.75))
-		("check_damage_frag" component(radar)  p(0.25))
-		("check_damage_frag" component(OLS)  p(0.15))
-		("check_damage_frag" component(PrPNK)  p(0.15))
-		("check_damage_frag" component(electronics)  p(0.2))
+		("check_damage_frag" component(main_reductor)  p(0.5) splitter(%splitter))
+		("check_damage_frag" component(tail_shaft)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(pilot_panel)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(hydrosystem)  p(0.2) splitter(%splitter))
+		("check_damage_frag" component(APU)  p(0.75) splitter(%splitter))
+		("check_damage_frag" component(radar)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(OLS)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(PrPNK)  p(0.15) splitter(%splitter))
+		("check_damage_frag" component(electronics)  p(0.2) splitter(%splitter))
 		
-		("check_damage_frag" component(gun)  p(0.1))
-		("check_damage_frag" component(mgun)  p(0.1))
-		("check_damage_frag" component(mgun1)  p(0.1))
-		("check_damage_frag" component(mgun2)  p(0.1))
-		("check_damage_frag" component(ptur)  p(0.3))
-		("check_damage_frag" component(ptur1)  p(0.3))
-		("check_damage_frag" component(ptur2)  p(0.3))
-		("check_damage_frag" component(ptur3)  p(0.3))
-		("check_damage_frag" component(ptur4)  p(0.3))
-		("check_damage_frag" component(nar)  p(0.3))
-		("check_damage_frag" component(nar1)  p(0.3))
-		("check_damage_frag" component(nar2)  p(0.3))
-		("check_damage_frag" component(nar3)  p(0.3))
-		("check_damage_frag" component(nar4)  p(0.3))
-		("check_damage_frag" component(nar5)  p(0.3))
-		("check_damage_frag" component(nar6)  p(0.3))
+		("check_damage_frag" component(gun)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(mgun)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(mgun1)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(mgun2)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(ptur)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur1)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur2)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur3)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(ptur4)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar1)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar2)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar3)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar4)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar5)  p(0.3) splitter(%splitter))
+		("check_damage_frag" component(nar6)  p(0.3) splitter(%splitter))
 		
-		("check_damage_frag" component(flares1)  p(0.1))
-		("check_damage_frag" component(flares2)  p(0.1))
-		("check_damage_frag" component(chaff1)  p(0.1))
-		("check_damage_frag" component(chaff2)  p(0.1))
-		("check_damage_frag" component(ir_active_def)  p(0.1))
-		("check_damage_frag" component(ir_active_def_2gen)  p(0.1))
+		("check_damage_frag" component(flares1)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(flares2)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(chaff1)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(chaff2)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(ir_active_def)  p(0.1) splitter(%splitter))
+		("check_damage_frag" component(ir_active_def_2gen)  p(0.1) splitter(%splitter))
 		
-		("check_damage_frag" component(fuel_tank_internal_a)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_b)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_c)  p(1))
-		("check_damage_frag" component(fuel_tank_internal_d)  p(1))
-		("check_damage_frag" component(fuel_tank_external_a)  p(1))
-		("check_damage_frag" component(fuel_tank_external_b)  p(1))
-		("check_damage_frag" component(fuel_tank_external_c)  p(1))
-		("check_damage_frag" component(fuel_tank_external_d)  p(1))
+		("check_damage_frag" component(fuel_tank_internal_a)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_b)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_c)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_internal_d)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_a)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_b)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_c)  p(1) splitter(%splitter))
+		("check_damage_frag" component(fuel_tank_external_d)  p(1) splitter(%splitter))
 
-		("check_damage_frag" component(ammo_storage_autocannon)  p(0.25))
-		("check_damage_frag" component(ammo_storage_mgun)  p(0.1))
+		("check_damage_frag" component(ammo_storage_autocannon)  p(0.25) splitter(%splitter))
+		("check_damage_frag" component(ammo_storage_mgun)  p(0.1) splitter(%splitter))
 		 else {blastwave c4 %e r0 0.01 r1 0.02 position}{spawn "metal_hit_bul"}
 		}
 		)
-		{if ("frag_to_blast" e(55))
-		else ("frag_to_blast" e(50))
-		else ("frag_to_blast" e(45))
-		else ("frag_to_blast" e(40))
-		else ("frag_to_blast" e(35))
-		else ("frag_to_blast" e(30))
-		else ("frag_to_blast" e(28))
-		else ("frag_to_blast" e(25))
-		else ("frag_to_blast" e(22))
-		else ("frag_to_blast" e(20))
-		else ("frag_to_blast" e(18))
-		else ("frag_to_blast" e(16))
-		else ("frag_to_blast" e(14))
-		else ("frag_to_blast" e(12))
-		else ("frag_to_blast" e(10))
-		else ("frag_to_blast" e(8))
-		else ("frag_to_blast" e(6.5))
-		else ("frag_to_blast" e(5))
-		else ("frag_to_blast" e(4))
-		else ("frag_to_blast" e(3))
-		else ("frag_to_blast" e(2.5))
-		else ("frag_to_blast" e(2))
-		else ("frag_to_blast" e(1.5))
-		else ("frag_to_blast" e(1))
-		else ("frag_to_blast" e(0.7))
-		else ("frag_to_blast" e(0.5))
+		{if ("frag_to_blast" e(54.9) splitter(1))
+		else ("frag_to_blast" e(49.9) splitter(1))
+		else ("frag_to_blast" e(44.9) splitter(1))
+		else ("frag_to_blast" e(39.9) splitter(1))
+		else ("frag_to_blast" e(34.9) splitter(1))
+		else ("frag_to_blast" e(29.9) splitter(1))
+		else ("frag_to_blast" e(27.9) splitter(1))
+		else ("frag_to_blast" e(24.9) splitter(1))
+		else ("frag_to_blast" e(21.9) splitter(1))
+		else ("frag_to_blast" e(19.9) splitter(1))
+		else ("frag_to_blast" e(17.9) splitter(1))
+		else ("frag_to_blast" e(15.9) splitter(1))
+		else ("frag_to_blast" e(13.4) splitter(1))
+		else ("frag_to_blast" e(10.9) splitter(1))
+		else ("frag_to_blast" e(9.9) splitter(1))
+		else ("frag_to_blast" e(7.9) splitter(1))
+		else ("frag_to_blast" e(6.4) splitter(1))
+		else ("frag_to_blast" e(4.9) splitter(1))
+		else ("frag_to_blast" e(3.9) splitter(0.7))
+		else ("frag_to_blast" e(2.9) splitter(0.4))
+		else ("frag_to_blast" e(2.4) splitter(0.2))
+		else ("frag_to_blast" e(1.9) splitter(0.2))
+		else ("frag_to_blast" e(1.4) splitter(0.2))
+		else ("frag_to_blast" e(0.9) splitter(0.2))
+		else ("frag_to_blast" e(0.6) splitter(0.2))
+		else ("frag_to_blast" e(0.4) splitter(0))
 		}
 		
 	}
 {on break overload
+	(define "critical_system"
+;		{if not tagged "crit_system_destroyed"
+;			{tags add "crit_system_destroyed"}
+;		else
+;			{components "body" break}
+;			{call "mp_destroy"}
+;		}
+	)
+	(define "engine_break"
+	  else component "%engine"
+		{tags add "%engine_damaged"}
+		{spawn "tank_die_particle"}
+		{burn fx "smoke_black" fake}
+		{if not tagged "destroyed"
+			{damage_report "%engine" "%engine_damaged"}
+		}
+		("critical_system")
+		{if rand 0.2
+			{call "_burn"}
+		}
+		{call "update_power"}
+		{view start "%engine_smoke"}
+		{delay 20
+			{view pause "%engine_smoke"}
+		}
+	)
+
 ;======Корпус=====
 	{if component "body"
 		{tags add "body_brake"}
@@ -1255,69 +1295,9 @@
 ;======Двигатели=====
 ;У однодвигательного вертолета ЕСТЬ engine, НЕТ engine1, engine2
 ;У двухдвигательного вертолета НЕТ engine, ЕСТЬ engine1 (левый), engine2 (правый).
-	else component "engine"
-		{tags add "engine_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			{damage_report "engine" "engine_damaged"}
-		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{call "update_power"}
-	else component "engine1"
-		{tags add "engine1_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "engine1_damage"}
-			{damage_report "engine1" "engine1_damaged"}
-		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "engine1_smoke"}
-		{delay 20
-			{view pause "engine1_smoke"}
-		}
-		{call "update_power"}
-	else component "engine2"
-		{tags add "engine2_damaged"}
-		{spawn "tank_die_particle"}
-		{burn fx "smoke_black" fake}
-		{if not tagged "destroyed"
-			("stop_damage_sound")
-			{play_sound "engine2_damage"}
-			{damage_report "engine2" "engine2_damaged"}
-		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
-		{if rand 0.2
-			{call "_burn"}
-		}
-		{view start "engine2_smoke"}
-		{delay 20
-			{view pause "engine2_smoke"}
-		}
-		{call "update_power"}
+	("engine_break" engine(engine))
+	("engine_break" engine(engine1))
+	("engine_break" engine(engine2))
 	else component "main_reductor" 
 		{tags add "main_reductor_damaged" }
 		{spawn "tank_die_particle"}
@@ -1336,12 +1316,7 @@
 				{damage_report "main_reductor" "main_reductor_damaged"}
 		     }
 		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 		{if rand 0.4
 			{call "_burn"}
 		}
@@ -1355,12 +1330,7 @@
 			{link_sound "heli_damage_rotor"		"vehicle/helicopter/crash/heli_damage_rotor"}
 			{play_sound "heli_damage_rotor"}
 		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 	else component "tail_shaft" 
 		{tags add "tail_shaft_damaged"}
 		{spawn "tank_die_particle"}
@@ -1369,12 +1339,7 @@
 			{play_sound "tail_shaft_damage"}
 			{damage_report "tail_shaft" "tail_shaft_damaged"}
 		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 	else component "tail_rotor" 
 		{tags add "tail_rotor_damaged"}
 		{spawn "tank_die_particle"}
@@ -1384,12 +1349,7 @@
 			{play_sound "heli_damage_tail"}
 
 		}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 ;======Оборудование=====
 	else component "pilot_panel"
 		{tags add "driver_panel_damaged"}
@@ -1397,12 +1357,7 @@
 			{damage_report "driver_panel" "driver_panel_damaged"}
 		}
 		{spawn "tank_die_particle"}
-		{if not tagged "crit_system_destroyed"
-			;{tags add "crit_system_destroyed"}
-		else
-			{components "body" break}
-			{call "mp_destroy"}
-		}
+		("critical_system")
 	else component "hydrosystem" 
 		{tags add "hydrosystem_damaged"}
 		{if not tagged "destroyed"

@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_common" 
+		missile(hj73c) 
+		stuff(hj73c_impactor) 
+		country(rus) type(other) 
+		calibre(125) length(860)
+		speed(slow) guidance(3point))
+	("maneuvrability_impulse" deg_per_s(75))
+}

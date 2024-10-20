@@ -1,0 +1,234 @@
+;Exported by Pheonix
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "Helicopter_M" "steel" "vision_lev_heli" "mi8amtsh" "heli_with_ropes" "laser_spo" "with_vitebsk" "IR_spo"}
+	{Extension "mi8amtsh1_mgnar.mdl"}
+	("missile_aimpoint_air")
+	{extender "enumerator" {digit_folder "vks"}}
+	{targetClass 	"Helicopter"}
+
+	{mass 11100}
+;Бронирована только кабина, локальными вставками, больше, чем Ми-17. Бронированы двиги и редуктор, перегородка в десантный, место на рампе
+;Стекла не бронированы. Броня, говорят, частично защищает от 12.7
+{volume "body1"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body2"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body3"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body4"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body5"	{tags "body"}	{component "body"} {thickness 3}}
+
+{volume "border1"	{thickness 8}}	;Накладные понели в кабине защищают с боков.
+{volume "border2"	{thickness 8}}
+{volume "border3"	{thickness 8}}	
+{volume "border4"	{thickness 8}}
+{volume "border5"	{thickness 8}}
+{volume "border6"	{thickness 8}}
+{volume "border7"	{thickness 8}}
+{volume "border8"	{thickness 8}}
+{volume "border9"	{thickness 8}}
+
+("air_armor" main_rotor(12) tail_rotor(7) cabin(3) engine(8) mechanics(6) electronics(5) fuel(5))
+
+	{extender "inventory"
+		{box	
+			{Size 8 12}
+			{weight 6000}
+			{item "ammo PKM_ammo" 4000}
+			{item "bullet80_DM cm ammo" 40}
+		}
+	}
+
+	{Weaponry
+	    {place "mgun3"
+			{weapon "pkt" filled}
+			{type "mgun_aa"}
+			{foresight "foresight4"}
+			{gunner "gunner3"}
+			{charger "gunner3"}                 
+			{LinkBone "mgunB_link"}
+			{LinkAnimation "off"}	
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+        {place "nar1"
+			{weapon "80mm_b820a_x4" filling "bullet80_DM cm ammo" 80}
+			{foresight "foresight6"}
+			{charger "driver"}
+			{gunner "driver"}
+			{shooter "shooter_0"}
+			{barrels 80}
+			{basic}
+		}
+;================Пулеметы==
+		{place "mgun1"
+			{weapon "pkp" filled}
+			{type "mgun_aa"}
+			{foresight "foresight2"}
+			{gunner "gunner1"}
+			{charger "gunner1"}                 
+			{LinkBone "mgunL_link"}
+			{LinkAnimation "off"}	
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		{place "mgun2"
+			{weapon "pkp" filled}
+			{type "mgun_aa"}
+			{foresight "foresight3"}
+			{gunner "gunner2"}
+			{charger "gunner2"}                 
+			{LinkBone "mgunR_link"}
+			{LinkAnimation "off"}	
+			{basic}
+			("CW_stab_no_stabiliser")
+		}
+		
+
+;================Оба крыла   ==
+		
+		{place "soep1"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk1"}
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "soep2"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk2"}
+			{charger "driver"}
+			{gunner "driver"}
+		}
+		{place "soep3"
+			{weapon "ir_soep" filled}
+			{foresight "Vitebsk3"}
+			{charger "driver"}
+			{gunner "driver"}
+		}	
+
+	}
+("CW_heli_chassis" 
+	Maxspeed(50) turnRadius(14) Acc(5.13) Climb(6.19)
+	Fuel(1450) Fuel_rate(2.76) Fuel_remain(1088))
+	{props "cwfs_fuel_1000"}
+
+;==========================
+       	("part" args "propeller")
+	("part" args "propeller_tail")
+       	("part" args "wheelfront")
+       	("part" args "wheelleft")
+       	("part" args "wheelright")
+       	("part" args "b8_v20_a_b002")
+       	("part" args "b8_v20_a_b003")
+       	("part" args "b8_v20_a_b004")
+       	("part" args "b8_v20_a_b005")
+       	("part" args "wingl")
+       	("part" args "wingr")
+		
+	{Sensor
+		{Visor "main"
+			{bone "visor1"}
+		}
+		{visor "shtora"				
+			{vision "shtora_visor"}
+			{bone "shtora_visor"}
+		}
+	}
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_driver_car"} {base "openL"}}
+			{reverse 	{end	"emit_body"} {base "openL" -1}}
+		}
+		{anm "commander"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_driver_car"} {base "openR"}}
+			{reverse 	{end	"emit_body"} {base "openL" -1}}
+		}
+		{anm "backL"
+			{forward	{begin	"board_dodge_bodyback"} {end "pose_maxim_gunlaeyr"} {base "openL"}}
+			{reverse 	{end	"emit_body"} {base "openL" -1}}
+		}
+		{anm "backR"
+			{forward	{begin	"board_dodge_bodyback"} {end "pose_maxim_gunlaeyr"} {base "openR"}}
+			{reverse 	{end	"emit_body"} {base "openR" -1}}
+		}
+		{anm "left"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_passenger"} {base "openL"}}
+			{reverse 	{end	"emit_body"} {base "openL" -1}}
+		}
+		{anm "right"
+			{forward	{begin	"board_dodge_bodyback"} {end "seat_passenger"} {base "openR"}}
+			{reverse 	{end	"emit_body"} {base "openR" -1}}
+		}
+		{anm "down"
+			{forward {speed 3} {loop "climb_down_rope" 1} {fix_orientation}}
+		}
+
+		{door "ropel_node5"}
+		{node "ropel_point1a"}
+		{node "emit_ropel"}
+		{door "roper_node5"}
+		{node "roper_point1a"}
+		{node "emit_roper"}
+
+
+		{link "ropel_point1a" "ropel_node5"	{anm "down"}}
+		{link "emit_ropel"	"ropel_point1a"}
+		{link "roper_point1a" "roper_node5"	{anm "down"}}
+		{link "emit_roper"	"roper_point1a"}
+
+		{link "emit1"	"commander" {anm "driver"}}	
+		{link "emit2"	"driver" {anm "commander"}}	
+
+	}
+
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(commander) bone(commander) door(emit2) animation(commander))
+(define "gunner"
+	{placer
+		{place "%place"
+			{group "passengers"}
+			{linkbone "%bone"}
+			{turnoff {shadow}}
+		}
+	}
+	{boarder
+		{door "%door1"}
+		{door "%door2"}
+		{link "%door1" "%place" {anm "%anm1"} {forward putoff} {reverse puton}}
+		{link "%door2" "%place" {anm "%anm2"} {forward putoff} {reverse puton}}
+	}
+)
+
+	("gunner" place(gunner1)		door1(emit1) door2(emit2) bone(gunner1) anm1(driver) anm2(commander))
+	("gunner" place(gunner2)		door1(emit1) door2(emit2) bone(gunner2) anm1(driver) anm2(commander))
+	("gunner" place(gunner3)		door1(emit1) door2(emit2) bone(gunner3) anm1(backL) anm2(backR))
+(define "passenger"
+	{placer
+		{place "%place"
+			{group "passengers"}
+			{linkbone "%bone"}
+			{turnoff {sensor} {shadow}}
+		}
+	}
+	{boarder
+		{link "emit_ropel"	"%place" {anm "left"}}	
+		{link "emit_roper"	"%place" {anm "right"}}	
+	}
+)
+
+	("passenger" place(seat1) bone(seat01) animation(passanger))
+	("passenger" place(seat2) bone(seat02) animation(passanger))
+	("passenger" place(seat3) bone(seat03) animation(passanger))
+	("passenger" place(seat4) bone(seat04) animation(passanger))
+	("passenger" place(seat5) bone(seat05) animation(passanger))
+	("passenger" place(seat6) bone(seat06) animation(passanger))
+	("passenger" place(seat7) bone(seat07) animation(passanger))
+	("passenger" place(seat8) bone(seat08) animation(passanger))
+	("passenger" place(seat9) bone(seat09) animation(passanger))
+	("passenger" place(seat10) bone(seat10) animation(passanger))
+	("passenger" place(seat11) bone(seat11) animation(passanger))
+	("passenger" place(seat12) bone(seat12) animation(passanger))
+
+}

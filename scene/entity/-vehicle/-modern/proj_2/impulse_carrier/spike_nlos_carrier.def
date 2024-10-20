@@ -1,0 +1,24 @@
+﻿{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_arc"
+		missile(spike_nlos) 
+		stuff(spike_nlos_impactor) 
+		country(usa) type(other) 
+		calibre(500) length(1670)
+		speed(slow) guidance(prop)
+		weapon(missilets_arc_320)
+	)
+	;такой большой калибр из-за большого размаха крыльев.
+	("maneuvrability_impulse" deg_per_s(15))
+	{sensor
+		{Visor "add"
+			{vision "tank_gunner_optic_IR_3g"}	;https://www.youtube.com/watch?v=XdDOHgcLGRI
+												;танк был замечен с 6 км.
+			{bone "missle_foresight"}
+		}
+	}
+	("cwps_top_attack")
+	("allow_manual_control")
+	("targetable_missile")
+}

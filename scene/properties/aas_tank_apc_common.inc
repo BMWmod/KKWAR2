@@ -347,7 +347,7 @@
             {durability{blast {koef 1} }}
             {threshold{blast {koef 1} }}
             {volumes "%volumes*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 
 ;			{damage_passer
 ;				{chance 1
@@ -367,20 +367,20 @@
             {threshold
                 {blast {value %thr_b} } {pierce {value %thr_p}  }
             }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
             {volumes "%volumes*"}
         }
 )
 (define "crew_places"
         {setting "crew_places"
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
             {volumes "driver_place" "driver1_place" "driver2_place" "driver3_place"
 			"gunner_place" "gunner1_place" "gunner2_place" "gunner3_place" "gunner4_place"
 			"charger_place" "charger1_place" "charger2_place" "charger3_place" "commander_place" "commander1_place" "commander2_place" "commander3_place"
 			"seat*"
 			}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
         }
 )
@@ -389,7 +389,7 @@
             {thickness 1}
             {durability{blast {koef 1} }}
             {threshold{blast {koef 1} }}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
             {volumes "lamp*"}
         }
 )
@@ -431,7 +431,7 @@
         {setting "engine"
             {thickness %t}
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
     }
 )
@@ -444,7 +444,7 @@
             {threshold {blast {value (* %track_b 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 		{setting "wheel"
             {thickness 5}
@@ -456,7 +456,7 @@
             }
 			{whole_wound}
 			{volumes "wheel*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
         {setting "turret"
             {thickness %tur}
@@ -467,7 +467,7 @@
                 {blast {koef %thr} {value %thr_value} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -475,7 +475,7 @@
             {durability {blast  {value (* %gun 2.1)}} {pierce {value (* %dur_value 0.5)}}}
             {threshold {blast {value (* %gun 2.0)} } {pierce {value (* %thr_value 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body"
             {thickness %bod}
@@ -486,7 +486,7 @@
                 {blast {koef %thr} {value %thr_value} }
             }
             {volumes "body*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
 
         }
@@ -499,7 +499,7 @@
                 {blast {koef %thr} }
             }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 	}
 )
@@ -541,18 +541,12 @@
 		{setting "comp_armor_body"
 			{thickness %body}
 			{volumes "comp_armor_body*"}
-			{health_reducing
-				{pierce {koef 0}}
-				{blast {koef 0}}
-			}	
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_armor_turret"
 			{thickness %turret}
 			{volumes "comp_armor_turret*"}
-			{health_reducing
-				{pierce {koef 0}}
-				{blast {koef 0}}
-			}	
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -565,10 +559,7 @@
 			{durability {blast {value 10}} {pierce  {koef 999}}}
 			{threshold {blast {value 1}}}
 			{volumes "shield*"}
-			{health_reducing
-				{pierce {koef 0}}
-				{blast {koef 0}}
-			}	
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -581,10 +572,7 @@
 			{durability {blast {value 20}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shield*"}
-			{health_reducing
-				{pierce {koef 0}}
-				{blast {koef 0}}
-			}	
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -598,14 +586,14 @@
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_side"
 			{thickness 15}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -617,7 +605,7 @@
 			{durability {blast {value 20}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -629,7 +617,7 @@
 			{durability {blast {value 20}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -643,14 +631,14 @@
 			{durability {blast {value 40}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shield*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "apploque_side"
 			{thickness 15}		
 			{durability {blast {value 100}} {pierce {koef 999}}}
 			{threshold {blast {koef 2} {value 50}}}
 			{volumes "apploque_side*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -662,7 +650,7 @@
 			{durability {blast {value 15}} {pierce  {koef 999}}}
 			{threshold {blast {value 10}}}
 			{volumes "shieldl1" "shieldl2" "shieldr2"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "shieldh"
 			{thickness 16}		
@@ -670,7 +658,7 @@
 			{threshold {blast {value 90}}{pierce {value 1000}}}
 			{volumes  "shieldl3" "shieldr3" "shieldl4" "shieldr4" "shieldl5" "shieldr5" "shieldl6" "shieldr6"
 			 "shieldl7" "shieldr7" "shieldl8" "shieldr8" "shieldl9" "shieldr9" "shieldl10" "shieldr10"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -755,14 +743,14 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 50}
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -775,14 +763,14 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 56}
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -797,7 +785,7 @@
 			{volumes "d_a1" "d_a2" "d_a3" "d_a4" "d_a5" "d_a6" "d_a7" "d_a8" "d_a9" "d_a10"
 			"d_a11" "d_a12" "d_a13" "d_a14" "d_a15" "d_a16" "d_a17" "d_a18" "d_a19" "d_a20"
 			 "d_a23" "d_a24" "d_a25" "d_a26" "d_a27" "d_a28" }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_hull"
 			{thickness 61}
@@ -806,7 +794,7 @@
 			{volumes "comp_d_a1" "comp_d_a2" "comp_d_a3" "comp_d_a4" "comp_d_a5" "comp_d_a6" "comp_d_a7" "comp_d_a8" "comp_d_a9" "comp_d_a10"
 			"comp_d_a11" "comp_d_a12" "comp_d_a13" "comp_d_a14" "comp_d_a15" "comp_d_a16" "comp_d_a17" "comp_d_a18" "comp_d_a19" "comp_d_a20"
 			 "comp_d_a23" "comp_d_a24" "comp_d_a25" "comp_d_a26" "comp_d_a27" "comp_d_a28" }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		
 		{setting "d_a_turret"
@@ -815,7 +803,7 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a21" "d_a22""d_a29" "d_a30"
 			"d_a31" "d_a32" "d_a33" "d_a34" "d_a35" "d_a36" "d_a37" "d_a38"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_turret"
 			{thickness 305}
@@ -823,14 +811,14 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a21" "comp_d_a22" "comp_d_a29" "comp_d_a30"
 			"comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36" "comp_d_a37" "comp_d_a38"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "d_a"
 			{thickness 10}
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_front"	;60 град
 			{thickness 75}
@@ -839,7 +827,7 @@
 			{volumes  "comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36" "comp_d_a37" "comp_d_a38" "comp_d_a39" "comp_d_a40"
 			"comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45" "comp_d_a46" "comp_d_a47" "comp_d_a48" "comp_d_a49" "comp_d_a40"
 			"comp_d_a51" "comp_d_a52" "comp_d_a53" }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side"		;0 град
 			{thickness 180}		;ѕричины не€сны, должно-то быть около 240
@@ -852,7 +840,7 @@
 			"comp_d_a61" "comp_d_a62" "comp_d_a63" "comp_d_a64" "comp_d_a65" "comp_d_a66" "comp_d_a67" "comp_d_a68" "comp_d_a69" "comp_d_a60"
 			"comp_d_a71" "comp_d_a72" "comp_d_a73" "comp_d_a74" "comp_d_a75" "comp_d_a76" "comp_d_a77" "comp_d_a78" "comp_d_a79" "comp_d_a70"
 			"comp_d_a81" "comp_d_a82" "comp_d_a83" "comp_d_a84" "comp_d_a85" "comp_d_a86" "comp_d_a87"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -865,14 +853,14 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 180}			
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -884,7 +872,7 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_front"	;60 град
 			{thickness 75}
@@ -893,7 +881,7 @@
 			{volumes  "comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36" "comp_d_a37" "comp_d_a38" "comp_d_a39" "comp_d_a40"
 			"comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45" "comp_d_a46" "comp_d_a47" "comp_d_a48" "comp_d_a49" "comp_d_a50"
 			"comp_d_a51" "comp_d_a52" "comp_d_a53" }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side"		;0 град
 			{thickness 180}		;ѕричины не€сны, должно-то быть около 240
@@ -906,7 +894,7 @@
 			"comp_d_a61" "comp_d_a62" "comp_d_a63" "comp_d_a64" "comp_d_a65" "comp_d_a66" "comp_d_a67" "comp_d_a68" "comp_d_a69" "comp_d_a60"
 			"comp_d_a71" "comp_d_a72" "comp_d_a73" "comp_d_a74" "comp_d_a75" "comp_d_a76" "comp_d_a77" "comp_d_a78" "comp_d_a79" "comp_d_a70"
 			"comp_d_a81" "comp_d_a82" "comp_d_a83" "comp_d_a84" "comp_d_a85" "comp_d_a86" "comp_d_a87"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -919,14 +907,14 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"	;45 гр
 			{thickness 166}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 0.15} {calibre 6}}}
 			{volumes  "comp_d_a*" }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -938,14 +926,14 @@
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 145}			
 			{durability {blast {koef 12}} {pierce {value 16}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -958,14 +946,14 @@
 			{durability {blast {koef 12}} {pierce {value 20}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} {calibre 6}}}
 			{volumes "d_a47" "d_a48" "d_a49" "d_a50" "d_a51" "d_a52" "d_a53" "d_a54" "d_a55" "d_a56"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "d_a_front"	;30 град
 			{thickness 10}
 			{durability {blast {koef 12}} {pierce {value 20}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} {calibre 6}}}
 			{volumes "d_a37" "d_a38" "d_a39" "d_a40" "d_a41" "d_a42" "d_a43" "d_a44" "d_a45" "d_a46"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "d_a_side"		;0 град
 			{thickness 10}
@@ -973,21 +961,21 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} {calibre 6}}}
 			{volumes "d_a1" "d_a2" "d_a3" "d_a4" "d_a5" "d_a6" "d_a7" "d_a8" "d_a9" "d_a10" "d_a11" "d_a12" "d_a13" "d_a14" "d_a15" "d_a16" "d_a17" "d_a18" "d_a19"
 			"d_a20" "d_a21" "d_a22" "d_a23" "d_a24" "d_a25" "d_a26" "d_a27" "d_a28" "d_a29" "d_a30" "d_a31" "d_a32" "d_a33" "d_a34" "d_a35" "d_a36"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_turret"	;предп. 60 град
 			{thickness 120}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 0.15} {calibre 6}}}
 			{volumes "comp_d_a47" "comp_d_a48" "comp_d_a49" "comp_d_a50" "comp_d_a51" "comp_d_a52" "comp_d_a53" "comp_d_a54" "comp_d_a55" "comp_d_a56"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_front"	;35 град
 			{thickness 200}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 0.15} {calibre 6}}}
 			{volumes "comp_d_a37" "comp_d_a38" "comp_d_a39" "comp_d_a40" "comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45" "comp_d_a46"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side"		;0 град
 			{thickness 190}
@@ -997,7 +985,7 @@
 			"comp_d_a11" "comp_d_a12" "comp_d_a13" "comp_d_a14" "comp_d_a15" "comp_d_a16" "comp_d_a17" "comp_d_a18" "comp_d_a19" "comp_d_a20"
 			"comp_d_a21" "comp_d_a22" "comp_d_a23" "comp_d_a24" "comp_d_a25" "comp_d_a26" "comp_d_a27" "comp_d_a28" "comp_d_a29" "comp_d_a30"
 			"comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1011,14 +999,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 15}
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1032,14 +1020,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 60}
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1052,14 +1040,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 66}
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1074,14 +1062,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 15}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1095,14 +1083,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 15}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1123,7 +1111,7 @@
 			"d_a49" "d_a50" "d_a51" "d_a52" "d_a53" "d_a54" "d_a55" "d_a56" "d_a57" "d_a58" 
 			"d_a59" "d_a60" "d_a61" "d_a62" "d_a63" "d_a64" "d_a65" "d_a66" "d_a67" "d_a68" 
 			"d_a69" "d_a70" "d_a71"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_normal"
 			{thickness 15}
@@ -1137,7 +1125,7 @@
 			"comp_d_a49" "comp_d_a50" "comp_d_a51" "comp_d_a52" "comp_d_a53" "comp_d_a54" "comp_d_a55" "comp_d_a56" "comp_d_a57" "comp_d_a58" 
 			"comp_d_a59" "comp_d_a60" "comp_d_a61" "comp_d_a62" "comp_d_a63" "comp_d_a64" "comp_d_a65" "comp_d_a66" "comp_d_a67" "comp_d_a68" 
 			"comp_d_a69" "comp_d_a70" "comp_d_a71"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		
 		{setting "d_a_side"	
@@ -1148,7 +1136,7 @@
 			"d_a72" "d_a73" "d_a74" "d_a75" "d_a76" "d_a77" "d_a78" "d_a79" "d_a80"
 			"d_a81" "d_a82" "d_a83" "d_a84" "d_a85" "d_a86" "d_a87" "d_a88" "d_a89" "d_a90" 
 			"d_a91" "d_a92" "d_a93" "d_a94" "d_a95" "d_a96"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side" 
 			{thickness 30}
@@ -1158,7 +1146,7 @@
 			"comp_d_a72" "comp_d_a73" "comp_d_a74" "comp_d_a75" "comp_d_a76" "comp_d_a77" "comp_d_a78" "comp_d_a79" "comp_d_a80"
 			"comp_d_a81" "comp_d_a82" "comp_d_a83" "comp_d_a84" "comp_d_a85" "comp_d_a86" "comp_d_a87" "comp_d_a88" "comp_d_a89" "comp_d_a90" 
 			"comp_d_a91" "comp_d_a92" "comp_d_a93" "comp_d_a94" "comp_d_a95" "comp_d_a96"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}		
 	}
 )
@@ -1174,7 +1162,7 @@
 			{volumes "d_a1" "d_a2" "d_a3" "d_a4" "d_a5" "d_a6" "d_a7" "d_a8" "d_a9" "d_a10" "d_a11" "d_a12" "d_a13" "d_a14" "d_a15" "d_a16" "d_a17" "d_a18" "d_a19"
 			"d_a20" "d_a21" "d_a22" "d_a23" "d_a24" "d_a25" "d_a26" "d_a27" "d_a28" "d_a29" "d_a30" "d_a31" "d_a32" "d_a33" "d_a34" "d_a35" "d_a36"
 			"d_a37" "d_a38" "d_a39" "d_a40" "d_a41" "d_a42" "d_a43" "d_a44" "d_a45"	"d_a66" "d_a67" "d_a68" "d_a69"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_normal"
 			{thickness 15}
@@ -1183,7 +1171,7 @@
 			{volumes "comp_d_a1" "comp_d_a2" "comp_d_a3" "comp_d_a4" "comp_d_a5" "comp_d_a6" "comp_d_a7" "comp_d_a8" "comp_d_a9" "comp_d_a10" "comp_d_a11" "comp_d_a12" "comp_d_a13" "comp_d_a14" "comp_d_a15" "comp_d_a16" "comp_d_a17" "comp_d_a18" "comp_d_a19"
 			"comp_d_a20" "comp_d_a21" "comp_d_a22" "comp_d_a23" "comp_d_a24" "comp_d_a25" "comp_d_a26" "comp_d_a27" "comp_d_a28" "comp_d_a29" "comp_d_a30" "comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36"
 			"comp_d_a37" "comp_d_a38" "comp_d_a39" "comp_d_a40" "comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45"	"comp_d_a66" "comp_d_a67" "comp_d_a68" "comp_d_a69"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		
 		{setting "d_a_side"	
@@ -1192,7 +1180,7 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a46" "d_a47" "d_a48" "d_a49" "d_a50" "d_a51" "d_a52" "d_a53" "d_a54" "d_a55" 
 			"d_a56" "d_a57" "d_a58" "d_a59" "d_a60" "d_a61" "d_a62" "d_a63" "d_a64" "d_a65"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side" 
 			{thickness 45}
@@ -1200,7 +1188,7 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a46" "comp_d_a47" "comp_d_a48" "comp_d_a49" "comp_d_a50" "comp_d_a51" "comp_d_a52" "comp_d_a53" "comp_d_a54" "comp_d_a55" 
 			"comp_d_a56" "comp_d_a57" "comp_d_a58" "comp_d_a59" "comp_d_a60" "comp_d_a61" "comp_d_a62" "comp_d_a63" "comp_d_a64" "comp_d_a65"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1215,7 +1203,7 @@
 			{volumes "d_a1" "d_a2" "d_a3" "d_a4" "d_a5" "d_a6" "d_a7" "d_a8" "d_a9" "d_a10" "d_a11" "d_a12" "d_a13" "d_a14" "d_a15" "d_a16" "d_a17" "d_a18" "d_a19"
 			"d_a20" "d_a21" "d_a22" "d_a23" "d_a24" "d_a25" "d_a26" "d_a27" "d_a28" "d_a49" "d_a50" "d_a51" "d_a52" "d_a53"  "d_a73" "d_a74" "d_a75" "d_a76" "d_a77" "d_a78" "d_a79" "d_a80"
 			}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_normal"
 			{thickness 15}
@@ -1223,7 +1211,7 @@
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a1" "comp_d_a2" "comp_d_a3" "comp_d_a4" "comp_d_a5" "comp_d_a6" "comp_d_a7" "comp_d_a8" "comp_d_a9" "comp_d_a10" "comp_d_a11" "comp_d_a12" "comp_d_a13" "comp_d_a14" "comp_d_a15" "comp_d_a16" "comp_d_a17" "comp_d_a18" "comp_d_a19"
 			"comp_d_a20" "comp_d_a21" "comp_d_a22" "comp_d_a23" "comp_d_a24" "comp_d_a25" "comp_d_a26" "comp_d_a27" "comp_d_a28" "comp_d_a29" "comp_d_a49" "comp_d_a50" "comp_d_a51" "comp_d_a52" "comp_d_a53" "comp_d_a73" "comp_d_a74" "comp_d_a75" "comp_d_a76" "comp_d_a77" "comp_d_a78" "comp_d_a79" "comp_d_a80"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		
 		{setting "d_a_side"	
@@ -1231,7 +1219,7 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a30" "d_a31" "d_a32" "d_a33" "d_a34" "d_a35" "d_a36" "d_a37" "d_a38" "d_a39" "d_a40" "d_a41" "d_a42" "d_a43" "d_a44" "d_a45" "d_a46" "d_a47" "d_a48" "d_a54" "d_a55" "d_a56" "d_a57" "d_a58" "d_a59" "d_a60" "d_a61" "d_a62" "d_a63" "d_a64" "d_a65" "d_a66" "d_a67" "d_a68" "d_a69" "d_a70" "d_a71" "d_a72"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side" 
 			{thickness 45}
@@ -1240,7 +1228,7 @@
 			{volumes "comp_d_a30" "comp_d_a31" "comp_d_a32" "comp_d_a33" "comp_d_a34" "comp_d_a35" "comp_d_a36"
 			"comp_d_a37" "comp_d_a38" "comp_d_a39" "comp_d_a40" "comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45"  "comp_d_a46"  "comp_d_a47"  "comp_d_a48" "comp_d_a54" "comp_d_a55" 
 			"comp_d_a56" "comp_d_a57" "comp_d_a58" "comp_d_a59" "comp_d_a60" "comp_d_a61" "comp_d_a62" "comp_d_a63" "comp_d_a64" "comp_d_a65" "comp_d_a66" "comp_d_a67" "comp_d_a68" "comp_d_a69" "comp_d_a70" "comp_d_a71" "comp_d_a72"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1252,14 +1240,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 35}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1298,14 +1286,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a1" "d_a2" "d_a3" "d_a4" "d_a5" "d_a6" "d_a7" "d_a8" "d_a37" "d_a38"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_front"
 			{thickness 56}
 			{durability {blast {koef 12}} {pierce {value 120}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a1" "comp_d_a2" "comp_d_a3" "comp_d_a4" "comp_d_a5" "comp_d_a6" "comp_d_a7" "comp_d_a8" "comp_d_a37" "comp_d_a38"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "d_a_side"	
 			{thickness 40}
@@ -1315,7 +1303,7 @@
 					"d_a40" "d_a41" "d_a42" "d_a43" "d_a44" "d_a45" "d_a46" "d_a47" "d_a48" "d_a49" 
 					"d_a50" "d_a51" "d_a52" "d_a53" "d_a54" "d_a59" "d_a60" "d_a61" "d_a62" "d_a71" 
 					"d_a72" "d_a73" "d_a74" "d_a75" "d_a76" "d_a77"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_side"
 			{thickness 290}
@@ -1325,7 +1313,7 @@
 					"comp_d_a40" "comp_d_a41" "comp_d_a42" "comp_d_a43" "comp_d_a44" "comp_d_a45" "comp_d_a46" "comp_d_a47" "comp_d_a48" "comp_d_a49" 
 					"comp_d_a50" "comp_d_a51" "comp_d_a52" "comp_d_a53" "comp_d_a54" "comp_d_a59" "comp_d_a60" "comp_d_a61" "comp_d_a62" "comp_d_a71" 
 					"comp_d_a72" "comp_d_a73" "comp_d_a74" "comp_d_a75" "comp_d_a76" "comp_d_a77"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "d_a_turret"	
 			{thickness 80}
@@ -1338,7 +1326,7 @@
 					"d_a87" "d_a88" "d_a89" "d_a90" "d_a91" "d_a92" "d_a93" "d_a94" "d_a95" "d_a96"
 					"d_a97" "d_a98" "d_a99" "d_a100" "d_a101" "d_a102" "d_a103" "d_a104" "d_a105" "d_a106"
 					"d_a107" "d_a108" "d_a109" "d_a110" "d_a111" "d_a112" "d_a113" "d_a114" "d_a115" "d_a116"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a_turret"
 			{thickness 50}
@@ -1351,7 +1339,7 @@
 					"comp_d_a87" "comp_d_a88" "comp_d_a89" "comp_d_a90" "comp_d_a91" "comp_d_a92" "comp_d_a93" "comp_d_a94" "comp_d_a95" "comp_d_a96"
 					"comp_d_a97" "comp_d_a98" "comp_d_a99" "comp_d_a100" "comp_d_a101" "comp_d_a102" "comp_d_a103" "comp_d_a104" "comp_d_a105" "comp_d_a106"
 					"comp_d_a107" "comp_d_a108" "comp_d_a109" "comp_d_a110" "comp_d_a111" "comp_d_a112" "comp_d_a113" "comp_d_a114" "comp_d_a115" "comp_d_a116"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1363,7 +1351,7 @@
 			{durability {blast {koef 2}} {pierce {value 180}}}
 			{threshold {blast {koef 1}} {pierce {koef 0.166} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1376,14 +1364,14 @@
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 		{setting "comp_d_a"
 			{thickness 90}
 			{durability {blast {koef 12}} {pierce {value 75}}}
 			{threshold {blast {koef 1}} {pierce {koef 2} 	{calibre 6}}}
 			{volumes "comp_d_a*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1424,7 +1412,7 @@
 			{durability {blast {value 50}} {pierce {value 50}}}	
 			{threshold {blast {koef 1}} {pierce {koef 0.166} 	{calibre 6}}}
 			{volumes "nera*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1525,7 +1513,7 @@
 			{durability {blast {value 50}} {pierce {value 50}}}	
 			{threshold {blast {koef 1}} {pierce {koef 0.166} 	{calibre 6}}}
 			{volumes "nera*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1632,7 +1620,7 @@
 			"kaz_hitzone_16a" "kaz_hitzone_17a" "kaz_hitzone_18a" "kaz_hitzone_19a" "kaz_hitzone_20a"
 			"kaz_hitzone_21a" "kaz_hitzone_22a" "kaz_hitzone_23a" "kaz_hitzone_24a" "kaz_hitzone_25a"
 			"kaz_hitzone_26a"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )
@@ -1673,7 +1661,7 @@
                 {blast {koef 1} }{pierce {koef 1}}
             }			
 			{volumes "mrap*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )

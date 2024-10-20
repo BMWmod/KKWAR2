@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	{props "tandem"}
+	("guidance_arc"
+		missile(javf_rock) 
+		stuff(javf_rock_impactor) 
+		country(usa) type(ir) 
+		calibre(127) length(1100)
+		speed(slow) guidance()
+		weapon(missilets_arc_120)
+	)
+	("maneuvrability_impulse" deg_per_s(59))
+}

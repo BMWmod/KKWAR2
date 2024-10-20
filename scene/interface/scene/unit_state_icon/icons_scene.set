@@ -663,7 +663,6 @@
 				{color 0xfff5f5f5}
 			}			
 		}
-		{if component_state "target_hight" "broken"}	;Это индикатор большой высоты полета, а не поломка.
 		{if true 
 			{icon "need_repair"}
 			{frame
@@ -759,6 +758,7 @@
 				{color 0xfff5f5f5}
 			}			
 		}
+		{if component_state "target_hight" "broken" {icon "charge"}}	;Это индикатор большой высоты полета, а не поломка.
 		{if true 
 			{icon "need_repair"}
 			{frame

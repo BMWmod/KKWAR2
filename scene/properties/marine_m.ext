@@ -95,7 +95,7 @@ actor
             }
 ;            {volumes "body3" "body1" "body" "body2" "body4" "bridge_support"}
             {volumes "body*" "bridge_support*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "bridge"
             {thickness (* 0.5 %bod)}
@@ -118,7 +118,7 @@ actor
         		;}
             }
             {volumes "bridge" "bridge1" "bridge2" "bridge3" "bridge4" "bridge5" "bridge6" "anten"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 }
 )
@@ -303,7 +303,7 @@ actor
 				}
 			}
 			{volumes %vol}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 		}
 	}
 )

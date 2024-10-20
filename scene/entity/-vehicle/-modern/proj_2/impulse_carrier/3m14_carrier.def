@@ -1,0 +1,26 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_arc"
+		missile(3m14) 
+		stuff(3m14_impactor) 
+		country(rus) type(other) 
+		calibre(500) length(8220)
+		speed(slow) guidance(prop)
+		weapon(missilets_long)
+	)
+	("maneuvrability_SAM_impulse" deg_per_s(24))
+	("targetable_missile")
+	{sensor
+		{Visor "main"
+			{vision "LRmissile"}
+			{bone "missile_point"}
+		}
+		{Visor "vertical"
+			{vision "vertical_LRmissile"}
+			{bone "vertvisor_point"}
+		}
+	}
+	("targetable_missile")
+	("cwps_rangefinder")
+	{props "ignore_linked_pointer"}
+}

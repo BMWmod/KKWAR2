@@ -48,12 +48,38 @@
 	}
 	{on ik begin "turret" {play_sound "rotate_turret" 1}}
 	{on ik end "turret" {stop_sound "rotate_turret"}}
+	{on spawn
+		{add_view 	"startsmoke_link"		"tail00"			"shooter00"}
+		{add_view 	"startsmoke_link"		"tail01"			"shooter01"}
+		{add_view 	"startsmoke_link"		"tail02"			"shooter02"}
+		{add_view 	"startsmoke_link"		"tail03"			"shooter03"}
+		{add_view 	"startsmoke_link"		"tail00"			"taill_00"}
+		{add_view 	"startsmoke_link"		"tail01"			"taill_01"}
+		{add_view 	"startsmoke_link"		"tail02"			"taill_02"}
+		{add_view 	"startsmoke_link"		"tail03"			"taill_03"}
+	}
 	{on fire "gun2" 
 		("low_speed_bullet")
-		{if name "00"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter00"   x}{spawn "startsmoke" "shooter00" x}{spawn "startsmoke" "tail_00" x}}
-		else name "01"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter01"   x}{spawn "startsmoke" "shooter01" x}{spawn "startsmoke" "tail_01" x}}
-		else name "02"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter02"   x}{spawn "startsmoke" "shooter02" x}{spawn "startsmoke" "tail_02" x}}
-		else name "03"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter03"   x}{spawn "startsmoke" "shooter03" x}{spawn "startsmoke" "tail_03" x}}
+		{if name "00"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter00"   x}
+;		{spawn "startsmoke" "shooter00" x}{spawn "startsmoke" "tail_00" x}
+		{view start "shooter00"}
+		{delay 0.4 {view pause "shooter00"}}
+		}
+		else name "01"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter01"   x}
+;		{spawn "startsmoke" "shooter01" x}{spawn "startsmoke" "tail_01" x}
+		{view start "shooter01"}
+		{delay 0.4 {view pause "shooter01"}}
+		}
+		else name "02"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter02"   x}
+;		{spawn "startsmoke" "shooter02" x}{spawn "startsmoke" "tail_02" x}
+		{view start "shooter02"}
+		{delay 0.4 {view pause "shooter02"}}
+		}
+		else name "03"	{delay 0.1 {spawn "hj9_missile_carrier" "shooter03"   x}
+;		{spawn "startsmoke" "shooter03" x}{spawn "startsmoke" "tail_03" x}
+		{view start "shooter03"}
+		{delay 0.4 {view pause "shooter03"}}
+		}
 		}
 	}
 }
@@ -417,13 +443,21 @@
 	{on spawn
 		{Volumes "ammo_storage_main" enable contact bullet blast}
 		{set "radar_up" 0}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"basis"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"FXtraceL4"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1s"			"FXtraceR4"}
+		{add_view	"startsmoke_otrk_link"		"flashbarrel1s"			"FXtraceR4"}
 	}
 	("9k72_sound")
     {on fire "gun" 
-      	{spawn "dust_shot_big_2" "basis"}
-      	{spawn "dust_shot_big_2" "FXtraceL4"}
-      	{spawn "dust_shot_big_2" "FXtraceR4"}
-      	{spawn "startsmoke_otrk" "turret"}
+;      	{spawn "dust_shot_big_2" "basis"}
+;      	{spawn "dust_shot_big_2" "FXtraceL4"}
+;      	{spawn "dust_shot_big_2" "FXtraceR4"}
+;      	{spawn "startsmoke_otrk" "turret"}
+			{view start "flashbarrel1s"}
+			{delay 0.4
+				{view pause "flashbarrel1s"}
+			}
 		{spawn "df15b_missilelaunch" "turret" x
 			{ani_play "start"}
 			{add_view	"rocket_smokebig_short"	"start"	"fxtail"}

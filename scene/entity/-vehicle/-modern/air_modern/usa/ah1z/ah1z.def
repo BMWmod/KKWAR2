@@ -1,0 +1,181 @@
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+        {props "Helicopter_M" "steel" "vision_lev_heli" "IR_spo" "rad_spo" "laser_spo" "heli_strike"}
+	{Extension "ah1z.mdl"}
+	("missile_aimpoint_air")
+	{targetClass 	"Helicopter"}
+
+	{mass 7900}
+
+{volume "body1"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body2"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body3"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body4"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "body5"	{tags "body"}	{component "body"} {thickness 3}}
+{volume "armor1"	{thickness 3}}
+{volume "armor2"	{thickness 3}}
+{volume "armor3"	{thickness 3}}
+{volume "armor4"	{thickness 3}}
+{volume "armor5"	{thickness 3}}
+
+("air_armor" main_rotor(12) tail_rotor(7) cabin(3) engine(8) mechanics(6) electronics(5) fuel(5))
+
+	{extender "inventory"
+		{box
+			{Size 6 8}
+			{weight 6000}	
+			{item "vulcan20mmA ammo" 500}
+			{item "agm-114 k ammo" 8}
+			{item "aim-9l_ammo" 2}
+			{item "bullet70_Hydra ammo" 38}
+		}
+	}
+	{Weaponry
+		{place "gun"
+			{weapon "20mm_M197" filling "ammo vulcan20mmA" 250} 
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			{sequentialAim 0}
+			{rotate}
+		}
+;===============Правое крыло
+		{place "ptur2"
+			{weapon "Hellfire_right"  filling "agm-114 k ammo" 4}
+			{foresight "foresight2"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			{rotate}
+		}
+		{place "ptur4"
+			{weapon "aim-9l_right" filled}
+			{foresight "foresight8"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			{rotate}
+		}
+		{place "nar2"
+			{weapon "70mm_Hydra_AH64" filling "bullet70_Hydra ammo" 19}
+			{foresight "foresight6"}
+			{shooter "shooter_r"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 19}
+			{basic}
+			{rotate}
+		}
+;==============Левое крыло
+		{place "ptur1"
+			{weapon "Hellfire_left"  filling "agm-114 k ammo" 4}
+			{foresight "foresight3"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			{rotate}
+		}
+		{place "ptur3"
+			{weapon "aim-9l_left" filled}
+			{foresight "foresight7"}
+			{charger "gunner"}
+			{gunner "gunner"}
+			{basic}
+			{rotate}
+		}
+		{place "nar1"
+			{weapon "70mm_Hydra_AH64" filling "bullet70_Hydra ammo" 19}
+			{foresight "foresight5"}
+			{shooter "shooter_l"}
+			{charger "driver"}
+			{gunner "driver"}
+			{barrels 19}
+			{basic}
+			{rotate}
+		}
+		
+      }
+;=================================================================================================
+;	{Chassis
+;		{Locomotion ("locomotion")
+;			{Maxspeed 45}
+;			{turnRadius 15}
+;		}
+;		{maxSideSlope 25} ;degree
+;		{speed
+;			{slow 1} ; km/h
+;			{Normal 1}
+;			{Fast 45}
+;	     }
+;        }
+ {Chassis "wheel"
+	{locomotion ("locomotion")
+		{MaxSpeed 1} 
+		{StartTime 		1  } 
+		{BrakeTime 		0.01  } 
+		{StopTime		0.01  }    
+	}
+ }
+;		{Chassis "airborne"
+;			{Altitude 25}
+;		}
+;		{ChassisManager
+;			{Current "airborne"}
+;		}
+;("CW_heli_chassis" Maxspeed(45) turnRadius(15) maxSlope(25))
+("CW_heli_chassis" 
+	Maxspeed(50) turnRadius(14) Acc(4.33) Climb(5.41)
+	Fuel(1218) Fuel_rate(1.29) Fuel_remain(913))
+	{props "cwfs_fuel_1000"}
+
+;=================================================
+       	("part" args "propeller")
+	("part" args "propeller_tail")
+       	("part" args "wheelleft")
+       	("part" args "wheelright")
+       	("part" args "ptur1")
+       	("part" args "ptur2")
+       	("part" args "nar1")
+       	("part" args "nar2")
+       	("part" args "wingl")
+       	("part" args "wingr")
+
+	{Sensor
+		{Visor "main"
+			{vision "aircraft_optic_IR_3g"}
+			{bone "visor1"}
+		}
+		{Visor "pilot"
+			{vision "mp_soldier"}
+			{bone "visor2"}
+		}
+	}
+
+
+	{boarder
+		{anm "driver"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "driver_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "driver_open" -1}}
+		}
+		{anm "gunner"
+			{forward	{begin	"board_plane_left"} {end "seat_driver_car"} {base "gunner_open"}}
+			{reverse 	{end	"board_plane_left" -1} {base "gunner_open" -1}}
+		}
+	}
+
+	{Placer
+		{place "driver" {turnOff {targetable}}}			
+	}	
+	
+	("crew_human" place(driver) bone(driver) door(emit1) animation(driver))
+	("crew_human" place(gunner) bone(gunner) door(emit2) animation(gunner))
+
+	{Volume "propeller"
+		{able {visible 0}}
+	}
+
+}

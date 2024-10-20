@@ -1,0 +1,11 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_common" 
+		missile(x-38mte) 
+		stuff(x-38mte_impactor) 
+		country(rus) type(ir) 
+		calibre(310) length(4200)
+		speed(fast) guidance(propsam))
+	("maneuvrability_impulse" deg_per_s(15))
+	{targetSelector "laser_guided_shell"}
+}

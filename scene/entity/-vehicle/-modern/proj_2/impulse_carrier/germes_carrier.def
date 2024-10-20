@@ -1,0 +1,17 @@
+{actor
+	(include "/properties/missile_impulse.ext")
+	("guidance_arc" 
+		missile(germes) 
+		stuff(germes_impactor) 
+		country(rus) type(ir) 
+		calibre(130) length(2980)
+		speed(fast) guidance(prop)
+		weapon(missilets_arc_160))
+	("maneuvrability_SAM_impulse" deg_per_s(23))
+	{sensor
+		{Visor "main"
+			{vision "semiLR_missile"}
+			{bone "missle_foresight"}
+		}
+	}
+}

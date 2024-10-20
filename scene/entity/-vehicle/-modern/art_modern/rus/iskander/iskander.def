@@ -47,7 +47,7 @@
             }
             {whole_wound}
             {volumes "wheel*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "gun"
             {thickness 15}
@@ -60,7 +60,7 @@
                             {pierce {value 16}}
                         }
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body"
             {thickness 5}
@@ -73,7 +73,7 @@
 				{pierce {koef 999} }
             }
             {volumes "body*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret"
             {thickness 4 4 4 4}
@@ -87,7 +87,7 @@
 				{pierce {koef 999} }
             }
             {volumes "turret*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "engine"
 			{thickness 15}
@@ -100,28 +100,28 @@
 				{pierce {koef 999} }
             }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "cabin"
             {thickness 5}
             {durability {blast  {value 10}} {pierce {value 12}}}
             {threshold  {blast  {value 2}} {pierce {value 5}}}
             {volumes "cabin"}
- 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+ 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
        }
         {setting "cabin_back"
             {thickness 5}
             {durability {blast  {value 10}} {pierce {value 12}}}
             {threshold  {blast  {value 2}} {pierce {value 5}}}
             {volumes "cabin_back"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "ammo_storage_main"
             {thickness 5}
             {durability {blast  {value 10}} {pierce {value 12}}}
             {threshold  {blast  {value 2}} {pierce {value 5}}}
             {volumes "ammo_storage_main*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "other"
             {thickness 0.1}
@@ -130,7 +130,7 @@
                     {koef 999}
                 }
             }
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
     }
 

@@ -298,7 +298,7 @@
                }
             }
             {volumes "mantlet"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
     }
 )
@@ -363,7 +363,7 @@
             {threshold {blast {value (* 35 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret"
             {thickness %turret}
@@ -374,7 +374,7 @@
                 {blast {koef 2} {value 65} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -382,7 +382,7 @@
             {durability {blast  {value (* 25 2.1)}} {pierce {value (* 240 0.5)}}}
             {threshold {blast {value (* 25 2.0)} } {pierce {value (* 65 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body1"
             {thickness %body1}
@@ -390,7 +390,7 @@
             {threshold
                 {blast  {koef 2} {value 65} }  }
             {volumes "body1*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "body2"
@@ -398,7 +398,7 @@
             {durability {blast {koef 2}  {value 240} } {pierce  {koef 999} } }
             {threshold {blast {koef 2} {value 65} }  }
             {volumes "body2*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "engine"
@@ -406,7 +406,7 @@
             {durability {blast {koef 1}  } }
             {threshold  {blast  {koef 0.8} }  }
             {volumes "engine*"}
- 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+ 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
        }
    }
     {sensor {visor "main" {vision "tank_main-h"} } }
@@ -423,7 +423,7 @@
             {threshold {blast {value (* 35 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret1"
             {thickness %turret1}
@@ -434,7 +434,7 @@
                 {blast {koef 2} {value 65} }
             }
             {volumes "turret1"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "turret2"
@@ -446,7 +446,7 @@
                 {blast {koef 2} {value 65} }
             }
             {volumes "turret2"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "turretmain"
@@ -458,7 +458,7 @@
                 {blast {koef 2} {value 65} }
             }
             {volumes "turret" "turret3" "turret4"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -466,7 +466,7 @@
             {durability {blast  {value (* 25 2.1)}} {pierce {value (* 240 0.5)}}}
             {threshold {blast {value (* 25 2.0)} } {pierce {value (* 65 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body"
             {thickness %body}
@@ -474,7 +474,7 @@
             {threshold
                 {blast  {koef 2} {value 65} }  }
             {volumes "body*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "engine"
@@ -482,7 +482,7 @@
             {durability {blast {koef 1}  } }
             {threshold  {blast  {koef 0.8} }  }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
    }
     {sensor {visor "main" {vision "tank_main-h"} } }
@@ -499,7 +499,7 @@
             {threshold {blast {value (* 15 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret"
             {thickness %turret}
@@ -510,7 +510,7 @@
                 {blast {koef 2} {value 10} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -518,14 +518,14 @@
             {durability {blast  {value (* 15 2.1)}} {pierce {value (* 40 0.5)}}}
             {threshold {blast {value (* 15 2.0)} } {pierce {value (* 10 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body1"
             {thickness %body1}
             {durability {blast {koef 1} {value 20} } {pierce {koef 999} } }
             {threshold {blast  {koef 1} {value 8} }  }
             {volumes "body1*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "body2"
@@ -533,7 +533,7 @@
             {durability {blast {koef 1}  {value 20} } {pierce  {koef 999} } }
             {threshold {blast {koef 1} {value 8} }  }
             {volumes "body2*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "engine"
@@ -541,7 +541,7 @@
             {durability {blast {koef 1}  } }
             {threshold  {blast  {koef 1} }  }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
    }
     {sensor {visor "main" {vision "tank_main-l"} } }
@@ -557,7 +557,7 @@
             {threshold {blast {value (* 15 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret"
             {thickness %turret}
@@ -568,7 +568,7 @@
                 {blast {koef 2} {value 10} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -576,14 +576,14 @@
             {durability {blast  {value (* 15 2.1)}} {pierce {value (* 40 0.5)}}}
             {threshold {blast {value (* 15 2.0)} } {pierce {value (* 10 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body1"
             {thickness %body1}
             {durability {blast {koef 1} {value 80} } {pierce {koef 999} } }
             {threshold {blast  {koef 1} {value 10} }  }
             {volumes "body1*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "body2"
@@ -591,7 +591,7 @@
             {durability {blast {koef 1}  {value 80} } {pierce  {koef 999} } }
             {threshold {blast {koef 1} {value 25} }  }
             {volumes "body2*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "engine"
@@ -599,7 +599,7 @@
             {durability {blast {koef 1}  } }
             {threshold  {blast  {koef 1} }  }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
    }
     {sensor {visor "main" {vision "tank_main-l"} } }
@@ -616,7 +616,7 @@
             {threshold {blast {value (* 35 1.5)} } }  
             {volumes "track*"}
             {whole_wound}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "turret"
             {thickness %turret}
@@ -627,7 +627,7 @@
                 {blast {koef 2} {value 65} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
         }
         {setting "gun"
@@ -635,14 +635,14 @@
             {durability {blast  {value (* 25 2.1)}} {pierce {value (* 240 0.5)}}}
             {threshold {blast {value (* 25 2.0)} } {pierce {value (* 65 1)} }}
             {volumes "gun*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body1"
             {thickness %body1}
             {durability  {blast {koef 2} {value 240} } {pierce {koef 999} }  }
             {threshold {blast {koef 2} {value 65} } }
             {volumes "body1"}
- 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+ 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
        }
         {setting "body2"
@@ -650,7 +650,7 @@
             {durability {blast {koef 2} {value 240} } {pierce {koef 999} } }
             {threshold {blast {koef 2}  {value 65} }  }
             {volumes "body2"}
- 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+ 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
        }
         {setting "body3"
@@ -658,7 +658,7 @@
             {durability {blast {koef 2} {value 240} } {pierce {koef 999} }  }
             {threshold {blast  {koef 2} {value 65} } }
             {volumes "body3"}
- 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+ 			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
 			{fragment_pass_threshold 1}
        }
         {setting "engine"
@@ -666,7 +666,7 @@
             {durability {blast {koef 1}  } }
             {threshold  {blast {koef 0.8} }  }
             {volumes "engine*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
    }
     {sensor

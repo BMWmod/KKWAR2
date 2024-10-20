@@ -98,7 +98,7 @@
                 {blast {koef 1} {value 20} }
             }
             {volumes "turret" "turret1" "turret2" "turret3" "turret4" "turret5" "Gun_rot1" "Gun_rot2"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 	}
 	

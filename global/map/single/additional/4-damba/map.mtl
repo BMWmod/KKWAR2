@@ -1,0 +1,76 @@
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl0"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/town/asfalt_road"}
+		{bump "/texture/land/town/asfalt_road_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl1"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/soil_q31"}
+		{bump "/texture/land/dirt/soil_q31_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl2"
+	{scheme 1
+		{diffuse "/texture/land/town/asfalt_road"}
+		{bump "/texture/land/town/asfalt_road_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/dirt/soil_q31"}
+		{bump "/texture/land/dirt/soil_q31_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/simple" "mtl3"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/rock/rock"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl4"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/fields/fieldgrass1"}
+		{bump "/texture/land/fields/fieldgrass1_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl5"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_02a"}
+		{bump "/texture/land/grass/gramma_02a_nm"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/bump_simple:gem2/ground/bump_simple" "mtl6"
+	{scheme 1
+		{diffuse "/texture/land/grass/gramma_102"}
+		{bump "/texture/land/grass/gramma_102_nm"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_103"}
+		{bump "/texture/land/grass/gramma_103_nm"}
+	}
+	{blend none}
+}

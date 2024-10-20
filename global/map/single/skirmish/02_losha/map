@@ -6,7 +6,7 @@
 		{Position -3425.97 -120.54}
 		{xform zl 20.7}
 		{Fogable never}
-		{Player 0}
+		{Player 1}
 		{MID 10000}
 	}
 	{Entity "corner14" 0x9
@@ -351,7 +351,7 @@
 		{Placer
 			{State "10" {Unlinked}}
 		}
-		{Player 0}
+		{Player 1}
 		{MID 10018}
 	}
 	{Entity "house_ru3room01" 0x8b
@@ -386,7 +386,7 @@
 			{State "82" {Unlinked}}
 			{State "72" {Unlinked}}
 		}
-		{Player 0}
+		{Player 1}
 		{MID 10021}
 	}
 	{Entity "house_ru3room01" 0x10b5
@@ -13995,11 +13995,17 @@
 		{Volume "body3"
 			{able {touch 1}}
 		}
+		{Volume "hole2"
+			{able {overlap 1}{touch 0}}
+		}
 		{Volume "roof0"
 			{able {touch 1}}
 		}
 		{Volume "roof1"
 			{able {touch 1}}
+		}
+		{Volume "window2"
+			{able {overlap 1}}
 		}
 	}
 	{Entity "hr3r_c06" 0x21c
@@ -17300,7 +17306,7 @@
 		{Position 3393.61 -173.71 136.5}
 		{xform zl -87.88}
 		{Fogable never}
-		{Player 0}
+		{Player 1}
 		{MID 10043}
 	}
 	{Entity "road_m_clay1" 0x403b
@@ -30985,7 +30991,7 @@
 			{State "118_c2" {Entity "118_c2a"}}
 			{State "118_w1" {Entity "118_w1a"}}
 		}
-		{Player 0}
+		{Player 1}
 		{MID 10055}
 	}
 	{Entity "road_sand5f1" 0x10fc
@@ -32519,7 +32525,7 @@
 			{State "win8" {Unlinked}}
 			{State "win11" {Unlinked}}
 		}
-		{Player 0}
+		{Player 1}
 		{MID 10066}
 	}
 	{Entity "wall_a" 0xfa2
@@ -47413,6 +47419,11 @@
 	{Entity "poplar6" 0x42ee
 		{Position -3117.28 -677.38}
 		{xform zl -102.27 scale 0.76}
+		{TexMod
+			{material "" "burned"}
+			{material "material1" "burned"}
+			{material "material2" "burned"}
+		}
 	}
 	{Entity "poplar_white3" 0x42f0
 		{Position -3252.76 -729.19}
@@ -47422,6 +47433,10 @@
 	{Entity "new_bush1a" 0x42f1
 		{Position -3079.92 -655.11}
 		{xform zl -73.58 scale 1.554}
+		{TexMod
+			{material "" "burned"}
+			{material "material1" "burned"}
+		}
 		{Volume "crown"
 			{able {visible 0}}
 		}
@@ -47558,19 +47573,13 @@
 		{Position -1792.7 -2280.64 23.89}
 		{xform zl -131.42 y 6.82 zw -63.54 scale 1.077}
 	}
-	{Entity "trench_t-72" 0x26b6
-		{Position -1309.87 -1388.1 70.1}
-		{xform zl -29.77}
-		{Color 0xffc4a78d}
-		{Fogable never}
-	}
 	{Entity "road_m_ridden" 0x15fe
-		{Position -1357.16 -1400.8}
+		{Position -1357.16 -1400.8 39.8}
 		{xform zl 16.6}
 		{DecalOrder 10}
 	}
 	{Entity "road_m_ridden" 0x15ff
-		{Position -1260.31 -1524.99}
+		{Position -1260.31 -1524.99 57.66}
 		{xform zl 16.6}
 		{DecalOrder 10}
 	}
@@ -47580,7 +47589,7 @@
 		{DecalOrder 10}
 	}
 	{Entity "road_m_ridden" 0x1601
-		{Position -1432.62 -1338.31}
+		{Position -1432.62 -1338.31 53.75}
 		{xform zl 16.6}
 		{DecalOrder 10}
 	}
@@ -48089,7 +48098,7 @@
 		{Placer
 			{State "11" {Unlinked}}
 		}
-		{Player 0}
+		{Player 1}
 		{MID 10097}
 	}
 	{Entity "new_bush1a" 0x437a
@@ -55246,6 +55255,9 @@
 		{Volume "body2"
 			{able {touch 1}}
 		}
+		{Volume "hole1"
+			{able {overlap 1}{touch 0}}
+		}
 		{Extender "window"
 			{window3 0}
 		}
@@ -55851,6 +55863,9 @@
 		}
 	}
 	{Entity "sels_win10" 0x2ca
+		{Volume "hole1"
+			{able {overlap 1}{touch 0}}
+		}
 		{Armor
 			{wounds
 				{damage "window1" 2.56166 0.0999365
@@ -76891,6 +76906,12 @@
 		{Volume "body78"
 			{able {touch 1}}
 		}
+		{Volume "hole1"
+			{able {overlap 1}{touch 0}}
+		}
+		{Volume "window1"
+			{able {overlap 1}}
+		}
 	}
 	{Entity "corner17" 0xa
 		{Volume "body79"
@@ -82731,6 +82752,9 @@
 		{Volume "body2"
 			{able {touch 1}}
 		}
+		{Volume "hole5"
+			{able {overlap 1}{touch 0}}
+		}
 	}
 	{Entity "reich_kaserne_c6" 0x390
 		{Volume "body"
@@ -82866,6 +82890,9 @@
 		}
 		{Volume "body5"
 			{able {touch 1}}
+		}
+		{Volume "hole"
+			{able {overlap 1}{touch 0}}
 		}
 	}
 	{Entity "reich_kaserne_c16" 0x398
@@ -84018,7 +84045,8 @@
 		{Fogable never}
 	}
 	{Entity "cwps3_proj_point" 0x1221
-		{Player 0}
+		{Position 0 0}
+		{Player 255}
 		{MID 10249}
 		{Component "rus_active"
 			{State broken}
@@ -84061,7 +84089,8 @@
 		}
 	}
 	{Entity "cwps3_proj_point" 0x12b3
-		{Player 0}
+		{Position 0 0}
+		{Player 255}
 		{MID 10250}
 		{Component "rus_active"
 			{State broken}
@@ -84109,6 +84138,115 @@
 	{Entity "trench_cannon_big" 0x419c
 		{Position -4320.67 -3318.04 54}
 		{xform zl 12.14}
+		{Fogable never}
+	}
+	{Entity "sch_ru_win15" 0x210
+		{Volume "hole5"
+			{able {overlap 1}{touch 0}}
+		}
+		{Volume "window4"
+			{able {overlap 1}}
+		}
+	}
+	{Entity "dok_build1_ff2" 0x2db
+	}
+	{Entity "rh_building_cornerf2_1" 0x693
+	}
+	{Entity "rock_fence_c4" 0xa0b
+	}
+	{Entity "fuel_plate" 0xc33
+	}
+	{Entity "metal_boiler" 0xc3a
+	}
+	{Entity "cwps3_proj_point" 0x11af
+		{Player 0}
+		{MID 10254}
+		{Component "rus_active"
+			{State broken}
+		}
+		{Component "rus_antiship"
+			{State broken}
+		}
+		{Component "rus_ir"
+			{State broken}
+		}
+		{Component "rus_laser"
+			{State broken}
+		}
+		{Component "rus_laser_spot"
+			{State broken}
+		}
+		{Component "rus_other"
+			{State broken}
+		}
+		{Component "rus_radpassive"
+			{State broken}
+		}
+		{Component "usa_active"
+			{State broken}
+		}
+		{Component "usa_antiship"
+			{State broken}
+		}
+		{Component "usa_ir"
+			{State broken}
+		}
+		{Component "usa_laser"
+			{State broken}
+		}
+		{Component "usa_other"
+			{State broken}
+		}
+		{Component "usa_radpassive"
+			{State broken}
+		}
+	}
+	{Entity "cwps3_proj_point" 0x1230
+		{Player 0}
+		{MID 10255}
+		{Component "rus_active"
+			{State broken}
+		}
+		{Component "rus_antiship"
+			{State broken}
+		}
+		{Component "rus_ir"
+			{State broken}
+		}
+		{Component "rus_laser"
+			{State broken}
+		}
+		{Component "rus_laser_spot"
+			{State broken}
+		}
+		{Component "rus_other"
+			{State broken}
+		}
+		{Component "rus_radpassive"
+			{State broken}
+		}
+		{Component "usa_active"
+			{State broken}
+		}
+		{Component "usa_antiship"
+			{State broken}
+		}
+		{Component "usa_ir"
+			{State broken}
+		}
+		{Component "usa_laser"
+			{State broken}
+		}
+		{Component "usa_other"
+			{State broken}
+		}
+		{Component "usa_radpassive"
+			{State broken}
+		}
+	}
+	{Entity "trench_cannon_big_t72" 0x419e
+		{Position -1314.18 -1397.14 55}
+		{xform zl -31.88}
 		{Fogable never}
 	}
 	{Link 0x1 {0x3 "c1"}}
@@ -84632,6 +84770,7 @@
 	{Link 0x2bc {0x7091 "57"}}
 	{Link 0x2bd {0x7091 "56"}}
 	{Link 0x2be {0x7091 "55"}}
+	{Link 0x210 {0x7091 "137"}}
 	{Link 0x216 {0x7091 "147"}}
 	{Link 0x220 {0x7091 "148"}}
 	{Link 0x221 {0x7091 "149"}}
@@ -84728,8 +84867,10 @@
 	{Link 0x70d {0x69d "38"}}
 	{Link 0x70e {0x69d "37"}}
 	{Link 0x710 {0x69d "42"}}
+	{Link 0x693 {0x69d "40"}}
 	{Link 0x712 {0x69d "41"}}
 	{Link 0x713 {0x69d "39"}}
+	{Link 0xa0b {0x5099 "4"}}
 	{Link 0x706f {0x7071 "wall_a"}}
 	{Link 0x7080 {0x7081 "wall_a"}}
 	{Link 0x7082 {0x7083 "wall_a"}}
@@ -84781,6 +84922,7 @@
 	{Link 0x7137 {0x713a "118_w2"}}
 	{Link 0x7138 {0x713a "118_w3"}}
 	{Link 0x7139 {0x713a "118_w4"}}
+	{Link 0xc33 {0xe23 "2"}}
 	{Link 0xf2c {0xf2f "01"}}
 	{Link 0xf2d {0xf2f "03"}}
 	{Link 0xf2e {0xf2f "02"}}
@@ -84897,6 +85039,7 @@
 	{Link 0x2d4 {0x3186 "win12"}}
 	{Link 0xfa2 {0xfa3 "wall_a"}}
 	{Link 0xfa5 {0xfa7 "wall_a"}}
+	{Link 0xc3a {0x18b7 "6"}}
 	{Link 0x2c01 {0x417c "2r"}}
 	{Link 0x7200 {0x417c "3r"}}
 	{Link 0x5601 {0x417c "4r"}}
@@ -84953,6 +85096,7 @@
 	{Link 0x1e4d {0x1e4f "1fsr"}}
 	{Link 0x1e4e {0x1e4f "1fsl"}}
 	{Link 0x37c {0x422c "05"}}
+	{Link 0x2db {0x422c "10"}}
 	{Link 0x640e {0xfdf "2r"}}
 	{Link 0xfe0 {0xfdf "2l"}}
 	{Link 0x3809 {0xfdf "2rl"}}
@@ -85142,7 +85286,7 @@
 	{Link 0x4389 {0x438b "03"}}
 	{Link 0x438a {0x438b "02"}}
 	{Link 0x1181 {0x1648 "cwps_proj_point"}}
-	{Link 0x1221 {0x7406 "cwps_proj_point"}}
+	{Link 0x11af {0x7406 "cwps_proj_point"}}
 	{Link 0x1960 {0x197b "wall"}}
 	{Link 0x1961 {0x197b "1"}}
 	{Link 0x1962 {0x197b "2"}}
@@ -85178,7 +85322,7 @@
 	{Link 0x1a35 {0x1a37 "118_w3"}}
 	{Link 0x1a36 {0x1a37 "118_w4"}}
 	{Link 0x11f7 {0x6430 "cwps_proj_point"}}
-	{Link 0x12b3 {0x643f "cwps_proj_point"}}
+	{Link 0x1230 {0x643f "cwps_proj_point"}}
 	{Link 0x784c {0x7855 "1"}}
 	{Link 0x784d {0x7855 "2"}}
 	{Link 0x784e {0x7855 "3"}}

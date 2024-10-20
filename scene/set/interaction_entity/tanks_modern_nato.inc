@@ -111,6 +111,8 @@
 	}
 	{on "init_gun"
 		{add_view 	"smoke_ejector_fast" 	"zenite_smoke" 		"foresight1"}
+		{add_view	"tank_canon_fire_3_link"		"flashbarrel1"			"Foresight1"}
+		{add_view	"dust_shot_big_link"		"flashbarrel1"			"basis"}
 	}
 	{on fire "gun" 
 		{view start "flashbarrel_gun"}
@@ -121,10 +123,9 @@
 			{view pause "flashbarrel_gun"}
 			{delay 0.8 {view pause "zenite_smoke"}}
 		}
-;		{spawn "proj_probe" "Foresight1" x}
 		{set "gun"}{call "proj_probe"}
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "tank_canon_fire_3" "Foresight1" x}
+;      		{spawn "dust_shot_big" "basis"}
+;    	 	{spawn "tank_canon_fire_3" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 		{volumes "apploque_inter4" disable bullet blast}
 		{delay 3
@@ -571,12 +572,38 @@
 	}
 	{on ik begin "turret" {play_sound "rotate_turret" 1}}
 	{on ik end "turret" {stop_sound "rotate_turret"}}
+	{on spawn
+		{add_view 	"startsmoke_link"		"tail00"			"shooter00"}
+		{add_view 	"startsmoke_link"		"tail01"			"shooter01"}
+		{add_view 	"startsmoke_link"		"tail02"			"shooter02"}
+		{add_view 	"startsmoke_link"		"tail03"			"shooter03"}
+		{add_view 	"startsmoke_link"		"tail00"			"taill_00"}
+		{add_view 	"startsmoke_link"		"tail01"			"taill_01"}
+		{add_view 	"startsmoke_link"		"tail02"			"taill_02"}
+		{add_view 	"startsmoke_link"		"tail03"			"taill_03"}
+	}
 	{on fire "gun2" 
 		("low_speed_bullet")
-		{if name "00"	{delay 0.1 {spawn "hot_rock_carrier" "shooter00"   x}{spawn "startsmoke" "shooter00" x}{spawn "startsmoke" "taill_00" x}}
-		else name "01"	{delay 0.1 {spawn "hot_rock_carrier" "shooter01"   x}{spawn "startsmoke" "shooter01" x}{spawn "startsmoke" "taill_01" x}}
-		else name "02"	{delay 0.1 {spawn "hot_rock_carrier" "shooter02"   x}{spawn "startsmoke" "shooter02" x}{spawn "startsmoke" "taill_02" x}}
-		else name "03"	{delay 0.1 {spawn "hot_rock_carrier" "shooter03"   x}{spawn "startsmoke" "shooter03" x}{spawn "startsmoke" "taill_03" x}}
+		{if name "00"	{delay 0.1 {spawn "hot_rock_carrier" "shooter00"   x}
+;		{spawn "startsmoke" "shooter00" x}{spawn "startsmoke" "taill_00" x}
+		{view start "shooter00"}
+		{delay 0.4 {view pause "shooter00"}}
+		}
+		else name "01"	{delay 0.1 {spawn "hot_rock_carrier" "shooter01"   x}
+;		{spawn "startsmoke" "shooter01" x}{spawn "startsmoke" "taill_01" x}
+		{view start "shooter01"}
+		{delay 0.4 {view pause "shooter01"}}
+		}
+		else name "02"	{delay 0.1 {spawn "hot_rock_carrier" "shooter02"   x}
+;		{spawn "startsmoke" "shooter02" x}{spawn "startsmoke" "taill_02" x}
+		{view start "shooter02"}
+		{delay 0.4 {view pause "shooter02"}}
+		}
+		else name "03"	{delay 0.1 {spawn "hot_rock_carrier" "shooter03"   x}
+;		{spawn "startsmoke" "shooter03" x}{spawn "startsmoke" "taill_03" x}
+		{view start "shooter03"}
+		{delay 0.4 {view pause "shooter03"}}
+		}
 		}
 	}
 }
@@ -729,16 +756,18 @@
 	}
 }
 
-{ "dana_152mm"
+{"dana_152mm"
 	{on spawn
 		{add_view "zenit_gilz"		"shell_m1"	"fxshell"}	
 		{add_view "flash_gun_big" "flashbarrel4" "foresight4"}	
-    	}
+		{add_view 	"dust_shot_big_link"		"flashbarrel1"			"basis"}
+		{add_view 	"canon_gaub_fire_link"		"flashbarrel1"			"basis"}
+    }
 	("dana_sound")
     	{on fire "gun" 
 		("tank_gun")
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
+;      		{spawn "dust_shot_big" "basis"}
+;    	 	{spawn "canon_gaub_fire" "Foresight1" x}
 		{spawn "cw_human_tankgun_contusion" "Foresight1"}
 		{ani_play "start"}
 	}
@@ -803,10 +832,14 @@
 }
 {"caesar"
 	("caesar_sound")
+	{on spawn
+		{add_view 	"dust_shot_big_link"		"flashbarrel1"			"basis"}
+		{add_view 	"canon_gaub_fire_link"		"flashbarrel1"			"basis"}
+	}
     {on fire "gun" 
 		("tank_gun")
-      		{spawn "dust_shot_big" "basis"}
-    	 	{spawn "canon_gaub_fire" "Foresight1" x}
+;      	{spawn "dust_shot_big" "basis"}
+;    	{spawn "canon_gaub_fire" "Foresight1" x}
 		{view start "flashbarrel1"}
 		{view start "flashbarrel1s"}
 		{ani_play "fire"}

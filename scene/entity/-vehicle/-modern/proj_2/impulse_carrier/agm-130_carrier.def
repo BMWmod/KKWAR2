@@ -1,0 +1,30 @@
+{actor
+	(include "/properties/projectile_impulse.ext")
+	{extender "stuff"
+		{item "agm-130_impactor"}
+	}	
+	("impulse_engine" missile("agm-130_impactor_link")
+	fore_offset(57) cont_offset(-150)
+	calibre(430) length(5700)
+	)
+	
+	("impulse_cruise_missile" bone(missile_point) )
+	("guidance_aj" country(usa) typeaj(other_aj) guidanceaj(long))
+	("impulse_allow_manual_control")
+	("impulse_missile_armor" thickness(3) durability(30))
+	{props "ecm_vulnerable_usa"}
+
+
+
+	
+	{sensor
+		{Visor "main"
+			{vision "LRmissile"}
+			{bone "missle_foresight"}
+		}
+		{Visor "add"
+			{vision "tank_gunner_optic_1g"}
+			{bone "missle_foresight"}
+		}
+	}
+}

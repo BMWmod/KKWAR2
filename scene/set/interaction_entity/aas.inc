@@ -286,42 +286,42 @@
 
 		(define "frag_to_blast" 
 		
-		(define "check_damage_frag"
-			else component "%component" 
-			 {if rand %p or not stuff "ammo"
-			  {if rand %splitter {spawn "metal_hit_bul"}}
-			  {blastwave c4 (+ %e 0.2) r0 0.04 r1 0.05 position} 
-			 }
-		)
-		(define "check_damage_crew"
-		  else volume "%crew_place" work and min_energy 0.3
-				(define "kill_crew"
-					{if crew_in_place "%crew"
-					 {damage_report "body" "%msg"}
-					}
-					{kill_crew "%crew"}{icon_event "crew_dead" 10}
-					{crew_enable place "%crew" 0} {set "crew_tempdisabled" 1}
-					{delay 10 {crew_enable place "%crew" 1} {set "crew_tempdisabled" 0}}
-				)
-			 {if min_energy 1.3 ("kill_crew")
-			 else  min_energy 1.0  and rand 0.8 ("kill_crew")
-			 else  min_energy 0.7  and rand 0.5 ("kill_crew")
-			 else  min_energy 0.5  and rand 0.3 ("kill_crew")
-			 else rand 0.15 ("kill_crew")
-			}
-		)
-		(define "check_damage_desant"
-		  else volume "%crew_place" work and min_energy 0.3
-		  		(define "kill_crew"
-					{kill_crew "%crew"}{icon_event "crew_dead" 2}
-				)
-			 {if min_energy 1.3 ("kill_crew")
-			 else  min_energy 1.0  and rand 0.8 ("kill_crew")
-			 else  min_energy 0.7  and rand 0.5 ("kill_crew")
-			 else  min_energy 0.5  and rand 0.3 ("kill_crew")
-			 else rand 0.15 ("kill_crew")
-			}
-		)
+			(define "check_damage_frag"
+				else component "%component" 
+				 {if rand %p or not stuff "ammo"
+				  {if rand %splitter {spawn "metal_hit_bul"}}
+				  {blastwave c4 (+ %e 0.2) r0 0.04 r1 0.05 position} 
+				 }
+			)
+			(define "check_damage_crew"
+			  else volume "%crew_place" work and min_energy 0.3
+					(define "kill_crew"
+						{if crew_in_place "%crew"
+						 {damage_report "body" "%msg"}
+						}
+						{kill_crew "%crew"}{icon_event "crew_dead" 10}
+						{crew_enable place "%crew" 0} {set "crew_tempdisabled" 1}
+						{delay 10 {crew_enable place "%crew" 1} {set "crew_tempdisabled" 0}}
+					)
+				 {if min_energy 1.3 ("kill_crew")
+				 else  min_energy 1.0  and rand 0.8 ("kill_crew")
+				 else  min_energy 0.7  and rand 0.5 ("kill_crew")
+				 else  min_energy 0.5  and rand 0.3 ("kill_crew")
+				 else rand 0.15 ("kill_crew")
+				}
+			)
+			(define "check_damage_desant"
+			  else volume "%crew_place" work and min_energy 0.3
+					(define "kill_crew"
+						{kill_crew "%crew"}{icon_event "crew_dead" 2}
+					)
+				 {if min_energy 1.3 ("kill_crew")
+				 else  min_energy 1.0  and rand 0.8 ("kill_crew")
+				 else  min_energy 0.7  and rand 0.5 ("kill_crew")
+				 else  min_energy 0.5  and rand 0.3 ("kill_crew")
+				 else rand 0.15 ("kill_crew")
+				}
+			)
 		min_energy %e 
 		 {if component "d_a" or component "nera" {if rand 0.1   {blastwave c4 (+ %e 0.2) r0 0.01 r1 0.02 position}{spawn "metal_hit_bul"}}
 		("check_damage_frag" component(engine)  p(1) splitter(%splitter))

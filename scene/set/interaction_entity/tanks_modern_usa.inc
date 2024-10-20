@@ -1,17 +1,18 @@
 (define "mlrs_m270"
 	{on spawn
-		{add_view 	"startsmoke_big" 		"rok_tail00" 		"shooter00"}
-		{add_view 	"startsmoke_big" 		"rok_tail01" 		"shooter01"}
-		{add_view 	"startsmoke_big" 		"rok_tail02" 		"shooter02"}
-		{add_view 	"startsmoke_big" 		"rok_tail03" 		"shooter03"}
-		{add_view 	"startsmoke_big" 		"rok_tail04" 		"shooter04"}
-		{add_view 	"startsmoke_big" 		"rok_tail05" 		"shooter05"}
-		{add_view 	"startsmoke_big" 		"rok_tail06" 		"shooter06"}
-		{add_view 	"startsmoke_big" 		"rok_tail07" 		"shooter07"}
-		{add_view 	"startsmoke_big" 		"rok_tail08" 		"shooter08"}
-		{add_view 	"startsmoke_big" 		"rok_tail09" 		"shooter09"}
-		{add_view 	"startsmoke_big" 		"rok_tail10" 		"shooter10"}
-		{add_view 	"startsmoke_big" 		"rok_tail11" 		"shooter11"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail00" 		"shooter00"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail01" 		"shooter01"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail02" 		"shooter02"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail03" 		"shooter03"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail04" 		"shooter04"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail05" 		"shooter05"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail06" 		"shooter06"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail07" 		"shooter07"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail08" 		"shooter08"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail09" 		"shooter09"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail10" 		"shooter10"}
+		{add_view 	"startsmoke_big_link" 		"rok_tail11" 		"shooter11"}
+		{add_view	"dust_shot_big_2_link"		"flashbarrel1"			"basis"}
 	}
 ;ходовая сильно унифицирована с бредли, двиг и трансмисси€ те же.
 	{on ik begin "turret"
@@ -25,8 +26,8 @@
 		("cw_check_shooting" weap_id(mgun1))
 	}
 	{on fire "gun" 
-		{spawn "startsmoke_big"}
-     		{spawn "dust_shot_big_2" "basis"}
+;		{spawn "startsmoke_big"}
+ ;    	{spawn "dust_shot_big_2" "basis"}
 		{ani_play "fire"}
 		{view start "flashbarrel_gun"}
 		{view start "smoke_add"}
@@ -310,6 +311,22 @@
 		{add_view 	"rok_tail"		"tail05"			"tail05"}
 		{add_view 	"rok_tail"		"tail06"			"tail06"}
 		{add_view 	"rok_tail"		"tail07"			"tail07"}
+		{add_view 	"startsmoke_link"		"tail00"			"shooter00"}
+		{add_view 	"startsmoke_link"		"tail01"			"shooter01"}
+		{add_view 	"startsmoke_link"		"tail02"			"shooter02"}
+		{add_view 	"startsmoke_link"		"tail03"			"shooter03"}
+		{add_view 	"startsmoke_link"		"tail04"			"shooter04"}
+		{add_view 	"startsmoke_link"		"tail05"			"shooter05"}
+		{add_view 	"startsmoke_link"		"tail06"			"shooter06"}
+		{add_view 	"startsmoke_link"		"tail07"			"shooter07"}
+		{add_view 	"startsmoke_link"		"tail00"			"tail00"}
+		{add_view 	"startsmoke_link"		"tail01"			"tail01"}
+		{add_view 	"startsmoke_link"		"tail02"			"tail02"}
+		{add_view 	"startsmoke_link"		"tail03"			"tail03"}
+		{add_view 	"startsmoke_link"		"tail04"			"tail04"}
+		{add_view 	"startsmoke_link"		"tail05"			"tail05"}
+		{add_view 	"startsmoke_link"		"tail06"			"tail06"}
+		{add_view 	"startsmoke_link"		"tail07"			"tail07"}
 	}
 	{on fire "gun2" overload
 		(define "fire_barrel"
@@ -327,8 +344,8 @@
 					}
 				}
 				{view start "tail%0"}
-				{spawn "startsmoke" "shooter%0" x}
-				{spawn "startsmoke" "tail%0" x}
+;				{spawn "startsmoke" "shooter%0" x}
+;				{spawn "startsmoke" "tail%0" x}
 				{delay 0.4	{view pause "tail%0"}}
 		)
 			{if    ("fire_barrel" args 00)  else ("fire_barrel" args 01)
@@ -414,6 +431,18 @@
 		{add_view 	"rok_tail"		"tail03"			"tail03"}
 		{add_view 	"rok_tail"		"tail04"			"tail04"}
 		{add_view 	"rok_tail"		"tail05"			"tail05"}
+		{add_view	"startsmoke_link"	"tail00"		"shooter00"}
+		{add_view	"startsmoke_link"	"tail01"		"shooter01"}
+		{add_view	"startsmoke_link"	"tail02"		"shooter02"}
+		{add_view	"startsmoke_link"	"tail03"		"shooter03"}
+		{add_view	"startsmoke_link"	"tail04"		"shooter04"}
+		{add_view	"startsmoke_link"	"tail05"		"shooter05"}
+		{add_view	"startsmoke_link"	"tail00"		"tail00"}
+		{add_view	"startsmoke_link"	"tail01"		"tail01"}
+		{add_view	"startsmoke_link"	"tail02"		"tail02"}
+		{add_view	"startsmoke_link"	"tail03"		"tail03"}
+		{add_view	"startsmoke_link"	"tail04"		"tail04"}
+		{add_view	"startsmoke_link"	"tail05"		"tail05"}
 	}
 	{on fire "gun2" overload
 		(define "fire_barrel"
@@ -421,8 +450,8 @@
 				{delay 0.1 {spawn "aim-120c7_nasams_carrier" "shooter%0"   x}}
 				{ani_play "fire%0"}
 				{view start "tail%0"}
-				{spawn "startsmoke" "shooter%0" x}
-				{spawn "startsmoke" "tail%0" x}
+;				{spawn "startsmoke" "shooter%0" x}
+;				{spawn "startsmoke" "tail%0" x}
 				{delay 0.4
 					{view pause "tail%0"}
 				}
@@ -546,13 +575,20 @@
 	("25-50mm_gilza" fxshell(fxshell))
 	("radar_params" triplex(commander_triplex) visor(visor1) anim_rotate(none) marker(antirad_generator_usa))
 ;	("custom_sh_multi_launcher" weapon(gun3) foresight(foresight5) tail(tailL_) shooter(shooterl))
-	{on "init_gun2"	{add_view 	"rok_tail"		"tailL_00"			"tailL_00"}		{add_view 	"rok_tail"		"tailL_01"			"tailL_01"}}
+	{on "init_gun2"	
+		{add_view 	"rok_tail"		"tailL_00"			"tailL_00"}
+		{add_view 	"rok_tail"		"tailL_01"			"tailL_01"}
+		{add_view	"startsmoke_link"	"tailL_00"	"shooterl00"}
+		{add_view	"startsmoke_link"	"tailL_00"	"shooterl00"}
+		{add_view	"startsmoke_link"	"tailL_00"	"tailL_00"}
+		{add_view	"startsmoke_link"	"tailL_00"	"tailL_00"}
+	}
 	{on fire "gun2" overload
 		("low_speed_bullet")
 		(define "fire_barrel"
 			name "%0"
-				{view start "%tail%0"}	{spawn "startsmoke" "shooterl%0" x}		{spawn "startsmoke" "tailL_%0" x}
-;				{spawn "proj_probe" "foresight5" x  {tags add "shooterl%0"}}
+				{view start "%tail%0"}
+;				{spawn "startsmoke" "shooterl%0" x}		{spawn "startsmoke" "tailL_%0" x}
 				{set "gun2"}{call "proj_probe"}
 				{delay 0.4		{view pause "tailL_%0"}	}
 		)

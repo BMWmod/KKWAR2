@@ -144,24 +144,25 @@
 		{spawn "sp_convoy_assistor" "basis" x no_normal no_position}
 	}
 	{on overlap begin overload
-	{if tagged "forward"
-	   {volumes enable bullet}
-	   {ani_wind "forward1" begin}
-	   {ani_wind "forward2" begin}
-	   {ani_wind "forward3" begin}
-	   {ani_wind "forward4" begin}
-	   {ani_wind "forward5" begin}
-	   {ani_wind "forward6" begin}
+		{if tagged "forward"
+		   {volumes enable bullet}
+		   {ani_wind "forward1" begin}
+		   {ani_wind "forward2" begin}
+		   {ani_wind "forward3" begin}
+		   {ani_wind "forward4" begin}
+		   {ani_wind "forward5" begin}
+		   {ani_wind "forward6" begin}
 
-	{tags add "stop_forward"}
-	{delay_ex 1 {if tagged "stop_forward" {tags remove "stop_forward"}} {volumes disable bullet}}
-	}
+		{tags add "stop_forward"}
+		{delay_ex 1 {if tagged "stop_forward" {tags remove "stop_forward"}} {volumes disable bullet}}
+		}
 		{if effector "cwps_rangefinder"
-		
+		  {if effector "ignore_linked_pointer" and linked
+		  else
 			{with_effector
 				{call "top_attack"}
 		    }
-		 
+		  }
 		}
 	}
 	{on bullet_hit

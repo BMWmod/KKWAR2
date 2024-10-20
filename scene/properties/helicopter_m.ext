@@ -403,28 +403,28 @@ actor
             {threshold  {blast {value 0.01}} {pierce {value %main_rotor_th}}}	
             {volumes "propeller*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "tail_rotor" {thickness %tail_rotor_th}
             {durability  {blast {value (* 0.1 %tail_rotor_th)}} {pierce {value 40}}}				
             {threshold  {blast {value (* 0.01 %tail_rotor_th)}} {pierce {value %tail_rotor_th}}}	
             {volumes "tail_rotor*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "body"
             {durability  {blast {koef 1} {value 15}} {pierce {koef 1} {value 130}}}				
             {threshold  {blast {koef 1} {value 0.1}} {pierce {koef 1} {value 15}}}	
             {volumes "body*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "cabin" {thickness %cabin_th}
             {durability  {blast {value (* 13 %cabin_th)}} {pierce {value 999}}}				
             {threshold  {blast {value (* 2 %cabin_th)}} {pierce {value 999}}}	
             {volumes "cabin*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 )
 
@@ -432,178 +432,115 @@ actor
 
 (define "internal_devices"
         {setting "engine" {thickness %engine_th}
-            {durability  {blast {value (* 2.75 %engine_th)}} {pierce {value 15}}}			 
+            {durability  {blast {value (* 5 %engine_th)}} {pierce {value 40}}}			 
             {threshold  {blast {value (* 0.5 %engine_th)}} {pierce {value %engine_th}}}		
-            {volumes "engine"}
+            {volumes "engine*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "engine1" {thickness %engine_th}
-            {durability  {blast {value (* 2.75 %engine_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %engine_th)}} {pierce {value %engine_th}}}	
-            {volumes "engine1"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "engine2" {thickness %engine_th}
-            {durability  {blast {value (* 2.75 %engine_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %engine_th)}} {pierce {value %engine_th}}}	
-            {volumes "engine2"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "main_reductor" {thickness %mechanics_th}
             {durability  {blast {value 33}} {pierce {value 15}}}
             {threshold  {blast {value (* 1.0 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "main_reductor*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "tail_shaft" {thickness %mechanics_th}
             {durability  {blast {value (* 6.7 %mechanics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "tail_shaft*"}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "hydrosystem" {thickness %mechanics_th}
-            {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
+            {durability  {blast {value (* 2 %mechanics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "hydrosystem*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "apu" {thickness %mechanics_th}
             {durability  {blast {value (* 3.6 %mechanics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 0.66 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "apu*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "gun" {thickness %mechanics_th}
-            {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
+            {durability  {blast {value (* 2 %mechanics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "gun*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "mgun" {thickness %mechanics_th}
-            {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
+            {durability  {blast {value (* 1 %mechanics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 0.5 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "mgun*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
-        {setting "ptur" {thickness (* 0.5 %mechanics_th)}
-            {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
+        {setting "ptur" {thickness (* 1 %mechanics_th)}
+            {durability  {blast {value (* 2 %mechanics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "ptur*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         } 
-		{setting "nar" {thickness (* 0.5 %mechanics_th)}
-            {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
+		{setting "nar" {thickness (* 1 %mechanics_th)}
+            {durability  {blast {value (* 2 %mechanics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "nar*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 		{setting "flares" {thickness (* 0.5 %mechanics_th)}
             {durability  {blast {value (* 0.3 %mechanics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 0.1 %mechanics_th)}} {pierce {value %mechanics_th}}}	
             {volumes "flares*" "chaff*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 		{setting "pilot_panel" {thickness %electronics_th}
-            {durability  {blast {value (* 4.4 %electronics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.8 %electronics_th)}} {pierce {value %electronics_th}}}	
+            {durability  {blast {value (* 8 %electronics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 1.2 %electronics_th)}} {pierce {value %electronics_th}}}	
             {volumes "pilot_panel*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "OLS" {thickness %electronics_th}
             {durability  {blast {value (* 0.3 %electronics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 0.1 %electronics_th)}} {pierce {value %electronics_th}}}	
             {volumes "OLS*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "radar" {thickness %electronics_th}
             {durability  {blast {value (* 0.3 %electronics_th)}} {pierce {value 15}}}
             {threshold  {blast {value (* 0.1 %electronics_th)}} {pierce {value %electronics_th}}}	
             {volumes "radar*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "PrPNK" {thickness %electronics_th}
-            {durability  {blast {value (* 0.3 %electronics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %electronics_th)}} {pierce {value %electronics_th}}}	
+            {durability  {blast {value (* 0.8 %electronics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 0.4 %electronics_th)}} {pierce {value %electronics_th}}}	
             {volumes "PrPNK*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
         {setting "electronics" {thickness %electronics_th}
-            {durability  {blast {value (* 0.3 %electronics_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.1 %electronics_th)}} {pierce {value %electronics_th}}}	
+            {durability  {blast {value (* 0.8 %electronics_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 0.4 %electronics_th)}} {pierce {value %electronics_th}}}	
             {volumes "electronics*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
-        {setting "fuel_tank_internal_a" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_internal_a"}
+        {setting "fuel_tank" {thickness %fuel_th}
+            {durability  {blast {value (* 5 %fuel_th)}} {pierce {value 15}}}
+            {threshold  {blast {value (* 1 %fuel_th)}} {pierce {value %fuel_th}}}	
+            {volumes "fuel_tank*"}
 			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_internal_b" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_internal_b"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_internal_c" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_internal_c"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_internal_d" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_internal_d"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_external_a" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_external_a"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_external_b" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_external_b"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_external_c" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_external_c"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
-        }
-        {setting "fuel_tank_external_d" {thickness %fuel_th}
-            {durability  {blast {value (* 2 %fuel_th)}} {pierce {value 15}}}
-            {threshold  {blast {value (* 0.5 %fuel_th)}} {pierce {value %fuel_th}}}	
-            {volumes "fuel_tank_external_d"}
-			{fragment_pass_threshold 0}	;не экранируют осколки, получают от них дамаг
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 )
 (define "armor_panel"
@@ -612,7 +549,7 @@ actor
             {threshold  {blast {value 999}} {pierce {value 999}}}	
             {volumes "%name"}
 			{fragment_pass_threshold 1}
-			{health_reducing {pierce {koef 0.0001}} {blast {koef 0.0001}} }
+			{health_reducing {pierce {koef 0.0001}} {blast {koef 0}} }
         }
 )
 
