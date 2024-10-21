@@ -162,6 +162,7 @@
 	
 	{"elite(rus)"						{tags "man_power mot"}  {button "special"} {group "extra10"}		{icon 2012} {charge 600} {cost 50} {fore 0.0}}
 	{"t-90a"							{tags "man_power mot"}  {button "special"} {group "extra11"}		{icon 2013} {charge 1200} {fore 0.0}}
+	{"t90a_mangal"							{tags "man_power mot"}  {button "special"} {group "extra11"}		{icon 2024} {charge 1200} {fore 0.0}}
 	{"bmpt"								{tags "man_power mot"}  {button "special"} {group "extra12"}		{icon 2014} {charge 1500} {fore 0.0}}
 	
 	{"morspec(rus)"						{tags "man_power specbr"}  {button "special"} {group "extra10"}		{icon 2015} {charge 600} {cost 50} {fore 0.0}}

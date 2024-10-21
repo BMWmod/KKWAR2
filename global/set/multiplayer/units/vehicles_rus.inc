@@ -123,6 +123,7 @@
 {"t72b3_2017" ("v_t" t(all) s(rus) sc(360) cw(0) cp(50) n(3))}
 
 {"t-90a" ("v_t" t(all) s(rus) sc(300) cw(0) cp(65) n(3))}
+{"t90a_mangal" ("v_t" t(all) s(rus) sc(300) cw(0) cp(65) n(3))}
 {"t-14" ("v_t" t(all) s(rus) sc(500) cw(0) cp(65) n(3))}
 {"t-15_au220" ("v_t" t(all) s(rus) sc(350) cw(0) cp(65) n(3))}
 {"bmpt" ("v_t" t(all) s(rus) sc(350) cw(0) cp(60) n(5))}
