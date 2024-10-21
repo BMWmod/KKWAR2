@@ -7,5 +7,6 @@
 
 {activate_implicit} ;эта хуйня нужна для мп
 
+{always_activate_global}
+{always_activate_scene}
 {order 2}
-;МАКС ХУЕСОСИНА ТУПОРЫЛАЯ
