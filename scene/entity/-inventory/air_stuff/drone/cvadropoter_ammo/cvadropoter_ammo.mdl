@@ -1,0 +1,70 @@
+;Exported by: ??????
+;Date:        Wed Jul 19 23:23:39 2023
+;File:        C:\Users\??????\Desktop\AR-2 Darter & Tayran AR-2 quadrotor\fpv_drone_bycawx_ammo.max
+{Skeleton
+	{bone "basis"
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "body"
+			{parameters "ID=body;"}
+			{Position 0.316054	0.0497948	2.32301}
+			{VolumeView "body.ply"}
+		}
+	}
+}
+{Volume "body1"
+	{Polyhedron "body1.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	1
+		-0.124825	-0.103441	0.563646
+	}
+}
+{Volume "body2"
+	{Polyhedron "body2.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	1
+		-0.124825	-0.103441	1.46111
+	}
+}
+{Volume "select"
+	{Polyhedron "select.vol"}
+	{Bone "body"}
+	{Matrix34
+		1	0	0
+		0	1	0
+		0	0	1
+		-0.124825	-0.103442	-5.00813
+	}
+}
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 23.0221	-53.1774	16.8506}
+			{lookat -0.29345	0.718133	2.64359}
+			{fov 45}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position 0.0799312	0.824402	3.00354}
+			}
+			{"1"
+				{type directional}
+				{direction 0.375917	0.263805	-0.197721}
+			}
+			{"2"
+				{type point}
+				{position 1.74773	-0.578791	2.93126}
+			}
+		}
+	}
+}

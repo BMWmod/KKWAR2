@@ -1,0 +1,36 @@
+{actor
+	{able "-select"}
+	{lodclass "vehicle_small"}
+	{simulation {able 1} {disableLinked 1}}
+	{targetclass "tank" "ap fg bullet"}
+	{brain "actor"}
+	{props "steel" "stuff" "collectable" "nocover"}
+{volume "body"
+	{able clear {visible} {bullet} {contact_ground} {touch} {contact} {blast}}
+}
+{volume "select"
+	{able clear}
+	{density 0}
+}
+{obstacleID "stuff"}
+{collider "stuff"}
+{constrain ground}
+	(include "/properties/shadow/round.inc")
+	{body {proper body sensible} {permit body}}
+	{extender "stuff"
+		{item "cvadropoter_b ammo"}
+	}
+	{Extension "cvadropoter_ammo.mdl"}
+
+	{Volume "body1"
+		{Tags  "body"}
+		{able clear {bullet} {select} {contact_ground} {touch} {contact} {blast}}
+		{Thickness 2}
+	}
+	{Volume "body2"
+		{Tags  "body"}
+		{able clear {bullet} {select} {contact_ground} {touch} {contact} {blast}}
+		{Thickness 2}
+	}
+
+}

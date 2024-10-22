@@ -1,0 +1,107 @@
+;By_cawx
+
+{actor
+	(include "/properties/helicopter_m.ext")
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	
+	{props "Helicopter_M" "vision_lev_small_UAV" "small_UAV"  "cw_autotakeoff" "smalluav_usa" "altmax_40m" }
+
+	{Extension "cvadropoter.mdl"}
+		("missile_aimpoint_custom" height(0) front(0) side(0))
+	
+	{collider "particle.big"}
+	{targetClass 	"small_UAV"}
+	{targetSelector "cannon_bullet"}
+	
+
+	{Volume "body1"
+		{tags "body"}
+		{component "body"}
+	}
+	{Volume "body2"
+		{tags "body"}
+		{component "body"}
+	}
+
+
+("air_armor" main_rotor(1) tail_rotor(1) cabin(1) engine(1) mechanics(1) electronics(1) fuel(1))	
+;==============================================================================================
+	{brain
+		{properties
+			{control user}
+		}
+	}
+	
+	{autooperatable 1}
+	{placer
+		{crew 0}
+		{place "driver" remove}
+		}
+
+;=================================================================================================
+
+	{extender "inventory"
+		{box
+			{clear}
+		}
+	}
+	
+	{Weaponry
+        {place "OLS"
+			{weapon "rus_las_designator" filled}
+			{foresight "foresight1"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}
+	}	
+
+	{Sensor
+		{Visor "OLS"
+			{vision "aircraft_optic_IR_1g"}
+			{bone "visor1"}
+		}
+	}
+;=================================================================================================
+	{mass 4}
+
+;	{Chassis
+;		{Locomotion ("locomotion")
+;			{Maxspeed 7}
+;			{turnRadius 7}
+;		}
+;		{maxSideSlope 20} ;degree
+;		{speed
+;			{slow 1} ; km/h
+;			{Normal 1}
+;			{Fast 7}
+;	     }
+;        }
+; {Chassis "wheel"
+;	{locomotion ("locomotion")
+;		{MaxSpeed 1} 
+;		{StartTime 		1  } 
+;		{BrakeTime 		0.01  } 
+;		{StopTime		0.01  }    
+;	}
+; }
+;		{Chassis "airborne"
+;			{Altitude 5}
+;		}
+;		{ChassisManager
+;			{Current "airborne"}
+;		}
+	
+;("CW_heli_chassis" Maxspeed(7) turnRadius(7) maxSlope(20))
+("CW_heli_skeed_chassis" 
+	Maxspeed(7) turnRadius(7) Acc(3.85) Climb(3.85)
+	Fuel(1172) Fuel_rate(1.42) Fuel_remain(879))
+	{props "cwfs_fuel_1000"}
+
+;=================================================
+
+}
+

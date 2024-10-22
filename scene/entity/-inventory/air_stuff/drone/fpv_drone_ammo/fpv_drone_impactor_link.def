@@ -1,0 +1,13 @@
+{actor
+	(include "/properties/projectile_impactor.ext")
+	{Extension "fpv_drone_ammo.mdl"}
+	{props "projectile_impactor" "propfan"}
+	{extender "stuff"
+		{item "fpv_drone_impactor"}
+	}
+	{volume "body"
+		{able {contact} {bullet} {blast} {contact_ground}}
+	}
+	;following record interrupts detonation, it must not be in _impactor, only in _impactor_link
+	("targetable_impactor_small_kamikadze")	;low speed and high flight altitude
+}

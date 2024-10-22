@@ -1,0 +1,145 @@
+;Exported by: MOCKVu4
+;Date:        Tue Aug 22 23:44:47 2023
+;File:        D:\!Neu\model\!air\drone_rpg.max
+{Skeleton
+	{bone "basis"
+		{parameters "Wheelradius=0.05;SteerMax=23;"}
+		{Orientation
+			1	0	0
+			0	-1	0
+			0	0	1
+		}
+		{bone "cwhs_ani"
+			{Matrix34
+				1	0	0
+				0	0.999999	-0.00126076
+				0	0.00126076	0.999999
+				0.0294383	0	3.20253
+			}
+			{bone "cwhs_ani1"
+				{Matrix34
+					0.999488	0	-0.0320004
+					0	1	8.32772e-05
+					0.0320004	-8.33198e-05	0.999488
+					-3.28815	0.107622	-2.92232
+				}
+				{bone "body"
+					{Matrix34
+						0.999488	0	0.032
+						-4.04096e-05	0.999999	0.00117751
+						-0.032	-0.0011782	0.999487
+						3.6004	-0.109392	4.75871
+					}
+					{VolumeView "body.ply"}
+					{bone "wint"
+						{parameters "id=body;"}
+						{Matrix34
+							1	0	0
+							0	0.999202	-0.039935
+							0	0.039935	0.999202
+							1.88735	-2.64123	-0.294216
+						}
+						{VolumeView "wint.ply"}
+					}
+					{bone "wint2"
+						{parameters "id=body;"}
+						{Matrix34
+							1	0	0
+							0	0.999202	-0.0399348
+							0	0.0399348	0.999202
+							1.88259	2.60932	-0.294216
+						}
+						{VolumeView "wint2.ply"}
+					}
+					{bone "object001"
+						{parameters "id=body;"}
+						{Matrix34
+							1	0	0
+							0	0.999202	-0.039935
+							0	0.039935	0.999202
+							-2.17288	-2.6415	-0.294216
+						}
+						{VolumeView "object001.ply"}
+					}
+					{bone "object002"
+						{parameters "id=body;"}
+						{Matrix34
+							1	0	0
+							0	0.999202	-0.0399359
+							0	0.0399359	0.999202
+							-2.1721	2.6397	-0.294218
+						}
+						{VolumeView "object002.ply"}
+					}
+					{Bone "bone0"
+                        {Position 1.47	0	-1.61}
+                        {VolumeView "mina.ply"}
+                    }
+				}
+			}
+		}
+		{bone revolute "rudder_proj"
+			{limits -20 20}
+			{speed 0.04}
+			{Matrix34
+				1	0	0
+				0	-1	0
+				0	0	-1
+				-0.457367	0.0148848	0.773076
+			}
+		}
+		{bone "pivot_back"
+			{Matrix34
+				1	0	0
+				0	1	0
+				0	0	1
+				-8.86166	0.85286	7.33768
+			}
+		}
+		{bone "pivot_front"
+			{Matrix34
+				1	0	0
+				0	1	0
+				0	0	1
+				4.33393	0.147229	7.33768
+			}
+		}
+	}
+}
+{Volume "body"
+	{Polyhedron "body.vol"}
+	{Bone "body"}
+	{Matrix34
+		0	-1	0
+		0	0	1
+		-1	0	0
+		-0.633106	-0.0400994	-0.277906
+	}
+}
+
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 13.5913	26.7739	23.0324}
+			{lookat 3.25544	9.30118	9.99074}
+			{fov 45}
+			{horizon -0.0197823}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position 5.48977	1.65337	7.98173}
+			}
+			{"1"
+				{type directional}
+				{direction -0.457871	-0.120625	-0.160635}
+				{ambient 0x666666}
+			}
+			{"2"
+				{type point}
+				{position -0.160843	11.0257	8.56927}
+			}
+		}
+	}
+}
+

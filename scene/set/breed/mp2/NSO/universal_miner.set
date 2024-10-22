@@ -1,0 +1,22 @@
+{breed
+	{skin "cw_rus_vkpo"}
+	{portrait "_new/rus/inf"}
+	{icon "at_miners"}
+	{icon_priority 1}
+	{nationality rus}
+	{armors
+		{head "6b47che2"}
+	}
+
+	(include "perks_generic.inc")
+	("traits_engineering_troops")
+	{inventory
+		{item "6b45_rpg"}
+		{item "545 ammo" 90}
+		{item "bandage" 5}
+		{item "aksu74" filling "545 ammo" 30}
+		{item "mine antitank_tm89" 6}
+		{item "mine antipersonnel_pob" 4}
+		{in_hands 3}
+	}
+}

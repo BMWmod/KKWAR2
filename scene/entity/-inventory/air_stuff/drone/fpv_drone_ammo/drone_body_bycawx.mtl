@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "drone_body_bycawx"}
+	{blend none}
+}

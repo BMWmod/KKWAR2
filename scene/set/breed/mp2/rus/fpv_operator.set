@@ -1,0 +1,24 @@
+{breed
+	{skin "cw_rus_vkpo"}
+	{portrait "_new/rus/inf"}
+	{icon "soldier"}
+	{icon_priority 0}
+	{nationality rus}
+	{armors
+		{head "6b47che"}
+	}
+	
+	(include "perks_generic.inc")
+	("traits_vehicle_supporter")
+	{inventory
+		{item "6b45_strelok"}
+		{item "aksu74" filling "545 ammo" 30}
+		{item "545 ammo" 60}
+		{item "bandage" 10}
+		
+		{item "rq11_control"}
+		{item "fpv_drone" 3}
+		{item "fpv_drone" 3}
+		{in_hands 4}
+	}
+}

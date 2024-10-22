@@ -1,0 +1,29 @@
+{weapon_bullet
+	{tag "weapon smallitemin1hand field_glass visor pistol sd laser_designator" "prepare"}
+	{Special
+		{Mode aim}
+		{PrepareTime 0}
+		{PrepareCursor "aimed_shot_aa"}
+	}
+	{filling "fpv_drone_ammo" 1}
+	{preloaded}
+	
+	{ammoLocked}
+	{Automatic}
+	{recoveryTime 1}
+	{rechargeTime 5}
+	{entity "rus_las_ammo"}
+	{inventory
+		{size 2 2}
+		{weight 100}
+		{fsm "belt"}
+	}
+	{mass 7.0}
+	{foresight "Foresight3"}
+	{range 1 1}
+	{gravity 0}
+	{speed 3000}
+	{AimingTolerance 1}	
+	;{cursor "fg_on"}	
+	{cursor "bpla"}
+}

@@ -1,0 +1,20 @@
+{from "pattern proj_impactor"
+	{entity "fpv_drone120_impactor"}
+              {inventory
+		{weight 100}
+		{size 5 1}
+	}
+	{tag "no_ricochet" "big" "size2" "88to105" "fx_90_110"} 
+	;БЧ 3кг, из них 1,5кг пластита (ТЭ около 1,3, коэфф 1), тип - ГПЭ
+;{damage blastwave {energy 0.7} {area 7.8 9}}
+;{damage add blastwave {energy 1.2} {area 5.8 6.7}}
+;{damage add blastwave {energy 2.5} {area 1.2 1.4}}
+;БЧ 3 кг, ВВ 1,5 кг, ТЭ 1,3, нач. скорость 0 м/с, тип оболочки - Снаряды 45-100мм, тип БЧ - ГПЭ(Fleshette)
+("cw_blastwave_1" tank() ifv() apc() end(0.7))
+("cw_fragwave" e2_5(2.5) r2_5(24.1) e1_2(2.5) r1_2(24.1) chance(5.8))
+("cw_fragwave" e2_5(2.5) r2_5(27.9) e1_2(2.5) r1_2(27.9) chance(2.7))
+("cw_fragwave" e2_5(2.5) r2_5(30) e1_2(2.5) r1_2(30) chance(1.9))
+("cw_fragwave" e2_5(2.5) r2_5(34.3) e1_2(2.5) r1_2(34.3) chance(0.8))
+("cw_contusion" t10(0) t6(0) t3(7.9) t0(10.3))
+ 
+}

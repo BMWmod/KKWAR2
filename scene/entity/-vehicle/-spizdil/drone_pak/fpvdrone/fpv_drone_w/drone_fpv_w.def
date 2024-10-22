@@ -1,0 +1,8 @@
+{Actor
+	(include "/properties/stuff_small.ext")
+	{Extension "drone_fpv_w.mdl"}
+	{extender "stuff"
+		{item "drone_fpv_w"}
+	}
+	{nogroupmesh 1}
+}

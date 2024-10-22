@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "rpg7rocket_albedo"}
+	{blend none}
+}

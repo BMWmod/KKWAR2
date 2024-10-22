@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "fugas"}
+	{blend none}
+}

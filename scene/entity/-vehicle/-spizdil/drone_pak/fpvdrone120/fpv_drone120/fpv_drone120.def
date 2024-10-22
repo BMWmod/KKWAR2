@@ -1,0 +1,113 @@
+{game_entity
+	(include "/properties/airborne_m.ext")	;сюда впишем общие свойства и компоненты
+	{PatherID  "airborne"}
+	(include "/properties/shadow/airborn.inc" scale(1.1))
+	(include "/properties/selection/airborne.inc" scale(3.0))
+	(include "/properties/car_crew.ext")
+	{props "airborne_M" "fighter" "vision_lev_drone_UAV" "small_UAV" "loitering_uav" "smalluav_usa" "altmax_40m" "-radar_spo" "-IR_spo" "cw_autotakeoff" "fpv_drone120"}	
+	{Extension "fpv_drone120.mdl"}
+		("missile_aimpoint_custom" height(0) front(0) side(0))
+		;
+	{collider "particle.big"}
+	{targetClass 	"small_UAV_kamikaze"}
+	{targetSelector "cannon_bullet"}
+
+	{mass 2.5}
+	{armor
+		("small_UAV_armor")
+	}
+	{extender "inventory"
+		{box
+			{clear}
+		}
+	}
+{Weaponry
+		{place "mark"
+			{weapon "fpv_drone_mark" filling "switchblade600_ammo ammo" 1}
+			{foresight "foresight1"}
+			{charger "driver"}
+			{gunner "driver"}
+			{basic}
+		}	
+		{place "straight"
+			{weapon "spot" filled}
+			{foresight "aiming_mark"}
+			{basic}
+		}
+	}
+	{extender "stuff"
+		{item "fpv_drone120_impactor_direct_hit"}
+	}
+{Extender "preview"
+	{"Stuff"
+		{camera
+			{origin 47.1027	-91.7563	14.3619}
+			{lookat 1.33385	-4.0601	0.945669}
+			{fov 9.5929}
+			{horizon 2.83041}
+		}
+		{lights
+			{"0"
+				{type point}
+				{position 4.23843	-5.67377	10.8797}
+			}
+			{"1"
+				{type directional}
+				{direction -0.0793779	0.377597	-0.317993}
+			}
+			{"2"
+				{type point}
+				{position -4.39621	-4.88662	8.11211}
+			}
+		}
+	}
+}
+("Chassis_parameters" 
+	Speed(35) TurnRadius(3) 
+	Fuel(3) Fuel_remain(3) Fuel_rate(0.03) 
+;	Acc_hor(2.00) Maneuvrability_hor(11.83)
+;	Acc_ver(1.37) Maneuvrability_ver(2.65)
+	Acc_hor(10) Maneuvrability_hor(9)
+	Acc_ver(6) Maneuvrability_ver(9)
+	;Стандартная шкала не годится, подобрано по удобству использования.
+
+)
+
+ {Chassis "wheel"
+	{locomotion ("locomotion")
+		{MaxSpeed 1} 
+		{StartTime 		1  } 
+		{BrakeTime 		0.01  } 
+		{StopTime		0.01  }    
+	}
+ }
+
+	{Sensor
+		{Visor "OLS"
+			{vision "uav_optic_optic_IR_1g"}
+			{bone "visor_OLS"}
+		}
+		{Visor "OLS1"
+			{vision "tank_gunner_optic_1g"}
+			{bone "visor_OLS1"}
+		}
+	}
+	{brain
+		{properties
+			{control user}
+		}
+	}
+	{Chassis "airborne"
+			{Altitude 25}
+		}
+	{ChassisManager
+			{Current "airborne"}
+	}
+
+       {autooperatable 1}
+       {placer
+          {crew 0}
+          {place "driver" remove}
+       }
+
+}

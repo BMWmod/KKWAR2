@@ -1,0 +1,10 @@
+{from "pattern proj_pointer"
+	{mass 2.5}
+	{entity "fpv_drone_ammo"}
+                {inventory
+		{weight 100}
+		{size 3 1}
+	}
+	{tag "no_ricochet" "size1" "antiinf" "ground_other_usa"}
+	{tag "kamikaze"} ; только для ammo.set   
+}

@@ -1,0 +1,11 @@
+{bullet
+	{entity "fpv_drone_loaded"}
+	{tag "smallitemin1hand keepentity dropboxed"}
+    {inventory
+		{weight 100}
+		{size 3 1}
+		{fsm "belt"}
+	}
+	{mass 2.5}
+	{tag "no_ricochet"} 
+}

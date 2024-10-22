@@ -1,0 +1,5 @@
+{material simple
+	{diffuse "ahe_mh6_c"}
+	{emitsheat}
+{blend blend}
+}

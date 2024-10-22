@@ -1,0 +1,18 @@
+{from "pattern proj_impactor"
+	{entity "fpv_drone_impactor"}
+              {inventory
+		{weight 100}
+		{size 5 1}
+	}
+	{tag "no_ricochet" "big" "size2" "88to105" "pierce" "rpg_shell" "fx_90_110" "fx_cm"} 
+("cw_blastwave_2" tank() ifv() apc(0.4) end(3.2))
+("cw_fragwave" e2_5(2.5) r2_5(13) e1_2(2.5) r1_2(13) chance(5.1))
+("cw_fragwave" e2_5(2.5) r2_5(14.9) e1_2(2.5) r1_2(14.9) chance(3.2))
+("cw_fragwave" e2_5(2.5) r2_5(16.4) e1_2(2.5) r1_2(16.4) chance(3.2))
+("cw_fragwave" e2_5(2.5) r2_5(19.1) e1_2(2.5) r1_2(19.1) chance(2.7))
+("cw_fragwave" e2_5(2.5) r2_5(22.6) e1_2(2.5) r1_2(22.6) chance(2.5))
+("cw_contusion" t10(0) t6(7.1) t3(9.6) t0(12.5))
+("cw_blast_mass_add" add(7.7))
+("cw_heat" energy(300))
+
+}

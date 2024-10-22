@@ -1,0 +1,22 @@
+{breed
+	{skin "cw_rus_vkpo"}
+	{portrait "_new/rus/inf"}
+	{icon "engineer"}
+	{icon_priority 1}
+	{nationality rus}
+	{armors
+		{head "6b47che2"}
+	}
+
+	(include "perks_generic.inc")
+	("traits_engineer")
+	{inventory
+		{item "6b45_rpg"}
+		{item "spade_inv" 1}
+		{item "netting_kit"}
+		{item "aksu74" filling "545 ammo" 30}
+		{item "repair_kit"}
+		{item "545 ammo" 60}
+		{in_hands 3}
+	}
+}

@@ -1,0 +1,24 @@
+{breed
+	{skin "cw_rus_vkpo"}
+	{portrait "_new/rus/inf"}
+	{icon "vehicle_sup"}
+	{icon_priority 0}
+	{nationality rus}
+	{armors
+		{head "6b47che"}
+	}
+	
+	(include "perks_generic.inc")
+	("traits_vehicle_supporter")
+	{inventory
+		{item "6b45_strelok"}
+		{item "bandage" 5}
+		{item "545 ammo" 180}
+		{item "rgd grenade" 2}
+		{item "ak74b" filling "545 ammo" 30}
+		{item "smoke rdg2b grenade"}
+		{item "f1 grenade" 2}
+		{item "smoke rdg2b grenade"}
+		{in_hands 4}
+	}
+}
