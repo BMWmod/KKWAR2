@@ -119,6 +119,8 @@
 		("seat_human" place(seat1) bone(seat01) door(emitc)  animation(armor))
 		("seat_human" place(seat2) bone(seat02) door(emitc)  animation(armor1))
 		("seat_human" place(seat3) bone(seat03) door(emitc)  animation(armor))
+		("seat_human" place(seat4) bone(seat04) door(emitc)  animation(armor1))
+		("seat_human" place(seat5) bone(seat05) door(emitc)  animation(armor1))
 		
 	{placer
 		{place "gunner2"
