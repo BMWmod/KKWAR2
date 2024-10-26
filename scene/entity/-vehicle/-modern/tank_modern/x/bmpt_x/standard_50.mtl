@@ -1,7 +1,0 @@
-{material bump
-	{diffuse "$/model/bmpt/whs"}
-	{bump "$/model/bmpt/whs_bp"}
-	{specular "$/model/bmpt/whs_sp"}
-	
-{blend none}
-}

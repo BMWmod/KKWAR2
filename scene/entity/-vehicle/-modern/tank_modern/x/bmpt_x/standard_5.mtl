@@ -1,7 +1,0 @@
-{material bump
-	{diffuse "$/model/bmpt/track33_df"}
-	{bump "$/model/bmpt/track33_bp"}
-	{specular "$/model/bmpt/track33_sp"}
-	
-{blend none}
-}

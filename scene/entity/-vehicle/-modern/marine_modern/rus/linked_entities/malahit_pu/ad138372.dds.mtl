@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/model/pr1234_ovod/missile_tubes"}
-	{blend none}
-}
