@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t80/glass_s"}
+{blend blend}
+}

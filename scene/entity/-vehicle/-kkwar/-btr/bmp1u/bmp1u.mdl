@@ -3,7 +3,7 @@
 ;Date: Sat Feb 23 17:43:17 2019
 ;File: G:\?????? ???\?????? ? 1.6.1\???-1-2\?????????\???-1.max
 ;Model create/rebuild by: Makimka
-;Last build date: Monday 20 October 2024 [16:47:46]
+;Last build date: Sunday 26 October 2024 [11:52:50]
 {Skeleton
     {Animation
         {Sequence "start"}
@@ -432,10 +432,10 @@
             {Bone revolute "turret"
                 {Parameters "ID=turret;"}
                 {Matrix34
-                    0.999976	0.00698127	0
-                    -0.00698127	0.999976	0
-                    0	0	1
-                    1.6124	12.015	13.8867
+                    1.31004	0.00113992	0
+                    0.00109719	1.10388	0
+                    0	0	1.63568
+                    1.6124	13.455	14.4467
                 }
                 {VolumeView "turret.ply"}
                 {Bone revolute "gun_rot"
@@ -1017,7 +1017,12 @@
 {Volume "gun"
     {Polyhedron "gun.vol"}
     {Bone "gun_rot"}
-    {Position 16.4792	-0.0936127	-1.03982}
+    {Matrix34
+        1.04714	0	0
+        0	1	0
+        0	0	1.02271
+        16.4792	-0.0936127	-1.03982
+    }
 }
 {Volume "gunner_place"
     {Polyhedron "gunner_place.vol"}

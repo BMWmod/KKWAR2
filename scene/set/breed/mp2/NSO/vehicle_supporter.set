@@ -1,6 +1,6 @@
 {breed
-	{skin "cw_rus_vkpo"}
-	{portrait "_new/rus/inf"}
+	{skin "cw_civilian1"}
+	{portrait "_new/nso/dummy"}
 	{icon "vehicle_sup"}
 	{icon_priority 0}
 	{nationality rus}
