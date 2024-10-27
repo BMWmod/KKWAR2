@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t62_new/ballon"}
+{blend none}
+}

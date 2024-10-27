@@ -1,0 +1,5 @@
+{material bump
+	{diffuse "$/model/t62_new/ecrans"}
+	
+{blend none}
+}

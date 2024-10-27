@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "$/model/t62_new/body"}
+	{bump "$/model/t62_new/body_bp"}
+	{specular "$/model/t62_new/body_sp"}
+	
+	{blend none}
+}

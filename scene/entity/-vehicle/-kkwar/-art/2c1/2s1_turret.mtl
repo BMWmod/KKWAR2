@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "2s1_02_co"}
+	{blend none}
+}

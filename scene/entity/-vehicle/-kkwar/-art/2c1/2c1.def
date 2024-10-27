@@ -1,0 +1,97 @@
+;Created by Parvis
+{entity
+	(include "/properties/tank.ext")
+	(include "/properties/selection/vehicle.inc" scale(1.2))
+	{collider "tank.light"}
+	{props "Light_M" "turret_rotator" "vision_lev04_can" "auto_dig_in" "has_autoloader" "cw_artillery"  "cw_panorama" "amphibia" "2c3_sound"}
+	{targetClass "light_tank"}
+	{PatherID "amphibia"}
+
+	{Volume "Body"
+		{tags "body"}
+		{component "body"}
+	}
+	{Volume "turret"
+		{tags "body"}
+		{component "body"}
+	}
+        
+	
+	("armor_light" turret(23 12 12 10) body(23 12 10 8)) ;http://army.lv/ru/2s9/740/22
+	("armor_engine"  t(20))
+
+	{extension "crew.ext"}
+        {extender "enumerator"}	
+	
+	{extender "inventory"			
+		{box
+			{Size 6 8}
+			{weight 1000}
+			{item "ammo bullet122_RUS fg" 24}
+			{item "ammo bullet122_RUS cm" 5}
+			{item "ammo bullet122_RUS sm" 5}
+			{item "ammo bullet122_RUS rok" 5}
+		}	
+	}		
+		
+	{sensor
+		{visor "main"
+			{vision "tank_gunner_optic_1g"}
+		}
+	}
+	{Weaponry
+		("restore_ik_time")
+		{place "gun"
+			{weapon "122mm_2A18" filling "ammo bullet122_RUS fg" 1}					
+                        {RestoreIKAfterAim}	
+                        {charger "gunner"}			
+                        {Rotate}				
+                        ("abm_howitzer")
+		}
+	}
+        
+	{mass 13900}
+	{Chassis
+                ("tank_trace" fx("tracks_sm") step(0.15) len(0.45))
+		{Locomotion ("locomotion")
+            		{maxspeed   50}
+            		{maxSpeedAtMaxTurn 21}
+            		{StartTime  12}
+            		{TurnTime   7}
+            		{TurnStart  1}
+            		{TurnRadius 7}
+            		{TurnStop   0.6}
+            		{BrakeTime  1.6}
+            		{StopTime   2.2}
+            		{Gears  0.2 0.5 1}
+            		{RearGears  0.3}
+        	}
+
+		{FuelBag
+			 {volume 500 }
+                	 {rate   140 }
+                	 {remain 500 }
+                	 {fuel "fuel"}
+		}
+		{speed
+                	{Normal  25}
+            	}
+		{switch
+			{exitFromWater}
+			{terrain not "water" "deep_water"}
+		}
+	}
+	
+
+	{Extension "2s1_gvozdika.mdl"}
+("missile_aimpoint_tanksize")
+	{chassis "water"
+		("chassis_defaults")
+		{ignorePatherBounds}
+		{waterline 1.4}
+		{switch
+			{terrain "water" "deep_water"}
+		}	
+	}
+}
+	
