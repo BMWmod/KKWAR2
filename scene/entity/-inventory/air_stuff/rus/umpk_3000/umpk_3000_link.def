@@ -1,0 +1,4 @@
+{Game_entity
+	(include "/properties/projectile_impactor.ext")
+	{Extension "umpk_3000.mdl"}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/su-34/x59m_intake"}
+{blend none}
+}

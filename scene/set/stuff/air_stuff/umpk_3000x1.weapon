@@ -1,0 +1,24 @@
+{weapon_bullet
+	{tag "weapon skill_airgun bullet"}	;"bullet" is needed for work of levelling and skills
+	{tag "weapon fg"}
+	{inventory
+		{noView}
+	}
+	{filling "ammo umpk_3000" 1}
+	{fillingVisible "ympk_body_"}
+	{fireSound "reactive_cw/bomb"}
+	{recoveryTime 0.75}
+	{rechargeTime 120}
+	{range 475 475}
+
+	{cursor "bomb_on"}
+	{cursorReloading "cannon_reload_fg"}
+	
+	{automatic}
+	{gravity 300}
+	{speed 3000}
+	{aimtype adaptive}
+
+	("accuracy_kab" kvo_meters(12.0))
+
+}

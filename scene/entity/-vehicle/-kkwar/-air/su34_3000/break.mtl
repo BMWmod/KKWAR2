@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/f-35b/break"}
+{blend none}
+}

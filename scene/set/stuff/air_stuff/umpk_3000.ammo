@@ -1,0 +1,11 @@
+{from "pattern proj_pointer"
+	{entity "umpk_3000"}
+	{inventory
+		{weight 100}
+		{size 6 2}
+	}
+	{tag "no_ricochet" "umpk_500_gps"} 
+	{tag "bomb"} ; только для ammo.set
+	{mass 3000}
+("cw_blast_charge" kg(1250))
+}

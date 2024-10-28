@@ -1,0 +1,90 @@
+-= Animation: flip_bomb, Node ympk_body =-
+	Frame 5 {
+		Visibility 1
+		Position	0	0	0
+		Orientation	0 0 0 1
+	}
+	Frame 11 {
+		Position	0	0	1.05688
+		Orientation	0.107059 0 0 0.994253
+	}
+	Frame 12 {
+		Position	0	0	3.69907
+		Orientation	0.369206 0 0 0.929348
+	}
+	Frame 13 {
+		Position	0	0	7.13393
+		Orientation	0.671559 0 0 0.740951
+	}
+	Frame 14 {
+		Position	0	0	10.5688
+		Orientation	0.893633 0 0 0.448799
+	}
+	Frame 15 {
+		Position	0	0	13.211
+		Orientation	0.986938 0 0 0.161102
+	}
+	Frame 16 {
+		Position	0	0	14.2679
+		Orientation	1 0 0 0
+	}
+	Frame 17 {
+		Orientation	0.999271 0 0 -0.0381694
+	}
+	Frame 18 {
+		Orientation	0.999048 0 0 -0.0436191
+	}
+	Frame 19 {
+		Orientation	0.999762 0 0 -0.0218146
+	}
+	Frame 20 {
+		Visibility 1
+		Position	0	0	14.2679
+		Orientation	1 0 0 0
+	}
+-= Animation: open_wing, Node wing_l =-
+	Frame 0 {
+		Visibility 1
+		Position	11.955	0.00676916	0.889011
+		Orientation	0 0 0 1
+	}
+	Frame 1 {
+		Orientation	0 0 0.0219894 0.999758
+	}
+	Frame 2 {
+		Orientation	0 0 0.0815906 0.996666
+	}
+	Frame 3 {
+		Orientation	0 0 0.168833 0.985645
+	}
+	Frame 4 {
+		Orientation	0 0 0.272952 0.962028
+	}
+	Frame 5 {
+		Visibility 1
+		Position	11.955	0.00676916	0.889011
+		Orientation	0 0 0.382683 0.92388
+	}
+-= Animation: open_wing, Node wing_R =-
+	Frame 0 {
+		Visibility 1
+		Position	11.955	0.00677837	0.241075
+		Orientation	1 0 0 0
+	}
+	Frame 1 {
+		Orientation	0.999758 0.0219894 0 0
+	}
+	Frame 2 {
+		Orientation	0.996666 0.0815906 0 0
+	}
+	Frame 3 {
+		Orientation	0.985645 0.168834 0 0
+	}
+	Frame 4 {
+		Orientation	0.962028 0.272952 0 0
+	}
+	Frame 5 {
+		Visibility 1
+		Position	11.955	0.00677837	0.241075
+		Orientation	0.92388 0.382683 0 0
+	}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/su-34/kab-500_c"}
+{blend none}
+}

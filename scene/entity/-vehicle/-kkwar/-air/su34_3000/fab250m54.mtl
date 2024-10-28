@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "fab250m54"}
+	{blend none}
+}

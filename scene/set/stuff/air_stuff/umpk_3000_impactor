@@ -1,0 +1,33 @@
+{from "pattern proj_impactor"
+	{tag "ammo"}
+	{tag "itemin2hands"}
+	{tag "no_ricochet" "fg" "fragmentary" "big" "size5" "fx_upto250kg"}
+	{tag "bomb"} ; только для ammo.set
+	{inventory
+		{size 5 1}
+		{weight 1000}
+		{noView}
+		{fsm "stuff"}
+	}	
+	{mass 3000}
+	{entity "umpk_3000"}
+	{view "umpk_3000"
+		{tail ""}
+	}
+	;200 кг ВВ
+
+("cw_blastwave_4" tank(3.6) ifv(7.1) apc(14.8) end(19.5))
+("cw_fragwave" e2_5(2.5) r2_5(13.6) e1_2(1.2) r1_2(20) chance(48.2))
+("cw_fragwave" e2_5(2.5) r2_5(16.6) e1_2(1.2) r1_2(25.9) chance(30.5))
+("cw_fragwave" e2_5(2.5) r2_5(18.7) e1_2(1.2) r1_2(29.7) chance(30.3))
+("cw_fragwave" e2_5(2.5) r2_5(22.5) e1_2(1.2) r1_2(36.2) chance(26))
+("cw_fragwave" e2_5(2.5) r2_5(27.4) e1_2(1.2) r1_2(44.8) chance(23.8))
+("cw_fragments" e1_2(1.2) r1_2(20) e1_0(1) r1_0(23.8) e0_7(0.7) r0_7(30.2) e0_25(0.25) r0_25(38.7) chance(48.2))
+("cw_fragments" e1_2(1.2) r1_2(25.9) e1_0(1) r1_0(31.3) e0_7(0.7) r0_7(40.5) e0_25(0.25) r0_25(52.8) chance(30.5))
+("cw_fragments" e1_2(1.2) r1_2(29.7) e1_0(1) r1_0(36.1) e0_7(0.7) r0_7(47.1) e0_25(0.25) r0_25(61.5) chance(30.3))
+("cw_fragments" e1_2(1.2) r1_2(36.2) e1_0(1) r1_0(44.3) e0_7(0.7) r0_7(58.1) e0_25(0.25) r0_25(58.1) chance(26))
+("cw_fragments" e1_2(1.2) r1_2(44.8) e1_0(1) r1_0(54.9) e0_7(0.25) r0_7(54.9) e0_25(0.25) r0_25(54.9) chance(23.8))
+("cw_contusion" t10(20.8) t6(29.7) t3(39.9) t0(52.2))
+("cw_seismic_6")
+("cw_blast_mass_add" add(1965.5))
+}
