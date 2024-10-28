@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/tactical_abrams/cw_skarb"}
+{blend none}
+}

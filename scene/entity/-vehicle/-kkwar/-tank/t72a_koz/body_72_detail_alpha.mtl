@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t-72/n2_t72"}
+{blend test}
+}
