@@ -1,6 +1,6 @@
 {breed
 	{skin "cw_rus_vertpilot1"}
-	{portrait "_new/rus/dummy"}
+	{portrait "_new/nso/dummy"}
 	{icon "pilot"}
 	{icon_priority 0}
 	{nationality rus}
