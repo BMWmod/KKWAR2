@@ -1,0 +1,21 @@
+{breed
+	{skin "cw_rus_vertpilot1"}
+	{portrait "_new/nso/dummy"}
+	{icon "pilot"}
+	{icon_priority 0}
+	{nationality arb}
+	{armors
+		{head "zsh7v"}
+	}
+
+	(include "perks_generic.inc")
+	("traits_pilot")
+	{inventory
+		{item "naz_ir"}
+		{item "545 ammo" 90}
+		{item "aksu74" filling "545 ammo" 30}
+		{item "bandage" 15}
+		{item "rgd grenade" 2}
+		{in_hands 2}
+	}
+}
