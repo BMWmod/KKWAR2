@@ -1,0 +1,10 @@
+{material
+	{layer bump
+		{diffuse "/texture/land/dirt/clay_gr"}
+		{bump "/texture/land/dirt/clay_gr_nm"}
+	}
+	{layer bump
+		{diffuse "/texture/land/grass/gramma_12a"}
+		{bump "/texture/land/grass/gramma_12a_nm"}
+	}
+}
