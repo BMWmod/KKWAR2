@@ -1,0 +1,18 @@
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl1"
+	{scheme 1
+		{diffuse "/texture/land/sand/sand4"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_111"}
+	}
+	{blend none}
+}
+{"land/layered_2:gem2/ground/simple:gem2/ground/simple" "land_mtl0"
+	{scheme 1
+		{diffuse "/texture/land/town/asfalt_road"}
+	}
+	{scheme 2
+		{diffuse "/texture/land/grass/gramma_111"}
+	}
+	{blend none}
+}
