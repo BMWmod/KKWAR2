@@ -1,0 +1,24 @@
+{breed
+	{skin "cw_rus_vkpo"}
+	{portrait "_new/nso/dummy"}
+	{icon "engineer"}
+	{icon_priority 1}
+	{nationality eng}
+	{armors
+		{head "6b47che2"}
+	}
+
+	(include "perks_generic.inc")
+	("traits_engineer")
+	{inventory
+		{item "6b45_rpg"}
+		{item "dynamite"}
+		{item "barbwire_kit" 2}
+		{item "hedgehog_kit" 2}
+		{item "sandbag_kit" 2}
+		{item "aksu74" filling "545 ammo" 30}
+		{item "repair_kit"}
+		{item "545 ammo" 60}
+		{in_hands 5}
+	}
+}

@@ -1,6 +1,6 @@
 {breed
 	{skin "cw_rus_tankman"}
-	{portrait "_new/rus/dummy"}
+	{portrait "_new/nso/dummy"}
 	{icon "tankman1"}
 	{icon_priority 0}
 	{nationality rus}

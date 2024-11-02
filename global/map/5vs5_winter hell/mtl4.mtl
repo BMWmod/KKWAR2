@@ -1,0 +1,11 @@
+{material
+	{layer bump
+		{diffuse "/texture/land/winter/ice_crust3"}
+		{bump "/texture/land/winter/ice_crust3_nm"}
+		{specular "/texture/land/winter/ice_crust3_sp"}
+	}
+	{layer bump
+		{diffuse "/texture/land/winter/clay_snow1"}
+		{bump "/texture/land/winter/clay_snow1_nm"}
+	}
+}
