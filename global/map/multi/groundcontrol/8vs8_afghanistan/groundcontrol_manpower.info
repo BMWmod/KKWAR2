@@ -1,0 +1,7 @@
+;SDL
+{game
+ {parameters
+	{freezeTime 180}
+ }
+  {maxPlayers 16}
+}	
