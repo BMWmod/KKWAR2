@@ -1,0 +1,25 @@
+{from "pattern proj_weapon"
+
+	{tag "gun"}
+	{filling "ammo mim23k" 3}
+	{fillingVisible "mim23_"}	
+	
+	{fireSound "bazooka/patriotLaunch"}	
+	{mass 120}
+	
+	{recoveryTime 7}
+	{rechargeTime 160}
+	
+	{AimingTolerance 5}
+	
+	{inventory {noView}}
+	
+	{maxRange 320}
+	{aimRange 320}
+	
+	;{cursor "zenite_on"}
+	;{cursorReloading "zenite_reload"}
+	{cursor "cannon_on_aa"}
+	{cursorReloading "cannon_reload_fg"}
+	;{cursorReloading "cannon_reload_fg_timer_160"}
+}

@@ -21423,7 +21423,7 @@
 		{xform zl -62.69}
 	}
 	{Entity "ash_tree3" 0x50a8
-		{Position -1785.77 10572.5}
+		{Position -1696.53 10593}
 		{xform zl -127.48}
 	}
 	{Entity "pine_04_g2" 0x50a9
@@ -21809,7 +21809,7 @@
 		{xform zl -50.08}
 	}
 	{Entity "new_tree1a" 0x50ff
-		{Position -1761.22 10522.6}
+		{Position -1671.98 10543.1}
 		{xform zl -165.73}
 	}
 	{Entity "new_tree3" 0x5100
@@ -21835,7 +21835,7 @@
 		{xform zl -175.43}
 	}
 	{Entity "acacia_tree" 0x5104
-		{Position -1824.41 10522.3}
+		{Position -1735.17 10542.8}
 		{xform zl -121.27}
 	}
 	{Entity "new_tree1a" 0x5105

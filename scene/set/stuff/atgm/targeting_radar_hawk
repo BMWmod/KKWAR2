@@ -1,0 +1,17 @@
+;By cAwX
+{from  "pattern proj_weapon"
+	{tag "visor" "gun"}
+	{filling "targeting_radar_usa ammo" 5000}
+	{foresight "Foresight1"}
+	{recoveryTime 0.6}
+	{rechargeTime 160}
+	{inventory {noView}}
+	{aimRange 400}
+	{MaxRange 400}
+	{Automatic}
+	{preloaded}
+	{ammoLocked}
+	;{cursor "fg_on"}
+	{cursor "radar"}
+}
+
