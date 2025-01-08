@@ -2,8 +2,8 @@
 ;Model created by: ??????
 ;Date: Sat Sep 16 21:34:37 2017
 ;File: G:\?????? ???\----????? 72\?????? ?-72\?-72?\T-72?_CCC?.max
-;Model create/rebuild by: Makimka
-;Last build date: Friday 4 April 2024 [20:55:14]
+;Model create/rebuild by: Makimaglist
+;Last build date: Thursday 8 January 2025 [17:30:55]
 {Skeleton
     {Animation
         {Sequence "start"}
@@ -1126,15 +1126,6 @@
                             9.04683	3.889	6.44878
                         }
                         {VolumeView "cover2.ply"}
-                    }
-                    {Bone "det_72av"
-                        {Matrix34
-                            1	0	2.3365e-05
-                            0	1	0
-                            -2.3365e-05	0	1
-                            0.659191	-2.58957	-8.20865
-                        }
-                        {VolumeView "det_72av.ply"}
                     }
                     {Bone "gun_rot_cover"
                         {Matrix34

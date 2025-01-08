@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t72_b3_gorod/tactical/tactical_sign"}
+{blend blend}
+}

@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t80/reshetka"}
+{blend test}
+}

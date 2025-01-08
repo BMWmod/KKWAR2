@@ -2,8 +2,8 @@
 ;Model created by: ??????
 ;Date: Tue Aug 29 18:40:57 2017
 ;File: G:\?????? ???\----????? 72\?????? ?-72\?-72?\T-72?_CCC?.max
-;Model create/rebuild by: Makimka
-;Last build date: Monday 27 October 2024 [23:12:22]
+;Model create/rebuild by: Makimaglist
+;Last build date: Thursday 8 January 2025 [17:41:10]
 {Skeleton
     {Animation
         {Sequence "start"}
@@ -575,28 +575,38 @@
                 }
                 {Bone "shieldl2"
                     {Parameters "ID=shield_body;"}
-                    {Position 34.2755	-44.4949	-0.336273}
+                    {Matrix34
+                        1.00097	-0.309478	0.000527773
+                        0.30969	1.34334	4.06365e-12
+                        -0.280546	0.0867387	1.94229
+                        27.1055	-42.4549	20.5637
+                    }
                     {VolumeView "shieldl2.ply"}
                 }
                 {Bone "shieldl3"
                     {Parameters "ID=shield_body;"}
-                    {Position 34.2755	-17.7655	-0.368622}
+                    {Matrix34
+                        0.792292	0	0
+                        0	1.06481	0
+                        0	0	3.20708
+                        30.4255	-9.9655	26.6014
+                    }
                     {VolumeView "shieldl3.ply"}
                 }
                 {Bone "shieldl4"
                     {Parameters "ID=shield_body;"}
-                    {Position 34.2755	8.80915	-0.409601}
+                    {Matrix34
+                        3.59589	1.90553	0
+                        -0.59978	1.13183	0
+                        0	0	2.87643
+                        20.1355	20.4891	29.7204
+                    }
                     {VolumeView "shieldl4.ply"}
                 }
                 {Bone "shieldl5"
                     {Parameters "ID=shield_body;"}
                     {Position 34.2755	40.8485	-0.443449}
                     {VolumeView "shieldl5.ply"}
-                }
-                {Bone "shieldl6"
-                    {Parameters "ID=shield_body;"}
-                    {Position 27.9118	62.4278	1.97715}
-                    {VolumeView "shieldl6.ply"}
                 }
                 {Bone "shieldr2"
                     {Parameters "ID=shield_body;"}
@@ -605,17 +615,32 @@
                 }
                 {Bone "shieldr3"
                     {Parameters "ID=shield_body;"}
-                    {Position -34.2754	-17.7655	-0.368637}
+                    {Matrix34
+                        0.973579	0.228351	0
+                        -0.315699	1.34599	0
+                        0	0	2.28542
+                        -25.3754	-43.4455	19.6414
+                    }
                     {VolumeView "shieldr3.ply"}
                 }
                 {Bone "shieldr4"
                     {Parameters "ID=shield_body;"}
-                    {Position -34.2754	8.80916	-0.409609}
+                    {Matrix34
+                        1.40568	0	0
+                        0	1.12423	0
+                        0	0	3.12637
+                        -29.6554	-10.3408	27.5404
+                    }
                     {VolumeView "shieldr4.ply"}
                 }
                 {Bone "shieldr5"
                     {Parameters "ID=shield_body;"}
-                    {Position -34.2754	40.8485	-0.443457}
+                    {Matrix34
+                        1.33022	-0.698384	0
+                        0.464842	0.885393	0
+                        0	0	3.18886
+                        -21.6754	20.7485	26.9765
+                    }
                     {VolumeView "shieldr5.ply"}
                 }
                 {Bone "torsion"
@@ -1353,16 +1378,6 @@
         0	0	1
         -1	0	0
         0.399757	-0.144642	0.0850887
-    }
-}
-{Volume "shieldl6"
-    {Polyhedron "shieldl6.vol"}
-    {Bone "shieldl6"}
-    {Matrix34
-        0	-1	0
-        1.55727e-05	0	1
-        -1	0	1.55727e-05
-        0.0795212	0.0517426	-0.0880432
     }
 }
 {Volume "shieldr1"

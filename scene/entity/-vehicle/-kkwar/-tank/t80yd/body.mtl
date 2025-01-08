@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/t80/t80y/t-80_body"}
+{blend none}
+}
