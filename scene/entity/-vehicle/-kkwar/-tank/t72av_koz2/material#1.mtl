@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "$/model/BTR-4E/Flag/flag_soviet"}
+	{blend test}
+}

@@ -1,0 +1,7 @@
+{material bump
+	{diffuse "net2"}
+	{bump "net2_n"}
+	{specular "net2_c"}
+	{color "230 230 230 125"}
+	{blend test}
+}

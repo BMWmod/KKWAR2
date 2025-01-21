@@ -1,0 +1,4 @@
+{material simple
+	{diffuse "t-64bv_2"}
+	{blend none}
+}

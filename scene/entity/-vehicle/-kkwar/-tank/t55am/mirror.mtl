@@ -1,0 +1,5 @@
+{material envmap
+	{diffuse "$/model/t62_new/body"}
+	{mask "$/model/bumerang/mirror"}
+ {blend none}
+}
